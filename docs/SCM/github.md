@@ -22,33 +22,29 @@ nav_order: 1
 원하는 폴더에서 시작하는 깃 초기화 커맨드.<br> 
 이 커맨드를 치고나면 .git 라는 이름의 숨김 폴더가 하나 생긴다. 이것을 저장소라고 하는데 깃은 이 폴더의 모든 변경 내용을 여기에 저장한다. 이 파일을 지우면 더 이상 깃으로 폴더의 변경사항을 추적할 수 없다.
 
-```markdown
-
-```
-
 ### 스테이징(git status)
 변경사항 중에서 “저장하고 싶은 부분만 선택해 임시로 저장”하는 개념<br>
 
 추적하고 싶은 파일을 스테이지에 넣기
-<div class="code-example" markdown="1">
-1. git add file.ext
+```markdown
+1. git add file.txt
   : 변경된 파일 직접선택
 
 2. git add .
   : 폴더의 전체 변경 사항을 지정
-</div>
+```
 
 스테이징 된 파일을 커밋 직전 상태로 변경
-<div class="code-example" markdown="1">
+```markdown
 git status
 
 Changes to be committed:
   new file: file.txt
-</div>
+```
 
 ### 커밋(git commit)
 깃이 폴더의 변경 내용을 저장하는 단위(스테이지 상태에 두어야만 커밋가능)
-<div class="code-example" markdown="1">
+```markdown
 1. git commit
   : 기본 에디터로 변경 내용을 기록할 수 있음
 
@@ -59,7 +55,7 @@ Changes to be committed:
 
 4. git commit --amend
   : 커밋을 만들지 않고 이전 커밋에 변경사항을 추가할 경우(에디터)
-</div>
+```
 
 ### 로그(git log)
 스테이징을 거쳐 커밋한 결과 보기
@@ -78,10 +74,10 @@ Changes to be committed:
 둘다 동시에(브랜치 만들면서 변경): git checkout -b 뉴브랜치명 <br>
 
 브랜치 병합하기: 기준이 되는 master브랜치로 이동한 뒤, 머지
-<div class="code-example" markdown="1">
+```markdown
 git checkout master
 git merge feature
-</div>
+```
 
 
 
