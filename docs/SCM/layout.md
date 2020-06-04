@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Layout
-parent: scm
+parent: SCM
 nav_order: 2
 ---
 
