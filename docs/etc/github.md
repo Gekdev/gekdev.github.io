@@ -31,6 +31,12 @@ https://blog.naver.com/agapeuni/221057032543 (더 자세하게 알고싶다면)
 
 ## What is Github?
 
+https://backlog.com/git-tutorial/kr/intro/intro1_2.html<br>
+https://www.zerocho.com/category/Git
+https://opentutorials.org/module/4636
+https://nolboo.kim/blog/2013/10/06/github-for-beginner/
+
+
 
 ### Command
 
@@ -133,10 +139,29 @@ git pull origin master 하면 origin의 내용이 master로 복사됨.<br>
 - git config --global credential.helper 'store --file 경로'
 git pull을 할 때는 깃허브의 유저이름과 비밀번호를 쳐야하는 경우가 많은데 매번 비밀번호를 치기 귀찮을때 사용<br> 
 해당 경로에 비밀번호가 저장된 파일이 생성됨. 단, 파일로 저장되는만큼 보안에 취약하기 때문에 주의.
+```markdown
+1. git config credential.helper store 
+  // git directory에선 반영구적으로 인증 절차가 생략됩니다.(저장된 credential 정보를 이용해 인증 처리)
+  
+2. git config credential.helper cache
+  // cash 사용 15분 동안 인증 절차를 요구하지 않음, git config credential.helper 'cache --timeout=3600'와같이 시간지정도 가능
+  
+3. git config credential.helper store --global
+  // 모든 프로젝트에 적용
+
+```
 
 ### 상황별 팁!
 https://jeonghwan-kim.github.io/dev/2020/02/10/git-usage.html#%EC%83%81%ED%99%A9%EB%B3%84-%ED%8C%81
 
 ### reference
 https://opentutorials.org/module/4636 <br>
+https://www.hahwul.com/2018/08/git-credential-helper.html<br>
+<br>
 https://medium.com/webeveloper/%EA%B9%83%ED%97%88%EB%B8%8C-%EC%82%AC%EC%9A%A9%EB%B0%A9%EB%B2%95-github-tutorials-4a63f31bb6a5
+
+## Github blog
+아래 블로그들을 참고해서 구축했습니다.
+
+https://devmjun.github.io/archive/CreatGithubBlog <br>
+https://honbabzone.com/jekyll/start-gitHubBlog/
