@@ -104,7 +104,7 @@ git remote add origin “remote repository url” 명령어는 첫 커밋을 할
 
 //fatal: remote origin already exists. 의 오류발생 시
 git remote rm origin후 다시 생성
-
+    
 git remote -v // 연결상태를 확인한다.
 
 7. git push -u origin master
@@ -122,7 +122,7 @@ git pull을 할 때는 깃허브의 유저이름과 비밀번호를 쳐야하는
 원격 저장소에서 팀원이 merge한 파일가져오기
 원격 저장소에서 팀원이 merge한 파일을 가져올 때에는 git pull 명령어를 통해서 간단하게 가져올 수 있습니다. 충돌이(conflict) 일어나는 경우에는 충돌이 일어난 위치를 찾아서 해결(resolve)하고 다시 git pull로 가져오면 됩니다.
 
-## 상황별 팁
+## 상황별 팁!
 https://jeonghwan-kim.github.io/dev/2020/02/10/git-usage.html#%EC%83%81%ED%99%A9%EB%B3%84-%ED%8C%81
 
 ## reference
