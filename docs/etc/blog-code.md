@@ -22,7 +22,7 @@ nav_order: 99
 
 ### Typography
 
-1. Responsive type scale
+* Responsive type scale
 
 | Selector              | Small screen size `font-size`    | Large screen size `font-size` |
 |:----------------------|:---------------------------------|:------------------------------|
@@ -35,7 +35,7 @@ epsilon, zeta도 있는데 폰트사이즈가 더 커짐 - 최대한 사용하�
 
 (기본 폰트사이즈 14px = h4 .text-delta)
 
-2. Headings
+* Headings
 
 ```markdown
 # Heading 1
@@ -47,7 +47,7 @@ epsilon, zeta도 있는데 폰트사이즈가 더 커짐 - 최대한 사용하�
 ```
 기본적으로 테이블 레이아웃에 나옴
 
-3. Inline elements
+* Inline elements
 
 ```markdown
 Text can be **bold**, _italic_, or ~~strikethrough~~.
@@ -57,7 +57,7 @@ Text can be **bold**, _italic_, or ~~strikethrough~~.
 
 ### Buttons
 
-1. Button colors
+* Button colors
 
 <div class="code-example" markdown="1">
 [Link button](http://example.com/){: .btn }
@@ -75,7 +75,7 @@ Text can be **bold**, _italic_, or ~~strikethrough~~.
 [Link button](http://example.com/){: .btn .btn-outline }
 ```
 
-2. Button size
+* Button size
 
 span 태그를 부모로 감싸주고 클래스로 크기를 줘서 버튼크기 조절
 
@@ -168,7 +168,7 @@ Deprecated
 
 ### Lists
 
-1. 순서목록
+* 순서목록 : 동시에 같이써야 카운트됨 ㅠㅠ
 
 <div class="code-example" markdown="1">
 1. Item 1
@@ -181,7 +181,7 @@ Deprecated
 1. Item 3
 ```
 
-2. 비순서목록 : 둘다 점으로 나옴
+* 비순서목록 : 둘다 점으로 나옴
 
 ```markdown
 - Item 1
@@ -194,7 +194,6 @@ _or_
 * Item 2
 * Item 3
 ```
-
 
 ! 이렇게 섞어서 써도 됨
 
@@ -216,7 +215,7 @@ _or_
 - level 1 item (ul)
 ```
 
-3. 체크박스
+* 체크박스
 
 <div class="code-example" markdown="1">
 - [ ] hello, this is a todo item
@@ -229,7 +228,7 @@ _or_
 - [x] goodbye, this item is done
 ```
 
-4. 정의목록
+* 정의목록
 
 ```html
 <dl>
@@ -254,7 +253,7 @@ _or_
 
 ### Code
 
-1. 인라인 코드
+* 인라인 코드
 
 <div class="code-example" markdown="1">
 `<inline code snippet>`
@@ -262,7 +261,7 @@ _or_
 
 짧은 코드를 쓸때 사용
 
-2. 블록 코드
+* 블록 코드
 
 {% highlight markdown %}
 ```js 
@@ -289,7 +288,7 @@ _or_
 | `xl`      | 1400px (87.5rem) and up              |
 
 ### Layout
-1. Spacing
+* Spacing
 
 | Classname prefix | What it does                  |
 |:-----------------|:------------------------------|
@@ -337,7 +336,7 @@ This paragraph will have 2rem/32px of padding on the right and left at all scree
 {: .px-6 }
 ```
 
-2. Vertical Alignment 
+* Vertical Alignment 
 
 | Classname              | What it does                    |
 |:-----------------------|:--------------------------------|
@@ -348,7 +347,7 @@ This paragraph will have 2rem/32px of padding on the right and left at all scree
 | `.v-align-text-top`    | `vertical-align: text-top`      |
 | `.v-align-top`         | `vertical-align: top`           |
 
-3. Display
+* Display
 
 | Class             |                         |
 |:------------------|:------------------------|
@@ -378,7 +377,7 @@ These headings will be `inline-block`:
 
 텍스트나 배경 색상 클래스 모음
 
-- Light Greys
+* Light Greys
 
 | Color value    | Font color utility   | Background color utility |
 |:---------------|:---------------------|:-------------------------|
@@ -387,7 +386,7 @@ These headings will be `inline-block`:
 | <span class="d-inline-block p-2 mr-1 v-align-middle bg-grey-lt-200"></span> `grey-lt-200` | `.text-grey-lt-200` | `.bg-grey-lt-200` |
 | <span class="d-inline-block p-2 mr-1 v-align-middle bg-grey-lt-300"></span> `grey-lt-300` | `.text-grey-lt-300` | `.bg-grey-lt-300` |
 
-- Dark Greys
+* Dark Greys
 
 | Color value    | Font color utility   | Background color utility |
 |:---------------|:---------------------|:-------------------------|
@@ -397,7 +396,7 @@ These headings will be `inline-block`:
 | <span class="d-inline-block p-2 mr-1 v-align-middle bg-grey-dk-250"></span> `grey-dk-250` | `.text-grey-dk-250` | `.bg-grey-dk-250` |
 | <span class="d-inline-block p-2 mr-1 v-align-middle bg-grey-dk-300"></span> `grey-dk-300` | `.text-grey-dk-300` | `.bg-grey-dk-300` |
 
-- Purples
+* Purples
 
 | Color value    | Font color utility   | Background color utility |
 |:---------------|:---------------------|:-------------------------|
@@ -406,7 +405,7 @@ These headings will be `inline-block`:
 | <span class="d-inline-block p-2 mr-1 v-align-middle bg-purple-200"></span> `purple-200` | `.text-purple-200` | `.bg-purple-200` |
 | <span class="d-inline-block p-2 mr-1 v-align-middle bg-purple-300"></span> `purple-300` | `.text-purple-300` | `.bg-purple-300` |
 
-- Blues
+* Blues
 
 | Color value    | Font color utility   | Background color utility |
 |:---------------|:---------------------|:-------------------------|
@@ -415,7 +414,7 @@ These headings will be `inline-block`:
 | <span class="d-inline-block p-2 mr-1 v-align-middle bg-blue-200"></span> `blue-200` | `.text-blue-200` | `.bg-blue-200` |
 | <span class="d-inline-block p-2 mr-1 v-align-middle bg-blue-300"></span> `blue-300` | `.text-blue-300` | `.bg-blue-300` |
 
-- Greens
+* Greens
 
 | Color value    | Font color utility   | Background color utility |
 |:---------------|:---------------------|:-------------------------|
@@ -424,7 +423,7 @@ These headings will be `inline-block`:
 | <span class="d-inline-block p-2 mr-1 v-align-middle bg-green-200"></span> `green-200` | `.text-green-200` | `.bg-green-200` |
 | <span class="d-inline-block p-2 mr-1 v-align-middle bg-green-300"></span> `green-300` | `.text-green-300` | `.bg-green-300` |
 
-- Yellows
+* Yellows
 
 | Color value    | Font color utility   | Background color utility |
 |:---------------|:---------------------|:-------------------------|
@@ -433,7 +432,7 @@ These headings will be `inline-block`:
 | <span class="d-inline-block p-2 mr-1 v-align-middle bg-yellow-200"></span> `yellow-200` | `.text-yellow-200` | `.bg-yellow-200` |
 | <span class="d-inline-block p-2 mr-1 v-align-middle bg-yellow-300"></span> `yellow-300` | `.text-yellow-300` | `.bg-yellow-300` |
 
-- Reds
+* Reds
 
 | Color value    | Font color utility   | Background color utility |
 |:---------------|:---------------------|:-------------------------|
@@ -444,7 +443,7 @@ These headings will be `inline-block`:
 
 ### Typography
 
-1. Font size
+* Font size
 
 아래처럼 1부터 10까지 쓸수는 있는데 2-6사이가 제일 많이 쓰임
 
@@ -461,7 +460,7 @@ These headings will be `inline-block`:
 | `.fs-9` | 38px                           | 42px                          |
 | `.fs-10`| 42px                           | 48px                          |
 
-2. Font weight
+* Font weight
 
 300~500 다같음
 
@@ -488,7 +487,7 @@ Font weight 700
 {: .fw-700 }
 ```
 
-3. Line height
+* Line height
 
 | Class         | `line-height` value  | Notes                         |
 |:--------------|:---------------------|:------------------------------|
@@ -521,7 +520,7 @@ nav_exclude: true
 
 ### Pages with children
 
-- 부모 YAML
+* 부모 YAML
 
 ```yaml
 ---
@@ -532,7 +531,7 @@ has_children: true
 ---
 ```
 
-- 자식 YAML
+* 자식 YAML
 
 ```yaml
 ---
@@ -586,7 +585,7 @@ nav_order: 1
 
 ### In-page navigation with Table of Contents
 
-목차범위 재설정
+: 목차범위 재설정
 
 `ol` 다음 `{:toc}` 을 작성하면 테이블이 자동으로 작성됨, 테이블에 나타나고싶지 않은 헤딩은 `{:no_toc}`을 사용
 
