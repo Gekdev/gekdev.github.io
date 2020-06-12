@@ -47,6 +47,19 @@ epsilon, zeta도 있는데 폰트사이즈가 더 커짐 - 최대한 사용하�
 ```
 기본적으로 테이블 레이아웃에 나옴
 
+* blockquote following a header
+
+<div class="code-example" markdown="1">
+> This is a blockquote following a header.
+>
+> When something is important enough, you do it even if the odds are not in your favor.
+</div>
+```markdown
+> This is a blockquote following a header.
+>
+> When something is important enough, you do it even if the odds are not in your favor.
+```
+
 * Inline elements
 
 ```markdown
@@ -596,6 +609,8 @@ nav_order: 1
 `_sass/support/variables.scss`파일은 건들지 마세요
 
 `_sass/overrides.scss.`파일에 클래스를 직접 지정해서 넣을 수 있음
+
+---
 
 ## Search
 
