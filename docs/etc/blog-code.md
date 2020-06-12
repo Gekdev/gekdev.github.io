@@ -1,11 +1,12 @@
 ---
 layout: default
-title: Blog code
-parent: ect
+title: Blog
+parent: Ect
 nav_order: 99
 ---
 
 # 블로그 사용법
+{: .no_toc }
 
 ## Table of contents
 {: .no_toc .text-delta }
@@ -29,9 +30,10 @@ nav_order: 99
 | `h2`, `.text-beta`    | 18px                             | 24px                          |
 | `h3`, `.text-gamma`   | 16px                             | 18px                          |
 | `h4`, `.text-delta`   | 14px                             | 16px                          |
+
 epsilon, zeta도 있는데 폰트사이즈가 더 커짐 - 최대한 사용하지 않기
 
-기본 폰트사이즈 14px = h4 .text-delta
+(기본 폰트사이즈 14px = h4 .text-delta)
 
 2. Headings
 
@@ -192,6 +194,7 @@ _or_
 * Item 2
 * Item 3
 ```
+
 
 ! 이렇게 섞어서 써도 됨
 
