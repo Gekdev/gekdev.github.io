@@ -6,7 +6,7 @@ nav_order: 99
 ---
 
 # 블로그 사용법
-{: .no_toc }
+{: .no_toc .text-beta .fw-700}
 
 ## Table of contents
 {: .no_toc .text-delta }
