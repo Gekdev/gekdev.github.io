@@ -543,6 +543,7 @@ nav_order: 2
 ---
 ```
 
+
 ! 부모페이지에서 자동으로 자식 페이지를 table로 설정하는데 원하지 않을경우
 
 ```yaml
@@ -555,7 +556,7 @@ has_toc: false
 ---
 ```
 
-#### Children with children
+### Children with children
 
 자식이 자손을 가질경우 (투뎁스)
 
@@ -587,7 +588,7 @@ nav_order: 1
 
 목차범위 재설정
 
-`ol`다음 `{:toc}`을 작성하면 테이블이 자동으로 작성됨, 테이블에 나타나고싶지 않은 헤딩은 `{:no_toc}`을 사용
+`ol` 다음 `{:toc}` 을 작성하면 테이블이 자동으로 작성됨, 테이블에 나타나고싶지 않은 헤딩은 `{:no_toc}`을 사용
 
 ## Customization
 
@@ -599,7 +600,7 @@ nav_order: 1
 
 ## Search
 
-객체지향검색인터페이스를 JSON으로 사용 
+객체지향 검색 인터페이스를 JSON으로 사용 
 
 ### Hiding pages from search
 
@@ -613,5 +614,3 @@ nav_exclude: true
 search_exclude: true
 ---
 ```
-
-## Markdown kitchen sink
