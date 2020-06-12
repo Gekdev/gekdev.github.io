@@ -602,6 +602,8 @@ nav_order: 1
 
 `ol` 다음 `{:toc}` 을 작성하면 테이블이 자동으로 작성됨, 테이블에 나타나고싶지 않은 헤딩은 `{:no_toc}`을 사용
 
+---
+
 ## Customization
 
 변경은 대부분 `_sass/custom/custom.scss` 에서 하기. 삭제하지 않고 수정만!
