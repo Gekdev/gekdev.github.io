@@ -1,13 +1,13 @@
 ---
 layout: default
 title: ect
-nav_order: 5
+nav_order: 99
 has_children: true
 permalink: docs/ect
 ---
 
-# Utilities
+# ect
 {: .no_toc }
 
-CSS utility classes come in handy when you to want to override default styles to create additional whitespace (margins/padding), correct unexpected shifts in font size or weight, add color, or hide (or show) something at a specific screen size.
+다양한 정보를 정리했습니다.
 {: .fs-6 .fw-300 }

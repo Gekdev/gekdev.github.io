@@ -1,7 +1,7 @@
 ---
 layout: default
-title: 블로그 사용법
-nav_order: 100
+title: Markdown kitchen sink
+nav_order: 99
 ---
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
