@@ -53,8 +53,7 @@ Git에서는 소스 코드가 변경된 이력을 쉽게 확인할 수 있고, �
 
 * Data Transport
 
-![](https://gekdev.github.io/assets/images/git_route.png)
-{: .m-3}
+    ![](https://gekdev.github.io/assets/images/git_route.png)
 
 * Watch : 저장소에 변화가 있을때 알림
 * Star : 좋아요

@@ -60,9 +60,9 @@ h6 {
 }
 
 p {
-  margin-bottom: 0.1em;
+  margin: 0.1em 0;
 }
-//1em에서 0.1em으로 수정
+//margin-bottom: 1em;에서 margin: 0.1em 0;으로 수정
 
 a {
   color: $link-color;
