@@ -50,18 +50,15 @@ Git에서는 소스 코드가 변경된 이력을 쉽게 확인할 수 있고, �
     2번째 줄 : 빈 칸
     3번째 줄 : 변경한 이유
     ```
-
-* Data Transport
-
-    ![](https://gekdev.github.io/assets/images/git_route.png)
-
 * Watch : 저장소에 변화가 있을때 알림
 * Star : 좋아요
 * Fork : 저장소 내 저장소에 가져오기
 * Code : 현재 저장된 코드
 * Issues : 다른 사람이 저장소에 있는 코드를 쓸때 문제가 생길경우 문제 제기
 * Pull request(PR) : 남들이 코드를 직접 수정해서 올리는 곳
-* Projects, Wiki, Pulse, Graph 등등..
+* Data Transport
+
+    ![](https://gekdev.github.io/assets/images/git_route.png)
 
 ---
 
