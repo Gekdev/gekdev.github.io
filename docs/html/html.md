@@ -7,6 +7,3 @@ permalink: docs/html
 ---
 
 # HTML
-
-유용하다고 생각하는 부분만 편집하여 작성했습니다.
-
