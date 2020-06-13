@@ -244,7 +244,7 @@ Git에서는 소스 코드가 변경된 이력을 쉽게 확인할 수 있고, �
 
 * git revert
     
-    ** 이전 commit 내용을 새 commit으로 만들어서 저장
+    **이전 commit 내용을 새 commit으로 만들어서 저장**
     
     (revert는 commit을 이미 push해서 서버에 저장해버린 경우 자주 사용)
     
