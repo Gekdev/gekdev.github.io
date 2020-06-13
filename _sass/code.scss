@@ -244,6 +244,8 @@ figure.highlight {
 .code-example {
   padding: $sp-3;
   margin-bottom: $sp-3;
+  margin-top: 0.25rem;
+  font-size 0.9rem;
   overflow: auto;
   border: 1px solid $border-color;
   border-radius: $border-radius;
