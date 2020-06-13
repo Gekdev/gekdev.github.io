@@ -220,6 +220,8 @@ Git에서는 소스 코드가 변경된 이력을 쉽게 확인할 수 있고, �
     ```markdown
     git checkout git.html(파일명)
     ```
+    
+    &#9656; git2.23버젼부터 `git restore`도 가능!
 
 * git reset
     1. add해서 Staged된 상태의 파일을 Modified 상태로 만들기 (이전 commit으로 직접 되돌아가기)
@@ -285,25 +287,143 @@ Git에서는 소스 코드가 변경된 이력을 쉽게 확인할 수 있고, �
 
 ### What is Branch?
 
+**여러 개발자들이 동시에 다양한 작업을 할 수 있게 만들어 주는 기능**
+
+또 실제 환경에선 **master 브랜치에 배포 준비가 된 commit들만 남기는 경우**가 많기 때문에 사용한다 
+
 ### Branch Command
 
 * git branch
-    브랜치 목록 확인
-    깃은 기본적으로 master라는 이름의 브랜치를 하나 가지고 있음<br>
 
-    새로운 브랜치 생성 : git branch 생성할브랜치명 기존브랜치명<br>
-    현재 브랜치는 앞에 별표(*)가 있는 master 브랜치, 이동은 git checkout 이동할브랜치명<br>
-    둘다 동시에(브랜치 만들면서 변경): git checkout -b 뉴브랜치명 <br>
+    **브랜치 목록 확인과 생성**
+    
+    &#9656; 깃은 기본적으로 master라는 이름의 브랜치를 하나 가지고 있음
+    
+    &#9656; 현재 브랜치는 앞에 별표(*)가 있는 master 브랜치
 
-    브랜치 병합하기: 기준이 되는 master브랜치로 이동한 뒤, 머지
+    ```markdown
+    git branch 생성할브랜치명 기존브랜치명
+      // 새로운 브랜치 생성
+    ```
+    
+* git checkout 
+    
+    **브랜치 옮기기**
+    
+    ```markdown
+    git checkout 이동할브랜치명
+    
+    git checkout -b 뉴브랜치명
+      // 브랜치 만들면서 변경
+    ```
+    
+    &#9656; git2.23버젼부터 `git switch`도 가능!
+    
+* git merge
+
+    **브랜치 병합하기 1** 
+    
+    기준이 되는 **master브랜치로 이동**한 뒤, 머지해야함
+    {: .text-red-300}
+    
+    &#8594; git branch 명령어로 head가 어디있는지 항상 확인!
+    
     ```markdown
     git checkout master
-    git merge feature
+    git merge 브랜치명(feature)
     ```
+    &#8594; merge 결과에 Fast-forward 라고 적혀있으면 OK!
 
+    오류! conflict 발생시
+    {: .label .label-red .mt-3 }
+    <div class="code-example" markdown="1">
+    1. 일단 충돌이 되는 파일을 해결
+    2. git add .로 staged 상태로 만듦 
+    3. 그 후에 commit을 하면 됨
+    </div>
+    
+* git rebase
 
+    **브랜치 병합하기 2**
+    
+    기준이 되는 **master브랜치로 이동**한 뒤, 리베이스 해야함
+    {: .text-red-300}
+    
+    ```markdown
+     git rebase 브랜치명
+    ```
+    오류! conflict 발생시
+    {: .label .label-red .mt-3 }
+    <div class="code-example" markdown="1">
+    1. 일단 충돌이 되는 파일을 해결
+    2. git add .로 staged 상태로 만듦 
+    3. 그 후에 git rebase --continue로 중단된 rebase를 이어감
+    </div>
+    
+    merge와 rebase는 취향에 따라 사용하시면 됩니다. 깔끔한 log를 원하면 rebase를 하고, 직관적으로 간단하게 하고 싶으면 merge를 하면 됩니다.
+    
 
 ## 상황별 팁
+
+### 기타 명령어
+
+* cherry-pick
+
+체리는 commit을 의미
+다른 브랜치의 commit 중 하나를 쏙 골라서 현재 브랜치에 넣는 겁니다. 
+merge나 rebase는 다른 브랜치를 통째로 가져오는 데 비해, 다른 브랜치의 원하는 commit 한 개만 가져올 수 있습니다.
+
+기존 master 브랜치에 새로 바꾼 CSS 작업만 가져오고 싶습니다.
+
+```markdown
+git cherry-pick [commit명] 
+  // commit명은 Git 자체에서 붙여주는 고유값
+```
+
+* git tag
+
+**commit에 태그를 붙이는 기능**
+
+&#8594; 태그란 꼬리표로 commit에게 별명을 지어주는 것(commit명이 너무 길기때문에)
+
+&#9656; 주로 새로운 버전이 나왔거나 특정 기능을 가진 commit에 tag를 붙여줍니다. 
+
+```markdown
+git tag -a v1.0.0 
+  // 태그생성, 나중에 git cherry-pick v1.0.0으로 선택가능
+  
+git tag -d 태그명
+  // 태그 삭제
+```
+
+* git fetch 
+
+**서버의 변경점을 별개의 브랜치로 만드는 것** 
+
+&#9656; git fetch 명령어만 실행하면 merge하지 않고 FETCH_HEAD라는 별개의 브랜치에서 변경점을 확인할 수 있다
+
+&#9656; git pull은 git fetch와 git merge를 동시에 실행 시키는것임
+
+* git shortlog
+
+**git log에서 commit 메시지만 추려서 보여줌**
+
+~하지만 최고의 방법은 GUI를 사용하는 것~
+
+* git stash, git unstash
+
+**현재 변경점을 저장**
+
+&#9656; commit과는 다른 의미의 저장
+
+&#9656; 한 브랜치에서 작업을 하다가 잠깐 다른 브랜치에서 작업할 일이 생겼을 때에 주로 사용
+
+&#9656; 현재까지의 변경사항을 저장하고 다른 브랜치로 넘어갔다가, 다시 돌아왔을 때 복구할 수 있다
+
+git stash 명령어를 사용하면 현재 변경사항들이 저장되고, git status 내역이 비워집니다. stash한 것들은 git stash list하면 확인할 수 있습니다.
+
+이제 다른 작업을 하고 돌아와서 저장했던 stash를 복구해보겠습니다. 간단히 git stash apply하면 최근에 저장한 stash가 복구됩니다.
+
 https://jeonghwan-kim.github.io/dev/2020/02/10/git-usage.html#%EC%83%81%ED%99%A9%EB%B3%84-%ED%8C%81
 
 ## Reference
