@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Blog
-parent: Ect
+parent: ect
 nav_order: 99
 ---
 

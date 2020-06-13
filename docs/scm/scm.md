@@ -6,9 +6,14 @@ has_children: true
 ---
 
 # SCM
-{: .no_toc }
+{: .no_toc .fs_beta .fw_700 }
+
+---
 
 ## Software Configuration Management
+{: .no_toc }
+
+### What is SCM
 {: .no_toc }
 
 더 범위가 큰 구성 관리(CM)의 학문간 분야의 일부인, 소프트웨어의 변경사항을 추적하고 통제하는 작업 <br>
