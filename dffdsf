@@ -1,0 +1,57 @@
+[1mdiff --git a/docs/scm/github.md b/docs/scm/github.md[m
+[1mindex 7991eb4..6069c76 100644[m
+[1m--- a/docs/scm/github.md[m
+[1m+++ b/docs/scm/github.md[m
+[36m@@ -116,6 +116,8 @@[m [mcd WorkingDirectory 주소 //파일 위치 이동[m
+ [m
+ * git commit[m
+     : 깃이 폴더의 변경 내용을 저장하는 단위 (스테이지 상태에 두어야만 커밋가능) - 버전을 만드는것[m
+[32m+[m[41m    [m
+[32m+[m[32m    하나의 단위로 취급되니 최대한 잘게 commit을 하는게 좋다[m
+ [m
+     ```markdown[m
+     _커밋방법_[m
+[36m@@ -152,27 +154,29 @@[m [mcd WorkingDirectory 주소 //파일 위치 이동[m
+       // origin의 내용이 master로 복사[m
+     ```[m
+     [m
+[31m-    비밀번호 파일 생성 !보안에 취약함! <br>[m
+[31m-    `git config --global credential.helper 'store --file 경로`[m
+[32m+[m[32m    비밀번호를 계속 치기 귀찮을 때[m
+[32m+[m[32m    {: .label .label-green }[m
+[32m+[m[32m    ```markdown[m
+[32m+[m[32m    _시간 설정_[m
+[32m+[m[32m    1. git config --global credential.helper 'store --file 경로[m
+[32m+[m[41m    [m
+[32m+[m[32m    2. git config credential.helper store[m[41m [m
+[32m+[m[32m      // git directory에선 반영구적으로 인증 절차가 생략됩니다.(저장된 credential 정보를 이용해 인증 처리)[m
+ [m
+[32m+[m[32m    3. git config credential.helper cache[m
+[32m+[m[32m      // cash 사용 15분 동안 인증 절차를 요구하지 않음, git config credential.helper 'cache --timeout=3600'와같이 시간지정도 가능[m
+[32m+[m
+[32m+[m[32m    4. git config credential.helper store --global[m
+[32m+[m[32m      // 모든 프로젝트에 적용[m
+[32m+[m[32m    ```[m
+ [m
+ * git clone[m
+     git clone으로 원격 저장소에 있는 모든 파일들을 자신의 Working Directory로 가져오는 것<br> [m
+     git clone은 git init의 효과 까지 있다<br>[m
+     `git clone _저장소 주소_`[m
+ [m
+[31m-[m
+[31m-```markdown[m
+[31m-1. git config credential.helper store [m
+[31m-  // git directory에선 반영구적으로 인증 절차가 생략됩니다.(저장된 credential 정보를 이용해 인증 처리)[m
+[31m-  [m
+[31m-2. git config credential.helper cache[m
+[31m-  // cash 사용 15분 동안 인증 절차를 요구하지 않음, git config credential.helper 'cache --timeout=3600'와같이 시간지정도 가능[m
+[31m-  [m
+[31m-3. git config credential.helper store --global[m
+[31m-  // 모든 프로젝트에 적용[m
+[31m-[m
+[31m-```[m
+[32m+[m[32m### > Checking[m
+[32m+[m[32m{: .no_toc .fw_700}[m
+ [m
+ * git log[m
+ [m

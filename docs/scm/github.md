@@ -24,7 +24,7 @@ Git이란 소스코드를 효과적으로 관리하기 위해 개발된 **분산
 
 Git에서는 소스 코드가 변경된 이력을 쉽게 확인할 수 있고, 특정 시점에 저장된 버전과 비교하거나 특정 시점으로 되돌아갈 수도 있습니다.
 
-### Terms of Github
+### Basic Terms of Github
 
 * Git Repository
 
@@ -60,10 +60,10 @@ Git에서는 소스 코드가 변경된 이력을 쉽게 확인할 수 있고, �
 
 ---
 
-### Git Command
+## Git Basic Command
 
-#### > Setting Folder
-{: .no_toc .fw_700}
+### Setting Folder
+{.fw_700}
 
 첫번째로 git 명령 프롬포트를 열고 경로를 지정해준다.
 
@@ -95,8 +95,7 @@ cd WorkingDirectory 주소 //파일 위치 이동
 
     이 커맨드를 치고나면 .git 라는 이름의 숨김 폴더가 하나 생긴다. 이것을 저장소라고 하는데 깃은 이 폴더의 모든 변경 내용을 여기에 저장한다. 이 파일을 지우면 더 이상 깃으로 폴더의 변경사항을 추적할 수 없다.
 
-#### > Upload, download
-{: .no_toc .fw_700}
+### Upload, download
 
 * git status
     : 파일들의 상태를 볼 수 있음
@@ -116,6 +115,8 @@ cd WorkingDirectory 주소 //파일 위치 이동
 
 * git commit
     : 깃이 폴더의 변경 내용을 저장하는 단위 (스테이지 상태에 두어야만 커밋가능) - 버전을 만드는것
+    
+    하나의 단위로 취급되니 최대한 잘게 commit을 하는게 좋다
 
     ```markdown
     _커밋방법_
@@ -152,41 +153,108 @@ cd WorkingDirectory 주소 //파일 위치 이동
       // origin의 내용이 master로 복사
     ```
     
-    비밀번호 파일 생성 !보안에 취약함! <br>
-    `git config --global credential.helper 'store --file 경로`
+    비밀번호를 계속 치기 귀찮을 때
+    {: .label .label-green }
+    ```markdown
+    _시간 설정_
+    1. git config --global credential.helper 'store --file 경로
+    
+    2. git config credential.helper store 
+      // git directory에선 반영구적으로 인증 절차가 생략됩니다.(저장된 credential 정보를 이용해 인증 처리)
 
+    3. git config credential.helper cache
+      // cash 사용 15분 동안 인증 절차를 요구하지 않음, git config credential.helper 'cache --timeout=3600'와같이 시간지정도 가능
+
+    4. git config credential.helper store --global
+      // 모든 프로젝트에 적용
+    ```
 
 * git clone
     git clone으로 원격 저장소에 있는 모든 파일들을 자신의 Working Directory로 가져오는 것<br> 
     git clone은 git init의 효과 까지 있다<br>
     `git clone _저장소 주소_`
 
+### Checking
 
-```markdown
-1. git config credential.helper store 
-  // git directory에선 반영구적으로 인증 절차가 생략됩니다.(저장된 credential 정보를 이용해 인증 처리)
-  
-2. git config credential.helper cache
-  // cash 사용 15분 동안 인증 절차를 요구하지 않음, git config credential.helper 'cache --timeout=3600'와같이 시간지정도 가능
-  
-3. git config credential.helper store --global
-  // 모든 프로젝트에 적용
+* git diff
+    : 수정된 파일에서 어떤 부분이 달라졌는지 확인<br>
+    
+    한글 파일이 깨진경우
+    {: .label .label-green }
+    파일을 메모장으로 열어(혹은 다른 에디터를 열어) 다른 이름으로 저장을 누르고 ANSI나 EUC-KR 대신 UTF-8 인코딩으로 저장
+    
+    -> 보기 불편해서 Git GUI나 Git을 지원하는 IDE를 사용
+    
+    Untracked와 Tracked의 3단계
+    ![](https://guides.github.com/assets/images/tracked.png)
 
-```
+* git checkout
+    : Modified 상태의 파일을 Unmodified로 되돌리기 (수정을 잘못해서 파일을 원상태로 되돌리고 싶을 때)<br>
+    
+    ```markdown
+    git checkout git.html(파일명)
+    ```
+
+* git reset
+    1. add해서 Staged된 상태의 파일을 Modified 상태로 만들기 (이전 commit으로 직접 되돌아가기)<br>
+    
+    ```markdown
+     git reset git.html(파일명)
+    ```
+    
+    2. commit한후 되돌리기
+    
+    ```markdown
+    _옵션 3가지_
+    
+    1. --soft
+      // commit 후의 Unmodifed에서 commit 직전의 Staged 상태로
+      
+    2. --mixed
+      // Unmodified에서 commit 전의 Modified 상태로 (default)
+      
+    3. --hard
+      // Unmodified에서 commit 전의 Unmodified (다 날리기)
+    
+    ---
+    
+    git reset HEAD~1
+      // HEAD가 현재 commit의 위치, ~1은 commit 1개 전으로 되돌아가라는 뜻
+    ```
+
+* git revert
+    : revert는 commit을 이미 push해서 서버에 저장해버린 경우 자주 사용<br>
+    
+    이전 commit 내용을 새 commit으로 만들어서 저장
+    
+    ```markdown
+    git revert HEAD // 현재 HEAD를 취소하고 이전 HEAD로 돌아간다는 뜻
+    
+    -> 화면이 바뀌고 commit 메세지를 바꿀 수 있음, 바꾸고 :wq
+    ```
 
 * git log
+    : 스테이징을 거쳐 커밋한 결과 보기<br>
 
-    : 스테이징을 거쳐 커밋한 결과 보기
-
-커밋 해쉬값, 작성자, 작성일자, 메세지순으로 확인가능
+    커밋 해쉬값, 작성자, 작성일자, 메세지순으로 확인가능
 
 * git show 
-변경 내용이 반영되었는지 보기<br>
-삭제한 라인은 앞에 -를, 추가한 라인은 +로 표시한다.
+    : 변경 내용이 반영되었는지 보기<br>
+    
+    삭제한 라인은 앞에 -를, 추가한 라인은 +로 표시한다.
+
+---
+
+## Git Branch
+
+### What is Branch?
+
+
+### Branch Command
 
 * git branch
-브랜치 목록 확인
-깃은 기본적으로 master라는 이름의 브랜치를 하나 가지고 있음<br>
+    브랜치 목록 확인
+    깃은 기본적으로 master라는 이름의 브랜치를 하나 가지고 있음<br>
 
 새로운 브랜치 생성 : git branch 생성할브랜치명 기존브랜치명<br>
 현재 브랜치는 앞에 별표(*)가 있는 master 브랜치, 이동은 git checkout 이동할브랜치명<br>
