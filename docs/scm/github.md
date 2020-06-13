@@ -33,11 +33,6 @@ Git에서는 소스 코드가 변경된 이력을 쉽게 확인할 수 있고, �
 
 * Commit : **변경을 기록하는 명령어**
 
-    
-    &#187; 최근 커밋부터 거슬러 올라가면 과거 변경 이력과 내용을 알 수 있다.
-
-    &#187; 버그 수정, 기능 추가 등 특별한 의미가 있는 업데이트를 작업 별로 구분해서 각각 커밋하면, 나중에 이력을 보고 특정 변경 내용을 찾기 쉽다.
-
     &#9656; 최근 커밋부터 거슬러 올라가면 과거 변경 이력과 내용을 알 수 있다.
 
     &#9656; 버그 수정, 기능 추가 등 특별한 의미가 있는 업데이트를 작업 별로 구분해서 각각 커밋하면, 나중에 이력을 보고 특정 변경 내용을 찾기 쉽다.
@@ -70,15 +65,17 @@ Git에서는 소스 코드가 변경된 이력을 쉽게 확인할 수 있고, �
 
 ### Setting Folder
 
-* git remote: 원격 저장소를 관리할 수 있는 명령어, 주소를 등록한다.
+* git remote
+    
+    &#9656; 원격 저장소를 관리할 수 있는 명령어, 주소를 등록한다.
 
     ```markdown
     git remote add origin _remote repository url_
       // 첫 커밋을 할 때만 사용하는 명령어이며 이후에는 사용하지 않아도 됨 
     ```
     
-    fatal: remote origin already exists.
-    {: .label .label-red }
+    오류! fatal: remote origin already exists.
+    {: .label .label-red .mt-3 }
     
     ```markdown
     git remote remove origin후 다시 생성
