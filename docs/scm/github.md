@@ -68,15 +68,16 @@ Git에서는 소스 코드가 변경된 이력을 쉽게 확인할 수 있고, �
 
 * git remote
     
-    &#9656; 원격 저장소를 관리할 수 있는 명령어, 주소를 등록한다.
+    **원격 저장소를 관리할 수 있는 명령어, 주소를 등록한다.**
 
     ```markdown
     git remote add origin _remote repository url_
       // 첫 커밋을 할 때만 사용하는 명령어이며 이후에는 사용하지 않아도 됨 
     ```
     
-    오류! fatal: remote origin already exists.
+    !오류
     {: .label .label-red .mt-3 }
+    fatal: remote origin already exists.
     
     ```markdown
     git remote remove origin후 다시 생성
