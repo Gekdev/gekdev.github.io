@@ -49,48 +49,47 @@ Git에서는 소스 코드가 변경된 이력을 쉽게 확인할 수 있고, �
 
     ![](https://gekdev.github.io/assets/images/git_route.png)
 
-* Watch, Star, Fork ... 
 
-  - Watch : 저장소에 변화가 있을때 알림
-  - Star : 좋아요
-  - Fork : 저장소 내 저장소에 가져오기
-  - Code : 현재 저장된 코드
-  - Issues : 다른 사람이 저장소에 있는 코드를 쓸때 문제가 생길경우 문제 제기
-  - Pull request(PR) : 남들이 코드를 직접 수정해서 올리는 곳
-  - Projects, Wiki, Pulse, Graph 등..
+* Watch : 저장소에 변화가 있을때 알림
+* Star : 좋아요
+* Fork : 저장소 내 저장소에 가져오기
+* Code : 현재 저장된 코드
+* Issues : 다른 사람이 저장소에 있는 코드를 쓸때 문제가 생길경우 문제 제기
+* Pull request(PR) : 남들이 코드를 직접 수정해서 올리는 곳
+* Projects, Wiki, Pulse, Graph 등..
 
 ---
 
 ### Git Command
 
 #### Setting Folder
-{: .no_toc}
+{: .no_toc .fw_700}
 
 * git remote
 
-> 원격 저장소를 관리할 수 있는 명령어, 주소를 등록한다. 
+    원격 저장소를 관리할 수 있는 명령어, 주소를 등록한다. 
 
-git remote add origin _remote repository url_
-첫 커밋을 할 때만 사용하는 명령어이며 이후에는 사용하지 않아도 됨 <br>
+    git remote add origin _remote repository url_ <br>
+    : 첫 커밋을 할 때만 사용하는 명령어이며 이후에는 사용하지 않아도 됨 
 
-```markdown
-fatal: remote origin already exists. 의 오류발생 시
-git remote remove origin후 다시 생성
-git remote -v // 연결상태를 확인한다.
-```
+    ```markdown
+    fatal: remote origin already exists. 의 오류발생 시
+    git remote remove origin후 다시 생성
+    git remote -v // 연결상태를 확인한다.
+    ```
 
-```markdown
-cd WorkingDirectory 주소 //파일 위치 이동
-```
+    ```markdown
+    cd WorkingDirectory 주소 //파일 위치 이동
+    ```
 
 * git config
 
-> 닉네임과 이메일을 등록하기
+    닉네임과 이메일을 등록하기
 
-```markdown
-git config --global user.name "닉네임"
-git config --global user.email "이메일"
-```
+    ```markdown
+    git config --global user.name "닉네임"
+    git config --global user.email "이메일"
+    ```
 
 * git init
 

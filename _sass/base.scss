@@ -60,8 +60,9 @@ h6 {
 }
 
 p {
-  margin-bottom: 1em;
+  margin-bottom: 0em;
 }
+//1em에서 0em으로 수정
 
 a {
   color: $link-color;
@@ -96,8 +97,9 @@ pre {
 }
 
 li {
-  margin: 0.25em 0;
+  margin: 0.3em 0;
 }
+// margin: 0.25em 0; 에서 수정
 
 img {
   max-width: 100%;
