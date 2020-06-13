@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Github basic
+title: Github
 parent: SCM
 nav_order: 1
 ---
@@ -33,11 +33,12 @@ Git에서는 소스 코드가 변경된 이력을 쉽게 확인할 수 있고, �
 
 * Commit
 
-    * 변경을 기록하는 명령어, 최근 커밋부터 거슬러 올라가면 과거 변경 이력과 내용을 알 수 있다.
+    **변경을 기록하는 명령어**, 최근 커밋부터 거슬러 올라가면 과거 변경 이력과 내용을 알 수 있다.
 
-    * 버그 수정, 기능 추가 등 특별한 의미가 있는 업데이트를 작업 별로 구분해서 각각 커밋하면, 나중에 이력을 보고 특정 변경 내용을 찾기 쉽다.
+    버그 수정, 기능 추가 등 특별한 의미가 있는 업데이트를 작업 별로 구분해서 각각 커밋하면, 나중에 이력을 보고 특정 변경 내용을 찾기 쉽다.
 
-    * git에서 권장하는 메시지 형식 ...
+    git에서 권장하는 메시지 형식
+    {: .label .label-green }
 
     ```
     1번째 줄 : 커밋 내의 변경 내용을 요약
@@ -49,41 +50,36 @@ Git에서는 소스 코드가 변경된 이력을 쉽게 확인할 수 있고, �
 
     ![](https://gekdev.github.io/assets/images/git_route.png)
 
-
 * Watch : 저장소에 변화가 있을때 알림
 * Star : 좋아요
 * Fork : 저장소 내 저장소에 가져오기
 * Code : 현재 저장된 코드
 * Issues : 다른 사람이 저장소에 있는 코드를 쓸때 문제가 생길경우 문제 제기
 * Pull request(PR) : 남들이 코드를 직접 수정해서 올리는 곳
-* Projects, Wiki, Pulse, Graph 등..
+* Projects, Wiki, Pulse, Graph 등등..
 
 ---
 
 ## Git Basic Command
 
 ### Setting Folder
-{.fw_700}
 
-첫번째로 git 명령 프롬포트를 열고 경로를 지정해준다.
-
-```markdown
-cd WorkingDirectory 주소 //파일 위치 이동
-```
-* git remote
-    : 원격 저장소를 관리할 수 있는 명령어, 주소를 등록한다. <br>
-
-    * git remote add origin _remote repository url_ <br>
-    : 첫 커밋을 할 때만 사용하는 명령어이며 이후에는 사용하지 않아도 됨 
+* git remote: 원격 저장소를 관리할 수 있는 명령어, 주소를 등록한다.
 
     ```markdown
-    fatal: remote origin already exists. 의 오류발생 시
+    git remote add origin _remote repository url_
+      // 첫 커밋을 할 때만 사용하는 명령어이며 이후에는 사용하지 않아도 됨 
+    ```
+    
+    fatal: remote origin already exists.
+    {: .label .label-red }
+    
+    ```markdown
     git remote remove origin후 다시 생성
     git remote -v // 연결상태를 확인한다.
     ```
 
-* git config
-    : 닉네임과 이메일을 등록하기
+* git config : 닉네임과 이메일을 등록하기
 
     ```markdown
     git config --global user.name "닉네임"
@@ -183,10 +179,10 @@ cd WorkingDirectory 주소 //파일 위치 이동
     {: .label .label-green }
     파일을 메모장으로 열어(혹은 다른 에디터를 열어) 다른 이름으로 저장을 누르고 ANSI나 EUC-KR 대신 UTF-8 인코딩으로 저장
     
-    -> 보기 불편해서 Git GUI나 Git을 지원하는 IDE를 사용
+    보기 불편해서 Git GUI나 Git을 지원하는 IDE를 사용
     
     Untracked와 Tracked의 3단계
-    ![](https://guides.github.com/assets/images/tracked.png)
+ ![](https://guides.github.com/assets/images/tracked.png)
 
 * git checkout
     : Modified 상태의 파일을 Unmodified로 되돌리기 (수정을 잘못해서 파일을 원상태로 되돌리고 싶을 때)<br>
