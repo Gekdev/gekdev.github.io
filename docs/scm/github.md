@@ -197,6 +197,8 @@ Git에서는 소스 코드가 변경된 이력을 쉽게 확인할 수 있고, �
 
     **수정된 파일에서 어떤 부분이 달라졌는지 확인**
     
+    &#9656; 보기 불편해서 Git GUI나 Git을 지원하는 IDE를 사용
+    
     &#9656; 나가기 q
     
     한글 파일이 깨진경우
@@ -206,14 +208,14 @@ Git에서는 소스 코드가 변경된 이력을 쉽게 확인할 수 있고, �
     ANSI나 EUC-KR 대신 UTF-8 인코딩으로 저장
     </div>    
     
-    보기 불편해서 Git GUI나 Git을 지원하는 IDE를 사용
-    
 * Untracked와 Tracked의 3단계
     ![](https://gekdev.github.io/assets/images/tracked.png)
 
 * git checkout
     
-    **Modified 상태의 파일을 Unmodified로 되돌리기 (수정을 잘못해서 파일을 원상태로 되돌리고 싶을 때)**
+    **Modified 상태의 파일을 Unmodified로 되돌리기** 
+    
+    대부분 수정을 잘못해서 파일을 원상태로 되돌리고 싶을 때 사용
     
     ```markdown
     git checkout git.html(파일명)
@@ -247,7 +249,7 @@ Git에서는 소스 코드가 변경된 이력을 쉽게 확인할 수 있고, �
     
     **이전 commit 내용을 새 commit으로 만들어서 저장**
     
-    (revert는 commit을 이미 push해서 서버에 저장해버린 경우 자주 사용)
+    git revert는 commit을 이미 push해서 서버에 저장해버린 경우 자주 사용
     
     ```markdown
     git revert HEAD 
@@ -259,15 +261,23 @@ Git에서는 소스 코드가 변경된 이력을 쉽게 확인할 수 있고, �
 
     **스테이징을 거쳐 커밋한 결과 보기**
 
-    커밋 해쉬값, 작성자, 작성일자, 메세지순으로 확인가능
+    &#9656; 커밋 해쉬값, 작성자, 작성일자, 메세지순으로 확인가능
     
     &#9656; 나가기 q
+    
+    ```markdown
+    git log 
+
+    commit 23427f8fb1baa80a5f0c9f974ba16dd0212edd69 (HEAD -> master)  //현재 작업 위치
+    commit d4b18ac8dc8f1e29a6082163b9329ffabd5bca96 (feature)
+    commit 18383c3d504208864ec73e7845d126a4824a43d6
+    ```
 
 * git show
 
     **변경 내용이 반영되었는지 보기**
     
-    삭제한 라인은 앞에 -를, 추가한 라인은 +로 표시한다.
+    &#9656; 삭제한 라인은 앞에 -를, 추가한 라인은 +로 표시한다.
 
 ---
 
@@ -275,39 +285,29 @@ Git에서는 소스 코드가 변경된 이력을 쉽게 확인할 수 있고, �
 
 ### What is Branch?
 
-
 ### Branch Command
 
 * git branch
     브랜치 목록 확인
     깃은 기본적으로 master라는 이름의 브랜치를 하나 가지고 있음<br>
 
-새로운 브랜치 생성 : git branch 생성할브랜치명 기존브랜치명<br>
-현재 브랜치는 앞에 별표(*)가 있는 master 브랜치, 이동은 git checkout 이동할브랜치명<br>
-둘다 동시에(브랜치 만들면서 변경): git checkout -b 뉴브랜치명 <br>
+    새로운 브랜치 생성 : git branch 생성할브랜치명 기존브랜치명<br>
+    현재 브랜치는 앞에 별표(*)가 있는 master 브랜치, 이동은 git checkout 이동할브랜치명<br>
+    둘다 동시에(브랜치 만들면서 변경): git checkout -b 뉴브랜치명 <br>
 
-브랜치 병합하기: 기준이 되는 master브랜치로 이동한 뒤, 머지
-```markdown
-git checkout master
-git merge feature
-```
+    브랜치 병합하기: 기준이 되는 master브랜치로 이동한 뒤, 머지
+    ```markdown
+    git checkout master
+    git merge feature
+    ```
 
-- head
-위치를 좀 더 정확하게 보여주는 정보, 여러 개 가지로 뻗어있는 브랜치와 커밋 목록에서 현재 위치를 나타냄
-체크아웃 하면서 브랜치를 이동할 때 마다 헤드는 수시로 변경
-```markdown
-git log 
 
-commit 23427f8fb1baa80a5f0c9f974ba16dd0212edd69 (HEAD -> master)  //현재 작업 위치
-commit d4b18ac8dc8f1e29a6082163b9329ffabd5bca96 (feature)
-commit 18383c3d504208864ec73e7845d126a4824a43d6
-```
 
-### 상황별 팁!
+## 상황별 팁
 https://jeonghwan-kim.github.io/dev/2020/02/10/git-usage.html#%EC%83%81%ED%99%A9%EB%B3%84-%ED%8C%81
 
-### reference
-https://opentutorials.org/module/4636 <br>
+## Reference
+[](https://opentutorials.org/module/4636) <br>
 https://www.hahwul.com/2018/08/git-credential-helper.html<br>
 <br>
 https://medium.com/webeveloper/%EA%B9%83%ED%97%88%EB%B8%8C-%EC%82%AC%EC%9A%A9%EB%B0%A9%EB%B2%95-github-tutorials-4a63f31bb6a5
