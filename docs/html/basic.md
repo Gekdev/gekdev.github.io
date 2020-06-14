@@ -21,7 +21,7 @@ nav_order: 2
 ### Head elements
 * title 
 
-	a title in the browser tab
+	**a title in the browser tab**
     
 	&#9656; provides a title for the page when it is added to favorites
 	
@@ -29,19 +29,19 @@ nav_order: 2
 
 * style 
 
-	define style information for a single HTML page
+	**style information for a single HTML page**
 
 * link element
 
-	link to external style sheets
+	**link to external style sheets**
     
 	`<link rel="stylesheet" href="mystyle.css">`
 
 * meta
 
-    specify which character set is used, page description, keywords, author, and other metadata.
+    **specify which character set is used, page description, keywords, author, and other metadata**
     
-    used by browsers (how to display content), by search engines (keywords), and other web services.
+    used by browsers (how to display content), by search engines (keywords), and other web services
     
     ```html
     <meta charset="UTF-8">
