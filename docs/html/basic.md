@@ -19,7 +19,7 @@ nav_order: 2
 ## HTML Basic Elements
 
 ### Head elements
-* **title**
+* title elements
 
 	defines a title in the browser tab
     
@@ -27,11 +27,11 @@ nav_order: 2
 	
     &#9656; displays a title for the page in search engine results
 
-* **style**
+* **style elements**
 
 	define style information for a single HTML page
 
-* **The HTML `<link>` Element**
+* **link element**
 
 	link to external style sheets
     
