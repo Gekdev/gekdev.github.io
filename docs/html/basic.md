@@ -20,34 +20,49 @@ nav_order: 2
 
 ### Head element
 
-● The `<title>` element
-	defines a title in the browser tab
-	provides a title for the page when it is added to favorites
-	displays a title for the page in search engine results
+* The `<title>` element
 
-● The HTML `<style>` Element
-	define style information for a single HTML page
+	**defines a title in the browser tab** 
+    
+	&#9656; provides a title for the page when it is added to favorites
+	
+    &#9656; displays a title for the page in search engine results
 
-● The HTML `<link>` Element
-	link to external style sheets
+* The HTML `<style>` Element
+
+	**define style information for a single HTML page**
+
+* The HTML `<link>` Element
+
+	**link to external style sheets**
     
 	`<link rel="stylesheet" href="mystyle.css">`
 
-● The HTML <meta> Element
-metadata is used by browsers (how to display content), by search engines (keywords), and other web services.
-The <meta> element is used to specify which character set is used, page description, keywords, author, and other metadata.
-<meta charset="UTF-8">
-<meta name=“description” content=“생활코딩의 소개자료” > 
-<meta name="keywords" content="HTML, CSS, XML, JavaScript"> 문서를 정의하는 단어들(키워드)
-<meta name="author" content="John Doe">
-<meta http-equiv="refresh" content="30"> 30초 간격으로 새로고침됨
+* The HTML <meta> Element
 
-Setting The Viewport
-HTML5 introduced a method to let web designers take control over the viewport, through the <meta> tag.
-The viewport is the user's visible area of a web page. It varies with the device, and will be smaller on a mobile phone than on a computer screen.
+    **specify which character set is used, page description, keywords, author, and other metadata.**
+    
+    &#9656; used by browsers (how to display content), by search engines (keywords), and other web services.
+    
+    ```html
+    <meta charset="UTF-8">
+    <meta name=“description” content=“생활코딩의 소개자료” > 
+    <meta name="keywords" content="HTML, CSS, XML, JavaScript"> // 문서를 정의하는 단어들(키워드)
+    <meta name="author" content="John Doe">
+    <meta http-equiv="refresh" content="30"> // 30초 간격으로 새로고침됨
+    ```
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    Setting The Viewport
+    {: .label .mt-3}
+    
+    <div class="code-example" markdown="1">
+    HTML5 introduced a method to let web designers take control over the viewport, through the <meta> tag.
+    The viewport is the user's visible area of a web page. It varies with the device, and will be smaller on a mobile phone than on a computer screen.
+    </div>
+    ```html
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    ```
+    
 A <meta> viewport element gives the browser instructions on how to control the page's dimensions and scaling.
 
 The width=device-width part sets the width of the page to follow the screen-width of the device (which will vary depending on the device).
