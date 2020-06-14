@@ -56,14 +56,17 @@ nav_order: 2
     {: .label .mt-3}
     
     <div class="code-example" markdown="1">
-    HTML5 introduced a method to let web designers take control over the viewport, through the <meta> tag.
     The viewport is the user's visible area of a web page. It varies with the device, and will be smaller on a mobile phone than on a computer screen.
+    
+    * name="viewport" : browser instructions on how to control the page's dimensions and scaling
+    
+    * width=device-width : sets the width of the page to follow the screen-width
+    
+    * initial-scale=1.0 : sets the initial zoom level when the page is first loaded by the browser
+    
     </div>
     ```html
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      // viewport element gives the browser instructions on how to control the page's dimensions and scaling.
-      // The width=device-width part sets the width of the page to follow the screen-width of the device (which will vary depending on the device).
-      // The initial-scale=1.0 part sets the initial zoom level when the page is first loaded by the browser.
     ```
 
 * script
@@ -79,10 +82,10 @@ nav_order: 2
     ```
 
     Omitting html, head and body tag?
-    {: .label .lable-yellow .mt-3}
+    {: .label .label-yellow .mt-3}
     <div class="code-example" markdown="1">
     According to the HTML5 standard; the <html>, the <body>, and the <head> tag can be omitted.
-    
+    <br><br>
     W3Schools does not recommend omitting the <html> and <body> tags. Omitting these tags can crash DOM or XML software and produce errors in older browsers (IE9).
     </div>
     
@@ -92,11 +95,11 @@ nav_order: 2
 
     **제목**
     
-    `<h1>`이 제일 중요한 헤딩, `<h6>` 제일 중요하지 않은 제목
+    &#9656; `<h1>`이 제일 중요한 헤딩, `<h6>` 제일 중요하지 않은 제목
     
-    Search engines use the headings to index the structure and content of your web pages.
+    &#9656; Search engines use the headings to index the structure and content of your web pages.
     
-    It is important to use headings to show the document structure.
+    &#9656; It is important to use headings to show the document structure.
     
     !Note
     {: .label .label-yellow .mt-3}
@@ -118,7 +121,7 @@ nav_order: 2
 
     **링크**
     
-    href에 주소나 북마크 하고싶은곳의 id value로 연결할 수 있음
+    &#9656; href에 주소나 북마크 하고싶은곳의 id value로 연결할 수 있음
     
     ```html
     <a href="#a"></a>
@@ -130,10 +133,10 @@ nav_order: 2
     target attribute
     {: .mt-3}
     * _blank : Opens the linked document in a new window or tab
-	* _self : Opens the linked document in the same window/tab as it was clicked (this is default)
+	* _self : Opens the linked document in the same window/tab as it was clicked (default)
     * _parent : Opens the linked document in the parent frame
-    * _top - Opens the linked document in the full body of the window
-    * framename - Opens the linked document in a named frame
+    * _top : Opens the linked document in the full body of the window
+    * framename : Opens the linked document in a named frame
 
     !Note
     {: .label .label-yellow .mt-3}
@@ -145,10 +148,10 @@ nav_order: 2
     
     **이미지**
     
-    Attribut : The source file (src), alternative text (alt), width, and height
+    Attribute : The source file (src), alternative text (alt), width, and height
 
     페이지를 이동하는 이미지맵
-    {: .label mt-3}
+    {: .label .mt-3}
     ```html
     <img src="workplace.jpg" alt="Workplace" usemap="#workmap">
 
@@ -159,7 +162,7 @@ nav_order: 2
     ```
     
     자바스크립트를 활용한 이미지맵
-    {: .label mt-3}
+    {: .label .mt-3}
     ```html
     <img src="workplace.jpg" alt="Workplace" usemap="#workmap" width="400" height="379">
 
