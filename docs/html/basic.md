@@ -38,11 +38,12 @@ nav_order: 2
     
 	`<link rel="stylesheet" href="mystyle.css">`
 
-* The HTML <meta> Element
+* The HTML `<meta>` Element
+{: .mt-5}
 
     **specify which character set is used, page description, keywords, author, and other metadata.**
     
-    &#9656; used by browsers (how to display content), by search engines (keywords), and other web services.
+    used by browsers (how to display content), by search engines (keywords), and other web services.
     
     ```html
     <meta charset="UTF-8">
@@ -61,17 +62,15 @@ nav_order: 2
     </div>
     ```html
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      // A <meta> viewport element gives the browser instructions on how to control the page's dimensions and scaling.
+      // The width=device-width part sets the width of the page to follow the screen-width of the device (which will vary depending on the device).
+      // The initial-scale=1.0 part sets the initial zoom level when the page is first loaded by the browser.
     ```
+
+* The HTML `<script>` Element
     
-A <meta> viewport element gives the browser instructions on how to control the page's dimensions and scaling.
-
-The width=device-width part sets the width of the page to follow the screen-width of the device (which will vary depending on the device).
-
-The initial-scale=1.0 part sets the initial zoom level when the page is first loaded by the browser.
-
-● The HTML <script> Element
-The <script> element is used to define client-side JavaScripts.
-● The HTML <base> Element
+**define client-side JavaScripts.**
+* The HTML <base> Element
 The <base> element specifies the base URL and base target for all relative URLs in a page:
 <base href="https://www.w3schools.com/images/" target="_blank">
 
