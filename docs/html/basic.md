@@ -19,7 +19,7 @@ nav_order: 2
 ## HTML Basic Elements
 
 ### Head elements
-* The `<title>` element
+* **The `<title>` element**
 
 	defines a title in the browser tab
     
@@ -27,17 +27,17 @@ nav_order: 2
 	
     &#9656; displays a title for the page in search engine results
 
-* The HTML `<style>` Element
+* **The HTML `<style>` Element**
 
 	define style information for a single HTML page
 
-* The HTML `<link>` Element
+* **The HTML `<link>` Element**
 
 	link to external style sheets
     
 	`<link rel="stylesheet" href="mystyle.css">`
 
-* The HTML `<meta>` Element
+* **The HTML `<meta>` Element**
 
     specify which character set is used, page description, keywords, author, and other metadata.
     
@@ -65,11 +65,11 @@ nav_order: 2
       // The initial-scale=1.0 part sets the initial zoom level when the page is first loaded by the browser.
     ```
 
-* The HTML `<script>` Element
+* **The HTML `<script>` Element**
     
     define client-side JavaScripts.
     
-* The HTML `<base>` Element
+* **The HTML `<base>` Element**
     
     specifies the base URL and base target for all relative URLs in a page
     
@@ -78,27 +78,57 @@ nav_order: 2
     ```
 
     Omitting html, head and body tag?
-    {: .label .lable-orange .mt-3}
+    {: .label .lable-yellow .mt-3}
     <div class="code-example" markdown="1">
     According to the HTML5 standard; the <html>, the <body>, and the <head> tag can be omitted.
     
-    Note:
     W3Schools does not recommend omitting the <html> and <body> tags. Omitting these tags can crash DOM or XML software and produce errors in older browsers (IE9).
     </div>
     
 ### Body elements
 
 * **Headings (h1~h6)**
-    `<h1>`이 제일 중요한 헤딩, `<h6>` 제일 중요하지 않은 제목
+
+    제목, `<h1>`이 제일 중요한 헤딩, `<h6>` 제일 중요하지 않은 제목
     
     Search engines use the headings to index the structure and content of your web pages.
     
     It is important to use headings to show the document structure.
     
     !Note
-    {: .label .label-yellow }
+    {: .label .label-yellow .mt-3}
+    <div class="code-example" markdown="1">
     Use HTML headings for headings only. Don't use headings to make text BIG or bold.
+    </div>
 
+* **Paragraphs (p)**
+
+    단락, block tag
+
+    !Note
+    {: .label .label-yellow .mt-3}
+    <div class="code-example" markdown="1">
+    블록테그지만 다른 blogtag가 들어오면 안됨
+    </div>
+
+* **Links (a)**
+
+    링크
+    
+    href에 주소나 북마크 하고싶은곳의 id value로 연결할 수 있음
+    
+    target attribute
+    * _blank : Opens the linked document in a new window or tab
+	* _self : Opens the linked document in the same window/tab as it was clicked (this is default)
+    * _parent : Opens the linked document in the parent frame
+    * _top - Opens the linked document in the full body of the window
+    * framename - Opens the linked document in a named frame
+
+    !Note
+    {: .label .label-yellow .mt-3}
+    <div class="code-example" markdown="1">
+    A link does not have to be text. It can be an image or any other HTML element
+    </div>
 
 ## HTML Table
 ---
