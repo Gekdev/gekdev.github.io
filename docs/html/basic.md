@@ -22,7 +22,7 @@ nav_order: 2
 
 * The `<title>` element
 
-	**defines a title in the browser tab** 
+	defines a title in the browser tab
     
 	&#9656; provides a title for the page when it is added to favorites
 	
@@ -30,18 +30,17 @@ nav_order: 2
 
 * The HTML `<style>` Element
 
-	**define style information for a single HTML page**
+	define style information for a single HTML page
 
 * The HTML `<link>` Element
 
-	**link to external style sheets**
+	link to external style sheets
     
 	`<link rel="stylesheet" href="mystyle.css">`
 
 * The HTML `<meta>` Element
-{: .mt-5}
 
-    **specify which character set is used, page description, keywords, author, and other metadata.**
+    specify which character set is used, page description, keywords, author, and other metadata.
     
     used by browsers (how to display content), by search engines (keywords), and other web services.
     
@@ -69,15 +68,26 @@ nav_order: 2
 
 * The HTML `<script>` Element
     
-**define client-side JavaScripts.**
-* The HTML <base> Element
-The <base> element specifies the base URL and base target for all relative URLs in a page:
-<base href="https://www.w3schools.com/images/" target="_blank">
+    define client-side JavaScripts.
+    
+* The HTML `<base>` Element
+    
+    specifies the base URL and base target for all relative URLs in a page
+    
+    ```html
+    <base href="https://www.w3schools.com/images/" target="_blank">
+    ```
 
-▶ Omitting <html>, <head> and <body>?
-According to the HTML5 standard; the <html>, the <body>, and the <head> tag can be omitted.
+    Omitting html, head and body tag?
+    {: .label .lable-orange .mt-3}
+    <div class="code-example" markdown="1">
+    According to the HTML5 standard; the <html>, the <body>, and the <head> tag can be omitted.
+    
+    Note:
+    W3Schools does not recommend omitting the <html> and <body> tags. Omitting these tags can crash DOM or XML software and produce errors in older browsers (IE9).
+    </div>
+    
+    
+    
 
-Note:
-W3Schools does not recommend omitting the <html> and <body> tags. Omitting these tags can crash DOM or XML software and produce errors in older browsers (IE9).
 
-However, omitting the <head> tag has been a common practice for quite some time now.
