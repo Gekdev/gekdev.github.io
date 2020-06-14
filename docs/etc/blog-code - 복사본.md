@@ -19,24 +19,25 @@ nav_order: 1
 [hopeless](https://brunch.co.kr/@hopeless/8)에서 가져왔습니다. 
 
 ## IT영단어 정리
+{: .no_toc}
 
 ### 명명법
 클래스명은 명사, 메서드는 동사, 기능은 명사 + 동사
 
 ### 표기법
-* CamelCase
+* **CamelCase**
 
     문자의 표현을 낙타 등 처럼 했다고 해서 정해진 이름
 
     주로 객체지향 프로그램에서 사용함
 
-* snake_case
+* **snake_case**
 
     언더라인(_) 으로 단어를 구분하는 명명법
 
     C, SQL등에서 사용
 
-* 헝가리안표기법
+* **헝가리안표기법**
 
     변수에 정보를 추가해서 명명하는 방법
 
@@ -45,7 +46,7 @@ nav_order: 1
     글로벌 / 멤버 / 스태틱
 
 ### 반대되는 단어
-* add / remove
+* **add / remove**
 
     추가, 삭제
 
@@ -53,116 +54,116 @@ nav_order: 1
 
     꼬리에 추가시에는 append, 선두에 추가시에는 prepend를 사용
 
-* top / last
+* **top / last**
 
     선두, 말미
 
-* head / tail
+* **head / tail**
 
     머리, 꼬리
 
     자료구조 등에서 자료의 첫번째, 마지막 의미로 사용
 
-* or under / and over
+* **or under / and over**
 
     이하, 이상
 
     greater then, not less than
 
-* foreground / background
+* **foreground / background**
 
     전경, 배경
 
     앞 단, 뒷 단
 
-* push / pop
+* **push / pop**
 
     스택 등에 넣고, 뺄 때
 
-* push / pull
+* **push / pull**
 
     git 에서 넣고, 뺄 때
 
-* enqueue / dequeue
+* **enqueue / dequeue**
 
     큐에 넣고, 뺄 때
 
-* parent / child / children / self
+* **parent / child / children / self**
 
     부모, 자식, 자식들, 자신
 
-* open / close
+* **open / close**
 
     파일이나 소켓을 열다, 닫다
 
-* input / output
+* **input / output**
 
     입력, 출력
 
     기기의 입출력
 
-* import / export
+* **import / export**
 
     설정 등을 가져오기, 내보내기
 
-* set / unset
+* **set / unset**
 
     설정, 해제
 
-* suspend / resume
+* **suspend / resume**
 
     쉬다, 재개
 
-* enable / disable
+* **enable / disable**
 
     유효하게 함, 무효하게 함
 
-* activate / deactivate
+* **activate / deactivate**
 
     활성화, 비활성화
 
-* show / hide
+* **show / hide**
 
     표시, 숨김
 
-* valid / invalid
+* **valid / invalid**
 
     유효, 무효
 
-* host / guest
+* **host / guest**
 
     손님을 받는 쪽이 호스트
 
     손님은 게스트
 
-* server / client 
+* **server / client **
 
     서비스를 제공하는 쪽이 서버
 
     의뢰하는 쪽이 클라이언트
 
-* provider / user
+* **provider / user**
 
     제공자, 사용자
 
-* resume / pause
+* **resume / pause**
 
     재개, 일시정지
 
-* create / destroy
+* **create / destroy**
 
     생성, 파괴
 
 ### 비슷한 의미의 단어, 뉘앙스
-* config / setting / preference
+* **config / setting / preference**
 
     구성, 설정, 환경설정
 
-* initialize / init / setup
+* **initialize / init / setup**
 
     초기화, 셋업
 
-* stop / end / finish
+* **stop / end / finish**
 
     재시작할 가능성이 있으면 stop
 
@@ -170,7 +171,7 @@ nav_order: 1
 
     완료 했다는 의미는 finish
 
-* stop / suspend / pause
+* **stop / suspend / pause**
 
     움직이는 것을 멈추는 것이 stop
 
@@ -178,13 +179,13 @@ nav_order: 1
 
     일단 움직임을 멈추는 것을 pause, 언제든 다시 재개할 수 있음
 
-* stop / quit / exit
+* **stop / quit / exit**
 
     현재 상태에서 탈출하는 것이 quit
 
     출구로 나가는 것이 exit
 
-* changed / modified / revised
+* **changed / modified / revised**
 
     전면적인 변경이 changed
 
@@ -192,33 +193,33 @@ nav_order: 1
 
     개정 revised
 
-* find / search
+* **find / search**
 
     찾아질 것을 기대하는 것이 find
 
     찾아보는 것이 search
 
-* toXXX / parseXXX / convertXXX
+* **toXXX / parseXXX / convertXXX**
 
     XXX로 변환
 
-* tryParseXXX
+* **tryParseXXX**
 
     XXX로 변환을 시도
 
-* fromXXX
+* **fromXXX**
 
     XXX로 부터 변환
 
     메서드명은 동사가 원칙이나 to나 from은 예외
 
-* clear / delete
+* **clear / delete**
 
     예를 들어 파일의 내용만 지우는 것이 clear
 
     파일을 통째로 지우는 것을 delete
 
-* create / make / generate
+* **create / make / generate**
 
     창조하는 것이 create
 
@@ -228,7 +229,7 @@ nav_order: 1
 
     인스턴스를 생성할 때에는 create가 일반적
 
-* parameter / argument
+* **parameter / argument**
 
     메서드에 정의되어 있는 것이 parameter
 
@@ -236,7 +237,7 @@ nav_order: 1
 
     인수, 매개변수라고도 한다
 
-* property / attribute
+* **property / attribute**
 
     둘 다 속성이란 뜻
 
@@ -246,7 +247,7 @@ nav_order: 1
 
     HTML의 태그의 속성은 attribute
 
-* number / numeric
+* **number / numeric**
 
     숫자, 번호를 나타내는 것이 number
 
@@ -254,13 +255,13 @@ nav_order: 1
 
     numeric이 좀 더 수학적인 느낌
 
-* sum / total
+* **sum / total**
 
     금액의 합계, 모두 더한 것이 sum
 
     합계, 전체의, 모두가 total
 
-* limits / bounds / range
+* **limits / bounds / range**
 
     경계, 제한범위, 제한구역이 limits. 제한.
 
@@ -268,7 +269,7 @@ nav_order: 1
 
     값이 변경하는 폭, 상한과 하한이 결정되는 범위가 range, 범위.
 
-* top / peak / spike
+* **top / peak / spike**
 
     최상, 선두가 top.
 
@@ -278,37 +279,37 @@ nav_order: 1
 
     헤깔리면 그냥 top 사용하면 됨
 
-* exclude / ignore
+* **exclude / ignore**
 
     배제하다, 빼내다, 고려하지 않는다가 exclude.
 
     무시하다, 신경쓰이지 않는 느낌이 ignore
 
-* state / status
+* **state / status**
 
     상태 그 자체의 의미. state
 
     게임 캐릭터의 status, 독에 걸린 state
 
-* letter / character
+* **letter / character**
 
     a나 b와 같은 문자 자체 letter.
 
     알파벳 전체, 문자 전체를 가리키는 경우 character
 
-* title / caption
+* **title / caption**
 
     책이나 기사의 제목, 표제가 title.
 
     짧은 설명문, 페이지의 제목이 caption.
 
-* issue / problem
+* **issue / problem**
 
     문제, 논점, 쟁점, 논해야 하는 것이 issue
 
     곤란해 질 만한 문제로, 해결이 필요한 것이 problem
 
-* individual / personal / private
+* **individual / personal / private**
 
     많은 사람들에 대해 개인일 경우 individual. 개별.
 
@@ -318,33 +319,33 @@ nav_order: 1
 
     종업원 한명한명을 가리키는 개인은 individual을 사용하면 됨
 
-* just / only
+* **just / only**
 
     무언가를 기준으로 딱, 그것을 가리킬 때 just
 
     절대적인 의미로, 유일한 것을 가리킬 때 only.
 
-* within
+* **within**
 
     시간, 거리, 범위를 의미하는 이내.
 
     within 3 sec = 3초 이내.
 
-* fix
+* **fix**
 
     수정, 수리, 고정, 결정.
 
-* apply
+* **apply**
 
     설정 등을 적용하다
 
-* flush
+* **flush**
 
     쌓인 데이터나 로그를 클리어한다.
 
     밀어 내보낸다. 모든것을 토해낸다.
 
-* validate / verify
+* **validate / verify**
 
     요구를 만족하는가, 올바른가 확인하는 것이 validate
 
@@ -353,7 +354,7 @@ nav_order: 1
     CD/DVD를 굽고 나면 verify를 함.
 
 ### 자주 나오는 단어
-* syntax / statement / expression / operator / signature
+* **syntax / statement / expression / operator / signature**
 
     syntax는 구문.
 
@@ -365,27 +366,27 @@ nav_order: 1
 
     signature는 메서드명, 파라미터, 리턴값의 타입을 표현하는 것.
 
-* inheritance
+* **inheritance**
 
     상속
 
-* delimiter / separator
+* **delimiter / separator**
 
     구분자 문자
 
-* log
+* **log**
 
     기록, 로그를 얻다.
 
     명사와 동사가 같음
 
-* stack
+* **stack**
 
     쌓기, 쌓다.
 
     명사와 동사가 같음
 
-* token
+* **token**
 
     토큰, 표시, 증거.
 
@@ -393,78 +394,78 @@ nav_order: 1
 
     네트워크의 경우에는 송신권을 주고 받는 데이터 등.
 
-* optimize
+* **optimize**
 
     최적화하다
 
-* normalize
+* **normalize**
 
     정규화하다
 
-* cheatsheet
+* **cheatsheet**
 
     사용법을 1페이지로 정리한 것
 
-* usage
+* **usage**
 
     사용방법
 
-* unknown
+* **unknown**
 
     미지의, 정체불명의
 
-* misc / miscellaneous
+* **misc / miscellaneous**
 
     다양한, 다방면의
 
-* brief
+* **brief**
 
     개요, 요약하다
 
-* features
+* **features**
 
     특징, 기능.
 
     대체로 복수형으로 사용
 
-* via
+* **via**
 
     ~에 의해, ~를 경유하여
 
-* required
+* **required**
 
     필수의
 
 ### 값 관련
-* initial value / initialized value
+* **initial value / initialized value**
 
     초기치, 초기값
 
-* default value
+* **default value**
 
     기본 값
 
-* original value
+* **original value**
 
     원래의 값, 변경전의 값
 
-* current value
+* **current value**
 
     현재 값
 
-* parameter / argument
+* **parameter / argument**
 
     인수
 
-* return value / returned value
+* **return value / returned value**
 
     리턴 값
 
-* variable / var
+* **variable / var**
 
     변수  
 
-* literal
+* **literal**
 
     리터럴. 직접 기술한 값.
 
@@ -476,27 +477,27 @@ nav_order: 1
 
     10을 정수 리터럴, "abc"를 문자열 리터럴
 
-* constant / const
+* **constant / const**
 
     상수
 
-* primitive data type
+* **primitive data type**
 
     프리미티브 타입. 기본형
 
     int, double, long 등 값을 가지는 타입
 
-* null / nil
+* **null / nil**
 
     존재하지 않는 것
 
-* void
+* **void**
 
     빈것.
 
     null과 비슷한 의미
 
-* prefix / suffix
+* **prefix / suffix**
 
     접두어, 접미어
 
@@ -504,81 +505,81 @@ nav_order: 1
 
     player의 er나 nullable의 able 이 접미어 
 
-* release
+* **release**
 
     출시
 
 ### 수치표현
-* binary number
+* **binary number**
 
     2진수
 
     선두에 0b를 붙이는 표현. 0b10은 십진수 2
 
-* octal number
+* **octal number**
 
     8진수
 
     선두에 0을 붙임. 010은 8
 
-* decimal number
+* **decimal number**
 
     10진수
 
-* hexadecimal number
+* **hexadecimal number**
 
     16진수
 
     선두에 0x를 붙임. 0x10 은 16
 
-* even / odd
+* **even / odd**
 
     짝수, 홀수
 
 ### 진위 값
-* true / false
+* **true / false**
 
     참, 거짓
 
-* isXXX / hasXXX / canXXX
+* **isXXX / hasXXX / canXXX**
 
     상태를 측정하는 경우.
 
     isNull, isNumber, hasConnection, canSave 등
 
-* exists
+* **exists**
 
     파일 등이 물리적으로 존재하는지 아닌지.
 
-* contains
+* **contains**
 
     리스트 등에 포함되어 있는지 아닌지
 
-* equals
+* **equals**
 
     같은지 아닌지
 
 ### 도형
-* point / x / y / offset
+* **point / x / y / offset**
 
     좌표, x축, y축, 상대적인 위치
 
-* size / width / height
+* **size / width / height**
 
     크기, 폭(가로), 높이
 
-* top / middle / bottom
+* **top / middle / bottom**
 
     left / center / right
 
-* front / middle / back
+* **front / middle / back**
 
     front / center / side / rear
 
-* fill
+* **fill**
 
     색칠하다
 
-* depth
+* **depth**
 
     심도, 깊이
