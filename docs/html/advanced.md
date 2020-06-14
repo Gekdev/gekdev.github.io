@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Advanced
-parent: html
+parent: HTML
 nav_order: 3
 ---
 

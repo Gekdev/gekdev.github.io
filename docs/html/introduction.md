@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Introduction
-parent: html
+parent: HTML
 nav_order: 1
 ---
 
@@ -36,7 +36,6 @@ nav_order: 1
 * HTML Is Not Case Sensitive
     **W3C recommends lowercase in HTML, and demands lowercase for stricter document types like XHTML.**
 * attribute값 안에 불필요한 공백이 들어가면 오류 but 파일 이름 등 필수로 들어가는 경우 “”로 묶어야지 속성 값 안에 빈칸이 들어가는 경우 오류가 안남
-
 
 ### Basic Terms
 * 디버깅 : 오류수정 과정
