@@ -148,7 +148,8 @@ nav_order: 2
     
     **이미지**
     
-    Attribute : The source file (src), alternative text (alt), width, and height
+    &#9656; Attribute : The source file (src), alternative text (alt), width, and height
+    &#9656; 이미지 투명도 조절 : opacity: 0.3;
 
     페이지를 이동하는 이미지맵
     {: .label .mt-3}
@@ -177,14 +178,32 @@ nav_order: 2
     </script>
     ```
     
-    이미지 투명도 조절 : opacity: 0.3;
-
 #### Reference
 {: .no_toc}
-    [w3schools](https://www.w3schools.com/html/html_images_imagemap.asp)
 
-*
+[w3schools](https://www.w3schools.com/html/html_images_imagemap.asp)
 
+* Picture
+    **이미지**
+    
+    add more flexibility when specifying image resources
+
+    &#9656; contains a number of `<source>` elements, each referring to different image sources. 
+    
+    &#9656; browser can choose the image that best fits the current view and/or device.
+
+    ```html
+    <picture>
+      <source media="(min-width: 650px)" srcset="img_food.jpg">
+      <source media="(min-width: 465px)" srcset="img_car.jpg">
+      <img src="img_girl.jpg">
+    </picture>
+    ```
+    !Note
+    {: .label .label-yellow .mt-3}
+    <div class="code-example" markdown="1">
+    Always specify an <img> element as the last child element of the <picture> element. The <img> element is used by browsers that do not support the <picture> element, or if none of the <source> tags matched.
+    </div>
 *
 
 *
