@@ -7,5 +7,5 @@ permalink: docs/ect
 ---
 
 # ect
-{: .no_toc .fs_beta .fw_700 }
+{: .no_toc .text_beta .fw_700 }
 
