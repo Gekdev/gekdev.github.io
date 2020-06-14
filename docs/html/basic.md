@@ -19,25 +19,25 @@ nav_order: 2
 ## HTML Basic Elements
 
 ### Head elements
-* title elements
+* title 
 
-	defines a title in the browser tab
+	a title in the browser tab
     
 	&#9656; provides a title for the page when it is added to favorites
 	
     &#9656; displays a title for the page in search engine results
 
-* **style elements**
+* style 
 
 	define style information for a single HTML page
 
-* **link element**
+* link element
 
 	link to external style sheets
     
 	`<link rel="stylesheet" href="mystyle.css">`
 
-* **The HTML `<meta>` Element**
+* meta
 
     specify which character set is used, page description, keywords, author, and other metadata.
     
@@ -65,11 +65,11 @@ nav_order: 2
       // The initial-scale=1.0 part sets the initial zoom level when the page is first loaded by the browser.
     ```
 
-* **The HTML `<script>` Element**
+* script
     
     define client-side JavaScripts.
     
-* **The HTML `<base>` Element**
+* base
     
     specifies the base URL and base target for all relative URLs in a page
     
