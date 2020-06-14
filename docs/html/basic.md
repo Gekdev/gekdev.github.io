@@ -19,6 +19,7 @@ nav_order: 2
 ## HTML Basic Elements
 
 ### Head elements
+
 * title 
 
 	**a title in the browser tab**
@@ -67,11 +68,11 @@ nav_order: 2
 
 * script
     
-    define client-side JavaScripts.
+    **define client-side JavaScripts**
     
 * base
     
-    specifies the base URL and base target for all relative URLs in a page
+    **specifies the base URL and base target for all relative URLs in a page**
     
     ```html
     <base href="https://www.w3schools.com/images/" target="_blank">
@@ -87,9 +88,11 @@ nav_order: 2
     
 ### Body elements
 
-* **Headings (h1~h6)**
+* Headings (h1~h6)
 
-    제목, `<h1>`이 제일 중요한 헤딩, `<h6>` 제일 중요하지 않은 제목
+    **제목**
+    
+    `<h1>`이 제일 중요한 헤딩, `<h6>` 제일 중요하지 않은 제목
     
     Search engines use the headings to index the structure and content of your web pages.
     
@@ -101,9 +104,9 @@ nav_order: 2
     Use HTML headings for headings only. Don't use headings to make text BIG or bold.
     </div>
 
-* **Paragraphs (p)**
+* Paragraphs (p)
 
-    단락, block tag
+    **단락**
 
     !Note
     {: .label .label-yellow .mt-3}
@@ -111,13 +114,21 @@ nav_order: 2
     블록테그지만 다른 blogtag가 들어오면 안됨
     </div>
 
-* **Links (a)**
+* Links (a)
 
-    링크
+    **링크**
     
     href에 주소나 북마크 하고싶은곳의 id value로 연결할 수 있음
     
+    ```html
+    <a href="#a"></a>
+    ...
+    
+    <div id="a"></div>
+    ```
+    
     target attribute
+    {: .mt-3}
     * _blank : Opens the linked document in a new window or tab
 	* _self : Opens the linked document in the same window/tab as it was clicked (this is default)
     * _parent : Opens the linked document in the parent frame
@@ -129,6 +140,51 @@ nav_order: 2
     <div class="code-example" markdown="1">
     A link does not have to be text. It can be an image or any other HTML element
     </div>
+    
+* Images  (img)
+    
+    **이미지**
+    
+    Attribut : The source file (src), alternative text (alt), width, and height
+
+    페이지를 이동하는 이미지맵
+    {: .label mt-3}
+    ```html
+    <img src="workplace.jpg" alt="Workplace" usemap="#workmap">
+
+	<map name="workmap">
+	  <area shape="rect" coords="34,44,270,350" alt="Computer" href="computer.htm">
+	  <area shape="circle" coords="337,300,44" alt="Coffee" href="coffee.htm">
+	</map>
+    ```
+    
+    자바스크립트를 활용한 이미지맵
+    {: .label mt-3}
+    ```html
+    <img src="workplace.jpg" alt="Workplace" usemap="#workmap" width="400" height="379">
+
+    <map name="workmap">
+      <area shape="circle" coords="337,300,44" onclick="myFunction()">
+    </map>
+
+    <script>
+    function myFunction() {
+      alert("You clicked the coffee cup!");
+    }
+    </script>
+    ```
+    
+    이미지 투명도 조절 : opacity: 0.3;
+
+#### Reference
+{: .no_toc}
+    [w3schools](https://www.w3schools.com/html/html_images_imagemap.asp)
+
+*
+
+*
+
+*
 
 ## HTML Table
 ---
