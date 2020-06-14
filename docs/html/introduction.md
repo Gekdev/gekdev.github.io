@@ -43,10 +43,6 @@ nav_order: 1
 * attribute값 안에 불필요한 공백이 들어가면 오류 <br>
     but 파일 이름 등 필수로 들어가는 경우 “”로 묶어야지 속성 값 안에 빈칸이 들어가는 경우 오류가 안남
 
-### Basic Terms
-* 디버깅 : 오류수정 과정
-* 디버깅 도구 : 개발자 도구
-
 ### A Simple HTML Document
 ![](https://gekdev.github.io/assets/images/noname01.png)
 
@@ -64,12 +60,14 @@ nav_order: 1
 ### HTML Tags
 * HTML Elements
 
-    HTML tags normally come in pairs like `<p> {start tag(opening tag)} </p>{end tag(closing tag)}`
-    
-    The end tag is written like the start tag, but with a forward slash inserted before the tag name
     ```html
     <tagname>content goes here</tagname>
     ```
+    
+    HTML tags normally come in pairs like `<p> {start tag(opening tag)} </p>{end tag(closing tag)}`
+    
+    The end tag is written like the start tag, but with a forward slash inserted before the tag name
+
 
 * Empty HTML Elements
 
