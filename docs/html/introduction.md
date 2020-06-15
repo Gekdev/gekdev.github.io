@@ -27,7 +27,6 @@ nav_order: 1
 **웹을 둘러싼 난무한 비 표준을 지양하고 지능적이고 실행 가능한 웹 구현을 위해 탄생한 차세대 웹 표준 기술**
 
 * 문서공유, 문서표현 -> 하나의 응용프로그램으로 진화
-* standard markup language for creating Web pages
 * 기존의 html 표준의 한계를 극복하는 차세대 웹 표준 
 * 추가적인 플러그인 없이 리치웹 응용을 가능하게 한다
 * 시멘틱 마크업 - 더 명확한 의미표현
@@ -46,14 +45,12 @@ nav_order: 1
 ### A Simple HTML Document
 ![](https://gekdev.github.io/assets/images/noname01.png)
 
-* <!DOCTYPE html> declaration defines this document to be HTML5
+* `<!DOCTYPE html>` declaration defines this document to be HTML5 <br>
 	This represents the document type, and helps browsers to display web pages correctly.
 * `<html>` element is the root element of an HTML page
-* `<head>` element contains meta information about the document
- 	metadata is data about the HTML document
+* `<head>` element contains meta information about the document (contain metadata)
 * `<title>` element specifies a title for the document
-* `<body>` element contains the visible page content 
-    (바디에는 높이가 없음 이미 width가 100%)
+* `<body>` element contains the visible page content
 * `<h1>` element defines a large heading
 * `<p>` element defines a paragraph
 
