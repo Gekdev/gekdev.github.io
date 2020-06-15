@@ -116,6 +116,30 @@ nav_order: 2
     <div class="code-example" markdown="1">
     블록테그지만 다른 블록테그가 들어오면 안됨
     </div>
+    
+* Horizontal Rules (hr)
+    
+    **가로 구분선**
+    
+* Line breaks (br)
+    
+    **single line break**
+    
+    empty tag(has no end tag)
+
+* Text Formatting
+
+    | description       | tag                        | shape                    |
+    |:------------------|:---------------------------|:-------------------------|
+    | Bold text         | `<b>b</b>`                 | <b>b</b>                 |
+    | Important text    | `<strong>strong</strong>`  | <strong>strong</strong>  |
+    | Italic text       | `<i>i</i>`                 | <i>i</i>                 |
+    | Emphasized text   | `<em>em</em>`              | <em>em</em>              |
+    | Deleted text      | `<del>del</del>`           | <del>del</del>           |
+    | Inserted text     | `<ins>ins</ins>`           | <ins>ins</ins>           |
+    | Subscript text    | `<sub>sub</sub>`           | <sub>sub</sub>           |
+    | Superscript text  | `<sup>sup</sup>`           | <sup>sup</sup>           |
+    | Marked text       | `<mark>mark</mark>`        | <mark>mark</mark>        |
 
 * Links (a)
 
@@ -244,30 +268,6 @@ nav_order: 2
     * unordered list
     * dl
     
-* Horizontal Rules (hr)
-    
-    **가로 구분선**
-    
-* line breaks (br)
-    
-    **single line break**
-    
-    empty tag(has no end tag)
-
-* Formatting Elements
-    ```html
-    <b>  Bold text
-    <strong> - Important text
-    <i> - Italic text
-    <em> - Emphasized text
-    <mark> - Marked text
-    <small> - Small text
-    <del> - Deleted text
-    <ins> - Inserted text
-    <sub> - Subscript text
-    <sup> - Superscript text
-    ```
-    
 * iframe
 
     inframe tag안에 또 들어갈 수 있음
@@ -314,7 +314,7 @@ The <canvas> element is only a container for graphics. You must use JavaScript t
 [w3schools](https://www.w3schools.com/html/html_youtube.asp)
 [cdmanii](https://cdmanii.com/3392)
 
-### Quotations
+### Quotation and Citation
 
 ```html
 <q> for Short Quotations =" "
@@ -322,8 +322,6 @@ The <canvas> element is only a container for graphics. You must use JavaScript t
 <abbr> for Abbreviations = title, .....
 <address> for Contact Information = italic
 <cite> for Work Title = italic
-    The HTML <cite> element defines the title of a work.
-    Browsers usually display <cite> elements in italic.
 <bdo> for Bi-Directional Override
 <bdo> element defines bi-directional override.
 ```
