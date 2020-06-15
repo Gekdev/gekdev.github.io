@@ -173,7 +173,7 @@ nav_order: 2
     
     &#9656; 이미지 투명도 조절 : opacity: 0.3;
 
-    &#9656; map element 활용
+    &#9656; map element 활용할 수 있음
 
     페이지를 이동하는 이미지맵
     {: .label .mt-3}
@@ -201,10 +201,9 @@ nav_order: 2
     }
     </script>
     ```
+    
+    [w3schools](https://www.w3schools.com/html/html_images_imagemap.asp)
 
-    #### Reference
-    {: .no_toc}
-[w3schools](https://www.w3schools.com/html/html_images_imagemap.asp)
 
 * Picture
 
