@@ -122,7 +122,7 @@ nav_order: 2
     **링크**
     
     &#9656; target attr의 종류
-    
+    <div class="code-example" markdown="1">
     * _blank : Opens the linked document in a new window or tab
 
     * _self : Opens the linked document in the same window/tab as it was clicked (default)
@@ -132,10 +132,10 @@ nav_order: 2
     * _top : Opens the linked document in the full body of the window
 
     * framename : Opens the linked document in a named frame
-
+    </div>
     
-    href 링크 종류
-    
+    &#9656; href 링크 종류
+    <div class="code-example" markdown="1">
     * Web pages
     
     * Images
@@ -154,6 +154,10 @@ nav_order: 2
 
         <div id="a"></div>
         ```
+    
+    // 상대경로가 가장 좋은 방법!
+    {: .text-blue-000}
+    </div>
     
     !Note
     {: .label .label-yellow .mt-3}
