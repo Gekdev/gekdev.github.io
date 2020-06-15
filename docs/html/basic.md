@@ -261,57 +261,143 @@ nav_order: 2
     Always specify an img element as the last child element of the picture element. The img element is used by browsers that do not support the picture element, or if none of the source tags matched.
     </div>
     
-* Lists
+### Table
 
-    &#9656; list is block, so float attribute is possible
+&#9656; 기본형식 : table > tr(열) > td
+
+```html
+<table style="width:100%">
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>Age</th>
+  </tr>
+  <tr>
+    <td>Jill</td>
+    <td>Smith</td>
+    <td>50</td>
+  </tr>
+  <tr>
+    <td>Eve</td>
+    <td>Jackson</td>
+    <td>94</td>
+  </tr>
+</table>
+```
+
+&#9656; 문법 []안에는 속성값, >뒤에는 하위값, *개수, +동일 항목 더하기
+
+* table tag 
+
+    **표**
     
-    * ordered list
-    * unordered list
-    * dl
+    &#9656; table attr : border="" cellpadding="" cellspacing="" bgcolor="" style="margin" width="" 
     
-* iframe
+* tr 
 
-    inframe tag안에 또 들어갈 수 있음
-	attribute:  src width height style="border:none;
-	Use the height and width attributes to specify the size of the iframe.
-	target값 name 따라서 가거나 blank, self, parent, top 등 다양하게 갈 수 있음
+    **row(열)**
+    
+    &#9656; tr attr : height="" bgcolor="" align="" style="font-size:"
 
-	Iframe - Target for a Link
-	<iframe src="demo_iframe.htm" name="iframe_a"></iframe>
-	<p><a href="https://www.w3schools.com" target="iframe_a">W3Schools.com</a></p>
+* th
+
+    **table header**
+    
+    &#9656; td attr과 동일
+
+* td
+
+    **table data/cell**
+    
+    &#9656; td attr : width="" height="" bgcolor="" **align="left center right" valign="top, middle bottom" colspan="" rowspan=""** style="color:"
+
+* caption
+
+    **caption to a table**
+    
+    Note:
+    {: .label .label-yellow .mt-3}
+    The caption tag must be inserted immediately after the table tag
+
+### Lists
+
+&#9656; list is block, so float attribute is possible
+
+* Ordered list(ol)
+* Unordered list(ul)
+* Description Lists(dl)
+    * The <dl> tag defines the description list 
+    * the <dt> tag defines the term (name)
+    * the <dd> tag describes each term:
+
+### iframe
+
+** display a web page within a web page**
+
+&#9656; attr:  src width height style="border:none;
+
+&#9656; inframe 서로 들어갈 수 있음
+    
+> &#8594; a링크로 주소를 찍거나, a 태그 타겟 없이 iframe src만으로도 다른 페이지로 이동가능
+
+&#9656; Use the height and width attributes to specify the size of the iframe.
+
+&#9656; target값 name 따라서 가거나 blank, self, parent, top 등 다양하게 갈 수 있음
+
+<div class="code-example" markdown="1">
+<iframe src="demo_iframe.htm" name="iframe_a"></iframe>
+<p><a href="https://www.w3schools.com" target="iframe_a">W3Schools.com</a></p>
+</div>
+```html
+<iframe src="demo_iframe.htm" name="iframe_a"></iframe>
+<p><a href="https://www.w3schools.com" target="iframe_a">W3Schools.com</a></p>
+```
 
 ### Media
-* video audio, object, embed
 
+* video 
+
+    **show a video on a web page**
+
+    &#9656; attr : autoplay, controls, loop
+
+    ```html
     <video width="320" height="240" controls autoplay loop> 
       <source src="movie.mp4" type="video/mp4">
       <source src="movie.ogg" type="video/ogg">
     Your browser does not support the video tag.
     </video>
+    ```
 
+* audio 
+
+    ** play an audio file on a web page**
+
+    ```html
     <audio controls>
       <source src="horse.ogg" type="audio/ogg">
       <source src="horse.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
     </audio>
-    <object width="400" height="50" data="bookmark.swf"></object>
+    ```
+
+* object, embed
+
+    **embedded object within an HTML document**
+
+    &#9656; supported by all browsers.
+
+    &#9656; It was designed to embed plug-ins
+
+    ```html
+    <object width="400" height="50" data="bookmark.html"></object>
+    <object data="audi.jpeg"></object>
 
     <embed width="400" height="50" src="bookmark.swf">
+    ```
 
-* Canvas
-    What is HTML Canvas?
-    The HTML <canvas> element is used to draw graphics, on the fly, via JavaScript.
+* Youtube
 
-    The <canvas> element is only a container for graphics. You must use JavaScript to actually draw the graphics.
-
-    <canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;">
-    </canvas>
-
-    #### Reference
-    {: .no_toc}
-    [w3schools](https://www.w3schools.com/graphics/canvas_intro.asp)
-
-    * Youtube
     [w3schools](https://www.w3schools.com/html/html_youtube.asp)
     [cdmanii](https://cdmanii.com/3392)
 
@@ -374,82 +460,367 @@ nav_order: 2
     The variable could be a variable in a mathematical expression or a variable in programming context:
     Einstein wrote: <var>E</var> = <var>mc</var><sup>2</sup>.
 
+### Block and Inline
 
-### HTML Table
+* Block
 
+    **starts on a new line and takes up the full width available (stretches out to the left and right as far as it can)**
 
+    ```html
+    <address> <article> <aside> <blockquote> <canvas> <dd> <div> 
+    <dl> <dt> <fieldset> <figcaption> <figure> <footer> <form> 
+    <h1>-<h6> <header> <hr> <li> <main> <nav> <noscript> <ol> 
+    <p> <pre> <section> <table> <tfoot> <ul> <video>
+    ```
+
+* Inline
+
+    **does not start on a new line and only takes up as much width as necessary**
+    
+    ```html
+    <a> <abbr> <acronym> <b> <bdo> <big> <br> <button> <cite> <code> 
+    <dfn> <em> <i> <img> <input> <kbd> <label> <map> <object> <output> 
+    <q> <samp> script <select> <small> <span> <strong> <sub> <sup> 
+    <textarea> <time> <tt> <var>
+    ```
+    
 ---
 
-## HTML Form
+## HTML Form elements
 
-### Form element
-form is used to collect user input
+### Form 
+
+**collect user input**
 
 * Form attr
 
-action=“웹 서버 응용 프로그램의 url”
-enctype=“인코딩 타입”(데이터를 전송할 때 암호과 방식 지정)
-method=“GET/POST”(폼 데이터를 웹 서버에 전송하는 방식)
-name=“폼 이름”
-target=“윈도우 이름”(응용프로그램으로부터 받은 데이터를 출력할 윈도우 이름)
+    &#9656; action : =“웹 서버 응용 프로그램의 url”
+    
+    &#9656; enctype : =“인코딩 타입”(데이터를 전송할 때 암호과 방식 지정)
+    
+    &#9656; method : =“GET/POST”(폼 데이터를 웹 서버에 전송하는 방식, default= get)
+    
+    &#9656; name : =“폼 이름”
+    
+    &#9656; target : =“윈도우 이름”(응용프로그램으로부터 받은 데이터를 출력할 윈도우 이름)
 
-* Form Tip
+* Method attribute
 
-input type=“hidden” name=“hide” value=“hey” -  그냥 데이터만 서버에 전송해야 할떄
+    그냥 데이터만 서버에 전송해야 할때 : input type=“hidden” name=“hide” value=“hey”
 
-When to Use GET?
-	The default method when submitting form data is GET.
+    Notes on GET:
+    {: .label .mt-3}
+    <div class="code-example" markdown="1">
+	**the submitted form data will be visible in the page address field**
 
-	However, when GET is used, the submitted form data will be visible in the page address field:
-
-	Notes on GET:
-	Appends form-data into the URL in name/value pairs
-	The length of a URL is limited (2048 characters)
-	Never use GET to send sensitive data! (will be visible in the URL)
-	Useful for form submissions where a user wants to bookmark the result
-	GET is better for non-secure data, like query strings in Google
-
-	When to Use POST?
-	Always use POST if the form data contains sensitive or personal information. The POST method does not display the submitted form data in the page address field.
+	&#9656; Appends form-data into the URL in name/value pairs
+    
+	&#9656; The length of a URL is limited (2048 characters)
+    
+	&#9656; Never use GET to send sensitive data! (will be visible in the URL)
+    
+	&#9656; Useful for form submissions where a user wants to bookmark the result
+    
+	&#9656; GET is better for non-secure data, like query strings in Google
+    </div>
 
 	Notes on POST:
-	POST has no size limitations, and can be used to send large amounts of data.
-	Form submissions with POST cannot be bookmarked
+    {: .label .mt-3}
+    <div class="code-example" markdown="1">
+    **Always use POST if the form data contains sensitive or personal information. The POST method does not display the submitted form data in the page address field**
+    
+	&#9656; POST has no size limitations, and can be used to send large amounts of data.
+    
+	&#9656; Form submissions with POST cannot be bookmarked
+    </div>
 
-웹 접근성 기준 상, 폼 입력 요소가 있다면 이에 해당하는 label 요소를 반드시 가지고 있어야 합니다. label은 폼 입력 요소에 무엇을 입력하는 지 명시해 주는 요소. 주로 해당 입력 요소의 id를 연결. 만약 label을 넣을만한 공간적인 여유가 없거나 부득이한 경우라면, 해당 폼 입력 요소에 title 속성이라도 넣도록 권장하고 있습니다.
+### input
 
-### input element
+**값을 입력받는 요소**
+
+&#9656; 기본형식
+```html
 <input type="text" title="아이디 입력" />
-The Name Attribute
-Each input field must have a name attribute to be submitted.
+```
+&#9656; 거의 모든 방식에서 method=“post” 와 enctype=“multipart/form-data”>를 씀 name이 없으면 에러가 뜸
 
-If the name attribute is omitted, the data of that input field will not be sent at all.
+* Name Attr : Each input field must have a name attribute to be submitted.
+    
+    > 생략될경우 submit 했을때 값을 받을수가 없음(not be sent at all)
 
-● The <select> Element
-The <select> element defines a drop-down list:
+* Type Attr : Each input field must have a name attribute to be submitted.(default= text)
+
+    <div class="code-example" markdown="1">
+    <input type="button">
+
+    <input type="checkbox">
+
+    <input type="color">
+
+    <input type="date">
+
+    <input type="datetime-local">
+
+    <input type="email">
+
+    <input type="file">
+
+    <input type="hidden">
+
+    <input type="image" src="">
+
+    <input type="month">
+
+    <input type="number">
+
+    <input type="password">
+
+    <input type="radio">
+
+    <input type="range">
+
+    <input type="reset">
+
+    <input type="search">
+
+    <input type="submit">
+
+    <input type="tel">
+
+    <input type="text">
+
+    <input type="time">
+
+    <input type="url">
+
+    <input type="week">
+    </div>
+    ```html
+    <input type="button">
+
+    <input type="checkbox">
+
+    <input type="color">
+
+    <input type="date">
+
+    <input type="datetime-local">
+
+    <input type="email">
+
+    <input type="file">
+
+    <input type="hidden">
+
+    <input type="image" src="">
+
+    <input type="month">
+
+    <input type="number">
+
+    <input type="password">
+
+    <input type="radio">
+
+    <input type="range">
+
+    <input type="reset">
+
+    <input type="search">
+
+    <input type="submit">
+
+    <input type="tel">
+
+    <input type="text">
+
+    <input type="time">
+
+    <input type="url">
+
+    <input type="week">
+    ```
+
+    새로 생긴것
+    {: .label .mt-3}
+    <div class="code-example" markdown="1">
+    <input type="color">
+    
+    Enter a date before 1980-01-01:
+    <input type="date" name="bday" max="1979-12-31"><br>
+    
+    Enter a date after 2000-01-01:
+    <input type="date" name="bday" min="2000-01-02"><br>
+    
+    <input type="datetime-local">
+    
+    <input type="email">
+    
+    <input type="file"> : file-select field and a "Browse" button for file uploads
+    
+    <input type="month"> : the user to select a month and year
+    <input type="number"> : numeric input field,
+    
+    You can also set restrictions on what numbers are accepted.
+    
+    <input type="number" name="quantity" min="1" max="5">
+    
+    <input type="range">
+    
+    <input type="search">
+    
+    <input type="tel">
+    
+    <input type="time">
+    
+    <input type="url">
+    
+    <input type="week">
+    </div>
+    ```html
+    <input type="color">
+    
+    Enter a date before 1980-01-01:
+    <input type="date" name="bday" max="1979-12-31"><br>
+    
+    Enter a date after 2000-01-01:
+    <input type="date" name="bday" min="2000-01-02"><br>
+    
+    <input type="datetime-local">
+    
+    <input type="email">
+    
+    <input type="file"> : file-select field and a "Browse" button for file uploads
+    
+    <input type="month"> : the user to select a month and year
+    <input type="number"> : numeric input field,
+    
+    You can also set restrictions on what numbers are accepted.
+    
+    <input type="number" name="quantity" min="1" max="5">
+    
+    <input type="range">
+    
+    <input type="search">
+    
+    <input type="tel">
+    
+    <input type="time">
+    
+    <input type="url">
+    
+    <input type="week">
+    ```
+
+* Value attr
+
+    The value attribute specifies the initial value for an input field:
+    <input type="text" name="firstname" value="John">
+
+* Readonly attr
+
+    The readonly attribute specifies that the input field is read only (cannot be changed):
+
+* Disabled Attribute
+
+    A disabled input field is unusable and un-clickable, and its value will not be sent when submitting the form:
+    <input type="text" name="firstname" value="John" disabled>
+
+* Size attr
+
+    The maxlength Attribute
+    The maxlength attribute does not provide any feedback. If you want to alert the user, you must write JavaScript code.
+
+    [w3schools](https://www.w3schools.com/html/html_form_attributes.asp)
+
+Note:
+{: .label .label-yellow .mt-3}
+<div class="code-example" markdown="1">
+웹 접근성 기준 상, 폼 입력 요소가 있다면 이에 해당하는 **label 요소**를 반드시 가지고 있어야 합니다. 
+label은 폼 입력 요소에 무엇을 입력하는 지 명시해 주는 요소. 주로 해당 입력 요소의 id를 연결. 
+
+**만약 label을 넣을만한 공간적인 여유가 없거나 부득이한 경우라면, 해당 폼 입력 요소에 title 속성이라도 넣도록 권장하고 있습니다**
+</div>
+
+### select
+
+**select element defines a drop-down list**
+
+```html
 <select name="cars">
   <option value="volvo" selected size="3">Volvo</option>
 </select>
+```
 
 Allow Multiple Selections
+{: .label .mt-3}
+<div class="code-example" markdown="1">
 Use the multiple attribute to allow the user to select more than one value.
 Hold down the Ctrl (windows) / Command (Mac) button to select multiple options.
+</div>
 
-● The <textarea> Element
-The <textarea> element defines a multi-line input field
-사이즈를 고정하고 싶으면   resize: none;
+* optgroup
 
-● The <button> Element
-The <button> element defines a clickable button:
-<button type="button" onclick="alert('Hello World!')">Click Me!</button>
-Note: Always specify the type attribute for the button element. Different browsers may use different default types for the button element.
+    **소제목 달기, make it bold**
+    
+    <div class="code-example" markdown="1">
+    <select>
+      <optgroup label="Swedish Cars">
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+      </optgroup>
+    <select>
+    </div>
+    ```html
+    <select>
+      <optgroup label="Swedish Cars">
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+      </optgroup>
+    <select>
+    ```
 
-datalist
-	input type list 속성에 datalist id를 같게 만들면
-	datalist 하위 option값들이 드롭다운 버튼에 나타난다 - 정답 미리보기 같은 개념
+### textarea
 
-The datalist element specifies a list of pre-defined options for an input element.
+**a multi-line input field**
 
+&#9656; 사이즈를 고정하고 싶으면 resize: none;
+
+### button
+
+**a clickable button**
+
+Note:
+{: .label .label-yellow .mt-3}
+<div class="code-example" markdown="1">
+Always specify the type attribute for the button element. 
+Different browsers may use different default types for the button element.
+</div>
+
+### fieldset
+
+**Grouping Form Data**
+
+* legend : caption for the fieldset element
+
+### datalist
+
+**pre-defined options for an input element**
+
+&#9656; input type list 속성에 datalist id를 같게 만들면, datalist 하위 option값들이 드롭다운 버튼에 나타난다
+
+<div class="code-example" markdown="1">
+<form action="/action_page.php">
+  <input list="browsers">
+  <datalist id="browsers">
+    <option value="Internet Explorer">
+    <option value="Firefox">
+    <option value="Chrome">
+    <option value="Opera">
+    <option value="Safari">
+  </datalist>
+</form>
+</div>
 ```html
 <form action="/action_page.php">
   <input list="browsers">
@@ -461,145 +832,27 @@ The datalist element specifies a list of pre-defined options for an input elemen
     <option value="Safari">
   </datalist>
 </form>
-
 ```
 
+### output
 
-HTML input types
-HTML Input Types
-Here are the different input types you can use in HTML:
+represents the **result of a calculation** (like one performed by a script).
 
-● <input type="button">
-<input type="button" onclick="alert('Hello World!')" value="Click Me!">
-● <input type="checkbox">
-● <input type="color">
-● <input type="date">
-● <input type="datetime-local">
-● <input type="email">
-● <input type="file">
-	거의 모든 방식에서 method=“post” 와 enctype=“multipart/form-data”>를 씀 name이 없으면 에러가 뜸
-● <input type="hidden">
-● <input type="image">
-● <input type="month">
-● <input type="number">
-● <input type="password">
-● <input type="radio">
-● <input type="range">
-● <input type="reset">
-● <input type="search">
-● <input type="submit">
-● <input type="tel">
-● <input type="text">
-● <input type="time">
-● <input type="url">
-● <input type="week">
-
-new
-● color
-● date
-	<form>
-	  Enter a date before 1980-01-01:
-	  <input type="date" name="bday" max="1979-12-31"><br>
-	  Enter a date after 2000-01-01:
-	  <input type="date" name="bday" min="2000-01-02"><br>
-	</form>
-● datetime-local
-● email
-● file
-	The <input type="file"> defines a file-select field and a "Browse" button for file uploads.
-● month
-	The <input type="month"> allows the user to select a month and year.
-● number
-	The <input type="number"> defines a numeric input field.
-	You can also set restrictions on what numbers are accepted.
-	 <input type="number" name="quantity" min="1" max="5">
-● range
-● search
-● tel
-● time
-● url
-● week
-
-* attr
-attributes
-The value Attribute
-The value attribute specifies the initial value for an input field:
-  <input type="text" name="firstname" value="John">
-
-The readonly Attribute
-The readonly attribute specifies that the input field is read only (cannot be changed):
-
-The disabled Attribute
-A disabled input field is unusable and un-clickable, and its value will not be sent when submitting the form:
-<input type="text" name="firstname" value="John" disabled>
-
-The size Attribute
-
-The maxlength Attribute
-The maxlength attribute does not provide any feedback. If you want to alert the user, you must write JavaScript code.
-
-[w3schools](https://www.w3schools.com/html/html_form_attributes.asp)
-
-
-HTML <optgroup> Tag
-make it bold
-<select>
-  <optgroup label="Swedish Cars">
-    <option value="volvo">Volvo</option>
-    <option value="saab">Saab</option>
-  </optgroup>
-
-HTML5 <output> Element
-The <output> element represents the result of a calculation (like one performed by a script).
-
-input img에는 src필요
-
-Grouping Form Data with <fieldset>
-The <fieldset> element is used to group related data in a form.
-
-The <legend> element defines a caption for the <fieldset> element.
-
----
-
-## HTML Semantic
-
-### What is Semantic?
-
-**문서의 구조와 의미를 표현하는 태그**
-
-### HTML Layout Elements
-
-header	페이지나 섹션의 머리말을 표현, section이나 article 태그 내에도 사용됨
-nav	하이퍼링크들을 모아논 특별한 섹션, 목차
-section	문서의 장 혹은 절을 구성하는 역할, h1~6로 섹션의 주제를 기재하는 것이 바람직 
-article	본문과 연결되어 있는 독립적인 콘텐츠, section의 보조적인 기사
-aside	흐름에 벗어나 짤막하게 곁들이는 관련 기사.. 
-footer	꼬리말 영역을 표시하는 태그 
-figure	본문에 삽입된 그림을 블록화 하는 시맨틱 태그
-details	상세정보 담기 summary가 제목태그
-
-### Features of Semantic Elements
-
-!Note
-{: .label .label-yellow .mt-3}
 <div class="code-example" markdown="1">
-IE9에서는 시멘틱 의미를 해석못해서, head태그 안에 HTML5Shiv라는 구문을 추가 해줘야함 
+<form oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+    <input type="range" id="a" value="50">
+    +<input type="number" id="b" value="25">
+    =<output name="x" for="a b"></output>
+</form>    
 </div>
 ```html
-<!--[if lt IE 9]>
-    <script src="/js/html5shiv.js"></script>
-<![endif]-->
+<form oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+    <input type="range" id="a" value="50">
+    +<input type="number" id="b" value="25">
+    =<output name="x" for="a b"></output>
+</form>
 ```
 
-### New Elements
-
-스스로 html 테그를 만들어서 사용할 수 있음
-
----
-
-## HTML Graphics
----
-## HTML Comments
 ---
 
 ## HTML Attributes
@@ -639,34 +892,194 @@ Double quotes around attribute values are the most common in HTML, but single qu
 
 ---
 
-## HTML Layout Techniques
-There are five different ways to create multicolumn layouts. Each way has its pros and cons:
+## HTML Semantic
 
-● HTML tables (not recommended) - Do NOT use tables for your page layout!
-● CSS float property
-It is common to do entire web layouts using the CSS float property. Float is easy to learn - you just need to remember how the float and clear properties work. Disadvantages: Floating elements are tied to the document flow, which may harm the flexibility. 
-	float된 요소는 내부의 float된 요소를 인식한다, 띄어진 요소는 띄어진 요소 서로간을 인식하고 그 다음으로 위치
-요점 정리
-블록 요소를 가로로 나란히 정렬하기 위해서는 float을 이용
-float된 요소는 기본적으로 상위 요소가 영역을 파악하지 못함 (float가 요소를 띄움)
-float는 띄어지기 때문에, 보통 다음 블록 요소는 float된 요소 밑에 깔리게 됨.
-블록 요소는 기본적으로 float을 인식하지 못함. 텍스트, 인라인 요소, 그리고 float된 요소만 다른 float요소를 인식 함.
-float된 요소를 부모 요소가 포함하기 위해, height로 임의의 높이 값을 줄 수 있지만, 내부 float 요소의 높이 바뀔 때마다 직접 바꿔줘야 함.
-float된 요소들 다음에 비어있는 div에 clear:both 속성을 주어 부모가 높이를 자동으로 인식하게 할 수 있음.
-float된 요소들의 부모 요소에 overflow:hidden을 줄 경우, 부모 요소는 float된 요소를 인식.
-overflow:hidden은 자식 요소의 margin 값도 내부로 인식하게 함.
-float된 요소의 부모가 float 될 경우, 부모 요소는 자식 요소를 인식 함.
-float 될 경우, 기존 블럭 요소처럼 너비가 넓게 퍼지지 않음. 기본적으로 내부 영역 만큼의 너비를 가짐.
+### What is Semantic?
 
+**문서의 구조와 의미를 표현하는 태그**
+
+웹 접근성을 위해 꼭 필요함, 검색 엔진이 시멘틱 태그 기반으로 움직임
+
+### HTML Layout Elements
+
+* header : 페이지나 섹션의 머리말을 표현, section이나 article 태그 내에도 사용됨
+* nav : 하이퍼링크들을 모아논 특별한 섹션, 목차
+* section : 문서의 장 혹은 절을 구성하는 역할, h1~6로 섹션의 주제를 기재하는 것이 바람직 
+* article : 본문과 연결되어 있는 독립적인 콘텐츠, section의 보조적인 기사
+* aside : 흐름에 벗어나 짤막하게 곁들이는 관련 기사.. 
+* footer : 꼬리말 영역을 표시하는 태그 
+* figure : 본문에 삽입된 그림을 블록화 하는 시맨틱 태그
+* details : 상세정보 담기 summary가 제목태그
+
+### Features of Semantic Elements
+
+!Note
+{: .label .label-yellow .mt-3}
+<div class="code-example" markdown="1">
+IE9에서는 시멘틱 의미를 해석못해서, head태그 안에 HTML5Shiv라는 구문을 추가 해줘야함 
+</div>
+```html
+<!--[if lt IE 9]>
+    <script src="/js/html5shiv.js"></script>
+<![endif]-->
+```
+
+### New Elements
+
+스스로 html 테그를 만들어서 사용할 수 있음
 
 ---
 
-## HTML API
+## HTML Graphics
 
+### Canvas Graphics
+
+**used to draw graphics, on the fly, via JavaScript.**
+
+&#9656; only a container for graphics, You must use JavaScript to actually draw the graphics.
+
+#### Reference
+{: .no_toc}
+[w3schools](https://www.w3schools.com/graphics/canvas_intro.asp)
+    
+### SVG Graphics
+
+**vector-based graphics in XML format**
+
+* svg element is a container for SVG graphics
+
+<div class="code-example" markdown="1">
+* 원형
+    <svg width="100" height="100">
+      <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+    </svg>
+
+* 네모
+    <svg width="400" height="100">
+      <rect width="400" height="100" style="fill:rgb(0,0,255);stroke-width:10;stroke:rgb(0,0,0)" />
+    </svg>
+
+* Rounded Rectangle
+    <svg width="400" height="180">
+      <rect x="50" y="20" rx="20" ry="20" width="150" height="150"
+      style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
+    </svg>
+
+* SVG Star
+<svg width="300" height="200">
+  <polygon points="100,10 40,198 190,78 10,78 160,198"
+  style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;" />
+</svg>
+
+* SVG Logo
+<svg height="130" width="500">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:rgb(255,255,0);stop-opacity:1" />
+      <stop offset="100%" style="stop-color:rgb(255,0,0);stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <ellipse cx="100" cy="70" rx="85" ry="55" fill="url(#grad1)" />
+  <text fill="#ffffff" font-size="45" font-family="Verdana" x="50" y="86">SVG</text>
+  Sorry, your browser does not support inline SVG.
+</svg>
+</div>
+```html
+* 원형
+    <svg width="100" height="100">
+      <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+    </svg>
+
+* 네모
+    <svg width="400" height="100">
+      <rect width="400" height="100" style="fill:rgb(0,0,255);stroke-width:10;stroke:rgb(0,0,0)" />
+    </svg>
+
+* Rounded Rectangle
+    <svg width="400" height="180">
+      <rect x="50" y="20" rx="20" ry="20" width="150" height="150"
+      style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
+    </svg>
+
+* SVG Star
+<svg width="300" height="200">
+  <polygon points="100,10 40,198 190,78 10,78 160,198"
+  style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;" />
+</svg>
+
+* SVG Logo
+<svg height="130" width="500">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:rgb(255,255,0);stop-opacity:1" />
+      <stop offset="100%" style="stop-color:rgb(255,0,0);stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <ellipse cx="100" cy="70" rx="85" ry="55" fill="url(#grad1)" />
+  <text fill="#ffffff" font-size="45" font-family="Verdana" x="50" y="86">SVG</text>
+  Sorry, your browser does not support inline SVG.
+</svg>
+```
+
+**Differences Between SVG and Canvas**
+{: .text-blue-000}
+
+SVG is a language for describing 2D graphics in XML.
+
+Canvas draws 2D graphics, on the fly (with a JavaScript).
+
+SVG is XML based, which means that every element is available within the SVG DOM. You can attach JavaScript event handlers for an element.
+
+In SVG, each drawn shape is remembered as an object. If attributes of an SVG object are changed, the browser can automatically re-render the shape.
+
+Canvas is rendered pixel by pixel. In canvas, once the graphic is drawn, it is forgotten by the browser. If its position should be changed, the entire scene needs to be redrawn, including any objects that might have been covered by the graphic
+
+Comparison of Canvas and SVG
+{: .label .mt-3}
+
+| Canvas                                            | SVG                                                                           | 
+|:--------------------------------------------------|:------------------------------------------------------------------------------|
+| Resolution dependent                              | Resolution independent                                                        |
+| No support for event handlers                     | Support for event handlers                                                    | 
+| Poor text rendering capabilities                  | Best suited for applications with large rendering areas (Google Maps)         | 
+| You can save the resulting image as .png or .jpg  | Slow rendering if complex (anything that uses the DOM a lot will be slow)     | 
+| Well suited for graphic-intensive games           | Not suited for game applications                                              |
+{: .mt-3}
 
 ---
 
-## HTML API
+## HTML Add
+
+### Comments
+
+**주석달기**
+
+<div class="code-example" markdown="1">
+<!-- This is a comment --> This is a comment
+</div>
+```html
+<!-- This is a comment --> This is a comment
+```
+
+### Character Entities
+
+[특수문자](https://dev.w3.org/html5/html-author/charref)
+
+### Emoji Characters
+**Emojis are also characters from the UTF-8 alphabet**
+
+<div class="code-example" markdown="1">
+😄 is 128516
+😍 is 128525
+💗 is 128151
+</div>
+```html
+😄 is 128516
+😍 is 128525
+💗 is 128151
+```
+
+[viewmore...](https://www.w3schools.com/charsets/ref_emoji.asp)
 
 
 
