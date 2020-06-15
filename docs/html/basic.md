@@ -346,7 +346,7 @@ nav_order: 2
 
 <div class="code-example" markdown="1">
 <iframe src="demo_iframe.htm" name="iframe_a"></iframe>
-<p><a href="https://www.w3schools.com" target="iframe_a">W3Schools.com</a></p>
+<p><a href="https://github.com/Gekdev/gekdev.github.io" target="iframe_a">Github</a></p>
 </div>
 ```html
 <iframe src="demo_iframe.htm" name="iframe_a"></iframe>
@@ -763,14 +763,6 @@ Hold down the Ctrl (windows) / Command (Mac) button to select multiple options.
 
     **소제목 달기, make it bold**
     
-    <div class="code-example" markdown="1">
-    <select>
-      <optgroup label="Swedish Cars">
-        <option value="volvo">Volvo</option>
-        <option value="saab">Saab</option>
-      </optgroup>
-    <select>
-    </div>
     ```html
     <select>
       <optgroup label="Swedish Cars">
