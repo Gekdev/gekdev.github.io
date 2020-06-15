@@ -122,10 +122,15 @@ nav_order: 2
     **링크**
     
     * target attr
+    
         &#9656; _blank : Opens the linked document in a new window or tab
+        
         &#9656; _self : Opens the linked document in the same window/tab as it was clicked (default)
+        
         &#9656; _parent : Opens the linked document in the parent frame
+        
         &#9656; _top : Opens the linked document in the full body of the window
+        
         &#9656; framename : Opens the linked document in a named frame
     
     href에 걸 수 있는것들 (상대경로가 제일 좋음)
@@ -150,8 +155,6 @@ nav_order: 2
         <div id="a"></div>
         ```
     
-    
-
     !Note
     {: .label .label-yellow .mt-3}
     <div class="code-example" markdown="1">
@@ -165,6 +168,8 @@ nav_order: 2
     &#9656; attr : The source file (src), alternative text (alt), width, and height
     
     &#9656; 이미지 투명도 조절 : opacity: 0.3;
+
+    &#9656; map element 활용
 
     페이지를 이동하는 이미지맵
     {: .label .mt-3}
