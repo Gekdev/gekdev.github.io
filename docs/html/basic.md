@@ -137,9 +137,10 @@ nav_order: 2
     | Emphasized text   | `<em>em</em>`              | <em>em</em>              |
     | Deleted text      | `<del>del</del>`           | <del>del</del>           |
     | Inserted text     | `<ins>ins</ins>`           | <ins>ins</ins>           |
-    | Subscript text    | `<sub>sub</sub>`           | <sub>sub</sub>           |
-    | Superscript text  | `<sup>sup</sup>`           | <sup>sup</sup>           |
+    | Subscript text    | `<sub>sub</sub>`           | <sub>sub</sub>X          |
+    | Superscript text  | `<sup>sup</sup>`           | <sup>sup</sup>X          |
     | Marked text       | `<mark>mark</mark>`        | <mark>mark</mark>        |
+    {: .mt-3}
 
 * Links (a)
 
@@ -158,8 +159,8 @@ nav_order: 2
     * framename : Opens the linked document in a named frame
     </div>
     
-    &#9656; href 링크 종류
-    <div class="code-example" markdown="1">
+    href 링크 종류
+    {: .label .mt-3}
     * Web pages
     
     * Images
@@ -181,7 +182,6 @@ nav_order: 2
     
     // 상대경로가 가장 좋은 방법!
     {: .text-blue-000}
-    </div>
     
     !Note
     {: .label .label-yellow .mt-3}
@@ -226,6 +226,7 @@ nav_order: 2
     </script>
     ```
     
+    #### 참고자료
     [w3schools](https://www.w3schools.com/html/html_images_imagemap.asp)
 
 
@@ -282,48 +283,55 @@ nav_order: 2
 ### Media
 * video audio, object, embed
 
-<video width="320" height="240" controls autoplay loop> 
-  <source src="movie.mp4" type="video/mp4">
-  <source src="movie.ogg" type="video/ogg">
-Your browser does not support the video tag.
-</video>
+    <video width="320" height="240" controls autoplay loop> 
+      <source src="movie.mp4" type="video/mp4">
+      <source src="movie.ogg" type="video/ogg">
+    Your browser does not support the video tag.
+    </video>
 
-<audio controls>
-  <source src="horse.ogg" type="audio/ogg">
-  <source src="horse.mp3" type="audio/mpeg">
-Your browser does not support the audio element.
-</audio>
-<object width="400" height="50" data="bookmark.swf"></object>
+    <audio controls>
+      <source src="horse.ogg" type="audio/ogg">
+      <source src="horse.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+    </audio>
+    <object width="400" height="50" data="bookmark.swf"></object>
 
-<embed width="400" height="50" src="bookmark.swf">
+    <embed width="400" height="50" src="bookmark.swf">
 
 * Canvas
-What is HTML Canvas?
-The HTML <canvas> element is used to draw graphics, on the fly, via JavaScript.
+    What is HTML Canvas?
+    The HTML <canvas> element is used to draw graphics, on the fly, via JavaScript.
 
-The <canvas> element is only a container for graphics. You must use JavaScript to actually draw the graphics.
+    The <canvas> element is only a container for graphics. You must use JavaScript to actually draw the graphics.
 
-<canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;">
-</canvas>
+    <canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;">
+    </canvas>
 
-#### Reference
-{: .no_toc}
-[w3schools](https://www.w3schools.com/graphics/canvas_intro.asp)
+    #### Reference
+    {: .no_toc}
+    [w3schools](https://www.w3schools.com/graphics/canvas_intro.asp)
 
-* Youtube
-[w3schools](https://www.w3schools.com/html/html_youtube.asp)
-[cdmanii](https://cdmanii.com/3392)
+    * Youtube
+    [w3schools](https://www.w3schools.com/html/html_youtube.asp)
+    [cdmanii](https://cdmanii.com/3392)
 
 ### Quotation and Citation
 
+| description                   | tag                                    | shape                                |
+|:------------------------------|:---------------------------------------|:-------------------------------------|
+| Short Quotations (" ")        | `<q>q</q>`                             | <q>q</q>                             |
+| Quotations (indent)           | `<blockquote>blockquote</blockquote>`  | <blockquote>blockquote</blockquote>  |
+| Abbreviations (.....)         | `<abbr>abbr</abbr>`                    | <abbr>abbr</abbr>                    |
+| Contact Information (italic)  | `<address>address</address>`           | <address>address</address>           |
+| Work Title (italic)           | `<cite>cite</cite>`                    | <cite>cite</cite>                    |
+| bi-directional override       | `<bdo>bdo</bdo>`                       | <bdo>bdo</bdo>                       |
+{: .mt-3}
+
+<div class="code-example" markdown="1">
+<bdo dir="rtl">This line will be written from right to left</bdo>
+</div>
 ```html
-<q> for Short Quotations =" "
-<blockquote> for Quotations = indent
-<abbr> for Abbreviations = title, .....
-<address> for Contact Information = italic
-<cite> for Work Title = italic
-<bdo> for Bi-Directional Override
-<bdo> element defines bi-directional override.
+<bdo dir="rtl">This line will be written from right to left</bdo>
 ```
 
 ### Computercode
