@@ -236,8 +236,6 @@ nav_order: 2
     Always specify an img element as the last child element of the picture element. The img element is used by browsers that do not support the picture element, or if none of the source tags matched.
     </div>
     
-* Buttons
-
 * Lists
 
     &#9656; list is block, so float attribute is possible
@@ -249,6 +247,12 @@ nav_order: 2
 * Horizontal Rules (hr)
     
     **가로 구분선**
+    
+* line breaks (br)
+    
+    **single line break**
+    
+    empty tag(has no end tag)
 
 * Formatting Elements
     ```html
@@ -596,8 +600,12 @@ IE9에서는 시멘틱 의미를 해석못해서, head태그 안에 HTML5Shiv라
 
 ### 기본특징
 
+&#9656; All HTML elements can have attributes
+
 &#9656; Attributes provide additional information about an element
+
 &#9656; Attributes are always specified in the start tag
+
 &#9656; Attributes usually come in name/value pairs like: name="value"
 
 ### Basic Attributes
