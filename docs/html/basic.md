@@ -121,8 +121,8 @@ nav_order: 2
 
     **링크**
     
-    &#9656;target attr의 종류
-    <div class="code-example" markdown="1">
+    &#9656; target attr의 종류
+    
     * _blank : Opens the linked document in a new window or tab
 
     * _self : Opens the linked document in the same window/tab as it was clicked (default)
@@ -132,11 +132,9 @@ nav_order: 2
     * _top : Opens the linked document in the full body of the window
 
     * framename : Opens the linked document in a named frame
-    </div>
 
     
-    href에 걸 수 있는것들 (상대경로가 제일 좋음)
-    {: .label .mt-3}
+    href 링크 종류
     
     * Web pages
     
