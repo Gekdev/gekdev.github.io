@@ -91,82 +91,7 @@ nav_order: 6
     basic type
     {: .label .mt-3}
     
-    | description       | tag                                     | shape                                |
-    |:------------------|:----------------------------------------|:-------------------------------------|
-    | text(default)     | `<input type="text">`                   | <input type="text">                  |
-    | password          | `<input type="password">`               | <input type="password">              |
-    | image             | `<input type="image" src="">`           | <input type="image" src="">          |
-    | button            | `<input type="button" value="button">`  | <input type="button" value="button"> |
-    | checkbox          | `<input type="checkbox">`               | <input type="checkbox">              |
-    | radio             | `<input type="radio">`                  | <input type="radio">                 |
-    | email             | `<input type="email">`                  | <input type="email">                 |
-    | file              | `<input type="file">`                   | <input type="file">                  |
-    | submit            | `<input type="submit">`                 | <input type="submit">                |
-    | reset             | `<input type="reset">`                  | <input type="reset">                 |
-    | search            | `<input type="search">`                 | <input type="search">                |
-    | color             | `<input type="color">`                  | <input type="color">                 |
-    | hidden            | `<input type="hidden">`                 | <input type="hidden">                |
-    | number            | `<input type="number">`                 | <input type="number">                |
-    | range             | `<input type="range">`                  | <input type="range">                 |
-    | tel               | `<input type="tel">`                    | <input type="tel">                   |
-    | time              | `<input type="time">`                   | <input type="time">                  |
-    | url               | `<input type="url">`                    | <input type="url">                   |
-    | month             | `<input type="month">`                  | <input type="month">                 |
-    | week              | `<input type="week">`                   | <input type="week">                  |
-    | date              | `<input type="date">`                   | <input type="date">                  |
-    | datetime-local    | `<input type="datetime-local">`         | <input type="datetime-local">        |
-    
-    
-    
-    ```html
-    <input type="button">
-
-    <input type="checkbox">
-
-    <input type="color">
-
-    <input type="date">
-
-    <input type="datetime-local">
-
-    <input type="email">
-
-    <input type="file">
-
-    <input type="hidden">
-
-    <input type="image" src="">
-
-    <input type="month">
-
-    <input type="number">
-
-    <input type="password">
-
-    <input type="radio">
-
-    <input type="range">
-
-    <input type="reset">
-
-    <input type="search">
-
-    <input type="submit">
-
-    <input type="tel">
-
-    <input type="text">
-
-    <input type="time">
-
-    <input type="url">
-
-    <input type="week">
-    ```
-
-    새로 생긴것
-    {: .label .mt-3}
-    | description       | tag                                                         | shape                                                     |
+    | name              | tag                                                         | shape                                                     |
     |:------------------|:------------------------------------------------------------|:----------------------------------------------------------|
     | text(default)     | `<input type="text">`                                       | <input type="text">                                       |
     | password          | `<input type="password">`                                   | <input type="password">                                   |
@@ -193,42 +118,6 @@ nav_order: 6
     |                   | `<input type="date" name="bday" max="1979-12-31">`          | <input type="date" name="bday" max="1979-12-31">          |
     |                   | `<input type="date" name="bday" min="2000-01-02">`          | <input type="date" name="bday" min="2000-01-02">          |
     | datetime-local    | `<input type="datetime-local">`                             | <input type="datetime-local">                             |
-    
-    
-    ```html
-    <input type="color">
-    
-    Enter a date before 1980-01-01:
-    <input type="date" name="bday" max="1979-12-31"><br>
-    
-    Enter a date after 2000-01-01:
-    <input type="date" name="bday" min="2000-01-02"><br>
-    
-    <input type="datetime-local">
-    
-    <input type="email">
-    
-    <input type="file"> : file-select field and a "Browse" button for file uploads
-    
-    <input type="month"> : the user to select a month and year
-    <input type="number"> : numeric input field,
-    
-    You can also set restrictions on what numbers are accepted.
-    
-    <input type="number" name="quantity" min="1" max="5">
-    
-    <input type="range">
-    
-    <input type="search">
-    
-    <input type="tel">
-    
-    <input type="time">
-    
-    <input type="url">
-    
-    <input type="week">
-    ```
 
 * value attribute
 
