@@ -7,19 +7,18 @@ permalink: docs/html
 ---
 
 # HTML
-{: .no_toc .fs_beta .fw_700 }
+{: .no_toc .text-beta .fw_700 }
 
 작성하면서...
+{: .text-gamma}
 
-예전에 공부하면서 정리했던 내용을 퇴고하여 작성했습니다. 
+예전에 공부하면서 정리했던 내용을 퇴고하여 작성했습니다.
 
 [W3schools](https://www.w3schools.com/) 홈페이지를 기본으로 공부하고 작성했으며,
+{: .fs-2}
 추가적으로 [HTML5 + CSS + Javascript](http://www.webprogramming.co.kr/) 웹 프로그래밍,
+{: .fs-2}
 [실전프로젝트 반응형 웹 퍼블리싱](https://book.naver.com/bookdb/book_detail.nhn?bid=7059258), 
+{: .fs-2}
 [만들면서 배우는 HTML5 + CSS3 + jQuery](https://book.naver.com/bookdb/book_detail.nhn?bid=6837215)를 참고했습니다.
-
-
-{}
-
-
- 
+{: .fs-2}
