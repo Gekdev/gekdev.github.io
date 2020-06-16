@@ -32,11 +32,11 @@ nav_order: 1
 
 **World Wide Web : 전 세계에 있는 네트워크에 연결된 시스템을 통해 정보를 공유할 수 있는 정보 공간**
 
+![](https://gekdev.github.io/assets/images/w3c.png)
+
 W3C는 월드 와이드 웹을 개발 및 배포, HTML 표준을 제안
 
 1989 Tim Berners-Lee invented www (Tim Berners-Lee also invented HTML in 1991)
-
-![](https://gekdev.github.io/assets/images/w3c.png)
 
 ### URL
 
@@ -77,7 +77,7 @@ URL은 기본적으로 '통신 규칙://인터넷 호스트 주소/경로 이름
 
 웹브라우저와 웹서버는 IP주소를 이용해서 연결하기 때문에 도메인 이름을 IP주소로 변환할 필요가 있는데 , 이때 사용하는 것이 DNS(domain name server)
 
-### 송수신 작동과정
+### Send and Receive Operations 
 
 ![](https://gekdev.github.io/assets/images/request.png)
 
@@ -95,7 +95,7 @@ f. 여기 까지 과정을 HTTP세션이라 부르며 마지막으로 브라우�
 
 &#8594; 한 번의 HTTP세션 동안 하나의 파일만 전송된다. 즉 10개의 이미지를 가진 페이지를 출력하기 위해서는 11번의 통신을 수행해야 한다.
 
-### 웹 사이트의 구조와 구축
+### Website structure and construction
 
 ![](https://gekdev.github.io/assets/images/webtrans.png)
 
@@ -145,11 +145,17 @@ f. 여기 까지 과정을 HTTP세션이라 부르며 마지막으로 브라우�
 
 * `<!DOCTYPE html>` declaration defines this document to be HTML5 <br>
 	This represents the document type, and helps browsers to display web pages correctly.
+    
 * `<html>` element is the root element of an HTML page
+
 * `<head>` element contains meta information about the document (contain metadata)
+
 * `<title>` element specifies a title for the document
+
 * `<body>` element contains the visible page content
+
 * `<h1>` element defines a large heading
+
 * `<p>` element defines a paragraph
 
 ### HTML Tags
@@ -160,9 +166,7 @@ f. 여기 까지 과정을 HTTP세션이라 부르며 마지막으로 브라우�
     ```html
     <p> {start tag(opening tag)} </p>{end tag(closing tag)}
     ```
-    
     The end tag is written like the start tag, but with a forward slash inserted before the tag name
-
 
 * Empty HTML Elements
 
