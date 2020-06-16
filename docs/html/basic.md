@@ -371,7 +371,7 @@ nav_order: 2
 
 * audio 
 
-    ** play an audio file on a web page**
+    **play an audio file on a web page**
 
     ```html
     <audio controls>
@@ -392,13 +392,14 @@ nav_order: 2
     ```html
     <object width="400" height="50" data="bookmark.html"></object>
     <object data="audi.jpeg"></object>
-
+    ---
     <embed width="400" height="50" src="bookmark.swf">
     ```
 
 * Youtube
-
-    [w3schools](https://www.w3schools.com/html/html_youtube.asp)
+    
+    #### Reference
+    [w3schools](https://www.w3schools.com/html/html_youtube.asp)<br>
     [cdmanii](https://cdmanii.com/3392)
 
 ### Quotation and Citation
@@ -407,64 +408,87 @@ nav_order: 2
 |:------------------------------|:---------------------------------------|:-------------------------------------|
 | Short Quotations (" ")        | `<q>q</q>`                             | <q>q</q>                             |
 | Quotations (indent)           | `<blockquote>blockquote</blockquote>`  | <blockquote>blockquote</blockquote>  |
-| Abbreviations (.....)         | `<abbr>abbr</abbr>`                    | <abbr>abbr</abbr>                    |
+| Abbreviations (.....)         | `<abbr title="abbr">abbr</abbr>`       | <abbr title="abbr">abbr</abbr>       |
 | Contact Information (italic)  | `<address>address</address>`           | <address>address</address>           |
 | Work Title (italic)           | `<cite>cite</cite>`                    | <cite>cite</cite>                    |
-| bi-directional override       | `<bdo>bdo</bdo>`                       | <bdo>bdo</bdo>                       |
+| bi-directional override       | `<bdo dir="rtl">bdo</bdo>`             | <bdo dir="rtl">bdo</bdo>             |
 {: .mt-3}
 
-<div class="code-example" markdown="1">
-<bdo dir="rtl">This line will be written from right to left</bdo>
-</div>
-```html
-<bdo dir="rtl">This line will be written from right to left</bdo>
-```
 
 ### Computercode
 
 * code
 
-    **Computer Code**
-    The HTML <code> element defines a fragment of computer code.
-    Text surrounded by <code> tags is typically displayed in a monospace font: 
+    **a fragment of computer code**
+    
+    typically displayed in a monospace font
+    <div class="code-example" markdown="1">
     <code>
     x = 5;<br>
     y = 6;<br>
     z = x + y;
     </code>
-
-    Notice that the <code> element does not preserve extra whitespace and line-breaks.
-    To fix this, you can put the <code> element inside a <pre> element:
+    </div>
+    
+    Notice
+    {: .label .label-yellow .mt-3}
+    <div class="code-example" markdown="1">
+    that the <code> element does not preserve extra whitespace and line-breaks.
+    To fix this, you can put the <code> element inside a <pre> element
+    </div>
+    ```html
+    that the <code> element does not preserve extra whitespace and line-breaks.
+    To fix this, you can put the <code> element inside a <pre> element
+    ```
 
 * kbd
 
     **Keyboard Input**
     
-    The HTML <kbd> element represents user input, like keyboard input or voice commands.
-    Text surrounded by <samp> tags is typically displayed in a monospace font:
+    **user input, like keyboard input or voice commands**
+    
+    typically displayed in a monospace font
+    <div class="code-example" markdown="1">
     <p>Save the document by pressing <kbd>Ctrl + S</kbd></p>
-
+    </div>
+    ```html
+    <p>Save the document by pressing <kbd>Ctrl + S</kbd></p>
+    ```
+    
 * samp
 
     **Program Output**
     
-    The HTML <samp> element represents output from a program or computing system.
-    Text surrounded by <samp> tags is typically displayed in a monospace font:
+    **output from a program or computing system**
+    
+    typically displayed in a monospace font
+    
+    <div class="code-example" markdown="1">
     <p>If you input wrong value, the program will return <samp>Error!</samp></p>
+    </div>
+    ```html
+    <p>If you input wrong value, the program will return <samp>Error!</samp></p>
+    ```
 
 * var
 
     **Variables**
     
-    The HTML <var> element defines a variable.
     The variable could be a variable in a mathematical expression or a variable in programming context:
-    Einstein wrote: <var>E</var> = <var>mc</var><sup>2</sup>.
-
+    <div class="code-example" markdown="1">
+    Einstein wrote: <var>E</var> = <var>mc</var><sup>2</sup>
+    </div>
+    ```html
+    Einstein wrote: <var>E</var> = <var>mc</var><sup>2</sup>
+    ```
+    
 ### Block and Inline
 
 * Block
 
-    **starts on a new line and takes up the full width available (stretches out to the left and right as far as it can)**
+    **starts on a new line and takes up the full width available**
+    
+    (stretches out to the left and right as far as it can)
 
     ```html
     <address> <article> <aside> <blockquote> <canvas> <dd> <div> 
@@ -492,23 +516,21 @@ nav_order: 2
 
 **collect user input**
 
-* Form attr
+그냥 데이터만 서버에 전송해야 할때 : input type=“hidden” name=“hide” value=“hey”
 
-    &#9656; action : =“웹 서버 응용 프로그램의 url”
-    
-    &#9656; enctype : =“인코딩 타입”(데이터를 전송할 때 암호과 방식 지정)
-    
-    &#9656; method : =“GET/POST”(폼 데이터를 웹 서버에 전송하는 방식, default= get)
-    
-    &#9656; name : =“폼 이름”
-    
-    &#9656; target : =“윈도우 이름”(응용프로그램으로부터 받은 데이터를 출력할 윈도우 이름)
+* form attribute
 
-* Method attribute
+    &#9656; action : 웹 서버 응용 프로그램의 url
+    
+    &#9656; enctype : 인코딩 타입 (데이터를 전송할 때 암호과 방식 지정)
+        
+    &#9656; name : 폼 이름
+    
+    &#9656; target : 윈도우 이름 (응용프로그램으로부터 받은 데이터를 출력할 윈도우 이름)
+    
+    &#9656; method : GET/POST (폼 데이터를 웹 서버에 전송하는 방식, default= get)
 
-    그냥 데이터만 서버에 전송해야 할때 : input type=“hidden” name=“hide” value=“hey”
-
-    Notes on GET:
+    Notes on GET
     {: .label .mt-3}
     <div class="code-example" markdown="1">
 	**the submitted form data will be visible in the page address field**
@@ -524,10 +546,12 @@ nav_order: 2
 	&#9656; GET is better for non-secure data, like query strings in Google
     </div>
 
-	Notes on POST:
+	Notes on POST
     {: .label .mt-3}
     <div class="code-example" markdown="1">
-    **Always use POST if the form data contains sensitive or personal information. The POST method does not display the submitted form data in the page address field**
+    **Always use POST if the form data contains sensitive or personal information. 
+    
+    The POST method does not display the submitted form data in the page address field**
     
 	&#9656; POST has no size limitations, and can be used to send large amounts of data.
     
