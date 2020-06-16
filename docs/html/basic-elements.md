@@ -34,7 +34,9 @@ nav_order: 3
 
 **link to external style sheets**
 
-`<link rel="stylesheet" href="mystyle.css">`
+```html
+<link rel="stylesheet" href="mystyle.css">
+```
 
 ### &#60;meta&#62;
 
@@ -87,9 +89,11 @@ According to the HTML5 standard; the <html>, the <body>, and the <head> tag can 
 W3Schools does not recommend omitting the <html> and <body> tags. Omitting these tags can crash DOM or XML software and produce errors in older browsers (IE9).
 </div>
     
+---
+
 ## Body elements
 
-### Headings (&#60;h1&#62;~&#60;h6&#62;)
+### &#60;h1&#62;~&#60;h6&#62;
 
 **제목**
 
@@ -105,9 +109,9 @@ W3Schools does not recommend omitting the <html> and <body> tags. Omitting these
 Use HTML headings for headings only. Don't use headings to make text BIG or bold.
 </div>
 
-### Paragraphs (&#60;p&#62;)
+### &#60;p&#62;
 
-**단락**
+**Paragraphs**
 
 !Note
 {: .label .label-yellow .mt-3}
@@ -115,31 +119,17 @@ Use HTML headings for headings only. Don't use headings to make text BIG or bold
 블록테그지만 다른 블록테그가 들어오면 안됨
 </div>
 
-### Horizontal Rules (&#60;hr&#62;)
+### &#60;hr&#62;
 
-**가로 구분선**
+**Horizontal Rules**
 
-### Line breaks (&#60;br&#62;)
+### &#60;br&#62;
 
 **single line break**
 
 empty tag(has no end tag)
 
-### Text Formatting
-
-| description       | tag                        | shape                    |
-|:------------------|:---------------------------|:-------------------------|
-| Bold text         | `<b>b</b>`                 | <b>b</b>                 |
-| Important text    | `<strong>strong</strong>`  | <strong>strong</strong>  |
-| Italic text       | `<i>i</i>`                 | <i>i</i>                 |
-| Emphasized text   | `<em>em</em>`              | <em>em</em>              |
-| Deleted text      | `<del>del</del>`           | <del>del</del>           |
-| Inserted text     | `<ins>ins</ins>`           | <ins>ins</ins>           |
-| Subscript text    | `<sub>sub</sub>`           | <sub>sub</sub>X          |
-| Superscript text  | `<sup>sup</sup>`           | <sup>sup</sup>X          |
-| Marked text       | `<mark>mark</mark>`        | <mark>mark</mark>        |
-
-### Links (&#60;a&#62;)
+### &#60;a&#62;
 
 **링크**
 
@@ -187,7 +177,7 @@ empty tag(has no end tag)
 A link does not have to be text. It can be an image or any other HTML element
 </div>
 
-### Images (img)
+### &#60;img&#62;
 
 **이미지**
 
@@ -224,7 +214,7 @@ function myFunction() {
 </script>
 ```
 
-### Picture
+### &#60;picture&#62;
 
 **이미지**
 
@@ -255,6 +245,22 @@ When to use the Picture Element
 Always specify an img element as the last child element of the picture element. The img element is used by browsers that do not support the picture element, or if none of the source tags matched.
 </div>
 
+### Text Formatting
+
+| description       | tag                        | shape                    |
+|:------------------|:---------------------------|:-------------------------|
+| Bold text         | `<b>b</b>`                 | <b>b</b>                 |
+| Important text    | `<strong>strong</strong>`  | <strong>strong</strong>  |
+| Italic text       | `<i>i</i>`                 | <i>i</i>                 |
+| Emphasized text   | `<em>em</em>`              | <em>em</em>              |
+| Deleted text      | `<del>del</del>`           | <del>del</del>           |
+| Inserted text     | `<ins>ins</ins>`           | <ins>ins</ins>           |
+| Subscript text    | `<sub>sub</sub>`           | <sub>sub</sub>X          |
+| Superscript text  | `<sup>sup</sup>`           | <sup>sup</sup>X          |
+| Marked text       | `<mark>mark</mark>`        | <mark>mark</mark>        |
+
+---
+
 ## Table elements
 
 &#9656; 기본형식 : table > tr(열) > td
@@ -281,50 +287,63 @@ Always specify an img element as the last child element of the picture element. 
 </table>
 ```
 
-### table 
+### &#60;table&#62;
 
 **표**
 
 &#9656; table attr : border="" cellpadding="" cellspacing="" bgcolor="" style="margin" width="" 
 
-### table row (tr)
+### &#60;tr&#62; 
 
-**row(열)**
+**table row(열)**
 
 &#9656; tr attr : height="" bgcolor="" align="" style="font-size:"
 
-### th
+### &#60;th&#62; 
 
 **table header**
 
 &#9656; td attr과 동일
 
-### td
+### &#60;td&#62; 
 
 **table data/cell**
 
 &#9656; td attr : width="" height="" bgcolor="" **align="left center right" valign="top, middle bottom" colspan="" rowspan=""** style="color:"
 
-### caption
+### &#60;caption&#62; 
 
 **caption to a table**
 
 Note:
 {: .label .label-yellow .mt-3}
+<div class="code-example" markdown="1">
 The caption tag must be inserted immediately after the table tag
+<div>
+
+---
 
 ## List elements
 
 &#9656; list is block, so float attribute is possible
 
-### Ordered list(ol)
-### Unordered list(ul)
-### Description Lists(dl)
+### &#60;ol&#62; 
+
+**Ordered list**
+
+### &#60;ul&#62; 
+
+**Unordered list**
+
+### &#60;dl&#62; 
+
+**Description Lists**
+
 * the `<dl>` tag defines the description list 
 * the `<dt>` tag defines the term (name)
 * the `<dd>` tag describes each term
 
-## iframe
+## iframe element
 
 **display a web page within a web page**
 
@@ -343,13 +362,20 @@ The caption tag must be inserted immediately after the table tag
 <p><a href="https://www.w3schools.com" target="iframe_a">W3Schools.com</a></p>
 ```
 
+Youtube
+{: .label .mt-3}
+
+#### Reference
+[w3schools](https://www.w3schools.com/html/html_youtube.asp)<br>
+[cdmanii](https://cdmanii.com/3392)
+
 ## Media elements
 
-* video 
+### &#60;video&#62; 
 
 **show a video on a web page**
 
-&#9656; attr : autoplay, controls, loop
+&#9656; attribute : autoplay, controls, loop
 
 ```html
 <video width="320" height="240" controls autoplay loop> 
@@ -359,7 +385,7 @@ Your browser does not support the video tag.
 </video>
 ```
 
-* audio 
+### &#60;audio&#62; 
 
 **play an audio file on a web page**
 
@@ -371,7 +397,7 @@ Your browser does not support the audio element.
 </audio>
 ```
 
-* object, embed
+### &#60;object, embed&#62; 
 
 **embedded object within an HTML document**
 
@@ -386,13 +412,9 @@ Your browser does not support the audio element.
 <embed width="400" height="50" src="bookmark.swf">
 ```
 
-* Youtube
+---
 
-#### Reference
-[w3schools](https://www.w3schools.com/html/html_youtube.asp)<br>
-[cdmanii](https://cdmanii.com/3392)
-
-### Quotation and Citation
+## Quotation and Citation
 
 | description                   | tag                                    | shape                                |
 |:------------------------------|:---------------------------------------|:-------------------------------------|
@@ -402,8 +424,8 @@ Your browser does not support the audio element.
 | Contact Information (italic)  | `<address>address</address>`           | <address>address</address>           |
 | Work Title (italic)           | `<cite>cite</cite>`                    | <cite>cite</cite>                    |
 | bi-directional override       | `<bdo dir="rtl">bdo</bdo>`             | <bdo dir="rtl">bdo</bdo>             |
-{: .mt-3}
 
+---
 
 ## Computercode
 
@@ -411,7 +433,7 @@ Your browser does not support the audio element.
 
 **a fragment of computer code**
 
-typically displayed in a monospace font
+&#8594; typically displayed in a monospace font
 <div class="code-example" markdown="1">
 <code>
 x = 5;<br>
@@ -422,10 +444,6 @@ z = x + y;
 
 Notice
 {: .label .label-yellow .mt-3}
-<div class="code-example" markdown="1">
-that the <code> element does not preserve extra whitespace and line-breaks.
-To fix this, you can put the <code> element inside a <pre> element
-</div>
 ```html
 that the <code> element does not preserve extra whitespace and line-breaks.
 To fix this, you can put the <code> element inside a <pre> element
@@ -437,7 +455,7 @@ To fix this, you can put the <code> element inside a <pre> element
 
 **user input, like keyboard input or voice commands**
 
-typically displayed in a monospace font
+&#8594; typically displayed in a monospace font
 <div class="code-example" markdown="1">
 <p>Save the document by pressing <kbd>Ctrl + S</kbd></p>
 </div>
@@ -451,7 +469,7 @@ typically displayed in a monospace font
 
 **output from a program or computing system**
 
-typically displayed in a monospace font
+&#8594; typically displayed in a monospace font
 
 <div class="code-example" markdown="1">
 <p>If you input wrong value, the program will return <samp>Error!</samp></p>
@@ -471,6 +489,8 @@ Einstein wrote: <var>E</var> = <var>mc</var><sup>2</sup>
 ```html
 Einstein wrote: <var>E</var> = <var>mc</var><sup>2</sup>
 ```
+
+---
 
 ## Block and Inline
 

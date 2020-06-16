@@ -13,7 +13,9 @@ permalink: docs/html
 {: .fs-2 .text-grey-dk-200 .fw-700 .mt-3}
 
 예전에 공부하면서 정리했던 내용을 퇴고하면서 작성했습니다.
+
 ~~목차를 잡는게 이렇게 힘들줄이야ㅜㅜ~~
+{: .fs-3}
 
 <br><br>
 [W3schools](https://www.w3schools.com/) 홈페이지를 기본으로 공부하고 작성했으며
