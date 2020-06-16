@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Semantic Elements
+title: Advanced Elements
 parent: HTML
-nav_order: 5
+nav_order: 8
 ---
 
-# Basic
+# Advanced Elements
 {: .no_toc .text-beta .fw-700}
 
 ## Table of contents

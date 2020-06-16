@@ -1,0 +1,87 @@
+---
+layout: default
+title: Table
+parent: HTML
+nav_order: 5
+---
+
+# Table
+{: .no_toc .text-beta .fw-700}
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
+---
+
+## Table basic 
+
+### What is table?
+
+**표를 만드는 테그**
+
+&#9656; 기본형식 : table > tr(열) > td
+
+&#9656; 문법 []안에는 속성값, >뒤에는 하위값, *개수, +동일 항목 더하기
+
+### Basic form of table
+
+```html
+<table style="width:100%">
+<tr>
+<th>Firstname</th>
+<th>Lastname</th>
+<th>Age</th>
+</tr>
+<tr>
+<td>Jill</td>
+<td>Smith</td>
+<td>50</td>
+</tr>
+<tr>
+<td>Eve</td>
+<td>Jackson</td>
+<td>94</td>
+</tr>
+</table>
+```
+
+---
+
+## Table elements
+
+### &#60;table&#62;
+
+**표**
+
+&#9656; table attr : border="" cellpadding="" cellspacing="" bgcolor="" style="margin" width="" 
+
+### &#60;tr&#62; 
+
+**table row(열)**
+
+&#9656; tr attr : height="" bgcolor="" align="" style="font-size:"
+
+### &#60;th&#62; 
+
+**table header**
+
+&#9656; td attr과 동일
+
+### &#60;td&#62; 
+
+**table data/cell**
+
+&#9656; td attr : width="" height="" bgcolor="" **align="left center right" valign="top, middle bottom" colspan="" rowspan=""** style="color:"
+
+### &#60;caption&#62; 
+
+**caption to a table**
+
+Note:
+{: .label .label-yellow .mt-3}
+<div class="code-example" markdown="1">
+The caption tag must be inserted immediately after the table tag
+</div>

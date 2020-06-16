@@ -36,7 +36,7 @@ nav_order: 99
 &#9656; 특수문자를 코드로 사용해서 작성해야 마크업 언어가 꼬이지 않음
 
 <span class="fs-2">
-[특수문자 사이트](https://dev.w3.org/html5/html-author/charref){: .btn .btn-blue }
+[특수문자 사이트](https://dev.w3.org/html5/html-author/charref){: .btn .btn-blue .mt-3}
 </span>
 
 ### Emoji Characters

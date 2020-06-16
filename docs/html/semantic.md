@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Form Elements
+title: Semantic
 parent: HTML
-nav_order: 4
+nav_order: 7
 ---
 
-# Basic
+# Semantic
 {: .no_toc .text-beta .fw-700}
 
 ## Table of contents

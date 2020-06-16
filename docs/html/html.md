@@ -22,7 +22,7 @@ permalink: docs/html
 
 <br>
 
-글을 작성하면서 어려웠던 부분은 없었으나, 이 블로그 테마를 처음 쓰다보니 익히는데 조금 시간이 들었고 
+글을 작성하면서 어려웠던 부분은 없었으나, 이 블로그 테마를 처음 쓰다보니 익히는데 시간이 들었고 
 
 제일 힘들었던 부분은 목차를 정하는 일이였습니다 (최대한 간결하게 작성하고 싶어서 노력하다보니)
 
@@ -30,7 +30,7 @@ permalink: docs/html
 
 <br>
 
-[W3schools](https://www.w3schools.com/) 홈페이지를 기본으로 공부하고 작성했으며
+[W3schools](https://www.w3schools.com/) 홈페이지를 기반으로 작성했으며
 
 추가적으로 [생활코딩](https://opentutorials.org/course/3),
 
@@ -39,5 +39,7 @@ permalink: docs/html
 [실전프로젝트 반응형 웹 퍼블리싱](https://book.naver.com/bookdb/book_detail.nhn?bid=7059258), 
 
 [만들면서 배우는 HTML5 + CSS3 + jQuery](https://book.naver.com/bookdb/book_detail.nhn?bid=6837215)를 참고했습니다.
+
+<br>
 
 블로그 글을 처음 작성하다보니 부족한 점이 많습니다. 혹시 문제점을 발견하신다면 언제든지 연락 주시면 감사하겠습니다.
