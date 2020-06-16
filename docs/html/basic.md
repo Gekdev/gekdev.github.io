@@ -332,7 +332,7 @@ nav_order: 2
 
 ### iframe
 
-** display a web page within a web page**
+**display a web page within a web page**
 
 &#9656; attr:  src width height style="border:none;
 
@@ -345,8 +345,8 @@ nav_order: 2
 &#9656; target값 name 따라서 가거나 blank, self, parent, top 등 다양하게 갈 수 있음
 
 <div class="code-example" markdown="1">
-<iframe src="demo_iframe.htm" name="iframe_a"></iframe>
-<p><a href="https://github.com/Gekdev/gekdev.github.io" target="iframe_a">Github</a></p>
+<iframe src="introduction.md" name="iframe_a"></iframe>
+<p><a href="basic.md" target="iframe_a">Github</a></p>
 </div>
 ```html
 <iframe src="demo_iframe.htm" name="iframe_a"></iframe>
@@ -802,16 +802,16 @@ Different browsers may use different default types for the button element.
 &#9656; input type list 속성에 datalist id를 같게 만들면, datalist 하위 option값들이 드롭다운 버튼에 나타난다
 
 <div class="code-example" markdown="1">
-<form action="/action_page.php">
-  <input list="browsers">
-  <datalist id="browsers">
-    <option value="Internet Explorer">
-    <option value="Firefox">
-    <option value="Chrome">
-    <option value="Opera">
-    <option value="Safari">
-  </datalist>
-</form>
+    <form action="/action_page.php">
+      <input list="browsers">
+      <datalist id="browsers">
+        <option value="Internet Explorer">
+        <option value="Firefox">
+        <option value="Chrome">
+        <option value="Opera">
+        <option value="Safari">
+      </datalist>
+    </form>
 </div>
 ```html
 <form action="/action_page.php">
