@@ -18,7 +18,7 @@ nav_order: 3
 
 ## Head elements
 
-### Title 
+### &#60;Title&#62;
 
 **a title in the browser tab**
 
