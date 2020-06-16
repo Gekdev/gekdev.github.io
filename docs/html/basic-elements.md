@@ -2,7 +2,7 @@
 layout: default
 title: Basic Elements
 parent: HTML
-nav_order: 3
+nav_order: 2
 ---
 
 # Basic Elements
@@ -357,10 +357,10 @@ The caption tag must be inserted immediately after the table tag
 
 > &#8594; a링크로 주소를 찍거나, a 태그 타겟 없이 iframe src만으로도 다른 페이지로 이동가능
 
-```html
-<iframe src="demo_iframe.htm" name="iframe_a"></iframe>
-<p><a href="https://www.w3schools.com" target="iframe_a">W3Schools.com</a></p>
-```
+    ```html
+    <iframe src="demo_iframe.htm" name="iframe_a"></iframe>
+    <p><a href="https://www.w3schools.com" target="iframe_a">W3Schools.com</a></p>
+    ```
 
 Youtube
 {: .label .mt-3}
