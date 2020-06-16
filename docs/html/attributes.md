@@ -15,6 +15,8 @@ nav_order: 3
 {:toc}
 
 ---
+* attribute값 안에 불필요한 공백이 들어가면 오류 <br>
+    but 파일 이름 등 필수로 들어가는 경우 “”로 묶어야지 오류가 안남
 
 ## HTML Basic Elements
 
