@@ -281,13 +281,13 @@ Always specify an img element as the last child element of the picture element. 
 </table>
 ```
 
-### table tag 
+### table 
 
 **표**
 
 &#9656; table attr : border="" cellpadding="" cellspacing="" bgcolor="" style="margin" width="" 
 
-### tr 
+### table row (tr)
 
 **row(열)**
 
@@ -405,9 +405,9 @@ Your browser does not support the audio element.
 {: .mt-3}
 
 
-### Computercode
+## Computercode
 
-* code
+### code
 
 **a fragment of computer code**
 
@@ -431,7 +431,7 @@ that the <code> element does not preserve extra whitespace and line-breaks.
 To fix this, you can put the <code> element inside a <pre> element
 ```
 
-* kbd
+### kbd
 
 **Keyboard Input**
 
@@ -445,7 +445,7 @@ typically displayed in a monospace font
 <p>Save the document by pressing <kbd>Ctrl + S</kbd></p>
 ```
 
-* samp
+### samp
 
 **Program Output**
 
@@ -460,7 +460,7 @@ typically displayed in a monospace font
 <p>If you input wrong value, the program will return <samp>Error!</samp></p>
 ```
 
-* var
+### var
 
 **Variables**
 
@@ -472,9 +472,9 @@ Einstein wrote: <var>E</var> = <var>mc</var><sup>2</sup>
 Einstein wrote: <var>E</var> = <var>mc</var><sup>2</sup>
 ```
 
-### Block and Inline
+## Block and Inline
 
-* Block
+### Block
 
 **starts on a new line and takes up the full width available**
 
@@ -487,7 +487,7 @@ Einstein wrote: <var>E</var> = <var>mc</var><sup>2</sup>
 <p> <pre> <section> <table> <tfoot> <ul> <video>
 ```
 
-* Inline
+### Inline
 
 **does not start on a new line and only takes up as much width as necessary**
 
