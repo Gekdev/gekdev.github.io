@@ -315,11 +315,11 @@ Always specify an img element as the last child element of the picture element. 
 
 **caption to a table**
 
-    Note:
-    {: .label .label-yellow .mt-3}
-    <div class="code-example" markdown="1">
-    The caption tag must be inserted immediately after the table tag
-    <div>
+Note:
+{: .label .label-yellow .mt-3}
+<div class="code-example" markdown="1">
+The caption tag must be inserted immediately after the table tag
+</div>
 
 ---
 
