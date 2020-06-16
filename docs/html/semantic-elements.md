@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Basic
+title: Semantic Elements
 parent: HTML
-nav_order: 2
+nav_order: 6
 ---
 
 # Basic

@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Basic
+title: Graphics
 parent: HTML
-nav_order: 2
+nav_order: 7
 ---
 
 # Basic
