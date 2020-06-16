@@ -90,6 +90,7 @@ nav_order: 6
 
     basic type
     {: .label .mt-3}
+    
     | description       | tag                                     | shape                                |
     |:------------------|:----------------------------------------|:-------------------------------------|
     | text(default)     | `<input type="text">`                   | <input type="text">                  |
