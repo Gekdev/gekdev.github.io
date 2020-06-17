@@ -24,6 +24,14 @@ nav_order: 5
 
 ### Form features
 
+### Basic form of form
+
+---
+
+## Form elements
+
+### Form
+
 * form attribute
 
     &#9656; action : 웹 서버 응용 프로그램의 url
@@ -63,14 +71,6 @@ nav_order: 5
     
 	&#9656; Form submissions with POST cannot be bookmarked
     </div>
-
-### Basic form of form
-
----
-
-## Form elements
-
-### Form
 
 ### input 
 
