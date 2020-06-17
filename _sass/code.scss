@@ -14,7 +14,6 @@ code {
 pre.highlight,
 figure.highlight {
   padding: $sp-3;
-  margin-top: 0.25rem;
   margin-bottom: 0;
   -webkit-overflow-scrolling: touch;
   background-color: $code-background-color;
@@ -259,6 +258,11 @@ figure.highlight {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
   }
+}
+
+pre.highlight,
+figure.highlight {
+    margin-top: 0.25rem;
 }
 
 .code-example {

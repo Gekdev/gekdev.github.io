@@ -16,7 +16,9 @@ nav_order: 7
 
 ---
 
-## iframe element
+## Iframe element
+
+### &#60;iframe&#62; 
 
 **display a web page within a web page**
 
@@ -37,10 +39,10 @@ nav_order: 7
 
 Youtube
 {: .label .mt-3}
-
-### Reference
+<div class="code-example" markdown="1">
 [w3schools](https://www.w3schools.com/html/html_youtube.asp)<br>
 [cdmanii](https://cdmanii.com/3392)
+</div>
 
 ## Media elements
 
