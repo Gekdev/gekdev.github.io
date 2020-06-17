@@ -95,6 +95,8 @@ Double quotes around attribute values are the most common in HTML, but single qu
     <textarea> <time> <tt> <var>
     ```
 
+![](https://gekdev.github.io/assets/images/blockorline.jpg)
+
 ### Character Entities
 
 &#9656; 특수문자를 코드로 사용해서 작성해야 마크업 언어가 꼬이지 않음

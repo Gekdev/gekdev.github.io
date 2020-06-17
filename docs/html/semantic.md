@@ -48,6 +48,20 @@ IE9에서는 시멘틱 의미를 해석못해서, head태그 안에 HTML5Shiv라
 <![endif]-->
 ```
 
+### Semantic block & Inline tag
+
+* 시멘틱 블록 태그
+
+    figure	본문에 삽입된 그림을 블록화 하는 시맨틱 태그
+    
+    details	상세정보 담기 summary가 제목태그
+ 
+* 시멘틱 인라인 태그
+
+    mark, time, meter value=“0.8”, progress value=“2” max=“10”
+
+
+
 ### New Elements
 
 스스로 html 테그를 만들어서 사용할 수 있음
