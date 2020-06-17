@@ -147,6 +147,7 @@ empty tag(has no end tag)
     </div>
 
 * href 링크 종류
+
     // 상대경로가 가장 좋은 방법!
     {: .text-blue-000}
     
