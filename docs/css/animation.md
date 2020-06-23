@@ -1,6 +1,6 @@
 ---
 layout: default
-title: List
+title: Animation
 parent: CSS
 nav_order: 3
 ---
