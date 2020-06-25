@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Advanced Elements
+title: Advanced Tags
 parent: HTML
 nav_order: 7
 ---

@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Basic Elements
+title: Basic Tags
 parent: HTML
-nav_order: 2
+nav_order: 3
 ---
 
-# Basic Elements
+# Basic Tags
 {: .no_toc .text-beta .fw-700}
 
 ## Table of contents

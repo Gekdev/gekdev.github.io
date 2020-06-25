@@ -144,39 +144,6 @@ URL은 기본적으로 '통신 규칙://인터넷 호스트 주소/경로 이름
 
     **W3C recommends lowercase in HTML, and demands lowercase for stricter document types like XHTML.**
 
-### A Simple HTML Document
-
-![](https://gekdev.github.io/assets/images/noname01.png)
-
-* `<!DOCTYPE html>` declaration defines this document to be HTML5 <br>
-	This represents the document type, and helps browsers to display web pages correctly.
-    
-* `<html>` element is the root element of an HTML page
-
-* `<head>` element contains meta information about the document (contain metadata)
-
-* `<title>` element specifies a title for the document
-
-* `<body>` element contains the visible page content
-
-* `<h1>` element defines a large heading
-
-* `<p>` element defines a paragraph
-
-### HTML Tags
-* HTML Elements
-    
-    HTML tags normally come in pairs like
-    
-    ```html
-    <p> {start tag(opening tag)} </p>{end tag(closing tag)}
-    ```
-    The end tag is written like the start tag, but with a forward slash inserted before the tag name
-
-* Empty HTML Elements
-
-    Empty elements : HTML elements with no content. Empty elements do not have an end tag, such as the `<br>` element
-
 ### HTML5 Representative site
 [W3C](https://html.spec.whatwg.org/multipage/)<br>
 [마크업 관련 자료](http://html5doctor.com/)<br>
