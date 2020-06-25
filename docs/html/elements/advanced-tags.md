@@ -2,6 +2,7 @@
 layout: default
 title: Advanced Tags
 parent: Elements
+grand_parent: HTML
 nav_order: 1
 ---
 
