@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Basic Tags
+title: Common Elements
 parent: HTML
 nav_order: 3
 ---
 
-# Basic Tags
+# Common Elements
 {: .no_toc .text-beta .fw-700}
 
 ## Table of contents
@@ -187,7 +187,7 @@ A link does not have to be text. It can be an image or any other HTML element
 
 &#9656; 이미지 투명도 조절 : opacity: 0.3;
 
-&#9656; map element 활용할 수 있음 [w3schools](https://www.w3schools.com/html/html_images_imagemap.asp)
+&#9656; map element 활용할 수 있음, 참고 => [w3schools](https://www.w3schools.com/html/html_images_imagemap.asp)
 
 페이지를 이동하는 이미지맵
 {: .label .mt-3}
