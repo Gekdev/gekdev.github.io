@@ -16,10 +16,7 @@ nav_order: 1
 
 ---
 
-[hopeless](https://brunch.co.kr/@hopeless/8)에서 가져왔습니다. 
-
 ## IT영단어 정리
-{: .no_toc .d-none}
 
 ### 명명법
 클래스명은 명사, 메서드는 동사, 기능은 명사 + 동사
@@ -136,7 +133,7 @@ nav_order: 1
 
     손님은 게스트
 
-* **server / client **
+* **server / client**
 
     서비스를 제공하는 쪽이 서버
 
@@ -583,3 +580,9 @@ nav_order: 1
 * **depth**
 
     심도, 깊이
+    
+---
+
+## References
+
+[hopeless](https://brunch.co.kr/@hopeless/8) 에서 가져왔습니다.
