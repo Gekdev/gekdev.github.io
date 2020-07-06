@@ -9,7 +9,7 @@
 }
 
 .navigation-list-child-list {
-  padding-left: $sp-3;
+  padding-left: $sp-4;
   list-style: none;
 
   .navigation-list-link {
@@ -19,13 +19,13 @@
   .navigation-list-item {
     position: relative;
 
-    &::before {
-      position: absolute;
-      margin-top: 0.3em;
-      margin-left: -0.8em;
-      color: rgba($body-text-color, 0.3);
-      content: "- ";
-    }
+//    &::before {
+//      position: absolute;
+//      margin-top: 0.3em;
+//      margin-left: -0.8em;
+//      color: rgba($body-text-color, 0.3);
+//      content: "- ";
+//    }
 
     &.active {
       &::before {
@@ -37,7 +37,7 @@
 
 //수정
 .navigation-list-child-list2 {
-  padding-left: $sp-3;
+  padding-left: $sp-4;
   list-style: none;
 }
 
@@ -80,7 +80,7 @@
 
   &.active {
     font-weight: 600;
-    color: $body-heading-color;
+    color: $nav-child-link-color;
     text-decoration: none;
   }
 }
