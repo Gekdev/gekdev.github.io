@@ -54,6 +54,31 @@
   }
 }
 
+//수정
+.navigation-list {
+    .navigation-list-item {
+        .navigation-list-child-list {
+          display: none;
+        }
+        
+        &.active {            
+          .navigation-list-child-list {
+              .navigation-list-item{
+                  .navigation-list-child-list {
+                          display: none;
+                  }
+                  
+                  &.active {    
+                      .navigation-list-child-list {
+                          display: block;
+                      }
+                  }
+              }
+          }
+        }
+    }
+}
+
 .navigation-list-link {
   display: block;
   padding-top: $sp-1;
