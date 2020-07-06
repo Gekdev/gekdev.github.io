@@ -1,9 +1,9 @@
 ---
 layout: default
 title: Counters
-parent: advanced
+parent: Advanced
 grand_parent: CSS
-nav_order: 1
+nav_order: 3
 ---
 
 # Counters
