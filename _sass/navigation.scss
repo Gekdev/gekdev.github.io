@@ -13,7 +13,7 @@
   list-style: none;
 
   .navigation-list-link {
-    color: $link-color;
+    color: $nav-child-link-color;
   }
 
   .navigation-list-item {
@@ -80,7 +80,7 @@
 
   &.active {
     font-weight: 600;
-    color: $nav-child-link-color;
+    color: $link-color;
     text-decoration: none;
   }
 }
