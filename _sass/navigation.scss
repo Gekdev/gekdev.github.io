@@ -62,9 +62,14 @@
       display: block;
     }
     
-    .navigation-list-child-list2 {
-      display: block;
-    }
+      .navigation-list-item{
+          &.active{
+             .navigation-list-child-list2 {
+                display: block;
+              } 
+          }
+      }
+    
   }
 }
 
