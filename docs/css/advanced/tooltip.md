@@ -18,7 +18,7 @@ nav_order: 2
 ---
 
 ## CSS Tooltip
-{: no_toc}
+{: .no_toc}
 
 ### Basic Tooltip
 
