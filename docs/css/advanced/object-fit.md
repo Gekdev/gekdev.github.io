@@ -20,7 +20,7 @@ nav_order: 1
 ## CSS Object-fit
 {: .no_toc}
 
-### CSS object-fit Property
+### Object-fit Property
 
 이미지와 비디오태그가 부모 태그 안에서 어떻게 보여야하는지 (사이징)
 
