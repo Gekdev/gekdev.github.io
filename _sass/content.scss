@@ -17,6 +17,14 @@
   .table-wrapper {
     margin-top: 0.5em;
   }
+    
+  .ol,
+  .ul,
+  .dl,
+  address,
+  blockquote {
+      margin: 0.1em 0;
+  }
 
   a {
     overflow: hidden;
