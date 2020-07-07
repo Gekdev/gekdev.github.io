@@ -18,9 +18,9 @@ nav_order: 3
 ---
 
 ## CSS Counters
-{: no_toc}
+{: .no_toc}
 
-### What is Counters?
+### What are Counters?
 
 카운터는 변수와 같은것
 
@@ -43,7 +43,7 @@ h2::before {
 /*결과물로 h2 앞에 Section n: ... 이렇게 나옴*/
 ```
 
-### Counter properties
+### Counter Properties
 
 * counter-reset 
 
