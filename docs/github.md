@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Github1
-nav_order: 4
+title: Github
+nav_order: 8
 ---
  
 # Github
@@ -449,9 +449,10 @@ Git에서는 소스 코드가 변경된 이력을 쉽게 확인할 수 있고, �
 
 
 ## References
-[](https://jeonghwan-kim.github.io/dev/2020/02/10/git-usage.html#%EC%83%81%ED%99%A9%EB%B3%84-%ED%8C%81) <br>
-[](https://opentutorials.org/module/4636) <br>
-https://www.hahwul.com/2018/08/git-credential-helper.html<br>
-<br>
-https://medium.com/webeveloper/%EA%B9%83%ED%97%88%EB%B8%8C-%EC%82%AC%EC%9A%A9%EB%B0%A9%EB%B2%95-github-tutorials-4a63f31bb6a5
+[누구나 쉽게 이해할 수 있는 Git 입문](https://backlog.com/git-tutorial/kr/reference/)<br>
+[zerocho](https://www.zerocho.com/category/Git)<br>
+[깃(Git) 개념과 상황별 팁](https://jeonghwan-kim.github.io/dev/2020/02/10/git-usage.html#%EC%83%81%ED%99%A9%EB%B3%84-%ED%8C%81)<br>
+[깃허브 사용방법](https://medium.com/webeveloper/%EA%B9%83%ED%97%88%EB%B8%8C-%EC%82%AC%EC%9A%A9%EB%B0%A9%EB%B2%95-github-tutorials-4a63f31bb6a5)<br>
+[opentutorials](https://opentutorials.org/module/4636) <br>
+[비밀번호 파일 설정](https://www.hahwul.com/2018/08/git-credential-helper.html)<br>
 
