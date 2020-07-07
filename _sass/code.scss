@@ -243,10 +243,11 @@ figure.highlight {
 
 .code-example {
   padding: $sp-3;
-  margin-bottom: $sp-3;
+  margin: $sp-1 0;
   overflow: auto;
   border: 1px solid $border-color;
   border-radius: $border-radius;
+  font-size: 14px;
 
   + .highlighter-rouge,
   + figure.highlight {
