@@ -260,3 +260,10 @@ figure.highlight {
     border-top-right-radius: 0;
   }
 }
+
+//수정
+.code-example {
+    + .highlighter-rouge .highlight {
+        margin-bottom: 0;
+    }
+}
