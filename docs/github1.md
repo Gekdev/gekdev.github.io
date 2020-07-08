@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Github1
-nav_order: 98
+title: Customization
+nav_order: 6
 ---
- 
-# Github
-{: .no_toc .text-beta .fw-700}
+
+# Customization
+{: .no_toc }
 
 ## Table of contents
 {: .no_toc .text-delta }
