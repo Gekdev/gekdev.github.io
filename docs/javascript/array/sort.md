@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Array Sort
+title: Sort
 parent: Arrays
 grand_parent: JavaScript
 nav_order: 2

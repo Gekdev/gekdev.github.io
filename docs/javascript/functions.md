@@ -25,9 +25,9 @@ has_children: true
 
 어떤 무언가가 함수를 부르면 실행됨
 
-코드를 한번 정의하고 여러번 사용하기 위해 사용된다
+코드를 한번 정의하고 여러번 사용하기 위해 사용됨
 
-### Function Declarations
+### Function Syntax
 
 Syntax
 {: .label}
@@ -39,15 +39,13 @@ function functionName(parameters) {
 
 &#9656; 자바스크립트 함수는 **function 키워드로 정의**되고 그다음으로 **이름과 ()가 따라옴**
 
-&#9656; 정의된 함수는 바로 실행되는게 아니라 나중에 호출되면 실행되는것
-
 &#9656; 함수 이름으로는 변수명과 같은 조건으로 사용됨
 
-&#9656; 매개변수 (parameters)들은  함수 정의에서 ,로 구분되고 () 안에 존재함
+&#9656; 매개변수(parameters) 들은  함수 정의에서 ,로 구분되고 () 안에 존재함
 
 &#9656; 함수에 의해 실행되어야 하는 코드들은 {} 안에 종속됨
 
-&#9656; 인수 (arguments)는 함수가 호출될 때 함수가 받는 값, 함수 안에서는 인수 (매개변수)가 지역변수처럼 사용된다
+&#9656; 인수(arguments)는 함수가 호출될 때 함수가 받는 값, 함수 안에서는 인수 (매개변수)가 지역변수처럼 사용된다
 
 매개변수와 인수와의 차이점
 {: .label .mt-2}
@@ -60,7 +58,7 @@ function functionName(parameters) {
 </div>
 
 !note
-{: .label .mt-2}
+{: .label .label-yellow .mt-2}
 <div class="code-example" markdown="1">
 함수는 실행문이 아니라서 세미콜론으로 끝나지 않음
 </div>

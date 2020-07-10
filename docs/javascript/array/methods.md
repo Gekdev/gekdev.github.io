@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Array Methods
+title: Methods
 parent: Arrays
 grand_parent: JavaScript
 nav_order: 1

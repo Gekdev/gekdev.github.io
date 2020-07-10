@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Array Iteration
+title: Iteration
 parent: Arrays
 grand_parent: JavaScript
 nav_order: 3
