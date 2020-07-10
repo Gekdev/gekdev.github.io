@@ -48,6 +48,10 @@ var answer3 = 'He is called "Johnny"';
 | \"          | "           | Double quote          |
 | \\          | \           | Backslash             |
 
+위의 3가지가 자주 쓰이는 escape characters
+
+예제
+{: .label .label-purple .mt-2}
 ```js
 var x = "We are the so-called \"Vikings\" from the north.";
 
@@ -63,7 +67,7 @@ var x = "We are the so-called \"Vikings\" from the north.";
 | \t          | .           | Horizontal Tabulator  |
 | \v          | .           | Vertical Tabulator    |
 
-아래 6가지 문자들은 원래 타자기, 텔레타이프 및 팩스기를 제어하도록 설계되었음
+위 6가지 문자들은 원래 타자기, 텔레타이프 및 팩스기를 제어하도록 설계되었음
 
 &#8594; html에서는 의미가 없다
 
@@ -107,20 +111,20 @@ var y = new String("John");
 
 ## JavaScript String Methods
 
-원래 primitive values 즉 [기본값](https://gekdev.github.io/docs/javascript/4.datatypes/#primitive-data)들은 속성이나 메소드들을 가질 수 없지만 자바스크립트에서는 기본값도 object라고 생각하기 때문에 그에 관련된 속성과 메소드들을 제공함
+원래 primitive values 즉 [기본값](https://gekdev.github.io/docs/javascript/4.datatypes/#primitive-data)들은 속성이나 메소드들을 가질 수 없지만 **자바스크립트에서는 기본값도 object라고 취급**하기 때문에 그에 관련된 속성과 메소드들을 제공함
 
 ### String Length
 
-built-in `length` property
-
-**returns the length of a string**
+built-in length property : **returns the length of a string**
 
 Syntax
-{: .label}
+{: .label .mt-2}
 <div class="code-example" markdown="1">
 var ttt = txt.length;
 </div>
-    
+
+예제
+{: .label .label-purple .mt-2}
 ```js
 var txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var sln = txt.length;
@@ -130,17 +134,19 @@ var sln = txt.length;
 
 ### Finding a String in a String
 
-* `indexOf()` : **문자열에서 지정된 텍스트 의 첫번째 발생 위치 를 리턴**
+* indexOf() 
+
+    **문자열에서 지정된 텍스트 의 첫번째 발생 위치 를 리턴**
 
     Syntax
-    {: .label}
+    {: .label .mt-2}
     <div class="code-example" markdown="1">
     str.indexOf("string", starting position parameter);
     </div>
     
     &#9656; 앞에서 먼저 찾고, 숫자도 앞에서부터 셈
     
-    &#9656; 찾을 수 없을경우 -1 리턴
+    &#9656; 찾을 수 없을경우 **-1** 리턴
     
     &#9656; 두번째 매개변수(optional)를 검색 시작 위치로 사용, 숫자 카운트도 변하지 않음
 
@@ -157,14 +163,14 @@ var sln = txt.length;
 * `lastIndexOf()` : **문자열에서 지정된 텍스트 의 마지막 발생 위치 를 리턴**
     
     Syntax
-    {: .label}
+    {: .label .mt-2}
     <div class="code-example" markdown="1">
     str.lastIndexOf("string", starting position parameter);
     </div>
     
     &#9656; 뒤에서 먼저 찾고, 숫자는 앞에서부터 셈
     
-    &#9656; 찾을 수 없을경우 -1 리턴
+    &#9656; 찾을 수 없을경우 **-1** 리턴
     
     &#9656; 두번째 매개변수(optional)를 검색 시작 위치로 사용, 숫자도 매개변수 뒤부터 카운트 시작
     
@@ -201,6 +207,12 @@ search()는 두번째 시작 위치 인수를 사용할 수 없음
 
 * `substr(start, length)`
 
+### Replacing String Content
+
+* `replace()`
+
+
+
 
 All string methods return a new string. They don't modify the original string.
 Formally said: Strings are immutable: Strings cannot be changed, only replaced.
@@ -208,25 +220,9 @@ Formally said: Strings are immutable: Strings cannot be changed, only replaced.
 
 
 
-Both methods accept a second parameter as the starting position for the search: 
+### Replacing String Content 
 
-Searching for a String in a String – search()
-var pos = str.search("locate"); - indexOf와 비슷함
-//but this is difference
-● The search() method cannot take a second start position argument.
-● The indexOf() method cannot take powerful search values (정규식 불가 regular expressions).
-
-Extracting String Parts
-● slice(start, end): extracts a part of a string and returns the extracted part in a new string.
-● substring(start, end): similar with slice() but the difference is that substring() cannot accept negative indexes.
-● substr(start, length): similar with slice() but the difference is that the second parameter specifies the length of the extracted part.
-
-* last parameter can be omitted
-* If a parameter is negative(by slice method or substr method), the position is counted from the end of the string. (but Negative positions do not work in Internet Explorer 8 and earlier)
-	var str = "Apple, Banana, Kiwi";
-	var res = str.slice(-12, -6);
-
-Replacing String Content //원래 변수를 바꾸지는 않음
+//원래 변수를 바꾸지는 않음
 var n = str.replace("Microsoft", "W3Schools");
 * replaces only the first match (To replace all matches, use a regular expression with a /g flag (global match))
 	var n = str.replace(/Microsoft/g, "W3Schools");
@@ -235,15 +231,16 @@ var n = str.replace("Microsoft", "W3Schools");
 
 // Note that regular expressions are written without quotes.
 
-Converting to Upper and Lower Case
+### Converting to Upper and Lower Case
 var text2 = text1.toUpperCase();  // text2 is text1 converted to upper
 var text2 = text1.toLowerCase();  // text2 is text1 converted to lower
 
-The concat() Method: joins two or more strings – 뒤에 ,로 계속 추가 가능 or +...
+### The concat() Method
+: joins two or more strings – 뒤에 ,로 계속 추가 가능 or +...
 var text3 = text1.concat(" ", text2);
 can be used instead of the plus operator. -- var text = "Hello".concat(" ", "World!");
 
-String.trim():  removes whitespace from both sides of a string:
+### String.trim():  removes whitespace from both sides of a string:
 var str = "       Hello World!        ";
 alert(str.trim());
 
@@ -259,23 +256,29 @@ if (!String.prototype.trim) {
 var str = "       Hello World!        ";
 alert(str.trim());
 
-Extracting String Characters
-● charAt(position): returns the character at a specified index (position) in a string:
+### Extracting String Characters
+* charAt(position): returns the character at a specified index (position) in a string:
 	var str = "HELLO WORLD";
 	str.charAt(0);            // returns H
-● charCodeAt(position): returns the unicode of the character at a specified index in a string
+* charCodeAt(position): returns the unicode of the character at a specified index in a string
 The method returns a UTF-16 code (an integer between 0 and 65535).
 	var str = "HELLO WORLD";
 	str.charCodeAt(0);         // returns 72
-● Property access [ ]: allows property access [ ] on strings:
+* Property access [ ]: allows property access [ ] on strings:
 	var str = "HELLO WORLD";
 	str[0];                   // returns H
 
 Property access might be a little unpredictable
-● It does not work in Internet Explorer 7 or earlier
-● It makes strings look like arrays (but they are not)
-● If no character is found, [ ] returns undefined, while charAt() returns an empty string.
-● It is read only. str[0] = "A" gives no error (but does not work!)
+{: .label .label-yellow .mt-2}
+<div class="code-example" markdown="1">
+&#9656; It does not work in Internet Explorer 7 or earlier
+
+&#9656; It makes strings look like arrays (but they are not)
+
+&#9656; If no character is found, [ ] returns undefined, while charAt() returns an empty string.
+
+&#9656; It is read only. str[0] = "A" gives no error (but does not work!)
+</div>
 
 Converting a String to an Array
 split(“seperator”) method:
