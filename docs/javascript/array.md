@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Statement
+title: Arrays
 parent: JavaScript
 nav_order: 3
 ---
@@ -16,43 +16,87 @@ nav_order: 3
 
 ---
 
-## Arrays
+## JavaScript Arrays
 
-### JavaScript Programs
+### What is an Array?
 
-20. JavaScript Arrays : used to store multiple values in a single variable.
-way to make array
-1. var a = [a,b,c...] - use this
-2. var a = new Array(“”,“”,“”...); -  slow execution speed
+**한번에 여러가지의 value를 담을 수 있는 특별한 변수**, 목적도 같음
 
-access element	a[0]
-access full 	a
-change element 	a[0] = “A”
+배열은 **프로퍼티(name)로 숫자(인덱스)**를 사용하는 특별한 유형의 **객체**이다
 
-Array Elements Can Be Objects
-myArray[0] = Date.now; - object
-myArray[1] = myFunction; - function
-myArray[2] = myCars; - array
+### Creating an Array
 
-Looping Array Elements
-	1. for
-	text = "<ul>";
-	for (i = 0; i < fruits.length ; i++) {
-	  text += "<li>" + fruits[i] + "</li>";
-	}
-	text += "</ul>";
+**배열 리터럴을 사용**하는 것이 JavaScript 배열을 만드는 가장 쉬운 방법
 
-	2. Array.forEach()
-	var fruits, text;
-	fruits = ["Banana", "Orange", "Apple", "Mango"];
+줄바꿈과 공백은 규칙만 지킨다면 여러줄에 걸쳐 사용가능
 
-	text = "<ul>";
-	fruits.forEach(myFunction);
-	text += "</ul>";
+Syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+var array_name = [item1, item2, ...];
+</div>
 
-	function myFunction(value) {
-	  text += "<li>" + value + "</li>";
-	}
+Note!
+{: .label .label-yellow .mt-2}
+<div class="code-example" markdown="1">
+var a = new Array(“”,“”,“”...); 도 위와 같이 정확하게 동일한 배열을 만드는 방법
+
+하지만 단순선, 가독성, 실행속도를 위해 사용 자제
+</div>
+
+### Access the Elements
+
+**인덱스 번호로 배열 값에 접근하기**
+
+&#9656; 인덱스는 0부터 시작
+
+&#9656; 배열 전체로 접근하려면 []없이 이름만 사용
+
+```js
+var name = a[0];    //0번째 값 가져오기
+var name = a        //a배열 전체 가져오기
+```
+
+### Change the Elements
+
+**배열 값 바꾸기**
+
+```js
+a[0] = “A”          //0번째 배열값을 바꾸기
+```
+
+### Array Elements Can Be Objects
+
+배열은 객체이고, 변수는 객체일 수 있어서 동일한 배열에 다른 유형의 변수를 가질 수 있음
+
+```js
+myArray[0] = Date.now;      //object in array
+myArray[1] = myFunction;    //function in array
+myArray[2] = myCars;        //array in array
+```
+
+## Array Properties and Methods
+
+
+### Looping Array Elements
+1. for
+text = "<ul>";
+for (i = 0; i < fruits.length ; i++) {
+  text += "<li>" + fruits[i] + "</li>";
+}
+text += "</ul>";
+
+2. Array.forEach()
+var fruits, text;
+fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+text = "<ul>";
+fruits.forEach(myFunction);
+text += "</ul>";
+
+function myFunction(value) {
+  text += "<li>" + value + "</li>";
+}
 
 Adding Array Elements
 fruits.push("Lemon")

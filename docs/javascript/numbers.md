@@ -152,7 +152,7 @@ var y = -2 / 0;       // y will be -Infinity
     typeof Infinity;     // returns "number"
     ```
     
-## Hexadecimal 
+### Hexadecimal 
 
 **16진수**
 
@@ -193,16 +193,13 @@ var y = new Number(123);
 
 또한 둘다 객체로 선언될 경우 **객체는 비교될수 없기 때문에 모두 false**가 나온다
 
----
-
-## Number Methods
+### Number Methods and Properties
 
 원래 primitive values 즉 [기본값](https://gekdev.github.io/docs/javascript/4.datatypes/#primitive-data)들은 속성이나 메소드들을 가질 수 없지만 **자바스크립트에서는 기본값도 object라고 취급**하기 때문에 그에 관련된 속성과 메소드들을 제공함
 
-
-### A Number as a String
-
 * .toString()
+
+    **a number as a string**
 
     ```js
     var x = 10	//typeof x = number
@@ -211,72 +208,210 @@ var y = new Number(123);
     but it doesn’t change it’s own variation 	// so x is still number
     ```
 
-The toFixed() Method:  returns a string, with the number written with a specified number of decimals:
-0이면 1의자리를 반올림해서 보여줌, ex) 2면 3의자리까지 반올림해서 2자리까지보여줌(= 3의자리는 그냥 0으로 생략), 뒤의 숫자가 더 없으면 그대로 0을 채워서 보여줌
-	var x = 9.656;
-	x.toFixed(0);           // returns 10 
-	x.toFixed(2);           // returns 9.66 -- toFixed(2) is perfect for working with money.
-	x.toFixed(4);           // returns 9.6560
-	x.toFixed(6);           // returns 9.656000
+* .toExponential()
 
-The toPrecision() Method: returns a string, with a number written with a specified length:
-	var x = 9.656;
-	x.toPrecision();        // returns 9.656
-	x.toPrecision(2);       // returns 9.7 – (1)이면 10아님 e머시기나옴
-	x.toPrecision(4);       // returns 9.656
-	x.toPrecision(6);       // returns 9.65600
+    **지수 표기법을 사용하여 숫자를 반올림하고 쓴 문자열을 반환**
+    
+    매개 변수(optional)는 소수점 뒤의 문자 수를 정의
+    
+    ```js
+    var x = 9.656;
+    x.toExponential(2);     // returns 9.66e+0
+    x.toExponential(4);     // returns 9.6560e+0
+    x.toExponential(6);     // returns 9.656000e+0
+    ```
 
-The valueOf() Method: returns a number as a number.
-- is used internally in JavaScript to convert Number objects to primitive values.
-All JavaScript data types have a valueOf() and a toString() method.
-숫자를 오브젝트로 바꾸지 않은 이상 쓸 이유가 없음!
+* .toFixed() 
 
-Converting Variables to Numbers(global JS methods)
-● The Number() method : Returns a number, converted from its argument, can be used to convert JavaScript variables to numbers
-	Number(true);          // returns 1
-	Number(false);         // returns 0
-	Number("10");          // returns 10
-	Number("  10");        // returns 10
-	Number("10  ");        // returns 10
-	Number(" 10  ");       // returns 10
-	Number("10.33");       // returns 10.33
-	Number("10,33");       // returns NaN
-	Number("10 33");       // returns NaN
-	Number("John");        // returns NaN
-If the number cannot be converted, NaN (Not a Number) is returned.
-● The parseInt() method : Parses its argument and returns a floating point number, parses a string and returns a whole number. Spaces are allowed. Only the first number is returned:
+    **소수 자릿수로 쓴 숫자만큼 문자열로 반환** 
+    
+    매개변수 까지 반올림
+    
+    뒤의 숫자가 더 없으면 그대로 0을 채워서 보여줌
+    
+    ```js
+    var x = 9.656;
+    x.toFixed(0);           // returns 10
+    x.toFixed(2);           // returns 9.66
+    x.toFixed(4);           // returns 9.6560
+    x.toFixed(6);           // returns 9.656000
+    ```
+    
+* .toPrecision()
+
+    **지정된 길이로 쓴 숫자로 문자열을 반환**
+
+    ```js
+    var x = 9.656;
+    x.toPrecision();        // returns 9.656
+    x.toPrecision(2);       // returns 9.7 – (1)이면 10아님 e머시기나옴
+    x.toPrecision(4);       // returns 9.656
+    x.toPrecision(6);       // returns 9.65600
+    ```
+
+* .valueOf()
+
+    **숫자를 숫자로 반환**
+
+    숫자를 객체로 바꾸지 않은 이상 쓸 이유가 없음
+    
+    ```js
+    var x = 123;
+    x.valueOf();            // returns 123 from variable x
+    (123).valueOf();        // returns 123 from literal 123
+    (100 + 23).valueOf();   // returns 123 from expression 100 + 23
+    ```
+ 
+    !Note
+    {: .label .mt-2}
+    <div class="code-example" markdown="1">
+    All JavaScript data types have a valueOf() and a toString() method.
+    </div>
+
+### Converting Variables to Numbers
+
+숫자 메소드가 아니라 **global JS methods**
+
+&#8594; JavaScript global methods can be used on all JavaScript data types
+
+* .Number()
+
+    **JavaScript 변수를 숫자로 변환하는 데 사용**
+
+    ```js
+    Number(true);          // returns 1
+    Number(false);         // returns 0
+    Number("10");          // returns 10
+    Number("  10");        // returns 10
+    Number("10  ");        // returns 10
+    Number(" 10  ");       // returns 10
+    Number("10.33");       // returns 10.33
+    Number("10,33");       // returns NaN
+    Number("10 33");       // returns NaN
+    Number("John");        // returns NaN
+    ```
+
+    &#8594; 숫자를 변환 할 수 없으면 `NaN`이 반환
+
+    The Number() Method Used on Dates
+    {: .label .mt-2}
+    <div class="code-example" markdown="1">
+    convert a date to a number
+    
+    returns the number of milliseconds since 1.1.1970
+    </div>
+	```js
+    Number(new Date("2017-09-30"));    // returns 1506729600000
+	```
+
+* .parseInt()
+
+    **문자열을 구문 분석하고 정수를 반환**
+    
+    공백 허용, 하지만 첫 번째 숫자만 반환
+    
+    ```js
 	parseInt("10");         // returns 10
 	parseInt("10.33");      // returns 10(정수만 추출)
 	parseInt("10 20 30");   // returns 10
 	parseInt("10 years");   // returns 10
 	parseInt("years 10");   // returns NaN 
-If the number cannot be converted, NaN (Not a Number) is returned.
-● The parseFloat() method : Parses its argument and returns an integer, parseFloat() parses a string and returns a number. Spaces are allowed. Only the first number is returned: 소숫점도 추출하는 것
-	parseFloat("10");        // returns 10
+    ```
+    
+    &#8594; 숫자를 변환 할 수 없으면 `NaN`이 반환
+
+* .parseFloat()
+
+    **문자열을 구문 분석하고 숫자를 반환**
+    
+    공백 허용, 하지만 첫 번째 숫자만 반환
+    
+    소숫점도 추출하는 메소드
+    
+    ```js
+    parseFloat("10");        // returns 10
 	parseFloat("10.33");     // returns 10.33
 	parseFloat("10 20 30");  // returns 10
 	parseFloat("10 years");  // returns 10
 	parseFloat("years 10");  // returns NaN
-If the number cannot be converted, NaN (Not a Number) is returned.
+    ```
+    
+    &#8594; 숫자를 변환 할 수 없으면 `NaN`이 반환
 
-The Number() Method Used on Dates: 
-convert a date to a number:
-	Number(new Date("2017-09-30"));    // returns 1506729600000
-	The Number() method above returns the number of milliseconds since 1.1.1970.
+### Number Properties
 
-Number Properties - These properties can only be accessed as Number.MAX_VALUE
-● MAX_VALUE		Returns the largest number possible in JavaScript
-	var x = Number.MAX_VALUE;	//이상한 숫자나옴
-● MIN_VALUE		Returns the smallest number possible in JavaScript
-● POSITIVE_INFINITY	Represents infinity (returned on overflow)
-	var x = Number.POSITIVE_INFINITY; // infinite
-● NEGATIVE_INFINITY	Represents negative infinity (returned on overflow)
-● NaN			Represents a "Not-a-Number" value
-	var x = Number.NaN;
+Number라는 숫자 객체에 속한 속성들
 
-Number Properties Cannot be Used on Variables
-Number properties belongs to the JavaScript's number object wrapper called Number.
+**can only be accessed like `Number.property` form**
 
+따라서 변수에는 숫자 속성을 사용할 수 없음
+
+```js
 var x = 6;
 var y = x.MAX_VALUE;    // y becomes undefined
-more - https://www.w3schools.com/jsref/jsref_obj_number.asp
+```
+
+* .MAX_VALUE
+
+    **JavaScript에서 가능한 가장 큰 숫자를 반환**
+    
+    ```js
+	var x = Number.MAX_VALUE;
+    //1.7976931348623157e+308
+    ```
+
+* MIN_VALUE	
+
+    **JavaScript에서 가능한 가장 낮은 숫자를 반환**
+    
+    ```js
+    var x = Number.MIN_VALUE;
+    //5e-324
+    ```
+
+* POSITIVE_INFINITY
+
+    **양수 무한대**
+    
+    ```js
+    var x = Number.POSITIVE_INFINITY;
+
+    or 
+    var x = 1 / 0;
+
+    //Infinity
+    ```
+    
+* NEGATIVE_INFINITY
+
+    **음수 무한대**
+        
+    ```js
+    var x = Number.NEGATIVE_INFINITY;
+
+    or 
+    var x = -1 / 0;
+
+    //-Infinity
+    ```
+    
+* NaN			
+
+    **숫자가 유효한 숫자가 아님을 나타내는 JavaScript 예약어**
+    
+    숫자가 아닌 문자열로 산술을 하면 `NaN` 발생
+    
+    ```js
+	var x = Number.NaN;
+    
+    or 
+    var x = 100 / "Apple";  // x will be NaN (Not a Number)
+    ```
+
+### Complete Number Reference
+
+The reference contains descriptions and examples of all Number properties and methods
+
+<span class="fs-2">
+[더 찾아보기](https://www.w3schools.com/jsref/jsref_obj_number.asp){: .btn  .btn-outline}
+</span>
