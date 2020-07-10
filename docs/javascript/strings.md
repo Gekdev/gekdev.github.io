@@ -95,10 +95,9 @@ Dolly!";
 
 `new` 키워드는 복잡한 코드라서 계산속도를 늦추기때문에 권장되지 않음
 
-아래 예제는 `==` 는 true지만 `===`는 false
 
-또한 둘다 객체로 선언될 경우 **객체는 비교될수 없기 때문에 모두 false**가 나온다
-
+예제
+{: .label .label-purple .mt-2}
 ```js
 var x = "John";
 var y = new String("John");
@@ -106,6 +105,9 @@ var y = new String("John");
 // typeof x will return string, value "John"
 // typeof y will return object, value "John"
 ```
+위 예제는 `==` 는 true지만 `===`는 false
+
+또한 둘다 객체로 선언될 경우 **객체는 비교될수 없기 때문에 모두 false**가 나온다
 
 ---
 
@@ -115,7 +117,7 @@ var y = new String("John");
 
 ### String Length
 
-built-in length property : **returns the length of a string**
+length property : **returns the length of a string**
 
 Syntax
 {: .label .mt-2}
