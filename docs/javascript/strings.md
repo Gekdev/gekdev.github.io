@@ -115,6 +115,13 @@ var y = new String("John");
 
 원래 primitive values 즉 [기본값](https://gekdev.github.io/docs/javascript/4.datatypes/#primitive-data)들은 속성이나 메소드들을 가질 수 없지만 **자바스크립트에서는 기본값도 object라고 취급**하기 때문에 그에 관련된 속성과 메소드들을 제공함
 
+Note!
+{: .label .label-yellow .mt-2}
+<div class="code-example" markdown="1">
+모든 문자열 메서드는 새 문자열을 반환합니다. 원래 문자열을 수정하지 않습니다.
+문자열은 불변이고 문자열은 바꿀 수 없으며 교체만 가능
+</div>
+
 ### String Length
 
 length property : **returns the length of a string**
@@ -152,6 +159,8 @@ var sln = txt.length;
     
     &#9656; 두번째 매개변수(optional)를 검색 시작 위치로 사용, 숫자 카운트도 변하지 않음
 
+    예제
+    {: .label .label-purple .mt-2}
     ```js
     var str = "Please locate where 'locate' occurs!";
     var pos = str.indexOf("locate");
@@ -162,7 +171,9 @@ var sln = txt.length;
     //return 21
     ```
 
-* `lastIndexOf()` : **문자열에서 지정된 텍스트 의 마지막 발생 위치 를 리턴**
+* lastIndexOf() 
+
+    **문자열에서 지정된 텍스트 의 마지막 발생 위치 를 리턴**
     
     Syntax
     {: .label .mt-2}
@@ -176,6 +187,8 @@ var sln = txt.length;
     
     &#9656; 두번째 매개변수(optional)를 검색 시작 위치로 사용, 숫자도 매개변수 뒤부터 카운트 시작
     
+    예제
+    {: .label .label-purple .mt-2}
     ```js
     var str = "Please locate where 'locate' occurs!";
     var pos = str.lastIndexOf("locate");
@@ -186,8 +199,18 @@ var sln = txt.length;
     //return 7
     ```
 
-* `search()` : **문자열에서 지정된 값을 검색하고 일치하는 위치를 리턴**
+* search()
 
+    **문자열에서 지정된 값을 검색하고 일치하는 위치를 리턴**
+    
+    Syntax
+    {: .label .mt-2}
+    <div class="code-example" markdown="1">
+    str.search("string")
+    </div>
+    
+    예제
+    {: .label .label-purple .mt-2}
     ```js
     var str = "Please locate where 'locate' occurs!";
     var pos = str.search("locate");
@@ -203,89 +226,304 @@ search()는 두번째 시작 위치 인수를 사용할 수 없음
 
 ### Extracting String Parts
 
-* `slice(start, end)`
+* slice(start, end)
 
-* `substring(start, end)`
+    **문자열의 일부를 추출하고 추출 된 부분을 새 문자열로 반환**
+    
+    두 번째 매개 변수를 생략하면 나머지 문자열 끝까지 분리
+    
+    매개 변수가 음수이면 위치는 문자열 끝에서 계산됨
+    
+    Syntax
+    {: .label .mt-2}
+    <div class="code-example" markdown="1">
+    var res = str.slice(start position, end position);
+    </div>
+    
+    예제
+    {: .label .label-purple .mt-2}
+    ```js
+    var str = "Apple, Banana, Kiwi";
+    var res = str.slice(7, 13);
+    //Banana
 
-* `substr(start, length)`
+    var res = str.slice(7);
+    //Banana, Kiwi
+
+    var res = str.slice(-12, -6);
+    //Banana
+
+    var res = str.slice(-12);
+    //Banana, Kiwi
+    ```
+    
+    &#8594; Internet Explorer 8 이하에서는 음수 위치가 작동하지 않음
+    
+* substring(start, end)
+
+    slice()와 비슷하게 동작하지만 음수 매개변수를 승인하지 않음
+    
+    Syntax
+    {: .label .mt-2}
+    <div class="code-example" markdown="1">
+    var res = str.substring(start position, end position);
+    </div>
+    
+    예제
+    {: .label .label-purple .mt-2}
+    ```js
+    var str = "Apple, Banana, Kiwi";
+    var res = str.substring(7, 13);
+    //Banana
+    ```
+
+* substr(start, length)
+
+    slice()와 비슷하게 동작하지만 substr의 두번째 매개 변수는 길이를 지정함
+    
+    첫 번째 매개 변수가 음수이면 위치는 끝에서부터 계산
+    
+    Syntax
+    {: .label .mt-2}
+    <div class="code-example" markdown="1">
+    var res = str.substr(start position, length);
+    </div>
+    
+    예제
+    {: .label .label-purple .mt-2}
+    ```js
+    var str = "Apple, Banana, Kiwi";
+    var res = str.substr(7, 6);
+    //Banana
+
+    var str = "Apple, Banana, Kiwi";
+    var res = str.substr(7);
+    //Banana, Kiwi
+
+    var str = "Apple, Banana, Kiwi";
+    var res = str.substr(-4);
+    //Kiwi
+    ```
 
 ### Replacing String Content
 
-* `replace()`
+* replace() 
 
+    **지정된 값을 문자열의 다른 값으로 바꿈**
+    
+    &#9656; 원래 문자열을 변경하지 않고, 새 문자열로 반환
+    
+    &#9656; 첫번째로 매치된 값만 바꿈, 표현 정규식으로 바꿀 수 있음
+    
+    &#9656; case-sensitive함, 표현 정규식으로 바꿀 수 있음
+    
+    &#8594; 표현 정규식은 따옴표 없이 사용됨
 
+    Syntax
+    {: .label .mt-2}
+    <div class="code-example" markdown="1">
+    var n = str.replace("찾는 문자열", "바꿀 문자열");
+    </div>
+    
+    예제
+    {: .label .label-purple .mt-2}
+    ```js
+    str = "Please visit Microsoft!";
+    var n = str.replace("Microsoft", "W3Schools");
+    //Microsoft → W3Schools
 
+    str = "Please visit Microsoft!";
+    var n = str.replace(/MICROSOFT/i, "W3Schools");
+    //insensitive
 
-All string methods return a new string. They don't modify the original string.
-Formally said: Strings are immutable: Strings cannot be changed, only replaced.
-
-
-
-
-### Replacing String Content 
-
-//원래 변수를 바꾸지는 않음
-var n = str.replace("Microsoft", "W3Schools");
-* replaces only the first match (To replace all matches, use a regular expression with a /g flag (global match))
-	var n = str.replace(/Microsoft/g, "W3Schools");
-* case sensitive (To replace case insensitive, use a regular expression with an /i flag (insensitive))
-	var n = str.replace(/MICROSOFT/i, "W3Schools");
-
-// Note that regular expressions are written without quotes.
+    str = "Please visit Microsoft and Microsoft!";
+    var n = str.replace(/Microsoft/g, "W3Schools");
+    //모든 문자열 변환
+    ```
 
 ### Converting to Upper and Lower Case
-var text2 = text1.toUpperCase();  // text2 is text1 converted to upper
-var text2 = text1.toLowerCase();  // text2 is text1 converted to lower
 
-### The concat() Method
-: joins two or more strings – 뒤에 ,로 계속 추가 가능 or +...
-var text3 = text1.concat(" ", text2);
-can be used instead of the plus operator. -- var text = "Hello".concat(" ", "World!");
+* .toUpperCase()
 
-### String.trim():  removes whitespace from both sides of a string:
-var str = "       Hello World!        ";
-alert(str.trim());
+    **converted to upper case**
+    
+    Syntax
+    {: .label .mt-2}
+    <div class="code-example" markdown="1">
+    var text2 = text1.toUpperCase();
+    </div>
+    
+    예제
+    {: .label .label-purple .mt-2}
+    ```js
+    var text1 = "Hello World!";       // String
+    var text2 = text1.toUpperCase();  // text2 is text1 converted to upper
+    //HELLO WORLD!
+    ```
 
-// The trim() method is not supported in Internet Explorer 8 or lower. 
-	use this : alert(str.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, ''));
+* .toLowerCase()
 
-동시에 같이 쓰려면 이거 쓰세영
-if (!String.prototype.trim) {
-  String.prototype.trim = function () {
-    return this.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, '');
-  };
-}
-var str = "       Hello World!        ";
-alert(str.trim());
+    **converted to upper case**
+    
+    Syntax
+    {: .label .mt-2}
+    <div class="code-example" markdown="1">
+    var text2 = text1.toUpperCase();
+    </div>
+    
+    예제
+    {: .label .label-purple .mt-2}
+    ```js
+    var text1 = "Hello World!";       // String
+    var text2 = text1.toLowerCase();  // text2 is text1 converted to lower
+    //hello world!
+    ```
+
+### Join Strings
+
+* .concat()
+
+    **두 개 이상의 문자열을 조인**
+    
+    문자열의 결합이니까 `+` operator 대신 사용해도 됨
+    
+    뒤에 ,로 계속 추가 가능 or +...
+    
+    Syntax
+    {: .label .mt-2}
+    <div class="code-example" markdown="1">
+    var text3 = text1.concat(" ", text2);
+    </div>
+
+    예제
+    {: .label .label-purple .mt-2}
+    ```js
+    var text1 = "Hello";
+    var text2 = "World";
+    var text3 = text1.concat(" ", text2);
+    //Hello World!
+
+    var text = "Hello" + " " + "World!";
+    var text = "Hello".concat(" ", "World!");
+    //이와 같이 표현하기도 함
+    ```
+    
+### Removing whitespace
+
+* .trim()
+
+    **양쪽에 공백 지우기**
+    
+    Syntax
+    {: .label .mt-2}
+    <div class="code-example" markdown="1">
+    str.trim()
+    </div>
+
+    예제
+    {: .label .label-purple .mt-2}
+    ```js
+    var str = "       Hello World!        ";
+    alert(str.trim());
+    ```
+    
+    Note!
+    {: .label .label-yellow .mt-2}
+    <div class="code-example" markdown="1">
+    trim()은 Internet Explorer 8 or lower에는 지원하지 않음
+    
+    그 아래에서 지원하고 싶게 만들려면 replace() 와 정규표현식으로 사용해야함
+    </div>
+    ```js
+    var str = "       Hello World!        ";
+    alert(str.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, ''));
+
+    //string.prototype을 사용해서 trim function을 정의할수도 있음
+    String.prototype.trim = function () {
+        return this.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, '');
+      };
+    }
+    var str = "       Hello World!        ";
+    alert(str.trim());
+    ```
 
 ### Extracting String Characters
-* charAt(position): returns the character at a specified index (position) in a string:
-	var str = "HELLO WORLD";
-	str.charAt(0);            // returns H
-* charCodeAt(position): returns the unicode of the character at a specified index in a string
-The method returns a UTF-16 code (an integer between 0 and 65535).
-	var str = "HELLO WORLD";
-	str.charCodeAt(0);         // returns 72
-* Property access [ ]: allows property access [ ] on strings:
-	var str = "HELLO WORLD";
-	str[0];                   // returns H
 
-Property access might be a little unpredictable
-{: .label .label-yellow .mt-2}
-<div class="code-example" markdown="1">
-&#9656; It does not work in Internet Explorer 7 or earlier
+* .charAt(position)
 
-&#9656; It makes strings look like arrays (but they are not)
+    **문자열의 지정된 인덱스에있는 문자를 반환**
 
-&#9656; If no character is found, [ ] returns undefined, while charAt() returns an empty string.
+    ```js
+    var str = "HELLO WORLD";
+    str.charAt(0);            
+    
+    // returns H
+    ```
 
-&#9656; It is read only. str[0] = "A" gives no error (but does not work!)
-</div>
+* .charCodeAt(position)
 
-Converting a String to an Array
-split(“seperator”) method:
+    **문자열의 지정된 인덱스에서 문자의 유니 코드를 리턴**
+
+    이 메소드는 UTF-16 코드 (0과 65535 사이의 정수)를 리턴
+
+    ```js
+    var str = "HELLO WORLD";
+    str.charCodeAt(0);     
+
+    // returns 72
+    ```
+    
+* Property access [ ]
+
+    **allows property access [ ] on strings**
+
+    ```js
+    var str = "HELLO WORLD";
+    str[0];                   
+    // returns H
+    ```
+    
+    Property access might be a little unpredictable
+    {: .label .label-yellow .mt-2}
+    <div class="code-example" markdown="1">
+    &#9656; It does not work in Internet Explorer 7 or earlier
+
+    &#9656; It makes strings look like arrays (but they are not)
+
+    &#9656; If no character is found, [ ] returns undefined, while charAt() returns an empty string.
+
+    &#9656; It is read only. str[0] = "A" gives no error (but does not work!)
+    </div>
+    ```js
+    var str = "HELLO WORLD";
+    str[0] = "A";             // Gives no error, but does not work
+    str[0];                   // returns H
+    ```
+
+### Converting a String to an Array
+
+* split(“seperator”)
+    
+    **문자열을 배열로 바꾸는 메소드**
+    
+    separator가 생략되면 전체 문자열을 배열 0번째에 넣어버림
+    
+    ```js
 	var txt = "a,b,c,d,e";   // String
-	txt.split(",");          // Split on commas
+	var arr = txt.split(",");          // Split on commas
+    //arr = [a,b,c,d,e]
 
-If the separator is omitted, the returned array will contain the whole string in index [0]
-If the separator is "", the returned array will be an array of single characters:
+    txt.split(" ");          // Split on spaces
+    txt.split("|");          // Split on pipe
+    txt.split("");           // Split in characters
+    ```
+
+### Complete String Reference
+
+The reference contains descriptions and examples of all string properties and methods
+
+<span class="fs-2">
+[더 찾아보기](https://www.w3schools.com/jsref/jsref_obj_string.asp){: .btn  .btn-outline}
+</span>
+
+
