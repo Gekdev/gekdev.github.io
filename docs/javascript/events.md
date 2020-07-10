@@ -2,7 +2,7 @@
 layout: default
 title: Events
 parent: JavaScript
-nav_order: 99
+nav_order: 11
 ---
 
 # JavaScript Events

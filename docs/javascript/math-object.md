@@ -2,7 +2,7 @@
 layout: default
 title: Math Object
 parent: JavaScript
-nav_order: 3
+nav_order: 8
 ---
 
 # JavaScript Math Object
