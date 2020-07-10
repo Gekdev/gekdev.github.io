@@ -102,7 +102,7 @@ fruits.length;   // the length of fruits is 4
     
 * Looping Array Elements
 
-    1. `for` loop
+    1. for loop
 
         ```js
         text = "<ul>";
@@ -112,7 +112,7 @@ fruits.length;   // the length of fruits is 4
         text += "</ul>";
         ```
 
-    2. `Array.forEach()`
+    2. Array.forEach()
 
         ```js
         var fruits, text;
@@ -141,7 +141,7 @@ fruits[fruits.length] = "Lemon";
 
 Warning
 {: .label .label-red .mt-2}
-<div class="code-exmaple" markdown="1">
+<div class="code-example" markdown="1">
 인덱스가 높은 요소를 추가하면 배열에 정의되지 않은 "구멍"이 생성 될 수 있음
 
 그 "구멍"의 값은 undefined
@@ -155,7 +155,7 @@ Warning
 
 Warning
 {: .label .label-red .mt-2}
-<div class="code-exmaple" markdown="1">
+<div class="code-example" markdown="1">
 명명 된 인덱스를 사용하는 경우 JavaScript는 배열을 표준 객체로 재정의, 말 그대로 객체로 정의함
 
 그 후 배열 메소드 및 속성은 잘못된 결과 를 생성하니까 사용금지
@@ -186,9 +186,9 @@ points[0] -> undefined
 
 ### How to Recognize an Array
 
-`typeof` 오퍼레이터가 "object" 라고 리턴하기 때문에 문제가 생김
+`typeof` 오퍼레이터가 object 라고 리턴하기 때문에 문제가 생김
 
-다른 해결 방법:
+해결 방법: Array.isArray(), owun function, instanceof operator
 
 1. Array.isArray()
     

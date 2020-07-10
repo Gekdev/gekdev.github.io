@@ -19,6 +19,15 @@ nav_order: 1
 
 ## Array Methods
 
+### Changing Elements
+
+인덱스 번호를 사용하여 액세스한 후 변경
+
+```js
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits[0] = "Kiwi";        // Changes the first element of fruits to "Kiwi"
+```
+
 ### Converting Arrays to Strings
 
 * toString() 
@@ -114,15 +123,6 @@ nav_order: 1
     var fruits = ["Banana", "Orange", "Apple", "Mango"];
     fruits.unshift("Lemon");    // Returns 5
     ```
-
-### Changing Elements
-
-인덱스 번호를 사용하여 액세스한 후 변경
-
-```js
-var fruits = ["Banana", "Orange", "Apple", "Mango"];
-fruits[0] = "Kiwi";        // Changes the first element of fruits to "Kiwi"
-```
 
 ### Deleting Elements 
 
