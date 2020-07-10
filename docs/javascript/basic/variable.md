@@ -1,8 +1,9 @@
 ---
 layout: default
 title: Variable
-parent: JavaScript
-nav_order: 3
+parent: Basic
+grand_parent: JavaScript
+nav_order: 5
 ---
 
 # JavaScript Variable

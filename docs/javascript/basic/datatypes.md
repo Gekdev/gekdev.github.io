@@ -1,8 +1,9 @@
 ---
 layout: default
 title: Data types
-parent: JavaScript
-nav_order: 4
+parent: Basic
+grand_parent: JavaScript
+nav_order: 6
 ---
 
 # JavaScript Data types

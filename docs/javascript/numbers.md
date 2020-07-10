@@ -351,7 +351,7 @@ var x = 6;
 var y = x.MAX_VALUE;    // y becomes undefined
 ```
 
-* .MAX_VALUE
+* MAX_VALUE
 
     **JavaScript에서 가능한 가장 큰 숫자를 반환**
     
