@@ -223,9 +223,9 @@ value가 높을수록 우선
 | &#8290;      | &#8290;    | &#8290;                   | &#8290;           |
 | 9            | &          | Bitwise AND               | x & y             |
 | 8            | ^          | Bitwise XOR               | x ^ y             |
-| 7            | |          | Bitwise OR                | x | y             |
+| 7            | &#124;     | Bitwise OR                | x | y             |
 | 6            | &&         | Logical AND	            | x && y            |
-| 5            | ||         | Logical OR                | x || y            |
+| 5            |&#124;&#124;| Logical OR                | x || y            |
 | 4            | ?:         | Condition	                | ? "Yes" : "No"    |
 | &#8290;      | &#8290;    | &#8290;                   | &#8290;           |
 | 3            | +=         | Assignment                | x += y            |
@@ -238,7 +238,7 @@ value가 높을수록 우선
 | 3            | >>>=       | Assignment                | x >>>= y          |
 | 3            | &=         | Assignment                | x &= y            |
 | 3            | ^=         | Assignment                | x ^= y            |
-| 3            | |=         | Assignment                | x |= y            |
+| 3            | &#124;=    | Assignment                | x |= y            |
 | &#8290;      | &#8290;    | &#8290;                   | &#8290;           |
 | 2            | yield      | Pause Function            | yield x           |
 | 1            | ,          | Comma                     | 5, 6              |
