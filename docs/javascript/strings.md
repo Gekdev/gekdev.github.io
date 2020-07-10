@@ -16,31 +16,199 @@ nav_order: 3
 
 ---
 
-## Strings
+## Strings Basic
 
-### Strings Basic
+### What is String?
 
-Strings : **used for storing and manipulating text**
+**(쌍)따옴표안에 쓰여있는 아무것도 없거나 그 이상인 문자들**
 
-17. JavaScript String Methods
-Primitive values, like "John Doe", cannot have properties or methods (because they are not objects).
-But with JavaScript, methods and properties are also available to primitive values, because JavaScript treats primitive values as objects when executing methods and properties.
+used for storing and manipulating text
+
+문자열을 둘러싼 따옴표와 일치하지 않는 한 문자열 안에 따옴표를 사용할 수 있음
+
+```js
+var answer1 = "It's alright";
+var answer2 = "He is called 'Johnny'";
+var answer3 = 'He is called "Johnny"';
+```
+
+&#8594; 만약 두개 다 같은 따옴표를 쓰고싶다면 **backslash escape character**를 사용해야함
+
+### Escape Character
+
+위에서 말한것처럼 문자열을 둘러싼 따옴표와 일치하지 않는 따옴표를 문자열에 사용해야 하지만
+
+같은 따옴표를 사용해야 할 때 escape character을 사용함
+
+그러면 자바스크립트는 문자열에 쓰여있는 따옴표를 문자열이라고 인지함
+
+| Code        | Result      | Description           |
+|:------------|:------------|:----------------------|
+| \'          | '           | Single quote          |
+| \"          | "           | Double quote          |
+| \\          | \           | Backslash             |
+
+```js
+var x = "We are the so-called \"Vikings\" from the north.";
+
+//결과물로 We are the so-called "Vikings" from the north 가 나옴
+```
+
+| Code        | Result      | Description           |
+|:------------|:------------|:----------------------|
+| \b          | .           | Backspace             |
+| \f          | .           | Form Feed             |
+| \n          | .           | New Line              |
+| \r          | .           | Carriage Return       |
+| \t          | .           | Horizontal Tabulator  |
+| \v          | .           | Vertical Tabulator    |
+
+아래 6가지 문자들은 원래 타자기, 텔레타이프 및 팩스기를 제어하도록 설계되었음
+
+&#8594; html에서는 의미가 없다
+
+### Breaking Long Code Lines
+
+`=`, `+` 오퍼레이터에서 끊거나, `\`에서 끊음
+
+**`\` 메소드는 지원이 안되는 브라우저도 있어서 사용권장하지 않음**
+
+&#8594; 꼭 문자열 안 `\`로 사용해야함!
+
+예제
+{: .label .label-purple .mt-2}
+```js
+document.getElementById("demo").innerHTML =
+"Hello Dolly!";
+
+document.getElementById("demo").innerHTML = "Hello \
+Dolly!";
+```
+
+### Strings Can be Objects
+
+문자열을 객체로 선언할 수 있음
+
+`new` 키워드는 복잡한 코드라서 계산속도를 늦추기때문에 권장되지 않음
+
+아래 예제는 `==` 는 true지만 `===`는 false
+
+또한 둘다 객체로 선언될 경우 **객체는 비교될수 없기 때문에 모두 false**가 나온다
+
+```js
+var x = "John";
+var y = new String("John");
+
+// typeof x will return string, value "John"
+// typeof y will return object, value "John"
+```
+
+---
+
+## JavaScript String Methods
+
+원래 primitive values 즉 [기본값](https://gekdev.github.io/docs/javascript/4.datatypes/#primitive-data)들은 속성이나 메소드들을 가질 수 없지만 자바스크립트에서는 기본값도 object라고 생각하기 때문에 그에 관련된 속성과 메소드들을 제공함
+
+### String Length
+
+built-in `length` property
+
+**returns the length of a string**
+
+Syntax
+{: .label}
+<div class="code-example" markdown="1">
+var ttt = txt.length;
+</div>
+    
+```js
+var txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var sln = txt.length;
+
+//return 26
+```
+
+### Finding a String in a String
+
+* `indexOf()` : **문자열에서 지정된 텍스트 의 첫번째 발생 위치 를 리턴**
+
+    Syntax
+    {: .label}
+    <div class="code-example" markdown="1">
+    str.indexOf("string", starting position parameter);
+    </div>
+    
+    &#9656; 앞에서 먼저 찾고, 숫자도 앞에서부터 셈
+    
+    &#9656; 찾을 수 없을경우 -1 리턴
+    
+    &#9656; 두번째 매개변수(optional)를 검색 시작 위치로 사용, 숫자 카운트도 변하지 않음
+
+    ```js
+    var str = "Please locate where 'locate' occurs!";
+    var pos = str.indexOf("locate");
+    //return 7
+
+    var str = "Please locate where 'locate' occurs!";
+    var pos = str.indexOf("locate",15);
+    //return 21
+    ```
+
+* `lastIndexOf()` : **문자열에서 지정된 텍스트 의 마지막 발생 위치 를 리턴**
+    
+    Syntax
+    {: .label}
+    <div class="code-example" markdown="1">
+    str.lastIndexOf("string", starting position parameter);
+    </div>
+    
+    &#9656; 뒤에서 먼저 찾고, 숫자는 앞에서부터 셈
+    
+    &#9656; 찾을 수 없을경우 -1 리턴
+    
+    &#9656; 두번째 매개변수(optional)를 검색 시작 위치로 사용, 숫자도 매개변수 뒤부터 카운트 시작
+    
+    ```js
+    var str = "Please locate where 'locate' occurs!";
+    var pos = str.lastIndexOf("locate");
+    //return 21
+
+    var str = "Please locate where 'locate' occurs!";
+    var pos = str.lastIndexOf("locate", 15);
+    //return 7
+    ```
+
+* `search()` : **문자열에서 지정된 값을 검색하고 일치하는 위치를 리턴**
+
+    ```js
+    var str = "Please locate where 'locate' occurs!";
+    var pos = str.search("locate");
+    ```
+
+indexOf와 search 메소드의 다른점
+{: .label .labe-yellow .mt-2}
+<div class="code-example" markdown="1">
+indexOf()는 정규표현식과 같은 강력한 검색 값을 사용할 수 없음
+
+search()는 두번째 시작 위치 인수를 사용할 수 없음
+</div>
+
+### Extracting String Parts
+
+* `slice(start, end)`
+
+* `substring(start, end)`
+
+* `substr(start, length)`
+
 
 All string methods return a new string. They don't modify the original string.
 Formally said: Strings are immutable: Strings cannot be changed, only replaced.
 
-String Length
-var sln = txt.length;
 
-Finding a String in a String – indexOf()
-var pos = str.indexOf("locate", starting position parameter); 앞에서 먼저 찾음(숫자는 앞에서부터 센담)
-var pos = str.lastIndexOf("locate", starting position parameter); 뒤에서 먼저 찾음(숫자는 앞에서부터 세지만)
-	* Both indexOf(), and lastIndexOf() return -1 if the text is not found.
-	* starting position parameter can be omitted
+
 
 Both methods accept a second parameter as the starting position for the search: 
-	var pos = str.indexOf("locate", 15); 하면 처음부터 숫자를 세서 15+.. 가 나오는데 
-		  lastIndexOf("location", 15); 하면 15 다음부터 숫자를 세서 1,2,3.. 이렇게 샌다
 
 Searching for a String in a String – search()
 var pos = str.search("locate"); - indexOf와 비슷함
