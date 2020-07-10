@@ -18,10 +18,9 @@ nav_order: 3
 
 ## Strings
 
-### JavaScript Programs
+### Strings Basic
 
-16. JavaScript Strings
-: are used for storing and manipulating text.
+Strings : **used for storing and manipulating text**
 
 17. JavaScript String Methods
 Primitive values, like "John Doe", cannot have properties or methods (because they are not objects).
