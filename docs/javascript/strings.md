@@ -95,7 +95,6 @@ Dolly!";
 
 `new` 키워드는 복잡한 코드라서 계산속도를 늦추기때문에 권장되지 않음
 
-
 예제
 {: .label .label-purple .mt-2}
 ```js
@@ -111,7 +110,7 @@ var y = new String("John");
 
 ---
 
-## JavaScript String Methods
+## String Methods
 
 원래 primitive values 즉 [기본값](https://gekdev.github.io/docs/javascript/4.datatypes/#primitive-data)들은 속성이나 메소드들을 가질 수 없지만 **자바스크립트에서는 기본값도 object라고 취급**하기 때문에 그에 관련된 속성과 메소드들을 제공함
 
@@ -525,5 +524,4 @@ The reference contains descriptions and examples of all string properties and me
 <span class="fs-2">
 [더 찾아보기](https://www.w3schools.com/jsref/jsref_obj_string.asp){: .btn  .btn-outline}
 </span>
-
 
