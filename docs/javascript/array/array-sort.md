@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Array Sort
-parent: Advanced
+parent: Arrays
 grand_parent: JavaScript
 nav_order: 2
 ---
