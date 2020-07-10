@@ -3,6 +3,7 @@ layout: default
 title: Functions
 parent: JavaScript
 nav_order: 10
+has_children: true
 ---
 
 # JavaScript Functions
