@@ -26,9 +26,9 @@ nav_order: 1
 Syntax
 {: .label}
 <div class="code-example" markdown="1">
-function functionName(parameters) {
-  // code to be executed
-}
+function functionName(parameters) { <br>
+  // code to be executed            <br>
+}                               
 </div>
 ```js
 function myFunction(a, b) {
@@ -41,3 +41,4 @@ function myFunction(a, b) {
 ### Expressions
 
 JavaScript 함수는 표현식을 사용하여 정의 할수도 있음
+
