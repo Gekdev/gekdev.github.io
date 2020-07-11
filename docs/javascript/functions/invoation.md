@@ -25,7 +25,7 @@ The code inside a JavaScript function will execute when "something" invokes it
 
 **함수는 정의될때 실행되지 않고 호출되면 실행됨**
 
-call upon a function", "start a function", or "execute a function" 모두 같은 말
+"call upon a function", "start a function", or "execute a function" 모두 같은 말
 
 JavaScript **function can be invoked without being called**
 
@@ -33,9 +33,9 @@ JavaScript **function can be invoked without being called**
 
 함수가 항상 객체에 속하는건 아니지만, 자바스크립트에는 항상 기본 전역 객체가 있음
 
-HTML에서 기본 전역 객체는 HTML 페이지 자체이므로, HTML에서 쓰인 자바스크립트의 함수는 HTML 페이지에 속하게 됨, 또한 브라우저에서의 페이지 객체는 브라우저 윈도우라서 함수들은 자동적으로 윈도우 객체의 함수가 됨
+HTML에서 **기본 전역 객체는 HTML 페이지 자체**이므로, HTML에서 쓰인 자바스크립트의 함수는 **HTML 페이지에 속하게 됨**, 또한 브라우저에서의 **페이지 객체는 브라우저 윈도우**라서 함수들은 **자동적으로 윈도우 객체의 함수가 됨**
 
-&#9656; myFunction()과 window.myFunction()는 같음
+&#8594; 따라서 myFunction()과 window.myFunction()는 같음
 
 예제
 {: .label .label-purple .mt-3}
@@ -101,17 +101,17 @@ var myObject = {
 myObject.fullName();         // Will return "John Doe"
 ```
 
-fullName이 함수, myObject가 객체이자 함수의 소유자 객체
+&#8594; fullName이 함수, myObject가 객체이자 함수의 소유자 객체
 
-`this`는 소유자 객체를 나타내는 말이니 myObject가 됨
+&#8594; `this`는 소유자 객체를 나타내는 말이니 myObject가 됨
 
 ### Invoking a Function with a Function Constructor
 
-함수 호출 앞에 `new` 키워드가 있으면 생성자 호출
+**함수 호출 앞에 `new` 키워드가 있으면 생성자 호출**
 
 새 함수를 만드는 것처럼 보이지만 JavaScript 함수는 객체이므로 실제로 새 객체를 만드는 것
 
-새 객체는 생성자에서 속성과 메서드를 상속함
+**새 객체는 생성자에서 속성과 메서드를 상속함**
 
 예제
 {: .label .label-purple .mt-3}
