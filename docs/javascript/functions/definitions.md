@@ -117,6 +117,11 @@ function myFunction(y) {
 (function () {
   var x = "Hello!!";  // I will invoke myself
 })();
+
+var add = (function () {
+  var counter = 0;
+  return function () {counter += 1; return counter}
+})();
 ```
 
 ### Functions Can Be Used as ..

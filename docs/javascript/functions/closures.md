@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Parameters
+title: Closures
 parent: Functions
 grand_parent: JavaScript
-nav_order: 2
+nav_order: 5
 ---
 
-# Functions Parameters
+# Functions Closures
 {: .no_toc .text-beta .fw-700}
 
 ## Table of contents
@@ -17,6 +17,15 @@ nav_order: 2
 
 ---
 
-## Parameters
+## Closures
 
-### Function Parameters and Arguments
+### Global Variables
+
+### Variable Lifetime
+
+### A Counter Dilemma
+
+### JavaScript Nested Functions
+
+### JavaScript Closures
+
