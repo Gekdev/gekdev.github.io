@@ -27,9 +27,9 @@ Asynchronous JavaScript And XML 의 축약어
 
 프로그래밍 언어가 아니고 **웹 페이지에서 웹 서버로 접근하기 위한 테크닉**
 
-AJAX는 브라우저 내장 `XHLHTTPRequst` 객체 (웹 서버에서 데이터 요청)와JavaScript 및 HTML DOM (데이터 표시 또는 사용)의 조합을 사용함
+AJAX는 브라우저 내장 `XHLHTTPRequst` 객체 (웹 서버에서 데이터 요청)와 JavaScript 및 HTML DOM (데이터 표시 또는 사용)의 조합을 사용함
 
-AJAX를 사용하면 **비하인드 웹 서버와 데이터를 교환해 웹 페이지를 비동기 식으로 업데이트** 할 수 있음 (한마디로 새로고침 없이 데이터를 서버에서 가져온다는 뜻)
+AJAX를 사용하면 **비하인드 웹 서버와 데이터를 교환해 웹 페이지를 비동기 식으로 업데이트** 할 수 있음, 한마디로 새로고침 없이 데이터를 서버에서 가져온다는 뜻
 
 !note
 {: .label .label-yellow .mt-2}
@@ -92,7 +92,7 @@ function ajax() {
 
 <div id="demo">
 <h2>The XMLHttpRequest Object</h2>
-<button type="button" onclick="loadDoc()">Change Content</button>
+<button type="button" onclick="ajax()">Change Content</button>
 </div>
 ```
 
