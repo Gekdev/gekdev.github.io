@@ -58,25 +58,30 @@ AJAX는 사실 잘못된 이름. AJAX 어플리케이션은 XML로 데이터를 
 ### AJAX Example
 
 <div class="code-example" markdown="1">
-<script>
-function ajax() {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-     document.getElementById("demo").innerHTML = this.responseText;
-    }
-  };
-  xhttp.open("GET", "ajax_info.txt", true);
-  xhttp.send();
-}
-</script>
-
 <div id="demo">
 <h2>The XMLHttpRequest Object</h2>
 <button type="button" onclick="loadDoc()">Change Content</button>
 </div> 
+
+<script>
+function ajax() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+     document.getElementById("demo").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "ajax_info.txt", true);
+  xhttp.send();
+}
+</script>
 </div>
 ```html
+<div id="demo">
+<h2>The XMLHttpRequest Object</h2>
+<button type="button" onclick="ajax()">Change Content</button>
+</div>
+
 <script>
 function ajax() {
   var xhttp = new XMLHttpRequest();
@@ -90,9 +95,5 @@ function ajax() {
 }
 </script>
 
-<div id="demo">
-<h2>The XMLHttpRequest Object</h2>
-<button type="button" onclick="ajax()">Change Content</button>
-</div>
 ```
 
