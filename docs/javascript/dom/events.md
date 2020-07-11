@@ -1,11 +1,12 @@
 ---
 layout: default
 title: Events
-parent: JavaScript
-nav_order: 11
+parent: HTML DOM
+grand_parent: JavaScript
+nav_order: 4
 ---
 
-# JavaScript Events
+# HTML DOM Events
 {: .no_toc .text-beta .fw-700}
 
 ## Table of contents
@@ -16,9 +17,9 @@ nav_order: 11
 
 ---
 
-## Events
+## DOM Events
 
-### HTML Events
+### Reacting to Events
 
 JavaScript lets you execute code when events are detected
 
@@ -28,7 +29,8 @@ HTML을 사용하면 JavaScript 코드가있는 이벤트 핸들러 속성 을 H
 <element event="some JavaScript">
 ```
     
-### Common HTML Events 
+자주 사용되는 돔 이벤트
+{: .label .mt-3}
 
 | Event         | Description                                           |
 |:--------------|:------------------------------------------------------|
@@ -43,3 +45,12 @@ HTML을 사용하면 JavaScript 코드가있는 이벤트 핸들러 속성 을 H
 [더 알아보기](https://www.w3schools.com/jsref/dom_obj_event.asp){: .btn  .btn-outline .mt-2}
 </span>
 
+### HTML Event Attributes
+
+### Assign Events Using the HTML DOM
+
+### The onload and onunload Events
+
+The onchange Event
+
+The onmouseover and onmouseout Events

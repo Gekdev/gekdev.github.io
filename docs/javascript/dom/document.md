@@ -4,7 +4,7 @@ title: Document
 parent: HTML DOM
 grand_parent: JavaScript
 nav_order: 1
----
+--- 
 
 # HTML DOM Document
 {: .no_toc .text-beta .fw-700}
