@@ -42,7 +42,7 @@ function myFunction(a, b) {
 
 JavaScript 함수는 표현식을 사용하여 정의 할수도 있음
 
-함수 표현식은 변수에 저장될 수 있음, 그 후 변수는 함수처럼 사용됨
+또한 함수 표현식은 변수에 저장될 수 있음, 그 후 변수는 함수처럼 사용됨
 
 함수에 따로 이름이 없고 변수명으로 사용되는 함수라서 익명 함수라고도 불림
 
@@ -66,7 +66,7 @@ var z = x(4, 3);
 
 2. `Function()` 내장 자바스크립트 함수 생성자
 
-두 방법 모두 동일하고 첫번째 방법이 더 편리하기때문에 자주 씀
+두 방법 모두 동일하지만 첫번째 방법이 편리하기때문에 더 자주 씀
 
 예제
 {: .label .label-purple .mt-3}
@@ -86,11 +86,11 @@ Most of the time, you can avoid using the new keyword in JavaScript
 
 ### Function Hoisting
 
-Hoisting은 선언을 현재 범위의 맨 위로 이동시키는 자바스크립트 기본 동작
+[Hoisting]()은 선언을 현재 범위의 맨 위로 이동시키는 자바스크립트 기본 동작
 
 변수 선언과 함수 선언에 적용됨, 따라서 함수 선언 전 호출가능
 
-실행문(Expressions)으로 선언된 함수는 게양되지 않음
+※ 실행문(Expressions)으로 선언된 함수는 게양되지 않음
 
 예제
 {: .label .label-purple .mt-3}
@@ -141,7 +141,9 @@ var x = myFunction(4, 3) * 2;   //expressions
 
 JavaScript 함수에는 속성 과 메서드가 모두 있음
 
-* arguments.length : **함수가 호출될 때 받은 인수의 수를 반환**
+* arguments.length 
+
+    **함수가 호출될 때 받은 인수의 수를 반환**
 
     예제
     {: .label .label-purple .mt-3}
@@ -151,7 +153,11 @@ JavaScript 함수에는 속성 과 메서드가 모두 있음
     }
     ```
 
-* toString() : **함수를 문자열로 리턴**, toString() 메소드는 모든 데이터 타입에 작용하므로 함수 이름만 호출해도 같은 결과가 나옴
+* toString() 
+
+    **함수를 문자열로 리턴**
+    
+    toString() 메소드는 모든 데이터 타입에 작용하므로 함수 이름만 호출해도 같은 결과가 나옴
 
     예제
     {: .label .label-purple .mt-3}
@@ -160,14 +166,15 @@ JavaScript 함수에는 속성 과 메서드가 모두 있음
       return a * b;
     }
 
-    var txt = myFunction.toString();
+    var txt = myFunction.toString(); // txt = myFunction 과 같다
     ```
 
 !method
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-객체의 속성으로 정의 된 함수를 객체에 대한 메소드라고합니다.
-새로운 객체를 생성하도록 설계된 함수를 객체 생성자라고합니다.
+객체의 속성으로 정의 된 함수를 객체에 대한 메소드라고함
+
+새로운 객체를 생성하도록 설계된 함수를 객체 생성자라고함
 </div>
 
 ### Arrow Functions
@@ -187,13 +194,13 @@ const x = (x, y) => x * y;
 const x = (x, y) => { return x * y };
 ```
 
-화살표 함수는 `this`가 없어서 객체 메소드를 정의하는데 알맞지 않음
+&#9656; 화살표 함수는 `this`가 없어서 객체 메소드를 정의하는데 알맞지 않음
 
-게양되지 않아서 호출되기 전에 선언되어야함
+&#9656; 게양되지 않아서 호출되기 전에 선언되어야함
 
-`const` 변수 키워드를 사용하는게 안전함 (함수 표현식은 항상 constant value라서)
+&#9656; `const` 변수 키워드를 사용하는게 안전함 (함수 표현식은 항상 constant value라서)
 
-함수가 단일 명령문일경우 `return` 키워드와 `{}` 생략 가능
+&#9656; 함수가 단일 명령문일경우 `return` 키워드와 `{}` 생략 가능
 
 !note
 {: .label .label-yellow .mt-2}
