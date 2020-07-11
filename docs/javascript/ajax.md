@@ -21,7 +21,9 @@ has_children: true
 
 ### What is AJAX?
 
-*Asynchronous JavaScript And XML** 의 축약어
+**JavaScript와 XML을 이용한 비동기적 정보 교환 기법**
+
+Asynchronous JavaScript And XML 의 축약어
 
 프로그래밍 언어가 아니고 **웹 페이지에서 웹 서버로 접근하기 위한 테크닉**
 
