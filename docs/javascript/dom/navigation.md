@@ -3,7 +3,7 @@ layout: default
 title: Navigation
 parent: HTML DOM
 grand_parent: JavaScript
-nav_order: 6
+nav_order: 5
 ---
 
 # HTML DOM Navigation

@@ -3,7 +3,7 @@ layout: default
 title: Events
 parent: HTML DOM
 grand_parent: JavaScript
-nav_order: 4
+nav_order: 3
 ---
 
 # HTML DOM Events
@@ -139,6 +139,7 @@ document.getElementById("myBtn").onclick = displayDate;
     예제
     {: .label .label-purple .mt-3}
     <div class="code-example" markdown="1">
+    <head>
     <script>
     function myFunction() {
       var x = document.getElementById("fname");
@@ -153,53 +154,139 @@ document.getElementById("myBtn").onclick = displayDate;
     </body>
     </div>
     ```html
-    <input type="text" id="fname" onchange="upperCase()">
-    ```
-    
-### Mouse Events
+    <head>
+    <script>
+    function myFunction() {
+      var x = document.getElementById("fname");
+      x.value = x.value.toUpperCase();
+    }
+    </script>
+    </head>
+    <body>
 
-* onclick
+    Enter your name: <input type="text" id="fname" onchange="myFunction()">
+
+    </body>
+    ```
+
+* onfocus
+
+    **입력 필드에 포커스가있을 때 트리거**
+
+    예제
+    {: .label .label-purple .mt-3}
+    <div class="code-example" markdown="1">
+    <script>
+    function myFunction(x) {
+      x.style.background = "yellow";
+    }
+    </script>
+
+    Enter your name: <input type="text" onfocus="myFunction(this)">
+    </div>
+    ```html
+    <script>
+    function myFunction(x) {
+      x.style.background = "yellow";
+    }
+    </script>
+
+    Enter your name: <input type="text" onfocus="myFunction(this)">
+    ```
+
+### Mouse Events
 
 * onmouseover
 
     **마우스가 들어가면 트리거**
-
-    예제
-    {: .label .label-purple .mt-3}
-    ```html
-    <input type="text" id="fname" onchange="upperCase()">
-    ```
     
 * onmouseout 
 
     **사용자가 마우스를 나가면 트리거**
+    
+    예제
+    {: .label .label-purple .mt-3}
+    <div class="code-example" markdown="1">
+    <div onmouseover="mOver(this)" onmouseout="mOut(this)" 
+    style="background-color:#D94A38;width:120px;height:20px;padding:40px;">
+    Mouse Over Me</div>
+
+    <script>
+    function mOver(obj) {
+      obj.innerHTML = "Thank You"
+    }
+
+    function mOut(obj) {
+      obj.innerHTML = "Mouse Over Me"
+    }
+    </script>
+    </div>
+    ```html
+    <div onmouseover="mOver(this)" onmouseout="mOut(this)" 
+    style="background-color:#D94A38;width:120px;height:20px;padding:40px;">
+    Mouse Over Me</div>
+
+    <script>
+    function mOver(obj) {
+      obj.innerHTML = "Mouse Out"
+    }
+
+    function mOut(obj) {
+      obj.innerHTML = "Mouse Over Me"
+    }
+    </script>
+    ```
 
 * onmousedown
 
+    **마우스 버튼을 클릭하면 트리거**
+
 * onmouseup
 
+    **마우스 버튼을 놓으면 트리거**
 
+* onclick
 
+    **마우스 클릭이 완료되면 onclick 이벤트가 트리거**
 
+    예제
+    {: .label .label-purple .mt-3}
+    <div class="code-example" markdown="1">
+    <div onmousedown="mDown(this)" onmouseup="mUp(this)" style="background-color:#D94A38;width:90px;height:20px;padding:40px;">
+    Click Me</div>
 
+    <script>
+    function mDown(obj) {
+      obj.style.backgroundColor = "#1ec5e5";
+      obj.innerHTML = "Release Me";
+    }
 
+    function mUp(obj) {
+      obj.style.backgroundColor="#D94A38";
+      obj.innerHTML="Thank You";
+    }
+    </script>
+    </div>
+    ```html
+    <div onmousedown="mDown(this)" onmouseup="mUp(this)" style="background-color:#D94A38;width:90px;height:20px;padding:40px;">
+    Click Me</div>
 
+    <script>
+    function mDown(obj) {
+      obj.style.backgroundColor = "#1ec5e5";
+      obj.innerHTML = "Release Me";
+    }
 
+    function mUp(obj) {
+      obj.style.backgroundColor="#D94A38";
+      obj.innerHTML="Thank You";
+    }
+    </script>
+    ```
+    
+### HTML DOM Event Object Reference
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<span class="fs-2">
+[더 많은 이벤트 확인하기](https://www.w3schools.com/jsref/dom_obj_event.asp){: .btn  .btn-outline .mt-2}
+</span>
 

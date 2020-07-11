@@ -3,7 +3,7 @@ layout: default
 title: Objects
 parent: HTML DOM
 grand_parent: JavaScript
-nav_order: 8
+nav_order: 7
 ---
 
 # HTML DOM Objects
