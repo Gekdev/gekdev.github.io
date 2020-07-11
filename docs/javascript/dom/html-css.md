@@ -3,7 +3,7 @@ layout: default
 title: HTML & CSS 
 parent: HTML DOM
 grand_parent: JavaScript
-nav_order: 3
+nav_order: 2
 --- 
 
 # HTML DOM - Changing HTML and CSS
