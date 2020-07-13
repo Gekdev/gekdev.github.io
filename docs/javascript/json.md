@@ -159,7 +159,7 @@ JSON은 **즉시 사용 가능한 JavaScript 객체로 구문 분석**됨
 
 AJAX 애플리케이션의 경우 JSON이 XML보다 빠르고 쉽다
 
-* XML 사용 : 
+* XML 사용
 
     1. XML 문서를 가져옴
     2. XML DOM을 사용하여 문서를 반복

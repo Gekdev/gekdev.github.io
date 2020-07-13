@@ -1,6 +1,6 @@
 ---
 layout: default
-title: stringify
+title: Stringify
 parent: JSON
 grand_parent: JavaScript
 nav_order: 4
