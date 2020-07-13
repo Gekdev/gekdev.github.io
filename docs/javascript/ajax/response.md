@@ -19,43 +19,6 @@ nav_order: 3
 
 ## Server Response
 
-### Server Response Properties
-
-| Property                               | Description                                                          |
-|:---------------------------------------|:---------------------------------------------------------------------|
-| onreadystatechange                     | readyState 속성이 변할 때 호출될 함수를 정의하고 호출                      |
-| readyState                             | XMLHttpRequest의 상태를 홀드                                           |
-|                                        | 0: request not initialized                                           |
-|                                        | 1: server connection established                                     |
-|                                        | 2: request received                                                  | 
-|                                        | 3: processing request                                                |
-|                                        | 4: request finished and response is ready                            |
-| status                                 | XMLHttpRequest의 객체의 상태를 유지, 상태를 보유하고 메시지를 숫자로 리턴    |
-|                                        | 200: "OK"                                                            |
-|                                        | 403: "Forbidden"                                                     |
-|                                        | 404: "Not Found"                                                     |
-|                                        | [더보기](https://www.w3schools.com/tags/ref_httpmessages.asp)         |
-| statusText	                         | XMLHttpRequest의 객체의 상태를 보유, 상태 메시지를 텍스트로 리턴            |
-
-
-예제
-{: .label .label-purple .mt-3}
-```js
-function loadDoc() {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("demo").innerHTML =
-      this.responseText;
-    }
-  };
-  xhttp.open("GET", "ajax_info.txt", true);
-  xhttp.send();
-}
-
-//onreadystatechange는 readyState가 4가 될때까지 4번 실행됨
-```
-
 ### Using a Callback Function
 
 콜백 함수는 **다른 함수에 매개 변수로 전달되는 함수**

@@ -89,26 +89,43 @@ if (window.XMLHttpRequest) {
 | send(string)                           | 서버에게 요청, Used for POST requests               |
 | setRequestHeader()                     | 헤더에게 보내져야 할 라벨/값 쌍을 더함                 |
 
-[Request 페이지]()에서 더욱 자세하게 설명
-
 ### XMLHttpRequest Objext Properties
 
-| Property                               | Description                                                  |
-|:---------------------------------------|:-------------------------------------------------------------|
-| onreadystatechange                     | readyState 속성이 변할 때 호출할 함수를 정의하고 호출              |
-| readyState                             | XMLHttpRequest의 상태를 홀드                                   |
-|                                        | 0: request not initialized                                   |
-|                                        | 1: server connection established                             |
-|                                        | 2: request received                                          | 
-|                                        | 3: processing request                                        |
-|                                        | 4: request finished and response is ready                    |
-| status                                 | 요청의 상태 메시지를 숫자로 리턴                                 |
-|                                        | 200: "OK"                                                    |
-|                                        | 403: "Forbidden"                                             |
-|                                        | 404: "Not Found"                                             |
-|                                        | [더보기](https://www.w3schools.com/tags/ref_httpmessages.asp) |
-| statusText	                         | 상태 메시지를 텍스트로 리턴 (e.g. "OK" or "Not Found")           |
-| responseText	                         | 문자열로 response 데이터를 리턴                                 |
-| responseXML	                         | XML data로 response 데이터를 리턴                              |
+| Property                               | Description                                                          |
+|:---------------------------------------|:---------------------------------------------------------------------|
+| onreadystatechange                     | readyState 속성이 변할 때 호출될 함수를 정의하고 호출                      |
+| readyState                             | XMLHttpRequest의 상태를 홀드                                           |
+|                                        | 0: request not initialized                                           |
+|                                        | 1: server connection established                                     |
+|                                        | 2: request received                                                  | 
+|                                        | 3: processing request                                                |
+|                                        | 4: request finished and response is ready                            |
+| status                                 | XMLHttpRequest의 객체의 상태를 유지, 상태를 보유하고 메시지를 숫자로 리턴    |
+|                                        | 200: "OK"                                                            |
+|                                        | 403: "Forbidden"                                                     |
+|                                        | 404: "Not Found"                                                     |
+|                                        | [더보기](https://www.w3schools.com/tags/ref_httpmessages.asp)         |
+| statusText	                         | XMLHttpRequest의 객체의 상태를 보유, 상태 메시지를 텍스트로 리턴            |
+| responseText	                         | 문자열로 response 데이터를 리턴                                         |
+| responseXML	                         | XML data로 response 데이터를 리턴                                      |
 
-[Response 페이지]()에서 더욱 자세하게 설명
+&#8594; onreadystatechange함수는 readyState가 변경 될 때마다 호출
+
+예제
+{: .label .label-purple .mt-3}
+```js
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "ajax_info.txt", true);
+  xhttp.send();
+}
+
+//onreadystatechange는 readyState가 4가 될때까지 4번 실행됨
+```
+
