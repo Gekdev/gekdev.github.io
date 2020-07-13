@@ -6,7 +6,7 @@ grand_parent: JavaScript
 nav_order: 1
 ---
 
-# AJAX XMLHttpRequest
+# AJAX XMLHttpRequest Object
 {: .no_toc .text-beta .fw-700}
 
 ## Table of contents
@@ -95,22 +95,20 @@ if (window.XMLHttpRequest) {
 
 | Property                               | Description                                                  |
 |:---------------------------------------|:-------------------------------------------------------------|
-| onreadystatechange                     | readyState 속성이 변할 때 함수가 호출 결정                       |
+| onreadystatechange                     | readyState 속성이 변할 때 호출할 함수를 정의하고 호출              |
 | readyState                             | XMLHttpRequest의 상태를 홀드                                   |
 |                                        | 0: request not initialized                                   |
 |                                        | 1: server connection established                             |
 |                                        | 2: request received                                          | 
 |                                        | 3: processing request                                        |
 |                                        | 4: request finished and response is ready                    |
-| responseText	                         | 문자열로 response 데이터를 리턴                                 |
-| responseXML	                         | XML data로 response 데이터를 리턴                              |
 | status                                 | 요청의 상태 메시지를 숫자로 리턴                                 |
 |                                        | 200: "OK"                                                    |
 |                                        | 403: "Forbidden"                                             |
 |                                        | 404: "Not Found"                                             |
 |                                        | [더보기](https://www.w3schools.com/tags/ref_httpmessages.asp) |
-| statusText	                         | 상태 메시지를 -텍스트로 리턴 (e.g. "OK" or "Not Found")          |
-| send(string)                           | 서버에게 요청, Used for POST requests                          |
-| setRequestHeader()                     | 헤더에게 보내져야 할 라벨/값 쌍을 더함                            |
+| statusText	                         | 상태 메시지를 텍스트로 리턴 (e.g. "OK" or "Not Found")           |
+| responseText	                         | 문자열로 response 데이터를 리턴                                 |
+| responseXML	                         | XML data로 response 데이터를 리턴                              |
 
-[Request 페이지]()에서 더욱 자세하게 설명
+[Response 페이지]()에서 더욱 자세하게 설명

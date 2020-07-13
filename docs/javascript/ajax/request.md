@@ -6,7 +6,7 @@ grand_parent: JavaScript
 nav_order: 2
 ---
 
-# AJAX Request
+# AJAX - Request to Server
 {: .no_toc .text-beta .fw-700}
 
 ## Table of contents
