@@ -87,3 +87,7 @@ function loadDoc() {
 </body>
 ```
 
+<span class="fs-2">
+[더 많은 예제 보기](https://www.w3schools.com/js/js_ajax_examples.asp){: .btn  .btn-outline .mt-2}
+</span>
+
