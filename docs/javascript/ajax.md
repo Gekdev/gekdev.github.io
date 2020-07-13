@@ -2,7 +2,7 @@
 layout: default
 title: AJAX
 parent: JavaScript
-nav_order: 30
+nav_order: 96
 has_children: true
 ---
 
@@ -57,11 +57,6 @@ AJAX는 사실 잘못된 이름. AJAX 어플리케이션은 XML로 데이터를 
 
 ### AJAX Example
 
-<div class="code-example" markdown="1">
-<span class="fs-2">
-[W3C Example](https://www.w3schools.com/charsets/ref_emoji.asp){: .btn  .btn-outline .mt-2}
-</span>
-</div>
 ```html
 <body>
 

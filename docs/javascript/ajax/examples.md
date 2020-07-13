@@ -338,7 +338,7 @@ First name: <input type="text" onkeyup="showHint(this.value)">
 
 ASP 파일
 {: .label .label-purple .mt-3}
-```asp
+```js
 <%
 response.expires=-1
 dim a(30)

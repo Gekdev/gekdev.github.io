@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Introduction
+title: JSONP
 parent: JSON
 grand_parent: JavaScript
-nav_order: 1
+nav_order: 5
 ---
 
-# JSON Introduction
+# JSONP
 {: .no_toc .text-beta .fw-700}
 
 ## Table of contents
@@ -17,6 +17,6 @@ nav_order: 1
 
 ---
 
-## Introduction
+## Data Types
 
-### Charset
+### Valid Data Types
