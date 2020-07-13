@@ -77,7 +77,7 @@ if (window.XMLHttpRequest) {
 | abort()                                | 현재 요청 취소                                      |
 | getAllResponseHeaders()                | 헤더의 정보를 리턴                                   |
 | getResponseHeader()                    | 헤더의 특정한 정보를 리턴                             |
-| open(method, url, async, user, psw)    | 요청을 구체적으로 명시                                |
+| open(method, url, async, user, psw)    | 요청의 타입을 구체적으로 명시                         |
 |                                        | method: the request type GET or POST              |
 |                                        | url: the file location                            |
 |                                        | async: true (asynchronous) or false (synchronous) |
@@ -85,9 +85,11 @@ if (window.XMLHttpRequest) {
 |                                        | psw: optional password                            |
 |                                        | psw: optional password                            |
 |                                        | psw: optional password                            |
-|  send()                                | 서버에게 요청, Used for GET requests                |
-|  send(string)                          | 서버에게 요청, Used for POST requests               |
-|  setRequestHeader()                    | 헤더에게 보내져야 할 라벨/값 쌍을 더함                 |
+| send()                                 | 서버에게 요청, Used for GET requests                |
+| send(string)                           | 서버에게 요청, Used for POST requests               |
+| setRequestHeader()                     | 헤더에게 보내져야 할 라벨/값 쌍을 더함                 |
+
+[Request 페이지]()에서 더욱 자세하게 설명
 
 ### XMLHttpRequest Objext Properties
 
@@ -107,6 +109,8 @@ if (window.XMLHttpRequest) {
 |                                        | 403: "Forbidden"                                             |
 |                                        | 404: "Not Found"                                             |
 |                                        | [더보기](https://www.w3schools.com/tags/ref_httpmessages.asp) |
-|  statusText	                         | 상태 메시지를 -텍스트로 리턴 (e.g. "OK" or "Not Found")          |
-|  send(string)                          | 서버에게 요청, Used for POST requests                          |
-|  setRequestHeader()                    | 헤더에게 보내져야 할 라벨/값 쌍을 더함                            |
+| statusText	                         | 상태 메시지를 -텍스트로 리턴 (e.g. "OK" or "Not Found")          |
+| send(string)                           | 서버에게 요청, Used for POST requests                          |
+| setRequestHeader()                     | 헤더에게 보내져야 할 라벨/값 쌍을 더함                            |
+
+[Request 페이지]()에서 더욱 자세하게 설명
