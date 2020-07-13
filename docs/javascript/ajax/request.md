@@ -3,7 +3,7 @@ layout: default
 title: Request
 parent: AJAX
 grand_parent: JavaScript
-nav_order: 1
+nav_order: 2
 ---
 
 # AJAX Request
