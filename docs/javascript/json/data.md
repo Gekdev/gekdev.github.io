@@ -47,7 +47,7 @@ JSON의 문자열은 무조건 큰 따옴표로 묶여야 함
 예제
 {: .label .label-purple .mt-3}
 ```json
-{ "name":"John" }
+{ "name": "John" }
 ```
 
 ### JSON Numbers
@@ -57,7 +57,7 @@ JSON의 숫자는 정수 또는 부동 소수점
 예제
 {: .label .label-purple .mt-3}
 ```json
-{ "age":30 }
+{ "age": 30 }
 ```
 
 ### JSON Objects
@@ -70,7 +70,7 @@ JSON의 값인 객체는 JSON 객체와 동일한 규칙을 따라야함
 {: .label .label-purple .mt-3}
 ```json
 {
-"employee":{ "name":"John", "age":30, "city":"New York" }
+"employee": { "name":"John", "age":30, "city":"New York" }
 }
 ```
 
@@ -82,7 +82,7 @@ JSON의 값은 배열이 될 수 있음
 {: .label .label-purple .mt-3}
 ```json
 {
-"employees":[ "John", "Anna", "Peter" ]
+"employees": [ "John", "Anna", "Peter" ]
 }
 ```
 
@@ -93,7 +93,7 @@ JSON의 값은 true / false 일 수 있음
 예제
 {: .label .label-purple .mt-3}
 ```json
-{ "sale":true }
+{ "sale": true }
 ```
 
 ### JSON null
@@ -103,7 +103,7 @@ JSON의 값은 null 일 수 있음
 예제
 {: .label .label-purple .mt-3}
 ```json
-{ "middlename":null }
+{ "middlename": null }
 ```
 
 ---
@@ -112,48 +112,73 @@ JSON의 값은 null 일 수 있음
 
 ### Object Syntax
 
-예
-{ "name":"John", "age":30, "car":null }
-JSON 객체는 중괄호 {}로 묶습니다.
+Syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+{ "key":"value", "key":"value", ...}
+</div>
 
-JSON 객체는 키 / 값 쌍으로 작성됩니다.
+&#9656; **중괄호 {}**로 묶임
 
-키는 문자열이어야하며 값은 유효한 JSON 데이터 유형 (문자열, 숫자, 객체, 배열, 부울 또는 널)이어야합니다.
+&#9656; **"키" : "값"의 쌍**으로 쓰임, 쌍은 **쉼표**로 구분
 
-키와 값은 콜론으로 구분됩니다.
+&#8594; **키는 문자열, 값은 유효한 JSON 데이터 유형 (string, number, object, array, boolean 또는 null) 이어야 함**
 
-각 키 / 값 쌍은 쉼표로 구분됩니다.
+### Accessing Object Values
 
-객체 값에 액세스
-점 (.) 표기법을 사용하여 객체 값에 액세스 할 수 있습니다.
+1. 점 (.) 표기법 (dot notation)
 
-예
-myObj = { "name":"John", "age":30, "car":null };
-x = myObj.name;
-대괄호 ([]) 표기법을 사용하여 객체 값에 액세스 할 수도 있습니다.
+    예제
+    {: .label .label-purple .mt-3}
+    ```json
+    myObj = { "name":"John", "age":30, "car":null };
+    x = myObj.name;
+    ```
 
-예
-myObj = { "name":"John", "age":30, "car":null };
-x = myObj["name"];
-객체 반복
-for-in 루프를 사용하여 객체 속성을 반복 할 수 있습니다.
+2. 대괄호 ([]) 표기법 (bracket notation)
 
-예
+    예제
+    {: .label .label-purple .mt-3}
+    ```json
+    myObj = { "name":"John", "age":30, "car":null };
+    x = myObj["name"];
+    ```
+
+### Looping an Object
+
+**for-in 루프**를 사용하여 객체 속성 반복
+
+**x는 키값이 됨!**
+
+속성값에 접근하려면 대괄호 표기법을 사용해 접근해야 함 (점 표기법은 안됨)
+
+예제: 키 추출
+{: .label .label-purple .mt-3}
+```json
 myObj = { "name":"John", "age":30, "car":null };
 for (x in myObj) {
   document.getElementById("demo").innerHTML += x;
 }
-for-in 루프에서 대괄호 표기법을 사용하여 속성 값 에 액세스하십시오 .
+```
 
-예
+예제: 값 추출
+{: .label .label-purple .mt-3}
+```json
 myObj = { "name":"John", "age":30, "car":null };
 for (x in myObj) {
   document.getElementById("demo").innerHTML += myObj[x];
 }
-중첩 JSON 객체
-JSON 객체의 값은 다른 JSON 객체 일 수 있습니다.
+```
 
-예
+### Nested JSON Objects
+
+객체의 값은 또 객체일 수 있음
+
+**점 표기법 또는 대괄호 표기법을 사용해 중첩 JSON 객체에 접근**할 수 있음
+
+예제: 중첩된 객체
+{: .label .label-purple .mt-3}
+```json
 myObj = {
   "name":"John",
   "age":30,
@@ -163,116 +188,168 @@ myObj = {
     "car3":"Fiat"
   }
  }
-점 표기법 또는 대괄호 표기법을 사용하여 중첩 JSON 객체에 액세스 할 수 있습니다.
+```
 
-예
+예제: 중첩 JSON 객체에 접근하는 방법
+{: .label .label-purple .mt-3}
+```json
 x = myObj.cars.car2;
 // or:
 x = myObj.cars["car2"];
-값 수정
-점 표기법을 사용하여 JSON 객체의 값을 수정할 수 있습니다.
+```
 
-예
+### Modify Values
+
+**점, 대괄호 표기법을 사용하여 JSON 객체의 값을 수정**
+
+예제
+{: .label .label-purple .mt-3}
+```json
 myObj.cars.car2 = "Mercedes";
-대괄호 표기법을 사용하여 JSON 객체의 값을 수정할 수도 있습니다.
+```
 
-예
+예제
+{: .label .label-purple .mt-3}
+```json
 myObj.cars["car2"] = "Mercedes";
-객체 속성 삭제
-deleteJSON 객체에서 속성을 삭제하려면 키워드를 사용하십시오 .
+```
 
-예
+### Delete Object Properties
+
+**`delete` 키워드 사용해 JSON 객체의 값을 삭제**
+
+예제
+{: .label .label-purple .mt-3}
+```json
 delete myObj.cars.car2;
+```
 
 ---
 
 ## JSON Arrays
 
-###
-JSON 객체로서의 배열
-예
-[ "Ford", "BMW", "Fiat" ]
-JSON의 배열은 JavaScript의 배열과 거의 동일합니다.
+### Arrays as JSON Objects
 
-JSON에서 배열 값은 string, number, object, array, boolean 또는 null 유형이어야합니다 .
+Syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+[ "value", "value", ...]
+</div>
 
-JavaScript에서 배열 값은 위의 모든 값과 함수, 날짜 및 정의되지 않은 기타 유효한 JavaScript 표현식 일 수 있습니다.
+&#9656; JSON의 배열은 JavaScript의 배열과 거의 동일
 
-JSON 객체의 배열
-배열은 객체 속성의 값이 될 수 있습니다.
+&#9656; **JSON에서 배열 값은 유효한 JSON 데이터 유형 (string, number, object, array, boolean 또는 null) 이어야 함**
 
-예
+&#9656; JavaScript에서 배열 값은 위의 모든 값과 함수, 날짜 및 정의되지 않은 기타 유효한 JavaScript 표현식 일 수 있음
+
+### Arrays in JSON Objects
+
+배열은 객체의 속성 값일 수 있음
+
+예제
+{: .label .label-purple .mt-3}
+```json
 {
 "name":"John",
 "age":30,
 "cars":[ "Ford", "BMW", "Fiat" ]
 }
-배열 값에 액세스
-인덱스 번호를 사용하여 배열 값에 액세스합니다.
+```
 
-예
-x = myObj.cars[0];
-배열을 통한 루핑
-for-in 루프 를 사용하여 배열 값에 액세스 할 수 있습니다 .
+### Accessing Array Values
 
-예
-for (i in myObj.cars) {
-  x += myObj.cars[i];
-}
-또는 for루프를 사용할 수 있습니다 .
+1. **인덱스 번호를 사용**하여 배열 값에 액세스
 
-예
-for (i = 0; i < myObj.cars.length; i++) {
-  x += myObj.cars[i];
-}
-JSON 객체의 중첩 배열
-배열의 값은 다른 배열 또는 다른 JSON 객체 일 수도 있습니다.
+    예제: 인덱스
+    {: .label .label-purple .mt-3}
+    ```json
+    x = myObj.cars[0];
+    ```
 
-예
+2. **for-in 루프 또는 for 루프를 사용하여 배열 값에 액세스**
+
+    예제: for-in 
+    {: .label .label-purple .mt-3}
+    ```json
+    for (i in myObj.cars) {
+      x += myObj.cars[i];
+    }
+    ```
+
+    예제: for
+    {: .label .label-purple .mt-3}
+    ```json
+    for (i = 0; i < myObj.cars.length; i++) {
+      x += myObj.cars[i];
+    }
+    ```
+
+### Nested Arrays in JSON Objects
+
+**배열의 값은 다른 배열 또는 다른 JSON 객체 일 수도 있음**
+
+예제: 객체 안 배열의 객체의 값이 배열
+{: .label .label-purple .mt-3}
+```json
 myObj = {
   "name":"John",
   "age":30,
-  "cars": [
+  "cars": [ 
     { "name":"Ford", "models":[ "Fiesta", "Focus", "Mustang" ] },
     { "name":"BMW", "models":[ "320", "X3", "X5" ] },
     { "name":"Fiat", "models":[ "500", "Panda" ] }
   ]
  }
-배열 내부의 배열에 액세스하려면 각 배열에 for-in 루프를 사용하십시오.
+```
 
-예
+**배열 내부의 배열에 액세스하려면 각 배열에 for-in 루프를 사용**
+
+예제
+{: .label .label-purple .mt-3}
+```json
 for (i in myObj.cars) {
   x += "<h1>" + myObj.cars[i].name + "</h1>";
   for (j in myObj.cars[i].models) {
     x += myObj.cars[i].models[j];
   }
 }
-배열 값 수정
-배열을 수정하려면 색인 번호를 사용하십시오.
+```
 
-예
- myObj.cars[1] = "Mercedes";
-배열 항목 삭제
-delete키워드를 사용하여 배열에서 항목을 삭제 하십시오 .
+### Modify Array Values
 
-예
+**인덱스 번호를 사용해 배열을 수정**
+
+예제
+{: .label .label-purple .mt-3}
+```json
+myObj.cars[1] = "Mercedes";
+```
+
+### Delete Array Items
+
+`delete` 키워드를 사용하여 배열에서 항목을 삭제 
+
+예제
+{: .label .label-purple .mt-3}
+```json
 delete myObj.cars[1];
+```
 
 ---
 
 ## JSON PHP
 
-###
-JSON의 일반적인 용도는 웹 서버에서 데이터를 읽고 웹 페이지에 데이터를 표시하는 것입니다.
+JSON의 일반적인 용도는 웹 서버에서 데이터를 읽고 웹 페이지에 데이터를 표시하는 것
 
-이 장에서는 클라이언트와 PHP 서버간에 JSON 데이터를 교환하는 방법에 대해 설명합니다.
+클라이언트와 PHP 서버간에 JSON 데이터를 교환하는 방법에 대해 설명
 
-PHP 파일
-PHP에는 JSON을 처리하기위한 내장 함수가 있습니다.
+### The PHP File
 
-PHP 함수 json_encode ()를 사용하여 PHP의 객체를 JSON으로 변환 할 수 있습니다 .
+PHP에는 JSON을 처리하기위한 내장 함수 `json_encode()`를 사용하여 PHP의 객체를 JSON으로 변환 할 수 있음
 
-PHP 파일
+예제
+{: .label .label-purple .mt-3}
+```php
 <?php
 $myObj->name = "John";
 $myObj->age = 30;
@@ -282,12 +359,15 @@ $myJSON = json_encode($myObj);
 
 echo $myJSON;
 ?>
-클라이언트 JavaScript
-다음은 AJAX 호출을 사용하여 위 예제에서 PHP 파일을 요청하는 클라이언트의 JavaScript입니다.
+```
 
-예
-JSON.parse ()를 사용하여 결과를 JavaScript 객체로 변환하십시오.
+#### The Client JavaScript
 
+AJAX 호출을 사용하여 PHP 파일을 요청하는 클라이언트의 JavaScript
+
+예제: JSON.parse ()를 사용하여 PHP파일을 JavaScript 객체로 변환
+{: .label .label-purple .mt-3}
+```js
 var xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function() {
   if (this.readyState == 4 && this.status == 200) {
@@ -297,10 +377,15 @@ xmlhttp.onreadystatechange = function() {
 };
 xmlhttp.open("GET", "demo_file.php", true);
 xmlhttp.send();
-PHP 배열
-PHP 함수 json_encode ()를 사용할 때 PHP의 배열도 JSON으로 변환됩니다 .
+```
 
-PHP 파일
+### PHP Array
+
+PHP 함수 `json_encode()` : PHP의 배열을 JSON으로 변환
+
+예제
+{: .label .label-purple .mt-3}
+```php
 <?php
 $myArr = array("John", "Mary", "Peter", "Sally");
 
@@ -308,12 +393,15 @@ $myJSON = json_encode($myArr);
 
 echo $myJSON;
 ?>
-클라이언트 JavaScript
-위의 배열 예제에서 PHP 파일을 요청하기 위해 AJAX 호출을 사용하는 클라이언트의 JavaScript는 다음과 같습니다.
+```
 
-예
-JSON.parse ()를 사용하여 결과를 JavaScript 배열로 변환하십시오.
+#### The Client JavaScript
 
+PHP 파일을 요청하기 위해 AJAX 호출을 사용하는 클라이언트의 JavaScript
+
+예제
+{: .label .label-purple .mt-3}
+```js
 var xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function() {
   if (this.readyState == 4 && this.status == 200) {
@@ -323,8 +411,11 @@ xmlhttp.onreadystatechange = function() {
 };
 xmlhttp.open("GET", "demo_file_array.php", true);
 xmlhttp.send();
-PHP 데이터베이스
-PHP는 서버 측 프로그래밍 언어이며 데이터베이스에 액세스하는 데 사용할 수 있습니다.
+```
+
+### PHP Database
+
+PHP는 **서버측 프로그래밍 언어이며 데이터베이스에 액세스하는 데 사용**할 수 있음
 
 서버에 데이터베이스가 있고 "고객"이라는 테이블의 첫 10 행을 요청하는 클라이언트에서 데이터베이스로 요청을 보내려고한다고 가정하십시오.
 
@@ -332,51 +423,46 @@ PHP는 서버 측 프로그래밍 언어이며 데이터베이스에 액세스�
 
 요청을 서버로 보내기 전에 JSON 객체를 문자열로 변환하여 PHP 페이지의 URL에 매개 변수로 보내십시오.
 
-예
-JSON.stringify ()를 사용하여 JavaScript 객체를 JSON으로 변환하십시오.
-
-obj = { "limit":10 };
-dbParam = JSON.stringify(obj);
+예제: JavaScript 객체를 JSON으로 변환
+{: .label .label-purple .mt-3}
+```js
+obj = { "limit":10 };                       // 1. "제한"속성 및 값을 포함하는 개체를 정의
+dbParam = JSON.stringify(obj);              // 2. 객체를 JSON 문자열로 변환
 xmlhttp = new XMLHttpRequest();
-xmlhttp.onreadystatechange = function() {
-  if (this.readyState == 4 && this.status == 200) {
-    document.getElementById("demo").innerHTML = this.responseText;
+xmlhttp.onreadystatechange = function() {   // 3. JSON 문자열을 매개 변수로 사용하여 PHP 파일에 요청
+  if (this.readyState == 4 && this.status == 200) { // 4. 요청이 결과와 함께 반환 될 때까지 기다림
+    document.getElementById("demo").innerHTML = this.responseText;  // 5. PHP 파일에서받은 결과를 표시
   }
 };
 xmlhttp.open("GET", "json_demo_db.php?x=" + dbParam, true);
 xmlhttp.send();
-예 설명 :
-"제한"속성 및 값을 포함하는 개체를 정의하십시오.
-객체를 JSON 문자열로 변환하십시오.
-JSON 문자열을 매개 변수로 사용하여 PHP 파일에 요청을 보냅니다.
-요청이 결과와 함께 반환 될 때까지 기다립니다 (JSON).
-PHP 파일에서받은 결과를 표시합니다.
-PHP 파일을 살펴보십시오 :
+```
 
 PHP 파일
+{: .label .label-purple .mt-3}
+```php
 <?php
 header("Content-Type: application/json; charset=UTF-8");
-$obj = json_decode($_GET["x"], false);
+$obj = json_decode($_GET["x"], false);          // 1. PHP 함수 json_decode ()를 사용하여 요청을 객체로 변환
 
-$conn = new mysqli("myServer", "myUser", "myPassword", "Northwind");
+$conn = new mysqli("myServer", "myUser", "myPassword", "Northwind");    // 2. 데이터베이스에 액세스하고 요청 된 데이터로 배열을 채움
 $stmt = $conn->prepare("SELECT name FROM customers LIMIT ?");
 $stmt->bind_param("s", $obj->limit);
 $stmt->execute();
 $result = $stmt->get_result();
 $outp = $result->fetch_all(MYSQLI_ASSOC);
 
-echo json_encode($outp);
+echo json_encode($outp);        // 3. 배열을 객체에 추가하고 json_encode () 함수를 사용하여 객체를 JSON으로 반환
 ?>
-PHP 파일 설명 :
-PHP 함수 json_decode ()를 사용하여 요청을 객체로 변환하십시오 .
-데이터베이스에 액세스하고 요청 된 데이터로 배열을 채 웁니다.
-배열을 객체에 추가하고 json_encode () 함수를 사용하여 객체를 JSON으로 반환하십시오 .
-결과를 통한 루프
-PHP 파일에서받은 결과를 JavaScript 객체 또는이 경우 JavaScript 배열로 변환합니다.
+```
 
-예
-JSON을 JavaScript 객체로 변환하려면 JSON.parse ()를 사용하십시오.
+### Loop Through the Result
 
+PHP 파일에서받은 결과를 JavaScript 객체일 경우 JavaScript 배열로 변환
+
+예제 : JSON을 JavaScript 객체로 변환
+{: .label .label-purple .mt-3}
+```js
 ...
 xmlhttp.onreadystatechange = function() {
   if (this.readyState == 4 && this.status == 200) {
@@ -388,14 +474,23 @@ xmlhttp.onreadystatechange = function() {
   }
 };
 ...
-PHP 방법 = POST
-서버로 데이터를 전송할 때 종종 HTTP POST메소드 를 사용하는 것이 가장 좋습니다 .
+```
 
-POST메소드를 사용하여 AJAX 요청을 보내려면 메소드와 올바른 헤더를 지정하십시오.
+<span class="fs-2">
+[W3C Example](https://www.w3schools.com/js/tryit.asp?filename=tryjson_php_db_loop){: .btn  .btn-outline .mt-2}
+</span>
 
-서버로 전송 된 데이터는 이제 send()메소드에 대한 인수 여야합니다 .
+### PHP Method = POST
 
-예
+**서버로 데이터를 전송할 때 HTTP POST메소드를 사용하는 것이 가장 좋음**
+
+POST메소드를 사용하여 AJAX 요청을 보내려면 메소드와 올바른 헤더를 지정해야 함
+
+서버로 전송 된 데이터는 send()메소드에 대한 인수 여야함
+
+예제
+{: .label .label-purple .mt-3}
+```js
 obj = { "limit":10 };
 dbParam = JSON.stringify(obj);
 xmlhttp = new XMLHttpRequest();
@@ -411,11 +506,17 @@ xmlhttp.onreadystatechange = function() {
 xmlhttp.open("POST", "json_demo_db_post.php", true);
 xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 xmlhttp.send("x=" + dbParam);
-PHP 파일의 유일한 차이점은 전송 된 데이터를 가져 오는 방법입니다.
+```
+
+<span class="fs-2">
+[W3C Example](https://www.w3schools.com/js/tryit.asp?filename=tryjson_php_db_post){: .btn  .btn-outline .mt-2}
+</span>
+
+PHP 파일의 유일한 차이점은 전송 된 데이터를 가져 오는 방법임
 
 PHP 파일
-$ _GET 대신 $ _POST를 사용하십시오.
-
+{: .label .label-purple .mt-3}
+```php
 <?php
 header("Content-Type: application/json; charset=UTF-8");
 $obj = json_decode($_POST["x"], false);
@@ -429,6 +530,11 @@ $outp = $result->fetch_all(MYSQLI_ASSOC);
 
 echo json_encode($outp);
 ?>
+```
+
+<span class="fs-2">
+[W3C Example](https://www.w3schools.com/js/js_json_arrays.as){: .btn  .btn-outline .mt-2}
+</span>
 
 ---
 
@@ -438,7 +544,7 @@ echo json_encode($outp);
 
 JavaScript는 웹 페이지에서 HTML을 만드는 데 사용될 수 있음
 
-JSON으로받은 데이터로 HTML 테이블을 만듭니다.
+JSON으로받은 데이터로 HTML 테이블 만들기
 
 예제
 {: .label .label-purple .mt-3}
@@ -463,11 +569,13 @@ xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 xmlhttp.send("x=" + dbParam);
 ```
 
-동적 HTML 테이블
-드롭 다운 메뉴의 값을 기준으로 HTML 테이블을 만듭니다. 
-옵션을 선택하세요:
+### Dynamic HTML Table
 
-예
+드롭 다운 메뉴의 값을 기준으로 HTML 테이블을 만들기
+
+예제
+{: .label .label-purple .mt-3}
+```html
 <select id="myselect" onchange="change_myselect(this.value)">
   <option value="">Choose an option:</option>
   <option value="customers">Customers</option>
@@ -497,10 +605,19 @@ function change_myselect(sel) {
   xmlhttp.send("x=" + dbParam);
 }
 </script>
-HTML 드롭 다운 목록
-JSON으로받은 데이터로 HTML 드롭 다운 목록을 만듭니다.
+```
 
-예
+<span class="fs-2">
+[W3C Example](https://www.w3schools.com/js/tryit.asp?filename=tryjson_html_table_dynamic){: .btn  .btn-outline .mt-2}
+</span>
+
+### HTML Drop Down List
+
+JSON으로받은 데이터로 HTML 드롭 다운 목록을 만들기
+
+예제
+{: .label .label-purple .mt-3}
+```js
 obj = { table: "customers", limit: 20 };
 dbParam = JSON.stringify(obj);
 xmlhttp = new XMLHttpRequest();
@@ -518,3 +635,9 @@ xmlhttp.onreadystatechange = function() {
 xmlhttp.open("POST", "json_demo_html_table.php", true);
 xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 xmlhttp.send("x=" + dbParam);
+```
+
+<span class="fs-2">
+[W3C Example](https://www.w3schools.com/js/js_json_html.asp){: .btn  .btn-outline .mt-2}
+</span>
+
