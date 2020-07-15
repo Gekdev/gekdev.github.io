@@ -21,6 +21,8 @@ nav_order: 3
 
 ### Parsing JSON
 
+**데이터를 구문 분석하고 자바스크립트 객체를 만듦**
+
 JSON의 일반적인 용도는 웹 서버와 데이터를주고받는 것
 
 **웹 서버에서 데이터를 수신 할 때 데이터는 항상 문자열**임
@@ -33,7 +35,7 @@ JSON의 일반적인 용도는 웹 서버와 데이터를주고받는 것
 
     ! 텍스트가 JSON 형식으로 작성되어 있는지 확인 해야함 (그렇지 않으면 구문 오류가 발생)
 
-    ```txt
+    ```html
     '{ "name":"John", "age":30, "city":"New York"}'
     ```
 
@@ -113,7 +115,7 @@ xmlhttp.send();
 
 아니면 `JSON.parse()`의 두 번째 매개 변수인 **reviver를 사용**해 **요소 값을 리턴하기 전에 각 Property를 검사**함
 
-예제
+예제 : 문자열 날짜값
 {: .label .label-purple .mt-3}
 ```json
 var text = '{ "name":"John", "birth":"1986-12-14", "city":"New York"}';
@@ -127,16 +129,9 @@ document.getElementById("demo").innerHTML = obj.name + ", " + obj.birth;
 [W3C Example](https://www.w3schools.com/js/tryit.asp?filename=tryjson_parse_date){: .btn  .btn-outline .mt-2}
 </span>
 
-### Exceptions - Parsing Dates
-
-
-또는 reviver 라는 함수 의 를 사용할 수 있습니다 .
-
-염색제의 파라미터 값을 리턴하기 전에, 기능 검사 각 속성이다.
-
-예
-reviver 함수를 사용하여 문자열을 날짜로 변환하십시오 .
-
+예제 : 두번째 매개변수 이용
+{: .label .label-purple .mt-3}
+```json
 var text = '{ "name":"John", "birth":"1986-12-14", "city":"New York"}';
 var obj = JSON.parse(text, function (key, value) {
   if (key == "birth") {
@@ -147,27 +142,36 @@ var obj = JSON.parse(text, function (key, value) {
 });
 
 document.getElementById("demo").innerHTML = obj.name + ", " + obj.birth;
-파싱 ​​함수
-JSON에서는 함수가 허용되지 않습니다.
+```
 
-함수를 포함해야 할 경우 문자열로 작성하십시오.
+<span class="fs-2">
+[W3C Example](https://www.w3schools.com/js/tryit.asp?filename=tryjson_parse_reviver){: .btn  .btn-outline .mt-2}
+</span>
 
-나중에 함수로 다시 변환 할 수 있습니다.
+### Exceptions - Parsing Dates
 
-예
-문자열을 함수로 변환하십시오.
+함수 객체는 JSON에서 허용되지 않음
 
+함수를 포함해야 할 경우 **문자열로 작성**해야함 (나중에 함수로 다시 변환 할 수 있음)
+
+예제
+{: .label .label-purple .mt-3}
+```json
 var text = '{ "name":"John", "age":"function () {return 30;}", "city":"New York"}';
 var obj = JSON.parse(text);
 obj.age = eval("(" + obj.age + ")");
 
 document.getElementById("demo").innerHTML = obj.name + ", " + obj.age();
-JSON에서 함수를 사용하지 않아야합니다. 함수의 범위가 없어지고 eval()함수로 다시 변환하는 데 사용해야 합니다.
+```
 
-브라우저 지원
-이 JSON.parse()기능은 모든 주요 브라우저와 최신 ECMAScript (JavaScript) 표준에 포함되어 있습니다.
+!warning
+{: .label .label-red .mt-2}
+<div class="code-example" markdown="1">
+최대한 함수를 사용하는걸 줄여야 함. 함수의 범위가 없어지고, eval() 메소드로 함수로 다시 변환하는데에 사용해야 하기 때문
+</div>
 
-아래 표의 숫자는 JSON.parse()기능 을 완전히 지원하는 첫 번째 브라우저 버전을 지정합니다 .
+### 브라우저 지원
 
-Yes	8.0	3.5	4.0	10.0
-이전 브라우저의 경우 JavaScript 라이브러리는 https://github.com/douglascrockford/JSON-js 에서 사용할 수 있습니다 .
+`JSON.parse()`은 **모든 주요 브라우저와 최신 ECMAScript (JavaScript) 표준에 포함**
+
+이전 브라우저의 경우 JavaScript 라이브러리는 [여기](https://github.com/douglascrockford/JSON-js)에서 사용가능함
