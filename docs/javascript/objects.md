@@ -6,7 +6,7 @@ nav_order: 5
 has_children: true
 ---
 
-# JavaScript Objects
+# JavaScript Objects Basic 
 {: .no_toc .text-beta .fw-700}
 
 ## Table of contents
@@ -17,15 +17,13 @@ has_children: true
 
 ---
 
-## Objects
+## Objects Basic 
 
-### Object Definition
+### Object Syntax
 
-objects can contain many values
+객체는 많은 값을 담을 수 있음, 속성이나 메소드의 컨테이너라고 생각하면 됨
 
-values are written as **name:value** pairs (name and value separated by a colon)
-
-objects are containers for named values called properties or methods
+값은 주로 **name:value** 쌍으로 나타남 (name and value separated by a colon)
 
 object literal로 객체 생성하기
 {: .label .mt-3 }
@@ -45,29 +43,52 @@ var person = {
 
 ### Object Properties
 
-name:values pairs are called properties
-
-Property : name
-
-+
-
-Property Value : volvo
-
-= Properties
+**Property(name) + Property Value(volvo) = Properties**
 
 ### Accessing Object Properties
 
-<div class="code-exmaple" markdown="1">
 1. objectName.propertyName
 
 2. objectName["propertyName"]
+
+예제
+{: .label .label-purple .mt-3}
+<div class="code-example" markdown="1">
+<div id="a"></div>
+<div id="b"></div>
+
+<script>
+var person = {
+  firstName: "John",
+  lastName : "Doe",
+  id     :  5566
+};
+
+document.getElementById("a").innerHTML = person.firstName
+document.getElementById("b").innerHTML = person["lastName"]
+</script>
 </div>
+```html
+<div id="a"></div>
+<div id="b"></div>
+
+<script>
+var person = {
+  firstName: "John",
+  lastName : "Doe",
+  id     :  5566
+};
+
+document.getElementById("a").innerHTML = person.firstName
+document.getElementById("b").innerHTML = person["lastName"]
+</script>
+```
 
 ### Object Methods
 
-Methods : **actions that can be performed on objects**
+**Methods : 객체에서 수행할 수 있는 함수**
 
-Methods are stored in properties as function definitions. (A method is a function stored as a property)
+메소드는 속성으로 저장된 함수라고 보면 됨
 
 | Property      | Property Value                                                |
 |:--------------|:--------------------------------------------------------------|
@@ -85,14 +106,46 @@ var person = {
 
 ### Accessing Object Methods
 
-<div class="code-exmaple" markdown="1">
 1. objectName.methodName()
 
 2. name = person.fullName();
 
 ()없이 사용하면 함수 정의를 불러옴
-</div>
 
+예제
+{: .label .label-purple .mt-3}
+<div class="code-example" markdown="1">
+<div id="a" onclick="change()">Click here!</div>
+<script>
+var person = {
+  firstName: "Kwon",
+  lastName: "Grace",
+  fullName : function() {
+    return this.firstName + " " + this.lastName;
+  }
+};
+
+function change(){
+    document.getElementById("a").innerHTML = person.fullName()
+}
+</script>
+</div>
+```html
+<div id="a" onclick="change()">Click here!</div>
+<script>
+var person = {
+  firstName: "Kwon",
+  lastName: "Grace",
+  fullName : function() {
+    return this.firstName + " " + this.lastName;
+  }
+};
+
+function change(){
+    document.getElementById("a").innerHTML = person.fullName()
+}
+</script>
+```
 
 Do Not Declare Strings, Numbers, and Booleans as Objects!
 {: .label .label-red .mt-3}
