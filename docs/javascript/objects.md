@@ -2,7 +2,7 @@
 layout: default
 title: Objects
 parent: JavaScript
-nav_order: 11
+nav_order: 5
 has_children: true
 ---
 

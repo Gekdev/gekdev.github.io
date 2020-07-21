@@ -2,7 +2,7 @@
 layout: default
 title: Functions
 parent: JavaScript
-nav_order: 10
+nav_order: 4
 has_children: true
 ---
 
