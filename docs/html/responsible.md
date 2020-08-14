@@ -36,7 +36,7 @@ head의 meta태그에 추가함
 
 This will set the viewport of your page, which will give the browser instructions on how to control the page's dimensions and scaling.
 
-[meta 태그 더 확인하기]()
+[meta 태그 더 확인하기](https://gekdev.github.io/docs/html/advanced/meta/)
 
 ### Responsive Images
 
@@ -113,12 +113,14 @@ Viewport is the browser window size. 1vw = 1% of viewport width. If the viewport
 }
 ```
 
-[여기에서 더 확인](https://gekdev.github.io/docs/css/12.responsive/#rwd-media-queries)
+[여기에서 더 확인하기](https://gekdev.github.io/docs/css/12.responsive/#rwd-media-queries)
 
 ### Responsive Web Page
 
-[W3C Example](https://www.w3schools.com/html/tryit.asp?filename=tryhtml_responsive_media_query3)
 
+<span class="fs-2">
+[W3C Example](https://www.w3schools.com/html/tryit.asp?filename=tryhtml_responsive_media_query3){: .btn  .btn-outline .mt-3}
+</span>
 
 ### Bootstrap
 

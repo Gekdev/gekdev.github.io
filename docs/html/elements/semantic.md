@@ -3,7 +3,7 @@ layout: default
 title: Semantic
 parent: Elements
 grand_parent: HTML
-nav_order: 6
+nav_order: 5
 ---
 
 # Semantic
@@ -27,13 +27,11 @@ its meaning to both the browser and the developer
 
 웹 접근성을 위해 꼭 필요함, 검색 엔진이 시멘틱 태그 기반으로 움직임
 
-대표적인 non-semantic : div, span
+대표적인 non-semantic : div, span / 대표적인 semantic : form, table, article ... 
 
-대표적인 semantic : form, table, article ... 
+사용해야 하는 이유 : A semantic Web allows data to be shared and reused across applications, enterprises, and communities
 
-사용해야 하는 이유 - A semantic Web allows data to be shared and reused across applications, enterprises, and communities
-
-### Basic form of form
+### Basic form of Semantic Elements
 
 ![](https://gekdev.github.io/assets/images/img_sem_elements.gif)
 

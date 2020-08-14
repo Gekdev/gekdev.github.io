@@ -1,8 +1,9 @@
 ---
 layout: default
 title: API
-parent: HTML
-nav_order: 6
+parent: Advanced
+grand_parent: HTML
+nav_order: 2
 ---
 
 # HTML API

@@ -58,6 +58,9 @@ nav_order: 5
 
 타이틀 속성은 툴팁도 가능하지만 요소의 추가적인 정보도 담고있다
 
+<div class="code-example" markdown="1">
+<a href="https://www.w3schools.com/html/" title="Go to W3Schools HTML section">Visit our HTML Tutorial</a>
+</div>
 ```html
 <a href="https://www.w3schools.com/html/" title="Go to W3Schools HTML section">Visit our HTML Tutorial</a>
 ```
