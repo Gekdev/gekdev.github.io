@@ -20,11 +20,9 @@ nav_order: 2
 
 ### 편리한 사이트
 
-1. 문법 검사 사이트
-
-    <span class="fs-2">
-    [validator](https://validator.w3.org/){: .btn .btn-outline}
-    </span>
+1.  [validator](https://validator.w3.org/)
+    
+    문법 검사 사이트
 
 2. 특수문자 html 
 
@@ -60,10 +58,18 @@ nav_order: 2
 3. 생활코딩
 
     <span class="fs-2">
-    [레전드](https://opentutorials.org/course/1)
+    [레전드](https://opentutorials.org/course/1){: .btn .btn-outline}
     </span>
 
-4. 
+4. CodeCademy 
+
+    <span class="fs-2">
+    [CodeCademy](https://www.codecademy.com/){: .btn .btn-outline}
+    </span>
+    
+    영어로 되어있긴 하지만 개념 정리와 함께 미션을 통해 바로 실습을 하며 익힐 수 있어서 빠르게 배울 수 있습니다. 이것도 일부 기능을 제외하고 HTML CSS의 개념은 무료입니다
+
+
 
 
 [바로가기]
