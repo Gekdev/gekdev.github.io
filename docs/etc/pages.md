@@ -42,8 +42,12 @@ nav_order: 2
 
     파이선으로 작성한 코드를 시각화해주는 사이트 
 
-### CSS 관련 사이트
+### HTML, CSS 관련 사이트
 
+1. [WebberStudy](http://webberstudy.com/)
+
+    HTML과 CSS의 기초를 잡기에 좋음
+    
 1. [코드펜](https://codepen.io/)
 
 2. [부트스트랩](https://getbootstrap.com/)
@@ -52,6 +56,12 @@ nav_order: 2
 
 4. [Semantic UI](https://semantic-ui.com/)
 
+5. HTML/CSS Refrence.io
+
+    [HTML](https://htmlreference.io/) / [CSS](https://cssreference.io/)
+    
+    HTML CSS 속성이 어떤 효과를 갖는지 잘 모를 때 일일이 구글링을 하기보다 이곳을 활용하는것을 추천
+
 ---
 
 ## 프로그래밍 학습 사이트
@@ -59,11 +69,6 @@ nav_order: 2
 1. [코딩 입문자를 위한 파이썬(python)이야기](https://m.post.naver.com/viewer/postView.nhn?volumeNo=10330389&memberNo=10728965&vType=VERTICAL)
 
     짧고 읽어볼만 함
-
-2. [조코딩](https://www.youtube.com/channel/UCQNE2JmbasNYbjGAcuBiRRg)
-
-    재미있게 코딩을 시작할 수 있는 곳 
-
 
 3. [생활코딩](https://opentutorials.org/course/1)
 
@@ -91,11 +96,39 @@ nav_order: 2
 
 9. [에드윗](https://www.edwith.org/)
 
-    커넥트재단에서 운영되는 강의 사이트.
+    네이버에서 운영하는 커넥트재단에서 운영되는 강의 사이트.
 
 10. [coursera](https://www.coursera.org/)
 
     대학강의 듣기, 영어
+
+11. [freecodecamp](https://www.freecodecamp.org/learn/)
+
+    영어로 된 무료 강의 사이트. 동영상 강의가 아닌, 실습위주의 수업으로 되어있다
+
+2. [조코딩](https://www.youtube.com/channel/UCQNE2JmbasNYbjGAcuBiRRg)
+
+    재미있게 코딩을 시작할 수 있는 곳 
+
+    
+13. [동빈나](https://www.youtube.com/c/dongbinna/videos)
+
+    교육용 강의가 많다
+    
+14. [PoiemaWeb](https://poiemaweb.com/)
+
+    웹을 배우고 있다면? 꼭 봐야할 사이트.  HTML5, CSS3, Bootstrap, Sass,  Javascript, ECMAScript6, JQuery, Snippet, Node.js, Express, MongoDB, TypeScript, Angular에 대해 상세한 설명을 하고 있다. 
+    
+### 파이썬
+
+1. [김왼손의 왼손코딩](https://www.youtube.com/channel/UC0h8NzL2vllvp3PjdoYSK4g)
+
+    파이썬 강의
+
+2. [점프 투 파이썬](https://wikidocs.net/7)
+
+    위키독스 내의 점프 투 파이썬. 파이썬에 대해 자세히 설명하고 있다.
+    
 
 ---
 
@@ -139,5 +172,25 @@ nav_order: 2
 
     웹 프로그래밍과 관련된기술 정보를 나누는 커뮤니티 - 웹 개발
 
-[출처](https://coding-factory.tistory.com/400?category=758268)
+---
 
+## 대학강의
+
+1. [KOCW](http://www.kocw.net/home/index.do)
+
+    전국의 대학강의를 다 모아놓은 사이트, 필요한 전문지식을 대학강의를 통해 배워보자
+
+2. [K-MOOC](http://www.kmooc.kr/courses?range=e&pagepos=l)
+
+    인터넷강의로 대학 학점을 이수할 수 있는 사이트인 것 같다. 강의는 많이 개설되어 있지 않은 편
+
+3. [서울대학교 공과대학 온라인강의](https://eng.snu.ac.kr/node/13424)
+
+    서울대학교 공대의 온라인강의를 들을 수 있다.
+    
+## 출처
+
+[출처1](https://coding-factory.tistory.com/400?category=758268)
+
+[출처2](https://marlinbar.tistory.com/38)
+    
