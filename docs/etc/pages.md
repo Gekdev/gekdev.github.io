@@ -98,6 +98,8 @@ nav_order: 2
 
     네이버에서 운영하는 커넥트재단에서 운영되는 강의 사이트.
 
+    [부스트코스 웹 프로그래밍](https://www.edwith.org/boostcourse-web/lecture/19355/)
+
 10. [coursera](https://www.coursera.org/)
 
     대학강의 듣기, 영어
