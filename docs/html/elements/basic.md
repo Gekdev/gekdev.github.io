@@ -153,7 +153,7 @@ Use HTML headings for headings only. Don't use headings to make text BIG or bold
 
 ### &#60;p&#62;
 
-**Paragraphs**
+**Paragraphs** (has no end tag)
 
 <div class="code-example" markdown="1">
 <p>This is paragraph tag</p>
@@ -233,6 +233,8 @@ empty tag (has no end tag)
 
     **어떤 데이터를 제공할지** 선택
     
+    download 속성을 추가하면 href에 주소에 있는게 다운로드 됨
+    
     value
     {: .label .label-red}
     <div class="code-example" markdown="1">
@@ -263,27 +265,24 @@ empty tag (has no end tag)
 
     * 북마크
 
-        &#9656; 북마크 하고싶은곳의 id value로 연결할 수 있음
+        &#9656; 북마크 하고싶은곳의 **id, name** 으로 연결할 수 있음 (둘다 가능)
 
-        &#9656; 다른 파일의 id는 {href="파일명(주소)#앵커이름"}으로 연결함 
+        &#9656; 다른 파일의 id는 {href="파일명(주소)#앵커이름"}으로 연결함
 
         ```html
-        <a href="#a"></a>
+        <a href="../a.html#a"></a>
         ...
 
-        <div id="a"></div>
+        <div id="a"></div> or
+        <div name="a"></div>
         ```
     </div> 
 
 !Note
-{: .label .label-yellow .mt-3}
+{: .label .label-yellow}
 <div class="code-example" markdown="1">
 A link does not have to be text. It can be an image or any other HTML element
 </div>
-
-* download 
-
-    데이터를 다운로드 할 때 사용, href에 다운할 파일 위치
 
 ### &#60;img&#62;
 
