@@ -4,7 +4,7 @@ title: Basic
 parent: Elements
 grand_parent: HTML
 nav_order: 1
----
+--- 
 
 # Basic
 {: .no_toc .text-beta .fw-700}
@@ -176,9 +176,15 @@ attribute : width size color align
 
 <div class="code-example" markdown="1">
 <hr>
+<hr width="200" size="30" color="lightblue" align="center"/>
+<hr width="200" size="30" color="lightyellow" align="left"/>
+<hr width="200" size="30" color="lightgreen" align="right"/>
 </div>
 ```html
 <hr>
+<hr width="200" size="30" color="lightblue" align="center"/>
+<hr width="200" size="30" color="lightyellow" align="left"/>
+<hr width="200" size="30" color="lightgreen" align="right"/>
 ```
 
 ### &#60;br&#62;
@@ -239,7 +245,7 @@ empty tag (has no end tag)
         &#9656; 상대경로가 가장 좋은 방법!
         {: .text-blue-000}
         
-        <a href="../../github.md">메인페이지</a>
+        <a href="../../../index.md">메인페이지</a>
         
     * mail 
 
