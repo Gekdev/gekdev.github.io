@@ -176,9 +176,7 @@ attribute : width size color align
 
 <div class="code-example" markdown="1">
 <hr>
-<hr width="200" size="30" color="lightblue" align="center"/>
-<hr width="200" size="30" color="lightyellow" align="left"/>
-<hr width="200" size="30" color="lightgreen" align="right"/>
+<img src="https://gekdev.github.io/assets/images/html_basic_hr.jpg" alt="예시">
 </div>
 ```html
 <hr>
