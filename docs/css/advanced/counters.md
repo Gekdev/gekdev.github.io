@@ -39,7 +39,6 @@ h2::before {
   counter-increment: section;
   content: "Section " counter(section) ": ";
 }
-
 /*결과물로 h2 앞에 Section n: ... 이렇게 나옴*/
 ```
 
@@ -95,8 +94,6 @@ h2::before {
 
 ### Using Counters
 
-[자세히 확인하기](https://www.w3schools.com/css/tryit.asp?filename=trycss_counters3)
-
 ```css
 ol {
   counter-reset: section;
@@ -110,3 +107,5 @@ li::before {
 
 /*결과물로 1 1.1 1.2 ... 2*/
 ```
+
+[자세히 확인하기](https://www.w3schools.com/css/tryit.asp?filename=trycss_counters3)
