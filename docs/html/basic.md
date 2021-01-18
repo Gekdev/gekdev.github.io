@@ -102,8 +102,19 @@ Double quotes around attribute values are the most common in HTML, but single qu
 
 * [Font Awesome](https://fontawesome.com/) 
     
+    
+    <div class="code-example" markdown="1">
+    <img src="https://gekdev.github.io/assets/images/font_awesome.jpg" alt="">
+    </div>
     ```html
-    <script src="https://kit.fontawesome.com/yourcode.js"></script>
+    <script  src="https://kit.fontawesome.com/cefbde467a.js" crossorigin="anonymous"></script>
+    
+    ...
+    
+    <a href="#">
+        <span>cat</span>
+        <i class="fas fa-cat fa-5x"></i> 
+    </a>
     ```
     &#8594; 가입하면 개인별로 스크립트 코드를 부여함
 
