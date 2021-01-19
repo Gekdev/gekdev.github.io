@@ -20,15 +20,27 @@ nav_order: 9
 ## CSS Mix Blend Mode
 {: .no_toc}
 
+### Syntax
+
+```css
+mix-blend-mode: ;
+```
+
 ### Blending with parents
 
 <img style="background-color: greenyellow; width: 100px;" src="http://placehold.it/100" alt="">
 
 기본 이미지
 
-<div class="code-example" markdown="1">
+* multiply
 
+<div class="code-example" markdown="1">
+<div style="background-color: greenyellow; width: 120px;">
+    <img style="mix-blend-mode: multiply;" src="http://placehold.it/100" alt="">
+</div>
 </div>
 ```html
-
+<div style="background-color: greenyellow; width: 120px;">
+    <img style="mix-blend-mode: multiply;" src="http://placehold.it/100" alt="">
+</div>
 ```
