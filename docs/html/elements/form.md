@@ -695,6 +695,26 @@ label은 폼 입력 요소에 무엇을 입력하는 지 명시해 주는 요소
 
 **a clickable button**
 
+&#9656; url을 연결하지않고 단순하게 사용자 인터페이스만을 '조작'하기 위한 버튼. 
+
+&#9656; type을 명시하지않으면 submit 으로 실행하기때문에 반드시 type="button"으로 지정해야한다.
+
+&#9656; 사이에 다른 태그들을 삽입 가능하며 최근 라이브러리에서 button 요소들에 대한 꾸밈을 적용한 CSS를 배포로 간단히 클래스명을 이용해 적용할 수 있다
+
+* &#60;button type="submit"&#60;
+
+    폼(form)을 전송하는 기능을 담당 = default
+    
+* &#60; button type="reset"&#60; 
+
+    폼(form) 입력한 내용을 초기화하는 기능
+
+* &#60; button type="button"&#60; 
+
+    자바스크립트의 도움을 받아 기능 구현 인터페이스를 조작하는 기능 
+
+    디자인적인 관점에서 input 요소와 달리 button은 매우 자유롭다.
+
 <div class="code-example" markdown="1">
 <button type="button" onclick="alert('Hello World!')">Click Me!</button>
 </div>
@@ -702,7 +722,21 @@ label은 폼 입력 요소에 무엇을 입력하는 지 명시해 주는 요소
 <button type="button" onclick="alert('Hello World!')">Click Me!</button>
 ```
 
-Note:
+differences between input and button
+{: .label .label-blue .mt-3}
+<div class="code-example" markdown="1">
+input과 button의 큰 차이점이라면 내용을 가질 수 있다는 점.
+
+button 요소는 텍스트 뿐 아니라 이미지 요소를 자식으로 포함할 수 있다.
+
+그리고 button은 "열고 닫는 태그" 이고 input은 "스스로 닫는 태그" 라는 점 이다.
+
+그렇기 때문에 button 요소는 span, img같은 인라인 요소를 안에 포함할 수 있으며
+
+나중에 CSS로 스타일을 줄 때 다양한 스타일이 가능하다.
+</div>
+
+Note1:
 {: .label .label-yellow .mt-3}
 <div class="code-example" markdown="1">
 Always specify the type attribute for the button element. 
@@ -790,3 +824,6 @@ represents the **result of a calculation** (like one performed by a script).
 </form>
 ```
 
+## References
+
+[클로리셔 디자인 스터디](https://chlolisher.tistory.com/m/72?category=847028)

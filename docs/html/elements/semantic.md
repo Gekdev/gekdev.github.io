@@ -4,7 +4,7 @@ title: Semantic
 parent: Elements
 grand_parent: HTML
 nav_order: 5
----
+--- 
 
 # Semantic
 {: .no_toc .text-beta .fw-700}
@@ -229,3 +229,28 @@ this element is used translate the time into a machine-readable format so that b
 
 <p>I have a date on <time datetime="2008-02-14 20:00">Valentines day</time>.</p>
 ```
+
+### &#60;meter&#62;
+
+**미터 표시하기**
+
+<div class="code-example" markdown="1">
+<p>meter value="0.8"   <meter value="0.8"></meter></p>
+</div>
+```html
+<p>meter value="0.8"   <meter value="0.8"></meter></p>
+```
+
+### &#60;progress&#62;
+
+**진척도 표시하기**
+
+<div class="code-example" markdown="1">
+<p>progress value="2" max="5" <progress value="2" max="5"></progress></p>
+</div>
+```html
+<p>progress value="2" max="5" <progress value="2" max="5"></progress></p>
+```
+
+
+
