@@ -1,9 +1,8 @@
 ---
 layout: default
-title: errors
-nav_order: 98
-has_children: true
-permalink: docs/ect
+title: Errors
+parent: ect
+nav_order: 99
 ---
 
 # Errors
