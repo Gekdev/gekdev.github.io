@@ -22,7 +22,7 @@ nav_order: 2
 
 ![](https://gekdev.github.io/assets/images/noname01.png)
 
-* &#60; !DOCTYPE html &#62;
+* &#60;!DOCTYPE html&#62;
 
     declaration defines this document to be HTML5 <br>
     
@@ -30,19 +30,19 @@ nav_order: 2
     
     It must only appear once, at the top of the page (before any HTML tags)
     
-* &#60; html &#62; 
+* &#60;html&#62; 
 
     the root element of an HTML page
 
-* &#60; head &#62;
+* &#60;head&#62;
 
     meta information about the document (contain metadata)
 
-* &#60; title &#62; 
+* &#60;title&#62; 
     
     specifies a title for the document
 
-* &#60; body &#62; 
+* &#60;body&#62; 
 
     contains the visible page content
 
@@ -50,19 +50,19 @@ nav_order: 2
 
 ## Elements
 
-* &#60; h1 &#62; 
+* &#60;h1&#62; 
 
     defines a large heading
 
-* &#60; p &#62; 
+* &#60;p&#62; 
 
     defines a paragraph
 
-* &#60; a &#62; 
+* &#60;a&#62; 
 
     defines a link, link's destination specified in the href attribute
 
-* &#60; img &#62; 
+* &#60;img&#62; 
 
     defines a images, The source file (src), alternative text (alt), width, and height are provided as attributes
 
@@ -80,9 +80,7 @@ nav_order: 2
 
 &#9656; Attributes usually come in name/value pairs like: name="value"
 
-&#9656; attribute값 안에 불필요한 공백이 들어가면 오류 
-
-> &#8594; but 파일 이름 등 필수로 들어가는 경우 “”로 묶어야지 오류가 안남
+&#9656; attribute값 안에 불필요한 공백이 들어가면 오류 &#8594; but 파일 이름 등 필수로 들어가는 경우 “”로 묶어야지 오류가 안남
 
 ### Basic Attributes
 
@@ -90,11 +88,11 @@ nav_order: 2
 
 * src : filename of the image source = 주소
 
-* alt : The alt attribute specifies an alternative text to be used, if an image cannot be displayed. **can be read by screen readers**
+* alt : The alt attribute specifies an alternative text to be used, if an image cannot be displayed. can be read by screen readers
 
 * style : specify the styling of an element, like color, font, size etc.
 
-* lang : **important for accessibility applications (screen readers) and search engines**
+* lang : important for accessibility applications (screen readers) and search engines
 
 * title : displayed as a tooltip when you mouse over
 
@@ -115,7 +113,7 @@ Double quotes around attribute values are the most common in HTML, but single qu
 
 **주석**
 
-&#8594; 여러줄도 가능
+&#9656; 여러줄도 가능
 
 <div class="code-example" markdown="1">
 <!-- This is a comment --> This is a comment
