@@ -21,7 +21,7 @@ has_children: true
 
 ### Element Basic Form
     
-HTML **elements(tags) normally come in pairs**
+HTML elements(tags) normally come in pairs
 
 ```html
 <p> {start tag(opening tag)} </p>{end tag(closing tag)}
