@@ -161,7 +161,7 @@ Uniform Resource Locator : **정보가 들어있는 웹페이지의 위치를 �
 
     &#9656; Emmet : html 태그 자동완성
     
-    > [Emmet 명령어](https://velog.io/@aepee/Emmet-%EC%82%AC%EC%9A%A9%EB%B2%95)
+    &#32;&#32;&#32; [Emmet 명령어 더 알아보기](https://velog.io/@aepee/Emmet-%EC%82%AC%EC%9A%A9%EB%B2%95)
 
     &#9656; tree icons : 아이콘 이미지
 
