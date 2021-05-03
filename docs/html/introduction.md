@@ -180,18 +180,14 @@ Uniform Resource Locator : **정보가 들어있는 웹페이지의 위치를 �
 
 3. Window preferences > web > CSS, HTML, JSP files  encoding 모두 utf-8로 바꾸기
 
-----
+...
 
 help > eclipse marketplace 에서 emmet 설치
 </div>
 
 ### Web Accessibility Check
 
-* 에이쿨첵! : 웹 접근성 솔루션 검사 프로그램
-    
-    <span class="fs-2">
-    [다운로드](https://software.naver.com/software/summary.nhn?softwareId=GWS_000915#){: .btn  .btn-outline .mt-2}
-    </span>
+* [에이쿨첵!](https://software.naver.com/software/summary.nhn?softwareId=GWS_000915#) : 웹 접근성 솔루션 검사 프로그램
     
 ---
 
