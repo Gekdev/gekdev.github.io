@@ -44,7 +44,7 @@ mix-blend-mode: ;
 
     <div class="code-example" markdown="1">
     <div style="background-color: greenyellow; width: 120px;">
-        <img style="mix-blend-mode: hue;" src="http://placehold.it/100" alt="">
+        <img style="mix-blend-mode: hue;" src="http://gekdev.github.io/assets/images/100.png" alt="">
     </div>
     </div>
     ```html
@@ -57,7 +57,7 @@ mix-blend-mode: ;
 
     <div class="code-example" markdown="1">
     <div style="background-color: greenyellow; width: 120px;">
-        <img style="mix-blend-mode: lighten;" src="http://placehold.it/100" alt="">
+        <img style="mix-blend-mode: lighten;" src="http://gekdev.github.io/assets/images/100.png" alt="">
     </div>
     </div>
     ```html
@@ -70,7 +70,7 @@ mix-blend-mode: ;
 
     <div class="code-example" markdown="1">
     <div style="background-color: greenyellow; width: 120px;">
-        <img style="mix-blend-mode: luminosity;" src="http://placehold.it/100" alt="">
+        <img style="mix-blend-mode: luminosity;" src="http://gekdev.github.io/assets/images/100.png" alt="">
     </div>
     </div>
     ```html
@@ -83,7 +83,7 @@ mix-blend-mode: ;
 
     <div class="code-example" markdown="1">
     <div style="background-color: greenyellow; width: 120px;">
-        <img style="mix-blend-mode: normal;" src="http://placehold.it/100" alt="">
+        <img style="mix-blend-mode: normal;" src="http://gekdev.github.io/assets/images/100.png" alt="">
     </div>
     </div>
     ```html
@@ -96,7 +96,7 @@ mix-blend-mode: ;
 
     <div class="code-example" markdown="1">
     <div style="background-color: greenyellow; width: 120px;">
-        <img style="mix-blend-mode: overlay;" src="http://placehold.it/100" alt="">
+        <img style="mix-blend-mode: overlay;" src="http://gekdev.github.io/assets/images/100.png" alt="">
     </div>
     </div>
     ```html
@@ -109,7 +109,7 @@ mix-blend-mode: ;
 
     <div class="code-example" markdown="1">
     <div style="background-color: greenyellow; width: 120px;">
-        <img style="mix-blend-mode: saturation;" src="http://placehold.it/100" alt="">
+        <img style="mix-blend-mode: saturation;" src="http://gekdev.github.io/assets/images/100.png" alt="">
     </div>
     </div>
     ```html
@@ -122,7 +122,7 @@ mix-blend-mode: ;
 
     <div class="code-example" markdown="1">
     <div style="background-color: greenyellow; width: 120px;">
-        <img style="mix-blend-mode: screen;" src="http://placehold.it/100" alt="">
+        <img style="mix-blend-mode: screen;" src="http://gekdev.github.io/assets/images/100.png" alt="">
     </div>
     </div>
     ```html
@@ -135,7 +135,7 @@ mix-blend-mode: ;
 
     <div class="code-example" markdown="1">
     <div style="background-color: greenyellow; width: 120px;">
-        <img style="mix-blend-mode: soft-light;" src="http://placehold.it/100" alt="">
+        <img style="mix-blend-mode: soft-light;" src="http://gekdev.github.io/assets/images/100.png" alt="">
     </div>
     </div>
     ```html
@@ -148,7 +148,7 @@ mix-blend-mode: ;
 
     <div class="code-example" markdown="1">
     <div style="background-color: greenyellow; width: 120px;">
-        <img style="mix-blend-mode: inherit;" src="http://placehold.it/100" alt="">
+        <img style="mix-blend-mode: inherit;" src="http://gekdev.github.io/assets/images/100.png" alt="">
     </div>
     </div>
     ```html
@@ -161,7 +161,7 @@ mix-blend-mode: ;
 
     <div class="code-example" markdown="1">
     <div style="background-color: greenyellow; width: 120px;">
-        <img style="mix-blend-mode: initial;" src="http://placehold.it/100" alt="">
+        <img style="mix-blend-mode: initial;" src="http://gekdev.github.io/assets/images/100.png" alt="">
     </div>
     </div>
     ```html
@@ -174,7 +174,7 @@ mix-blend-mode: ;
 
     <div class="code-example" markdown="1">
     <div style="background-color: greenyellow; width: 120px;">
-        <img style="mix-blend-mode: unset;" src="http://placehold.it/100" alt="">
+        <img style="mix-blend-mode: unset;" src="http://gekdev.github.io/assets/images/100.png" alt="">
     </div>
     </div>
     ```html
