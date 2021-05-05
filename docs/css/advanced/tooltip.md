@@ -3,7 +3,7 @@ layout: default
 title: Tooltip
 parent: Advanced
 grand_parent: CSS
-nav_order: 2
+nav_order: 3
 ---
 
 # Tooltip
@@ -22,7 +22,7 @@ nav_order: 2
 
 ### Basic Tooltip
 
-html의 title 속성과는 다름 // 좀더 CSS적으로 예쁘게 꾸민것
+html의 title 속성과는 다름 (좀더 CSS적으로 예쁘게 꾸민것)
 
 ```css
 <style>

@@ -20,7 +20,7 @@ nav_order: 1
 ## CSS Object-fit
 {: .no_toc}
 
-### Object-fit Property
+### What is Object-fit?
 
 이미지와 비디오태그가 부모 태그 안에서 어떻게 보여야하는지 (사이징)
 
@@ -29,6 +29,8 @@ nav_order: 1
 리사이징할때 이미지가 비율을 무시하고 자유자재로 늘어나고 줄어들음
 
 따라서 object-fit을 사용해서 **비율을 어떻게 유지시킬건지 설정**
+
+### Object-fit Property
 
 * fill : sized to fill the element's content box. 늘어나거나 줄어듬 (default)
 

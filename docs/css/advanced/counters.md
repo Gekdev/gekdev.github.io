@@ -3,7 +3,7 @@ layout: default
 title: Counters
 parent: Advanced
 grand_parent: CSS
-nav_order: 3
+nav_order: 2
 ---
 
 # Counters
