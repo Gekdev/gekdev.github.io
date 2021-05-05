@@ -18,22 +18,22 @@ nav_order: 6
 ---
 
 ## CSS User Interface
-{: .no_toc}
 
 ### Resize Property
 
 **리사이즈 되어야하는지 결정하는 속성**
 
-* value 
-    
-    &#9656; horizontal : 가로로 리사이징
-    
-    &#9656; vertical : 세로로 리사이징
-    
-    &#9656; both : 둘다 리사이징
-    
-    &#9656; none : 리사이징 안되게
-    
+value
+{: .label .label-red .mt-2}
+<div class="code-example" markdown="1">
+&#9656; horizontal : 가로로 리사이징
+
+&#9656; vertical : 세로로 리사이징
+
+&#9656; both : 둘다 리사이징
+
+&#9656; none : 리사이징 안되게
+</div>
 ```css
 div {
   resize: horizontal;
@@ -43,4 +43,4 @@ div {
 
 ### Outline Offset Property
 
-[여기에서 확인](https://gekdev.github.io/docs/css/4.box-model/#outline-offset)
+[여기에서 확인](https://gekdev.github.io/docs/css/box-model/#outline-offset)

@@ -18,7 +18,6 @@ nav_order: 9
 ---
 
 ## CSS Mix Blend Mode
-{: .no_toc}
 
 ### Syntax
 
@@ -32,7 +31,7 @@ mix-blend-mode: ;
 
     <div class="code-example" markdown="1">
     <div style="background-color: greenyellow; width: 120px;">
-        <img style="mix-blend-mode: multiply;" src="http://placehold.it/100" alt="">
+        <img style="mix-blend-mode: multiply;" src="http://gekdev.github.io/assets/images/100.png" alt="">
     </div>
     </div>
     ```html

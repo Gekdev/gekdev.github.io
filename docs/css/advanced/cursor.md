@@ -18,11 +18,10 @@ nav_order: 8
 ---
 
 ## CSS Cursor
-{: .no_toc}
 
 ### Basic Cursor
 
-커서 모양을 다르게 만드는법
+**커서 모양을 다르게 하기**
 
 <div class="code-example" markdown="1">
 <p style="cursor:crosshair">crosshair</p>
