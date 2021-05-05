@@ -21,9 +21,11 @@ nav_order: 5
 
 ### What is Pagination
 
-## CSS Pagination Decoration
-
 **페이지 순서를 나타내는 섹션**
+
+---
+
+## CSS Pagination Decoration
 
 ### [Hoverable Transition Effect](https://www.w3schools.com/css/tryit.asp?filename=trycss_ex_pagination_transition)
 
