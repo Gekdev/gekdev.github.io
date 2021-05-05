@@ -31,17 +31,19 @@ permalink: docs/html
 목차는 다음과 같습니다.
 
 ```html
-html - Introduction             //배경지식과 기본 html5소개
-     - Basic                    //기초적인 html 내용
-     - Elements - Basic         //가장 많이 쓰이고 쉬운 태그
-                - List          
-                - Table         
-                - Form
-                - Advanced      //잘 쓰이지 않지만 알아두면 좋은 태그
-                - Semantic      
-     - Responsive               //반응형 홈페이지를 위한 내용
-     - Accessibility            //접근성을 위한 내용
-     - Advanced
+html 
+    - Introduction          //배경지식과 기본 html5소개
+    - Basic                 //기초적인 html 내용
+    - Elements 
+        - Basic             //가장 많이 쓰이고 쉬운 태그
+        - List          
+        - Table         
+        - Form
+        - Advanced           //많이 쓰이지 않지만 알아두면 좋은 태그
+        - Semantic      
+    - Responsive             //반응형 홈페이지를 위한 내용
+    - Accessibility          //접근성을 위한 내용
+    - Advanced
 ```
 
 <br>

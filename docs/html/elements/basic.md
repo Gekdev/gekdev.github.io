@@ -51,7 +51,7 @@ nav_order: 1
 <link rel="stylesheet" href="mystyle.css">
 ```
 
-### &#60;meta&#62;
+### [&#60;meta&#62;](https://gekdev.github.io/docs/html/advanced/meta/#meta-element)
 
 **specify which character set is used, page description, keywords, author, and other metadata**
 
@@ -81,8 +81,6 @@ The viewport is the user's visible area of a web page. It varies with the device
 ```html
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 ```
-
-[더 자세히 알아보기](https://gekdev.github.io/docs/html/advanced/meta/#meta-element)
 
 ### &#60;script&#62;
 
@@ -146,14 +144,15 @@ W3Schools does not recommend omitting the <html> and <body> tags. Omitting these
 ```
 
 !Note
-{: .label .label-yellow .mt-2}
+{: .label .label-yellow .mt-3}
 <div class="code-example" markdown="1">
 Use HTML headings for headings only. Don't use headings to make text BIG or bold.
 </div>
 
 ### &#60;p&#62;
 
-**Paragraphs** (has no end tag)
+**Paragraphs** 
+
 
 <div class="code-example" markdown="1">
 <p>This is paragraph tag</p>
@@ -172,6 +171,8 @@ Use HTML headings for headings only. Don't use headings to make text BIG or bold
 
 **Horizontal Rules**
 
+&#9656; empty tag (has no end tag)
+
 attribute : width size color align
 
 <div class="code-example" markdown="1">
@@ -189,7 +190,7 @@ attribute : width size color align
 
 **single line break**
 
-empty tag (has no end tag)
+&#9656; empty tag (has no end tag)
 
 <div class="code-example" markdown="1">
 <br>
@@ -202,6 +203,8 @@ empty tag (has no end tag)
 
 **링크**
 
+attribute : target, href, download
+
 <div class="code-example" markdown="1">
 <a href="https://gekdev.github.io/" target="_blank">anchor tag</a>
 </div>
@@ -209,11 +212,9 @@ empty tag (has no end tag)
 <a href="https://gekdev.github.io/" target="_blank">anchor tag</a>
 ```
 
-대표적으로 target, href, download 속성이 있음
-
 * target
 
-    **페이지를 어떤 형식으로 오픈할건지** 선택
+    **페이지를 어떤 형식으로 오픈할건지**
     
     value
     {: .label .label-red}
@@ -231,9 +232,9 @@ empty tag (has no end tag)
 
 * href
 
-    **어떤 데이터를 제공할지** 선택
+    **어떤 데이터를 제공할지**
     
-    download 속성을 추가하면 href에 주소에 있는게 다운로드 됨
+    &#9656; download 속성을 추가하면 href에 주소에 있는게 다운로드 됨
     
     value
     {: .label .label-red}
@@ -243,17 +244,17 @@ empty tag (has no end tag)
         &#9656; 절대주소는 로고에 사용, 호스팅 주소부터 끌고온다
 
         &#9656; 상대경로가 가장 좋은 방법!
-        {: .text-blue-000}
+        {: .text-blue-200}
         
-        <a href="../../../index.md">메인페이지</a>
+        ex) <a href="../../../index.md">메인페이지</a>
         
     * mail 
 
-        &#9656; href="mailto:moliuo@naver.com"
+        ex) href="mailto:moliuo@naver.com"
 
     * number 
 
-        &#9656; href="tel:010-0000-0000"
+        ex) href="tel:010-0000-0000"
 
     * Web pages
 
@@ -288,6 +289,10 @@ A link does not have to be text. It can be an image or any other HTML element
 
 **이미지**
 
+attribute : The source file (src), alternative text (alt), width, and height
+
+&#9656; 이미지 투명도 조절 : opacity: 0.3;
+
 <div class="code-example" markdown="1">
 <img src="https://gekdev.github.io/assets/images/cat1.jpg" alt="고양이">
 </div>
@@ -295,11 +300,7 @@ A link does not have to be text. It can be an image or any other HTML element
 <img src="주소" alt="시각장애우를 위해 꼭 써야하는 속성">
 ```
 
-&#9656; attribute : The source file (src), alternative text (alt), width, and height
-
-&#9656; 이미지 투명도 조절 : opacity: 0.3;
-
-&#9656; map element 활용할 수 있음, [W3School Example](https://www.w3schools.com/html/html_images_imagemap.asp)
+&#9656; map element 활용할 수 있음 [Example](https://www.w3schools.com/html/html_images_imagemap.asp)
 
 페이지를 이동하는 이미지맵
 {: .label .mt-3 .mb-2}
