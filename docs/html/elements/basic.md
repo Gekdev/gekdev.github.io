@@ -103,14 +103,6 @@ or
 ```html
 <base href="https://www.w3schools.com/images/" target="_blank">
 ```
-
-Omitting html, head and body tag?
-{: .label .label-yellow .mt-2}
-<div class="code-example" markdown="1">
-According to the HTML5 standard; the <html>, the <body>, and the <head> tag can be omitted.
-<br><br>
-W3Schools does not recommend omitting the <html> and <body> tags. Omitting these tags can crash DOM or XML software and produce errors in older browsers (IE9).
-</div>
     
 ---
 
@@ -375,5 +367,12 @@ Always specify an img element as the last child element of the picture element. 
 | Marked text       | `<mark>mark</mark>`        | <mark>mark</mark>        |
 
 
+Omitting html, head and body tag?
+{: .label .label-yellow .mt-2}
+<div class="code-example" markdown="1">
+According to the HTML5 standard; the <html>, the <body>, and the <head> tag can be omitted.
+<br><br>
+W3Schools does not recommend omitting the <html> and <body> tags. Omitting these tags can crash DOM or XML software and produce errors in older browsers (IE9).
+</div>
     
 
