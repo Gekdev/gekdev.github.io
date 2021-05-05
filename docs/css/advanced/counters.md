@@ -108,4 +108,6 @@ li::before {
 /*결과물로 1 1.1 1.2 ... 2*/
 ```
 
-[자세히 확인하기](https://www.w3schools.com/css/tryit.asp?filename=trycss_counters3)
+<span class="fs-2">
+[W3C School Example](https://www.w3schools.com/css/tryit.asp?filename=trycss_counters3){: .btn .btn-outline }
+</span>

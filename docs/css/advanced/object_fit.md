@@ -18,7 +18,6 @@ nav_order: 1
 ---
 
 ## CSS Object-fit
-{: .no_toc}
 
 ### What is Object-fit?
 
@@ -30,26 +29,40 @@ nav_order: 1
 
 따라서 object-fit을 사용해서 **비율을 어떻게 유지시킬건지 설정**
 
-### Object-fit Property
+---
 
-* fill : sized to fill the element's content box. 늘어나거나 줄어듬 (default)
+## Object-fit Values
 
-* contain : 비율에 맞춰 꼭 콘텐츠 내부에 들어가야 하는것, 컨텐츠 배경이 보일 수 있음
+### fill 
 
-    > background-size: contain;과 동일함
+sized to fill the element's content box
 
-* cover : 콘텐츠 내부에 꽉차게 하는것, 부모에 맞게 딱 짤린다
+늘어나거나 줄어듬 (default)
 
-    > background-size: cover;과 동일함
+### contain
+
+비율에 맞춰 꼭 콘텐츠 내부에 들어가야 하는것, 컨텐츠 배경이 보일 수 있음
+
+> background-size: contain;과 동일함
+
+### cover 
+
+콘텐츠 내부에 꽉차게 하는것, 부모에 맞게 딱 짤린다
+
+> background-size: cover;과 동일함
     
-    ```css
-    img {
-      width: 200px;
-      height: 400px;
-      object-fit: cover;
-    }
-    ```
-    
-* none : not resized
+```css
+img {
+  width: 200px;
+  height: 400px;
+  object-fit: cover;
+}
+```
 
-* scale-down : if none or contain were specified (would result in a smaller concrete object size)
+### none
+
+not resized
+
+### scale-down 
+
+if none or contain were specified (would result in a smaller concrete object size)
