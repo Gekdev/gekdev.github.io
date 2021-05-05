@@ -18,7 +18,6 @@ nav_order: 2
 ---
 
 ## CSS Counters
-{: .no_toc}
 
 ### What are Counters?
 
@@ -42,31 +41,56 @@ h2::before {
 /*결과물로 h2 앞에 Section n: ... 이렇게 나옴*/
 ```
 
-### Counter Properties
+---
 
-* counter-reset 
+## Counter Properties
 
-    **Creates or resets a counter**
-    
-    가장 먼저 생성되어야 하는 속성
-    
-    ```css
-    body {
-      counter-reset: section;
-    }
-    ```
-    
-* counter-increment
+### counter-reset 
 
-    **Increments a counter value**
+**Creates or resets a counter**
 
-* content
+가장 먼저 생성되어야 하는 속성
 
-    **Inserts generated content**
+```css
+body {
+  counter-reset: section;
+}
+```
 
-* counter() or counters() function 
+### counter-increment
 
-    **Adds the value of a counter to an element**
+**Increments a counter value**
+
+### content
+
+**Inserts generated content**
+
+### counter() or counters() function 
+
+**Adds the value of a counter to an element**
+
+---
+## Useage of Counters
+
+### Basic Counters
+
+```css
+ol {
+  counter-reset: section;
+  list-style-type: none;
+}
+
+li::before {
+  counter-increment: section;
+  content: counters(section,".") " ";
+}
+
+/*결과물로 1 1.1 1.2 ... 2*/
+```
+
+<span class="fs-2">
+[W3C School Example](https://www.w3schools.com/css/tryit.asp?filename=trycss_counters3){: .btn .btn-outline }
+</span>
 
 ### Nesting Counters
 
@@ -91,23 +115,3 @@ h2::before {
   content: counter(section) "." counter(subsection) " ";
 }
 ```
-
-### Using Counters
-
-```css
-ol {
-  counter-reset: section;
-  list-style-type: none;
-}
-
-li::before {
-  counter-increment: section;
-  content: counters(section,".") " ";
-}
-
-/*결과물로 1 1.1 1.2 ... 2*/
-```
-
-<span class="fs-2">
-[W3C School Example](https://www.w3schools.com/css/tryit.asp?filename=trycss_counters3){: .btn .btn-outline }
-</span>
