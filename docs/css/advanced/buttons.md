@@ -28,7 +28,7 @@ nav_order: 4
         <a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_buttons_animate1">
             <img src="https://gekdev.github.io/assets/images/bt1.JPG" alt="">
         </a>
-    </ul>
+    </ul>{: .fs-3}
 
 * 호버시 진해짐
 
