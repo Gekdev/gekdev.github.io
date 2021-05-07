@@ -19,15 +19,19 @@ nav_order: 3
 
 ## JavaScript Program Statements
 
-컴퓨터 프로그램 : 컴퓨터나 브라우저에 의해 실행되어야 하는 지시문
+**문장**
 
-**자바스크립트 프로그램 : 프로그램의 목록 statement** (자바스크립트 코드라고도 불림)
+&#9656; [표현식과 다른 개념임!](https://velog.io/@jakeseo_me/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EA%B0%9C%EB%B0%9C%EC%9E%90%EB%9D%BC%EB%A9%B4-%EC%95%8C%EC%95%84%EC%95%BC-%ED%95%A0-33%EA%B0%80%EC%A7%80-%EA%B0%9C%EB%85%90-7-%ED%91%9C%ED%98%84%EC%8B%9D%EA%B3%BC-%EB%AC%B8Statement-%EB%B2%88%EC%97%AD-2xjuhvbal7)
+
+**자바스크립트 프로그램 : 프로그램의 목록 지시문** (자바스크립트 코드라고도 불림)
+
+컴퓨터 프로그램 : 컴퓨터나 브라우저에 의해 실행되어야 하는 지시문들의 집합
 
 ### Statements
 
-문장 구성 : Values, Operators, Expressions, Keywords, Comments
+지시문 구성물 : Values, Operators, Expressions, Keywords, Comments
 
-실행문은 하나하나 순서대로 진행함
+&#9656; 실행문은 하나하나 순서대로 진행함
 
 예제
 {: .label .label-purple .mt-3}
@@ -39,9 +43,9 @@ document.getElementById("demo").innerHTML = "Hello Dolly.";
 
 **문장을 구분하는 역할**
 
-별도의 자바스크립트 문
+&#9656; 별도의 자바스크립트 문
 
-;는 자바스크립트에서 꼭 필요하진 않지만 다른 언어에서도 많이 사용되니까 쓰는 습관들이기!
+&#9656; ;는 자바스크립트에서 꼭 필요하진 않지만 다른 언어에서도 많이 사용되니까 쓰는 습관들이기!
 
 ### White Space
 
@@ -62,7 +66,7 @@ document.getElementById("demo").innerHTML =
 
 **curly brackets {...} 안으로 코드가 뭉칠 수 있음**
 
-같이 실행되기를 원하는 자바스크립트 코드를 묶는것
+&#9656; 같이 실행되기를 원하는 자바스크립트 코드를 묶는것
 
 예제
 {: .label .mt-2 .label-purple}
