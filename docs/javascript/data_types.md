@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Basic
+title: Data types
 parent: JavaScript
-nav_order: 2
+nav_order: 3
 has_children: true
 ---
 
-# JavaScript Basic
+# JavaScript Data types
 {: .no_toc .text-beta .fw-700}
 
 ## Table of contents

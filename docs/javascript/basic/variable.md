@@ -5,7 +5,7 @@ parent: Basic
 grand_parent: JavaScript
 nav_order: 3
 ---
-
+ 
 # JavaScript Variable
 {: .no_toc .text-beta .fw-700}
 

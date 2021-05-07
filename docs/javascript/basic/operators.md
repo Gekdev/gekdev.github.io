@@ -1,10 +1,11 @@
 ---
 layout: default
 title: Operators
-parent: JavaScript
-nav_order: 3
+parent: Basic
+grand_parent: JavaScript
+nav_order: 4
 ---
-
+ 
 # JavaScript Operators
 {: .no_toc .text-beta .fw-700}
 
