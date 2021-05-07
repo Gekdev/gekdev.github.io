@@ -25,10 +25,6 @@ nav_order: 2
 
 **테스트 용**
 
-&#9656; HTML 문서가로드 된 후 document.write ()를 사용하면 기존의 모든 HTML이 삭제 
-
--> 사용하지 않는게 좋음
-
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
@@ -36,6 +32,10 @@ document.write("내용");
 
 &#9656; document.writeIn("내용")도 비슷함
 </div>
+
+&#9656; HTML 문서가로드 된 후 document.write ()를 사용하면 기존의 모든 HTML이 삭제 
+
+&#8594; 사용하지 않는게 좋음
 
 ### innerHTML
 
@@ -57,16 +57,17 @@ innerhtml와 innertext의 차이점
 {: .label .label-yellow .mt-2}
 <div class="code-example" markdown="1">
 document.getElementById("").innerHTML = "<h1>HELLO JAVASCRIPT!</h1>";
-<!--결과값 : HELLO JAVASCRIPT!-->
+
+결과값 : HELLO JAVASCRIPT!
+
 document.getElementById("").innerTEXT = "<h1>HELLO JAVASCRIPT!</h1>";
-<!---결과값 : <h1>HELLO JAVASCRIPT!</h1>-->
+
+결과값 : &#60;h1&#62; HELLO JAVASCRIPT! &#60;h1&#62;
 </div>
 
 ### window.alert()
 
 **데이터를 표시하는 경고 상자**
-
-&#9656; window object 는 전역범위 개체(global scope object)라서 변수, 속성이나 메소드들이 기본적으로 window 객체에 속해 따로 window. 라고 쓰지 않아도 됨
 
 syntax
 {: .label .mt-2}
@@ -74,8 +75,11 @@ syntax
 alert("HELLO JAVASCRIPT!")
 
 window.alert("HELLO JAVASCRIPT!") 
-<!--코드를 풀어서 쓴 모습-->
+
+&#8594; 코드를 풀어서 쓴 모습
 </div>
+
+&#9656; window object 는 전역범위 개체(global scope object)라서 변수, 속성이나 메소드들이 기본적으로 window 객체에 속해 따로 window. 라고 쓰지 않아도 됨
 
 ### console.log()
 
@@ -86,7 +90,7 @@ window.print()
 <div class="code-example" markdown="1">
 오직 **window.print()로만 브라우저에서 메소드를 호출해 현재 창을 인쇄**할 수 있음
 
-자바스크립트는 프린트 객체나 프린트 메소드가 따로 없어서 출력 장치에 접근할 수 없음
+&#8594; 자바스크립트는 프린트 객체나 프린트 메소드가 따로 없어서 출력 장치에 접근할 수 없음
 </div>
 
 ---
@@ -95,7 +99,7 @@ window.print()
 
 사용자 입력방법
 
-### prompt dialog
+### prompt 
 
 **사용자에게 윈도우 창을 띄워 데이터를 입력받을 수 있는 함수, 다이얼로그 출력** 
 
@@ -107,6 +111,8 @@ prompt(“메시지”, “디폴트 입력값”-생략가능)
 
 &#9656; 아무것도 안하면 “”리턴 / 강제로 닫으면 null 리턴
 
+사용예제
+{: .label .label-purple .mt-2}
 ```js
 var ret = prompt(“hello”,“hi”)
 if(ret == null){
@@ -128,6 +134,8 @@ Syntax
 confirm(“메시지”)
 </div>
 
+사용예제
+{: .label .label-purple .mt-2}
 ```js
 var ret = confirm(‘전송할까요?’)
 if(ret == true){
