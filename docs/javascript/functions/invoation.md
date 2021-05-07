@@ -19,9 +19,15 @@ nav_order: 3
 
 ## Invocation
 
-### Invoking a JavaScript Function
+### Function Invocation
 
-**함수는 정의될때 실행되지 않고 호출되면 실행됨**
+무엇인가가 함수를 호출해야지 함수는 실행됨
+
+&#9656; 함수이름과 `()` operator가 특정 함수를 호출함
+
+&#9656; 함수 이름만 호출하면 함수 객체를 가져옴
+
+### Invoking a JavaScript Function
 
 &#9656; "call upon a function", "start a function", or "execute a function" 모두 같은 말
 
