@@ -16,65 +16,6 @@ nav_order: 2
  
 ---
 
-## HTML5
-
-### What is HTML5?
-
-**웹의 비 표준을 지양하고 지능적이고 실행 가능한 웹 구현을 위해 탄생한 차세대 웹 표준 기술**
-
-* 문서공유, 문서표현 &#8594; **하나의 응용프로그램으로 진화**
-
-* 기존의 html 표준의 한계를 극복하는 차세대 웹 표준 
-
-* 추가적인 플러그인 없이 리치웹 응용을 가능하게 한다
-
-* 시멘틱 마크업 &#8594; **더 명확한 의미표현**
-
-* 목적: 웹 디자이너와 웹 개발자들에게 마크업 언어를 쓰기 쉽게 만드는 것
-
-### Features of HTML5
-
-* 웹 문서 작성을 위한 표준화된 html 태그 구성(html 문서가 구조화되게 함)
-
-* 플러그인 없이 미디어 등을 재생할 수 있다
-
-* 웹 페이지를 애플리케이션으로 만들 수 있도록 한 API
-
-* 태그로 표현
-
-* 대소문자 구분 없지만 소문자 사용 권하고 xhtml에서는 소문자만 사용해야함
-
-
-### A Simple Document Shape
-
-![](https://gekdev.github.io/assets/images/noname01.png)
-
-* &#60;!DOCTYPE html&#62;
-
-    declaration defines this document to be HTML5 <br>
-    
-	This represents the document type, and helps browsers to display web pages correctly<br>
-    
-    It must only appear once, at the top of the page (before any HTML tags)
-    
-* &#60;html&#62; 
-
-    the root element of an HTML page
-
-* &#60;head&#62;
-
-    meta information about the document (contain metadata)
-
-* &#60;title&#62; 
-    
-    specifies a title for the document
-
-* &#60;body&#62; 
-
-    contains the visible page content
-
----
-
 ## Elements
 
 ### Element Basic Form
@@ -218,29 +159,3 @@ help > eclipse marketplace 에서 emmet 설치
 
 * [에이쿨첵!](https://software.naver.com/software/summary.nhn?softwareId=GWS_000915#) : 웹 접근성 솔루션 검사 프로그램
     
----
-
-## Representative Site
-
-### Information
-
-* [Codecademy](https://www.codecademy.com/)
-
-* [W3C Examples](https://www.w3schools.com/html/html_examples.asp)
-
-* [whatwg](https://html.spec.whatwg.org/multipage/)
-
-* [html5doctor](http://html5doctor.com/)
-
-* [html5gallery](http://html5gallery.com/)
-
-* [html5test](http://html5test.com/)
-
-* [다양한 강연자료 모음](http://channy.creation.net/lecture)
-
-### Quiz
-
-* [W3C Quiz](https://www.w3schools.com/quiztest/quiztest.asp?qtest=HTML)
-
-* [W3C Exercise](https://www.w3schools.com/html/exercise.asp)
-
