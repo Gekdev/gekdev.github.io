@@ -3,7 +3,7 @@ layout: default
 title: Syntax
 parent: Basic
 grand_parent: JavaScript
-nav_order: 4
+nav_order: 1
 ---
 
 # JavaScript Syntax
@@ -94,7 +94,7 @@ z = x + y;           // How to compute values
 
 자주 쓰는 습관 들이기!
 
-### Identifiers
+### [Identifiers](https://gekdev.github.io/docs/javascript/basic/variable/#identifiers)
 
 **이름**
 

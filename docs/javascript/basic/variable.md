@@ -3,7 +3,7 @@ layout: default
 title: Variable
 parent: Basic
 grand_parent: JavaScript
-nav_order: 5
+nav_order: 3
 ---
 
 # JavaScript Variable
@@ -86,7 +86,7 @@ nav_order: 5
 `==` 는 동일 유무를 판단하는 식별자
 </div>
 
-### Data Types
+### [Data Types](https://gekdev.github.io/docs/javascript/basic/datatypes)
 
 문자(text strings)나 숫자를 변수에 지정할 수 있음
 
@@ -102,15 +102,11 @@ nav_order: 5
 
 변수를 선언할때 3가지 키워드가 사용됨
 
-* var
-
-    **대표적으로 변수를 정의하는 키워드**
+* var : **대표적으로 변수를 정의하는 키워드**
 
 * int
 
-* const
-
-    재 할당 할 수없는 let변수를 정의 하고 키워드를 사용하여 제한된 범위의 변수를 정의
+* const : 재 할당 할 수없는 let변수를 정의 하고 키워드를 사용하여 제한된 범위의 변수를 정의
 
 ---
 

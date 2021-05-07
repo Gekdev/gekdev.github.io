@@ -3,7 +3,7 @@ layout: default
 title: Where to
 parent: Basic
 grand_parent: JavaScript
-nav_order: 1
+nav_order: 6
 ---
 
 # JavaScript Where to

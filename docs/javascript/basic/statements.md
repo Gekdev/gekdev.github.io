@@ -3,7 +3,7 @@ layout: default
 title: Statements
 parent: Basic
 grand_parent: JavaScript
-nav_order: 3
+nav_order: 2
 ---
 
 # JavaScript Statements

@@ -3,7 +3,7 @@ layout: default
 title: Output
 parent: Basic
 grand_parent: JavaScript
-nav_order: 2
+nav_order: 5
 ---
 
 # JavaScript Output
