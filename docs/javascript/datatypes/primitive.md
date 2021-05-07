@@ -19,7 +19,7 @@ nav_order: 1
 
 ## Primitive Data
 
-### Strings
+### [Strings](https://gekdev.github.io/docs/javascript/strings/)
 
 **series of characters**
 
@@ -33,7 +33,7 @@ var answer2 = "He is called 'Johnny'";    // Single quotes inside double quotes
 var answer3 = 'He is called "Johnny"';    // Double quotes inside single quotes
 ```
 
-### Numbers
+### [Numbers](https://gekdev.github.io/docs/javascript/numbers/)
 
 **유일한 숫자타입**
 

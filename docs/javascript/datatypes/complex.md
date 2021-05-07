@@ -19,7 +19,7 @@ nav_order: 2
 
 ## Complex Data
 
-### Arrays
+### [Arrays](https://gekdev.github.io/docs/javascript/array/)
 
 **배열**
 
@@ -33,7 +33,7 @@ nav_order: 2
 var cars = ["Saab", "Volvo", "BMW"];
 ```
 
-### Objects
+### [Objects](https://gekdev.github.io/docs/javascript/objects/)
 
 **객체**
 
