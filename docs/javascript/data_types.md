@@ -3,7 +3,7 @@ layout: default
 title: Data types
 parent: JavaScript
 nav_order: 3
-has_children: true
+has_children: true 
 ---
 
 # JavaScript Data types

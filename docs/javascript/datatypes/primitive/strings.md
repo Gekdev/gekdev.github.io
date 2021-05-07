@@ -1,8 +1,9 @@
 ---
 layout: default
 title: Strings
-parent: JavaScript
-nav_order: 6
+parent: primitive
+grand_parent: Data types
+nav_order: 1
 ---
 
 # JavaScript Strings
