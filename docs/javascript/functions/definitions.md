@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Definitions
+title: Features
 parent: Functions
 grand_parent: JavaScript
 nav_order: 1
 ---
 
-# Functions Definitions
+# Functions Features
 {: .no_toc .text-beta .fw-700}
 
 ## Table of contents
@@ -14,104 +14,6 @@ nav_order: 1
 
 1. TOC
 {:toc}
-
----
-
-## Definitions
-
-### Function keyword and Function() Constructor
-
-1. `function` 키워드로 정의
-
-2. `new Function()` 내장 자바스크립트 함수 생성자 - 지양해야함
-
-&#8594; 두 방법 모두 동일하지만 첫번째 방법이 편리하기때문에 더 자주 씀
-
-예제
-{: .label .label-purple .mt-3}
-```js
-1. var myFunction = function (a, b) {return a * b};
-
-2. var myFunction = new Function("a", "b", "return a * b");
-
-var x = myFunction(4, 3);
-```
-
----
-
-## Function Sort 
-
-함수의 종류에는 일반함수, 익명함수, 화살표 함수(익명함수)가 있음
-
-### Basic Function Declarations
-
-함수 선언은 앞서 보인것처럼 아래 문법으로 선언됨
-
-Syntax
-{: .label .mt-2}
-<div class="code-example" markdown="1">
-function functionName(parameters) { <br>
-  // code to be executed            <br>
-}                               
-</div>
-```js
-function myFunction(a, b) {
-  return a * b;
-}
-```
-
-### Function Expressions (Anonymous Function)
-
-&#9656; JavaScript 함수는 표현식을 사용하여 정의 할수도 있음
-
-&#9656; 또한 함수 표현식은 변수에 저장될 수 있음, 그 후 변수는 함수처럼 사용됨
-
-&#9656; 함수에 따로 이름이 없고 변수명으로 사용되는 함수라서 **익명 함수**라고도 불림
-
-예시
-{: .label .label-purple .mt-3}
-```js
-var x = function (a, b) {return a * b};
-
-var z = x(4, 3);
-```
-
-!note
-{: .label .label-yellow .mt-2}
-<div class="code-example" markdown="1">
-익명함수는 표현식(실행문)이기 때문에 세미콜론을 사용해야함 
-</div>
-
-### Arrow Functions
-
-**화살표 함수는 함수 표현식 작성을위한 짧은 구문을 허용**
-
-Syntax
-{: .label .mt-2}
-```js
-// ES5
-var x = function(x, y) {
-  return x * y;
-}
-
-// ES6
-const x = (x, y) => x * y;
-const x = (x, y) => { return x * y };
-```
-
-&#9656; 화살표 함수는 `this`가 없어서 객체 메소드를 정의하는데 알맞지 않음
-
-&#9656; 게양되지 않아서 호출되기 전에 선언되어야함
-
-&#9656; `const` 변수 키워드를 사용하는게 안전함 (함수 표현식은 항상 constant value라서)
-
-&#9656; 함수가 단일 명령문일경우 `return` 키워드와 `{}` 생략 가능
-
-!note
-{: .label .label-yellow .mt-2}
-<div class="code-example" markdown="1">
-Arrow functions are not supported in IE11 or earlier
-</div>
 
 ---
 
