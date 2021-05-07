@@ -83,6 +83,9 @@ Placing scripts in external files has some advantages
 &#9733; 자바스크립트 파일에 스크립트 태그 저장하면 안됨
 
 ### external url
-    
-<script src="https://www.w3schools.com/js/myScript.js"></script>
 
+```html
+<script src="https://www.w3schools.com/js/myScript.js"></script>
+```
+
+위와같이 외부 자바스크립트 파일 url 주소를 src 속성을 사용해 가지고 올 수 있음. 

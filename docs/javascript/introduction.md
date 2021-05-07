@@ -38,7 +38,7 @@ nav_order: 1
 
 ### Why Use JavaScript?
 
-가장 많은 사용 이유 : image manipulation, form validation, dynamic changes of content
+가장 많은 사용 이유 : 이미지 조작, 양식 유효성 검사, 콘텐츠의 동적 변경
 
 ### What can JavaScript do?
 
