@@ -21,9 +21,9 @@ nav_order: 2
 
 ### Function Parameters and Arguments
 
-**Parameter는 함수 정의에 사용된 변수**
+Parameter는 **함수 정의에 사용된 변수**
 
-**Argument는 함수를 지나가는 진짜 값**
+Argument는 **함수를 지나가는 진짜 값**
 
 매개변수와 인수와의 차이점
 {: .label .mt-2}
@@ -39,33 +39,35 @@ nav_order: 2
 
 **매개변수 규칙**
 
-JavaScript 함수 정의는 **매개 변수의 데이터 유형을 지정하지 않음**
+1. JavaScript 함수 정의는 **매개 변수의 데이터 유형을 지정하지 않음**
 
-JavaScript 함수는 **인자에 대한 아무런 검사를 수행하지 않음**
+2. JavaScript 함수는 **인자에 대한 아무런 검사를 수행하지 않음**
 
-JavaScript 함수는 **수신 된 인수 수를 확인하지 않음**
+3. JavaScript 함수는 **수신 된 인수 수를 확인하지 않음**
 
 ### Parameter Defaults
 
-매개변수는 있지만, 인수가 주어지지 않았다면 매개변수는 undefined 값을 가짐
+매개변수는 있지만, 인수가 주어지지 않았다면 매개변수는 **undefined 값을 가짐**
 
-때로는 이것이 허용되지만 아래와 같이 **매개 변수에 기본값을 할당**하는 것이 좋음
+때로는 이것이 허용되지만 아래와 같이 
 
-```js
-function myFunction(x, y) {
-  if (y === undefined) {
-    y = 0;
-  }
-}
-```
+1. **매개 변수에 기본값을 할당**하는 것이 좋음
 
-아니면 아래와 같이 **기본 매개 변수값을 허용**
+    ```js
+    function myFunction(x, y) {
+      if (y === undefined) {
+        y = 0;
+      }
+    }
+    ```
 
-```js
-function (a=1, b=1) {
-  // function code
-}
-```
+2. 아니면 아래와 같이 **기본 매개 변수값을 허용**
+
+    ```js
+    function (a=1, b=1) {
+      // function code
+    }
+    ```
 
 ---
 

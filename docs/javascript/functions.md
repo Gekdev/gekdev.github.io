@@ -47,16 +47,6 @@ function functionName(parameters) {
 
 &#9656; 인수(arguments)는 함수가 호출될 때 함수가 받는 값, 함수 안에서는 인수 (매개변수)가 지역변수처럼 사용된다
 
-매개변수와 인수와의 차이점
-{: .label .mt-2}
-<div class="code-example" markdown="1">
-매개변수는 함수의 정의부분에 나열되어 있는 변수들을 의미하며,
-
-전달인자는 함수를 호출할때 전달되는 실제 값을 의미한다. 
-
-이같은 의미를 명확히 하기 위해 매개변수는 변수(variable)로, 전달인자는 값(value)으로 보는 것이 일반적
-</div>
-
 !note
 {: .label .label-yellow .mt-2}
 <div class="code-example" markdown="1">
