@@ -2,7 +2,7 @@
 layout: default
 title: Numbers
 parent: JavaScript
-nav_order: 5
+nav_order: 4
 ---
 
 # JavaScript Numbers
