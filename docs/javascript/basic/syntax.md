@@ -17,15 +17,21 @@ nav_order: 4
 
 ---
 
-## Syntax basic
+## Syntax
 
-Syntax : 일련의 규칙, JavaScript 프로그램 구성 방법
+### What is Syntax?
+
+**JavaScript 프로그램이 구성되는 일련의 규칙**
 
 ```js
 var x, y, z;         // How to declare variables
 x = 5; y = 6;        // How to assign values
 z = x + y;           // How to compute values
 ```
+
+---
+
+## Syntax basic
 
 ### Values 
 
@@ -52,7 +58,7 @@ z = x + y;           // How to compute values
     [더 알아보기](https://mommoo.tistory.com/14){: .btn  .btn-outline .mt-2}
     </span>
 
-* [Variable value](https://gekdev.github.io/docs/javascript/basic/variable/)
+* [Variable values](https://gekdev.github.io/docs/javascript/basic/variable/)
 
     **variables = 변수**
 
@@ -88,3 +94,24 @@ z = x + y;           // How to compute values
 
 자주 쓰는 습관 들이기!
 
+### Identifiers
+
+**이름**
+
+&#9656; 식별자는 변수 (및 키워드, 함수 및 레이블)의 이름을 지정하는 데 사용
+
+&#9656; 첫 번째 문자는 문자, 밑줄 (_) 또는 달러 기호 ($)
+
+&#9656; 문자, 숫자, 밑줄 또는 달러 기호
+
+#### Features of Identifiers
+
+* 모든 JavaScript 식별자는 대소 문자를 구분
+
+    ```css
+    var lastname, lastName;
+    lastName = "Doe";
+    lastname = "Peterson";
+    ```
+
+* Camel Case
