@@ -21,9 +21,9 @@ nav_order: 2
 
 ### Function Parameters and Arguments
 
-Parameter는 함수 정의에 사용된 변수들
+**Parameter는 함수 정의에 사용된 변수**
 
-Argument는 함수를 지나가는 진짜 값들
+**Argument는 함수를 지나가는 진짜 값**
 
 매개변수와 인수와의 차이점
 {: .label .mt-2}

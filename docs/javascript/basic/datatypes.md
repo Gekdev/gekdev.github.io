@@ -21,11 +21,11 @@ nav_order: 6
 
 ### The Concept of Data Types
 
-프로그래밍에서 데이터 타입은 중요한 개념
+&#9656; 프로그래밍에서 데이터 타입은 중요한 개념
 
-변수를 조작하려면 그 변수가 어떤 데이터 타입인지 알아야 함
+&#9656; 변수를 조작하려면 그 변수가 어떤 데이터 타입인지 알아야 함
 
-numbers, strings(text values), object{}, booleans, arrays등이 있음
+&#9656; numbers, strings(text values), object{}, booleans, arrays등이 있음
 
 ### Primitive Data
 
@@ -56,17 +56,15 @@ typeof function myFunc(){}   // Returns "function"
 
 ---
 
-## Data types
+## Primitive Data
 
 ### Strings
 
 **series of characters**
 
-작은 따옴표나 큰 따옴표로 사용됨
+&#9656; 작은 따옴표나 큰 따옴표로 사용됨
 
-문장안에 따옴표가 사용될 경우 서로 겹치지 않게 사용해야함
-
-primitive data
+&#9656; 문장안에 따옴표가 사용될 경우 서로 겹치지 않게 사용해야함
 
 ```js
 var answer1 = "It's alright";             // Single quote inside double quotes
@@ -78,9 +76,7 @@ var answer3 = 'He is called "Johnny"';    // Double quotes inside single quotes
 
 **유일한 숫자타입**
 
-소수점 없이 쓸 수 있음
-
-primitive data
+&#9656; 소수점 없이 쓸 수 있음
 
 ```js
 var x1 = 34.00;     // Written with decimals
@@ -89,11 +85,11 @@ var x2 = 34;        // Written without decimals
 
 ### Booleans
 
-`true` or `false`
+**true or false**
 
-조건문을 테스트할때 자주 사용됨
+&#9656; 조건문을 테스트할때 자주 사용됨
 
-primitive data
+&#9656; primitive data
 
 ```js
 var x = 5;
@@ -103,39 +99,12 @@ var z = 6;
 (x == z)       // Returns false
 ```
 
-### Arrays
-
-square brackets `[]`로 쓰임
-
-아이템들은 ,로 구별됨
-
-0부터 시작
-
-complex data
-
-```js
-var cars = ["Saab", "Volvo", "BMW"];
-```
-
-### Objects
-
-curly braces `{}` 로 쓰임
-
-name:value 짝으로 사용되고 ,로 구별됨
-
-complex data
-
-```js
-var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
-```
-
 ### Undefined
 
 변수 선언 직후에는 변수값이 undefined
 
 변수값을 임의로 비우고 싶을때는 undefined로 할당해주면 됨
 
-primitive data
 
 ```js
 car = undefined;    // Value is undefined, type is undefined
@@ -151,22 +120,52 @@ undefined와 관련이 없음
 var car = "";    // The value is "", the typeof is "string"
 ```
 
+---
+
+## Complex Data
+
+### Arrays
+
+**배열**
+
+&#9656; square brackets `[]`로 쓰임
+
+&#9656; 아이템들은 ,로 구별됨
+
+&#9656; 0부터 시작
+
+```js
+var cars = ["Saab", "Volvo", "BMW"];
+```
+
+### Objects
+
+**객체**
+
+&#9656; curly braces `{}` 로 쓰임
+
+&#9656; name:value 짝으로 사용되고 ,로 구별됨
+
+```js
+var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+```
+
 ### null
 
-**nothing**, something that doesn't exist
+**nothing, something that doesn't exist**
 
-하지만 data type : object
+&#9656; 하지만 data type : object
 
-객체를 비우기위해 null이라고 지정해줄 수 있음 (undefined와 비슷한 느낌으로)
+&#9656; 객체를 비우기위해 null이라고 지정해줄 수 있음 (undefined와 비슷한 느낌으로)
 
-대소문자 구분해서 사용해야함 소문자 null만 위에서 말하는 null
+&#9656; 대소문자 구분해서 사용해야함 소문자 null만 위에서 말하는 null
 
 ```js
 var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
 person = null;    // Now value is null, but type is still an object
 ```
 
-undefined로 비워도 됨 // 대신 객체의 값과 속성이 달라짐
+비우는게 목적이라면 primitive data의 undefined도 있음 -> 대신 객체의 값과 속성이 달라짐
 
 ```js
 var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
@@ -191,7 +190,7 @@ null == undefined          // true
 
 ### The typeof Operator
 
-변수나 표현식의 데이터 타입을 찾기위해 typeof 연산자를 사용
+**변수나 표현식의 데이터 타입을 찾기위해 typeof 연산자를 사용**
 
 ```js
 typeof "John"        	          // Returns "string"

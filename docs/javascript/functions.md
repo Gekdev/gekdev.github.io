@@ -67,8 +67,8 @@ function functionName(parameters) {
 
 자바스크립트 안에서 선언된 변수들은 **지역변수**가 됨
 
-예제
-{: .label .label-purple .mt-2}
+Example
+{: .label .mt-2}
 ```js
 // code here can NOT use carName
 
@@ -88,13 +88,13 @@ function myFunction() {
 
 함수 이름만 호출하면 함수 객체를 가져옴
 
-* 함수가 호출되는 경우
+#### 함수가 호출되는 경우
 
-    &#9656; When an event occurs (when a user clicks a button)
+* When an event occurs (when a user clicks a button)
 
-    &#9656; When it is invoked (called) from JavaScript code
+* When it is invoked (called) from JavaScript code
 
-    &#9656; Automatically (self invoked)
+* Automatically (self invoked)
 
 ### Function Return
 
@@ -102,10 +102,10 @@ function myFunction() {
 
 함수는 종종 반환 값을 계산하고, **리턴 값은 호출자에게 반환됨**
 
-&#8594; 이거 때문에 변수에 값을 담고 출력해야 return값이 나옴 because return value needs variable caller !
+★ 이거 때문에 변수에 값을 담고 출력해야 return값이 나옴 because return value needs variable caller !
 
-예제
-{: .label .label-purple .mt-2}
+Example
+{: .label .mt-2}
 ```js
 var x = myFunction(4, 3);   // Function is called, return value will end up in x
 
@@ -114,5 +114,5 @@ function myFunction(a, b) {
 }
 ```
 
-위처럼 함수를 변수값으로 사용할 수 있음
+&#8594; 위처럼 함수를 변수값으로 사용할 수 있음
 

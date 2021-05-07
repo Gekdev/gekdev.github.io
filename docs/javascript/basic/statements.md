@@ -17,13 +17,11 @@ nav_order: 3
 
 ---
 
-## Statements
-
-### JavaScript Programs
+## JavaScript Program Statements
 
 컴퓨터 프로그램 : 컴퓨터나 브라우저에 의해 실행되어야 하는 지시문
 
-자바스크립트 프로그램 : 프로그램의 목록 statement (자바스크립토 코드라고도 불림)
+**자바스크립트 프로그램 : 프로그램의 목록 statement** (자바스크립트 코드라고도 불림)
 
 ### Statements
 
@@ -79,9 +77,9 @@ function myFunction() {
 
 문장은 종종 **수행 할 JavaScript 조치를 구별하기 위해 키워드(keyword)로 시작**
 
-키워드들은 변수명으로 사용하면 안됨!
+&#9656; 키워드들은 변수명으로 사용하면 안됨!
 
-대표적으로 break, continue, debugger... 가 있음
+&#9656; 대표적으로 break, continue, debugger... 가 있음
 
 <span class="fs-2">
 [키워드 더보기](https://www.w3schools.com/js/js_reserved.asp){: .btn  .btn-outline .mt-2}

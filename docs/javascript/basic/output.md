@@ -17,38 +17,40 @@ nav_order: 2
 
 ---
 
-## Output
-
-### Display Possibilities
+## Display Possibilities
 
 대표적으로 다음 4가지의 방법으로 데이터를 보일 수 있음
 
-* document.write
+### document.write
 
-    **HTML output, For testing purposes**
+**HTML output, For testing purposes**
 
-    Using document.write() after an HTML document is loaded, will delete all existing HTML (don't use it, not good one)
+Using document.write() after an HTML document is loaded, will delete all existing HTML -> 사용하지 않는게 좋음
+
+document.writeIn(“”)도 비슷함
     
-    document.writeIn(“”)도 비슷함
-    
-* innerHTML
+### innerHTML
 
-    ****HTML element**
+**HTML element**
 
-    document.getElementById('').innerHTML ... : common way
+document.getElementById('').innerHTML ... -> 가장 흔한 방법
 
-* window.alert()
+★ getElementById를 사용하기 때문에 순서가 중요함 (아이디를 알기 전에 스크립트를 읽어버리면 실행되지 않음)
 
-    **alert box to display data**
+### window.alert()
 
-    window object is the global scope object = 변수, 속성이나 메소드들이 기본적으로 window 객체에 속해서 따로 쓰지 않아도 됨
+**alert box to display data**
 
-* console.log()
+window object is the global scope object 
 
-    **browser console, For debugging purposes**
+&#9656; 변수, 속성이나 메소드들이 기본적으로 window 객체에 속해서 따로 쓰지 않아도 됨
+
+### console.log()
+
+**browser console, For debugging purposes**
 
 window.print()
-{: .label}
+{: .label .mt-2}
 <div class="code-example" markdown="1">
 오직 **window.print()로만 브라우저에서 메소드를 호출해 현재 창을 인쇄**할 수 있음
 

@@ -25,13 +25,13 @@ The code inside a JavaScript function will execute when "something" invokes it
 
 **함수는 정의될때 실행되지 않고 호출되면 실행됨**
 
-"call upon a function", "start a function", or "execute a function" 모두 같은 말
+&#9656; "call upon a function", "start a function", or "execute a function" 모두 같은 말
 
-JavaScript **function can be invoked without being called**
+&#9656; JavaScript **function can be invoked without being called**
 
 ### Invoking a Function as a Function
 
-함수가 항상 객체에 속하는건 아니지만, 자바스크립트에는 항상 기본 전역 객체가 있음
+함수가 항상 객체에 속하는건 아니지만, **자바스크립트에는 항상 기본 전역 객체가 있음**
 
 HTML에서 **기본 전역 객체는 HTML 페이지 자체**이므로, HTML에서 쓰인 자바스크립트의 함수는 **HTML 페이지에 속하게 됨**, 또한 브라우저에서의 **페이지 객체는 브라우저 윈도우**라서 함수들은 **자동적으로 윈도우 객체의 함수가 됨**
 
@@ -56,10 +56,10 @@ myFunction(10, 2);           // Will return 20
 
 **`this`는 현재 코드를 소유하는 객체를 나타냄**
 
-함수에서 `this`는 함수를 소유하고 있는 객체를 나타냄
+&#9656; 함수에서 `this`는 함수를 소유하고 있는 객체를 나타냄
 
 <span class="fs-2">
-[JS this Keyword](){: .btn  .btn-outline .mt-2}
+[JS this Keyword](https://www.w3schools.com/js/js_this.asp){: .btn  .btn-outline .mt-2}
 </span>
 
 ### The Global Object

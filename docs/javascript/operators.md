@@ -18,15 +18,21 @@ nav_order: 3
 
 ## Operators Basic
 
+### What is Operators?
+
+**여러 종류의 연산을 위한을 위해 사용**
+
+&#9656; 프로그래밍에서 쓰이는 기호
+
+---
+
+## Operators Sort
+
 ### Arithmetic Operators
 
 **산술연산자**
 
 2개 이상의 숫자들 (리터럴 또는 변수)에 산술을 시행함
-
-숫자들은 리터럴(1+1), 변수(a+b), 표현식((1+1)*a)일 수 있음
-
-숫자들을 operands 피연산자라고 부름
 
 | Operator      | Description                   |
 |:--------------|:------------------------------|
@@ -37,11 +43,15 @@ nav_order: 3
 | /             | division                      |
 | %             | Modulus (Division Remainder)  |
 
-&#9656; +는 숫자는 더하기, 문자는 결합의 속성 (순서 중요함) [확인](https://www.w3schools.com/js/tryit.asp?filename=tryjs_datatypes_addstrings_2)
+&#9656; +는 숫자는 더하기, 문자는 결합의 속성 [(순서 중요함)](https://www.w3schools.com/js/tryit.asp?filename=tryjs_datatypes_addstrings_2)
 
 &#9656; x ** y produces the same result as Math.pow(x,y)
 
 &#9656; % : 나머지값까지 모두 실수
+
+&#9656; 숫자들은 리터럴(1+1), 변수(a+b), 표현식((1+1)*a)일 수 있음
+
+&#9656; 숫자들을 operands 피연산자라고 부름
 
 Operator Precedence
 {: .label .mt-2}
@@ -58,11 +68,23 @@ Operator Precedence
 | ++            | Increment                     |
 | --            | Decrement                     |
 
-* 연산방법
+두가지 연산 방법이 있음
 
-    &#9656; 전위연산(++a) : 먼저 계산해서 내가됨
+* 전위연산(++a) : 먼저 계산해서 내가됨
 
-    &#9656; 후위연산(a++) : 다 하고 난 후 내가 더해짐
+* 후위연산(a++) : 다 하고 난 후 내가 더해짐
+
+Example
+{: .label .mt-2}
+```js
+var number = 10;
+document.write(++number + '<br>'); // 11, 전위증감
+document.write(number++ + '<br>'); // 11, 후위증감
+document.write(--number + '<br>'); // 11, 전위증감
+document.write(number++ + '<br>'); // 11, 후위증감
+
+이후에 number이 12가 된다
+```
 
 ### Assignment Operators
 
@@ -92,7 +114,7 @@ The **= operator is an experimental part of the ECMAScript 2016 proposal (ES7). 
 
 **비교연산자**
 
-값으로 true or false이 나옴
+값으로 true or false
 
 | Operator      | Description                       |
 |:--------------|:----------------------------------|
@@ -105,7 +127,16 @@ The **= operator is an experimental part of the ECMAScript 2016 proposal (ES7). 
 | >=            | greater than or equal to          |
 | <=            | less than or equal to             |
 
-&#9656; 문자열로 되어있는 숫자면(둘중 하나가) 숫자로 치환해서 비교해준다 ex) 1 < “3” true
+&#9656; 문자열로 되어있는 숫자면(둘중 하나가) 숫자로 치환해서 비교해주고 ex) 1 < “3” true
+
+&#9656; 문자열과 숫자를 비교할때는 숫자를 문자열로 치환해서 비교함
+
+Example
+{: .label .mt-2}
+```js
+document.write(("3" >= 1)) 		// true
+document.write(("273" == 273))  // true
+```
 
 &#9656; 둘다 문자열로 되어있으면 알파벳 순으로 비교해서(it works like sort()) ex) “2” < “12” false 
 
@@ -113,6 +144,10 @@ The **= operator is an experimental part of the ECMAScript 2016 proposal (ES7). 
 
 &#9656; 숫자로 바꿀 수 없는 문자열 = NaN – so result is always false
 
+&#9656; 문자끼리는 순서대로 나열해 알파벳이 뒤에있을수록 값이 크다 
+
+Example
+{: .label .mt-2}
 ```js
 age = Number(age);
 	if (isNaN(age)) {
@@ -128,15 +163,19 @@ age = Number(age);
 
 값으로 true or false이 나옴
 
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+variablename = (condition) ? value1:value2
+</div>
+
 | Operator      | Description                       |
 |:--------------|:----------------------------------|
 | ?             | ternary operator                  |
 
 &#9656; 조건 연산을 계속 겹쳐서 사용할 수 있음
 
-variablename = (condition) ? value1:value2
-
-예제
+Example
 {: .label .mt-2}
 ```js
 	var voteable = (age < 18) ? "Too young":"Old enough";
@@ -151,7 +190,7 @@ variablename = (condition) ? value1:value2
 | Operator      | Description             |
 |:--------------|:------------------------|
 | &&            | and                     |
-| ||            | or                      |
+| &#124;&#124;  | or                      |
 | !             | not                     |
 
 &#9656; ! : if a = true ==> false , a = false ==> true
@@ -179,7 +218,7 @@ Bit operators work on **32 bits numbers**
 
 **연산 우선순위**
 
-value가 높을수록 우선
+&#124; value가 높을수록 우선
 
 | Value        | Operator   | Description               | Example           |
 |:-------------|:-----------|:--------------------------|:------------------|
