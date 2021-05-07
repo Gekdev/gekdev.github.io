@@ -1,9 +1,8 @@
 ---
 layout: default
 title: Numbers
-parent: primitive
-grand_parent: Data types
-nav_order: 2
+parent: JavaScript
+nav_order: 5
 ---
 
 # JavaScript Numbers

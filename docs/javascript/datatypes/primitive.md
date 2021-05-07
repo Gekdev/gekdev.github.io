@@ -4,7 +4,6 @@ title: Primitive Data
 parent: Data types
 grand_parent: JavaScript
 nav_order: 1
-has_children: true
 ---
 
 # JavaScript Primitive Data
@@ -20,7 +19,7 @@ has_children: true
 
 ## Primitive Data
 
-### [Strings]()
+### Strings
 
 **series of characters**
 
@@ -34,7 +33,7 @@ var answer2 = "He is called 'Johnny'";    // Single quotes inside double quotes
 var answer3 = 'He is called "Johnny"';    // Double quotes inside single quotes
 ```
 
-### [Numbers]()
+### Numbers
 
 **유일한 숫자타입**
 
