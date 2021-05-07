@@ -31,7 +31,7 @@ nav_order: 4
 
 추가적인 속성이나 메소드가 없는 단순한 기본 데이터
 
-string, number, boolean, undefined가 있음
+string, number, boolean, undefined, empty values가 있음
 
 ```js
 typeof "John"              // Returns "string"
@@ -88,8 +88,6 @@ var x2 = 34;        // Written without decimals
 **true or false**
 
 &#9656; 조건문을 테스트할때 자주 사용됨
-
-&#9656; primitive data
 
 ```js
 var x = 5;
@@ -154,18 +152,18 @@ var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
 
 **nothing, something that doesn't exist**
 
-&#9656; 하지만 data type : object
+&#9656; data type : object
+
+&#9656; 대소문자 구분해서 사용해야함 소문자 null만 가능
 
 &#9656; 객체를 비우기위해 null이라고 지정해줄 수 있음 (undefined와 비슷한 느낌으로)
-
-&#9656; 대소문자 구분해서 사용해야함 소문자 null만 위에서 말하는 null
 
 ```js
 var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
 person = null;    // Now value is null, but type is still an object
 ```
 
-비우는게 목적이라면 primitive data의 undefined도 있음 -> 대신 객체의 값과 속성이 달라짐
+&#9656; 비우는게 목적이라면 primitive data의 undefined도 있지만 객체의 값과 속성이 달라짐
 
 ```js
 var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};

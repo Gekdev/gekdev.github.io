@@ -131,14 +131,15 @@ The **= operator is an experimental part of the ECMAScript 2016 proposal (ES7). 
 
 &#9656; 문자열과 숫자를 비교할때는 숫자를 문자열로 치환해서 비교함
 
+&#9656; 둘다 문자열로 되어있으면 알파벳 순으로 비교해서 = it works like sort()
+
 Example
 {: .label .mt-2}
 ```js
 document.write(("3" >= 1)) 		// true
 document.write(("273" == 273))  // true
+document.write((“2” < “12”))    // false 
 ```
-
-&#9656; 둘다 문자열로 되어있으면 알파벳 순으로 비교해서(it works like sort()) ex) “2” < “12” false 
 
 &#9656; 빈 문자열 = 0
 
@@ -168,18 +169,15 @@ syntax
 <div class="code-example" markdown="1">
 variablename = (condition) ? value1:value2
 </div>
+```js
+	var voteable = (age < 18) ? "Too young":"Old enough";
+```
 
 | Operator      | Description                       |
 |:--------------|:----------------------------------|
 | ?             | ternary operator                  |
 
 &#9656; 조건 연산을 계속 겹쳐서 사용할 수 있음
-
-Example
-{: .label .mt-2}
-```js
-	var voteable = (age < 18) ? "Too young":"Old enough";
-```
 
 ### Logical Operators
 
@@ -201,6 +199,9 @@ Example
 |:--------------|:--------------------------------------------------------------|
 | typeof        | Returns the type of a variable                                |
 | instanceof    | Returns true if an object is an instance of an object type    |
+
+[Basic - Data types](https://gekdev.github.io/docs/javascript/basic/datatypes/#checking-data-types)에서 설명했듯이 변수의 데이터 타입을 알기 위해 사용하는 연산자
+
 
 ### Bitwise Operators
 
