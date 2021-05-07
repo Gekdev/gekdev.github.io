@@ -19,8 +19,6 @@ nav_order: 3
 
 ## Invocation
 
-The code inside a JavaScript function will execute when "something" invokes it
-
 ### Invoking a JavaScript Function
 
 **함수는 정의될때 실행되지 않고 호출되면 실행됨**
@@ -28,6 +26,14 @@ The code inside a JavaScript function will execute when "something" invokes it
 &#9656; "call upon a function", "start a function", or "execute a function" 모두 같은 말
 
 &#9656; JavaScript **function can be invoked without being called**
+
+#### 함수가 호출되는 경우
+
+* When an event occurs (when a user clicks a button)
+
+* When it is invoked (called) from JavaScript code
+
+* Automatically (self invoked)
 
 ### Invoking a Function as a Function
 
@@ -52,17 +58,15 @@ myFunction(10, 2);           // Will return 20
 전역 변수, 메소드 또는 함수는 전역 객체에서 이름 충돌 및 버그를 쉽게 만들 수 있음
 </div>
 
-### The this Keyword
+#### The this Keyword
 
-**`this`는 현재 코드를 소유하는 객체를 나타냄**
-
-&#9656; 함수에서 `this`는 함수를 소유하고 있는 객체를 나타냄
+**`this`는 현재 코드를 소유하는 객체를 나타냄** 따라서 함수에서 `this`는 함수를 소유하고 있는 객체를 나타냄
 
 <span class="fs-2">
 [JS this Keyword](https://www.w3schools.com/js/js_this.asp){: .btn  .btn-outline .mt-2}
 </span>
 
-### The Global Object
+#### The Global Object
 
 소유자 객체없이 함수를 호출하면 값 `this` 가 전역 객체가 됨
 
@@ -74,7 +78,7 @@ myFunction(10, 2);           // Will return 20
 var x = myFunction();            // x = [object Window]
 
 function myFunction() {
-  return this;
+  return this;  
 }
 ```
 

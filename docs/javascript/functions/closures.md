@@ -55,7 +55,7 @@ function myFunction() {
 
 * 지역변수 : 함수가 호출될 때 작성되고 함수가 완료되면 삭제
 
-### JavaScript Closures
+### JavaScript Counting Dilemma
 
 무언가를 세는데 함수를 사용하고 싶을 때 자주 딜레마가 발생됨
 

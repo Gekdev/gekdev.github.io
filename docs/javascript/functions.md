@@ -17,7 +17,7 @@ has_children: true
 
 ---
 
-## Function Basic
+## Basic
 
 ### What is Function?
 
@@ -77,14 +77,6 @@ function myFunction() {
 &#9656; 함수이름과 `()` operator가 특정 함수를 호출함
 
 &#9656; 함수 이름만 호출하면 함수 객체를 가져옴
-
-#### 함수가 호출되는 경우
-
-* When an event occurs (when a user clicks a button)
-
-* When it is invoked (called) from JavaScript code
-
-* Automatically (self invoked)
 
 ### Function Return
 

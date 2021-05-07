@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Call & Apply
+title: Methods
 parent: Functions
 grand_parent: JavaScript
 nav_order: 4
 ---
 
-# Functions Call & Apply
+# Functions Methods
 {: .no_toc .text-beta .fw-700}
 
 ## Table of contents
@@ -23,7 +23,7 @@ nav_order: 4
 
 **모든 함수는 메소드**
 
-함수가 자바스크립트 객체의 메소드가 아니라면, [전역 객체(window)의 함수](https://gekdev.github.io/docs/javascript/functions/invoation/#invoking-a-function-as-a-function)가 됨
+&#9656; 함수가 자바스크립트 객체의 메소드가 아니라면, [전역 객체(window)의 함수](https://gekdev.github.io/docs/javascript/functions/invoation/#invoking-a-function-as-a-function)가 됨
 
 아래 예제는 firstName, lastName, fullName이라는 3 개의 속성을 가진 객체를 만듦
 
@@ -40,89 +40,93 @@ var person = {
 person.fullName();   // Will return "John Doe"
 ```
 
-### The JavaScript call() Method
+---
 
-**소유자 객체를 인수로 사용하여 메소드를 호출**하는 데 사용
+## Methods
 
-자바스크립트의 미리 정의된 메소드
+### call() Method
 
-* 어떤 객체에 속하는 메소드를 다른 객체가 사용하기
+**소유자 객체를 인수로 사용하여 메소드를 호출하는 데 사용**
 
-    예제
-    {: .label .label-purple .mt-3}
-    ```js
-    var person = {
-      fullName: function() {
-        return this.firstName + " " + this.lastName;
-      }
-    }
-    var person1 = {
-      firstName:"John",
-      lastName: "Doe"
-    }
-    var person2 = {
-      firstName:"Mary",
-      lastName: "Doe"
-    }
+&#9656; 자바스크립트의 미리 정의된 메소드
 
-    person.fullName.call(person1);  // "John Doe"
-    person.fullName.call(person2);  // "Mary Doe"
-    ```
+&#9656; call()메소드는 인수를 받음
 
-* call()메소드는 인수를 받음
+어떤 객체에 속하는 메소드를 다른 객체가 사용하기
+{: .label .label-purple .mt-2}
+```js
+var person = {
+  fullName: function() {
+    return this.firstName + " " + this.lastName;
+  }
+}
+var person1 = {
+  firstName:"John",
+  lastName: "Doe"
+}
+var person2 = {
+  firstName:"Mary",
+  lastName: "Doe"
+}
 
-    예제
-    {: .label .label-purple}
-    ```js
-    var person = {
-      fullName: function(city, country) {
-        return this.firstName + " " + this.lastName + "," + city + "," + country;
-      }
-    }
-    var person1 = {
-      firstName:"John",
-      lastName: "Doe"
-    }
-    person.fullName.call(person1, "Oslo", "Norway"); // John Doe,Oslo,Norway
-    ```
+person.fullName.call(person1);  // "John Doe"
+person.fullName.call(person2);  // "Mary Doe"
+```
 
-### The JavaScript apply() Method
+인수를 받는 call()메소드
+{: .label .label-purple .mt-2}
+```js
+var person = {
+  fullName: function(city, country) {
+    return this.firstName + " " + this.lastName + "," + city + "," + country;
+  }
+}
+var person1 = {
+  firstName:"John",
+  lastName: "Doe"
+}
+person.fullName.call(person1, "Oslo", "Norway"); // John Doe,Oslo,Norway
+```
 
-call() 메소드와 비슷하지만 인수를 배열로 받는다는 점에서 다름
+### apply() Method
 
-* 어떤 객체에 속하는 메소드를 다른 객체가 사용하기
+**소유자 객체 배열을 인수로 사용하여 메소드를 호출하는 데 사용**
 
-    예제
-    {: .label .label-purple}
-    ```js
-    var person = {
-      fullName: function() {
-        return this.firstName + " " + this.lastName;
-      }
-    }
-    var person1 = {
-      firstName: "Mary",
-      lastName: "Doe"
-    }
-    person.fullName.apply(person1);  // Will return "Mary Doe"
-    ```
+&#9656; 자바스크립트의 미리 정의된 메소드
 
-* apply() 메소드는 인수를 받음
+&#9656; apply()메소드는 인수를 받음
 
-    예제
-    {: .label .label-purple .mt-3}
-    ```js
-    var person = {
-      fullName: function(city, country) {
-        return this.firstName + " " + this.lastName + "," + city + "," + country;
-      }
-    }
-    var person1 = {
-      firstName:"John",
-      lastName: "Doe"
-    }
-    person.fullName.apply(person1, ["Oslo", "Norway"]); // John Doe,Oslo,Norway
-    ```
+★ call() 메소드와 비슷하지만 **인수를 배열로 받는다는 점**에서 다름
+
+어떤 객체에 속하는 메소드를 다른 객체가 사용하기
+{: .label .label-purple .mt-2}
+```js
+var person = {
+  fullName: function() {
+    return this.firstName + " " + this.lastName;
+  }
+}
+var person1 = {
+  firstName: "Mary",
+  lastName: "Doe"
+}
+person.fullName.apply(person1);  // Will return "Mary Doe"
+```
+
+인수를 받는 apply() 메소드
+{: .label .label-purple .mt-2}
+```js
+var person = {
+  fullName: function(city, country) {
+    return this.firstName + " " + this.lastName + "," + city + "," + country;
+  }
+}
+var person1 = {
+  firstName:"John",
+  lastName: "Doe"
+}
+person.fullName.apply(person1, ["Oslo", "Norway"]); // John Doe,Oslo,Norway
+```
 
 The Difference Between call() and apply()
 {: .label .label-yellow .mt-2}
@@ -144,6 +148,10 @@ JavaScript의 엄격한 모드에서 apply()메소드 의 첫 번째 인수가 �
 
 "엄격하지 않은"모드에서는 전역 객체가됨
 </div>
+
+---
+
+## Useage of Function Methods
 
 ### Simulate a Max Method on Arrays
 
