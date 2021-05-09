@@ -17,13 +17,21 @@ nav_order: 3
 
 ---
 
-## Sorting Array Elements
+## Sorting Array Elements Basic
 
 ### Sorting an Array
 
 #### sort()
 
 **method sorts an array alphabetically**
+
+`sort()`함수는 두 개의 값을 비교하여, 상기 비교 함수 값을 전송하고, 반환(-, 0, +)의 값에 따른 값을 정렬
+
+&#9656; 결과가 음수 이면 b 이전에 a 정렬 
+
+&#9656; 결과가 양수 이면 a 이전에 b 정렬 
+
+&#9656; 결과가 0이면 두 값의 정렬 순서가 변경되지 않음
 
 &#9656; a-z순
 
@@ -52,23 +60,6 @@ fruits.sort();
 
 예제
 {: .label .label-purple .mt-2}
-<div class="code-example" markdown="1">
-<p id="demo"></p>
-
-<script>
-// Create and display an array:
-var fruits = ["Banana", "Orange", "Apple", "Mango"]
-
-function myFunction(){
-  fruits.sort();            // First sort the array
-  fruits.reverse();         // Then reverse it:
-  
-  document.getElementById("demo").innerHTML = fruits;
-}
-
-myFunction();
-</script>
-</div>
 ```html
 <p id="demo"></p>
 
@@ -87,7 +78,14 @@ myFunction();
 </script>
 ```
 
-### Numeric Sort 
+<span class="fs-2">
+{: .btn .btn-outline .mt-2}
+[W3School](https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort_reverse)
+</span>
+
+---
+
+## Numeric Sort 
 
 기본으로 the sort() 함수는 값을 문자열로 정렬
 
@@ -95,178 +93,66 @@ myFunction();
 
 &#9656; 해결법 : 함수이용(compare funtion)
 
-#### 오름차순
+### 오름차순
 
 예제
 {: .label .label-purple .mt-2}
-<div class="code-example" markdown="1">
-<button onclick="myFunction()">Try it</button>
-
-<p id="demo"></p>
-
-<script>
-var points = [40, 100, 1, 5, 25, 10];
-document.getElementById("demo").innerHTML = points;  
-
-function myFunction() {
-  points.sort(function(a, b){return a - b});
-  document.getElementById("demo").innerHTML = points;
-}
-
-myFunction();
-</script>
-</div>
-```html
-<button onclick="myFunction()">Try it</button>
-
-<p id="demo"></p>
-
-<script>
-var points = [40, 100, 1, 5, 25, 10];
-document.getElementById("demo").innerHTML = points;  
-
-function myFunction() {
-  points.sort(function(a, b){return a - b});
-  document.getElementById("demo").innerHTML = points;
-}
-</script>
-```
-
-#### 내림차순
-
-예제
-{: .label .label-purple .mt-3}
-<div class="code-example" markdown="1">
-<button onclick="myFunction()">Try it</button>
-
-<p id="demo"></p>
-
-<script>
-var points = [40, 100, 1, 5, 25, 10];
-document.getElementById("demo").innerHTML = points;
-
-function myFunction() {
-  points.sort(function(a, b){return b - a});
-  document.getElementById("demo").innerHTML = points;
-}
-</script>
-</div>
-```html
-<button onclick="myFunction()">Try it</button>
-
-<p id="demo"></p>
-
-<script>
-var points = [40, 100, 1, 5, 25, 10];
-document.getElementById("demo").innerHTML = points;
-
-function myFunction() {
-  points.sort(function(a, b){return b - a});
-  document.getElementById("demo").innerHTML = points;
-}
-</script>
-```
-
-#### 무작위로
-
-무작위지만 우선순위가 있음
-
-Fisher Yates Shuffle 방법을 더 선호해서 사용(뒤에 설명되어 있음)
-
-예제
-{: .label .label-purple .mt-3}
-<div class="code-example" markdown="1">
-<button onclick="myFunction()">Try it</button>
-
-<p id="demo"></p>
-
-<script>
-var points = [40, 100, 1, 5, 25, 10];
-document.getElementById("demo").innerHTML = points;  
-
-function myFunction() {
-  points.sort(function(a, b){return 0.5 - Math.random()});
-  document.getElementById("demo").innerHTML = points;
-}
-</script>
-</div>
-```html
-<button onclick="myFunction()">Try it</button>
-
-<p id="demo"></p>
-
-<script>
-var points = [40, 100, 1, 5, 25, 10];
-document.getElementById("demo").innerHTML = points;  
-
-function myFunction() {
-  points.sort(function(a, b){return 0.5 - Math.random()});
-  document.getElementById("demo").innerHTML = points;
-}
-</script>
-```
-
-### The Compare Function
-
-비교 함수의 목적은 대체 **정렬 순서를 정의하는 것**
-
-비교 함수는 인수에 따라 음수, 0 또는 양수 값을 반환
-
 ```js
-function(a, b){return a - b}
+var points = [40, 100, 1, 5, 25, 10];
+document.getElementById("demo").innerHTML = points;  
+
+function myFunction() {
+  points.sort(function(a, b){return a - b});
+  document.getElementById("demo").innerHTML = points;
+}
 ```
 
-`sort()`함수는 두 개의 값을 비교하여, 상기 비교 함수 값을 전송하고, 반환(-, 0, +)의 값에 따른 값을 정렬
+<span class="fs-2">
+{: .btn .btn-outline .mt-2}
+[W3School](https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort2)
+</span>
 
-&#9656; 결과가 음수 이면 b 이전에 a 정렬 
-
-&#9656; 결과가 양수 이면 a 이전에 b 정렬 
-
-&#9656; 결과가 0이면 두 값의 정렬 순서가 변경되지 않음
-
+### 내림차순
 
 예제
 {: .label .label-purple .mt-3}
-<div class="code-example" markdown="1">
-<button onclick="myFunction1()">Sort Alphabetically</button>
-<button onclick="myFunction2()">Sort Numerically</button>
-
-<p id="demo"></p>
-
-<script>
+```js
 var points = [40, 100, 1, 5, 25, 10];
-document.getElementById("demo").innerHTML = points;  
+document.getElementById("demo").innerHTML = points;
 
-function myFunction1() {
-  points.sort();
+function myFunction() {
+  points.sort(function(a, b){return b - a});
   document.getElementById("demo").innerHTML = points;
 }
-function myFunction2() {
-  points.sort(function(a, b){return a - b});
-  document.getElementById("demo").innerHTML = points;
-}
-</script>
-</div>
-```html
-<button onclick="myFunction1()">Sort Alphabetically</button>
-<button onclick="myFunction2()">Sort Numerically</button>
-
-<p id="demo"></p>
-
-<script>
-var points = [40, 100, 1, 5, 25, 10];
-document.getElementById("demo").innerHTML = points;  
-
-function myFunction1() {
-  points.sort();
-  document.getElementById("demo").innerHTML = points;
-}
-function myFunction2() {
-  points.sort(function(a, b){return a - b});
-  document.getElementById("demo").innerHTML = points;
-}
-</script>
 ```
+
+<span class="fs-2">
+{: .btn .btn-outline .mt-2}
+[W3School](https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort3)
+</span>
+
+### 무작위
+
+&#9656; 무작위지만 우선순위가 있음
+
+&#9656; Fisher Yates Shuffle 방법을 더 선호해서 사용(뒤에 설명되어 있음)
+
+예제
+{: .label .label-purple .mt-3}
+```js
+var points = [40, 100, 1, 5, 25, 10];
+document.getElementById("demo").innerHTML = points;  
+
+function myFunction() {
+  points.sort(function(a, b){return 0.5 - Math.random()});
+  document.getElementById("demo").innerHTML = points;
+}
+```
+
+<span class="fs-2">
+{: .btn .btn-outline .mt-2}
+[W3School](https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort_random)
+</span>
 
 ### The Fisher Yates Method
 
@@ -274,27 +160,6 @@ function myFunction2() {
 
 예제
 {: .label .label-purple .mt-3}
-<div class="code-example" markdown="1">
-<button onclick="myFunction()">Try it</button>
-
-<p id="demo"></p>
-
-<script>
-var points = [40, 100, 1, 5, 25, 10];
-document.getElementById("demo").innerHTML = points;  
-
-function myFunction() {
-var i, j, k;
-  for (i = points.length -1; i > 0; i--) {
-    j = Math.floor(Math.random() * i)
-    k = points[i]
-    points[i] = points[j]
-    points[j] = k
-  }
-  document.getElementById("demo").innerHTML = points;
-}
-</script>
-</div>
 ```html
 <button onclick="myFunction()">Try it</button>
 
@@ -316,6 +181,55 @@ var i, j, k;
 }
 </script>
 ```
+
+<span class="fs-2">
+{: .btn .btn-outline .mt-2}
+[W3School](https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort_random2)
+</span>
+
+---
+
+## Array Sort Technics The Compare Function
+
+### The Compare Function
+
+비교 함수의 목적은 대체 **정렬 순서를 정의하는 것**
+
+&#9656; 비교 함수는 인수에 따라 음수, 0 또는 양수 값을 반환
+
+syntax
+{: .label .mt-2}
+```js
+function(a, b){return a - b}
+```
+
+예제
+{: .label .label-purple .mt-3}
+```html
+<button onclick="myFunction1()">Sort Alphabetically</button>
+<button onclick="myFunction2()">Sort Numerically</button>
+
+<p id="demo"></p>
+
+<script>
+var points = [40, 100, 1, 5, 25, 10];
+document.getElementById("demo").innerHTML = points;  
+
+function myFunction1() {
+  points.sort();
+  document.getElementById("demo").innerHTML = points;
+}
+function myFunction2() {
+  points.sort(function(a, b){return a - b});
+  document.getElementById("demo").innerHTML = points;
+}
+</script>
+```
+
+<span class="fs-2">
+{: .btn .btn-outline .mt-2}
+[W3School](https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort_alpha)
+</span>
 
 ### Find the Highest (or Lowest) Array Value
 
@@ -325,12 +239,11 @@ var i, j, k;
 
 근데 최대나 최소값 하나만 원하면 정말 비효율적임(max() or min() 사용하는게 효율적)
 
-#### Using Math.max() on an Array
-
-`Math.max.apply` : 배열에서 가장 높은 숫자를 찾는 데 사용
-
-예제
-{: .label .label-purple .mt-3}
+Using Math.max() on an Array
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+Math.max.apply() : 배열에서 가장 높은 숫자를 찾는 데 사용
+</div>
 ```js
 function myArrayMax(arr) {
 	Math.max.apply(null, arr);
@@ -339,12 +252,11 @@ function myArrayMax(arr) {
 }
 ```
 
-#### Using Math.min() on an Array
-
-`Math.min.apply` : 배열에서 가장 낮은 숫자를 찾는 데 사용
-
-예제
-{: .label .label-purple .mt-3}
+Using Math.min() on an Array
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+Math.min.apply() : 배열에서 가장 낮은 숫자를 찾는 데 사용
+</div>
 ```js
 function myArrayMax(arr) {
 	Math.min.apply(null, arr);
@@ -355,93 +267,95 @@ function myArrayMax(arr) {
 
 ### My Min / Max JavaScript Methods
 
-* 최대 값 찾기
+#### 최대 값 찾기
 
-    예제
-    {: .label .label-purple .mt-3}
-    <div class="code-example" markdown="1">
-    <p>The highest number is <span id="demo"></span>.</p>
+예제
+{: .label .label-purple .mt-3}
+<div class="code-example" markdown="1">
+<p>The highest number is <span id="demo"></span>.</p>
 
-    <script>
-    var points = [40, 100, 1, 5, 25, 10];
-    document.getElementById("demo").innerHTML = myArrayMax(points);
+<script>
+var points = [40, 100, 1, 5, 25, 10];
+document.getElementById("demo").innerHTML = myArrayMax(points);
 
-    function myArrayMax(arr) {
-      var len = arr.length;
-      var max = -Infinity;
-      while (len--) {
-        if (arr[len] > max) {
-          max = arr[len];
-        }
-      }
-      return max;
+function myArrayMax(arr) {
+  var len = arr.length;
+  var max = -Infinity;
+  while (len--) {
+    if (arr[len] > max) {
+      max = arr[len];
     }
-    </script>
-    </div>
-    ```html
-    <p>The highest number is <span id="demo"></span>.</p>
+  }
+  return max;
+}
+</script>
+</div>
+```html
+<p>The highest number is <span id="demo"></span>.</p>
 
-    <script>
-    var points = [40, 100, 1, 5, 25, 10];
-    document.getElementById("demo").innerHTML = myArrayMax(points);
+<script>
+var points = [40, 100, 1, 5, 25, 10];
+document.getElementById("demo").innerHTML = myArrayMax(points);
 
-    function myArrayMax(arr) {
-      var len = arr.length;
-      var max = -Infinity;
-      while (len--) {
-        if (arr[len] > max) {
-          max = arr[len];
-        }
-      }
-      return max;
+function myArrayMax(arr) {
+  var len = arr.length;
+  var max = -Infinity;
+  while (len--) {
+    if (arr[len] > max) {
+      max = arr[len];
     }
-    </script>
-    ```
+  }
+  return max;
+}
+</script>
+```
     
-* 최소 값 찾기
+#### 최소 값 찾기
 
-    예제
-    {: .label .label-purple .mt-3}
-    <div class="code-example" markdown="1">
-    <p>The lowest number is <span id="demo"></span>.</p>
+예제
+{: .label .label-purple .mt-3}
+<div class="code-example" markdown="1">
+<p>The lowest number is <span id="demo"></span>.</p>
 
-    <script>
-    var points = [40, 100, 1, 5, 25, 10];
-    document.getElementById("demo").innerHTML = myArrayMin(points);
+<script>
+var points = [40, 100, 1, 5, 25, 10];
+document.getElementById("demo").innerHTML = myArrayMin(points);
 
-    function myArrayMin(arr) {
-      var len = arr.length;
-      var min = Infinity;
-      while (len--) {
-        if (arr[len] < min) {
-          min = arr[len];
-        }
-      }
-      return min;
+function myArrayMin(arr) {
+  var len = arr.length;
+  var min = Infinity;
+  while (len--) {
+    if (arr[len] < min) {
+      min = arr[len];
     }
-    </script>
-    </div>
-    ```html
-    <p>The lowest number is <span id="demo"></span>.</p>
+  }
+  return min;
+}
+</script>
+</div>
+```html
+<p>The lowest number is <span id="demo"></span>.</p>
 
-    <script>
-    var points = [40, 100, 1, 5, 25, 10];
-    document.getElementById("demo").innerHTML = myArrayMin(points);
+<script>
+var points = [40, 100, 1, 5, 25, 10];
+document.getElementById("demo").innerHTML = myArrayMin(points);
 
-    function myArrayMin(arr) {
-      var len = arr.length;
-      var min = Infinity;
-      while (len--) {
-        if (arr[len] < min) {
-          min = arr[len];
-        }
-      }
-      return min;
+function myArrayMin(arr) {
+  var len = arr.length;
+  var min = Infinity;
+  while (len--) {
+    if (arr[len] < min) {
+      min = arr[len];
     }
-    </script>
-    ```
+  }
+  return min;
+}
+</script>
+```
 
-### Sorting Object Arrays 
+---
+
+## Sorting Object Arrays 
 
 배열에 포함된 객체를 정렬할 때 사용
 
