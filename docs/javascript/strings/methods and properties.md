@@ -207,7 +207,7 @@ var res = str.substr(-4);
 //Kiwi
 ```
 
-### Replacing String Content
+### Replacing String 
 
 #### replace() 
 
@@ -297,7 +297,26 @@ var text = "Hello" + " " + "World!";
 var text = "Hello".concat(" ", "World!");
 //이와 같이 표현하기도 함
 ```
-    
+
+### Repeating Strings
+
+#### repeat 
+
+**요소를 반복시키기**
+
+&#9656; 매개변수는 얼마나 반복시킬지 결정
+
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+string.repeat(count)
+</div>
+```js
+var str = "Hello world!";
+str.repeat(2);
+//result is Hello world!Hello world!
+```
+
 ### Removing whitespace
 
 #### trim()

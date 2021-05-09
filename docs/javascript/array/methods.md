@@ -267,95 +267,83 @@ var fruits = ["Banana", "Orange", "Apple", "Mango"];
 delete fruits[0];           // Changes the first element in fruits to undefined
 ```
 
-### Repeating Elements
-
-#### repeat 
-
-**요소를 반복시키기**
-
-&#9656; 매개변수는 얼마나 반복시킬지 결정
-
-```js
-“*”.repeat()
-```
-
 ### Splicing an Array
 
 #### splice()
 
-    **배열에 항목을 추가 / 제거하고 제거 된 항목을 반환**
-    
-    원래 배열을 변경함
-    
-    Syntax
-    {: .label .mt-2}
-    <div class="code-example" markdown="1">
-    arr.splice(index, howmany(optional), item1(optional), ....., itemX)
-    
-    &#9656; index : 어디서부터 추가하거나 지워야하는지
-    
-    &#9656; howmany : 몇개의 요소가 지워져야 하는지
-    
-    &#9656; item1... : 어떤 요소가 들어가야 하는지
-    </div>
-    ```js
-    var fruits = ["Banana", "Orange", "Apple", "Mango"];
-    fruits.splice(2, 0, "Lemon", "Kiwi");
+**배열에 항목을 추가 / 제거하고 제거 된 항목을 반환**
 
-    //Banana,Orange,Lemon,Kiwi,Apple,Mango
-    ```
-    
-    인덱스0 으로 삭제만 이용하는 방법도 있다 - 오류 x 좋은방법
-    
-    ```js
-	var fruits = ["Banana", "Orange", "Apple", "Mango"];
-	fruits.splice(0, 1);        // Removes the first element of fruits
-    ```
+원래 배열을 변경함
+
+Syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+arr.splice(index, howmany(optional), item1(optional), ....., itemX)
+
+&#9656; index : 어디서부터 추가하거나 지워야하는지
+
+&#9656; howmany : 몇개의 요소가 지워져야 하는지
+
+&#9656; item1... : 어떤 요소가 들어가야 하는지
+</div>
+```js
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.splice(2, 0, "Lemon", "Kiwi");
+
+//Banana,Orange,Lemon,Kiwi,Apple,Mango
+```
+
+인덱스0 으로 삭제만 이용하는 방법도 있다 - 오류 x 좋은방법
+
+```js
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.splice(0, 1);        // Removes the first element of fruits
+```
 
 ### Merging (Concatenating) Arrays
 
 #### concat()
 
-    **기존 배열을 병합 (연결)하여 새 배열**을 만듦
-    
-    Syntax
-    {: .label .mt-2}
-    <div class="code-example" markdown="1">
-    var arr3 = arr1.concat(arr2);
-    </div>
-    ```js
-    var myGirls = ["Cecilie", "Lone"];
-	var myBoys = ["Emil", "Tobias", "Linus"];
-	var myChildren = myGirls.concat(myBoys);   
-    // Concatenates (joins) myGirls and myBoys
-    ```
-    
-    매개변수로 위와같이 배열을 가지고 있는 변수를 받을수도 있고, 배열을 바로 받을수도 있음
-    
-    매개변수 개수는 무한(,를 사용해서 넣고싶은 만큼 넣어도 됨)
-    
-    ```js
-    arr1.concat(arr2, arr3, "Peter");
-    ```
+**기존 배열을 병합 (연결)하여 새 배열**을 만듦
+
+Syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+var arr3 = arr1.concat(arr2);
+</div>
+```js
+var myGirls = ["Cecilie", "Lone"];
+var myBoys = ["Emil", "Tobias", "Linus"];
+var myChildren = myGirls.concat(myBoys);   
+// Concatenates (joins) myGirls and myBoys
+```
+
+매개변수로 위와같이 배열을 가지고 있는 변수를 받을수도 있고, 배열을 바로 받을수도 있음
+
+매개변수 개수는 무한(,를 사용해서 넣고싶은 만큼 넣어도 됨)
+
+```js
+arr1.concat(arr2, arr3, "Peter");
+```
 
 ### Slicing an Array
 
 #### slice()
 
-    **배열의 일부를 새로운 배열로 잘라냄**
-    
-    첫번째 매개변수는 어디서부터 잘라낼지 결정, 매개변수와 맞는 인덱스에 있는 요소부터 시작하고 자름 (포함)
-    
-    두번째 매개변수(optional)는 종료 인수 선택 (포함하지 않음)
-    
-    ```js
-    var fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
-    var citrus = fruits.slice(1);
-    //citrus = Orange, Lemon, Apple, Mango
+**배열의 일부를 새로운 배열로 잘라냄**
 
-    var citrus = fruits.slice(1,3);
-    //citrus = Orange,Lemon
-    ```
+첫번째 매개변수는 어디서부터 잘라낼지 결정, 매개변수와 맞는 인덱스에 있는 요소부터 시작하고 자름 (포함)
+
+두번째 매개변수(optional)는 종료 인수 선택 (포함하지 않음)
+
+```js
+var fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+var citrus = fruits.slice(1);
+//citrus = Orange, Lemon, Apple, Mango
+
+var citrus = fruits.slice(1,3);
+//citrus = Orange,Lemon
+```
   
 ### Automatic toString()
 
