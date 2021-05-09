@@ -135,6 +135,21 @@ var fruits = ["Banana", "Orange", "Apple", "Mango"];
 document.getElementById("demo").innerHTML = fruits.toString();
 //Banana,Orange,Apple,Mango
 ```
+  
+!note
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+**Automatic toString()**
+
+&#9656; 배열을 부르면 배열을 쉼표로 구분된 문자열로 자동 변환해서 출력함
+
+&#8594; 자동으로 toString()메소드가 사용되는 것
+</div>
+```js
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+fruits.toString(); = fruits;
+```
 
 !Note
 {: .label .mt-2}
@@ -271,9 +286,9 @@ delete fruits[0];           // Changes the first element in fruits to undefined
 
 #### splice()
 
-**배열에 항목을 추가 / 제거하고 제거 된 항목을 반환**
+**배열에 항목을 추가/제거하고 제거 된 항목을 반환**
 
-원래 배열을 변경함
+&#9656; 원래 배열을 변경함
 
 Syntax
 {: .label .mt-2}
@@ -293,7 +308,7 @@ fruits.splice(2, 0, "Lemon", "Kiwi");
 //Banana,Orange,Lemon,Kiwi,Apple,Mango
 ```
 
-인덱스0 으로 삭제만 이용하는 방법도 있다 - 오류 x 좋은방법
+&#9656; 인덱스0 으로 삭제만 이용하는 방법도 있다 - 오류 x 좋은방법임!
 
 ```js
 var fruits = ["Banana", "Orange", "Apple", "Mango"];
@@ -318,10 +333,12 @@ var myChildren = myGirls.concat(myBoys);
 // Concatenates (joins) myGirls and myBoys
 ```
 
-매개변수로 위와같이 배열을 가지고 있는 변수를 받을수도 있고, 배열을 바로 받을수도 있음
+&#9656; 매개변수로 위와같이 배열을 가지고 있는 변수를 받을수도 있고, 배열을 바로 받을수도 있음
 
-매개변수 개수는 무한(,를 사용해서 넣고싶은 만큼 넣어도 됨)
+&#9656; 매개변수 개수는 무한(,를 사용해서 넣고싶은 만큼 넣어도 됨)
 
+예제
+{: .label .label-purple .mt-2}
 ```js
 arr1.concat(arr2, arr3, "Peter");
 ```
@@ -332,10 +349,15 @@ arr1.concat(arr2, arr3, "Peter");
 
 **배열의 일부를 새로운 배열로 잘라냄**
 
-첫번째 매개변수는 어디서부터 잘라낼지 결정, 매개변수와 맞는 인덱스에 있는 요소부터 시작하고 자름 (포함)
+Syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+array.slice(start, end)
 
-두번째 매개변수(optional)는 종료 인수 선택 (포함하지 않음)
+&#9656; start : 어디서부터 잘라낼지 결정, 매개변수와 맞는 인덱스에 있는 요소부터 시작하고 자름 (포함)
 
+&#9656; end : 매개변수(optional)는 종료 인수 선택 (포함하지 않음)
+</div>
 ```js
 var fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
 var citrus = fruits.slice(1);
@@ -344,26 +366,10 @@ var citrus = fruits.slice(1);
 var citrus = fruits.slice(1,3);
 //citrus = Orange,Lemon
 ```
-  
-### Automatic toString()
 
-배열을 부르면 배열을 쉼표로 구분 된 문자열로 자동 변환해서 출력함
+---
 
-자동으로 toString()메소드가 사용되는 것
-
-```js
-var fruits = ["Banana", "Orange", "Apple", "Mango"];
-
-fruits.toString(); = fruits;
-```
-
-!Note
-{: .label .mt-2}
-<div class="code-example" markdown="1">
-All JavaScript data types have a valueOf() and a toString() method.
-</div>
-
-### Complete Array Reference
+## Complete Array Reference
 
 The reference contains descriptions and examples of all Array properties and methods.
 
