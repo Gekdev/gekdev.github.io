@@ -30,7 +30,7 @@ nav_order: 1
 Syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-num.toString()
+num.toString();
 </div>
 ```js
 var x = 10	//typeof x = number
@@ -55,7 +55,7 @@ but it doesn’t change it’s own variation 	// so x is still number
 Syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-num.toFixed() 
+num.toFixed();
 </div>
 ```js
 var x = 9.656;
@@ -76,7 +76,7 @@ x.toFixed(6);           // returns 9.656000
 Syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-num.toExponential()
+num.toExponential();
 </div>
 ```js
 var x = 9.656;
@@ -92,7 +92,7 @@ x.toExponential(6);     // returns 9.656000e+0
 Syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-num.toPrecision()
+num.toPrecision();
 </div>
 ```js
 var x = 9.656;
@@ -113,7 +113,7 @@ x.toPrecision(6);       // returns 9.65600
 Syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-num.valueOf()
+num.valueOf();
 </div>
 ```js
 var x = 123;
@@ -140,8 +140,11 @@ All JavaScript data types have a valueOf() and a toString() method.
 
 &#9656; 숫자를 변환 할 수 없으면 `NaN`이 반환
 
-예제
-{: .label .label-purple .mt-2}
+Syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+Number(value);
+</div>
 ```js
 Number(true);          // returns 1
 Number(false);         // returns 0
@@ -174,8 +177,11 @@ Number(new Date("2017-09-30"));    // returns 1506729600000
 
 &#9656; 숫자를 변환 할 수 없으면 `NaN`이 반환
 
-예제
-{: .label .label-purple .mt-2}
+Syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+parseInt("string");
+</div>
 ```js
 parseInt("10");         // returns 10
 parseInt("10.33");      // returns 10(정수만 추출)
@@ -190,12 +196,15 @@ parseInt("years 10");   // returns NaN
 
 &#9656; 공백 허용, 하지만 첫 번째 숫자만 반환
 
-&#9656; 소숫점도 추출하는 메소드
+&#9656; .parseInt와 다른점은 소숫점도 추출한다는것
 
 &#9656; 숫자를 변환 할 수 없으면 `NaN`이 반환
 
-예제
-{: .label .label-purple .mt-2}
+Syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+parseFloat("string");
+</div>
 ```js
 parseFloat("10");        // returns 10
 parseFloat("10.33");     // returns 10.33

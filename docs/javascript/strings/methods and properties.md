@@ -47,6 +47,8 @@ var sln = txt.length;
 //return 26
 ```
 
+---
+
 ## String Methods
 
 원래 primitive values 즉 [기본값](https://gekdev.github.io/docs/javascript/basic/data_types/#primitive-data-1)들은 속성이나 메소드들을 가질 수 없지만 **자바스크립트에서는 기본값도 object라고 취급**하기 때문에 그에 관련된 속성과 메소드들을 제공함
@@ -240,7 +242,7 @@ var n = str.replace(/Microsoft/g, "W3Schools");
 
 ### Converting to Upper and Lower Case
 
-#### .toUpperCase()
+#### toUpperCase()
 
 **converted to upper case**
 
@@ -255,7 +257,7 @@ var text2 = text1.toUpperCase();  // text2 is text1 converted to upper
 //HELLO WORLD!
 ```
 
-#### .toLowerCase()
+#### toLowerCase()
 
 **converted to upper case**
 
@@ -272,7 +274,7 @@ var text2 = text1.toLowerCase();  // text2 is text1 converted to lower
 
 ### Join Strings
 
-#### .concat()
+#### concat()
 
 **두 개 이상의 문자열을 조인**
 
@@ -298,7 +300,7 @@ var text = "Hello".concat(" ", "World!");
     
 ### Removing whitespace
 
-#### .trim()
+#### trim()
 
 **양쪽에 공백 지우기**
 
@@ -334,7 +336,7 @@ alert(str.trim());
 
 ### Extracting String Characters
 
-#### .charAt(position)
+#### charAt(position)
 
 **문자열의 지정된 인덱스에있는 문자를 반환**
 
@@ -345,7 +347,7 @@ str.charAt(0);
 // returns H
 ```
 
-#### .charCodeAt(position)
+#### charCodeAt(position)
 
 **문자열의 지정된 인덱스에서 문자의 유니 코드를 리턴**
 
