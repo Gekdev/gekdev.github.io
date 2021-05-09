@@ -41,15 +41,10 @@ var fruits = ["Banana", "Orange", "Apple", "Mango"];
 fruits.length;   // the length of fruits is 4
 ```
 
-Accessing the Last Array Element
-{: .label .mt-2}
-```js
-fruits = ["Banana", "Orange", "Apple", "Mango"];
-var last = fruits[fruits.length - 1];
-```
+#### Accessing the Last Array Element
 
-Looping Array Elements by length property
-{: .label .mt-2}
+예제
+{: .label .label-purple .mt-2}
 ```js
 fruits = ["Banana", "Orange", "Apple", "Mango"];
 var last = fruits[fruits.length - 1];
@@ -59,7 +54,27 @@ var last = fruits[fruits.length - 1];
 
 ## Array Technics
 
-### Access the Elements
+### Creating an Array
+
+**배열 리터럴을 사용하는 것이 JavaScript 배열을 만드는 가장 쉬운 방법**
+
+&#9656; 줄바꿈과 공백은 규칙만 지킨다면 여러줄에 걸쳐 사용가능
+
+Syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+var array_name = [item1, item2, ...];
+</div>
+
+Note!
+{: .label .label-yellow .mt-2}
+<div class="code-example" markdown="1">
+var a = new Array(“”,“”,“”...); 도 위와 같이 정확하게 동일한 배열을 만드는 방법
+
+하지만 단순성, 가독성, 실행속도를 위해 사용 자제해야 함
+</div>
+
+### Accessing the Elements
 
 **인덱스 번호로 배열 값에 접근하기**
 
@@ -74,7 +89,7 @@ var name = a[0];    //0번째 값 가져오기
 var name = a;       //a배열 전체 가져오기
 ```
 
-### Looping Array Elements
+#### Looping Array Elements
 
 1. length (for loop)
 

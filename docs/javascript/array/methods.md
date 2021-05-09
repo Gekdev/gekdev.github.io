@@ -30,20 +30,15 @@ syntax
 <div class="code-example" markdown="1">
 arr.push(str);
 </div>
+```js
+//추가
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.push("Kiwi");       //  Adds a new element ("Kiwi") to fruits
 
-1. 추가 
-
-    ```js
-    var fruits = ["Banana", "Orange", "Apple", "Mango"];
-    fruits.push("Kiwi");       //  Adds a new element ("Kiwi") to fruits
-    ```
-
-2. 반환 : 변수에 담으면 반환됨
-
-    ```js
-    var fruits = ["Banana", "Orange", "Apple", "Mango"];
-    var x = fruits.push("Kiwi");   //  x = 5
-    ```
+//반환
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+var x = fruits.push("Kiwi");   //  x = 5
+```
 
 Same result different way
 {: .label .mt-2}
@@ -75,7 +70,6 @@ syntax
 <div class="code-example" markdown="1">
 arr.unshift(str);
 </div>
-
 ```js
 //추가
 var fruits = ["Banana", "Orange", "Apple", "Mango"];
@@ -118,7 +112,6 @@ syntax
 <div class="code-example" markdown="1">
 arr.shift();
 </div>
-
 ```js
 //제거
 var fruits = ["Banana", "Orange", "Apple", "Mango"];
@@ -265,7 +258,7 @@ Automatic toString()
 ```js
 var fruits = ["Banana", "Orange", "Apple", "Mango"];
 
-fruits.toString(); = fruits;
+//fruits.toString(); = fruits;
 ```
 
 !Note
