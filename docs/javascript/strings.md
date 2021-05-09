@@ -49,6 +49,7 @@ var answer3 = 'He is called "Johnny"';
 | \'          | '           | Single quote          |
 | \"          | "           | Double quote          |
 | \\          | \           | Backslash             |
+
 ```js
 var x = "We are the so-called \"Vikings\" from the north.";
 
@@ -76,7 +77,7 @@ var x = "We are the so-called \"Vikings\" from the north.";
 
 &#9656; **`\` 메소드는 지원이 안되는 브라우저도 있어서 사용권장하지 않음**
 
-&#8594; 꼭 문자열 안 `\`로 사용해야함!
+&#9656; 꼭 문자열 안 `\`로 사용해야함!
 
 예제
 {: .label .label-purple .mt-2}
@@ -123,7 +124,7 @@ Note!
 
 ### String Length
 
-#### .length
+#### length
 
 **returns the length of a string**
 
@@ -145,6 +146,12 @@ var sln = txt.length;
 
 **문자열에서 지정된 텍스트 의 첫번째 발생 위치 를 리턴**
 
+&#9656; 앞에서 먼저 찾고, 숫자도 앞에서부터 셈
+
+&#9656; 찾을 수 없을경우 **-1** 리턴
+
+&#9656; 두번째 매개변수(optional)를 검색 시작 위치로 사용, 숫자 카운트도 변하지 않음
+
 Syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
@@ -160,15 +167,15 @@ var pos = str.indexOf("locate",15);
 //return 21
 ```
 
-&#9656; 앞에서 먼저 찾고, 숫자도 앞에서부터 셈
-
-&#9656; 찾을 수 없을경우 **-1** 리턴
-
-&#9656; 두번째 매개변수(optional)를 검색 시작 위치로 사용, 숫자 카운트도 변하지 않음
-
 #### lastIndexOf() 
 
 **문자열에서 지정된 텍스트 의 마지막 발생 위치 를 리턴**
+
+&#9656; 뒤에서 먼저 찾고, 숫자는 앞에서부터 셈
+
+&#9656; 찾을 수 없을경우 **-1** 리턴
+
+&#9656; 두번째 매개변수(optional)를 검색 시작 위치로 사용, 숫자도 매개변수 뒤부터 카운트 시작
 
 Syntax
 {: .label .mt-2}
@@ -184,12 +191,6 @@ var str = "Please locate where 'locate' occurs!";
 var pos = str.lastIndexOf("locate", 15);
 //return 7
 ```
-
-&#9656; 뒤에서 먼저 찾고, 숫자는 앞에서부터 셈
-
-&#9656; 찾을 수 없을경우 **-1** 리턴
-
-&#9656; 두번째 매개변수(optional)를 검색 시작 위치로 사용, 숫자도 매개변수 뒤부터 카운트 시작
 
 #### search()
 
@@ -219,10 +220,12 @@ search()는 두번째 시작 위치 인수를 사용할 수 없음
 
 **문자열의 일부를 추출하고 추출 된 부분을 새 문자열로 반환**
 
-두 번째 매개 변수를 생략하면 나머지 문자열 끝까지 분리
+&#9656; 두 번째 매개 변수를 생략하면 나머지 문자열 끝까지 분리
 
-매개 변수가 음수이면 위치는 문자열 끝에서 계산됨
+&#9656; 매개 변수가 음수이면 위치는 문자열 끝에서 계산됨
 
+&#8594; Internet Explorer 8 이하에서는 음수 위치가 작동하지 않음
+    
 Syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
@@ -243,11 +246,9 @@ var res = str.slice(-12);
 //Banana, Kiwi
 ```
 
-&#8594; Internet Explorer 8 이하에서는 음수 위치가 작동하지 않음
-    
 #### substring(start, end)
 
-slice()와 비슷하게 동작하지만 음수 매개변수를 승인하지 않음
+&#9656; slice()와 비슷하게 동작하지만 음수 매개변수를 승인하지 않음
 
 Syntax
 {: .label .mt-2}
@@ -262,9 +263,9 @@ var res = str.substring(7, 13);
 
 #### substr(start, length)
 
-slice()와 비슷하게 동작하지만 substr의 두번째 매개 변수는 길이를 지정함
+&#9656; slice()와 비슷하게 동작하지만 substr의 두번째 매개 변수는 길이를 지정함
 
-첫 번째 매개 변수가 음수이면 위치는 끝에서부터 계산
+&#9656; 첫 번째 매개 변수가 음수이면 위치는 끝에서부터 계산
 
 Syntax
 {: .label .mt-2}
@@ -297,7 +298,7 @@ var res = str.substr(-4);
 
 &#9656; case-sensitive함, 표현 정규식으로 바꿀 수 있음
 
-&#8594; 표현 정규식은 따옴표 없이 사용됨
+&#9656; 표현 정규식은 따옴표 없이 사용됨
 
 Syntax
 {: .label .mt-2}
@@ -356,9 +357,9 @@ var text2 = text1.toLowerCase();  // text2 is text1 converted to lower
 
 **두 개 이상의 문자열을 조인**
 
-문자열의 결합이니까 `+` operator 대신 사용해도 됨
+&#9656; 문자열의 결합이니까 `+` operator 대신 사용해도 됨
 
-뒤에 ,로 계속 추가 가능 or +...
+&#9656; 뒤에 ,로 계속 추가 가능 or +...
 
 Syntax
 {: .label .mt-2}
@@ -429,7 +430,7 @@ str.charAt(0);
 
 **문자열의 지정된 인덱스에서 문자의 유니 코드를 리턴**
 
-이 메소드는 UTF-16 코드 (0과 65535 사이의 정수)를 리턴
+&#9656; 이 메소드는 UTF-16 코드 (0과 65535 사이의 정수)를 리턴
 
 ```js
 var str = "HELLO WORLD";
@@ -471,7 +472,7 @@ str[0];                   // returns H
 
 **문자열을 배열로 바꾸는 메소드**
 
-separator가 생략되면 전체 문자열을 배열 0번째에 넣어버림
+&#9656; separator가 생략되면 전체 문자열을 배열 0번째에 넣어버림
 
 ```js
 var txt = "a,b,c,d,e";   // String
