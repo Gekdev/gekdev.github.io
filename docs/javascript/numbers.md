@@ -320,7 +320,7 @@ Number("John");        // returns NaN
 The Number() Method Used on Dates
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-convert a date to a number
+**convert a date to a number**
 
 returns the number of milliseconds since 1.1.1970
 </div>
@@ -328,21 +328,21 @@ returns the number of milliseconds since 1.1.1970
 Number(new Date("2017-09-30"));    // returns 1506729600000
 ```
 
-* .parseInt()
+#### .parseInt()
 
-    **문자열을 구문 분석하고 정수를 반환**
-    
-    공백 허용, 하지만 첫 번째 숫자만 반환
-    
-    ```js
-	parseInt("10");         // returns 10
-	parseInt("10.33");      // returns 10(정수만 추출)
-	parseInt("10 20 30");   // returns 10
-	parseInt("10 years");   // returns 10
-	parseInt("years 10");   // returns NaN 
-    ```
-    
-    &#8594; 숫자를 변환 할 수 없으면 `NaN`이 반환
+**문자열을 구문 분석하고 정수를 반환**
+
+&#9656; 공백 허용, 하지만 첫 번째 숫자만 반환
+
+```js
+parseInt("10");         // returns 10
+parseInt("10.33");      // returns 10(정수만 추출)
+parseInt("10 20 30");   // returns 10
+parseInt("10 years");   // returns 10
+parseInt("years 10");   // returns NaN 
+```
+
+&#8594; 숫자를 변환 할 수 없으면 `NaN`이 반환
 
 * .parseFloat()
 
