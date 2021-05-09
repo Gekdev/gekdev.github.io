@@ -107,7 +107,7 @@ var x = 100 / "Apple";  // x will be NaN (Not a Number)
 
 ### Converting number as a String
 
-#### .toString()
+#### toString()
 
 **숫자를 문자열로 반환**
 
@@ -128,7 +128,7 @@ x.toString();            // returns 123 from variable x
 but it doesn’t change it’s own variation 	// so x is still number
 ```
 
-#### .toFixed() 
+#### toFixed() 
 
 **소수 자릿수로 쓴 숫자만큼 문자열로 반환** 
 
@@ -149,7 +149,7 @@ x.toFixed(4);           // returns 9.6560
 x.toFixed(6);           // returns 9.656000
 ```
 
-#### .toExponential()
+#### toExponential()
 
 **지수 표기법을 사용하여 숫자를 반올림하고 쓴 문자열을 반환**
 
@@ -169,7 +169,7 @@ x.toExponential(4);     // returns 9.6560e+0
 x.toExponential(6);     // returns 9.656000e+0
 ```
 
-#### .toPrecision()
+#### toPrecision()
 
 **지정된 길이로 쓴 숫자로 문자열을 반환**
 
@@ -188,7 +188,7 @@ x.toPrecision(6);       // returns 9.65600
 
 ### Converting Number as a Number
 
-#### .valueOf()
+#### valueOf()
 
 **숫자를 숫자로 반환**
 
@@ -218,7 +218,7 @@ All JavaScript data types have a valueOf() and a toString() method.
 
 &#8594; JavaScript global methods can be used on all JavaScript data types
 
-#### .Number()
+#### Number()
 
 **JavaScript 변수를 숫자로 변환하는 데 사용**
 
@@ -253,7 +253,7 @@ returns the number of milliseconds since 1.1.1970
 Number(new Date("2017-09-30"));    // returns 1506729600000
 ```
 
-#### .parseInt()
+#### parseInt()
 
 **문자열을 구문 분석하고 정수를 반환**
 
@@ -274,7 +274,7 @@ parseInt("10 years");   // returns 10
 parseInt("years 10");   // returns NaN 
 ```
 
-####  .parseFloat()
+#### parseFloat()
 
 **문자열을 구문 분석하고 숫자를 반환**
 
