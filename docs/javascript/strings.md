@@ -44,11 +44,11 @@ var answer3 = 'He is called "Johnny"';
 
 그러면 자바스크립트는 문자열에 쓰여있는 따옴표를 문자열이라고 인지한다
 
-| Code              | Result      | Description           |
-|:------------------|:------------|:----------------------|
-| &#9656;'          | '           | Single quote          |
-| &#9656;"          | "           | Double quote          |
-| &#9656;&#9656;    | \           | Backslash             |
+| Code        | Result      | Description           |
+|:------------|:------------|:----------------------|
+| \'          | '           | Single quote          |
+| \"          | "           | Double quote          |
+| \\          | \           | Backslash             |
 ```js
 var x = "We are the so-called \"Vikings\" from the north.";
 
@@ -141,30 +141,30 @@ var sln = txt.length;
 
 ### Finding a String in a String
 
-* indexOf() 
+#### indexOf() 
 
-    **문자열에서 지정된 텍스트 의 첫번째 발생 위치 를 리턴**
+**문자열에서 지정된 텍스트 의 첫번째 발생 위치 를 리턴**
 
-    Syntax
-    {: .label .mt-2}
-    <div class="code-example" markdown="1">
-    str.indexOf("string", starting position parameter);
-    </div>
-    ```js
-    var str = "Please locate where 'locate' occurs!";
-    var pos = str.indexOf("locate");
-    //return 7
+Syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+str.indexOf("string", starting position parameter);
+</div>
+```js
+var str = "Please locate where 'locate' occurs!";
+var pos = str.indexOf("locate");
+//return 7
 
-    var str = "Please locate where 'locate' occurs!";
-    var pos = str.indexOf("locate",15);
-    //return 21
-    ```
-    
-    &#9656; 앞에서 먼저 찾고, 숫자도 앞에서부터 셈
-    
-    &#9656; 찾을 수 없을경우 **-1** 리턴
-    
-    &#9656; 두번째 매개변수(optional)를 검색 시작 위치로 사용, 숫자 카운트도 변하지 않음
+var str = "Please locate where 'locate' occurs!";
+var pos = str.indexOf("locate",15);
+//return 21
+```
+
+&#9656; 앞에서 먼저 찾고, 숫자도 앞에서부터 셈
+
+&#9656; 찾을 수 없을경우 **-1** 리턴
+
+&#9656; 두번째 매개변수(optional)를 검색 시작 위치로 사용, 숫자 카운트도 변하지 않음
 
 * lastIndexOf() 
 
@@ -200,16 +200,13 @@ var sln = txt.length;
     <div class="code-example" markdown="1">
     str.search("string")
     </div>
-    
-    예제
-    {: .label .label-purple .mt-2}
     ```js
     var str = "Please locate where 'locate' occurs!";
     var pos = str.search("locate");
-    ```
+    ```    
 
 indexOf와 search 메소드의 다른점
-{: .label .labe-yellow .mt-2}
+{: .label .label-yellow .mt-2}
 <div class="code-example" markdown="1">
 indexOf()는 정규표현식과 같은 강력한 검색 값을 사용할 수 없음
 
