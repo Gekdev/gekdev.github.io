@@ -110,7 +110,7 @@ var y = new String("John");
 
 ---
 
-## String Methods
+## String Property
 
 원래 primitive values 즉 [기본값](https://gekdev.github.io/docs/javascript/basic/data_types/#primitive-data-1)들은 속성이나 메소드들을 가질 수 없지만 **자바스크립트에서는 기본값도 object라고 취급**하기 때문에 그에 관련된 속성과 메소드들을 제공함
 
@@ -139,6 +139,18 @@ var sln = txt.length;
 
 //return 26
 ```
+
+## String Methods
+
+원래 primitive values 즉 [기본값](https://gekdev.github.io/docs/javascript/basic/data_types/#primitive-data-1)들은 속성이나 메소드들을 가질 수 없지만 **자바스크립트에서는 기본값도 object라고 취급**하기 때문에 그에 관련된 속성과 메소드들을 제공함
+
+Note!
+{: .label .label-yellow .mt-2}
+<div class="code-example" markdown="1">
+모든 문자열 메서드는 새 문자열을 반환하고 원래 문자열을 수정하지 않음
+
+문자열은 불변이고 문자열은 바꿀 수 없으며 교체만 가능함!
+</div>
 
 ### Finding a String in a String
 
