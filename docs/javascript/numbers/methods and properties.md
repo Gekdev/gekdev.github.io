@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Methods and Properties
-parent: numbers
+parent: Numbers
 grand_parent: JavaScript
 nav_order: 1
 ---
