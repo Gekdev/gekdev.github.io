@@ -57,122 +57,7 @@ var last = fruits[fruits.length - 1];
 
 ---
 
-## Array Technic
-
-### Access the Elements
-
-**인덱스 번호로 배열 값에 접근하기**
-
-&#9656; 인덱스는 0부터 시작
-
-&#9656; 배열 전체로 접근하려면 []없이 이름만 사용
-
-syntax
-{: .label .mt-2}
-```js
-var name = a[0];    //0번째 값 가져오기
-var name = a;       //a배열 전체 가져오기
-```
-
-### Looping Array Elements
-
-1. length (for loop)
-
-    ```js
-    text = "<ul>";
-    for (i = 0; i < fruits.length ; i++) {
-      text += "<li>" + fruits[i] + "</li>";
-    }
-    text += "</ul>";
-    ```
-
-2. Array.forEach()
-
-    ```js
-    var fruits, text;
-    fruits = ["Banana", "Orange", "Apple", "Mango"];
-
-    text = "<ul>";
-    fruits.forEach(myFunction);
-    text += "</ul>";
-
-    function myFunction(value) {
-      text += "<li>" + value + "</li>";
-    }
-    ```
-
-### Changing Elements
-
-**인덱스 번호를 사용하여 액세스한 후 변경**
-
-syntax
-{: .label .mt-2}
-<div class="code-example" markdown="1">
-arr[0] = "";
-</div>
-```js
-var fruits = ["Banana", "Orange", "Apple", "Mango"];
-fruits[0] = "Kiwi";        // Changes the first element of fruits to "Kiwi"
-```
-
----
-
 ## Array Methods
-
-### Converting Arrays to Strings
-
-#### toString() 
-
-**모든 배열 요소를 쉼표로 구분 한 문자열로 변환**
-
-syntax
-{: .label .mt-2}
-<div class="code-example" markdown="1">
-arr.toString();
-</div>
-```js
-var fruits = ["Banana", "Orange", "Apple", "Mango"];
-document.getElementById("demo").innerHTML = fruits.toString();
-//Banana,Orange,Apple,Mango
-```
-  
-!note
-{: .label .mt-2}
-<div class="code-example" markdown="1">
-**Automatic toString()**
-
-&#9656; 배열을 부르면 배열을 쉼표로 구분된 문자열로 자동 변환해서 출력함
-
-&#8594; 자동으로 toString()메소드가 사용되는 것
-</div>
-```js
-var fruits = ["Banana", "Orange", "Apple", "Mango"];
-
-fruits.toString(); = fruits;
-```
-
-!Note
-{: .label .mt-2}
-<div class="code-example" markdown="1">
-All JavaScript data types have a valueOf() and a toString() method.
-</div>
-
-#### join() 
-
-**모든 배열 요소를 지정한 구분자로 구분한 문자열로 변환**
-
-&#9656; 매개변수를 지정하지 않으면 ,로 구분함
-
-syntax
-{: .label .mt-2}
-<div class="code-example" markdown="1">
-fruits.join("특수문자");
-</div>
-```js
-var fruits = ["Banana", "Orange", "Apple", "Mango"];
-document.getElementById("demo").innerHTML = fruits.join(" * ");
-//Banana * Orange * Apple * Mango
-```
 
 ### Adding, Shifting and Deleting Elements
 
@@ -365,6 +250,121 @@ var citrus = fruits.slice(1);
 
 var citrus = fruits.slice(1,3);
 //citrus = Orange,Lemon
+```
+
+### Converting Arrays to Strings
+
+#### toString() 
+
+**모든 배열 요소를 쉼표로 구분 한 문자열로 변환**
+
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+arr.toString();
+</div>
+```js
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits.toString();
+//Banana,Orange,Apple,Mango
+```
+  
+!note
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+**Automatic toString()**
+
+&#9656; 배열을 부르면 배열을 쉼표로 구분된 문자열로 자동 변환해서 출력함
+
+&#8594; 자동으로 toString()메소드가 사용되는 것
+</div>
+```js
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+fruits.toString(); = fruits;
+```
+
+!Note
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+All JavaScript data types have a valueOf() and a toString() method.
+</div>
+
+#### join() 
+
+**모든 배열 요소를 지정한 구분자로 구분한 문자열로 변환**
+
+&#9656; 매개변수를 지정하지 않으면 ,로 구분함
+
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+fruits.join("특수문자");
+</div>
+```js
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits.join(" * ");
+//Banana * Orange * Apple * Mango
+```
+
+---
+
+## Array Technic
+
+### Access the Elements
+
+**인덱스 번호로 배열 값에 접근하기**
+
+&#9656; 인덱스는 0부터 시작
+
+&#9656; 배열 전체로 접근하려면 []없이 이름만 사용
+
+syntax
+{: .label .mt-2}
+```js
+var name = a[0];    //0번째 값 가져오기
+var name = a;       //a배열 전체 가져오기
+```
+
+### Looping Array Elements
+
+1. length (for loop)
+
+    ```js
+    text = "<ul>";
+    for (i = 0; i < fruits.length ; i++) {
+      text += "<li>" + fruits[i] + "</li>";
+    }
+    text += "</ul>";
+    ```
+
+2. Array.forEach()
+
+    ```js
+    var fruits, text;
+    fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+    text = "<ul>";
+    fruits.forEach(myFunction);
+    text += "</ul>";
+
+    function myFunction(value) {
+      text += "<li>" + value + "</li>";
+    }
+    ```
+
+### Changing Elements
+
+**인덱스 번호를 사용하여 액세스한 후 변경**
+
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+arr[0] = "";
+</div>
+```js
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits[0] = "Kiwi";        // Changes the first element of fruits to "Kiwi"
 ```
 
 ---
