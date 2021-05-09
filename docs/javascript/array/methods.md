@@ -206,68 +206,80 @@ arr.push(str);
     var x = fruits.push("Kiwi");   //  x = 5
     ```
 
-### Shifting Elements
+### Shifting and Deleting Elements
 
 #### shift() 
 
-    **첫 번째 배열 요소를 제거하고 다른 모든 요소를 더 낮은 인덱스로 이동, 전환된 문자열을 리턴** 
+**첫 번째 배열 요소를 제거하고 다른 모든 요소를 더 낮은 인덱스로 이동, 전환된 문자열을 리턴** 
 
-    마지막 요소 대신 첫 번째 요소에서 작업하는 pop()과 비슷함
-    
-    ```js
-    //제거
-    var fruits = ["Banana", "Orange", "Apple", "Mango"];
-    fruits.shift();            // Removes the first element "Banana" from fruits
+&#9656; 마지막 요소 대신 첫 번째 요소에서 작업하는 pop()과 비슷함
 
-    //리턴
-    var fruits = ["Banana", "Orange", "Apple", "Mango"];
-    var x = fruits.shift();    // x = "Banana"
-    ```
-    
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+arr.shift();
+</div>
+
+```js
+//제거
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.shift();            // Removes the first element "Banana" from fruits
+
+//리턴
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+var x = fruits.shift();    // x = "Banana"
+```
+
 #### unshift()
 
-    **배열에 새 요소를 추가하고 이전 요소를 뒤로 밀음, 새로운 배열 길이 반환**
+**배열에 새 요소를 추가하고 이전 요소를 뒤로 밀음, 새로운 배열 길이 반환**
 
-    마지막 요소 대신 첫 번째 요소에서 작업하는 push()와 비슷함
+&#9656; 마지막 요소 대신 첫 번째 요소에서 작업하는 push()와 비슷함
 
-    ```js
-    //추가
-    var fruits = ["Banana", "Orange", "Apple", "Mango"];
-    fruits.unshift("Lemon");    // Adds a new element "Lemon" to fruits
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+arr.unshift(str);
+</div>
 
-    //반환
-    var fruits = ["Banana", "Orange", "Apple", "Mango"];
-    fruits.unshift("Lemon");    // Returns 5
-    ```
+```js
+//추가
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.unshift("Lemon");    // Adds a new element "Lemon" to fruits
 
-### Deleting Elements 
+//반환
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.unshift("Lemon");    // Returns 5
+```
 
-JavaScript 배열은 객체이므로 JavaScript 연산자 `delete`를 사용하여 요소를 삭제가능
+#### delete operator 
 
-#### delete
+JavaScript 배열은 객체이므로 **JavaScript 연산자 `delete`를 사용하여 요소를 삭제가능**
 
-    그냥 구멍내버리고 채우지않음 (구멍낸 경우 arr.[숫자] = “” 로 채워야함)
+&#9656; 그냥 구멍내버리고 채우지않음 (구멍낸 경우 arr.[숫자] = “” 로 채워야함)
 
-    &#8594; 그래서 pop() 이나 shift()를 대신 사용함
+&#9656; 그래서 pop() 이나 shift()를 대신 사용함
 
-    &#8594; splice()도 요소를 지우는데 사용가능함
+&#9656; splice()도 요소를 지우는데 사용가능함
 
-    ```js
-    var fruits = ["Banana", "Orange", "Apple", "Mango"];
-    delete fruits[0];           // Changes the first element in fruits to undefined
-    ```
+예제
+{: .label .label-purple .mt-2}
+```js
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+delete fruits[0];           // Changes the first element in fruits to undefined
+```
 
 ### Repeating Elements
 
 #### repeat 
 
-    **요소를 반복시키기**
-    
-    매개변수는 얼마나 반복시킬지 결정
+**요소를 반복시키기**
 
-    ```js
-    “*”.repeat()
-    ```
+&#9656; 매개변수는 얼마나 반복시킬지 결정
+
+```js
+“*”.repeat()
+```
 
 ### Splicing an Array
 
