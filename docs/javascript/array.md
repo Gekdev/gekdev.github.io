@@ -25,26 +25,6 @@ has_children: true
 
 &#9656; **프로퍼티(name)로 숫자(인덱스)를 사용하는 특별한 유형의 객체**이다
 
-### Creating an Array
-
-**배열 리터럴을 사용하는 것이 JavaScript 배열을 만드는 가장 쉬운 방법**
-
-&#9656; 줄바꿈과 공백은 규칙만 지킨다면 여러줄에 걸쳐 사용가능
-
-Syntax
-{: .label .mt-2}
-<div class="code-example" markdown="1">
-var array_name = [item1, item2, ...];
-</div>
-
-Note!
-{: .label .label-yellow .mt-2}
-<div class="code-example" markdown="1">
-var a = new Array(“”,“”,“”...); 도 위와 같이 정확하게 동일한 배열을 만드는 방법
-
-하지만 단순성, 가독성, 실행속도를 위해 사용 자제해야 함
-</div>
-
 ### Avoid new Array()
 
 대신 `[]` 사용하기
