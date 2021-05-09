@@ -166,44 +166,44 @@ var pos = str.indexOf("locate",15);
 
 &#9656; 두번째 매개변수(optional)를 검색 시작 위치로 사용, 숫자 카운트도 변하지 않음
 
-* lastIndexOf() 
+#### lastIndexOf() 
 
-    **문자열에서 지정된 텍스트 의 마지막 발생 위치 를 리턴**
-    
-    Syntax
-    {: .label .mt-2}
-    <div class="code-example" markdown="1">
-    str.lastIndexOf("string", starting position parameter);
-    </div>
-    ```js
-    var str = "Please locate where 'locate' occurs!";
-    var pos = str.lastIndexOf("locate");
-    //return 21
+**문자열에서 지정된 텍스트 의 마지막 발생 위치 를 리턴**
 
-    var str = "Please locate where 'locate' occurs!";
-    var pos = str.lastIndexOf("locate", 15);
-    //return 7
-    ```
-    
-    &#9656; 뒤에서 먼저 찾고, 숫자는 앞에서부터 셈
-    
-    &#9656; 찾을 수 없을경우 **-1** 리턴
-    
-    &#9656; 두번째 매개변수(optional)를 검색 시작 위치로 사용, 숫자도 매개변수 뒤부터 카운트 시작
+Syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+str.lastIndexOf("string", starting position parameter);
+</div>
+```js
+var str = "Please locate where 'locate' occurs!";
+var pos = str.lastIndexOf("locate");
+//return 21
 
-* search()
+var str = "Please locate where 'locate' occurs!";
+var pos = str.lastIndexOf("locate", 15);
+//return 7
+```
 
-    **문자열에서 지정된 값을 검색하고 일치하는 위치를 리턴**
-    
-    Syntax
-    {: .label .mt-2}
-    <div class="code-example" markdown="1">
-    str.search("string")
-    </div>
-    ```js
-    var str = "Please locate where 'locate' occurs!";
-    var pos = str.search("locate");
-    ```    
+&#9656; 뒤에서 먼저 찾고, 숫자는 앞에서부터 셈
+
+&#9656; 찾을 수 없을경우 **-1** 리턴
+
+&#9656; 두번째 매개변수(optional)를 검색 시작 위치로 사용, 숫자도 매개변수 뒤부터 카운트 시작
+
+#### search()
+
+**문자열에서 지정된 값을 검색하고 일치하는 위치를 리턴**
+
+Syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+str.search("string")
+</div>
+```js
+var str = "Please locate where 'locate' occurs!";
+var pos = str.search("locate");
+```    
 
 indexOf와 search 메소드의 다른점
 {: .label .label-yellow .mt-2}
