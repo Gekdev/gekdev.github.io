@@ -272,7 +272,7 @@ x.toPrecision(6);       // returns 9.65600
 
 **숫자를 숫자로 반환**
 
-숫자를 객체로 바꾸지 않은 이상 쓸 이유가 없음
+&#9656; 숫자를 객체로 바꾸지 않은 이상 쓸 이유가 없음
 
 Syntax
 {: .label .mt-2}
@@ -302,6 +302,10 @@ All JavaScript data types have a valueOf() and a toString() method.
 
 **JavaScript 변수를 숫자로 변환하는 데 사용**
 
+&#9656; 숫자를 변환 할 수 없으면 `NaN`이 반환
+
+예제
+{: .label .label-purple .mt-2}
 ```js
 Number(true);          // returns 1
 Number(false);         // returns 0
@@ -314,8 +318,6 @@ Number("10,33");       // returns NaN
 Number("10 33");       // returns NaN
 Number("John");        // returns NaN
 ```
-
-&#8594; 숫자를 변환 할 수 없으면 `NaN`이 반환
 
 The Number() Method Used on Dates
 {: .label .mt-2}
@@ -334,6 +336,8 @@ Number(new Date("2017-09-30"));    // returns 1506729600000
 
 &#9656; 공백 허용, 하지만 첫 번째 숫자만 반환
 
+예제
+{: .label .label-purple .mt-2}
 ```js
 parseInt("10");         // returns 10
 parseInt("10.33");      // returns 10(정수만 추출)
@@ -344,23 +348,25 @@ parseInt("years 10");   // returns NaN
 
 &#8594; 숫자를 변환 할 수 없으면 `NaN`이 반환
 
-* .parseFloat()
+####  .parseFloat()
 
-    **문자열을 구문 분석하고 숫자를 반환**
-    
-    공백 허용, 하지만 첫 번째 숫자만 반환
-    
-    소숫점도 추출하는 메소드
-    
-    ```js
-    parseFloat("10");        // returns 10
-	parseFloat("10.33");     // returns 10.33
-	parseFloat("10 20 30");  // returns 10
-	parseFloat("10 years");  // returns 10
-	parseFloat("years 10");  // returns NaN
-    ```
-    
-    &#8594; 숫자를 변환 할 수 없으면 `NaN`이 반환
+**문자열을 구문 분석하고 숫자를 반환**
+
+&#9656; 공백 허용, 하지만 첫 번째 숫자만 반환
+
+&#9656; 소숫점도 추출하는 메소드
+
+&#8594; 숫자를 변환 할 수 없으면 `NaN`이 반환
+
+예제
+{: .label .label-purple .mt-2}
+```js
+parseFloat("10");        // returns 10
+parseFloat("10.33");     // returns 10.33
+parseFloat("10 20 30");  // returns 10
+parseFloat("10 years");  // returns 10
+parseFloat("years 10");  // returns NaN
+```
 
 ### Number Properties
 
