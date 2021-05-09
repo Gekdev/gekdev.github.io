@@ -57,7 +57,7 @@ fruits.sort();
 
 <script>
 // Create and display an array:
-var fruits = ["Banana", "Orange", "Apple", "Mango"];
+var fruits = ["Banana", "Orange", "Apple", "Mango"]
 
 function myFunction(){
   fruits.sort();            // First sort the array
@@ -74,59 +74,63 @@ myFunction();
 
 <script>
 // Create and display an array:
-var fruits = ["Banana", "Orange", "Apple", "Mango"];
-document.getElementById("demo").innerHTML = fruits;
+var fruits = ["Banana", "Orange", "Apple", "Mango"]
 
-function myFunction() {
-  // First sort the array
-  fruits.sort();
-  // Then reverse it:
-  fruits.reverse();
+function myFunction(){
+  fruits.sort();            // First sort the array
+  fruits.reverse();         // Then reverse it:
+  
   document.getElementById("demo").innerHTML = fruits;
 }
+
+myFunction();
 </script>
 ```
 
 ### Numeric Sort 
 
-By default, the sort() 함수는 값을 문자열 로 정렬 - 그래서 첫 번째 숫자의 오름차순으로 정렬하기 때문에 25보다 100이 먼저 정렬됨
+기본으로 the sort() 함수는 값을 문자열로 정렬
 
-해결법 : 함수이용(compare funtion)
+&#8594; 숫자는 첫 번째 숫자의 오름차순으로 정렬해 25보다 100이 먼저 정렬됨
 
-* 오름차순
+&#9656; 해결법 : 함수이용(compare funtion)
 
-    예제
-    {: .label .label-purple .mt-2}
-    <div class="code-example" markdown="1">
-    <button onclick="myFunction()">Try it</button>
+### 오름차순
 
-    <p id="demo"></p>
+예제
+{: .label .label-purple .mt-2}
+<div class="code-example" markdown="1">
+<button onclick="myFunction()">Try it</button>
 
-    <script>
-    var points = [40, 100, 1, 5, 25, 10];
-    document.getElementById("demo").innerHTML = points;  
+<p id="demo"></p>
 
-    function myFunction() {
-      points.sort(function(a, b){return a - b});
-      document.getElementById("demo").innerHTML = points;
-    }
-    </script>
-    </div>
-    ```html
-    <button onclick="myFunction()">Try it</button>
+<script>
+var points = [40, 100, 1, 5, 25, 10];
+document.getElementById("demo").innerHTML = points;  
 
-    <p id="demo"></p>
+function myFunction() {
+  points.sort(function(a, b){return a - b});
+  document.getElementById("demo").innerHTML = points;
+}
 
-    <script>
-    var points = [40, 100, 1, 5, 25, 10];
-    document.getElementById("demo").innerHTML = points;  
+myFunction();
+</script>
+</div>
+```html
+<button onclick="myFunction()">Try it</button>
 
-    function myFunction() {
-      points.sort(function(a, b){return a - b});
-      document.getElementById("demo").innerHTML = points;
-    }
-    </script>
-    ```
+<p id="demo"></p>
+
+<script>
+var points = [40, 100, 1, 5, 25, 10];
+document.getElementById("demo").innerHTML = points;  
+
+function myFunction() {
+  points.sort(function(a, b){return a - b});
+  document.getElementById("demo").innerHTML = points;
+}
+</script>
+```
 
 * 내림차순
 
