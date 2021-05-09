@@ -356,7 +356,7 @@ parseInt("years 10");   // returns NaN
 
 &#9656; 소숫점도 추출하는 메소드
 
-&#8594; 숫자를 변환 할 수 없으면 `NaN`이 반환
+&#9656; 숫자를 변환 할 수 없으면 `NaN`이 반환
 
 예제
 {: .label .label-purple .mt-2}
@@ -368,77 +368,93 @@ parseFloat("10 years");  // returns 10
 parseFloat("years 10");  // returns NaN
 ```
 
-### Number Properties
+---
 
-Number라는 숫자 객체에 속한 속성들
+## Number Properties
 
-**can only be accessed like `Number.property` form**
+**Number라는 숫자 객체(Object)에 속한 속성들**
 
-따라서 변수에는 숫자 속성을 사용할 수 없음
+&#8594; can only be accessed like `Number.property` form
+
+&#8594; 따라서 아래와 같이 변수에는 숫자 속성을 사용할 수 없음
 
 ```js
 var x = 6;
 var y = x.MAX_VALUE;    // y becomes undefined
 ```
 
-* MAX_VALUE
+### Returning Specific Number
 
-    **JavaScript에서 가능한 가장 큰 숫자를 반환**
-    
-    ```js
-	var x = Number.MAX_VALUE;
-    //1.7976931348623157e+308
-    ```
+#### MAX_VALUE
 
-* MIN_VALUE	
+**JavaScript에서 가능한 가장 큰 숫자를 반환**
 
-    **JavaScript에서 가능한 가장 낮은 숫자를 반환**
-    
-    ```js
-    var x = Number.MIN_VALUE;
-    //5e-324
-    ```
+syntax
+{: .label .mt-2}
+```js
+var x = Number.MAX_VALUE;
+//1.7976931348623157e+308
+```
 
-* POSITIVE_INFINITY
+#### MIN_VALUE	
 
-    **양수 무한대**
-    
-    ```js
-    var x = Number.POSITIVE_INFINITY;
+**JavaScript에서 가능한 가장 낮은 숫자를 반환**
 
-    or 
-    var x = 1 / 0;
+syntax
+{: .label .mt-2}
+```js
+var x = Number.MIN_VALUE;
+//5e-324
+```
 
-    //Infinity
-    ```
-    
-* NEGATIVE_INFINITY
+#### POSITIVE_INFINITY
 
-    **음수 무한대**
-        
-    ```js
-    var x = Number.NEGATIVE_INFINITY;
+**양수 무한대**
 
-    or 
-    var x = -1 / 0;
+syntax
+{: .label .mt-2}
+```js
+var x = Number.POSITIVE_INFINITY;
 
-    //-Infinity
-    ```
-    
-* NaN			
+or 
+var x = 1 / 0;
 
-    **숫자가 유효한 숫자가 아님을 나타내는 JavaScript 예약어**
-    
-    숫자가 아닌 문자열로 산술을 하면 `NaN` 발생
-    
-    ```js
-	var x = Number.NaN;
-    
-    or 
-    var x = 100 / "Apple";  // x will be NaN (Not a Number)
-    ```
+//Infinity
+```
 
-### Complete Number Reference
+#### NEGATIVE_INFINITY
+
+**음수 무한대**
+
+syntax
+{: .label .mt-2}
+```js
+var x = Number.NEGATIVE_INFINITY;
+
+or 
+var x = -1 / 0;
+
+//-Infinity
+```
+
+#### NaN			
+
+**숫자가 유효한 숫자가 아님을 나타내는 JavaScript 예약어**
+
+&#9656; 숫자가 아닌 문자열로 산술을 하면 `NaN` 발생
+
+syntax
+{: .label .mt-2}
+```js
+var x = Number.NaN;
+
+or 
+var x = 100 / "Apple";  // x will be NaN (Not a Number)
+```
+
+---
+
+## Complete Number Reference
 
 The reference contains descriptions and examples of all Number properties and methods
 

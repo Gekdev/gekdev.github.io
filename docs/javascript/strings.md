@@ -484,11 +484,12 @@ txt.split("|");          // Split on pipe
 txt.split("");           // Split in characters
 ```
 
-### Complete String Reference
+---
+
+## Complete String Reference
 
 The reference contains descriptions and examples of all string properties and methods
 
 <span class="fs-2">
 [더 찾아보기](https://www.w3schools.com/jsref/jsref_obj_string.asp){: .btn  .btn-outline}
 </span>
-
