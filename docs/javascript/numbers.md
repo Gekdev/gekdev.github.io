@@ -150,6 +150,8 @@ typeof Infinity;     // returns "number"
 
 &#9656; toString으로 기수 2 에서 기수 36으로 숫자를 출력 할 수 있음
 
+예제
+{: .label .label-purple .mt-2}
 ```js
 var myNumber = 32;
 myNumber.toString(10);  // 10진법, returns 32
@@ -235,7 +237,7 @@ x.toFixed(6);           // returns 9.656000
 
 &#9656; 매개 변수는 소수점 뒤의 문자 수를 정의
 
-&#9656; 매개변수는 선택사항(optional)이여서 규정하지 않으면 반올림하지않음
+&#9656; 매개변수는 선택사항(optional)이여서 규정하지 않으면 반올림하지 않음
 
 Syntax
 {: .label .mt-2}
@@ -287,7 +289,7 @@ x.valueOf();            // returns 123 from variable x
 ```
 
 !Note
-{: .label .mt-2}
+{: .label .label-yellow .mt-2}
 <div class="code-example" markdown="1">
 All JavaScript data types have a valueOf() and a toString() method.
 </div>
@@ -336,6 +338,8 @@ Number(new Date("2017-09-30"));    // returns 1506729600000
 
 &#9656; 공백 허용, 하지만 첫 번째 숫자만 반환
 
+&#9656; 숫자를 변환 할 수 없으면 `NaN`이 반환
+
 예제
 {: .label .label-purple .mt-2}
 ```js
@@ -345,8 +349,6 @@ parseInt("10 20 30");   // returns 10
 parseInt("10 years");   // returns 10
 parseInt("years 10");   // returns NaN 
 ```
-
-&#8594; 숫자를 변환 할 수 없으면 `NaN`이 반환
 
 ####  .parseFloat()
 
@@ -370,11 +372,11 @@ parseFloat("years 10");  // returns NaN
 
 ---
 
-## Number Properties
+## Number Object Properties
 
 **Number라는 숫자 객체(Object)에 속한 속성들**
 
-&#8594; can only be accessed like `Number.property` form
+&#9656; can only be accessed like `Number.property` form
 
 &#8594; 따라서 아래와 같이 변수에는 숫자 속성을 사용할 수 없음
 
