@@ -17,74 +17,76 @@ nav_order: 3
 
 ---
 
-## Array Sort
+## Sorting Array Elements
 
 ### Sorting an Array
 
-* sort()
+#### sort()
 
-    **method sorts an array alphabetically** // a-z순
+**method sorts an array alphabetically**
 
-    Syntax
-    {: .label .mt-2}
-    <div class="code-example" markdown="1">
-    fruits.sort()
-    </div>
-    ```js
-    var fruits = ["Banana", "Orange", "Apple", "Mango"];
-    fruits.sort();        
-    //fruits = Apple,Banana,Mango,Orange
-    ```
+&#9656; a-z순
 
-    숫자가 문자보다 먼저 정렬, 문자열인 숫자도 숫자로 이해해서 먼저정렬
-    
-    전체 숫자값보다 첫 번째 숫자의 오름차순으로 정렬한다 // 23 6 abcd 이렇게
+&#9656; 숫자가 문자보다 먼저 정렬, 문자열인 숫자도 숫자로 이해해서 먼저정렬
+
+&#9656; 전체 숫자값보다 첫 번째 숫자의 오름차순으로 정렬한다 ex) 23 6 abcd 이렇게
+
+Syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+arr.sort();
+</div>
+```js
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.sort();        
+//fruits = Apple,Banana,Mango,Orange
+```
 
 ### Reversing an Array
 
-* reverse()
+#### reverse()
 
-    **reverses the elements in an array** 
-    
-    sort후 reverse하면 내림차순
+**reverses the elements in an array** 
 
-    예제
-    {: .label .label-purple .mt-3}
-    <div class="code-example" markdown="1">
-    <p id="demo"></p>
+&#9656; sort후 reverse하면 내림차순
 
-    <script>
-    // Create and display an array:
-    var fruits = ["Banana", "Orange", "Apple", "Mango"];
-    document.getElementById("demo").innerHTML = fruits;
+예제
+{: .label .label-purple .mt-2}
+<div class="code-example" markdown="1">
+<p id="demo"></p>
 
-    function myFunction() {
-      // First sort the array
-      fruits.sort();
-      // Then reverse it:
-      fruits.reverse();
-      document.getElementById("demo").innerHTML = fruits;
-    }
-    </script>
-    </div>
-    ```html
-    <p id="demo"></p>
+<script>
+// Create and display an array:
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
 
-    <script>
-    // Create and display an array:
-    var fruits = ["Banana", "Orange", "Apple", "Mango"];
-    document.getElementById("demo").innerHTML = fruits;
+function myFunction(){
+  fruits.sort();            // First sort the array
+  fruits.reverse();         // Then reverse it:
+  
+  document.getElementById("demo").innerHTML = fruits;
+}
 
-    function myFunction() {
-      // First sort the array
-      fruits.sort();
-      // Then reverse it:
-      fruits.reverse();
-      document.getElementById("demo").innerHTML = fruits;
-    }
-    </script>
-    ```
-    
+myFunction();
+</script>
+</div>
+```html
+<p id="demo"></p>
+
+<script>
+// Create and display an array:
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits;
+
+function myFunction() {
+  // First sort the array
+  fruits.sort();
+  // Then reverse it:
+  fruits.reverse();
+  document.getElementById("demo").innerHTML = fruits;
+}
+</script>
+```
+
 ### Numeric Sort 
 
 By default, the sort() 함수는 값을 문자열 로 정렬 - 그래서 첫 번째 숫자의 오름차순으로 정렬하기 때문에 25보다 100이 먼저 정렬됨
@@ -94,7 +96,7 @@ By default, the sort() 함수는 값을 문자열 로 정렬 - 그래서 첫 번
 * 오름차순
 
     예제
-    {: .label .label-purple .mt-3}
+    {: .label .label-purple .mt-2}
     <div class="code-example" markdown="1">
     <button onclick="myFunction()">Try it</button>
 
