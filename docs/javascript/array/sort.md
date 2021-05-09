@@ -95,7 +95,7 @@ myFunction();
 
 &#9656; 해결법 : 함수이용(compare funtion)
 
-### 오름차순
+#### 오름차순
 
 예제
 {: .label .label-purple .mt-2}
@@ -132,79 +132,79 @@ function myFunction() {
 </script>
 ```
 
-* 내림차순
+#### 내림차순
 
-    예제
-    {: .label .label-purple .mt-3}
-    <div class="code-example" markdown="1">
-    <button onclick="myFunction()">Try it</button>
+예제
+{: .label .label-purple .mt-3}
+<div class="code-example" markdown="1">
+<button onclick="myFunction()">Try it</button>
 
-    <p id="demo"></p>
+<p id="demo"></p>
 
-    <script>
-    var points = [40, 100, 1, 5, 25, 10];
-    document.getElementById("demo").innerHTML = points;
+<script>
+var points = [40, 100, 1, 5, 25, 10];
+document.getElementById("demo").innerHTML = points;
 
-    function myFunction() {
-      points.sort(function(a, b){return b - a});
-      document.getElementById("demo").innerHTML = points;
-    }
-    </script>
-    </div>
-    ```html
-    <button onclick="myFunction()">Try it</button>
+function myFunction() {
+  points.sort(function(a, b){return b - a});
+  document.getElementById("demo").innerHTML = points;
+}
+</script>
+</div>
+```html
+<button onclick="myFunction()">Try it</button>
 
-    <p id="demo"></p>
+<p id="demo"></p>
 
-    <script>
-    var points = [40, 100, 1, 5, 25, 10];
-    document.getElementById("demo").innerHTML = points;
+<script>
+var points = [40, 100, 1, 5, 25, 10];
+document.getElementById("demo").innerHTML = points;
 
-    function myFunction() {
-      points.sort(function(a, b){return b - a});
-      document.getElementById("demo").innerHTML = points;
-    }
-    </script>
-    ```
+function myFunction() {
+  points.sort(function(a, b){return b - a});
+  document.getElementById("demo").innerHTML = points;
+}
+</script>
+```
 
-* 무작위로
+#### 무작위로
 
-    무작위지만 우선순위가 있음
-    
-    Fisher Yates Shuffle 방법을 더 선호해서 사용(뒤에 설명되어 있음)
+무작위지만 우선순위가 있음
 
-    예제
-    {: .label .label-purple .mt-3}
-    <div class="code-example" markdown="1">
-    <button onclick="myFunction()">Try it</button>
+Fisher Yates Shuffle 방법을 더 선호해서 사용(뒤에 설명되어 있음)
 
-    <p id="demo"></p>
+예제
+{: .label .label-purple .mt-3}
+<div class="code-example" markdown="1">
+<button onclick="myFunction()">Try it</button>
 
-    <script>
-    var points = [40, 100, 1, 5, 25, 10];
-    document.getElementById("demo").innerHTML = points;  
+<p id="demo"></p>
 
-    function myFunction() {
-      points.sort(function(a, b){return 0.5 - Math.random()});
-      document.getElementById("demo").innerHTML = points;
-    }
-    </script>
-    </div>
-    ```html
-    <button onclick="myFunction()">Try it</button>
+<script>
+var points = [40, 100, 1, 5, 25, 10];
+document.getElementById("demo").innerHTML = points;  
 
-    <p id="demo"></p>
+function myFunction() {
+  points.sort(function(a, b){return 0.5 - Math.random()});
+  document.getElementById("demo").innerHTML = points;
+}
+</script>
+</div>
+```html
+<button onclick="myFunction()">Try it</button>
 
-    <script>
-    var points = [40, 100, 1, 5, 25, 10];
-    document.getElementById("demo").innerHTML = points;  
+<p id="demo"></p>
 
-    function myFunction() {
-      points.sort(function(a, b){return 0.5 - Math.random()});
-      document.getElementById("demo").innerHTML = points;
-    }
-    </script>
-    ```
+<script>
+var points = [40, 100, 1, 5, 25, 10];
+document.getElementById("demo").innerHTML = points;  
+
+function myFunction() {
+  points.sort(function(a, b){return 0.5 - Math.random()});
+  document.getElementById("demo").innerHTML = points;
+}
+</script>
+```
 
 ### The Compare Function
 
