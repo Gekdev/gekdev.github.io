@@ -269,12 +269,11 @@ document.getElementById("demo").innerHTML = fruits.toString();
 //Banana,Orange,Apple,Mango
 ```
   
-!note
+Automatic toString()
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-**Automatic toString()**
 
-&#9656; 배열을 부르면 배열을 쉼표로 구분된 문자열로 자동 변환해서 출력함
+**배열을 부르면 배열을 쉼표로 구분된 문자열로 자동 변환해서 출력함**
 
 &#8594; 자동으로 toString()메소드가 사용되는 것
 </div>
@@ -285,7 +284,7 @@ fruits.toString(); = fruits;
 ```
 
 !Note
-{: .label .mt-2}
+{: .label .label-yellow .mt-2}
 <div class="code-example" markdown="1">
 All JavaScript data types have a valueOf() and a toString() method.
 </div>
