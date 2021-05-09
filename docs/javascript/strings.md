@@ -215,120 +215,111 @@ search()는 두번째 시작 위치 인수를 사용할 수 없음
 
 ### Extracting String Parts
 
-* slice(start, end)
+#### slice(start, end)
 
-    **문자열의 일부를 추출하고 추출 된 부분을 새 문자열로 반환**
-    
-    두 번째 매개 변수를 생략하면 나머지 문자열 끝까지 분리
-    
-    매개 변수가 음수이면 위치는 문자열 끝에서 계산됨
-    
-    Syntax
-    {: .label .mt-2}
-    <div class="code-example" markdown="1">
-    var res = str.slice(start position, end position);
-    </div>
-    
-    예제
-    {: .label .label-purple .mt-2}
-    ```js
-    var str = "Apple, Banana, Kiwi";
-    var res = str.slice(7, 13);
-    //Banana
+**문자열의 일부를 추출하고 추출 된 부분을 새 문자열로 반환**
 
-    var res = str.slice(7);
-    //Banana, Kiwi
+두 번째 매개 변수를 생략하면 나머지 문자열 끝까지 분리
 
-    var res = str.slice(-12, -6);
-    //Banana
+매개 변수가 음수이면 위치는 문자열 끝에서 계산됨
 
-    var res = str.slice(-12);
-    //Banana, Kiwi
-    ```
-    
-    &#8594; Internet Explorer 8 이하에서는 음수 위치가 작동하지 않음
-    
-* substring(start, end)
+Syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+var res = str.slice(start position, end position);
+</div>
+```js
+var str = "Apple, Banana, Kiwi";
+var res = str.slice(7, 13);
+//Banana
 
-    slice()와 비슷하게 동작하지만 음수 매개변수를 승인하지 않음
-    
-    Syntax
-    {: .label .mt-2}
-    <div class="code-example" markdown="1">
-    var res = str.substring(start position, end position);
-    </div>
-    
-    예제
-    {: .label .label-purple .mt-2}
-    ```js
-    var str = "Apple, Banana, Kiwi";
-    var res = str.substring(7, 13);
-    //Banana
-    ```
+var res = str.slice(7);
+//Banana, Kiwi
 
-* substr(start, length)
+var res = str.slice(-12, -6);
+//Banana
 
-    slice()와 비슷하게 동작하지만 substr의 두번째 매개 변수는 길이를 지정함
-    
-    첫 번째 매개 변수가 음수이면 위치는 끝에서부터 계산
-    
-    Syntax
-    {: .label .mt-2}
-    <div class="code-example" markdown="1">
-    var res = str.substr(start position, length);
-    </div>
-    
-    예제
-    {: .label .label-purple .mt-2}
-    ```js
-    var str = "Apple, Banana, Kiwi";
-    var res = str.substr(7, 6);
-    //Banana
+var res = str.slice(-12);
+//Banana, Kiwi
+```
 
-    var str = "Apple, Banana, Kiwi";
-    var res = str.substr(7);
-    //Banana, Kiwi
+&#8594; Internet Explorer 8 이하에서는 음수 위치가 작동하지 않음
+    
+#### substring(start, end)
 
-    var str = "Apple, Banana, Kiwi";
-    var res = str.substr(-4);
-    //Kiwi
-    ```
+slice()와 비슷하게 동작하지만 음수 매개변수를 승인하지 않음
+
+Syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+var res = str.substring(start position, end position);
+</div>
+```js
+var str = "Apple, Banana, Kiwi";
+var res = str.substring(7, 13);
+//Banana
+```
+
+#### substr(start, length)
+
+slice()와 비슷하게 동작하지만 substr의 두번째 매개 변수는 길이를 지정함
+
+첫 번째 매개 변수가 음수이면 위치는 끝에서부터 계산
+
+Syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+var res = str.substr(start position, length);
+</div>
+```js
+var str = "Apple, Banana, Kiwi";
+var res = str.substr(7, 6);
+//Banana
+
+var str = "Apple, Banana, Kiwi";
+var res = str.substr(7);
+//Banana, Kiwi
+
+var str = "Apple, Banana, Kiwi";
+var res = str.substr(-4);
+//Kiwi
+```
 
 ### Replacing String Content
 
 * replace() 
 
-    **지정된 값을 문자열의 다른 값으로 바꿈**
-    
-    &#9656; 원래 문자열을 변경하지 않고, 새 문자열로 반환
-    
-    &#9656; 첫번째로 매치된 값만 바꿈, 표현 정규식으로 바꿀 수 있음
-    
-    &#9656; case-sensitive함, 표현 정규식으로 바꿀 수 있음
-    
-    &#8594; 표현 정규식은 따옴표 없이 사용됨
+**지정된 값을 문자열의 다른 값으로 바꿈**
 
-    Syntax
-    {: .label .mt-2}
-    <div class="code-example" markdown="1">
-    var n = str.replace("찾는 문자열", "바꿀 문자열");
-    </div>
-    
-    예제
-    {: .label .label-purple .mt-2}
-    ```js
-    str = "Please visit Microsoft!";
-    var n = str.replace("Microsoft", "W3Schools");
-    //Microsoft → W3Schools
+&#9656; 원래 문자열을 변경하지 않고, 새 문자열로 반환
 
-    str = "Please visit Microsoft!";
-    var n = str.replace(/MICROSOFT/i, "W3Schools");
-    //insensitive
+&#9656; 첫번째로 매치된 값만 바꿈, 표현 정규식으로 바꿀 수 있음
 
-    str = "Please visit Microsoft and Microsoft!";
-    var n = str.replace(/Microsoft/g, "W3Schools");
-    //모든 문자열 변환
-    ```
+&#9656; case-sensitive함, 표현 정규식으로 바꿀 수 있음
+
+&#8594; 표현 정규식은 따옴표 없이 사용됨
+
+Syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+var n = str.replace("찾는 문자열", "바꿀 문자열");
+</div>
+
+예제
+{: .label .label-purple .mt-2}
+```js
+str = "Please visit Microsoft!";
+var n = str.replace("Microsoft", "W3Schools");
+//Microsoft → W3Schools
+
+str = "Please visit Microsoft!";
+var n = str.replace(/MICROSOFT/i, "W3Schools");
+//insensitive
+
+str = "Please visit Microsoft and Microsoft!";
+var n = str.replace(/Microsoft/g, "W3Schools");
+//모든 문자열 변환
+```
 
 ### Converting to Upper and Lower Case
 
