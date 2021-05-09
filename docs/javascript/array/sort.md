@@ -53,20 +53,21 @@ fruits.sort();
 예제
 {: .label .label-purple .mt-2}
 <div class="code-example" markdown="1">
+<p id="demo"></p>
+
 <script>
 // Create and display an array:
 var fruits = ["Banana", "Orange", "Apple", "Mango"]
 
 function myFunction(){
   fruits.sort();            // First sort the array
-  fruits.reverse();         // Then reverse it
+  fruits.reverse();         // Then reverse it:
   
   document.getElementById("demo").innerHTML = fruits;
 }
 
 myFunction();
 </script>
-<p id="demo"></p>
 </div>
 ```html
 <p id="demo"></p>
