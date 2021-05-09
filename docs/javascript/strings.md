@@ -287,7 +287,7 @@ var res = str.substr(-4);
 
 ### Replacing String Content
 
-* replace() 
+#### replace() 
 
 **지정된 값을 문자열의 다른 값으로 바꿈**
 
@@ -304,9 +304,6 @@ Syntax
 <div class="code-example" markdown="1">
 var n = str.replace("찾는 문자열", "바꿀 문자열");
 </div>
-
-예제
-{: .label .label-purple .mt-2}
 ```js
 str = "Please visit Microsoft!";
 var n = str.replace("Microsoft", "W3Schools");
@@ -323,180 +320,168 @@ var n = str.replace(/Microsoft/g, "W3Schools");
 
 ### Converting to Upper and Lower Case
 
-* .toUpperCase()
+#### .toUpperCase()
 
-    **converted to upper case**
-    
-    Syntax
-    {: .label .mt-2}
-    <div class="code-example" markdown="1">
-    var text2 = text1.toUpperCase();
-    </div>
-    
-    예제
-    {: .label .label-purple .mt-2}
-    ```js
-    var text1 = "Hello World!";       // String
-    var text2 = text1.toUpperCase();  // text2 is text1 converted to upper
-    //HELLO WORLD!
-    ```
+**converted to upper case**
 
-* .toLowerCase()
+Syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+var text2 = text1.toUpperCase();
+</div>
+```js
+var text1 = "Hello World!";       // String
+var text2 = text1.toUpperCase();  // text2 is text1 converted to upper
+//HELLO WORLD!
+```
 
-    **converted to upper case**
-    
-    Syntax
-    {: .label .mt-2}
-    <div class="code-example" markdown="1">
-    var text2 = text1.toUpperCase();
-    </div>
-    
-    예제
-    {: .label .label-purple .mt-2}
-    ```js
-    var text1 = "Hello World!";       // String
-    var text2 = text1.toLowerCase();  // text2 is text1 converted to lower
-    //hello world!
-    ```
+#### .toLowerCase()
+
+**converted to upper case**
+
+Syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+var text2 = text1.toUpperCase();
+</div>
+```js
+var text1 = "Hello World!";       // String
+var text2 = text1.toLowerCase();  // text2 is text1 converted to lower
+//hello world!
+```
 
 ### Join Strings
 
-* .concat()
+#### .concat()
 
-    **두 개 이상의 문자열을 조인**
-    
-    문자열의 결합이니까 `+` operator 대신 사용해도 됨
-    
-    뒤에 ,로 계속 추가 가능 or +...
-    
-    Syntax
-    {: .label .mt-2}
-    <div class="code-example" markdown="1">
-    var text3 = text1.concat(" ", text2);
-    </div>
+**두 개 이상의 문자열을 조인**
 
-    예제
-    {: .label .label-purple .mt-2}
-    ```js
-    var text1 = "Hello";
-    var text2 = "World";
-    var text3 = text1.concat(" ", text2);
-    //Hello World!
+문자열의 결합이니까 `+` operator 대신 사용해도 됨
 
-    var text = "Hello" + " " + "World!";
-    var text = "Hello".concat(" ", "World!");
-    //이와 같이 표현하기도 함
-    ```
+뒤에 ,로 계속 추가 가능 or +...
+
+Syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+var text3 = text1.concat(" ", text2);
+</div>
+```js
+var text1 = "Hello";
+var text2 = "World";
+var text3 = text1.concat(" ", text2);
+//Hello World!
+
+var text = "Hello" + " " + "World!";
+var text = "Hello".concat(" ", "World!");
+//이와 같이 표현하기도 함
+```
     
 ### Removing whitespace
 
-* .trim()
+#### .trim()
 
-    **양쪽에 공백 지우기**
-    
-    Syntax
-    {: .label .mt-2}
-    <div class="code-example" markdown="1">
-    str.trim()
-    </div>
+**양쪽에 공백 지우기**
 
-    예제
-    {: .label .label-purple .mt-2}
-    ```js
-    var str = "       Hello World!        ";
-    alert(str.trim());
-    ```
-    
-    Note!
-    {: .label .label-yellow .mt-2}
-    <div class="code-example" markdown="1">
-    trim()은 Internet Explorer 8 or lower에는 지원하지 않음
-    
-    그 아래에서 지원하고 싶게 만들려면 replace() 와 정규표현식으로 사용해야함
-    </div>
-    ```js
-    var str = "       Hello World!        ";
-    alert(str.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, ''));
+Syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+str.trim()
+</div>
+```js
+var str = "       Hello World!        ";
+alert(str.trim());
+```
 
-    //string.prototype을 사용해서 trim function을 정의할수도 있음
-    String.prototype.trim = function () {
-        return this.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, '');
-      };
-    }
-    var str = "       Hello World!        ";
-    alert(str.trim());
-    ```
+Note!
+{: .label .label-yellow .mt-2}
+<div class="code-example" markdown="1">
+trim()은 Internet Explorer 8 or lower에는 지원하지 않음
+
+그 아래에서 지원하고 싶게 만들려면 replace() 와 정규표현식으로 사용해야함
+</div>
+```js
+var str = "       Hello World!        ";
+alert(str.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, ''));
+
+//string.prototype을 사용해서 trim function을 정의할수도 있음
+String.prototype.trim = function () {
+    return this.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, '');
+  };
+}
+var str = "       Hello World!        ";
+alert(str.trim());
+```
 
 ### Extracting String Characters
 
-* .charAt(position)
+#### .charAt(position)
 
-    **문자열의 지정된 인덱스에있는 문자를 반환**
+**문자열의 지정된 인덱스에있는 문자를 반환**
 
-    ```js
-    var str = "HELLO WORLD";
-    str.charAt(0);            
-    
-    // returns H
-    ```
+```js
+var str = "HELLO WORLD";
+str.charAt(0);            
 
-* .charCodeAt(position)
+// returns H
+```
 
-    **문자열의 지정된 인덱스에서 문자의 유니 코드를 리턴**
+#### .charCodeAt(position)
 
-    이 메소드는 UTF-16 코드 (0과 65535 사이의 정수)를 리턴
+**문자열의 지정된 인덱스에서 문자의 유니 코드를 리턴**
 
-    ```js
-    var str = "HELLO WORLD";
-    str.charCodeAt(0);     
+이 메소드는 UTF-16 코드 (0과 65535 사이의 정수)를 리턴
 
-    // returns 72
-    ```
-    
-* Property access [ ]
+```js
+var str = "HELLO WORLD";
+str.charCodeAt(0);     
 
-    **allows property access [ ] on strings**
+// returns 72
+```
 
-    ```js
-    var str = "HELLO WORLD";
-    str[0];                   
-    // returns H
-    ```
-    
-    Property access might be a little unpredictable
-    {: .label .label-yellow .mt-2}
-    <div class="code-example" markdown="1">
-    &#9656; It does not work in Internet Explorer 7 or earlier
+#### Property access [ ]
 
-    &#9656; It makes strings look like arrays (but they are not)
+**allows property access [ ] on strings**
 
-    &#9656; If no character is found, [ ] returns undefined, while charAt() returns an empty string.
+```js
+var str = "HELLO WORLD";
+str[0];                   
+// returns H
+```
 
-    &#9656; It is read only. str[0] = "A" gives no error (but does not work!)
-    </div>
-    ```js
-    var str = "HELLO WORLD";
-    str[0] = "A";             // Gives no error, but does not work
-    str[0];                   // returns H
-    ```
+Property access might be a little unpredictable
+{: .label .label-yellow .mt-2}
+<div class="code-example" markdown="1">
+&#9656; It does not work in Internet Explorer 7 or earlier
+
+&#9656; It makes strings look like arrays (but they are not)
+
+&#9656; If no character is found, [ ] returns undefined, while charAt() returns an empty string.
+
+&#9656; It is read only. str[0] = "A" gives no error (but does not work!)
+</div>
+```js
+var str = "HELLO WORLD";
+str[0] = "A";             // Gives no error, but does not work
+str[0];                   // returns H
+```
 
 ### Converting a String to an Array
 
-* split(“seperator”)
-    
-    **문자열을 배열로 바꾸는 메소드**
-    
-    separator가 생략되면 전체 문자열을 배열 0번째에 넣어버림
-    
-    ```js
-	var txt = "a,b,c,d,e";   // String
-	var arr = txt.split(",");          // Split on commas
-    //arr = [a,b,c,d,e]
+#### split(“seperator”)
 
-    txt.split(" ");          // Split on spaces
-    txt.split("|");          // Split on pipe
-    txt.split("");           // Split in characters
-    ```
+**문자열을 배열로 바꾸는 메소드**
+
+separator가 생략되면 전체 문자열을 배열 0번째에 넣어버림
+
+```js
+var txt = "a,b,c,d,e";   // String
+var arr = txt.split(",");          // Split on commas
+//arr = [a,b,c,d,e]
+
+txt.split(" ");          // Split on spaces
+txt.split("|");          // Split on pipe
+txt.split("");           // Split in characters
+```
 
 ### Complete String Reference
 
