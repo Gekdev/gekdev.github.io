@@ -159,28 +159,7 @@ document.getElementById("demo").innerHTML = fruits.join(" * ");
 //Banana * Orange * Apple * Mango
 ```
 
-### Popping and Pushing
-
-#### pop()
-
-**배열에서 마지막 요소를 제거하거나 튀어나온 요소를 리턴**
-
-&#9656; 리턴하고 싶으면 변수에 값을 담아서 사용해야함
-
-syntax
-{: .label .mt-2}
-<div class="code-example" markdown="1">
-arr.pop();
-</div>
-```js
-//제거
-var fruits = ["Banana", "Orange", "Apple", "Mango"];
-fruits.pop();              // Removes the last element ("Mango") from fruits
-
-//리턴
-var fruits = ["Banana", "Orange", "Apple", "Mango"];
-var x = fruits.pop();      // x = "Mango"
-```
+### Adding, Shifting and Deleting Elements
 
 #### push() 
 
@@ -205,36 +184,12 @@ arr.push(str);
     var fruits = ["Banana", "Orange", "Apple", "Mango"];
     var x = fruits.push("Kiwi");   //  x = 5
     ```
-
-### Shifting and Deleting Elements
-
-#### shift() 
-
-**첫 번째 배열 요소를 제거하고 다른 모든 요소를 더 낮은 인덱스로 이동, 전환된 문자열을 리턴** 
-
-&#9656; 마지막 요소 대신 첫 번째 요소에서 작업하는 pop()과 비슷함
-
-syntax
-{: .label .mt-2}
-<div class="code-example" markdown="1">
-arr.shift();
-</div>
-
-```js
-//제거
-var fruits = ["Banana", "Orange", "Apple", "Mango"];
-fruits.shift();            // Removes the first element "Banana" from fruits
-
-//리턴
-var fruits = ["Banana", "Orange", "Apple", "Mango"];
-var x = fruits.shift();    // x = "Banana"
-```
-
+    
 #### unshift()
 
-**배열에 새 요소를 추가하고 이전 요소를 뒤로 밀음, 새로운 배열 길이 반환**
+**배열의 처음에 새 요소를 추가하고 이전 요소를 뒤로 밀음, 새로운 배열 길이 반환**
 
-&#9656; 마지막 요소 대신 첫 번째 요소에서 작업하는 push()와 비슷함
+&#9656; 첫 번째 요소대신 마지막 요소에서 작업하는 push()와 비슷함
 
 syntax
 {: .label .mt-2}
@@ -250,6 +205,49 @@ fruits.unshift("Lemon");    // Adds a new element "Lemon" to fruits
 //반환
 var fruits = ["Banana", "Orange", "Apple", "Mango"];
 fruits.unshift("Lemon");    // Returns 5
+```
+
+#### pop()
+
+**배열에서 마지막 요소를 제거하거나 튀어나온 요소를 리턴**
+
+&#9656; 리턴하고 싶으면 변수에 값을 담아서 사용해야함
+
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+arr.pop();
+</div>
+```js
+//제거
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.pop();              // Removes the last element ("Mango") from fruits
+
+//리턴
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+var x = fruits.pop();      // x = "Mango"
+```
+
+#### shift() 
+
+**첫 번째 배열 요소를 제거하고 다른 모든 요소를 더 낮은 인덱스로 이동, 전환된 문자열을 리턴** 
+
+&#9656; 첫 번째 요소대신 마지막 요소에서 작업하는 pop()과 비슷함
+
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+arr.shift();
+</div>
+
+```js
+//제거
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.shift();            // Removes the first element "Banana" from fruits
+
+//리턴
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+var x = fruits.shift();    // x = "Banana"
 ```
 
 #### delete operator 
