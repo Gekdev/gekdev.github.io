@@ -22,10 +22,12 @@ nav_order: 3
 
 **(쌍)따옴표안에 쓰여있는 아무것도 없거나 그 이상인 문자들**
 
-used for storing and manipulating text
+&#9656; used for storing and manipulating text
 
-문자열을 둘러싼 따옴표와 일치하지 않는 한 문자열 안에 따옴표를 사용할 수 있음
+&#9656; 문자열을 둘러싼 따옴표와 일치하지 않는 한 문자열 안에 따옴표를 사용할 수 있음
 
+예시
+{: .label .mt-2}
 ```js
 var answer1 = "It's alright";
 var answer2 = "He is called 'Johnny'";
@@ -38,25 +40,22 @@ var answer3 = 'He is called "Johnny"';
 
 위에서 말한것처럼 문자열을 둘러싼 따옴표와 일치하지 않는 따옴표를 문자열에 사용해야 하지만
 
-같은 따옴표를 사용해야 할 때 escape character을 사용함
+같은 따옴표를 사용해야 할 때는 escape character을 사용함
 
-그러면 자바스크립트는 문자열에 쓰여있는 따옴표를 문자열이라고 인지함
+그러면 자바스크립트는 문자열에 쓰여있는 따옴표를 문자열이라고 인지한다
 
-| Code        | Result      | Description           |
-|:------------|:------------|:----------------------|
-| \'          | '           | Single quote          |
-| \"          | "           | Double quote          |
-| \\          | \           | Backslash             |
-
-위의 3가지가 자주 쓰이는 escape characters
-
-예제
-{: .label .label-purple .mt-2}
+| Code              | Result      | Description           |
+|:------------------|:------------|:----------------------|
+| &#9656;'          | '           | Single quote          |
+| &#9656;"          | "           | Double quote          |
+| &#9656;&#9656;    | \           | Backslash             |
 ```js
 var x = "We are the so-called \"Vikings\" from the north.";
 
 //결과물로 We are the so-called "Vikings" from the north 가 나옴
 ```
+
+&#8594; 위의 3가지가 자주 쓰이는 escape characters
 
 | Code        | Result      | Description           |
 |:------------|:------------|:----------------------|
@@ -67,7 +66,7 @@ var x = "We are the so-called \"Vikings\" from the north.";
 | \t          | .           | Horizontal Tabulator  |
 | \v          | .           | Vertical Tabulator    |
 
-위 6가지 문자들은 원래 타자기, 텔레타이프 및 팩스기를 제어하도록 설계되었음
+&#8594; 위 6가지 문자들은 원래 타자기, 텔레타이프 및 팩스기를 제어하도록 설계되었음
 
 &#8594; html에서는 의미가 없다
 
@@ -75,7 +74,7 @@ var x = "We are the so-called \"Vikings\" from the north.";
 
 `=`, `+` 오퍼레이터에서 끊거나, `\`에서 끊음
 
-**`\` 메소드는 지원이 안되는 브라우저도 있어서 사용권장하지 않음**
+&#9656; **`\` 메소드는 지원이 안되는 브라우저도 있어서 사용권장하지 않음**
 
 &#8594; 꼭 문자열 안 `\`로 사용해야함!
 
@@ -93,7 +92,7 @@ Dolly!";
 
 문자열을 객체로 선언할 수 있음
 
-`new` 키워드는 복잡한 코드라서 계산속도를 늦추기때문에 권장되지 않음
+&#9656; `new` 키워드는 복잡한 코드라서 계산속도를 늦추기때문에 권장되지 않음
 
 예제
 {: .label .label-purple .mt-2}
@@ -104,7 +103,7 @@ var y = new String("John");
 // typeof x will return string, value "John"
 // typeof y will return object, value "John"
 ```
-위 예제는 `==` 는 true지만 `===`는 false
+위 예제는 `x==y` 는 true지만 `x===y`는 false
 
 또한 둘다 객체로 선언될 경우 **객체는 비교될수 없기 때문에 모두 false**가 나온다
 
@@ -112,27 +111,27 @@ var y = new String("John");
 
 ## String Methods
 
-원래 primitive values 즉 [기본값](https://gekdev.github.io/docs/javascript/4.datatypes/#primitive-data)들은 속성이나 메소드들을 가질 수 없지만 **자바스크립트에서는 기본값도 object라고 취급**하기 때문에 그에 관련된 속성과 메소드들을 제공함
+원래 primitive values 즉 [기본값](https://gekdev.github.io/docs/javascript/basic/data_types/#primitive-data-1)들은 속성이나 메소드들을 가질 수 없지만 **자바스크립트에서는 기본값도 object라고 취급**하기 때문에 그에 관련된 속성과 메소드들을 제공함
 
 Note!
 {: .label .label-yellow .mt-2}
 <div class="code-example" markdown="1">
-모든 문자열 메서드는 새 문자열을 반환합니다. 원래 문자열을 수정하지 않습니다.
-문자열은 불변이고 문자열은 바꿀 수 없으며 교체만 가능
+모든 문자열 메서드는 새 문자열을 반환하고 원래 문자열을 수정하지 않음
+
+문자열은 불변이고 문자열은 바꿀 수 없으며 교체만 가능함!
 </div>
 
 ### String Length
 
-length property : **returns the length of a string**
+#### .length
+
+**returns the length of a string**
 
 Syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
 var ttt = txt.length;
 </div>
-
-예제
-{: .label .label-purple .mt-2}
 ```js
 var txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var sln = txt.length;
@@ -151,15 +150,6 @@ var sln = txt.length;
     <div class="code-example" markdown="1">
     str.indexOf("string", starting position parameter);
     </div>
-    
-    &#9656; 앞에서 먼저 찾고, 숫자도 앞에서부터 셈
-    
-    &#9656; 찾을 수 없을경우 **-1** 리턴
-    
-    &#9656; 두번째 매개변수(optional)를 검색 시작 위치로 사용, 숫자 카운트도 변하지 않음
-
-    예제
-    {: .label .label-purple .mt-2}
     ```js
     var str = "Please locate where 'locate' occurs!";
     var pos = str.indexOf("locate");
@@ -169,6 +159,12 @@ var sln = txt.length;
     var pos = str.indexOf("locate",15);
     //return 21
     ```
+    
+    &#9656; 앞에서 먼저 찾고, 숫자도 앞에서부터 셈
+    
+    &#9656; 찾을 수 없을경우 **-1** 리턴
+    
+    &#9656; 두번째 매개변수(optional)를 검색 시작 위치로 사용, 숫자 카운트도 변하지 않음
 
 * lastIndexOf() 
 
@@ -179,15 +175,6 @@ var sln = txt.length;
     <div class="code-example" markdown="1">
     str.lastIndexOf("string", starting position parameter);
     </div>
-    
-    &#9656; 뒤에서 먼저 찾고, 숫자는 앞에서부터 셈
-    
-    &#9656; 찾을 수 없을경우 **-1** 리턴
-    
-    &#9656; 두번째 매개변수(optional)를 검색 시작 위치로 사용, 숫자도 매개변수 뒤부터 카운트 시작
-    
-    예제
-    {: .label .label-purple .mt-2}
     ```js
     var str = "Please locate where 'locate' occurs!";
     var pos = str.lastIndexOf("locate");
@@ -197,6 +184,12 @@ var sln = txt.length;
     var pos = str.lastIndexOf("locate", 15);
     //return 7
     ```
+    
+    &#9656; 뒤에서 먼저 찾고, 숫자는 앞에서부터 셈
+    
+    &#9656; 찾을 수 없을경우 **-1** 리턴
+    
+    &#9656; 두번째 매개변수(optional)를 검색 시작 위치로 사용, 숫자도 매개변수 뒤부터 카운트 시작
 
 * search()
 
