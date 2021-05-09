@@ -17,7 +17,7 @@ nav_order: 2
 
 ---
 
-## Changing Array Elements
+## Modifying Array Elements
 
 ### Adding, Shifting and Deleting Elements
 
@@ -137,6 +137,16 @@ JavaScript 배열은 객체이므로 **JavaScript 연산자 `delete`를 사용�
 ```js
 var fruits = ["Banana", "Orange", "Apple", "Mango"];
 delete fruits[0];           // Changes the first element in fruits to undefined
+```
+
+!note
+{: .label .label-yellow .mt-2}
+<div class="code-example" markdown="1">
+배열속 요소의 내용을 변경하고 싶을 때 인덱스 번호를 사용해서 요소를 변경하는 경우에는 아래와 같이 사용됨
+</div>
+```js
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits[0] = "Kiwi";        // Changes the first element of fruits to "Kiwi"
 ```
 
 ### Splicing an Array Elements

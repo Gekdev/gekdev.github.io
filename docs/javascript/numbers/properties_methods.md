@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Methods and Properties
+title: Properties and Methods
 parent: Numbers
 grand_parent: JavaScript
 nav_order: 1
@@ -14,6 +14,90 @@ nav_order: 1
 
 1. TOC
 {:toc}
+
+---
+
+## Number Object Properties
+
+**Number라는 숫자 객체(Object)에 속한 속성들**
+
+&#9656; can only be accessed like `Number.property` form
+
+&#8594; 따라서 아래와 같이 변수에는 숫자 속성을 사용할 수 없음
+
+```js
+var x = 6;
+var y = x.MAX_VALUE;    // y becomes undefined
+```
+
+### Returning Specific Number
+
+#### MAX_VALUE
+
+**JavaScript에서 가능한 가장 큰 숫자를 반환**
+
+syntax
+{: .label .mt-2}
+```js
+var x = Number.MAX_VALUE;
+//1.7976931348623157e+308
+```
+
+#### MIN_VALUE	
+
+**JavaScript에서 가능한 가장 낮은 숫자를 반환**
+
+syntax
+{: .label .mt-2}
+```js
+var x = Number.MIN_VALUE;
+//5e-324
+```
+
+#### POSITIVE_INFINITY
+
+**양수 무한대**
+
+syntax
+{: .label .mt-2}
+```js
+var x = Number.POSITIVE_INFINITY;
+
+or 
+var x = 1 / 0;
+
+//Infinity
+```
+
+#### NEGATIVE_INFINITY
+
+**음수 무한대**
+
+syntax
+{: .label .mt-2}
+```js
+var x = Number.NEGATIVE_INFINITY;
+
+or 
+var x = -1 / 0;
+
+//-Infinity
+```
+
+#### NaN			
+
+**숫자가 유효한 숫자가 아님을 나타내는 JavaScript 예약어**
+
+&#9656; 숫자가 아닌 문자열로 산술을 하면 `NaN` 발생
+
+syntax
+{: .label .mt-2}
+```js
+var x = Number.NaN;
+
+or 
+var x = 100 / "Apple";  // x will be NaN (Not a Number)
+```
 
 ---
 
@@ -211,90 +295,6 @@ parseFloat("10.33");     // returns 10.33
 parseFloat("10 20 30");  // returns 10
 parseFloat("10 years");  // returns 10
 parseFloat("years 10");  // returns NaN
-```
-
----
-
-## Number Object Properties
-
-**Number라는 숫자 객체(Object)에 속한 속성들**
-
-&#9656; can only be accessed like `Number.property` form
-
-&#8594; 따라서 아래와 같이 변수에는 숫자 속성을 사용할 수 없음
-
-```js
-var x = 6;
-var y = x.MAX_VALUE;    // y becomes undefined
-```
-
-### Returning Specific Number
-
-#### MAX_VALUE
-
-**JavaScript에서 가능한 가장 큰 숫자를 반환**
-
-syntax
-{: .label .mt-2}
-```js
-var x = Number.MAX_VALUE;
-//1.7976931348623157e+308
-```
-
-#### MIN_VALUE	
-
-**JavaScript에서 가능한 가장 낮은 숫자를 반환**
-
-syntax
-{: .label .mt-2}
-```js
-var x = Number.MIN_VALUE;
-//5e-324
-```
-
-#### POSITIVE_INFINITY
-
-**양수 무한대**
-
-syntax
-{: .label .mt-2}
-```js
-var x = Number.POSITIVE_INFINITY;
-
-or 
-var x = 1 / 0;
-
-//Infinity
-```
-
-#### NEGATIVE_INFINITY
-
-**음수 무한대**
-
-syntax
-{: .label .mt-2}
-```js
-var x = Number.NEGATIVE_INFINITY;
-
-or 
-var x = -1 / 0;
-
-//-Infinity
-```
-
-#### NaN			
-
-**숫자가 유효한 숫자가 아님을 나타내는 JavaScript 예약어**
-
-&#9656; 숫자가 아닌 문자열로 산술을 하면 `NaN` 발생
-
-syntax
-{: .label .mt-2}
-```js
-var x = Number.NaN;
-
-or 
-var x = 100 / "Apple";  // x will be NaN (Not a Number)
 ```
 
 ---

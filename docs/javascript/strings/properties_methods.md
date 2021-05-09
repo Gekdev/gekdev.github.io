@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Methods and Properties
+title: Properties and Methods
 parent: Strings
 grand_parent: JavaScript
 nav_order: 1

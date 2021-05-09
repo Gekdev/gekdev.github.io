@@ -19,7 +19,7 @@ nav_order: 1
 
 ## Array Property
 
-배열에는 정말 좋은 built-in 배열 속성과 메소드가 있음
+배열에는 정말 좋은 built-in 속성과 메소드가 있음
 
 ### Array length
 
@@ -41,9 +41,7 @@ var fruits = ["Banana", "Orange", "Apple", "Mango"];
 fruits.length;   // the length of fruits is 4
 ```
 
-#### Accessing the Last Array Element
-
-예제
+Accessing the Last Array Element
 {: .label .label-purple .mt-2}
 ```js
 fruits = ["Banana", "Orange", "Apple", "Mango"];
@@ -116,7 +114,7 @@ var name = a;       //a배열 전체 가져오기
     }
     ```
 
-### Changing Elements
+#### Changing Elements
 
 **인덱스 번호를 사용하여 액세스한 후 변경**
 

@@ -27,14 +27,14 @@ has_children: true
 
 ### Avoid new Array()
 
-대신 `[]` 사용하기
+**`[]` 사용하기**
 
 ```js
 var points = new Array();     // Bad
 var points = [];              // Good 
 ```
 
-`new` 키워드는 Array 함수의 매개변수가 **2개 이상**이여야지 제대로 작동하고, 코드를 복잡하게 함
+&#9656; `new` 키워드는 Array 함수의 매개변수가 2개 이상 이여야지 제대로 작동하고, 코드를 복잡하게 함
 
 ```js
 var points = new Array(40);  
