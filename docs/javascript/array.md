@@ -66,9 +66,9 @@ points[0] -> undefined
 
 **연관배열**
 
-&#9656; 이름을 가지고 있는 배열을 많은 프로그래밍 언어에서 사용하며 그렇게 명명된 인덱스 배열을 연관배열 이라고 함
+이름을 가지고 있는 배열을 많은 프로그래밍 언어에서 사용하며 그렇게 명명된 인덱스 배열을 연관배열 이라고 함
 
-&#9656; **자바스크립트는 연관배열을 지원하지 않기 때문에 어떤 인덱스를 사용하고 싶은지에 따라서 명명된 인덱스는 객체, 숫자 인덱스는 배열을 사용하면 됨**
+&#8594; **자바스크립트는 연관배열을 지원하지 않기 때문에 어떤 인덱스를 사용하고 싶은지에 따라서 명명된 인덱스는 객체, 숫자 인덱스는 배열을 사용하면 됨**
 
 Warning
 {: .label .label-red .mt-2}
@@ -129,70 +129,3 @@ myArray[0] = Date.now;      //object in array
 myArray[1] = myFunction;    //function in array
 myArray[2] = myCars;        //array in array
 ```
-
----
-
-### The length Property
-
-**배열의 길이 (배열 요소 수)를 반환**
-
-index가 0부터 시작하기 때문에 항상 가장 높은 배열 인덱스보다 하나 이상
-
-```js
-var fruits = ["Banana", "Orange", "Apple", "Mango"];
-fruits.length;   // the length of fruits is 4
-```
-
-* Accessing the Last Array Element
-
-    ```js
-    fruits = ["Banana", "Orange", "Apple", "Mango"];
-    var last = fruits[fruits.length - 1];
-    ```
-    
-* Looping Array Elements
-
-    1. for loop
-
-        ```js
-        text = "<ul>";
-        for (i = 0; i < fruits.length ; i++) {
-          text += "<li>" + fruits[i] + "</li>";
-        }
-        text += "</ul>";
-        ```
-
-    2. Array.forEach()
-
-        ```js
-        var fruits, text;
-        fruits = ["Banana", "Orange", "Apple", "Mango"];
-
-        text = "<ul>";
-        fruits.forEach(myFunction);
-        text += "</ul>";
-
-        function myFunction(value) {
-          text += "<li>" + value + "</li>";
-        }
-        ```
-
-### Adding Array Elements
-
-push() : **배열에 새 요소를 추가**
-
-arr[arr.length] 도 동일
-
-```js
-fruits.push("Lemon")
-
-fruits[fruits.length] = "Lemon";
-```
-
-Warning
-{: .label .label-red .mt-2}
-<div class="code-example" markdown="1">
-인덱스가 높은 요소를 추가하면 배열에 정의되지 않은 "구멍"이 생성 될 수 있음
-
-그 "구멍"의 값은 undefined
-</div>

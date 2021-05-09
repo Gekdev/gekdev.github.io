@@ -3,7 +3,7 @@ layout: default
 title: Sort
 parent: Arrays
 grand_parent: JavaScript
-nav_order: 2
+nav_order: 3
 ---
 
 # JavaScript Array Sort

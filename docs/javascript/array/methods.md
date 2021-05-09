@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Methods and Properties
+title: Methods
 parent: Arrays
 grand_parent: JavaScript
-nav_order: 1
+nav_order: 2
 ---
 
-# Array Methods and Properties
+# Array Methods
 {: .no_toc .text-beta .fw-700}
 
 ## Table of contents
@@ -17,47 +17,7 @@ nav_order: 1
 
 ---
 
-## Array Property
-
-배열에는 정말 좋은 built-in 배열 속성과 메소드가 있음
-
-### Array length
-
-#### length
-
-**배열의 길이(배열 요소 수)를 반환**
-
-&#9656; index가 0부터 시작하기 때문에 항상 가장 높은 배열 인덱스보다 하나 이상임
-
-&#9656; for문으로 요소를 추출할 수 있음
-
-syntax
-{: .label .mt-2}
-<div class="code-example" markdown="1">
-arr.length; 
-</div>
-```js
-var fruits = ["Banana", "Orange", "Apple", "Mango"];
-fruits.length;   // the length of fruits is 4
-```
-
-Accessing the Last Array Element
-{: .label .mt-2}
-```js
-fruits = ["Banana", "Orange", "Apple", "Mango"];
-var last = fruits[fruits.length - 1];
-```
-
-Looping Array Elements by length property
-{: .label .mt-2}
-```js
-fruits = ["Banana", "Orange", "Apple", "Mango"];
-var last = fruits[fruits.length - 1];
-```
-
----
-
-## Array Methods
+## Changing Array Elements
 
 ### Adding, Shifting and Deleting Elements
 
@@ -84,7 +44,26 @@ arr.push(str);
     var fruits = ["Banana", "Orange", "Apple", "Mango"];
     var x = fruits.push("Kiwi");   //  x = 5
     ```
-    
+
+Same result different way
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+arr[arr.length]도 동일하게 작동함
+</div>
+```js
+fruits.push("Lemon")
+
+fruits[fruits.length] = "Lemon";
+```
+
+Warning
+{: .label .label-red .mt-2}
+<div class="code-example" markdown="1">
+인덱스가 높은 요소를 추가하면 배열에 정의되지 않은 "구멍"이 생성 될 수 있음
+
+그 "구멍"의 값은 undefined
+</div>
+
 #### unshift()
 
 **배열의 처음에 새 요소를 추가하고 이전 요소를 뒤로 밀음, 새로운 배열 길이 반환**
@@ -167,7 +146,7 @@ var fruits = ["Banana", "Orange", "Apple", "Mango"];
 delete fruits[0];           // Changes the first element in fruits to undefined
 ```
 
-### Splicing an Array
+### Splicing an Array Elements
 
 #### splice()
 
@@ -200,11 +179,19 @@ var fruits = ["Banana", "Orange", "Apple", "Mango"];
 fruits.splice(0, 1);        // Removes the first element of fruits
 ```
 
+---
+
+## Creating New Arrays
+
 ### Merging (Concatenating) Arrays
 
 #### concat()
 
-**기존 배열을 병합 (연결)하여 새 배열**을 만듦
+**기존 배열을 병합(연결)하여 새 배열**을 만듦
+
+&#9656; 매개변수로 배열을 가지고 있는 변수를 받을수도 있고, 배열을 바로 받을수도 있음
+
+&#9656; 매개변수 개수는 무한(,를 사용해서 넣고싶은 만큼 넣어도 됨)
 
 Syntax
 {: .label .mt-2}
@@ -216,15 +203,9 @@ var myGirls = ["Cecilie", "Lone"];
 var myBoys = ["Emil", "Tobias", "Linus"];
 var myChildren = myGirls.concat(myBoys);   
 // Concatenates (joins) myGirls and myBoys
-```
 
-&#9656; 매개변수로 위와같이 배열을 가지고 있는 변수를 받을수도 있고, 배열을 바로 받을수도 있음
+...
 
-&#9656; 매개변수 개수는 무한(,를 사용해서 넣고싶은 만큼 넣어도 됨)
-
-예제
-{: .label .label-purple .mt-2}
-```js
 arr1.concat(arr2, arr3, "Peter");
 ```
 
@@ -251,6 +232,10 @@ var citrus = fruits.slice(1);
 var citrus = fruits.slice(1,3);
 //citrus = Orange,Lemon
 ```
+
+---
+
+## Other Arrays Methods
 
 ### Converting Arrays to Strings
 
@@ -308,66 +293,6 @@ document.getElementById("demo").innerHTML = fruits.join(" * ");
 
 ---
 
-## Array Technic
-
-### Access the Elements
-
-**인덱스 번호로 배열 값에 접근하기**
-
-&#9656; 인덱스는 0부터 시작
-
-&#9656; 배열 전체로 접근하려면 []없이 이름만 사용
-
-syntax
-{: .label .mt-2}
-```js
-var name = a[0];    //0번째 값 가져오기
-var name = a;       //a배열 전체 가져오기
-```
-
-### Looping Array Elements
-
-1. length (for loop)
-
-    ```js
-    text = "<ul>";
-    for (i = 0; i < fruits.length ; i++) {
-      text += "<li>" + fruits[i] + "</li>";
-    }
-    text += "</ul>";
-    ```
-
-2. Array.forEach()
-
-    ```js
-    var fruits, text;
-    fruits = ["Banana", "Orange", "Apple", "Mango"];
-
-    text = "<ul>";
-    fruits.forEach(myFunction);
-    text += "</ul>";
-
-    function myFunction(value) {
-      text += "<li>" + value + "</li>";
-    }
-    ```
-
-### Changing Elements
-
-**인덱스 번호를 사용하여 액세스한 후 변경**
-
-syntax
-{: .label .mt-2}
-<div class="code-example" markdown="1">
-arr[0] = "";
-</div>
-```js
-var fruits = ["Banana", "Orange", "Apple", "Mango"];
-fruits[0] = "Kiwi";        // Changes the first element of fruits to "Kiwi"
-```
-
----
-
 ## Complete Array Reference
 
 The reference contains descriptions and examples of all Array properties and methods.
@@ -375,4 +300,3 @@ The reference contains descriptions and examples of all Array properties and met
 <span class="fs-2">
 [더 찾아보기](https://www.w3schools.com/jsref/jsref_obj_array.asp){: .btn  .btn-outline}
 </span>
-
