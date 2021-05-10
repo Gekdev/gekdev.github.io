@@ -107,7 +107,7 @@ person.eyeColor = "blue";
 
 3. objectName[expression] 
 
-4. objectName.values()
+4. objectName.values()  //객체를 배열로 전환(value만 추출)
 
 예제
 {: .label .label-purple .mt-2}
@@ -130,6 +130,8 @@ document.getElementById("c").innerHTML = person[x]
 **for...in문은 개체의 속성을 반복**
 
 &#9656; for...in루프 내부의 코드 블록은 각 속성에 대해 한 번씩 실행
+
+&#9656; **반복하는 변수는 name(key)가 된다**
 
 syntax
 {: .label .mt-2}
@@ -193,41 +195,86 @@ delete person.age;   // or delete person["age"];
 // person.age = undefined 
 ```
 
+### Displaying Object Properties
 
+총 네가지 방법이 있음
 
+1. 이름으로 개체속성 표시(위에서 설명)
 
+2. loop로 개체속성 표시(위에서 설명)
 
+3. Object.values()를 사용하여 객체표시 : 객체를 배열로 바꾸는 방법
 
+4. JSON.stringify()를 사용하여 객체표시 : 객체를 문자열로 바꾸는 방법
 
+#### Object.values()
 
+**객체의 값만을 새로운 배열로 생성하는 객체 메소드**
 
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+var arr2 = Object.values(arr1)
+</div>
+```js
+var person = {name:"John", age:30, city:"New York"};
 
+var myArray = Object.values(person);
+// myArray is John,50,New York
+```
 
+#### JSON.stringify()
 
+**모든 JavaScript 객체를 문자열화 (문자열로 변환)**
 
+&#9656; 배열을 문자열화 할 때도 사용함
 
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+var arr2 = JSON.stringify(arr1)
+</div>
+```js
+var person = {name:"John", age:30, city:"New York"};
 
+var myString = JSON.stringify(person);
+// myString is {"name":"John","age":30,"city":"New York"}
+```
 
+&#9656; 객체 안에 있는 함수는 문자열화하지 않아서 객체를 따로 변환해줘야함
 
+예제
+{: .label .label-purple .mt-2}
+```js
+var person = {name:"John", age:function () {return 30;}};
+person.age = person.age.toString();
 
+var myString = JSON.stringify(person);
+document.getElementById("demo").innerHTML = myString;
+```
 
+<span class="fs-2">
+[W3School](https://www.w3schools.com/js/tryit.asp?filename=tryjs_object_display_stringify_function_tostring){: .btn .btn-outline .mt-2}
+</span>
 
+#9656; 날짜를 문자열로 변환
 
+예제
+{: .label .label-purple .mt-2}
+```js
+var person = {name:"John", today:new Date()};
 
+var myString = JSON.stringify(person);
+document.getElementById("demo").innerHTML = myString;
+//myString is {"name":"John","today":"2021-05-10T12:18:26.377Z"}
+```
 
+<span class="fs-2">
+[W3School](https://www.w3schools.com/js/tryit.asp?filename=tryjs_object_display_stringify_date){: .btn .btn-outline .mt-2}
+</span>
 
+### Prototype Properties
 
+JavaScript 객체는 **프로토타입의 속성을 상속함**
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+delete키워드는 상속 된 속성을 삭제하지 않지만 직접 프로토 타입 속성을 삭제하면 프로토 타입에서 상속된 모든 객체에 영향을 미침

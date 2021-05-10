@@ -15,7 +15,7 @@ nav_order: 2
 1. TOC
 {:toc}
 
----
+--- 
 
 ## JavaScript Properties
 
@@ -37,26 +37,6 @@ nav_order: 2
 
 ### JavaScript for...in Loop
 
-for...in문은 객체의 속성을 반복함, 이때 **반복하는 변수는 name(key)가 된다**
-
-Syntax
-{: .label .mt-2}
-<div class="code-example" markdown="1">
-for (variable in object) {  <br>
-  // code to be executed    <br>
-}
-</div>
-
-
-예제
-{: .label .label-purple .mt-3}
-```js
-var person = {fname:"John", lname:"Doe", age:25};
-
-for (x in person) {
-  txt += person[x];
-}
-```
 
 ### Adding New Properties
 
@@ -94,10 +74,4 @@ delete person.age;   // or delete person["age"];
 &#9656; 이러한 속성은 속성에 액세스하는 방법을 정의함
 
 &#9656; JavaScript에서는 모든 속성을 읽을 수 있지만 value 속성 만 변경할 수 있음 (속성이 쓰기 가능한 경우에만)
-
-### Prototype Properties
-
-JavaScript 객체는 **프로토 타입의 속성을 상속함**
-
-delete키워드는 상속 된 속성을 삭제하지 않지만 당신은 프로토 타입 속성을 삭제하면 프로토 타입에서 상속 된 모든 객체에 영향을 미침
 

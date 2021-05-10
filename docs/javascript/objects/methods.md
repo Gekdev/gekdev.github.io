@@ -29,12 +29,12 @@ nav_order: 3
 
 예시
 {: .label .label-purple .mt-2}
-<div class="code-example" markdown="1">
+
 | Property      | Property Value                                                |
 |:--------------|:--------------------------------------------------------------|
 | firstName     | John                                                          |
 | fullName      | function() {return this.firstName + " " + this.lastName;}     |
-</div>
+
 ```js
 var person = {
   firstName: "John",
@@ -53,7 +53,7 @@ Syntax
 
 2. name = person.fullName();
 
-&#9656; ()없이 사용하면 함수 정의를 불러옴
+&#8594; ()없이 사용하면 함수 정의를 불러옴
 </div>
 ```js
 var person = {
