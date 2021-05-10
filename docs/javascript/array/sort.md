@@ -79,8 +79,7 @@ myFunction();
 ```
 
 <span class="fs-2">
-[W3School](https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort_reverse)
-{: .btn .btn-outline .mt-2}
+[W3School](https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort_reverse){: .btn  .btn-outline .mt-2}
 </span>
 
 ---
@@ -122,8 +121,7 @@ function myFunction2() {
 ```
 
 <span class="fs-2">
-[W3School](https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort_alpha)
-{: .btn .btn-outline .mt-2}
+[W3School](https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort_alpha){: .btn  .btn-outline .mt-2}
 </span>
 
 ### Sorting Ascending
@@ -141,8 +139,7 @@ function myFunction() {
 ```
 
 <span class="fs-2">
-[W3School](https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort2)
-{: .btn .btn-outline .mt-2}
+[W3School](https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort2){: .btn  .btn-outline .mt-2}
 </span>
 
 ### Sorting Descending
@@ -160,8 +157,7 @@ function myFunction() {
 ```
 
 <span class="fs-2">
-[W3School](https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort3)
-{: .btn .btn-outline .mt-2}
+[W3School](https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort3){: .btn  .btn-outline .mt-2}
 </span>
 
 ### Sorting Random Order
@@ -183,7 +179,7 @@ function myFunction() {
 ```
 
 <span class="fs-2">
-[W3School](https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort_random){: .btn .btn-outline .mt-2}
+[W3School](https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort_random){: .btn  .btn-outline .mt-2}
 </span>
 
 ### The Fisher Yates Method
@@ -215,10 +211,8 @@ var i, j, k;
 ```
 
 <span class="fs-2">
-[W3School](https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort_random2)
-{: .btn .btn-outline .mt-2}
+[W3School](https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort_random2){: .btn  .btn-outline .mt-2}
 </span>
-
 
 ### Find the Highest (or Lowest) Array Value
 
@@ -369,8 +363,7 @@ function displayCars() {
 ```
 
 <span class="fs-2">
-[W3School](https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort_object1)
-{: .btn .btn-outline .mt-2}
+[W3School](https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort_object1){: .btn  .btn-outline .mt-2}
 </span>
 
 ### Alphabetic Sorting
