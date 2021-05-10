@@ -16,21 +16,45 @@ nav_order: 9
 
 ---
 
-## Loop
+## Loops
 
-### 
-34. JavaScript For Loop
-Different Kinds of Loops
-■ for 		 loops through a block of code a number of times
-■ for/in 	 loops through the properties of an object
-■ for/of 	 loops through the values of an iterable object
-■ while 		 loops through a block of code while a specified condition is true
-■ do/while  	 loops through a block of code while a specified condition is true
+**반복문은 코드 블록을 여러 번 실행할 수 있어서 편리함 = 배열로 작업하는 경우**
 
-a. The For Loop
-	for (statement 1; condition ; statement 3) {
-	  // code block to be executed
-	}
+### Different Kinds of Loops
+
+자바스크립트는 다섯가지 반복문을 제공함
+
+* for : 코드 블록을 여러 번 반복
+
+* for/in : 개체의 속성을 반복
+
+* for/of : 반복 가능한 객체의 값을 반복
+
+* while : 지정된 조건이 참인 동안 코드 블록을 반복
+
+* do/while : 지정된 조건이 참인 동안 코드 블록을 반복
+
+### The For Loop
+
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+for (statement 1; condition ; statement 3) {
+  // code block to be executed
+}
+
+&#9656; statement 1 코드 블록이 실행되기 전에(한번) 실행
+
+&#9656; statement 2 코드 블록을 실행하기 위한 조건을 정의
+
+&#9656; statement 3 코드 블록이 실행 된 후 (매번) 실행
+</div>
+```js
+if (hour < 18) {
+  greeting = "Good day";
+}
+```
+
 
 statement1: executed one time before the execution of the code block
 statement3: executed (every time) after the code block has been executed.
