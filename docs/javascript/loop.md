@@ -16,9 +16,9 @@ nav_order: 9
 
 ---
 
-## Loops
+## JavaScript Loops
 
-**반복문은 코드 블록을 여러 번 실행할 수 있어서 편리함 = 배열로 작업하는 경우**
+**반복문은 코드 블록을 여러 번 실행할 수 있어서 편리함 = 배열로 작업하는 경우 주로 사용**
 
 ### Different Kinds of Loops
 
@@ -40,14 +40,16 @@ syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
 for (statement 1; condition ; statement 3) {
+
   // code block to be executed
+  
 }
 
-&#9656; statement 1 코드 블록이 실행되기 전에(한번) 실행
+&#9656; statement 1 : 초기화, 코드 블록이 실행되기 전에(한번) 실행
 
-&#9656; statement 2 코드 블록을 실행하기 위한 조건을 정의
+&#9656; statement 2 : 코드 블록을 실행하기 위한 반복조건을 정의
 
-&#9656; statement 3 코드 블록이 실행 된 후 (매번) 실행
+&#9656; statement 3 : 코드 블록이 실행 된 후 (매번) 실행되는 코드
 </div>
 ```js
 for (i = 0; i < 5; i++) {
@@ -57,7 +59,7 @@ for (i = 0; i < 5; i++) {
 //text is The number is 0 The number is 1 The number is 2 The number is 3 The number is 4
 ```
 
-#### statement1
+#### Statement1
 
 **루프에서 사용되는 변수를 초기화함**
 
@@ -74,7 +76,7 @@ for (; i < len; i++) {
 }
 ```
 
-#### Statement 2 (condtion)
+#### Statement2 (condtion)
 
 **초기 변수의 조건을 평가하는 조건문**
 
@@ -82,8 +84,7 @@ for (; i < len; i++) {
 
 &#9656; 선택사항 = 생략가능 하지만 무한루프이기 때문에 you must provide a break inside the loop
 
-
-#### Statement 3
+#### Statement3
 
 **초기 변수의 값을 변화하는 조건문**
 
@@ -91,13 +92,19 @@ for (; i < len; i++) {
 
 ### The For/In Loop
 
-**객체의 속성을 통해서 반복**
+**객체나 배열을 속성을 통해서 조건문을 반복**
 
-syntax
+&#9656; 각 반복은 property의 name(index)을 배출함 
+
+#### Object loop
+
+syntax 
 {: .label .mt-2}
 <div class="code-example" markdown="1">
 for (key in object) {
+
   // code block to be executed
+  
 }
 </div>
 ```js
@@ -111,161 +118,199 @@ for (x in person){
 //text is John Doe 25
 ```
 
+#### Array loop
 
-c. The For/Of Loop
-The JavaScript for/of statement loops through the values of an iterable objects
-for/of lets you loop over data structures that are iterable such as Arrays, Strings, Maps, NodeLists, and more.
+syntax 
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+for (variable in array) {
 
-syntax:
-	for (variable of iterable) {
-	  // code block to be executed
-	}
+  code
+  
+}
+</div>
+```js
+var numbers = [45, 4, 9, 16, 25];
 
-* variable - For every iteration the value of the next property is assigned to the variable. 
-		Variable can be declared with const, let, or var.
-* iterable - An object that has iterable properties.
-
-var cars = ['BMW', 'Volvo', 'Mini']; // string이면 x가 한글자씩 댐
+var txt = "";
 var x;
-
-for (x of cars) {
-  document.write(x + "<br >"); // x = BMW, Volvo, Mini
+for (x in numbers) {
+  txt += numbers[x] + "<br>";
 }
+document.getElementById("demo").innerHTML = txt;
+//text is 45 4 9 16 25
+```
 
-35. JavaScript While Loop
-The While Loop
-: can execute a block of code as long as a specified condition is true.
-if you omit condition, loop will never end - crush
+### The For/Of Loop
 
-Syntax
-while (condition) {
+**반복 가능한 객체의 값을 반복**
+
+&#9656; 배열, 문자열,지도, NodeLists 등과 같은 반복 가능한 데이터 구조를 반복 할 수 있음
+
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+for (variable of iterable) {
+
   // code block to be executed
+  
 }
 
-The Do/While Loop
-최초 한번 실행됨(무조건)/ do로 먼저 쓰기때문
+&#9656; variable : 모든 반복에 대해 다음 속성의 값이 변수에 할당됨, 변수는 const, let, var로 선언 할 수있음
 
+&#9656; iterable : 반복 가능한 속성이있는 객체
+</div>
+
+
+#### Array loop
+
+```js
+let cars = ["BMW", "Volvo", "Mini"];
+let text = "";
+
+for (let x of cars) {
+  text += x + "<br>";
+}
+//text is BMW Volvo Mini
+```
+
+#### String loop
+
+```js
+let language = "JavaScript";
+let text = "";
+
+for (let x of language) {
+text += x + "<br>";
+}
+//하나하나 따로 글자가 나옴!
+```
+
+### The While Loop
+
+**지정된 조건에 해당하는 만큼의 코드 블록을 루핑**
+
+&#9656; 조건이 true에서 false가 될 때까지 반복실행
+
+&#9656; 조건에 사용된 변수를 조작하는것이 생략되면 무한루프에 걸림
+
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+while (condition) {
+
+  // code block to be executed
+  
+}
+</div>
+```js
+while (i < 10) {
+  text += "The number is " + i;
+  i++;
+}
+```
+
+for과 while의 차이점
+{: .label .label-yellow .mt-2}
+<div class="code-example" markdown="1">
+for(;arr[i];) / while (arr[i])
+
+for문은 반복문 함수 매개변수에 세미콜론이 있어야함!
+</div>
+
+### The Do/While Loop
+
+While문과 거의 동일하지만 do로 먼저 쓰기때문에 **최초 한번 실행됨** (무조건)
+
+&#9656; 조건이 테스트되기 전에 코드 블록이 실행되기 때문에 조건이 거짓 인 경우에도 루프는 항상 한 번 이상 실행
+
+&#9656; 조건에 사용된 변수를 조작하는것이 생략되면 무한루프에 걸림
+
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+do {
+
+  // code block to be executed
+  
+}
+
+while (condition);
+</div>
+```js
 do {
   text += "The number is " + i;
   i++;
 }
 while (i < 10);
+```
 
-for와 while문은 매우비슷하다
+---
 
-5. 반복문(loop / iterate)
-	A. while문 – 조건이 true에서 false가 될 때까지 반복실행한다
-	 반복문에서 종료조건을 잘못 지정하면 무한반복이 되거나, 반복문이 실행되지 않는다
-		var i = 0;
-		// 종료조건으로 i의 값이 10보다 작다면 true, 같거나 크다면 false가 된다.
-		while(i < 10){
-		    // 반복이 실행될 때마다 coding everybody <br />이 출력된다.
-		    document.write('coding everybody <br />');
-		    // i의 값이 1씩 증가한다.
-		    i++
-		}
-			
-	B. for문
-		for(초기화; 반복조건; 반복이 될 때마다 실행되는 코드){
-		    반복해서 실행될 코드
-		}
-		
-	C. do-while 문
-		최소 한번은 실행되며, 조건식을 검사해 ture인 동안 작업문이 반복 실행됨
-		var I = 0;
-		do{
-			document.write(i);
-			i++;
-		}while(i<10(조건식));
+## JavaScript Break and Continue
 
-	D. break 문 = 반복문 벗어나기(여러개 중첩일 경우 하나만 벗어남)
-	ex) 1에서 얼마까지 더해야 3000이 넘는지 구하기
-		var t = 0;
-		var sum = 0;
-		while(true){
-		sum += t
-			if(sum>3000){			
-            		    break;
-			}
-      		t++ //sum 먼저 검사해야댕
-		}
-		document.write(t+"까지 더하면 3000이 넘어요"+sum)
+### break Statement  
 
-	E. continue 문 = 다음 반복으로 넘어가고자 할 때 사용
-		for(){
-		.............
-		continue; // 아래 ....을 실행하지 않고 작업과 조건식으로 다시 올라감
-		.............
-		}
+**반복문 벗어나기** (여러개 중첩일 경우 하나만 벗어남)
 
-		ex) 
-		var sum = 0;
-	         for(var i=0;i<=10;i++){
-	            if(i%3!=1){
-	                continue;
-	            }
-	            document.write(i+" ");
-	            sum += i;
-	         }
-	         document.write("합은:"+sum)
-		
-	C. 반복문의 제어
-	break
-			for(var i = 0; i < 10; i++){
-			    if(i === 5) {
-			        break;
-			    }
-			    document.write('coding everybody'+i+'<br />');
-			}
+예제
+{: .label .label-purple .mt-2}
+```js
+// 1에서 얼마까지 더해야 3000이 넘는지 구하기
+var t = 0;
+var sum = 0;
+while(true){
+sum += t
+    if(sum>3000){			
+        break;
+    }
+    t++ //sum 먼저 검사해야댕
+}
+document.write(t+"까지 더하면 3000이 넘어요"+sum)
+```
 
-	continue :실행을 즉시 중단 하면서 반복은 지속
-	 　　　　 i의 값이 5가 되었을 때 실행이 중단 됐기 때문에 continue 이후의 구문이 실행되지 않은 것이다. 
+### continue Statement 
 
+**다음 반복으로 넘어가고자 할 때 사용**
 
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+for(){
 
-36. JavaScript Break and Continue
-The Break Statement
-:  "jumps out" of a loop.
-continues executing the code after the loop (if any)
+.............
 
-	for (i = 0; i < 10; i++) {
-	  if (i === 3) { break; }
-	  text += "The number is " + i + "<br>";
-	}
+continue; // 아래 ....을 실행하지 않고 작업과 조건식으로 다시 올라감
 
-The Continue Statement
-: "jumps over" one iteration in the loop.
-The continue statement breaks one iteration (in the loop), if a specified condition occurs, and continues with the next iteration in the loop.
-
-3만 안나옴
-	for (i = 0; i < 10; i++) {
-	  if (i === 3) { continue; }
-	  text += "The number is " + i + "<br>";
-	}
-
-/안중요한것같아서 공부안함/
-JavaScript Labels
-To label JavaScript statements, you precede the statements with a label name and a colon:
-↓
-label:
-statements
-
-The break and the continue statements are the only JavaScript statements that can "jump out of" a code block.
-Syntax:
-	break labelname;
-	continue labelname;
-
-The continue statement (with or without a label reference) can only be used to skip one loop iteration.
-The break statement, without a label reference, can only be used to jump out of a loop or a switch.
-With a label reference, the break statement can be used to jump out of any code block:
-
-ex)
-var cars = ["BMW", "Volvo", "Saab", "Ford"];
-list: {
-  text += cars[0] + "<br>";
-  text += cars[1] + "<br>";
-  break list;
-  text += cars[2] + "<br>";				//안나옴
-  text += cars[3] + "<br>";				//안나옴
+.............
+    
+}
+</div>
+```js
+var text = "";
+var i;
+for (i = 0; i < 10; i++) {
+  if (i === 3) { continue; }
+  text += "The number is " + i + "<br>";
 }
 
+//3빼고 모두 출력됨
+```
+
+### JavaScript Labels
+
+JavaScript 문에 레이블을 지정하려면 문 앞에 레이블 이름과 콜론을 추가
+
+&#9656; break과 continue문은 코드 블록 "밖으로 점프"할 수있는 유일한 자바 스크립트 구문
+
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+label:
+
+statements
+</div>
+
+<span class="fs-2">
+[W3School](https://www.w3schools.com/js/tryit.asp?filename=tryjs_break_list){: .btn .btn-outline .mt-2 }
+</span>
