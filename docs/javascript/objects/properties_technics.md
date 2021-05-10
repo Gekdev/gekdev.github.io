@@ -17,7 +17,9 @@ nav_order: 1
 
 ---
 
-### Object Properties
+## Object Property
+
+### Object Property Features
 
 **Property(name) + Property(value) = Properties**
 
@@ -72,6 +74,7 @@ var person = {
 };
 //object definition can span multiple lines
 ```
+
 #### 4 ways to creating a JavaScript Object
 
 새 객체를 만드는 방법에는 네가지 방법이 있음
@@ -273,7 +276,9 @@ document.getElementById("demo").innerHTML = myString;
 [W3School](https://www.w3schools.com/js/tryit.asp?filename=tryjs_object_display_stringify_date){: .btn .btn-outline .mt-2}
 </span>
 
-### Prototype Properties
+---
+
+## Prototype Properties
 
 JavaScript 객체는 **프로토타입의 속성을 상속함**
 
