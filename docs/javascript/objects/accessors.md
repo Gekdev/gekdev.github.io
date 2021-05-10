@@ -23,12 +23,60 @@ ECMAScript 5 (2009)는 Getter and Setter를 도입함
 
 Getters and setters를 사용하면 **개체 접근자(계산 된 속성)를 정의 할 수 있음**
 
+### Why Using Getters and Setters?
+
+1. 더 간단한 구문을 제공
+
+2. 속성과 메소드에 대해 동일한 구문을 허용
+
+3. 더 나은 데이터 품질을 보장 할 수 있음
+
+4. 비하인드 스토리를 수행하는 데 유용함
+
+### JavaScript Function or Getter?
+
+예제: function
+{: .label .label-purple .mt-3}
+```js
+var person = {
+  firstName: "John",
+  lastName : "Doe",
+  fullName : function() {
+    return this.firstName + " " + this.lastName;
+  }
+};
+
+// Display data from the object using a method:
+document.getElementById("demo").innerHTML = person.fullName();
+```
+
+예제: getter
+{: .label .label-purple .mt-3}
+```js
+var person = {
+  firstName: "John",
+  lastName : "Doe",
+  get fullName() {
+    return this.firstName + " " + this.lastName;
+  }
+};
+
+// Display data from the object using a getter:
+document.getElementById("demo").innerHTML = person.fullName;
+```
+
+&#8594; getter가 더 간단한 구문을 제공
+
+---
+
+## JavaScript Getter and Setter 
+
 ### JavaScript Getter (The get Keyword)
 
 이 예제는 lang속성 get 값에 language 속성을 사용 
 
 예제
-{: .label .label-purple .mt-3}
+{: .label .label-purple .mt-2}
 ```js
 // Create an object:
 var person = {
@@ -66,48 +114,6 @@ person.lang = "en";
 // Display data from the object:
 document.getElementById("demo").innerHTML = person.language;
 ```
-
-### JavaScript Function or Getter?
-
-예제: function
-{: .label .label-purple .mt-3}
-```js
-var person = {
-  firstName: "John",
-  lastName : "Doe",
-  fullName : function() {
-    return this.firstName + " " + this.lastName;
-  }
-};
-
-// Display data from the object using a method:
-document.getElementById("demo").innerHTML = person.fullName();
-```
-
-예제: getter
-{: .label .label-purple .mt-3}
-```js
-var person = {
-  firstName: "John",
-  lastName : "Doe",
-  get fullName() {
-    return this.firstName + " " + this.lastName;
-  }
-};
-
-// Display data from the object using a getter:
-document.getElementById("demo").innerHTML = person.fullName;
-```
-
-&#8594; getter가 더 간단한 구문을 제공
-
-### Why Using Getters and Setters?
-
-1. 더 간단한 구문을 제공
-2. 속성과 메소드에 대해 동일한 구문을 허용
-3. 더 나은 데이터 품질을 보장 할 수 있음
-4. 비하인드 스토리를 수행하는 데 유용함
-5. getters and setters를 사용할 때 더 나은 데이터 품질을 보장
 
 ### Object.defineProperty()
 
@@ -185,3 +191,11 @@ document.getElementById("demo").innerHTML = obj.counter;
 ### Browser Support
 
 Internet Explorer 8 이전 버전에서는 Getter 및 Setter가 지원되지 않음
+
+---
+
+## Accessors Advanced
+
+### Reference 
+
+[자바스크립트 getter 함수와 setter 함수의 이해](http://yongho-coding.com/javascript-getter-setter/)
