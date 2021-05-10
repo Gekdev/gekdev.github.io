@@ -114,7 +114,7 @@ var name = a;       //a배열 전체 가져오기
     }
     ```
 
-#### Changing Elements
+### Changing Elements
 
 **인덱스 번호를 사용하여 액세스한 후 변경**
 

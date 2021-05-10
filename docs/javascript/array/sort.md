@@ -408,7 +408,5 @@ function displayCars() {
 ```
 
 <span class="fs-2">
-[W3School](https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort_object2)
-{: .btn .btn-outline .mt-2}
+[W3School](https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort_object2){: .btn  .btn-outline .mt-2}
 </span>
-    
