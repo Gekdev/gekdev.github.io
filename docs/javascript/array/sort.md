@@ -79,13 +79,13 @@ myFunction();
 ```
 
 <span class="fs-2">
-{: .btn .btn-outline .mt-2}
 [W3School](https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort_reverse)
+{: .btn .btn-outline .mt-2}
 </span>
 
 ---
 
-## Numeric Sort 
+## Sorting Array Elements Technics (Numeric Sort)
 
 기본으로 the sort() 함수는 값을 문자열로 정렬
 
@@ -93,7 +93,40 @@ myFunction();
 
 &#9656; 해결법 : 함수이용(compare funtion)
 
-### 오름차순
+### The Compare Function
+
+비교 함수의 목적은 대체 **정렬 순서를 정의하는 것**
+
+&#9656; 비교 함수는 인수에 따라 음수, 0 또는 양수 값을 반환
+
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+function(a, b){return a - b}
+</div>
+```js
+var points = [40, 100, 1, 5, 25, 10];
+document.getElementById("demo").innerHTML = points;  
+
+//Sort Alphabetically
+function myFunction1() {
+  points.sort();
+  document.getElementById("demo").innerHTML = points;
+}
+
+//Sort Numerically
+function myFunction2() {
+  points.sort(function(a, b){return a - b});
+  document.getElementById("demo").innerHTML = points;
+}
+```
+
+<span class="fs-2">
+[W3School](https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort_alpha)
+{: .btn .btn-outline .mt-2}
+</span>
+
+### Sorting Ascending
 
 예제
 {: .label .label-purple .mt-2}
@@ -108,11 +141,11 @@ function myFunction() {
 ```
 
 <span class="fs-2">
-{: .btn .btn-outline .mt-2}
 [W3School](https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort2)
+{: .btn .btn-outline .mt-2}
 </span>
 
-### 내림차순
+### Sorting Descending
 
 예제
 {: .label .label-purple .mt-3}
@@ -127,15 +160,15 @@ function myFunction() {
 ```
 
 <span class="fs-2">
-{: .btn .btn-outline .mt-2}
 [W3School](https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort3)
+{: .btn .btn-outline .mt-2}
 </span>
 
-### 무작위
+### Sorting Random Order
 
 &#9656; 무작위지만 우선순위가 있음
 
-&#9656; Fisher Yates Shuffle 방법을 더 선호해서 사용(뒤에 설명되어 있음)
+&#9656; Fisher Yates Shuffle 방법을 더 선호해서 사용 (뒤에 설명되어 있음)
 
 예제
 {: .label .label-purple .mt-3}
@@ -150,8 +183,7 @@ function myFunction() {
 ```
 
 <span class="fs-2">
-{: .btn .btn-outline .mt-2}
-[W3School](https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort_random)
+[W3School](https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort_random){: .btn .btn-outline .mt-2}
 </span>
 
 ### The Fisher Yates Method
@@ -183,175 +215,124 @@ var i, j, k;
 ```
 
 <span class="fs-2">
-{: .btn .btn-outline .mt-2}
 [W3School](https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort_random2)
-</span>
-
----
-
-## Array Sort Technics The Compare Function
-
-### The Compare Function
-
-비교 함수의 목적은 대체 **정렬 순서를 정의하는 것**
-
-&#9656; 비교 함수는 인수에 따라 음수, 0 또는 양수 값을 반환
-
-syntax
-{: .label .mt-2}
-```js
-function(a, b){return a - b}
-```
-
-예제
-{: .label .label-purple .mt-3}
-```html
-<button onclick="myFunction1()">Sort Alphabetically</button>
-<button onclick="myFunction2()">Sort Numerically</button>
-
-<p id="demo"></p>
-
-<script>
-var points = [40, 100, 1, 5, 25, 10];
-document.getElementById("demo").innerHTML = points;  
-
-function myFunction1() {
-  points.sort();
-  document.getElementById("demo").innerHTML = points;
-}
-function myFunction2() {
-  points.sort(function(a, b){return a - b});
-  document.getElementById("demo").innerHTML = points;
-}
-</script>
-```
-
-<span class="fs-2">
 {: .btn .btn-outline .mt-2}
-[W3School](https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort_alpha)
 </span>
+
 
 ### Find the Highest (or Lowest) Array Value
 
-배열에서는 최대 값이나 최소 값을 찾기위한 내장함수가 없음
+배열에서는 최대 값이나 최소 값을 찾기 위한 내장함수가 없어서 값을 찾기 위한 세가지 방법이 있음
 
-그래서 **오름 or 내림차순으로 정렬한 첫 번째나 마지막번째가 highest or lowest value**
+#### Basic Sorting 
 
-근데 최대나 최소값 하나만 원하면 정말 비효율적임(max() or min() 사용하는게 효율적)
+**오름 or 내림차순으로 정렬한 첫 번째나 마지막번째가 highest or lowest value**
 
-Using Math.max() on an Array
-{: .label .mt-2}
-<div class="code-example" markdown="1">
-Math.max.apply() : 배열에서 가장 높은 숫자를 찾는 데 사용
-</div>
-```js
-function myArrayMax(arr) {
-	Math.max.apply(null, arr);
-	or
-	Math.max(1, 2, 3) //이경우 매개변수에 배열이 들어가면 안됨, toString이나 join 써도 안됨ㅠ
-}
-```
+1. [최소값 찾기](https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort_low)
 
-Using Math.min() on an Array
-{: .label .mt-2}
-<div class="code-example" markdown="1">
-Math.min.apply() : 배열에서 가장 낮은 숫자를 찾는 데 사용
-</div>
-```js
-function myArrayMax(arr) {
-	Math.min.apply(null, arr);
-	or
-	Math.min(1, 2, 3) //이경우에도 매개변수에 배열이 들어가면 안됨, toString이나 join 써도 안됨
-}
-```
+    예제
+    {: .label .label-purple .mt-3}
+    ```js
+    var points = [40, 100, 1, 5, 25, 10];
+    points.sort(function(a, b){return a-b});
+    document.getElementById("demo").innerHTML = points[0];
 
-### My Min / Max JavaScript Methods
+    //result is 1
+    ```
 
-#### 최대 값 찾기
+2. [최대값 찾기](https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort_high)
 
-예제
-{: .label .label-purple .mt-3}
-<div class="code-example" markdown="1">
-<p>The highest number is <span id="demo"></span>.</p>
+    예제
+    {: .label .label-purple .mt-3}
+    ```js
+    var points = [40, 100, 1, 5, 25, 10];
+    points.sort(function(a, b){return b-a});
+    document.getElementById("demo").innerHTML = points[0];
 
-<script>
-var points = [40, 100, 1, 5, 25, 10];
-document.getElementById("demo").innerHTML = myArrayMax(points);
+    //result is 100
+    ```
 
-function myArrayMax(arr) {
-  var len = arr.length;
-  var max = -Infinity;
-  while (len--) {
-    if (arr[len] > max) {
-      max = arr[len];
+#### My Min / Max JavaScript Methods
+
+**직접 함수(메소드)를 만들어서 사용 (가장 빠른방법)**
+
+1. [최소값 찾기](https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort_min)
+
+    예제
+    {: .label .label-purple .mt-3}
+    ```js
+    var points = [40, 100, 1, 5, 25, 10];
+    document.getElementById("demo").innerHTML = myArrayMin(points);
+
+    function myArrayMin(arr) {
+      var len = arr.length;
+      var min = Infinity;
+      while (len--) {
+        if (arr[len] < min) {
+          min = arr[len];
+        }
+      }
+      return min;
     }
-  }
-  return max;
-}
-</script>
-</div>
-```html
-<p>The highest number is <span id="demo"></span>.</p>
+    ```
 
-<script>
-var points = [40, 100, 1, 5, 25, 10];
-document.getElementById("demo").innerHTML = myArrayMax(points);
+2. [최대값 찾기](https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort_max)
 
-function myArrayMax(arr) {
-  var len = arr.length;
-  var max = -Infinity;
-  while (len--) {
-    if (arr[len] > max) {
-      max = arr[len];
+    예제
+    {: .label .label-purple .mt-3}
+    ```js
+    var points = [40, 100, 1, 5, 25, 10];
+    document.getElementById("demo").innerHTML = myArrayMax(points);
+
+    function myArrayMax(arr) {
+      var len = arr.length;
+      var max = -Infinity;
+      while (len--) {
+        if (arr[len] > max) {
+          max = arr[len];
+        }
+      }
+      return max;
     }
-  }
-  return max;
-}
-</script>
-```
-    
-#### 최소 값 찾기
+    ```
 
-예제
-{: .label .label-purple .mt-3}
-<div class="code-example" markdown="1">
-<p>The lowest number is <span id="demo"></span>.</p>
+#### max() or min()
 
-<script>
-var points = [40, 100, 1, 5, 25, 10];
-document.getElementById("demo").innerHTML = myArrayMin(points);
+최대나 최소값 하나만 원하면 위 두가지 방법은 정말 비효율적임
 
-function myArrayMin(arr) {
-  var len = arr.length;
-  var min = Infinity;
-  while (len--) {
-    if (arr[len] < min) {
-      min = arr[len];
+★ max() or min() 사용하는게 효율적
+
+1. [Math.max() on an Array](https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort_math_max)
+
+    <div class="code-example" markdown="1">
+    Math.max.apply() : 배열에서 가장 높은 숫자를 찾는 데 사용
+    </div>
+    ```js
+    var points = [40, 100, 1, 5, 25, 10];
+    document.getElementById("demo").innerHTML = myArrayMax(points);
+
+    function myArrayMax(arr) {
+      return Math.max.apply(null, arr);
+      or
+      Math.max(1, 2, 3) //이경우 매개변수에 배열이 들어가면 안됨, toString이나 join 써도 안됨ㅠ
     }
-  }
-  return min;
-}
-</script>
-</div>
-```html
-<p>The lowest number is <span id="demo"></span>.</p>
+    ```
 
-<script>
-var points = [40, 100, 1, 5, 25, 10];
-document.getElementById("demo").innerHTML = myArrayMin(points);
+2. [Math.min() on an Array](https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort_math_min)
 
-function myArrayMin(arr) {
-  var len = arr.length;
-  var min = Infinity;
-  while (len--) {
-    if (arr[len] < min) {
-      min = arr[len];
+    <div class="code-example" markdown="1">
+    Math.min.apply() : 배열에서 가장 낮은 숫자를 찾는 데 사용
+    </div>
+    ```js
+    var points = [40, 100, 1, 5, 25, 10];
+    document.getElementById("demo").innerHTML = myArrayMin(points);
+
+    function myArrayMin(arr) {
+      return Math.min.apply(null, arr);
+      or
+      Math.min(1, 2, 3) //이경우에도 매개변수에 배열이 들어가면 안됨, toString이나 join 써도 안됨                              
     }
-  }
-  return min;
-}
-</script>
-```
+    ```
 
 ---
 
@@ -359,134 +340,66 @@ function myArrayMin(arr) {
 
 배열에 포함된 객체를 정렬할 때 사용
 
-* 숫자 정렬
+### Numeric Sorting
 
-    예제
-    {: .label .label-purple .mt-3}
-    <div class="code-example" markdown="1">
-    <button onclick="myFunction()">Sort</button>
+숫자 정렬
 
-    <p id="demo"></p>
+예제
+{: .label .label-purple .mt-3}
+```js
+var cars = [
+  {type:"Volvo", year:2016},
+  {type:"Saab", year:2001},
+  {type:"BMW", year:2010}
+];
 
-    <script>
-    var cars = [
-      {type:"Volvo", year:2016},
-      {type:"Saab", year:2001},
-      {type:"BMW", year:2010}
-    ];
+displayCars();
 
-    displayCars();
+function myFunction() {
+  cars.sort(function(a, b){return a.year - b.year});
+  displayCars();
+}
 
-    function myFunction() {
-      cars.sort(function(a, b){return a.year - b.year});
-      displayCars();
-    }
+function displayCars() {
+  document.getElementById("demo").innerHTML =
+  cars[0].type + " " + cars[0].year + "<br>" +
+  cars[1].type + " " + cars[1].year + "<br>" +
+  cars[2].type + " " + cars[2].year;
+}
+```
 
-    function displayCars() {
-      document.getElementById("demo").innerHTML =
-      cars[0].type + " " + cars[0].year + "<br>" +
-      cars[1].type + " " + cars[1].year + "<br>" +
-      cars[2].type + " " + cars[2].year;
-    }
-    </script>
-    </div>
-    ```html
-    <button onclick="myFunction()">Sort</button>
+### Alphabetic Sorting
 
-    <p id="demo"></p>
+문자열 정렬
 
-    <script>
-    var cars = [
-      {type:"Volvo", year:2016},
-      {type:"Saab", year:2001},
-      {type:"BMW", year:2010}
-    ];
+예제
+{: .label .label-purple .mt-3}
+```js
+var cars = [
+  {type:"Volvo", year:2016},
+  {type:"Saab", year:2001},
+  {type:"BMW", year:2010}
+];
 
-    displayCars();
+displayCars();
 
-    function myFunction() {
-      cars.sort(function(a, b){return a.year - b.year});
-      displayCars();
-    }
+function myFunction() {
+  cars.sort(function(a, b){
+    var x = a.type.toLowerCase();
+    var y = b.type.toLowerCase();
+    if (x < y) {return -1;} //마이너스면 앞으로 정렬
+    if (x > y) {return 1;}  //플러스면 뒤로 정렬 – 그래서 알파벳이 클수록 앞으로감
+    return 0;
+  });
+  displayCars();
+}
 
-    function displayCars() {
-      document.getElementById("demo").innerHTML =
-      cars[0].type + " " + cars[0].year + "<br>" +
-      cars[1].type + " " + cars[1].year + "<br>" +
-      cars[2].type + " " + cars[2].year;
-    }
-    </script>
-    ```
+function displayCars() {
+  document.getElementById("demo").innerHTML =
+  cars[0].type + " " + cars[0].year + "<br>" +
+  cars[1].type + " " + cars[1].year + "<br>" +
+  cars[2].type + " " + cars[2].year;
+}
+```
 
-* 문자열 정렬
-
-    예제
-    {: .label .label-purple .mt-3}
-    <div class="code-example" markdown="1">
-    <button onclick="myFunction()">Sort</button>
-
-    <p id="demo"></p>
-
-    <script>
-    var cars = [
-      {type:"Volvo", year:2016},
-      {type:"Saab", year:2001},
-      {type:"BMW", year:2010}
-    ];
-
-    displayCars();
-
-    function myFunction() {
-      cars.sort(function(a, b){
-        var x = a.type.toLowerCase();
-        var y = b.type.toLowerCase();
-        if (x < y) {return -1;}
-        if (x > y) {return 1;}
-        return 0;
-      });
-      displayCars();
-    }
-
-    function displayCars() {
-      document.getElementById("demo").innerHTML =
-      cars[0].type + " " + cars[0].year + "<br>" +
-      cars[1].type + " " + cars[1].year + "<br>" +
-      cars[2].type + " " + cars[2].year;
-    }
-    </script>
-    </div>
-    ```html
-    <button onclick="myFunction()">Sort</button>
-
-    <p id="demo"></p>
-
-    <script>
-    var cars = [
-      {type:"Volvo", year:2016},
-      {type:"Saab", year:2001},
-      {type:"BMW", year:2010}
-    ];
-
-    displayCars();
-
-    function myFunction() {
-      cars.sort(function(a, b){
-        var x = a.type.toLowerCase();
-        var y = b.type.toLowerCase();
-        if (x < y) {return -1;} //마이너스면 앞으로 정렬
-        if (x > y) {return 1;}  //플러스면 뒤로 정렬 – 그래서 알파벳이 클수록 앞으로감
-        return 0;
-      });
-      displayCars();
-    }
-
-    function displayCars() {
-      document.getElementById("demo").innerHTML =
-      cars[0].type + " " + cars[0].year + "<br>" +
-      cars[1].type + " " + cars[1].year + "<br>" +
-      cars[2].type + " " + cars[2].year;
-    }
-    </script>
-    ```
-    
     
