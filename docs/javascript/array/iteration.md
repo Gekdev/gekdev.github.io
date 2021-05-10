@@ -19,6 +19,8 @@ nav_order: 4
 
 ## Array Iteration
 
+**배열 반복 방법은 모든 배열 항목에서 작동함**
+
 ### forEach()
 
 **각 하나의 원소를 뽑아내는 방법**
@@ -344,7 +346,7 @@ function myFunction(value, index, array) {
 [W3School](https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_find){: .btn  .btn-outline .mt-2}
 </span>
 
-### Array.findIndex()
+### findIndex()
 
 **테스트 함수를 통과 한 첫 번째 배열 value의 index만 추출**
 

@@ -55,7 +55,7 @@ function functionName(parameters) {
 
 ---
 
-## Definitions
+## Function Definitions
 
 ### Function keyword and Function() Constructor
 
