@@ -25,7 +25,7 @@ has_children: true
 
 &#9656; 자바스크립트는 객체(object) 기반의 스크립트 언어이며 자바스크립트를 이루고 있는 거의 “모든 것”이 객체 (원시 타입(Primitives)을 제외한 나머지 값들(함수, 배열, 정규표현식 등)은 모두 객체)
 
-&#9656; 자바스크립트의 최상위 부모
+&#9656; **자바스크립트의 최상위 부모**
 
 &#9656; 객체는 데이터(프로퍼티)와 그 데이터에 관련되는 동작(메소드)을 모두 포함할 수 있기 때문에 데이터와 동작을 하나의 단위로 구조화할 수 있어 유용
 
@@ -37,13 +37,13 @@ has_children: true
 
 &#9656; 자바스크립트의 객체는 객체지향의 상속을 구현하기 위해 “프로토타입(prototype)”이라고 불리는 객체의 프로퍼티와 메소드를 상속받을 수 있음(프로토타입은 타 언어와 구별되는 중요한 개념)
 
+&#9656; 객체는 많은 값을 담을 수 있음, 속성이나 메소드의 컨테이너라고 생각하면 됨
+
 <span class="fs-2">
 [더 알아보기](https://poiemaweb.com/js-object){: .btn  .btn-outline .mt-2}
 </span>
 
 ### Object Syntax
-
-객체는 많은 값을 담을 수 있음, 속성이나 메소드의 컨테이너라고 생각하면 됨
 
 값은 주로 **name:value** 쌍으로 나타남 (name and value separated by a colon)
 
@@ -63,9 +63,7 @@ var person = {
 //object definition can span multiple lines
 ```
 
- ---
- 
-## Objects Features
+### All data types can be Object
 
 **JavaScript에서 거의 모든 것은 객체**
 
@@ -89,44 +87,9 @@ var person = {
 
 &#8594; **primitive를 제외한 모든 JavaScript 값은 객체**
 
-### JavaScript Primitives
-
-primitive value는 어떤 특성 또는 메소드가 없는 값
-
-primitive data 타입은 primitive value값을 가짐
-
-1. string
-2. number
-3. boolean
-4. null
-5. undefined
-
-기본 값은 변경할 수 없음 (x = 3.14 인 경우 x 값을 변경할 수 있지만 3.14의 값을 변경할 수 없음)
-
-
-### Objects are Variables
-
-객체는 변수이지만 변수에는 단일 값이 들어갈 수 있지만 객체에는 많은 값이 포함됨
-
-JavaScript 객체는 named values의 모음
-
-값은 name : value pair (이름과 값을 콜론,으로 구분)으로 작성
-
-예제
-{: .label .label-purple .mt-3}
-```js
-var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
-```
-
 ### JavaScript Objects are Mutable
 
-객체는 변경 가능함
-
-**사본을 생성하지 않고 그 자체가 됨!!**
-
-var x = person;  // 만약 person이 객체라면, x는 person과 같은 객체가 됨(사본이 아님!)
-
-x와 person은 동일한 객체이므로 x를 변경하면 사람도 변경된다
+**객체는 변경 가능하며, 사본을 생성하지 않고 그 자체가 됨!!**
 
 예제
 {: .label .label-purple .mt-3}
@@ -135,5 +98,8 @@ var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"}
 
 var x = person;
 x.age = 10;           // This will change both x.age and person.age
+
+//만약 person이 객체라면, x는 person과 같은 객체가 됨(사본이 아님!)
+//x와 person은 동일한 객체이므로 x를 변경하면 사람도 변경된다
 ```
 

@@ -6,7 +6,7 @@ nav_order: 5
 has_children: true
 ---
 
-# JavaScript Arrays
+# JavaScript Arrays basic
 {: .no_toc .text-beta .fw-700}
 
 ## Table of contents
