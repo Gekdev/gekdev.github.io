@@ -3,7 +3,7 @@ layout: default
 title: Methods
 parent: Functions
 grand_parent: JavaScript
-nav_order: 4
+nav_order: 3
 ---
 
 # Functions Methods
