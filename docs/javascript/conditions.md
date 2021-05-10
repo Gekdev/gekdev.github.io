@@ -16,9 +16,9 @@ nav_order: 8
 
 ---
 
-## Conditions
+## Conditional Statements
 
-### Conditional Statements Basic
+### Conditions Basic
 
 **조건문, 조건을 검사해 참인지 거짓인지에 따라 서로 작은 작업을 실행하는 문장**
 
@@ -42,7 +42,9 @@ syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
 if (condition) {
+
   //  block of code to be executed if the condition is true
+  
 }
 </div>
 ```js
@@ -59,9 +61,13 @@ syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
 if (condition) {
+
   //  block of code to be executed if the condition is true
+  
 } else {
+
   //  block of code to be executed if the condition is false
+  
 }
 </div>
 ```js
@@ -80,11 +86,17 @@ syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
 if (condition1) {
+
   //  block of code to be executed if condition1 is true
+  
 } else if (condition2) {
+
   //  block of code to be executed if the condition1 is false and condition2 is true
+  
 } else {
+
   //  block of code to be executed if the condition1 is false and condition2 is false
+  
 }
 </div>
 ```js
@@ -97,7 +109,11 @@ if (time < 10) {
 }
 ```
 
-### Switch Statement
+---
+
+## Switch Statement
+
+## Switch Basic
 
 **다른 조건에서 실행되어야 하는 다른 작업들을 지정**
 
@@ -119,14 +135,22 @@ syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
 switch(expression) {
+
   case x:
-    // code block
-    break;
+  
+  // code block
+
+  break;
+
   case y:
-    // code block
-    break;
+  
+  // code block
+
+  break;
   default:
-    // code block
+
+  // code block
+
 }
 </div>
 ```js
@@ -154,11 +178,11 @@ switch (new Date().getDay()) {
 }
 ```
 
-#### The break Keyword
+### The break Keyword
 
 **break 키워드에 도달 하면 스위치 블록을 벗어나고 스위치 블록 내부의 실행이 중지**
 
-#### The default Keyword
+### The default Keyword
 
 **어떤 경우 일치하지 않는 경우 실행하는 코드를 지정**
 
@@ -166,7 +190,7 @@ switch (new Date().getDay()) {
 
 &#9656; 조건문의 마지막이 아님! 종료는 break keyword
 
-#### Common Code Blocks
+### Common Code Blocks
 
 break 키워드를 사용하지 않고 일부러 아래와 같이 값을 적지않고 뒤로 넘기는 방식이 가능함
 
@@ -175,7 +199,7 @@ case 4:
 case 5: var txt = “love myself”
 ```
 
-#### Strict Comparison
+### Strict Comparison
 
 **use strict comparison (===)**
 

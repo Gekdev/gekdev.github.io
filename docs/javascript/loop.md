@@ -50,49 +50,67 @@ for (statement 1; condition ; statement 3) {
 &#9656; statement 3 코드 블록이 실행 된 후 (매번) 실행
 </div>
 ```js
-if (hour < 18) {
-  greeting = "Good day";
+for (i = 0; i < 5; i++) {
+  text += "The number is " + i + "<br>";
 }
+
+//text is The number is 0 The number is 1 The number is 2 The number is 3 The number is 4
 ```
 
+#### statement1
 
-statement1: executed one time before the execution of the code block
-statement3: executed (every time) after the code block has been executed.
+**루프에서 사용되는 변수를 초기화함**
 
-/충격실화/
-Statement 1
-Normally you will use statement 1 to initialize the variable used in the loop (i = 0).
-This is not always the case, JavaScript doesn't care. Statement 1 is optional.
-You can initiate many values in statement 1 (separated by comma):
-for (i = 0, len = cars.length, text = ""; i < len; i++) {
-  text += cars[i] + "<br>";
-}
+&#9656; 선택사항 = 루프가 시작되기 전에 값이 설정되었다면 생략가능함
 
-And you can omit statement 1 (like when your values are set before the loop starts):
+&#9656; 실행문 1안에서 ,를 사용해서 다양한 변수를 선언할 수 있음
+
+```js
 var i = 2;
 var len = cars.length;
 var text = "";
 for (; i < len; i++) {
   text += cars[i] + "<br>";
 }
+```
 
-Statement 2(condtion)
-최초 실행 뒤 반복을 결정하는 조건문, 생략가능 하지만 무한루프이기 때문에 you must provide a break inside the loop
+#### Statement 2 (condtion)
 
-Statement 3
-Often statement 3 increments the value of the initial variable.
-This is not always the case, JavaScript doesn't care, and statement 3 is optional.
-Statement 3 can do anything like negative increment (i--), positive increment (i = i + 15), or anything else.
-Statement 3 can also be omitted (like when you increment your values inside the loop)
+**초기 변수의 조건을 평가하는 조건문**
 
-b. The For/In Loop
-	var person = {fname:"John", lname:"Doe", age:25};
+&#9656; 최초 실행 뒤 반복을 결정하는 조건문
 
-	var text = "";
-	var x;
-	for (x in person) {
-	  text += person[x];
-	}
+&#9656; 선택사항 = 생략가능 하지만 무한루프이기 때문에 you must provide a break inside the loop
+
+
+#### Statement 3
+
+**초기 변수의 값을 변화하는 조건문**
+
+&#9656; 선택사항 = 루프 내에서 값을 변화시킨다면 생략가능함
+
+### The For/In Loop
+
+**객체의 속성을 통해서 반복**
+
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+for (key in object) {
+  // code block to be executed
+}
+</div>
+```js
+var person = {fname:"John", lname:"Doe", age:25};
+
+var text = "";
+var x;
+for (x in person){
+  text += person[x];
+}
+//text is John Doe 25
+```
+
 
 c. The For/Of Loop
 The JavaScript for/of statement loops through the values of an iterable objects
