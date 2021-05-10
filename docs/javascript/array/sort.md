@@ -58,8 +58,11 @@ fruits.sort();
 
 &#9656; sort후 reverse하면 내림차순
 
-예제
-{: .label .label-purple .mt-2}
+Syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+arr.reverse();
+</div>
 ```html
 <p id="demo"></p>
 
@@ -145,7 +148,7 @@ function myFunction() {
 ### Sorting Descending
 
 예제
-{: .label .label-purple .mt-3}
+{: .label .label-purple .mt-2}
 ```js
 var points = [40, 100, 1, 5, 25, 10];
 document.getElementById("demo").innerHTML = points;
@@ -167,7 +170,7 @@ function myFunction() {
 &#9656; Fisher Yates Shuffle 방법을 더 선호해서 사용 (뒤에 설명되어 있음)
 
 예제
-{: .label .label-purple .mt-3}
+{: .label .label-purple .mt-2}
 ```js
 var points = [40, 100, 1, 5, 25, 10];
 document.getElementById("demo").innerHTML = points;  
@@ -187,7 +190,7 @@ function myFunction() {
 위의 무작위 배열에서 사용하는 array.sort() 방법이 정확하지 않아서(우선순위가 있음) Fisher Yates Shuffle 이라는 방법을 자주 씀
 
 예제
-{: .label .label-purple .mt-3}
+{: .label .label-purple .mt-2}
 ```html
 <button onclick="myFunction()">Try it</button>
 
@@ -225,7 +228,7 @@ var i, j, k;
 1. [최소값 찾기](https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort_low)
 
     예제
-    {: .label .label-purple .mt-3}
+    {: .label .label-purple .mt-2}
     ```js
     var points = [40, 100, 1, 5, 25, 10];
     points.sort(function(a, b){return a-b});
@@ -237,7 +240,7 @@ var i, j, k;
 2. [최대값 찾기](https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort_high)
 
     예제
-    {: .label .label-purple .mt-3}
+    {: .label .label-purple .mt-2}
     ```js
     var points = [40, 100, 1, 5, 25, 10];
     points.sort(function(a, b){return b-a});
@@ -253,7 +256,7 @@ var i, j, k;
 1. [최소값 찾기](https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort_min)
 
     예제
-    {: .label .label-purple .mt-3}
+    {: .label .label-purple .mt-2}
     ```js
     var points = [40, 100, 1, 5, 25, 10];
     document.getElementById("demo").innerHTML = myArrayMin(points);
@@ -273,7 +276,7 @@ var i, j, k;
 2. [최대값 찾기](https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort_max)
 
     예제
-    {: .label .label-purple .mt-3}
+    {: .label .label-purple .mt-2}
     ```js
     var points = [40, 100, 1, 5, 25, 10];
     document.getElementById("demo").innerHTML = myArrayMax(points);
@@ -339,7 +342,7 @@ var i, j, k;
 숫자 정렬
 
 예제
-{: .label .label-purple .mt-3}
+{: .label .label-purple .mt-2}
 ```js
 var cars = [
   {type:"Volvo", year:2016},
@@ -371,7 +374,7 @@ function displayCars() {
 문자열 정렬
 
 예제
-{: .label .label-purple .mt-3}
+{: .label .label-purple .mt-2}
 ```js
 var cars = [
   {type:"Volvo", year:2016},
