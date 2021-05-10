@@ -3,7 +3,7 @@ layout: default
 title: Accessors
 parent: Objects
 grand_parent: JavaScript
-nav_order: 5
+nav_order: 3 
 ---
 
 # Objects Accessors

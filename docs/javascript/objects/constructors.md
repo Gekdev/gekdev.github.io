@@ -3,7 +3,7 @@ layout: default
 title: Constructors
 parent: Objects
 grand_parent: JavaScript
-nav_order: 6
+nav_order: 4
 ---
 
 # Objects Constructors
