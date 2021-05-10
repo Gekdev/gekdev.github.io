@@ -43,26 +43,6 @@ has_children: true
 [더 알아보기](https://poiemaweb.com/js-object){: .btn  .btn-outline .mt-2}
 </span>
 
-### Object Syntax
-
-값은 주로 **name:value** 쌍으로 나타남 (name and value separated by a colon)
-
-object literal로 객체 생성하기
-{: .label .mt-3 }
-```js
-var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
-
-or
-
-var person = {
-  firstName: "John",
-  lastName: "Doe",
-  age: 50,
-  eyeColor: "blue"
-};
-//object definition can span multiple lines
-```
-
 ### All data types can be Object
 
 **JavaScript에서 거의 모든 것은 객체**
@@ -87,6 +67,19 @@ var person = {
 
 &#8594; **primitive를 제외한 모든 JavaScript 값은 객체**
 
+Do Not Declare Strings, Numbers, and Booleans as Objects!
+{: .label .label-red .mt-3}
+<div class="code-exmaple" markdown="1">
+When a JavaScript variable is declared with the keyword `new`, the variable is created as an object
+
+this code slow down your execution speed
+</div>
+```js
+var x = new String();        // Declares x as a String object
+var y = new Number();        // Declares y as a Number object
+var z = new Boolean();       // Declares z as a Boolean object
+```
+
 ### JavaScript Objects are Mutable
 
 **객체는 변경 가능하며, 사본을 생성하지 않고 그 자체가 됨!!**
@@ -103,3 +96,16 @@ x.age = 10;           // This will change both x.age and person.age
 //x와 person은 동일한 객체이므로 x를 변경하면 사람도 변경된다
 ```
 
+### Similar with Object Properties
+
+이름 값 쌍으로 작성된 객체는 다음과 유사함
+
+* Associative arrays in PHP
+
+* Dictionaries in Python
+
+* Hash tables in C
+
+* Hash maps in Java
+
+* Hashes in Ruby and Perl

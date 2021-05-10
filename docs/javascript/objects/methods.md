@@ -19,15 +19,22 @@ nav_order: 3
 
 ## JavaScript Methods
 
+### Object Methods
+
 **Methods : 객체에서 수행할 수 있는 함수**
 
-메소드는 속성으로 저장된 함수라고 보면 됨
+&#9656; 메소드는 속성으로 저장된 함수라고 보면 됨
 
+&#9656; 객체 속성은 기본 값, 다른 객체 및 함수가 될 수 있음
+
+예시
+{: .label .label-purple .mt-2}
+<div class="code-example" markdown="1">
 | Property      | Property Value                                                |
 |:--------------|:--------------------------------------------------------------|
 | firstName     | John                                                          |
 | fullName      | function() {return this.firstName + " " + this.lastName;}     |
-
+</div>
 ```js
 var person = {
   firstName: "John",
@@ -39,33 +46,16 @@ var person = {
 
 ### Accessing Object Methods
 
+Syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
 1. objectName.methodName()
 
 2. name = person.fullName();
 
-()없이 사용하면 함수 정의를 불러옴
-
-예제
-{: .label .label-purple .mt-3}
-<div class="code-example" markdown="1">
-<div id="a" onclick="change()">Click here!</div>
-<script>
-var person = {
-  firstName: "Kwon",
-  lastName: "Grace",
-  fullName : function() {
-    return this.firstName + " " + this.lastName;
-  }
-};
-
-function change(){
-    document.getElementById("a").innerHTML = person.fullName()
-}
-</script>
+&#9656; ()없이 사용하면 함수 정의를 불러옴
 </div>
-```html
-<div id="a" onclick="change()">Click here!</div>
-<script>
+```js
 var person = {
   firstName: "Kwon",
   lastName: "Grace",
@@ -77,30 +67,40 @@ var person = {
 function change(){
     document.getElementById("a").innerHTML = person.fullName()
 }
-</script>
-```
-
-### Using Built-In Methods
-
-String 객체의 메서드 `toUpperCase()`를 사용하여 텍스트를 대문자로 변환
-
-예제
-{: .label .label-purple .mt-3}
-```js
-var message = "Hello world!";
-var x = message.toUpperCase();
-// x = HELLO WORLD!
 ```
 
 ### Adding a Method to an Object
 
-**객체에 메소드 추가**
+**객체에 새로운 메소드 생성하기**
 
 예제
 {: .label .label-purple .mt-3}
 ```js
-person.name = function () {
+var person = {
+  firstName: "John",
+  lastName : "Doe",
+  id     : 5566,
+};
+person.name = function() {
   return this.firstName + " " + this.lastName;
 };
+
+document.getElementById("demo").innerHTML =
+"My father is " + person.name(); 
+```
+
+### Using Built-In Methods
+
+객체의 내장 메소드를 이용하기
+
+예제
+{: .label .label-purple .mt-3}
+<div class="code-example" markdown="1">
+String 객체의 메서드 `toUpperCase()`를 사용하여 텍스트를 대문자로 변환
+</div>
+```js
+var message = "Hello world!";
+var x = message.toUpperCase();
+// x = HELLO WORLD!
 ```
 
