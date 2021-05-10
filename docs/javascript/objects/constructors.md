@@ -17,11 +17,11 @@ nav_order: 4
 
 ---
 
-## Object Types (Blueprints) (Classes)
+## Object Blueprints Constructors
 
-때로는 같은 "유형"의 많은 객체를 생성하기 위해 "청사진"이 필요함
+동일한 "유형"의 많은 객체를 생성하기 위해 "청사진"이 필요하기 때문에 객체 유형을 생성하기 위해서 객체 생성자 함수를 사용해야 함
 
-"객체 유형"을 생성하는 방법은 객체 생성자 함수 를 사용하는 것
+동일한 유형의 객체는 new 키워드와 함께 생성자 함수를 호출해 생성함
 
 ### The this Keyword
 
@@ -29,30 +29,23 @@ JavaScript에서 호출되는 것은 this코드를 "소유"하는 객체
 
 this의 값은 객체로 사용될때는 객체 그 자체를 말함
 
-생성자 함수(constructor function) this에는 값이 없고 새 객체를 대체하는것, this새 개체를 만들 때 의 값은 새 개체가 됨
+생성자 함수(constructor function) this에는 값이 없고 새 객체를 대체하는것, this새 개체를 만들때의 값은 새 개체가 됨
 
 !note
-{: .label .mt-3}
+{: .label .label-yellow .mt-2}
 <div class="code-example" markdown="1">
 this는 키워드이기 때문에 값을 변경할 수 없음
 </div>
 
 ### Adding a Property to an Object
 
-기존 객체에 새 속성을 추가하는 것은 쉽다
+**기존 객체에 새 속성을 추가**
+
+객체가 생성된 후 속성을 추가하는건 괜찮지만 객체 생성자에 새 속성 생성은 안됨
 
 예제
 {: .label .label-purple .mt-2}
-```html
-<!DOCTYPE html>
-<html>
-<body>
-
-<h2>JavaScript Object Constructors</h2>
-
-<p id="demo"></p>
-
-<script>
+```js
 // Constructor function for Person objects
 function Person(first, last, age, eye) {
   this.firstName = first;
@@ -73,29 +66,15 @@ document.getElementById("demo").innerHTML =
 "My father is " + myFather.nationality;   
 
 //결과값은 My father is English
-</script>
-
-</body>
-</html>
 ```
 
 ### Adding a Method to an Object
 
-기존 객체에 새로운 메소드를을 추가하는 것은 쉽다
+**기존 객체에 새로운 메소드를을 추가**
 
 예제
 {: .label .label-purple .mt-2}
-```html
-<!DOCTYPE html>
-<html>
-<body>
-
-<h2>JavaScript Object Constructors</h2>
-
-<p id="demo"></p>
-
-<script>
-
+```js
 // Constructor function for Person objects
 function Person(first, last, age, eye) {
   this.firstName = first;
@@ -117,71 +96,25 @@ myFather.name = function() {
 document.getElementById("demo").innerHTML =
 "My father is " + myFather.name(); 
 // 결과값은 My father is John Doe
-</script>
-
-</body>
-</html>
 ```
 
 ### Adding a Property to a Constructor
 
-★★ 기존 객체에 새 속성을 추가하는 것과 같은 방식으로 객체 생성자에 새 속성을 추가 할 수 없음!
+★★ 기존 객체에 새 속성을 추가하는 것과 같은 방식으로 객체 생성자에 따로 새 속성을 추가 할 수 없고 직접 안에 적어야함!
 
-그래서 직접 안에 적어야함
-
-예제
-{: .label .label-purple .mt-2}
-```html
-Person.nationality = "English";
-```
-
-예제
-{: .label .label-purple .mt-2}
-```html
-function Person(first, last, age, eyecolor) {
-  this.firstName = first;
-  this.lastName = last;
-  this.age = age;
-  this.eyeColor = eyecolor;
-  this.nationality = "English";
-}
-```
+<span class="fs-2">
+[W3School](https://www.w3schools.com/js/tryit.asp?filename=tryjs_object_constructor4){: .btn .btn-outline }
+</span>
 
 ### Adding a Method to a Constructor
 
-생성자 함수는 메소드를 정의 할 수도 있음
+**생성자 함수는 메소드를 정의 할 수도 있음**
 
-예제
-{: .label .label-purple .mt-2}
-```html
-function Person(first, last, age, eyecolor) {
-  this.firstName = first;
-  this.lastName = last;
-  this.age = age;
-  this.eyeColor = eyecolor;
-  this.name = function() {return this.firstName + " " + this.lastName;};
-}
-```
+★★ 기존 객체에 새 메소드를 추가하는 것과 같은 방식으로 객체 생성자에 따로 새 메소드를 추가 할 수 없고 직접 안에 적어야함!
 
-기존 객체에 새 메소드를 추가하는 것과 같은 방법으로 객체 생성자에 새 메소드를 추가 할 수 없습니다.
-
-생성자 함수 내에서 객체 생성자에 메소드를 추가해야합니다.
-
-예제
-{: .label .label-purple .mt-2}
-```html
-function Person(firstName, lastName, age, eyeColor) {
-  this.firstName = firstName; 
-  this.lastName = lastName;
-  this.age = age;
-  this.eyeColor = eyeColor;
-  this.changeName = function (name) {
-    this.lastName = name;
-  };
-}
-```
-
-changeName () 함수는 name 값을 사람의 lastName 속성에 할당합니다.
+<span class="fs-2">
+[W3School](https://www.w3schools.com/js/tryit.asp?filename=tryjs_object_constructor4){: .btn .btn-outline }
+</span>
 
 ### Built-in JavaScript Constructors
 
