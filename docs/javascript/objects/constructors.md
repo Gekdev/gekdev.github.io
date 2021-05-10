@@ -103,7 +103,7 @@ document.getElementById("demo").innerHTML =
 ★★ 기존 객체에 새 속성을 추가하는 것과 같은 방식으로 객체 생성자에 따로 새 속성을 추가 할 수 없고 직접 안에 적어야함!
 
 <span class="fs-2">
-[W3School](https://www.w3schools.com/js/tryit.asp?filename=tryjs_object_constructor4){: .btn .btn-outline }
+[W3School](https://www.w3schools.com/js/tryit.asp?filename=tryjs_object_constructor4){: .btn .btn-outline .mt-2}
 </span>
 
 ### Adding a Method to a Constructor
@@ -113,45 +113,40 @@ document.getElementById("demo").innerHTML =
 ★★ 기존 객체에 새 메소드를 추가하는 것과 같은 방식으로 객체 생성자에 따로 새 메소드를 추가 할 수 없고 직접 안에 적어야함!
 
 <span class="fs-2">
-[W3School](https://www.w3schools.com/js/tryit.asp?filename=tryjs_object_constructor4){: .btn .btn-outline }
+[W3School](https://www.w3schools.com/js/tryit.asp?filename=tryjs_object_constructor7){: .btn .btn-outline .mt-2}
 </span>
 
 ### Built-in JavaScript Constructors
 
-JavaScript에는 기본 객체에 대한 생성자가 내장되어 있습니다.
+JavaScript에는 기본 객체에 대한 생성자가 내장되어 있음
 
-예
-var x1 = new Object();    // A new Object object
-var x2 = new String();    // A new String object
-var x3 = new Number();    // A new Number object
-var x4 = new Boolean();   // A new Boolean object
-var x5 = new Array();     // A new Array object
-var x6 = new RegExp();    // A new RegExp object
-var x7 = new Function();  // A new Function object
-var x8 = new Date();      // A new Date object
-Math()개체가 목록에 없습니다. Math전역 객체입니다. 에 new키워드를 사용할 수 없습니다 Math.
+&#9656; var x1 = new Object();    // A new Object object
 
-### Did You Know?
+&#9656; var x2 = new String();    // A new String object
 
-위에서 볼 수 있듯이, 자바 스크립트는 기본 데이터 형의 객체 버전이 String, Number하고 Boolean. 그러나 복잡한 객체를 만들 이유가 없습니다. 기본 값이 훨씬 빠릅니다.
+&#9656; var x3 = new Number();    // A new Number object
 
-또한:
+&#9656; var x4 = new Boolean();   // A new Boolean object
 
-{}대신 객체 리터럴을 사용하십시오 new Object().
+&#9656; var x5 = new Array();     // A new Array object
 
-""대신 문자열 리터럴을 사용하십시오 new String().
+&#9656; var x6 = new RegExp();    // A new RegExp object
 
-12345대신 숫자 리터럴을 사용하십시오 new Number().
+&#9656; var x7 = new Function();  // A new Function object
 
-true / false대신 부울 리터럴을 사용하십시오 new Boolean().
+&#9656; var x8 = new Date();      // A new Date object
 
-[]대신 배열 리터럴을 사용하십시오 new Array().
+note!
+{: .label .label-yellow .mt-2}
+<div class="code-example" markdown="1">
+Math는 전역 객체이기 때문에 new키워드를 사용할 수 없음
+</div>
 
-/()/대신 패턴 리터럴을 사용하십시오 new RegExp().
+★ 자바 스크립트는 기본 데이터 형의 객체 버전이 String, Number하고 Boolean이기 때문에 복잡한 객체를 만들 이유가 없음 (기본 값이 훨씬 빠름)
 
-() {}대신 함수 표현식을 사용하십시오 new Function().
-
-예
+예제
+{: .label .label-purple .mt-2}
+```js
 var x1 = {};            // new object
 var x2 = "";            // new primitive string
 var x3 = 0;             // new primitive number
@@ -159,27 +154,4 @@ var x4 = false;         // new primitive boolean
 var x5 = [];            // new array object
 var x6 = /()/           // new regexp object
 var x7 = function(){};  // new function object
-
-### String Objects
-
-일반적으로 문자열은 기본 요소로 작성됩니다. var firstName = "John"
-
-그러나 new키워드를 사용하여 문자열을 객체로 만들 수도 있습니다 .var firstName = new String("John")
-
-JS 문자열 장에서 문자열 을 객체로 생성하지 않아야하는 이유를 알아 봅니다 .
-
-### Number Objects
-
-일반적으로 숫자는 기본 요소로 작성됩니다. var x = 123
-
-그러나 new키워드를 사용하여 숫자를 객체로 만들 수도 있습니다 .var x = new Number(123)
-
-JS Numbers 장에서 숫자 를 객체로 생성하지 않아야하는 이유를 알아 봅니다 .
-
-### Boolean Objects
-일반적으로 부울은 기본 요소로 작성됩니다. var x = false
-
-그러나 new키워드를 사용하여 부울을 객체로 만들 수도 있습니다 .var x = new Boolean(false)
-
-JS 부울 장에서 부울 을 객체로 생성하지 않아야하는 이유를 알아 봅니다 .
-
+```
