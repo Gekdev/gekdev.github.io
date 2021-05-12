@@ -19,7 +19,7 @@ nav_order: 3
 
 ## Checking Data types
 
-### [The typeof Operator](https://gekdev.github.io/docs/javascript/operators/#type-operators)
+### [The typeof Operator](https://gekdev.github.io/docs/javascript/operator/#type-operators)
 
 &#8594; 자바스크립트에서 array 는 object인걸 잊지말자
 
