@@ -73,8 +73,8 @@ Operator Precedence
 
 * 후위연산(a++) : 다 하고 난 후 내가 더해짐
 
-Example
-{: .label .mt-2}
+예시
+{: .label .label-purple .mt-2}
 ```js
 var number = 10;
 document.write(++number + '<br>'); // 11, 전위증감
@@ -132,8 +132,8 @@ The **= operator is an experimental part of the ECMAScript 2016 proposal (ES7). 
 
 &#9656; 둘다 문자열로 되어있으면 알파벳 순으로 비교해서 = it works like sort()
 
-Example
-{: .label .mt-2}
+예시
+{: .label .label-purple .mt-2}
 ```js
 document.write(("3" >= 1)) 		// true
 document.write(("273" == 273))  // true
@@ -146,8 +146,8 @@ document.write((“2” < “12”))    // false
 
 &#9656; 문자끼리는 순서대로 나열해 알파벳이 뒤에있을수록 값이 크다 
 
-Example
-{: .label .mt-2}
+예시
+{: .label .label-purple .mt-2}
 ```js
 age = Number(age);
 	if (isNaN(age)) {
