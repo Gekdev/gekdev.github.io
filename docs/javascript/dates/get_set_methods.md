@@ -355,5 +355,5 @@ document.getElementById("demo").innerHTML = text;
 ## Complete JavaScript Date Reference
 
 <span class="fs-2">
-[W3School](https://www.w3schools.com/jsref/jsref_obj_date.asp){: .btn .btn-outline }
+[W3School](https://www.w3schools.com/jsref/jsref_obj_date.asp){: .btn .btn-outline .mt-2}
 </span>
