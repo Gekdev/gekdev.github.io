@@ -232,6 +232,8 @@ Number(value);
 ```js
 Number(true);          // returns 1
 Number(false);         // returns 0
+Number(" ")       // returns 0
+Number("")        // returns 0
 Number("10");          // returns 10
 Number("  10");        // returns 10
 Number("10  ");        // returns 10
