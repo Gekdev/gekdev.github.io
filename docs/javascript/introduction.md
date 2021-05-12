@@ -36,11 +36,9 @@ nav_order: 1
 2. CSS → specify the layout
 3. JavaScript →  program the behavior
 
-### Why Use JavaScript?
+### What can JavaScript do?
 
 가장 많은 사용 이유 : 이미지 조작, 양식 유효성 검사, 콘텐츠의 동적 변경
-
-### What can JavaScript do?
 
 1. Change HTML Content = .innerHTML
 
