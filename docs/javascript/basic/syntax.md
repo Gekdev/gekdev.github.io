@@ -17,9 +17,9 @@ nav_order: 1
 
 ---
 
-## Syntax
+## Syntax Basic
 
-### What is Syntax?
+### Syntax 
 
 **JavaScript 프로그램이 구성되는 일련의 규칙**
 
@@ -31,7 +31,7 @@ z = x + y;           // How to compute values
 
 ---
 
-## JavaScript Syntax Basic Structure
+## Syntax Structure
 
 ### Values 
 
