@@ -27,6 +27,12 @@ var, int, const
 
 ### Hoisting 
 
+**변수 선언을 게양하는 자바스크립트 동작**
+
+&#8594; 하지만 버그를 방지하려면 항상 모든 범위의 시작 부분에 모든 변수를 선언해야 함
+
+#### JavaScript Declarations are Hoisted
+
 **var로 선언된 변수는 항상 게양되어서 먼저 읽혀짐**
 
 &#9656; let이나 const는 안됨
@@ -37,6 +43,21 @@ var, int, const
 carName = "Volvo";
 alert(carName);
 var carName;
+```
+
+#### Initializations are Not Hoisted
+
+**선언이 아닌 값을 할당하는 초기화는 게양되지 않음**
+
+예시
+{: .label .label-purple .mt-2}
+```js
+var x = 5; // Initialize x
+
+elem = document.getElementById("demo"); // Find an element
+elem.innerHTML = x + " " + y;           // Display x and y
+
+var y = 7; // Initialize y = undefined
 ```
 
 ---

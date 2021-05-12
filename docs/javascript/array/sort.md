@@ -6,7 +6,7 @@ grand_parent: JavaScript
 nav_order: 3
 ---
 
-# JavaScript Array Sort
+# Array Sort
 {: .no_toc .text-beta .fw-700}
 
 ## Table of contents

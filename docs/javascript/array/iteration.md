@@ -6,7 +6,7 @@ grand_parent: JavaScript
 nav_order: 4
 ---
 
-# JavaScript Array Iteration
+# Array Iteration
 {: .no_toc .text-beta .fw-700}
 
 ## Table of contents
