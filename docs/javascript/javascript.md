@@ -31,11 +31,9 @@ permalink: docs/javascript
 
 [W3schools](https://www.w3schools.com/) 홈페이지를 기반으로 작성했으며
 
-[생활코딩](https://opentutorials.org/course/3),
+[생활코딩](https://opentutorials.org/course/3), [모질라](https://developer.mozilla.org/ko/docs/Web/JavaScript),
 
 [HTML5 + CSS + Javascript 웹 프로그래밍](http://www.webprogramming.co.kr/),
-
-[모질라](https://developer.mozilla.org/ko/docs/Web/JavaScript),
 
 [실전프로젝트 반응형 웹 퍼블리싱](https://book.naver.com/bookdb/book_detail.nhn?bid=7059258),
 

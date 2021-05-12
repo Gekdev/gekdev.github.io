@@ -48,6 +48,10 @@ nav_order: 1
 
 3. Change HTML Styles (CSS) = style.display or style.fontSize
 
+4. Hide HTML Elements = .style.display = "none";
+
+5. Show HTML Elements = .style.display = "block";
+
 <div class="code-example" markdown="1">
 <img id="myImage" src="https://www.w3schools.com/js/pic_bulboff.gif" style="width:100px">
 
