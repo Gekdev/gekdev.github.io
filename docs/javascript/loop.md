@@ -2,7 +2,7 @@
 layout: default
 title: Loop
 parent: JavaScript
-nav_order: 9
+nav_order: 16
 ---
 
 # JavaScript Loop

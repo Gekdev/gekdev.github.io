@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Booleans
+title: Errors
 parent: JavaScript
-nav_order: 9
+nav_order: 16
 ---
 
-# JavaScript Booleans
+# JavaScript Errors
 {: .no_toc .text-beta .fw-700}
 
 ## Table of contents

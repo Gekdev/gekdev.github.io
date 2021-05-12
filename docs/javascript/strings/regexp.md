@@ -1,11 +1,12 @@
 ---
 layout: default
-title: Booleans
-parent: JavaScript
-nav_order: 9
+title: RegExp
+parent: Strings
+grand_parent: JavaScript
+nav_order: 2
 ---
 
-# JavaScript Booleans
+# RegExp
 {: .no_toc .text-beta .fw-700}
 
 ## Table of contents

@@ -142,7 +142,7 @@ var q = + z;      // q is a number (NaN)
 
 ## Automatic Conversion
 
-## Type Conversion
+### Type Conversion
 
 **JavaScript가 잘못된 데이터 유형에 대해 작동하려고하면 값을 올바른 유형으로 변환하려고 시도**
 

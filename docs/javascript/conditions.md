@@ -2,7 +2,7 @@
 layout: default
 title: Conditions
 parent: JavaScript
-nav_order: 8
+nav_order: 14
 ---
 
 # JavaScript Conditions

@@ -6,7 +6,7 @@ grand_parent: JavaScript
 nav_order: 1
 ---
 
-# Numbers Properties and Methods
+# Properties and Methods
 {: .no_toc .text-beta .fw-700}
 
 ## Table of contents
