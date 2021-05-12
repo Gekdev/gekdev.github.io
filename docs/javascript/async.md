@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Browser BOM
+title: Async
 parent: JavaScript
 nav_order: 17
 has_children: true
