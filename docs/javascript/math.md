@@ -32,7 +32,7 @@ nav_order: 10
 
 ### 8 Math Constants
 
-아래는 Math 속성으로 액세스 할 수 있는 8개의 수학 상수
+아래는 Math 속성으로 액세스 할 수 있는 **8개의 수학 상수**
 
 syntax
 {: .label .mt-2}
@@ -41,19 +41,12 @@ Math.property
 </div>
 ```js
 * Math.E        // returns Euler's number
-
 * Math.PI       // returns PI
-
 * Math.SQRT2    // returns the square root of 2
-
 * Math.SQRT1_2  // returns the square root of 1/2
-
 * Math.LN2      // returns the natural logarithm of 2
-
 * Math.LN10     // returns the natural logarithm of 10
-
 * Math.LOG2E    // returns base 2 logarithm of E
-
 * Math.LOG10E   // returns base 10 logarithm of E
 ```
 
@@ -121,25 +114,25 @@ Math.sign(4);    // returns 1
 
 **제곱**
 
-``js
+```js
 Math.pow(8, 2);      // returns 64
-``
+```
 
 #### Math.sqrt()
 
 **제곱근 square root**
 
-``js
+```js
 Math.sqrt(64);      // returns 8
-``
+```
 
 #### Math.abs()
 
 **무조건 양수로**
 
-``js
+```js
 Math.abs(-4.7);     // returns 4.7
-``
+```
 
 #### Math.sin()
 
@@ -149,9 +142,9 @@ Math.abs(-4.7);     // returns 4.7
 
 &#9656; 라디안 각도 = 각도 x PI / 180
 
-``js
+```js
 Math.sin(90 * Math.PI / 180);     // returns 1 (the sine of 90 degrees)
-``
+```
 
 #### Math.cos()
 
@@ -161,9 +154,9 @@ Math.sin(90 * Math.PI / 180);     // returns 1 (the sine of 90 degrees)
 
 &#9656; 라디안 각도 = 각도 x PI / 180
 
-``js
+```js
 Math.cos(0 * Math.PI / 180);     // returns 1 (the cos of 0 degrees)
-``
+```
 
 ### Finding Certain Number
 
@@ -171,20 +164,20 @@ Math.cos(0 * Math.PI / 180);     // returns 1 (the cos of 0 degrees)
 
 **인수 목록에서 가장 낮은 또는 높은 값**
 
-``js
+```js
 Math.min(0, 150, 30, 20, -8, -200);  // returns -200
 Math.max(0, 150, 30, 20, -8, -200);  // returns 150
-``
+```
 
-#### [Math.random()]()
+#### Math.random()
 
 **0(포함)과 1(제외)사이의 난수를 반환**
 
 &#9656; 항상 1보다 작은 값을 반환함
 
-``js
+```js
 Math.random();     // returns a random number like 0.09714565914195883
-``
+```
 
 #### Math.log()
 
@@ -208,7 +201,7 @@ Math.log(1);    // returns 0
 
 	```js
 	Math.floor(Math.random() * 10);
-		```
+    ```
 
 2. 0부터 10까지 랜덤한 숫자 생성
 
@@ -228,7 +221,7 @@ Math.log(1);    // returns 0
 
 	```js
 	function getRndInteger(min, max) {
-	  return Math.floor(Math.random() * (max - min) ) + min;
+	    return Math.floor(Math.random() * (max - min) ) + min;
 	}
 	```
 
@@ -240,7 +233,7 @@ Math.log(1);    // returns 0
 
 	```js
 	function getRndInteger(min, max) {
-	  return Math.floor(Math.random() * (max - min + 1) ) + min;
+	    return Math.floor(Math.random() * (max - min + 1) ) + min;
 	}
 	```
 

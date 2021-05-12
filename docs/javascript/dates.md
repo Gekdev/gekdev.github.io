@@ -29,6 +29,10 @@ has_children: true
 
 시간대를 지정하지 않고 날짜를 설정할 때 JavaScript는 **브라우저의 시간대를 사용** (가져올때도 동일함)
 
+---
+
+## Date Technic
+
 ### Creating Date Objects 
 
 **`new Date()` 생성자로 생성**
@@ -41,7 +45,7 @@ has_children: true
 
 4. new Date(date string)
 
-#### new Date()
+### new Date()
 
 **새 날짜**
 
@@ -56,7 +60,7 @@ document.getElementById("demo").innerHTML = d;
 //d = 현재 시간 표시
 ```
 
-#### new Date(year, month, day, hours, minutes, seconds, milliseconds)
+### new Date(year, month, day, hours, minutes, seconds, milliseconds)
 
 **지정된 날짜 및 시간으로 새 날짜 개체 생성**
 
@@ -87,8 +91,18 @@ document.getElementById("demo").innerHTML = d;
 // d = Fri Dec 24 1999 00:00:00 GMT+0900 (대한민국 표준시)
 ```
 
-#### new Date(milliseconds)
+### new Date(milliseconds)
 
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+new Date(milliseconds)
+</div>
+```js
+var d = new Date(1332255600000);
+document.getElementById("demo").innerHTML = d;
+//d = Wed Mar 21 2012 00:00:00 GMT+0900 (대한민국 표준시)
+```
 &#9656; new Date() 함수에서 매개변수가 단 하나면 miliseconds로 인식함
 
 &#9656; 1970 년 1 월 1 일 00:00:00 UTC(협정 세계시) 이후 날짜를 밀리 초 단위로 저장
@@ -97,16 +111,14 @@ document.getElementById("demo").innerHTML = d;
 
 &#9656; 하루(24시간)는 86,400,000 밀리 초
 
-#### new Date(date string)
+### new Date(date string)
 
 **날짜 문자열 에서 새 날짜 개체를 만듦**
-
-뒤 [date formats](https://gekdev.github.io/docs/javascript/dates/date-formats/)에서 더 자세하게 설명
 
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-new Date(milliseconds)
+new Date(date string)
 </div>
 ```js
 var d = new Date("October 13, 2014 11:13:00");
@@ -114,3 +126,4 @@ document.getElementById("demo").innerHTML = d;
 //d = Mon Oct 13 2014 11:13:00 GMT+0900 (대한민국 표준시)
 ```
 
+뒤 [Date Formats](https://gekdev.github.io/docs/javascript/dates/date-formats/)에서 더 자세하게 설명

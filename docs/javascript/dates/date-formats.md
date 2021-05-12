@@ -17,11 +17,11 @@ nav_order: 1
 
 ---
 
-## Date Formats
+## Date Input and Output 
 
 ### Date Input
 
-일반적으로 3 가지 유형의 JavaScript 날짜 입력 형식이 있음
+new Date(date string)으로 생성할때는 일반적으로 3 가지 유형의 JavaScript 날짜 입력형식이 있음
 
 | Type         | Example                                     |
 |:-------------|:--------------------------------------------|
@@ -29,17 +29,11 @@ nav_order: 1
 | Short Date   | "03/25/2015"                                |
 | Long Date    | "Mar 25 2015" or "25 Mar 2015"              |
 
-&#9656; ISO format만 자바스크립트의 엄격한 표준에 맞고 나머지들은 정의되어 있지 않으며 브라우저에 따라 다를 수 있음
+&#8594; ISO format만 자바스크립트의 엄격한 표준에 맞고 나머지들은 정의되어 있지 않으며 브라우저에 따라 다를 수 있음
 
-### Date Output (ISO Dates)
+### Date Output
 
 **입력 형식에 관계없이 JavaScript는(기본적으로) 전체 텍스트 문자열 형식으로 날짜를 출력**
-
-&#9656; 기본적으로 YYYY-MM-DD형식
-
-&#9656; MM, DD 설정하지 않으면 자동으로 01, 시간은 9시
-
-★ 여러 가지 방법으로 쓸 수 있는데 그냥 YYYY-MM-DD맞춰 쓰세요
 
 ```js
 new Date("2015-03-25");
@@ -47,44 +41,47 @@ new Date("2015-03-25");
 // Wed Mar 25 2015 09:00:00 GMT+0900 (대한민국 표준시)
 ```
 
-#### ISO Dates (Date-Time)
+---
 
-YYYY-MM-DDTHH:MM:SSZ 형식으로도 사용할 수 있음
+## Date Input Formats
 
+### ISO Dates (Date-Time)
+
+**기본적으로 YYYY-MM-DD형식**
+
+&#9656; MM, DD 설정하지 않으면 자동으로 01, 시간은 9시
+
+★ YYYY-MM이나 YYYY로 쓸 수 있는데 그냥 YYYY-MM-DD맞춰 쓰세요
+
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+new Date("YYYY-MM-DD");
+</div>
 ```js
-var d = new Date("2015-03-25T12:00:00Z");
-//d = Wed Mar 25 2015 21:00:00 GMT+0900 (대한민국 표준시)
+var d = new Date("2015-03-25");
+var d = new Date("2015-03");
+var d = new Date("2015");
 ```
+
+심화
+{: .label .label-red .mt-2}
+<div class="code-example" markdown="1">
+&#9656; YYYY-MM-DDTHH:MM:SSZ 형식으로도 사용할 수 있음
 
 &#9656; 날짜와 시간은 대문자 T로 구분
 
 &#9656; UTC 시간은 대문자 Z로 정의
 
-&#9656; UTC를 기준으로 시간을 수정하려면 Z를 제거하고 대신 + HH : MM 또는 -HH : MM을 추가
-
+&#8594;  UTC를 기준으로 시간을 수정하려면 Z를 제거하고 대신 + HH : MM 또는 -HH : MM을 추가
+</div>
 ```js
+var d = new Date("2015-03-25T12:00:00Z");
+//d = Wed Mar 25 2015 21:00:00 GMT+0900 (대한민국 표준시)
+
 var d = new Date("2015-03-25T12:00:00-06:30");
 // d = Thu Mar 26 2015 03:00:00 GMT+0900 (대한민국 표준시)
 ```
-
-Date Input - Parsing Dates – ms로 바꾸는 것
-아래 예시는 ms로 바꾼걸 다시 date로 바꾸는 거
-	var msec = Date.parse("March 21, 2012");
-	var d = new Date(msec);
-	document.getElementById("demo").innerHTML = d;
-
-### Short Dates
-
-syntax
-{: .label .mt-2}
-<div class="code-example" markdown="1">
-new Date("MM/DD/YYYY");
-</div>
-```js
-var d = new Date("03/25/2015");
-```
-
-### Warnings!
 
 #### no 0 problem
 
@@ -94,6 +91,31 @@ var d = new Date("03/25/2015");
 {: .label .label-purple .mt-2}
 ```js
 var d = new Date("2015-3-25");
+```
+
+#### "DD-MM-YYYY" error
+
+**"DD-MM-YYYY"의 동작은 정의되지 않음**
+
+&#9656; 일부 브라우저는 형식을 추측하려고 하고, 일부는 NaN을 반환함
+
+예시
+{: .label .label-purple .mt-2}
+```js
+var d = new Date("25-03-2015");
+```
+
+### Short Dates
+
+**/ 사용**
+
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+new Date("MM/DD/YYYY");
+</div>
+```js
+var d = new Date("03/25/2015");
 ```
 
 #### "YYYY / MM / DD" error
@@ -108,14 +130,55 @@ var d = new Date("2015-3-25");
 var d = new Date("2015/03/25");
 ```
 
-#### "DD-MM-YYYY" error
+### Long Dates
 
-**"DD-MM-YYYY"의 동작은 정의되지 않음**
+**월을 문자로 작성하기**
 
-&#9656; 일부 브라우저는 형식을 추측하려고 하고, 일부는 NaN을 반환함
+&#9656; 월과 일은 다른 순서로 작성할 수 있음 (DD MMM YYYY)
 
-예시
-{: .label .label-purple .mt-2}
+&#9656; 월은 전체(January) 또는 약어(Jan)로 작성 가능함
+
+&#9656; ,로 구분가능하고 월은 case insensitive
+
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+new Date("MMM DD YYYY");
+</div>
 ```js
-var d = new Date("25-03-2015");
+var d = new Date("Mar 25 2015");
+var d = new Date("25 Mar 2015");
+var d = new Date("January 25 2015");
+var d = new Date("Jan 25 2015");
+var d = new Date("JANUARY, 25, 2015");
 ```
+
+---
+
+## Parsing Date Input 
+
+### Date.parse() Method 
+
+**유효한 날짜 문자열이있는 경우 밀리초로 변환 할 수 있음**
+
+&#9656; 1970년 1월 1일 사이의 밀리초 수를 기준으로 Date.parse() 날짜 사이의 밀리초를 반환함
+
+&#9656; [앞서 봤던것처럼](https://gekdev.github.io/docs/javascript/dates/#new-datemilliseconds) 밀리 초 수를 사용하여 날짜 개체로 변환할 수 있음
+
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+Date.parse(date string)
+</div>
+```js
+var msec = Date.parse("March 21, 2012");
+document.getElementById("demo").innerHTML = msec;
+//msec = 1332255600000
+
+var d = new Date(msec);
+document.getElementById("demo").innerHTML = d;
+//d = Wed Mar 21 2012 00:00:00 GMT+0900 (대한민국 표준시)
+```
+
+
+
