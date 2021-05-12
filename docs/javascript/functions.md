@@ -223,6 +223,18 @@ var z = x(4, 3);
 
 Syntax
 {: .label .mt-2}
+<div class="code-example" markdown="1">
+hello = () => {
+
+  return "Hello World!";
+  
+} 
+
+or
+
+hello = () => "Hello World!"; 
+// 하나의 문이 있고 문이 값을 반환하는 경우에는 return 및 괄호 제거 가능 
+</div>
 ```js
 // ES5
 var x = function(x, y) {
@@ -234,13 +246,31 @@ const x = (x, y) => x * y;
 const x = (x, y) => { return x * y };
 ```
 
-&#9656; 화살표 함수는 `this`가 없어서 객체 메소드를 정의하는데 알맞지 않음
-
 &#9656; 게양되지 않아서 호출되기 전에 선언되어야함
 
 &#9656; `const` 변수 키워드를 사용하는게 안전함 (함수 표현식은 항상 constant value라서)
 
 &#9656; 함수가 단일 명령문일경우 `return` 키워드와 `{}` 생략 가능
+
+&#9656; 매개 변수가있는 경우 괄호 안에 전달
+
+```js
+hello = (val) => "Hello " + val;
+```
+
+#### this in Arrow Function
+
+&#9656; 일반 함수에서 this키워드는 함수 를 호출 한 객체(창, 문서, 버튼)를 나타냄 
+
+<span class="fs-2">
+[W3School](https://www.w3schools.com/js/tryit.asp?filename=tryjs_arrow_function6){: .btn .btn-outline .mt-2}
+</span>
+
+&#9656; 화살표 함수의 `this`는 항상 화살표 함수를 정의한 객체를 나타내서 객체 메소드를 정의하는데 알맞지 않음
+
+<span class="fs-2">
+[W3School](https://www.w3schools.com/js/tryit.asp?filename=tryjs_arrow_function7){: .btn .btn-outline .mt-2}
+</span>
 
 !note
 {: .label .label-yellow .mt-2}

@@ -1,12 +1,12 @@
 ---
 layout: default
-title: RegExp
-parent: Strings
+title: Strict Mode
+parent: Advanced
 grand_parent: JavaScript
-nav_order: 2
+nav_order: 1
 ---
 
-# RegExp
+# JavaScript Strict Mode
 {: .no_toc .text-beta .fw-700}
 
 ## Table of contents
@@ -17,3 +17,6 @@ nav_order: 2
 
 ---
 
+## Strict Mode
+
+https://www.w3schools.com/js/js_strict.asp
