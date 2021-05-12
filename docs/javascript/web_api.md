@@ -1,11 +1,12 @@
 ---
 layout: default
-title: Errors
+title: Web API
 parent: JavaScript
-nav_order: 15
+nav_order: 22
+has_children: true
 ---
 
-# JavaScript Errors
+# JavaScript Web API
 {: .no_toc .text-beta .fw-700}
 
 ## Table of contents

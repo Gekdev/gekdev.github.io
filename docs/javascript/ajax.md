@@ -2,7 +2,7 @@
 layout: default
 title: AJAX
 parent: JavaScript
-nav_order: 14
+nav_order: 20
 has_children: true
 ---
 

@@ -2,7 +2,7 @@
 layout: default
 title: Browser BOM
 parent: JavaScript
-nav_order: 13
+nav_order: 19
 has_children: true
 ---
 
