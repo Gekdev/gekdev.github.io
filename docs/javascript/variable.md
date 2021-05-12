@@ -54,6 +54,24 @@ var carName;            //still Volvo
 
 &#8594; 밑줄을 사용하는 것은 JavaScript에서 흔하지는 않지만 전문 프로그래머들 사이에서는 "개인 (숨겨진)"변수의 별칭으로 종종 사용
 
+&#9656; 선언되지 않은 변수에 값을 할당하면 자동으로 GLOBAL 변수
+
+```js
+myFunction();
+
+// code here can use carName
+
+function myFunction() {
+  carName = "Volvo";
+}
+```
+
+### Lifetime of Variable
+
+&#9656; JavaScript 변수의 수명은 선언 될 때 시작, 함수가 완료되면 지역 변수가 삭제
+
+&#9656; 웹 브라우저에서 브라우저 창 (또는 탭)을 닫으면 전역 변수가 삭제
+
 ---
 
 ## Variable Structure
@@ -94,45 +112,3 @@ var carName;            //still Volvo
 
 &#9656; 변수에 지정할때에는 문자는 이중부호를 사용하고, 숫자는 그냥 사용하면 됨
 
----
-
-## Declaring Variables
-
-### Keywords of Variables 
-
-변수를 선언할때 3가지 키워드가 사용됨
-
-* var : **대표적으로 변수를 정의하는 키워드**
-
-* int
-
-* const 
-
----
-
-## Variable Scope
-
-### Global Variable
-
-**전역 변수** 
-
-&#9656; 함수 밖에서 선언되거나 함수 내에서 var키워드 없이 선언
-
-### Local Variable
-
-**지역 변수**
-
-&#9656; 함수 안에서 var키워드로 선언, 선언된 함수 내에서만 사용 가능
-
-this
-{: .label .mt-2}
-```js
-var x;
-function f(){
-    var x;
-    x = 1
-    this.x = 100; //전역변수에 100넣기
-}
-
-// 변수값이 같을 때 this를 사용하면 전역변수를 지역 변수가 사용되는 함수 내에서 가져올 수 있다
-```

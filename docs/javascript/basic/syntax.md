@@ -156,8 +156,13 @@ foo(2+2;) // 문법 에러(Syntax Error)
 9. debugger
 10. variable declaration
 
+<span class="fs-2">
+[W3School Statements](https://www.w3schools.com/jsref/jsref_statements.asp){: .btn .btn-outline .mt-2}
+</span>
 
 ### Comment
+
+**주석**
 
 * single : //
 
