@@ -21,6 +21,18 @@ nav_order: 2
 
 ### [The typeof Operator](https://gekdev.github.io/docs/javascript/operator/#type-operators)
 
+&#9656; NaN의 데이터 유형은 숫자
+
+&#9656; 배열의 데이터 유형은 객체
+
+&#9656; 날짜의 데이터 유형은 객체
+
+&#9656; null의 데이터 유형은 객체
+
+&#9656; 정의되지 않은 변수의 데이터 유형이 정의되지 않음
+
+&#9656; 값이 할당되지 않은 변수의 데이터 유형도 정의되지 않음
+
 예시
 {: .label .label-purple .mt-2}
 ```js
@@ -35,18 +47,6 @@ typeof function () {}         // Returns "function"
 typeof myCar                  // Returns "undefined" (if x has no value)
 typeof null                   // Returns "object"
 ```
-
-&#9656; NaN의 데이터 유형은 숫자
-
-&#9656; 배열의 데이터 유형은 객체
-
-&#9656; 날짜의 데이터 유형은 객체
-
-&#9656; null의 데이터 유형은 객체
-
-&#9656; 정의되지 않은 변수의 데이터 유형이 정의되지 않음
-
-&#9656; 값이 할당되지 않은 변수의 데이터 유형도 정의되지 않음
 
 &#8594; function는 object지만 typeof 연산자에서는 function이라고 나옴
 
@@ -76,6 +76,8 @@ function () {}.constructor        // Returns function Function(){[native code]}
 
 문자열로 찾거나 생성자 속성으로 찾는 아래 두가지 방법이 있음
 
+예시
+{: .label .label-purple .mt-2}
 ```js
 var fruits = ["Banana", "Orange", "Apple", "Mango"];
 document.getElementById("demo").innerHTML = isArray(fruits);
@@ -92,6 +94,8 @@ function isArray(myArray) {
 
 문자열로 찾거나 생성자 속성으로 찾는 아래 두가지 방법이 있음
 
+예시
+{: .label .label-purple .mt-2}
 ```js
 var myDate = new Date();
 document.getElementById("demo").innerHTML = isDate(myDate);

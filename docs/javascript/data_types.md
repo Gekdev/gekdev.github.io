@@ -27,7 +27,7 @@ has_children: true
 
 &#9656; numbers, strings(text values), object{}, booleans, arrays등이 있음
 
-### [Primitive Data](https://gekdev.github.io/docs/javascript/datatypes/primitive/)
+### [Primitive Data](https://gekdev.github.io/docs/javascript/datatypes/primitive_complex/#primitive-data-1)
 
 추가적인 속성이나 메소드가 없는 단순한 기본 데이터
 
@@ -41,7 +41,7 @@ typeof false               // Returns "boolean"
 typeof x                   // Returns "undefined" (if x has no value)
 ```
 
-### [Complex Data](https://gekdev.github.io/docs/javascript/datatypes/complex/)
+### [Complex Data](https://gekdev.github.io/docs/javascript/datatypes/primitive_complex/#complex-data)
 
 기본 데이터보다 좀더 복잡한 형식으로 되어있는 데이터들 
 
