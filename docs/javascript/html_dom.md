@@ -2,7 +2,7 @@
 layout: default
 title: HTML DOM
 parent: JavaScript
-nav_order: 96
+nav_order: 12
 has_children: true
 ---
 

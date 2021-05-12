@@ -152,3 +152,11 @@ var d = new Date(msec);
 document.getElementById("demo").innerHTML = d;
 //d = Wed Mar 21 2012 00:00:00 GMT+0900 (대한민국 표준시)
 ```
+
+### Month number to Month name
+
+다음장 [get date methods](https://gekdev.github.io/docs/javascript/dates/get_set_methods/#month-number-to-month-name) 에서 확인
+
+### Day number to Day name
+
+다음장 [get date methods](https://gekdev.github.io/docs/javascript/dates/get_set_methods/#day-number-to-day-name) 에서 확인
