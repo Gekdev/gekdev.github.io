@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Operators
+title: Operator
 parent: JavaScript
 nav_order: 4
 has_children: true
 ---
  
-# JavaScript Operators
+# JavaScript Operator
 {: .no_toc .text-beta .fw-700}
 
 ## Table of contents
@@ -17,9 +17,9 @@ has_children: true
 
 ---
 
-## Operators Basic
+## Operator Basic
 
-### What is Operators?
+### What is Operator?
 
 **여러 종류의 연산을 위한을 위해 사용**
 
@@ -27,7 +27,7 @@ has_children: true
 
 ---
 
-## Operators Sort
+## Operator Sort
 
 ### Arithmetic Operators
 
@@ -60,7 +60,7 @@ Operator Precedence
 일반 수학처럼 * / 가 + - 보다 연산 우선순위를 갖음
 </div>
 
-### Increment and Decrement Operator
+### Increment and Decrement Operators
 
 **증감연산자**
 

@@ -186,7 +186,7 @@ null == undefined          // true
 
 ## Checking Data types
 
-### [The typeof Operator]()
+### [The typeof Operator](https://gekdev.github.io/docs/javascript/operators/#type-operators)
 
 &#8594; 자바스크립트에서 array 는 object인걸 잊지말자
 
