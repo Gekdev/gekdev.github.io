@@ -31,7 +31,7 @@ z = x + y;           // How to compute values
 
 ---
 
-## Syntax Structures
+## Syntax Structure
 
 ### Values 
 

@@ -1,9 +1,9 @@
 ---
 layout: default
 title: Variable
-parent: Basic
-grand_parent: JavaScript
+parent: JavaScript
 nav_order: 3
+has_children: true
 ---
  
 # JavaScript Variable
@@ -29,30 +29,30 @@ nav_order: 3
 
 ### Features of Variable
 
-* 변수를 선언한 직후에는 데이터 값이 undefined
+&#9656; 변수를 선언한 직후에는 데이터 값이 undefined
 
-* 한 문장에 변수 여러개 선언 가능하고 선언과 동시에 초기화 동시가능
+&#9656; 한 문장에 변수 여러개 선언 가능하고 선언과 동시에 초기화 동시가능
 
-    ```js
-    var person = "John Doe", carName = "Volvo", price = 200;
-    ```
+```js
+var person = "John Doe", carName = "Volvo", price = 200;
+```
 
-* 재선언 뒤에도 값이 남아있음
+&#9656; 재선언 뒤에도 값이 남아있음
 
-    ```js
-    var carName = "Volvo";
-    var carName;            //still Volvo
-    ```
+```js
+var carName = "Volvo";
+var carName;            //still Volvo
+```
 
-* 산술연산자로 값을 산술할 수 있음
+&#9656; 산술연산자로 값을 산술할 수 있음
 
-* Dollar Sign $을 문자로 인지함 (제이쿼리에서 많이 사용)
+&#9656; Dollar Sign $을 문자로 인지함 (제이쿼리에서 많이 사용)
 
-    달러 기호를 사용하는 것은 JavaScript에서 흔하지는 않지만 전문 프로그래머는 종종 JavaScript 라이브러리에서 주 함수의 별칭으로 사용
+&#8594; 달러 기호를 사용하는 것은 JavaScript에서 흔하지는 않지만 전문 프로그래머는 종종 JavaScript 라이브러리에서 주 함수의 별칭으로 사용
 
-* Underscore (_)를 문자로 인지함 
+&#9656; Underscore (_)를 문자로 인지함 
 
-    밑줄을 사용하는 것은 JavaScript에서 흔하지는 않지만 전문 프로그래머들 사이에서는 "개인 (숨겨진)"변수의 별칭으로 종종 사용
+&#8594; 밑줄을 사용하는 것은 JavaScript에서 흔하지는 않지만 전문 프로그래머들 사이에서는 "개인 (숨겨진)"변수의 별칭으로 종종 사용
 
 ---
 
@@ -78,7 +78,9 @@ nav_order: 3
 
 ### Assignment Operator
 
-`=` 는 변수에 값을 할당하기 위해 사용되는 식별자
+**=(할당) 연산자**
+
+&#9656; 변수에 값을 할당하기 위해 사용
 
 !Note
 {: .label .label-yellow .mt-2}
@@ -88,11 +90,9 @@ nav_order: 3
 
 ### [Data Types](https://gekdev.github.io/docs/javascript/basic/datatypes)
 
-문자(text strings)나 숫자를 변수에 지정할 수 있음
+&#9656; 문자(text strings)나 숫자등 다양한 데이터 타입들을 변수에 지정할 수 있음
 
-변수에 지정할때에는 문자는 이중부호를 사용하고, 숫자는 그냥 사용하면 됨
-
-문자 + 숫자 = 데이터 타입 문자
+&#9656; 변수에 지정할때에는 문자는 이중부호를 사용하고, 숫자는 그냥 사용하면 됨
 
 ---
 
@@ -106,7 +106,7 @@ nav_order: 3
 
 * int
 
-* const : 재 할당 할 수없는 let변수를 정의 하고 키워드를 사용하여 제한된 범위의 변수를 정의
+* const 
 
 ---
 
