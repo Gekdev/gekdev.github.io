@@ -106,7 +106,7 @@ function myFunction() {
 `==` 는 동일 유무를 판단하는 식별자
 </div>
 
-### [Data Types](https://gekdev.github.io/docs/javascript/basic/datatypes)
+### [Data Types](https://gekdev.github.io/docs/javascript/data_types/)
 
 &#9656; 문자(text strings)나 숫자등 다양한 데이터 타입들을 변수에 지정할 수 있음
 
