@@ -17,7 +17,7 @@ nav_order: 2
 
 ---
 
-## Program Statement Basic
+## Statement Basic
 
 **문장**
 

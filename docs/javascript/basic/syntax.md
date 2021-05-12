@@ -102,13 +102,60 @@ z = x + y;           // How to compute values
 
 ### Expression
 
-**자바스크립트 문**
+**표현식**
+
+&#9656; 표현식은 값을 만들어냄, 값 하나로 귀결되는 자바스크립트 코드 조각(snippet)
 
 &#9656; value, variable, operator의 조합
 
-&#9656; 변수들을 연산자로 곱하고 더하는 형식으로 자바스크립트 문은 표현됨
+&#9656; 표현식은 우리가 원하는만큼 길어질 수 있지만 언제나 동일한 값이 나오지는 않음
+
+&#9656; 표현식은 반드시 상태(State)를 바꿀 필요는 없다
+
+&#9656; 함수, 익명함수, 함수 호출은 표현식 (값을 만들어내기 때문에)
+
+#### Expression Statements
+
+**세미콜론만 추가하면 표현식 문장**
+
+예시
+{: .label .label-purple .mt-2}
+```js
+2+2 // 그 자체로는 표현식입니다.
+foo(2+2) // 그래서 어디든 값이 들어가야 할 곳에서 사용할 수 있죠.
+true ? 2+2 : 1 + 1
+function foo () {return 2+2}
+
+2+2; // expression statement
+foo(); // expression statement
+foo(2+2;) // 문법 에러(Syntax Error)
+
+//2+2자체는 표현식, 하지만 그 줄(line) 자체는 표현식 문장(Expression Statements)
+```
 
 ### Statement
+
+**문장**
+
+&#9656; 자바스크립트에서 문장은 값이 들어와야 할 곳에 들어갈 수 없기 때문에 함수형 프로그래밍의 관점에서 문장은 골치덩어리
+
+&#9656; 함수의 인자로도, 대입 연산의 값으로도, 연산자의 피연산자로도 사용될 수 없음
+
+&#9656; 함수 선언은 문장(Statement)
+
+대표적으로 아래와 같은 문장들이 있음
+
+1. if
+2. if-else
+3. while
+4. do-while
+5. for
+6. switch
+7. for-in
+8. with (deprecated)
+9. debugger
+10. variable declaration
+
 
 ### Comment
 

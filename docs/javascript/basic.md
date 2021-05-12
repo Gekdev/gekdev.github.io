@@ -14,5 +14,3 @@ has_children: true
 
 1. TOC
 {:toc}
-
----
