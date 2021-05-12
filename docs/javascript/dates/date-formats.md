@@ -152,33 +152,3 @@ var d = new Date("January 25 2015");
 var d = new Date("Jan 25 2015");
 var d = new Date("JANUARY, 25, 2015");
 ```
-
----
-
-## Parsing Date Input 
-
-### Date.parse() Method 
-
-**유효한 날짜 문자열이있는 경우 밀리초로 변환 할 수 있음**
-
-&#9656; 1970년 1월 1일 사이의 밀리초 수를 기준으로 Date.parse() 날짜 사이의 밀리초를 반환함
-
-&#9656; [앞서 봤던것처럼](https://gekdev.github.io/docs/javascript/dates/#new-datemilliseconds) 밀리 초 수를 사용하여 날짜 개체로 변환할 수 있음
-
-syntax
-{: .label .mt-2}
-<div class="code-example" markdown="1">
-Date.parse(date string)
-</div>
-```js
-var msec = Date.parse("March 21, 2012");
-document.getElementById("demo").innerHTML = msec;
-//msec = 1332255600000
-
-var d = new Date(msec);
-document.getElementById("demo").innerHTML = d;
-//d = Wed Mar 21 2012 00:00:00 GMT+0900 (대한민국 표준시)
-```
-
-
-
