@@ -2,7 +2,7 @@
 layout: default
 title: Arrays
 parent: JavaScript
-nav_order: 5
+nav_order: 10
 has_children: true
 ---
 
