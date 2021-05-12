@@ -53,15 +53,3 @@ typeof [1,2,3,4]             // Returns "object" (not "array", see note below)
 typeof null                  // Returns "object"
 typeof function myFunc(){}   // Returns "function"
 ```
-
----
-
-## Checking Data types
-
-### [The typeof Operator](https://gekdev.github.io/docs/javascript/operators/#type-operators)
-
-&#8594; 자바스크립트에서 array 는 object인걸 잊지말자
-
-&#8594; function는 object지만 typeof 연산자에서는 function이라고 나옴
-
-### 

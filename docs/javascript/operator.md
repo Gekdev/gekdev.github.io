@@ -206,14 +206,16 @@ variablename = (condition) ? value1:value2
 예제
 {: .label .label-purple .mt-2}
 ```js
-typeof "John"        	          // Returns "string"
-typeof 3.14         	          // Returns "number"
-typeof false         	          // Returns "boolean"
-typeof x            	          // Returns "undefined" (if x has no value)
-typeof {name:'John', age:34}      // Returns "object"
-typeof [1,2,3,4]                  // Returns "object" (not "array")
-typeof null                       // Returns "object"
-typeof function myFunc(){}        // Returns "function"
+typeof "John"                 // Returns "string"
+typeof 3.14                   // Returns "number"
+typeof NaN                    // Returns "number"
+typeof false                  // Returns "boolean"
+typeof [1,2,3,4]              // Returns "object"
+typeof {name:'John', age:34}  // Returns "object"
+typeof new Date()             // Returns "object"
+typeof function () {}         // Returns "function"
+typeof myCar                  // Returns "undefined" (if x has no value)
+typeof null                   // Returns "object"
 ```
 
 ### Bitwise Operators

@@ -9,19 +9,11 @@ nav_order: 99
 # Operator Precedence
 {: .no_toc .text-beta .fw-700}
 
-## Table of contents
-{: .no_toc .text-delta }
-
-1. TOC
-{:toc}
-
----
-
 ## Operator Precedence Table
 
 **연산 우선순위**
 
-&#124; value가 높을수록 우선
+&#8594; value가 높을수록 우선
 
 | Value        | Operator   | Description               | Example           |
 |:-------------|:-----------|:--------------------------|:------------------|
