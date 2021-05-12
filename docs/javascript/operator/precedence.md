@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Precedence
-parent: operator
+parent: Operator
 grand_parent: JavaScript
 nav_order: 99
 ---

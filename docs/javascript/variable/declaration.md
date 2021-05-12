@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Declaration
-parent: variable
+parent: Variable
 grand_parent: JavaScript
 nav_order: 1
 ---

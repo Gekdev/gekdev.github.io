@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Scope
-parent: variable
+parent: Variable
 grand_parent: JavaScript
 nav_order: 2
 ---
