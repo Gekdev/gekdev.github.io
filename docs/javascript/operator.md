@@ -201,7 +201,7 @@ variablename = (condition) ? value1:value2
 | typeof        | Returns the type of a variable                                |
 | instanceof    | Returns true if an object is an instance of an object type    |
 
-예제
+예시
 {: .label .label-purple .mt-2}
 ```js
 typeof "John"                 // Returns "string"
