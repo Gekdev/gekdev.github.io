@@ -31,7 +31,7 @@ z = x + y;           // How to compute values
 
 ---
 
-## Syntax Structure
+## Syntax Structures
 
 ### Values 
 
@@ -100,13 +100,15 @@ z = x + y;           // How to compute values
 
 * 할당 연산자 : =
 
-### Expressions
+### Expression
 
 **자바스크립트 문**
 
 &#9656; value, variable, operator의 조합
 
 &#9656; 변수들을 연산자로 곱하고 더하는 형식으로 자바스크립트 문은 표현됨
+
+### Statement
 
 ### Comment
 

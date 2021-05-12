@@ -3,7 +3,7 @@ layout: default
 title: Output
 parent: Basic
 grand_parent: JavaScript
-nav_order: 6
+nav_order: 3
 ---
 
 # JavaScript Output
@@ -25,6 +25,10 @@ nav_order: 6
 
 **테스트 용**
 
+&#9656; HTML 문서가로드 된 후 document.write ()를 사용하면 기존의 모든 HTML이 삭제 
+
+&#8594; 사용하지 않는게 좋음
+
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
@@ -33,23 +37,19 @@ document.write("내용");
 &#9656; document.writeIn("내용")도 비슷함
 </div>
 
-&#9656; HTML 문서가로드 된 후 document.write ()를 사용하면 기존의 모든 HTML이 삭제 
-
-&#8594; 사용하지 않는게 좋음
-
 ### innerHTML
 
 **HTML 내용 변경**
+
+&#9656; 가장 흔한 방법
+
+★ getElementById를 사용하기 때문에 순서가 중요함 (아이디를 알기 전에 스크립트를 읽어버리면 실행되지 않음)
 
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
 document.getElementById("").innerHTML = "";
 </div>
-
-&#9656; 가장 흔한 방법
-
-★ getElementById를 사용하기 때문에 순서가 중요함 (아이디를 알기 전에 스크립트를 읽어버리면 실행되지 않음)
 
 &#9656; `innerTEXT`를 사용하게 되면 뒤 ""에 따라나오는 내용 전체를 텍스트로 읽어버림
 
@@ -103,16 +103,13 @@ window.print()
 
 **사용자에게 윈도우 창을 띄워 데이터를 입력받을 수 있는 함수, 다이얼로그 출력** 
 
+&#9656; 아무것도 안하면 “”리턴 / 강제로 닫으면 null 리턴
+
 Syntax
 {: .label}
 <div class="code-example" markdown="1">
 prompt(“메시지”, “디폴트 입력값”-생략가능)
 </div>
-
-&#9656; 아무것도 안하면 “”리턴 / 강제로 닫으면 null 리턴
-
-사용예제
-{: .label .label-purple .mt-2}
 ```js
 var ret = prompt(“hello”,“hi”)
 if(ret == null){
@@ -133,9 +130,6 @@ Syntax
 <div class="code-example" markdown="1">
 confirm(“메시지”)
 </div>
-
-사용예제
-{: .label .label-purple .mt-2}
 ```js
 var ret = confirm(‘전송할까요?’)
 if(ret == true){

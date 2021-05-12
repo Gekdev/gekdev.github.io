@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Statements
+title: Statement
 parent: Basic
 grand_parent: JavaScript
 nav_order: 2
 ---
 
-# JavaScript Statements
+# JavaScript Statement
 {: .no_toc .text-beta .fw-700}
 
 ## Table of contents
@@ -17,19 +17,19 @@ nav_order: 2
 
 ---
 
-## JavaScript Program Statements
+## Program Statement Basic
 
 **문장**
 
 컴퓨터 프로그램은 컴퓨터에 의해 "지침"들이 "실행"할 목록
 
-프로그래밍 언어에서 이러한 프로그래밍 명령어(instructions)를 statements 이라고 함
+프로그래밍 언어에서 이러한 프로그래밍 명령어(instructions)를 statement 이라고 함
 
 **자바스크립트 프로그램은 프로그래밍 statements 목록** (자바스크립트 코드라고도 불림)
 
 &#9656; [표현식(Expressions)과 다른 개념임!](https://velog.io/@jakeseo_me/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EA%B0%9C%EB%B0%9C%EC%9E%90%EB%9D%BC%EB%A9%B4-%EC%95%8C%EC%95%84%EC%95%BC-%ED%95%A0-33%EA%B0%80%EC%A7%80-%EA%B0%9C%EB%85%90-7-%ED%91%9C%ED%98%84%EC%8B%9D%EA%B3%BC-%EB%AC%B8Statement-%EB%B2%88%EC%97%AD-2xjuhvbal7)
 
-### Statements
+### JavaScript Statement
 
 지시문 구성물 : Values, Operators, Expressions, Keywords, Comments
 
@@ -40,6 +40,10 @@ nav_order: 2
 ```js
 document.getElementById("demo").innerHTML = "Hello Dolly.";
 ```
+
+---
+
+## Features of Statement
 
 ### Semicolons ; and Space
 
