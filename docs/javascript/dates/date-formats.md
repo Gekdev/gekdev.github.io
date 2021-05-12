@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Date Formats
+title: Formats
 parent: Dates
 grand_parent: JavaScript
 nav_order: 1
