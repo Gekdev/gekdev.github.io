@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Type Conversion
+title: Checking Data type
 parent: Data types
 grand_parent: JavaScript
-nav_order: 3
+nav_order: 2
 ---
  
-# Type Conversion
+# Checking Data type
 {: .no_toc .text-beta .fw-700}
 
 ## Table of contents
@@ -17,7 +17,7 @@ nav_order: 3
 
 ---
 
-## Checking Data types
+## Two ways to Check Data type
 
 ### [The typeof Operator](https://gekdev.github.io/docs/javascript/operator/#type-operators)
 
@@ -103,27 +103,3 @@ function isDate(myDate) {
     return myDate.constructor === Date;               
 }
 ```
-
----
-
-## Type Conversion
-
-### Numbers to Strings
-
-### Booleans to Strings
-
-### Dates to Strings
-
-### Strings to Numbers
-
-### The Unary + Operator
-
-### Booleans to Numbers
-
-### Dates to Numbers
-
-### Automatic Type Conversion
-
-### Automatic String Conversion
-
-### JavaScript Type Conversion Table
