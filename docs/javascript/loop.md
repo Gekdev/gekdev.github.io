@@ -141,6 +141,19 @@ document.getElementById("demo").innerHTML = txt;
 //text is 45 4 9 16 25
 ```
 
+Note!
+{: .label .label-yellow mt-2}
+<div class="code-example" markdown="1">
+문서객체배열에서는 for in 반복문을 사용할 수 없음
+</div>
+```js
+var headers = document.getElementsByTagName('h2');
+
+for(i in headers){
+    headers가 배열로 들어오지만 사용 불가함
+}
+```
+
 ### The For/Of Loop
 
 **반복 가능한 객체의 값을 반복**
