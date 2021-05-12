@@ -1,9 +1,9 @@
 ---
 layout: default
 title: Operators
-parent: Basic
-grand_parent: JavaScript
+parent: JavaScript
 nav_order: 4
+has_children: true
 ---
  
 # JavaScript Operators
@@ -196,24 +196,36 @@ variablename = (condition) ? value1:value2
 
 ### Type Operators
 
+**변수나 표현식의 데이터 타입을 찾기위해 사용하는 연산자**
+
 | Operator      | Description                                                   |
 |:--------------|:--------------------------------------------------------------|
 | typeof        | Returns the type of a variable                                |
 | instanceof    | Returns true if an object is an instance of an object type    |
 
-[Basic - Data types](https://gekdev.github.io/docs/javascript/basic/datatypes/#checking-data-types)에서 설명했듯이 변수의 데이터 타입을 알기 위해 사용하는 연산자
-
+예제
+{: .label .label-purple .mt-2}
+```js
+typeof "John"        	          // Returns "string"
+typeof 3.14         	          // Returns "number"
+typeof false         	          // Returns "boolean"
+typeof x            	          // Returns "undefined" (if x has no value)
+typeof {name:'John', age:34}      // Returns "object"
+typeof [1,2,3,4]                  // Returns "object" (not "array")
+typeof null                       // Returns "object"
+typeof function myFunc(){}        // Returns "function"
+```
 
 ### Bitwise Operators
 
 Bit operators work on **32 bits numbers**
 
-비트 : 비트의 &AND, |OR, ^XOR, ~NOT의 논리 연산
+비트 : 비트의 논리 연산
 
 비트 시프트 : 새로운 비트를 끝에 삽입하면서 비트의 자리를 이동하는 연산
 
 <span class="fs-2">
-[더 알아보기](https://www.w3schools.com/js/js_bitwise.asp){: .btn  .btn-outline .mt-2}
+[W3School](https://www.w3schools.com/js/js_bitwise.asp){: .btn  .btn-outline .mt-2}
 </span>
 
 ### Operator Precedence

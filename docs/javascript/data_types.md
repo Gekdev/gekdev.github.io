@@ -1,9 +1,9 @@
 ---
 layout: default
 title: Data types
-parent: Basic
-grand_parent: JavaScript
+parent: JavaScript
 nav_order: 5
+has_children: true
 ---
 
 # JavaScript Data types
@@ -186,20 +186,7 @@ null == undefined          // true
 
 ## Checking Data types
 
-### The typeof Operator
-
-**변수나 표현식의 데이터 타입을 찾기위해 typeof 연산자를 사용**
-
-```js
-typeof "John"        	          // Returns "string"
-typeof 3.14         	          // Returns "number"
-typeof false         	          // Returns "boolean"
-typeof x            	          // Returns "undefined" (if x has no value)
-typeof {name:'John', age:34}      // Returns "object"
-typeof [1,2,3,4]                  // Returns "object" (not "array")
-typeof null                       // Returns "object"
-typeof function myFunc(){}        // Returns "function"
-```
+### [The typeof Operator]()
 
 &#8594; 자바스크립트에서 array 는 object인걸 잊지말자
 
