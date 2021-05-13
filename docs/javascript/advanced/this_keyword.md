@@ -1,6 +1,6 @@
 ---
 layout: default
-title: JavaScript this Keyword
+title: this Keyword
 parent: Advanced
 grand_parent: JavaScript
 nav_order: 2
