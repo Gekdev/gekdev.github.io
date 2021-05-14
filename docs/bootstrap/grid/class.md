@@ -17,9 +17,9 @@ nav_order: 1
 
 ---
 
-## Grid Classes
+## Grid Prefix Classes
 
-### Grid Device Classes
+### Device Classes
 
 &#9656; 4개의 그리드 클래스를 가지고 있음
 
@@ -29,6 +29,13 @@ nav_order: 1
 
 &#9656; 각 클래스는 확장되므로 xs 및 sm에 대해 동일한 너비를 설정하려면 xs만 지정
 
+기기별 해상도에 따른 클래스 접두사
+{: .label .mt-2}
+
+| 모바일 (<768px)    | 태블릿 (>=768px)   | 데스트탑 (>=992px) | 와이드 (>=1200px)  |
+|:-------------------|:------------------|:------------------|:------------------|
+| .col-xs-           | .col-sm-          | .col-md-          | .col-lg-          |
+
 * xs : 핸드폰, 768px 미만
 
 * ms : 태블릿, 768px 이상
@@ -36,13 +43,6 @@ nav_order: 1
 * md : 작은 노트북, 992px 이상
 
 * lg : 컴퓨터(노트북), 1200px 이상
-
-기기별 해상도에 따른 클래스 접두사
-{: .label .mt-2}
-
-| 모바일 (<768px)    | 태블릿 (>=768px)   | 데스트탑 (>=992px) | 와이드 (>=1200px)  |
-|:-------------------|:------------------|:------------------|:------------------|
-| .col-xs-           | .col-sm-          | .col-md-          | .col-lg-          |
 
 예시
 {: .label .mt-2 .label-purple}
@@ -57,6 +57,10 @@ nav_order: 1
   <div class="col-xs-6 col-sm-4 col-lg-2">.col-xs-6 .col-sm-4 .col-lg-2</div>
 </div>
 ```
+
+---
+
+## Basic Structure 
 
 ### container
 
@@ -98,21 +102,9 @@ syntax
 class="row"
 </div>
 
-### row-no-gutters
+---
 
-**행과 열에서 거터를 제거함**
-
-&#9656; 그래서 사용하면 양 옆으로 마진 값이 생김
-
-syntax
-{: .label .mt-2}
-<div class="code-example" markdown="1">
-class="row row-no-gutters"
-</div>
-
-<span class="fs-2">
-[W3School](https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_grid_no-gutters&stacked=h){: .btn .btn-outline .mt-2}
-</span>
+## Spacing Element 
 
 ### offset 
 
@@ -141,6 +133,32 @@ class="col-md-offset-?"
 <span class="fs-2">
 [W3School](https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_grid_ex8&stacked=h){: .btn .btn-outline .mt-2}
 </span>
+
+### row-no-gutters
+
+**행과 열에서 거터를 제거함**
+
+&#9656; 그래서 사용하면 양 옆으로 마진 값이 생김
+
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+class="row row-no-gutters"
+</div>
+```html
+<div class="row row-no-gutters">
+    <div class="col-sm-4" style="background-color:lavender;">.col-sm-4</div>
+    <div class="col-sm-8" style="background-color:lavenderblush;">.col-sm-8</div>
+</div>
+```
+
+<span class="fs-2">
+[W3School](https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_grid_no-gutters&stacked=h){: .btn .btn-outline .mt-2}
+</span>
+
+---
+
+## Changing Element Order 
 
 ### push and pull
 
@@ -189,6 +207,24 @@ class="pull-left"
       이 부분은 pull-left을 적용해 준 상태입니다. 따라서 왼쪽에 박스가 배치되어 있습니다. 
 </section> 
   ```
+
+### clearfix
+
+**고르지 않은 콘텐츠로 이상한 래핑을 방지하기 위해 특정 해상도에서 clear: both같은 효과를 줌**
+
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+class="clearfix"
+</div>
+
+<span class="fs-2">
+[W3School](https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_grid_ex7&stacked=h){: .btn .btn-outline .mt-2}
+</span>
+
+---
+
+## Displaying Element
 
 ### visible and hidden
 
@@ -253,6 +289,10 @@ class="text-hide"
 <h1 class="text-hide logo">9pixelstudio</h1>
 ```
 
+---
+
+## Web Accessibility 
+
 ### sr-only
 
 **스크린 리더에서는 건너 뜀**
@@ -284,16 +324,3 @@ class="hidden-print"
 <div class="hidden-print box cl1">화면에서는 나오지만 프린터에서는 안 나옴</div>
 ```
 
-### clearfix
-
-**고르지 않은 콘텐츠로 이상한 래핑을 방지하기 위해 특정 해상도에서 clear: both같은 효과를 줌**
-
-syntax
-{: .label .mt-2}
-<div class="code-example" markdown="1">
-class="clearfix"
-</div>
-
-<span class="fs-2">
-[W3School](https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_grid_ex7&stacked=h){: .btn .btn-outline .mt-2}
-</span>
