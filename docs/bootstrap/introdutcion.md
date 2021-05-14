@@ -85,7 +85,7 @@ nav_order: 1
 
     &#9656; container, container-fluid 두가지 클래스를 사용함
 
-    bootstrap_intro.png        
+    ![](https://gekdev.github.io/assets/images/bootstrap_intro.png)
 
 ---
 
