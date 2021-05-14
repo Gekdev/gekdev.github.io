@@ -47,12 +47,20 @@ nav_order: 1
 
 2. 부트 스트랩 CDN(Content Delivery Network)으로 파일에 직접 코드 포함
 
-    장점
-    {: .label .mt-2}
     <div class="code-example" markdown="1">
     이미 다른 사이트를 방문 할 때 MaxCDN에서 Bootstrap을 다운로드해서 로드 속도가 빠름, 또한 대부분의 CDN은 사용자가 파일을 요청하면 가장 가까운 서버에서 제공되므로 로드시간이 빠르다
     </div>
+    ```js
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    ```
+    
 ### jQuery and Bootstrap
 
 &#9656; Bootstrap은 **jQuery 플러그인 (모달, 툴팁 등)을 사용하기 때문에 jQuery를 포함해야 함!**
