@@ -28,7 +28,7 @@ nav_order: 2
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-img class="img-rounded" 
+img class="img-rounded"
 </div>
 
 <div class="code-example" markdown="1">
@@ -38,7 +38,7 @@ img class="img-rounded"
 <div class="container">
   <h2>Rounded Corners</h2>
   <p>The .img-rounded class adds rounded corners to an image (not available in IE8):</p>            
-  <img src="http://www.placehold.it/200" class="img-rounded" alt="Cinque Terre" width="304" height="236"> 
+  <img src="cinqueterre" class="img-rounded" alt="Cinque Terre" width="304" height="236"> 
 </div>
 ```
 
@@ -59,7 +59,7 @@ img class="img-circle"
 <div class="container">
   <h2>Circle</h2>
   <p>The .img-circle class shapes the image to a circle (not available in IE8):</p>            
-  <img src="http://www.placehold.it/200" class="img-circle" alt="Cinque Terre" width="304" height="236"> 
+  <img src="newyork.jpg" class="img-circle" alt="Cinque Terre" width="304" height="236"> 
 </div>
 ```
 
@@ -80,7 +80,7 @@ img class="img-thumbnail"
 <div class="container">
   <h2>Thumbnail</h2>
   <p>The .img-thumbnail class creates a thumbnail of the image:</p>            
-  <img src="http://www.placehold.it/200" class="img-thumbnail" alt="Cinque Terre" width="304" height="236"> 
+  <img src="sanfran.jpg" class="img-thumbnail" alt="Cinque Terre" width="304" height="236"> 
 </div>
 ```
 
@@ -109,7 +109,7 @@ img class="img-responsive"
 <div class="container">
   <h2>Image</h2>
   <p>The .img-responsive class makes the image scale nicely to the parent element (resize the browser window to see the effect):</p>
-  <img class="img-responsive" src="http://www.placehold.it/200" alt="Chania" width="460" height="345"> 
+  <img class="img-responsive" src="img_chania.jpg" alt="Chania" width="460" height="345"> 
 </div>
 ```
 
@@ -183,7 +183,10 @@ class="caption"
           <div class="caption">
             <h3>제목과 </h3>
             <p>내용도 넣을 수 있다.</p>
-            <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+            <p>
+                <a href="#" class="btn btn-primary" role="button">Button</a> 
+                <a href="#" class="btn btn-default" role="button">Button</a>
+            </p>
           </div>
         </a>
     </div>
@@ -221,7 +224,7 @@ What is aspect ratio?
 두 가지 종횡비 클래스 중에서 선택할 수 있음
 </div>
 <div class="code-example" markdown="1">
-<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_img_ratio.html" height="900" width="700" style="border:none;" title=" example"></iframe>
+<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_img_ratio.html" height="1300" width="700" style="border:none;" title=" example"></iframe>
 </div>
 ```html
 <!-- 16:9 aspect ratio -->
