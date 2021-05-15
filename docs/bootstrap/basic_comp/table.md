@@ -226,7 +226,7 @@ table class="table table-bordered"
 </div>
 
 <div class="code-example" markdown="1">
-<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_tb_condensed.html" height="280" width="700" style="border:none;" title="bt heading example"></iframe>
+<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_tb_condensed.html" height="270" width="700" style="border:none;" title="bt heading example"></iframe>
 </div>
 ```html
 <div class="container">
@@ -270,24 +270,25 @@ table class="table table-bordered"
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-class="success" : 성공적인 작업 또는 긍정적인 작업
+* class="success" : 성공적인 작업 또는 긍정적인 작업
 
-class="danger" : 위험하거나 잠재적으로 부정적인 조치
+* class="danger" : 위험하거나 잠재적으로 부정적인 조치
 
-class="info" : 중립적인 정보 변경 또는 조치
+* class="info" : 중립적인 정보 변경 또는 조치
 
-class="warning" : 주의가 필요할 수 있는 경고
+* class="warning" : 주의가 필요할 수 있는 경고
 
-class="active" : 테이블 행 또는 테이블 셀에 호버 색상을 적용
+* class="active" : 테이블 행 또는 테이블 셀에 호버 색상을 적용
 </div>
 
 <div class="code-example" markdown="1">
-<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_tb_contextual.html" height="300" width="700" style="border:none;" title="bt heading example"></iframe>
+<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_tb_contextual.html" height="450" width="700" style="border:none;" title="bt heading example"></iframe>
 </div>
 ```html
 <div class="container">
   <h2>Contextual Classes</h2>
-  <p>Contextual classes can be used to color table rows or table cells. The classes that can be used are: .active, .success, .info, .warning, and .danger.</p>
+  <p>Contextual classes can be used to color table rows or table cells. 
+  The classes that can be used are: .active, .success, .info, .warning, and .danger.</p>
   <table class="table">
     <thead>
       <tr>
@@ -347,7 +348,7 @@ div class="table-responsive"
 </div>
 
 <div class="code-example" markdown="1">
-<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_tb_responsive.html" height="200" width="700" style="border:none;" title="bt heading example"></iframe>
+<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_tb_responsive.html" height="230" width="700" style="border:none;" title="bt heading example"></iframe>
 </div>
 ```html
 <div class="container">
