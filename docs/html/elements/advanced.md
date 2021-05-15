@@ -23,27 +23,39 @@ nav_order: 4
 
 **display a web page within a web page**
 
-&#9656; attribute: src width height style="border:none;
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+    <iframe src="url" title="description">
+</div>
 
-&#9656; Use the height and width attributes to specify the size of the iframe.
+&#9656; height및 width으로 가로 세로값을 지정할 수 있음
+
+&#9656; border:none;으로 테두리를 없앨 수 있음
 
 &#9656; target값 name 따라서 가거나 blank, self, parent, top 등 다양하게 갈 수 있음
 
 &#9656; inframe 서로 들어갈 수 있음
 
-> &#8594; a링크로 주소를 찍거나, a 태그 타겟 없이 iframe src만으로도 다른 페이지로 이동가능
+&#8594; a링크 타겟을 지정해서 iframe name과 연결하면 a링크 주소에따라 iframe 주소값이 달라짐
 
+&#8594; 보안 이슈때문에 대기업 사이트들은 iframe 접근을 막아둠
+
+예시
+{: .label .label-purple .mt-2}
 ```html
 <iframe src="demo_iframe.htm" name="iframe_a"></iframe>
 <p><a href="https://www.w3schools.com" target="iframe_a">W3Schools.com</a></p>
+<p><a href="https://www.google.com" target="iframe_a">google.com</a></p>
 ```
 
-Youtube
-{: .label .mt-3}
-<div class="code-example" markdown="1">
-[w3schools](https://www.w3schools.com/html/html_youtube.asp)<br>
-[cdmanii](https://cdmanii.com/3392)
-</div>
+### Youtube Link 
+
+유튜브는 좀 더 복잡한 방식으로 넣어야함
+
+* [w3schools](https://www.w3schools.com/html/html_youtube.asp)
+
+* [cdmanii](https://cdmanii.com/3392)
 
 ## Media elements
 

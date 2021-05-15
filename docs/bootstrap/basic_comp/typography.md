@@ -52,6 +52,10 @@ nav_order: 1
 </div>
 ```
 
+<div class="code-example" markdown="1">
+<iframe src="example/bt_ty_heading.html" height="400" width="800" style="border:none;" title="bt heading example"></iframe>
+</div>
+
 #### <small>
 
 **모든 제목에 더 가벼운 보조 텍스트를 만드는 데 사용**
