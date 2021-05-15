@@ -17,6 +17,17 @@ nav_order: 4
 
 ---
 
+    
+  7. 목록(list)
+
+     &#9656; ul/ol/li : 왼쪽에 20px 하단으로 10px의 여백
+
+     &#9656; .list-unstyled 클래스 선택자를 사용하면 왼쪽 20px 여백이 0으로 바뀜
+
+     직접 위에 페이지 들어가서 보는걸 추천!
+     
+     https://www.w3schools.com/bootstrap/bootstrap_typography.asp
+     
 https://www.w3schools.com/bootstrap/bootstrap_ref_css_text.asp
 
 <ul>	Indicates an unordered list	
