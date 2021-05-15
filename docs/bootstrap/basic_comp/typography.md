@@ -49,31 +49,73 @@ nav_order: 1
 
 #### &#60;small&#62;
 
-
-
 **모든 제목에 더 가벼운 보조 텍스트를 만드는 데 사용**
 
-### <mark>
+<div class="code-example" markdown="1">
+<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_ty_small.html" height="300" width="700" style="border:none;" title="bt heading example"></iframe>
+</div>
+```html
+<div class="container">
+  <h1>Lighter, Secondary Text</h1>
+  <p>The small element is used to create a lighter, secondary text in any heading:</p>       
+  <h1>h1 heading <small>secondary text</small></h1>
+  <h2>h2 heading <small>secondary text</small></h2>
+  <h3>h3 heading <small>secondary text</small></h3>
+  <h4>h4 heading <small>secondary text</small></h4>
+  <h5>h5 heading <small>secondary text</small></h5>
+  <h6>h6 heading <small>secondary text</small></h6>
+</div>
+```
 
-### <abbr>
+### &#60;mark&#62;
+
+**형광펜**
+
+<div class="code-example" markdown="1">
+<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_ty_mark.html" height="100" width="700" style="border:none;" title="bt heading example"></iframe>
+</div>
+```html
+<div class="container">
+  <h1>Highlight Text</h1>    
+  <p>Use the mark element to <mark>highlight</mark> text.</p>
+</div>
+```
+
+### &#60;abbr&#62;
+
+**점선 밑줄**
+
+<div class="code-example" markdown="1">
+<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_ty_abbr.html" height="300" width="700" style="border:none;" title="bt heading example"></iframe>
+</div>
+```html
+<div class="container">
+  <h1>Abbreviations</h1>
+  <p>The abbr element is used to mark up an abbreviation or acronym:</p>
+  <p>The <abbr title="World Health Organization">WHO</abbr> was founded in 1948.</p>
+</div>
+```
 
 ---
 
 ## Code Elements
 
-### <var>
+### &#60;var&#62;
 
-### <blockquote>
+### &#60;blockquote&#62;
 
-### <kbd>
+**인용 문구**
 
-### <pre>
 
-#### <pre class="pre-scrollable">
+### &#60;kbd&#62;
 
-### <samp>
+### &#60;pre&#62;
 
-### <code>
+#### &#60;pre class="pre-scrollable"&#62;
+
+### &#60;samp&#62;
+
+### &#60;code&#62;
 
 ---
 
