@@ -34,7 +34,7 @@ nav_order: 1
 ### <h1>-<h6>
 
 <div class="code-example" markdown="1">
-<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_ty_heading.html" height="300" width="700" style="border:none;" title="bt heading example"></iframe>
+<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_ty_heading.html" height="280" width="700" style="border:none;" title="bt heading example"></iframe>
 </div>
 ```html
 <div class="container">
@@ -52,7 +52,7 @@ nav_order: 1
 **모든 제목에 더 가벼운 보조 텍스트를 만드는 데 사용**
 
 <div class="code-example" markdown="1">
-<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_ty_small.html" height="300" width="700" style="border:none;" title="bt heading example"></iframe>
+<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_ty_small.html" height="340" width="700" style="border:none;" title="bt heading example"></iframe>
 </div>
 ```html
 <div class="container">
@@ -86,7 +86,7 @@ nav_order: 1
 **점선 밑줄**
 
 <div class="code-example" markdown="1">
-<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_ty_abbr.html" height="300" width="700" style="border:none;" title="bt heading example"></iframe>
+<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_ty_abbr.html" height="100" width="700" style="border:none;" title="bt heading example"></iframe>
 </div>
 ```html
 <div class="container">
@@ -102,20 +102,105 @@ nav_order: 1
 
 ### &#60;var&#62;
 
+<div class="code-example" markdown="1">
+<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_ty_abbr.html" height="100" width="700" style="border:none;" title="bt heading example"></iframe>
+</div>
+```html
+<div class="container">
+  <h1>Abbreviations</h1>
+  <p>The abbr element is used to mark up an abbreviation or acronym:</p>
+  <p>The <abbr title="World Health Organization">WHO</abbr> was founded in 1948.</p>
+</div>
+```
+
 ### &#60;blockquote&#62;
 
 **인용 문구**
 
+<div class="code-example" markdown="1">
+<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_ty_blockquote.html" height="400" width="700" style="border:none;" title="bt heading example"></iframe>
+</div>
+```html
+<div class="container">
+  <h1>Blockquotes</h1>
+  <p>The blockquote element is used to present content from another source:</p>
+  <blockquote>
+    <p>For 50 years, WWF has been protecting the future of nature. The world's leading conservation organization, WWF works in 100 countries and is supported by 1.2 million members in the United States and close to 5 million globally.</p>
+    <footer>From WWF's website</footer>
+  </blockquote>
+</div>
+```
+
+#### blockquote-reverse class
+
+**오른쪽 정렬**
+
+<div class="code-example" markdown="1">
+<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_ty_blockquote_rv.html" height="400" width="700" style="border:none;" title="bt heading example"></iframe>
+</div>
+```html
+<div class="container">
+  <h1>Blockquotes</h1>
+  <p>To show the quote on the right use the class .blockquote-reverse:</p>
+  <blockquote class="blockquote-reverse">
+    <p>For 50 years, WWF has been protecting the future of nature. The world's leading conservation organization, WWF works in 100 countries and is supported by 1.2 million members in the United States and close to 5 million globally.</p>
+    <footer>From WWF's website</footer>
+  </blockquote>
+</div>
+```
 
 ### &#60;kbd&#62;
 
+<div class="code-example" markdown="1">
+<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_ty_kbd.html" height="400" width="700" style="border:none;" title="bt heading example"></iframe>
+</div>
+```html
+<div class="container">
+  <h1>Keyboard Inputs</h1>
+  <p>To indicate input that is typically entered via the keyboard, use the kbd element:</p>
+  <p>Use <kbd>ctrl + p</kbd> to open the Print dialog box.</p>
+</div>
+```
+
 ### &#60;pre&#62;
 
-#### &#60;pre class="pre-scrollable"&#62;
+<div class="code-example" markdown="1">
+<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_ty_pre.html" height="400" width="700" style="border:none;" title="bt heading example"></iframe>
+</div>
+```html
+<div class="container">
+    <h1>Multiple Code Lines</h1>
+    <p>For multiple lines of code, use the pre element:</p>
+    <pre>
+    Text in a pre element
+    is displayed in a fixed-width
+    font, and it preserves
+    both      spaces and
+    line breaks.
+    </pre>
+</div>
+```
+
+#### pre-scrollable class
+
+&#60;pre class="pre-scrollable"&#62;
 
 ### &#60;samp&#62;
 
 ### &#60;code&#62;
+
+**짧은 코드**
+
+<div class="code-example" markdown="1">
+<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_ty_code.html" height="300" width="700" style="border:none;" title="bt heading example"></iframe>
+</div>
+```html
+<div class="container">
+  <h1>Code Snippets</h1>
+  <p>Inline snippets of code should be embedded in the code element:</p>
+  <p>The following HTML elements: <code>span</code>, <code>section</code>, and <code>div</code> defines a section in a document.</p>
+</div>
+```
 
 ---
 
