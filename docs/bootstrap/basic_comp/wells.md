@@ -32,7 +32,7 @@ class="well"
 </div>
 
 <div class="code-example" markdown="1">
-<iframe src="https://gekdev.github.io/docs/bootstrap/basic_cpmp/example/bt_wells_01.html" height="350" width="700" style="border:none;" title="bt heading example"></iframe>
+<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_wells_01.html" height="350" width="700" style="border:none;" title="bt heading example"></iframe>
 </div>
 ```html
 <div class="container">
@@ -54,7 +54,7 @@ class="well well-lg"
 </div>
 
 <div class="code-example" markdown="1">
-<iframe src="https://gekdev.github.io/docs/bootstrap/basic_cpmp/example/bt_wells_02.html" height="350" width="700" style="border:none;" title="bt heading example"></iframe>
+<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_wells_02.html" height="350" width="700" style="border:none;" title="bt heading example"></iframe>
 </div>
 ```html
 <div class="container">
