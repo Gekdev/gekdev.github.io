@@ -94,6 +94,8 @@ img class="img-thumbnail"
 
 &#9656; 상위 요소에 맞게 조정
 
+&#9656; 가로 991px 이하에서는 100%로 나옴
+
 &#9656; 이미지에 **display: block; max-width: 100%; height: auto;** CSS 적용한 것과 같음
 
 syntax
