@@ -6,7 +6,7 @@ grand_parent: Bootstrap
 nav_order: 1
 ---
 
-# Basic Typography
+# Basic BT Typography
 {: .no_toc .text-beta .fw-700}
 
 ## Table of contents
@@ -23,9 +23,7 @@ nav_order: 1
 
 **부트스트랩 기본 CSS는 브라우저 기본값과 약간 다름**
 
-* 전역 기본 글꼴 크기는 14px이고 줄 높이는 1.428
-
-* <p>요소에는 계산 된 선 높이의 절반(기본적으로 10px)에 해당하는 아래쪽 여백이 있음
+* `<p>`요소에는 계산 된 선 높이의 절반(기본적으로 10px)에 해당하는 아래쪽 여백이 있음
 
 ### Bootstrap's Default font 
 
@@ -51,7 +49,7 @@ body{
 
 ### Default fonts By Browsers
 
-브라우저에 따른 기본글꼴
+브라우저에 따른 기본 글꼴
 
 | 구글(크롬)          | 파이어폭스/IE11     | 맥(사파리)             | 맥(크롬)            | 
 |:-------------------|:------------------|:----------------------|:-------------------|
@@ -60,7 +58,7 @@ body{
 
 ### Using Google Font
 
-**@font-face{}나 @import url()로 구글폰트를 사용할 수 있음**
+**@font-face{}나 @import url()**로 구글폰트를 사용할 수 있음
 
 * @font-face{} 
 
@@ -89,7 +87,7 @@ body{
 ### <h1>-<h6>
 
 <div class="code-example" markdown="1">
-<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_ty_heading.html" height="280" width="700" style="border:none;" title="bt heading example"></iframe>
+<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_ty_heading.html" height="270" width="700" style="border:none;" title="bt heading example"></iframe>
 </div>
 ```html
 <div class="container">
@@ -107,7 +105,7 @@ body{
 **모든 제목에 더 가벼운 보조 텍스트를 만드는 데 사용**
 
 <div class="code-example" markdown="1">
-<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_ty_small.html" height="340" width="700" style="border:none;" title="bt heading example"></iframe>
+<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_ty_small.html" height="350" width="700" style="border:none;" title="bt heading example"></iframe>
 </div>
 ```html
 <div class="container">
@@ -141,7 +139,7 @@ body{
 **점선 밑줄**
 
 <div class="code-example" markdown="1">
-<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_ty_abbr.html" height="100" width="700" style="border:none;" title="bt heading example"></iframe>
+<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_ty_abbr.html" height="150" width="700" style="border:none;" title="bt heading example"></iframe>
 </div>
 ```html
 <div class="container">
@@ -161,9 +159,8 @@ syntax
 abbr class="initialism"
 </div>
 
-
 <div class="code-example" markdown="1">
-<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_ty_initialism_cl.html" height="100" width="700" style="border:none;" title="bt heading example"></iframe>
+<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_ty_initialism_cl.html" height="150" width="700" style="border:none;" title="bt heading example"></iframe>
 </div>
 ```html
 <div class="container">
@@ -178,14 +175,16 @@ abbr class="initialism"
 **인용 문구**
 
 <div class="code-example" markdown="1">
-<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_ty_blockquote.html" height="400" width="700" style="border:none;" title="bt heading example"></iframe>
+<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_ty_blockquote.html" height="250" width="700" style="border:none;" title="bt heading example"></iframe>
 </div>
 ```html
 <div class="container">
   <h1>Blockquotes</h1>
   <p>The blockquote element is used to present content from another source:</p>
   <blockquote>
-    <p>For 50 years, WWF has been protecting the future of nature. The world's leading conservation organization, WWF works in 100 countries and is supported by 1.2 million members in the United States and close to 5 million globally.</p>
+    <p>For 50 years, WWF has been protecting the future of nature. 
+    The world's leading conservation organization, WWF works in 100 countries and is supported by 
+    1.2 million members in the United States and close to 5 million globally.</p>
     <footer>From WWF's website</footer>
   </blockquote>
 </div>
@@ -202,7 +201,7 @@ blockquote class="blockquote-reverse"
 </div>
 
 <div class="code-example" markdown="1">
-<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_ty_blockquote_rv.html" height="400" width="700" style="border:none;" title="bt heading example"></iframe>
+<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_ty_blockquote_rv.html" height="250" width="700" style="border:none;" title="bt heading example"></iframe>
 </div>
 ```html
 <div class="container">
@@ -224,7 +223,7 @@ blockquote class="blockquote-reverse"
 **변수를 나타냄**
 
 <div class="code-example" markdown="1">
-<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_ty_var.html" height="100" width="700" style="border:none;" title="bt heading example"></iframe>
+<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_ty_var.html" height="150" width="700" style="border:none;" title="bt heading example"></iframe>
 </div>
 ```html
 <div class="container">
@@ -241,7 +240,7 @@ blockquote class="blockquote-reverse"
 **짧은 코드**
 
 <div class="code-example" markdown="1">
-<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_ty_code.html" height="100" width="700" style="border:none;" title="bt heading example"></iframe>
+<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_ty_code.html" height="150" width="700" style="border:none;" title="bt heading example"></iframe>
 </div>
 ```html
 <div class="container">
@@ -254,7 +253,7 @@ blockquote class="blockquote-reverse"
 ### &#60;kbd&#62;
 
 <div class="code-example" markdown="1">
-<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_ty_kbd.html" height="100" width="700" style="border:none;" title="bt heading example"></iframe>
+<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_ty_kbd.html" height="150" width="700" style="border:none;" title="bt heading example"></iframe>
 </div>
 ```html
 <div class="container">
@@ -267,7 +266,7 @@ blockquote class="blockquote-reverse"
 ### &#60;pre&#62;
 
 <div class="code-example" markdown="1">
-<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_ty_pre.html" height="200" width="700" style="border:none;" title="bt heading example"></iframe>
+<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_ty_pre.html" height="230" width="700" style="border:none;" title="bt heading example"></iframe>
 </div>
 ```html
 <div class="container">
@@ -296,7 +295,7 @@ pre class="pre-scrollable"
 </div>
 
 <div class="code-example" markdown="1">
-<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_ty_pre_sb.html" height="100" width="700" style="border:none;" title="bt heading example"></iframe>
+<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_ty_pre_sb.html" height="230" width="700" style="border:none;" title="bt heading example"></iframe>
 </div>
 ```html
 <div class="container">
@@ -314,7 +313,7 @@ pre class="pre-scrollable"
 **컴퓨터 프로그램에서 샘플 출력**
 
 <div class="code-example" markdown="1">
-<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_ty_samp.html" height="100" width="700" style="border:none;" title="bt heading example"></iframe>
+<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_ty_samp.html" height="150" width="700" style="border:none;" title="bt heading example"></iframe>
 </div>
 ```html
 <div class="container">
@@ -332,8 +331,14 @@ pre class="pre-scrollable"
 
 ### Text Align 
 
+syntax
+{: .label .mt-2}
 <div class="code-example" markdown="1">
-<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_ty_align_cl.html" height="300" width="700" style="border:none;" title="bt heading example"></iframe>
+pre class="pre-scrollable"
+</div>
+
+<div class="code-example" markdown="1">
+<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_ty_align_cl.html" height="280" width="700" style="border:none;" title="bt heading example"></iframe>
 </div>
 ```html
 <div class="container">
@@ -349,8 +354,14 @@ pre class="pre-scrollable"
 
 ### Text Transform
 
+syntax
+{: .label .mt-2}
 <div class="code-example" markdown="1">
-<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_ty_trans_cl.html" height="300" width="700" style="border:none;" title="bt heading example"></iframe>
+pre class="pre-scrollable"
+</div>
+
+<div class="code-example" markdown="1">
+<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_ty_trans_cl.html" height="150" width="700" style="border:none;" title="bt heading example"></iframe>
 </div>
 ```html
 <div class="container">
@@ -364,6 +375,12 @@ pre class="pre-scrollable"
 ### Contextual Text Colors
 
 **색상을 통한 의미를 제공하는 데 사용할 수 있는 클래스**
+
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+pre class="pre-scrollable"
+</div>
 
 <div class="code-example" markdown="1">
 <iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_ty_color_cl.html" height="300" width="700" style="border:none;" title="bt heading example"></iframe>
@@ -385,8 +402,14 @@ pre class="pre-scrollable"
 
 **색상을 통한 의미를 제공하는 데 사용할 수 있는 클래스**
 
+syntax
+{: .label .mt-2}
 <div class="code-example" markdown="1">
-<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_ty_background_cl.html" height="300" width="700" style="border:none;" title="bt heading example"></iframe>
+pre class="pre-scrollable"
+</div>
+
+<div class="code-example" markdown="1">
+<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_ty_background_cl.html" height="280" width="700" style="border:none;" title="bt heading example"></iframe>
 </div>
 ```html
 <div class="container">
@@ -402,39 +425,51 @@ pre class="pre-scrollable"
 
 ### More Typography Classes
 
-* .lead	         
+#### lead class  
 
-    **단락의 첫 문장을 강조** 
+**단락의 첫 문장을 강조** 
 
-    &#9656; 16px, 살짝 두꺼운 글꼴
+&#9656; 16px, 살짝 두꺼운 글꼴
 
-    <div class="code-example" markdown="1">
-    <iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_ty_lead_cl.html" height="100" width="700" style="border:none;" title="bt heading example"></iframe>
-    </div>
-    ```html
-    <div class="container">
-      <h2>Typography</h2>
-      <p>Use the .lead class to make a paragraph "stand out":</p>
-      <p class="lead">This paragraph stands out.</p>
-      <p>This is a regular paragraph.</p>
-    </div>
-    ```
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+pre class="pre-scrollable"
+</div>
 
-* .small	                      
+<div class="code-example" markdown="1">
+<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_ty_lead_cl.html" height="200" width="700" style="border:none;" title="bt heading example"></iframe>
+</div>
+```html
+<div class="container">
+  <h2>Typography</h2>
+  <p>Use the .lead class to make a paragraph "stand out":</p>
+  <p class="lead">This paragraph stands out.</p>
+  <p>This is a regular paragraph.</p>
+</div>
+```
 
-    **더 작은 텍스트 (상위 텍스트 크기의 85%로 설정됨)**
-    
-    <div class="code-example" markdown="1">
-    <iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_ty_small_cl.html" height="100" width="700" style="border:none;" title="bt heading example"></iframe>
-    </div>
-    ```html
-    <div class="container">
-      <h2>Typography</h2>
-      <p>Use the .small class to make the text smaller:</p>
-      <p class="small">This paragraph is smaller.</p>
-      <p>This is a regular paragraph.</p>
-    </div>
-    ```
+#### small class
+
+**더 작은 텍스트 (상위 텍스트 크기의 85%로 설정됨)**
+
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+pre class="pre-scrollable"
+</div>
+
+<div class="code-example" markdown="1">
+<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_ty_small_cl.html" height="200" width="700" style="border:none;" title="bt heading example"></iframe>
+</div>
+```html
+<div class="container">
+  <h2>Typography</h2>
+  <p>Use the .small class to make the text smaller:</p>
+  <p class="small">This paragraph is smaller.</p>
+  <p>This is a regular paragraph.</p>
+</div>
+```
 
 ---
 
