@@ -226,7 +226,7 @@ table class="table table-bordered"
 </div>
 
 <div class="code-example" markdown="1">
-<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_tb_condensed.html" height="300" width="700" style="border:none;" title="bt heading example"></iframe>
+<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_tb_condensed.html" height="280" width="700" style="border:none;" title="bt heading example"></iframe>
 </div>
 ```html
 <div class="container">
@@ -347,7 +347,7 @@ div class="table-responsive"
 </div>
 
 <div class="code-example" markdown="1">
-<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_tb_responsive.html" height="300" width="700" style="border:none;" title="bt heading example"></iframe>
+<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_tb_responsive.html" height="200" width="700" style="border:none;" title="bt heading example"></iframe>
 </div>
 ```html
 <div class="container">
