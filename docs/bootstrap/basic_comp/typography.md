@@ -52,12 +52,10 @@ nav_order: 1
 </div>
 ```
 
-<iframe src="https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_txt_hn&stacked=h" height="400" width="800" style="border:none;" title="bt heading example"></iframe>
-
-<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_ty_heading.html" height="400" width="800" style="border:none;" title="bt heading example"></iframe>
+<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_ty_heading.html" style="border:none;" title="bt heading example"></iframe>
 
 <div class="code-example" markdown="1">
-<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_ty_heading.html" height="400" width="800" style="border:none;" title="bt heading example"></iframe>
+<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_ty_heading.html" style="border:none;" title="bt heading example"></iframe>
 </div>
 
 #### <small>
