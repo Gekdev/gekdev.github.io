@@ -19,28 +19,13 @@ nav_order: 3
 
 ## Single Button  
 
-### 
+### Button Styles
+
+**a, button, input태그에 사용될 수 있음**
 
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-img class="img-rounded"
-</div>
-
-<div class="code-example" markdown="1">
-<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_img_rounded.html" height="280" width="700" style="border:none;" title="example"></iframe>
-</div>
-```html
-<div class="container">
-  <h2>Rounded Corners</h2>
-  <p>The .img-rounded class adds rounded corners to an image (not available in IE8):</p>            
-  <img src="cinqueterre" class="img-rounded" alt="Cinque Terre" width="304" height="236"> 
-</div>
-```
-
-
-### [Button](https://gekdev.github.io/docs/css/bootstrap/button.html)
-
 * class="btn" : 다양한 버튼 효과
 
 * class="btn btn-default" : 기본 버튼 모양
@@ -56,52 +41,179 @@ img class="img-rounded"
 * class="btn btn-danger" : 위험을 나타내는 버튼
 
 * class="btn btn-link" : 단순 링크로 처리하는 버튼
+</div>
 
+<div class="code-example" markdown="1">
+<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_bt_style.html" height="300" width="700" style="border:none;" title="example"></iframe>
+</div>
+```html
+<div class="container">
+  <h2>Button Styles</h2>
+  <button type="button" class="btn">Basic</button>
+  <button type="button" class="btn btn-default">Default</button>
+  <button type="button" class="btn btn-primary">Primary</button>
+  <button type="button" class="btn btn-success">Success</button>
+  <button type="button" class="btn btn-info">Info</button>
+  <button type="button" class="btn btn-warning">Warning</button>
+  <button type="button" class="btn btn-danger">Danger</button>
+  <button type="button" class="btn btn-link">Link</button>
+  <hr>
+  <h2>Button Tags</h2>
+  <a href="#" class="btn btn-info" role="button">Link Button</a>
+  <button type="button" class="btn btn-info">Button</button>
+  <input type="button" class="btn btn-info" value="Input Button">
+  <input type="submit" class="btn btn-info" value="Submit Button">      
+</div>    
+```
+
+링크에 #사용이유
+{: .label .label-yellow .mt-2}
+<div class="code-example" markdown="1">
+링크 할 페이지가없고 "404"메시지를 받고 싶지 않을 때 자주 사용
+</div>
+
+### Button Sizes
+
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
 * class="btn btn-lg" : 큰 버튼 btn-lg
 
 * class="btn btn-sm" : 작은 버튼
 
 * class="btn btn-xs" : 아주 작은 버튼
-
-* class="btn btn-block" : 화면 전체 버튼 (width:100%)
-
-* disabled : 버튼 작동 불가능
-
-    ```html
-     <button type="button" class="btn btn-default" disabled="disabled" >버튼 작동 안함 </button>
-     <input type="submit" class="btn btn-default" value="버튼 작동 안함" disabled>
-     <a href="#" class="btn btn-default" disabled="disabled" >버튼 작동 안함 </a>
-    ```
-    
-    
-    
-* 닫기 버튼 
-
-     <button type="button" class="close" aria-hidden="true">×</button>
-
-### [Button Group](https://gekdev.github.io/docs/css/bootstrap/buttongrp.html)
-
-버튼들이 가로로 배치되고 간격은 0 한 묶음
-
-버튼들을 `<div class="btn-group">`로 묶음
-
-```html
-<div class="btn-group">
-   <button type="button" class="btn btn-default">버튼 1 </button>
-   <button type="button" class="btn btn-default">버튼 2 </button>
-   <button type="button" class="btn btn-default">버튼 3 </button>
-   <button type="button" class="btn btn-default">버튼 4 </button>
 </div>
-```    
-    
+
+<div class="code-example" markdown="1">
+<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_bt_size.html" height="100" width="700" style="border:none;" title="example"></iframe>
+</div>
+```html
+<div class="container">
+  <h2>Button Sizes</h2>
+  <button type="button" class="btn btn-primary btn-lg">Large</button>
+  <button type="button" class="btn btn-primary">Normal</button>    
+  <button type="button" class="btn btn-primary btn-sm">Small</button>
+  <button type="button" class="btn btn-primary btn-xs">XSmall</button>
+</div>
+```
+
+### Block Level Buttons
+
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+class="btn btn-block" : 화면 전체 버튼 (width:100%)
+</div>
+
+<div class="code-example" markdown="1">
+<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_bt_block.html" height="300" width="700" style="border:none;" title="example"></iframe>
+</div>
+```html
+<div class="container">
+  <h2>Block Level Buttons</h2>
+  <button type="button" class="btn btn-primary btn-block">Button 1</button>
+  <button type="button" class="btn btn-default btn-block">Button 2</button>
+
+  <h2>Large Block Level Buttons</h2>
+  <button type="button" class="btn btn-primary btn-lg btn-block">Button 1</button>
+  <button type="button" class="btn btn-default btn-lg btn-block">Button 2</button>
+
+  <h2>Small Block Level Buttons</h2>
+  <button type="button" class="btn btn-primary btn-sm btn-block">Button 1</button>
+  <button type="button" class="btn btn-default btn-sm btn-block">Button 2</button>
+</div>
+```
+
+### Active/Disabled Buttons
+
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+* class="btn btn-primary active" : 활성화
+
+* class="btn btn-primary disabled" : 비활성화
+</div>
+
+<div class="code-example" markdown="1">
+<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_bt_active.html" height="300" width="700" style="border:none;" title="example"></iframe>
+</div>
+```html
+<div class="container">
+  <h2>Button States</h2>
+  <button type="button" class="btn btn-primary">Primary Button</button>
+  <button type="button" class="btn btn-primary active">Active Primary</button>
+  <button type="button" class="btn btn-primary disabled">Disabled Primary</button>
+</div>
+```
+
+---
+
+## Button Groups
+
+### Button Groups & Size
+
+**버튼들을 하나의 묶음으로 만들어주는 것**
+
+&#9656; 버튼들이 가로로 배치되고 간격은 0
+
+&#9656; 버튼들을 붙잡고 있는 부모 객체에 주어야함
+
+&#9656; .btn-group-lg|sm|xs으로 크기를 지정할 수 있음
+
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+class = "btn-group"
+
+//sizing
+
+class = "btn-group-lg|sm|xs"
+</div>
+
+<div class="code-example" markdown="1">
+<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_btg_basic.html" height="450" width="700" style="border:none;" title="example"></iframe>
+</div>
+```html
+<div class="container">
+  <h2>Button Groups - Set Sizes</h2>
+  <p>Add class .btn-group-* to size all buttons in a button group.</p>
+  <h3>Default Buttons:</h3>
+  <div class="btn-group">
+    <button type="button" class="btn btn-primary">Apple</button>
+    <button type="button" class="btn btn-primary">Samsung</button>
+    <button type="button" class="btn btn-primary">Sony</button>
+  </div>
+  <h3>Large Buttons:</h3>
+   <div class="btn-group btn-group-lg">
+    <button type="button" class="btn btn-primary">Apple</button>
+    <button type="button" class="btn btn-primary">Samsung</button>
+    <button type="button" class="btn btn-primary">Sony</button>
+  </div>
+  <h3>Small Buttons:</h3>
+  <div class="btn-group btn-group-sm">
+    <button type="button" class="btn btn-primary">Apple</button>
+    <button type="button" class="btn btn-primary">Samsung</button>
+    <button type="button" class="btn btn-primary">Sony</button>
+  </div>
+  <h3>Extra Small Buttons:</h3>
+  <div class="btn-group btn-group-xs">
+    <button type="button" class="btn btn-primary">Apple</button>
+    <button type="button" class="btn btn-primary">Samsung</button>
+    <button type="button" class="btn btn-primary">Sony</button>
+  </div>
+</div>
+```
+
+### Vertical Button Groups
+
+
+
+
+
 * class="btn-toolbar"
 
     버튼 그룹을 툴바 형식으로 변환 (좌우배치)  
     
-     
-* class="btn-group btn-group-lg" , btn-group-sm, btn-group-xs
-
-  버튼 그룹을 이용해서 버튼 크기 일괄 조절
 
 * data-toggle="dropdown"
 
@@ -111,20 +223,6 @@ img class="img-rounded"
     
     클릭 메뉴에 data-toggle="dropdown" 이 있어야 작동함
 
-    ```html
-   <div class="btn-group">
-       <button type="button" class="btn btn-default">버튼 1 </button>
-       <button type="button" class="btn btn-default">버튼 2 </button>
-        <div class="btn-group">     
-           <button type="button" data-toggle="dropdown" class="btn btn-default dropdown-toggle"> 클릭 <span class="caret"> </span>
-           </button>
-           <ul class="dropdown-menu">
-            <li><a tabindex="-1" href="#">메뉴 1</a></li>
-            <li><a tabindex="-1" href="#">메뉴 2</a></li>
-          </ul>
-        </div>
-    </div>
-    ``` 
 
 * btn-group-vertical
 
@@ -140,7 +238,7 @@ img class="img-rounded"
    
     `<div class="btn-group  btn-group-justified">`
 
-### [Button Dropdown](https://gekdev.github.io/docs/css/bootstrap/buttondropdown.html)
+### Button Dropdown
 
 * class="btn dropdown-toggle" 선택자를 btn 클래스 선택자가 적용된 부분에 같이 사용
 
