@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Plugin
-parent: Bootstrap
-nav_order: 6
-has_children: true
+title: Dropdowns
+parent: Traverse
+grand_parent: Bootstrap
+nav_order: 2
 ---
 
-# Bootstrap Plugin
+# Traverse Dropdowns
 {: .no_toc .text-beta .fw-700}
 
 ## Table of contents

@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Plugin
-parent: Bootstrap
-nav_order: 6
-has_children: true
+title: Typography
+parent: Basic Comp
+grand_parent: Bootstrap
+nav_order: 1
 ---
 
-# Bootstrap Plugin
+# Basic Typography
 {: .no_toc .text-beta .fw-700}
 
 ## Table of contents

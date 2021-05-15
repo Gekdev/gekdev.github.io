@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Plugin
-parent: Bootstrap
-nav_order: 6
-has_children: true
+title: Glyphicons
+parent: Basic Comp
+grand_parent: Bootstrap
+nav_order: 8
 ---
 
-# Bootstrap Plugin
+# Basic Glyphicons
 {: .no_toc .text-beta .fw-700}
 
 ## Table of contents

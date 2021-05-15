@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Input & Form
-parent: Bootstrap
-nav_order: 5
-has_children: true
+title: Form & Input
+parent: Basic Comp
+grand_parent: Bootstrap
+nav_order: 6
 ---
 
-# Bootstrap Input & Form
+# Basic Form & Input
 {: .no_toc .text-beta .fw-700}
 
 ## Table of contents

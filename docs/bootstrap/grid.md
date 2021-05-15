@@ -27,7 +27,7 @@ has_children: true
 
 &#9656; 그리드 클래스를 이용해 스크린 사이즈에 따라서 Responisve하게 열을 리사이징 할 수 있음
 
-![](https://gekdev.github.io/assets/images/gridsystem.png)
+![](https://gekdev.github.io/assets/images/gridsystem.PNG)
 
 ### Grid Basic Structure
 
@@ -90,7 +90,3 @@ has_children: true
 | 중첩 가능 여부	 | Yes	| Yes	| Yes	| Yes |
 | 오프셋 가능 여부	| Yes	| Yes	| Yes	| Yes |
 | Column ordering	| Yes	| Yes	| Yes	| Yes |
-
----
-
-## Grid System Examples

@@ -60,7 +60,7 @@ nav_order: 1
 
 ---
 
-## Basic Structure 
+## Basic Structure Classes
 
 ### container
 
@@ -104,7 +104,7 @@ class="row"
 
 ---
 
-## Spacing Element 
+## Spacing Element Classes
 
 ### offset 
 
@@ -158,7 +158,7 @@ class="row row-no-gutters"
 
 ---
 
-## Changing Element Order 
+## Changing Element Order Classes
 
 ### push and pull
 
@@ -224,7 +224,7 @@ class="clearfix"
 
 ---
 
-## Displaying Element
+## Displaying Element Classes
 
 ### visible and hidden
 
@@ -291,7 +291,7 @@ class="text-hide"
 
 ---
 
-## Web Accessibility 
+## Web Accessibility Classes
 
 ### sr-only
 

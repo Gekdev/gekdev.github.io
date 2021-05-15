@@ -18,15 +18,15 @@ nav_order: 1
 
 ## Bootstrap 3
 
-반응형 모바일 우선 웹 사이트를 개발하기위한 가장 인기있는 HTML, CSS 및 JavaScript 프레임워크
+반응형 모바일 우선 웹 사이트를 개발하기 위한 가장 인기있는 HTML, CSS 및 JavaScript 프레임워크
 
 ### What is Bootstrap?
 
-**Bootstrap은 빠르고 쉬운 웹 개발을위한 무료 프런트 엔드 프레임 워크**
+**Bootstrap은 빠르고 쉬운 웹 개발을위한 무료 프런트엔드 프레임 워크**
 
-&#9656; 부트 스트랩에는 타이포그래피, 양식, 버튼, 테이블, 탐색, 모달, 이미지 캐 러셀 및 기타 여러 가지를위한 HTML 및 CSS 기반 디자인 템플릿과 선택적 JavaScript 플러그인이 포함
+&#9656; 부트스트랩에는 타이포그래피, 양식, 버튼, 테이블, 탐색, 모달, 이미지 캐러셀 및 기타 여러가지를 위한 HTML 및 CSS 기반 디자인 템플릿과 선택적 JavaScript 플러그인이 포함
 
-&#9656; 부트 스트랩은 또한 반응형 디자인을 쉽게 만들 수있는 기능을 제공
+&#9656; 부트스트랩은 또한 반응형 디자인을 쉽게 만들 수 있는 기능을 제공
 
 ### Why Use Bootstrap?
 
@@ -93,3 +93,10 @@ nav_order: 1
 
 새로운 구성 요소, 더 빨라진 스타일 시트 및 더 빠른 응답 성, 모든 주요 브라우저 및 플랫폼의 안정적인 최신 릴리스를 지원을 제공하지만 Internet Explorer 9 이하는 지원하지 않음
 
+---
+
+## Representative Site
+
+### Information
+
+* [W3School](https://www.w3schools.com/bootstrap/bootstrap_ver.asp)

@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Plugin
-parent: Bootstrap
-nav_order: 6
-has_children: true
+title: Tabs & Pills
+parent: Pagination
+grand_parent: Bootstrap
+nav_order: 4
 ---
 
-# Bootstrap Plugin
+# Traverse Pagination
 {: .no_toc .text-beta .fw-700}
 
 ## Table of contents

@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Plugin
-parent: Bootstrap
-nav_order: 6
-has_children: true
+title: Wells
+parent: Basic Comp
+grand_parent: Bootstrap
+nav_order: 7
 ---
 
-# Bootstrap Plugin
+# Basic Wells
 {: .no_toc .text-beta .fw-700}
 
 ## Table of contents

@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Plugin
-parent: Bootstrap
-nav_order: 6
-has_children: true
+title: Navbar
+parent: Traverse
+grand_parent: Bootstrap
+nav_order: 3
 ---
 
-# Bootstrap Plugin
+# Traverse Navbar
 {: .no_toc .text-beta .fw-700}
 
 ## Table of contents

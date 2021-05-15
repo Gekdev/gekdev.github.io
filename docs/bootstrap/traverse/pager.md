@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Plugin
-parent: Bootstrap
-nav_order: 6
-has_children: true
+title: Pager
+parent: Traverse
+grand_parent: Bootstrap
+nav_order: 5
 ---
 
-# Bootstrap Plugin
+# Traverse Pager
 {: .no_toc .text-beta .fw-700}
 
 ## Table of contents
