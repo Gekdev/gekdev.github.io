@@ -60,25 +60,25 @@ body{
 
 **@font-face{}나 @import url()**로 구글폰트를 사용할 수 있음
 
-* @font-face{} 
+#### @font-face{} 
 
-    ```css
-    @font-face{
-      font-family:'NanumBarunGothic';
-      src:url("../fonts/NanumBarunGothic.eot");
-      src:local("☺"),url("../fonts/NanumBarunGothic.woff") format("woff");
-    }
+```css
+@font-face{
+  font-family:'NanumBarunGothic';
+  src:url("../fonts/NanumBarunGothic.eot");
+  src:local("☺"),url("../fonts/NanumBarunGothic.woff") format("woff");
+}
 
-    body { font-family: "Helvetica Neue", Helvetica, Arial,"NanumBarunGothic",  sans-serif; }
-    ```
+body { font-family: "Helvetica Neue", Helvetica, Arial,"NanumBarunGothic",  sans-serif; }
+```
 
-* @import url()
+#### @import url()
 
-    ```css
-    @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+```css
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 
-    body { font-family: "Helvetica Neue", Helvetica, Arial,'Nanum Gothic', sans-serif; }
-    ```
+body { font-family: "Helvetica Neue", Helvetica, Arial,'Nanum Gothic', sans-serif; }
+```
 
 ---
 

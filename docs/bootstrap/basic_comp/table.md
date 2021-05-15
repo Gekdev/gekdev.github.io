@@ -27,8 +27,14 @@ nav_order: 5
 
 &#9656; .table클래스는 테이블에 기본 스타일만 추가
 
+syntax
+{: .label .mt-2}
 <div class="code-example" markdown="1">
-<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_tb_table.html" height="200" width="700" style="border:none;" title="bt heading example"></iframe>
+table class="table"
+</div>
+
+<div class="code-example" markdown="1">
+<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_tb_table.html" height="300" width="700" style="border:none;" title="bt heading example"></iframe>
 </div>
 ```html
 <div class="container">
@@ -63,24 +69,111 @@ nav_order: 5
 </div>
 ```
 
-스트라이프 행
-이 .table-striped클래스는 테이블에 얼룩말 줄무늬를 추가합니다.
+### table-striped class
 
+**스트라이프 행**
+
+&#9656; 테이블에 얼룩말 줄무늬를 추가
+
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+table class="table table-striped"
+</div>
+
+<div class="code-example" markdown="1">
+<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_tb_striped.html" height="300" width="700" style="border:none;" title="bt heading example"></iframe>
+</div>
+```html
+<div class="container">
+  <h2>Striped Rows</h2>
+  <p>The .table-striped class adds zebra-stripes to a table:</p>            
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+      </tr>
+      <tr>
+        <td>Mary</td>
+        <td>Moe</td>
+        <td>mary@example.com</td>
+      </tr>
+      <tr>
+        <td>July</td>
+        <td>Dooley</td>
+        <td>july@example.com</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+```
+
+### table-bordered class
+
+**경계선이 있는 표**
+
+&#9656; 표와 셀의 모든면에 테두리를 추가
+
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+table class="table table-bordered"
+</div>
+
+<div class="code-example" markdown="1">
+<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_tb_bordered.html" height="300" width="700" style="border:none;" title="bt heading example"></iframe>
+</div>
+```html
+<div class="container">
+  <h2>Bordered Table</h2>
+  <p>The .table-bordered class adds borders to a table:</p>            
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+      </tr>
+      <tr>
+        <td>Mary</td>
+        <td>Moe</td>
+        <td>mary@example.com</td>
+      </tr>
+      <tr>
+        <td>July</td>
+        <td>Dooley</td>
+        <td>july@example.com</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+```
 예
 Firstname	Lastname	Email
 John	Doe	john@example.com
 Mary	Moe	mary@example.com
 July	Dooley	july@example.com
-경계 표
-이 .table-bordered클래스는 표와 셀의 모든면에 테두리를 추가합니다.
 
-예
-Firstname	Lastname	Email
-John	Doe	john@example.com
-Mary	Moe	mary@example.com
-July	Dooley	july@example.com
+**table-hover**
+
 호버 행
-.table-hover클래스는 테이블 행에 호버 효과 (회색 배경 색상)을 추가합니다 :
+.클래스는 테이블 행에 호버 효과 (회색 배경 색상)을 추가합니다 :
 
 예
 Firstname	Lastname	Email
