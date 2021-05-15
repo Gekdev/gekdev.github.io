@@ -38,7 +38,7 @@ syntax
 </div>
 
 <div class="code-example" markdown="1">
-<iframe src="https://gekdev.github.io/docs/bootstrap/information/example/alt_01.html" height="300" width="700" style="border:none;" title=" example"></iframe>
+<iframe src="https://gekdev.github.io/docs/bootstrap/information/example/alt_01.html" height="350" width="700" style="border:none;" title=" example"></iframe>
 </div>
 ```html
 <div class="container">
@@ -73,10 +73,9 @@ class="alert alert-success"
 
 a href="#" class="alert-link">
 </div>
-</div>
 
 <div class="code-example" markdown="1">
-<iframe src="https://gekdev.github.io/docs/bootstrap/information/example/alt_02.html" height="300" width="700" style="border:none;" title=" example"></iframe>
+<iframe src="https://gekdev.github.io/docs/bootstrap/information/example/alt_02.html" height="350" width="700" style="border:none;" title=" example"></iframe>
 </div>
 ```html
 <div class="container">
@@ -95,26 +94,87 @@ a href="#" class="alert-link">
     <strong>Danger!</strong> You should <a href="#" class="alert-link">read this message</a>.
   </div>
 </div>
-
 ```
 
-### [Alert](https://gekdev.github.io/docs/css/bootstrap/progressbar.html)
- 
+### Closing Alerts
 
-* 없애기 버튼(X)과 .alert-dismissable 을 이용한 경보 없애기
+**알람에 제거 버튼(X) 생성**
 
-    ```html
-    <div class="alert alert-danger alert-dismissable">
-         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-         <strong>경고!</strong> 입력하신 이메일이 존재하지 않습니다.
-    </div>
-    ```
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+//부모 객체에 alert alert-... 선언 후
 
-* 경보내에 링크 처리는 .alert-link 선택자를 이용
+class = "alert-dismissible"
 
-    ```html
-    <div class="alert alert-success alert-dismissable">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-        <strong>축하합니다.!</strong> 회원이 성공적으로 이뤄졌습니다.   <a href="#" class="alert-link">홈으로 돌아가기 </a>
-    </div>
-    ```
+//자식 a 객체에 아래 코드 선언
+
+a href="#" class="close" data-dismiss="alert" aria-label="close"
+</div>
+
+<div class="code-example" markdown="1">
+<iframe src="https://gekdev.github.io/docs/bootstrap/information/example/alt_close.html" height="350" width="700" style="border:none;" title=" example"></iframe>
+</div>
+```html
+<div class="container">
+  <h2>Alerts</h2>
+  <p>The a element with class="close" and data-dismiss="alert" is used to close the alert box.</p>
+  <p>The alert-dismissible class adds some extra padding to the close button.</p>
+  <div class="alert alert-success alert-dismissible">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>Success!</strong> This alert box could indicate a successful or positive action.
+  </div>
+  <div class="alert alert-info alert-dismissible">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>Info!</strong> This alert box could indicate a neutral informative change or action.
+  </div>
+  <div class="alert alert-warning alert-dismissible">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>Warning!</strong> This alert box could indicate a warning that might need attention.
+  </div>
+  <div class="alert alert-danger alert-dismissible">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>Danger!</strong> This alert box could indicate a dangerous or potentially negative action.
+  </div>
+</div>
+```
+
+#### aria- *
+
+**스크린 리더를 사용하는 사람들을 위한 웹 접근성 속성**
+
+### Animated Alerts
+
+**경고 메시지를 닫을 때 클래스는 페이딩 효과를 추가**
+
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+class="alert alert-danger fade in
+</div>
+
+<div class="code-example" markdown="1">
+<iframe src="https://gekdev.github.io/docs/bootstrap/information/example/alt_animation.html" height="350" width="700" style="border:none;" title=" example"></iframe>
+</div>
+```html
+<div class="container">
+  <h2>Animated Alerts</h2>
+  <p>The .fade and .in classes adds a fading effect when closing the alert message.</p>
+  <div class="alert alert-success alert-dismissible fade in">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>Success!</strong> This alert box could indicate a successful or positive action.
+  </div>
+  <div class="alert alert-info alert-dismissible fade in">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>Info!</strong> This alert box could indicate a neutral informative change or action.
+  </div>
+  <div class="alert alert-warning alert-dismissible fade in">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>Warning!</strong> This alert box could indicate a warning that might need attention.
+  </div>
+  <div class="alert alert-danger alert-dismissible fade in">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>Danger!</strong> This alert box could indicate a dangerous or potentially negative action.
+  </div>
+</div>
+```
