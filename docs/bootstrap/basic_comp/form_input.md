@@ -129,3 +129,87 @@ nav_order: 6
 
    `<span class="help-block">반드시 010-1234-5678 과 같은 형태로 입력해 주세요. </span>`
    
+   
+### [Input Group](https://gekdev.github.io/docs/css/bootstrap/inputgroup.html)
+
+div class="input-group"
+
+* `<input>`이 위치한 앞/뒤에 `<span class="input-group-addon"></span>` 을 추가하면 된다.
+
+    ```html
+    <div class="input-group">
+        <span class="input-group-addon"> <span class="glyphicon glyphicon-user"> </span> </span>
+        <input type="text" class="form-control" placeholder="아이디">
+    </div>
+    <div class="input-group">
+        <input type="text" class="form-control">
+        <span class="input-group-addon">  Cm  </span>
+    </div> 
+    ```
+ 
+* 입력 그룹 크기조절
+
+    class="input-group input-group-lg" , class="input-group input-group-sm"
+    
+    ```html
+    <div class="input-group input-group-lg">...</div>
+    ```
+
+* 입력 그룹 체크 박스 또는 라디오 버튼 추가
+
+    ```html
+    <span class="input-group-addon">  <input type="checkbox"> </span>
+    <span class="input-group-addon">  <input type="radio"> </span>
+     ```
+     
+* 입력 그룹 버튼 애드온 추가 
+
+    class="input-group-btn"
+    
+    ```html
+    <span class="input-group-btn"> <button class="btn btn-default" type="button">Go!</button> </span>
+    ```
+
+* 입력 그룹 버튼 드롭다운 또는 드롭업 추가
+
+    1. 드롭다운
+    
+        ```html
+        <div class="input-group">
+         <div class="input-group-btn"> 
+             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"> 버튼1  <span class="caret"></span>
+         </button>
+           <ul class="dropdown-menu" role="menu">
+            <li><a href="#">메뉴 1</a></li>
+            <li><a href="#">메뉴 2</a></li>
+            <li><a href="#">메뉴 3</a></li>
+            <li class="divider"></li>
+            <li><a href="#">다른 메뉴 </a></li>
+          </ul>
+         </div>        
+        <input type="text" class="form-control">
+        </div>
+        ```
+
+   2. 드롬업
+   
+        class="input-group-btn dropup"
+        
+        ```html
+        <div class="input-group">
+        <span class="input-group-addon"> <span class="glyphicon glyphicon-user"> </span> </span>            
+        <input type="text" class="form-control">
+          <div class="input-group-btn dropup"> 
+             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"> 버튼1  <span class="caret"></span>
+         </button>
+           <ul class="dropdown-menu" role="menu">
+            <li><a href="#">메뉴 1</a></li>
+            <li><a href="#">메뉴 2</a></li>
+            <li><a href="#">메뉴 3</a></li>
+            <li class="divider"></li>
+            <li><a href="#">다른 메뉴 </a></li>
+          </ul>
+         </div>         
+        </div>
+        ```
+   
