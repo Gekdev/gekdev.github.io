@@ -334,7 +334,15 @@ pre class="pre-scrollable"
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-pre class="pre-scrollable"
+class="text-left" : 왼쪽 정렬
+
+class="text-right" : 오른쪽 정렬
+
+class="text-center" : 가운데 정렬
+
+class="text-justify" : 양쪽 정렬
+
+class="text-nowrap" : no wrap text
 </div>
 
 <div class="code-example" markdown="1">
@@ -357,7 +365,11 @@ pre class="pre-scrollable"
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-pre class="pre-scrollable"
+class="text-lowercase"
+
+class="text-uppercase"
+
+class="text-capitalize"
 </div>
 
 <div class="code-example" markdown="1">
@@ -379,7 +391,15 @@ pre class="pre-scrollable"
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-pre class="pre-scrollable"
+class="text-primary"
+
+class="text-success"
+
+class="text-info"
+
+class="text-warning"
+
+class="text-danger"
 </div>
 
 <div class="code-example" markdown="1">
@@ -405,7 +425,15 @@ pre class="pre-scrollable"
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-pre class="pre-scrollable"
+class="bg-primary"
+
+class="bg-success"
+
+class="bg-info"
+
+class="bg-warning"
+
+class="bg-danger"
 </div>
 
 <div class="code-example" markdown="1">
@@ -434,7 +462,7 @@ pre class="pre-scrollable"
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-pre class="pre-scrollable"
+class ="lead"
 </div>
 
 <div class="code-example" markdown="1">
@@ -456,7 +484,7 @@ pre class="pre-scrollable"
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-pre class="pre-scrollable"
+class="small"
 </div>
 
 <div class="code-example" markdown="1">

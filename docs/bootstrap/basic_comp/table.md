@@ -164,32 +164,110 @@ table class="table table-bordered"
   </table>
 </div>
 ```
-예
-Firstname	Lastname	Email
-John	Doe	john@example.com
-Mary	Moe	mary@example.com
-July	Dooley	july@example.com
 
-**table-hover**
+### table-hover class
 
-호버 행
-.클래스는 테이블 행에 호버 효과 (회색 배경 색상)을 추가합니다 :
+**호버할 수 있는 행**
 
-예
-Firstname	Lastname	Email
-John	Doe	john@example.com
-Mary	Moe	mary@example.com
-July	Dooley	july@example.com
-압축 된 테이블
-이 .table-condensed클래스는 셀 패딩을 반으로 줄여 테이블을 더 간결하게 만듭니다.
+&#9656; 클래스는 테이블 행에 호버 효과 (회색 배경 색상)을 추가
 
-예
-Firstname	Lastname	Email
-John	Doe	john@example.com
-Mary	Moe	mary@example.com
-July	Dooley	july@example.com
-상황 별 클래스
-상황 별 클래스를 사용하여 테이블 행 ( <tr>) 또는 테이블 셀 ( <td>)의 색상을 지정할 수 있습니다 .
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+table class="table table-bordered"
+</div>
+
+<div class="code-example" markdown="1">
+<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_tb_bordered.html" height="300" width="700" style="border:none;" title="bt heading example"></iframe>
+</div>
+```html
+<div class="container">
+  <h2>Bordered Table</h2>
+  <p>The .table-bordered class adds borders to a table:</p>            
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+      </tr>
+      <tr>
+        <td>Mary</td>
+        <td>Moe</td>
+        <td>mary@example.com</td>
+      </tr>
+      <tr>
+        <td>July</td>
+        <td>Dooley</td>
+        <td>july@example.com</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+```
+
+### table-condensed class
+
+**압축된 테이블**
+
+&#9656; 각 행의 padding을 반으로 줄여 테이블을 더 간결하게 만듦
+
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+table class="table table-bordered"
+</div>
+
+<div class="code-example" markdown="1">
+<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_tb_bordered.html" height="300" width="700" style="border:none;" title="bt heading example"></iframe>
+</div>
+```html
+<div class="container">
+  <h2>Bordered Table</h2>
+  <p>The .table-bordered class adds borders to a table:</p>            
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+      </tr>
+      <tr>
+        <td>Mary</td>
+        <td>Moe</td>
+        <td>mary@example.com</td>
+      </tr>
+      <tr>
+        <td>July</td>
+        <td>Dooley</td>
+        <td>july@example.com</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+```
+
+### Contextual Classes
+
+**상황별 클래스**
+
+상황별 클래스로 테이블 행(<tr>) 또는 테이블 셀(<td>)의 색상을 지정
+
+
 
 예
 Firstname	Lastname	Email
@@ -230,7 +308,7 @@ Active	Activeson	act@example.com
     
 * class="table table-condensed"
 
-    각행의 padding 값이 작아짐
+    
     
 * class="active" class="success" class="warning" class="danger" 
 
