@@ -33,7 +33,9 @@ nav_order: 1
 
 ### <h1>-<h6>
 
+<div class="code-example" markdown="1">
 <iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_ty_heading.html" height="300" width="700" style="border:none;" title="bt heading example"></iframe>
+</div>
 ```html
 <div class="container">
   <h1>h1 Bootstrap heading (36px)</h1>
@@ -45,7 +47,7 @@ nav_order: 1
 </div>
 ```
 
-#### <small>
+#### &#60;small&#62;
 
 
 
