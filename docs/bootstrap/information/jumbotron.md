@@ -27,7 +27,7 @@ nav_order: 1
 
 &#9656; 모서리가 둥근 회색 상자로 표시되고 내부 텍스트의 글꼴 크기를 확대함
 
-&#9656; 점보트론 내부의 글꼴크기 21px, 내부는 30px의 패딩값 적용, 배경색상 #eee
+&#9656; 글꼴크기 21px, 내부는 30px의 패딩값 적용, 배경색상 #eee
 
 ★ jumbotron 안에는 다른 Bootstrap 요소, 클래스를 포함하여 거의 모든 유효한 HTML에 사용할 수 있음
 
@@ -55,7 +55,7 @@ class="container"
 
 ### Jumbotron Outside Container
 
-외부에 두면 넓이가 100%가 된다
+&#9656; **외부에 두면 넓이가 100%가 된다**
 
 <div class="code-example" markdown="1">
 <iframe src="https://gekdev.github.io/docs/bootstrap/information/example/jb_out.html" height="350" width="700" style="border:none;" title="bt heading example"></iframe>
@@ -83,7 +83,7 @@ class="container"
 ### Example Page Header
 
 <div class="code-example" markdown="1">
-<iframe src="https://gekdev.github.io/docs/bootstrap/information/example/jb_ph.html" height="350" width="700" style="border:none;" title="bt heading example"></iframe>
+<iframe src="https://gekdev.github.io/docs/bootstrap/information/example/jb_ph.html" height="150" width="700" style="border:none;" title="bt heading example"></iframe>
 </div>
 ```html
 <div class="container">
