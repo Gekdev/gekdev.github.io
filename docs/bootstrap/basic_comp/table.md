@@ -17,9 +17,9 @@ nav_order: 5
 
 ---
 
-## Table Classes
+## Table Class
 
-### table class
+### table 
 
 **넓이가 100%인 테이블 생성, 행 사이에 보더 적용**
 
@@ -34,7 +34,7 @@ table class="table"
 </div>
 
 <div class="code-example" markdown="1">
-<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_tb_table.html" height="300" width="700" style="border:none;" title="bt heading example"></iframe>
+<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_tb_table.html" height="280" width="700" style="border:none;" title="example"></iframe>
 </div>
 ```html
 <div class="container">
@@ -69,7 +69,7 @@ table class="table"
 </div>
 ```
 
-### table-striped class
+### table-striped 
 
 **스트라이프 행**
 
@@ -82,7 +82,7 @@ table class="table table-striped"
 </div>
 
 <div class="code-example" markdown="1">
-<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_tb_striped.html" height="300" width="700" style="border:none;" title="bt heading example"></iframe>
+<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_tb_striped.html" height="300" width="700" style="border:none;" title=" example"></iframe>
 </div>
 ```html
 <div class="container">
@@ -117,7 +117,7 @@ table class="table table-striped"
 </div>
 ```
 
-### table-bordered class
+### table-bordered 
 
 **경계선이 있는 표**
 
@@ -130,7 +130,7 @@ table class="table table-bordered"
 </div>
 
 <div class="code-example" markdown="1">
-<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_tb_bordered.html" height="300" width="700" style="border:none;" title="bt heading example"></iframe>
+<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_tb_bordered.html" height="300" width="700" style="border:none;" title=" example"></iframe>
 </div>
 ```html
 <div class="container">
@@ -165,7 +165,7 @@ table class="table table-bordered"
 </div>
 ```
 
-### table-hover class
+### table-hover 
 
 **호버할 수 있는 행**
 
@@ -178,7 +178,7 @@ table class="table table-hover"
 </div>
 
 <div class="code-example" markdown="1">
-<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_tb_hover.html" height="300" width="700" style="border:none;" title="bt heading example"></iframe>
+<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_tb_hover.html" height="300" width="700" style="border:none;" title=" example"></iframe>
 </div>
 ```html
 <div class="container">
@@ -213,7 +213,7 @@ table class="table table-hover"
 </div>
 ```
 
-### table-condensed class
+### table-condensed 
 
 **압축된 테이블**
 
@@ -226,7 +226,7 @@ table class="table table-bordered"
 </div>
 
 <div class="code-example" markdown="1">
-<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_tb_condensed.html" height="270" width="700" style="border:none;" title="bt heading example"></iframe>
+<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_tb_condensed.html" height="270" width="700" style="border:none;" title="example"></iframe>
 </div>
 ```html
 <div class="container">
@@ -261,6 +261,10 @@ table class="table table-bordered"
 </div>
 ```
 
+---
+
+## tr, td Class
+
 ### Contextual Classes
 
 **상황별 클래스**
@@ -282,7 +286,7 @@ syntax
 </div>
 
 <div class="code-example" markdown="1">
-<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_tb_contextual.html" height="450" width="700" style="border:none;" title="bt heading example"></iframe>
+<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_tb_contextual.html" height="450" width="700" style="border:none;" title=" example"></iframe>
 </div>
 ```html
 <div class="container">
@@ -333,7 +337,11 @@ syntax
 </div>
 ```
 
-### table-responsive class
+---
+
+## Responsible table 
+
+### table-responsive 
 
 **반응형 테이블**
 
@@ -348,12 +356,13 @@ div class="table-responsive"
 </div>
 
 <div class="code-example" markdown="1">
-<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_tb_responsive.html" height="230" width="700" style="border:none;" title="bt heading example"></iframe>
+<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_tb_responsive.html" height="230" width="700" style="border:none;" title=" example"></iframe>
 </div>
 ```html
 <div class="container">
   <h2>Table</h2>
-  <p>The .table-responsive class creates a responsive table which will scroll horizontally on small devices (under 768px). When viewing on anything larger than 768px wide, there is no difference:</p>                                                                                      
+  <p>The .table-responsive class creates a responsive table which will scroll horizontally on small devices (under 768px).
+  When viewing on anything larger than 768px wide, there is no difference:</p>                                                                                      
   <div class="table-responsive">          
   <table class="table">
     <thead>
