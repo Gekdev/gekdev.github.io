@@ -6,7 +6,7 @@ grand_parent: Bootstrap
 nav_order: 7
 ---
 
-# Basic Wells
+# Basic BT Wells
 {: .no_toc .text-beta .fw-700}
 
 ## Table of contents
@@ -17,22 +17,50 @@ nav_order: 7
 
 ---
 
-### [Wells](https://gekdev.github.io/docs/css/bootstrap/wells.html)
+## Wells
 
-우물과 같이 박스가 움푹 파인 효과
+### Basic Well
 
+**회색 배경 색상과 약간의 패딩 요소 주위에 둥근 테두리를 추가**
+
+&#9656; 우물과 같이 박스가 움푹 파인 효과
+
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+class="well"
+</div>
+
+<div class="code-example" markdown="1">
+<iframe src="https://gekdev.github.io/docs/bootstrap/basic_cpmp/example/bt_wells_01.html" height="350" width="700" style="border:none;" title="bt heading example"></iframe>
+</div>
 ```html
- <div class="well"> well 선택자는 안쪽으로 파인 효과를 내는 박스를 만들어 준다.</div>
- <div class="well well-lg"> 큰 박스는 well-lg를 적용하면 된다. </div>
- <div class="well well-sm"> 작은 박스는 well-sm을 적용하면 된다.</div>
+<div class="container">
+  <h2>Well</h2>
+  <div class="well">Basic Well</div>
+</div>
 ```
 
-### [Pageheader](https://gekdev.github.io/docs/css/bootstrap/pageheader.html)
+### Well Size 
 
-* 제목 부분이 본문과 선으로 분리
+기본 well 클래스는 미디엄 사이즈임
 
-    ```html
-    <div class="page-header">
-    <h1> 여기는 페이지 제목 부분입니다.</h1>
-    </div>
-    ```
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+class="well well-sm"
+
+class="well well-lg"
+</div>
+
+<div class="code-example" markdown="1">
+<iframe src="https://gekdev.github.io/docs/bootstrap/basic_cpmp/example/bt_wells_02.html" height="350" width="700" style="border:none;" title="bt heading example"></iframe>
+</div>
+```html
+<div class="container">
+  <h2>Well Size</h2>
+  <div class="well well-sm">Small Well</div>
+  <div class="well">Normal Well</div>
+  <div class="well well-lg">Large Well</div>
+</div>
+```
