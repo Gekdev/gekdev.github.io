@@ -17,6 +17,13 @@ nav_order: 4
 
 ---
 
+https://www.w3schools.com/bootstrap/bootstrap_ref_css_text.asp
+
+<ul>	Indicates an unordered list	
+<ol>
+### <dl>
+
+
 ### [List Group](https://gekdev.github.io/docs/css/bootstrap/list-group.html)
 
 웹사이트의 서브페이지의 오른쪽/왼쪽에 위치한 서브메뉴를 구성할때 사용

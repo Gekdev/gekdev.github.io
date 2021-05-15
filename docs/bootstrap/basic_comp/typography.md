@@ -64,13 +64,23 @@ nav_order: 1
 
 ### <abbr>
 
+---
+
+## Code Elements
+
+### <var>
+
 ### <blockquote>
 
+### <kbd>
+
+### <pre>
+
+#### <pre class="pre-scrollable">
+
+### <samp>
+
 ### <code>
-
-<kbd>
-
-<pre>
 
 ---
 
@@ -129,20 +139,6 @@ For a complete reference of all typography elements/classes, go to our complete 
 
         class="text-left", class="text-center", class="text-right"
   
-  5. 다양한 강조클래스
-  
-        &#9656; class="text-muted" 
-
-        &#9656; class="text-primary"
-
-        &#9656; class="text-success" 
-
-        &#9656; class="text-info"
-
-        &#9656; class="text-warning" 
-
-        &#9656; class="text-danger"
-    
   6. `<abbr>` 
 
         **물음표와 원래 텍스트 표현**
