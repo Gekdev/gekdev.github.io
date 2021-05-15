@@ -174,17 +174,17 @@ table class="table table-bordered"
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-table class="table table-bordered"
+table class="table table-hover"
 </div>
 
 <div class="code-example" markdown="1">
-<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_tb_bordered.html" height="300" width="700" style="border:none;" title="bt heading example"></iframe>
+<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_tb_hover.html" height="300" width="700" style="border:none;" title="bt heading example"></iframe>
 </div>
 ```html
 <div class="container">
-  <h2>Bordered Table</h2>
-  <p>The .table-bordered class adds borders to a table:</p>            
-  <table class="table table-bordered">
+  <h2>Hover Rows</h2>
+  <p>The .table-hover class enables a hover state on table rows:</p>            
+  <table class="table table-hover">
     <thead>
       <tr>
         <th>Firstname</th>
@@ -226,7 +226,7 @@ table class="table table-bordered"
 </div>
 
 <div class="code-example" markdown="1">
-<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_tb_bordered.html" height="300" width="700" style="border:none;" title="bt heading example"></iframe>
+<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_tb_condensed.html" height="300" width="700" style="border:none;" title="bt heading example"></iframe>
 </div>
 ```html
 <div class="container">
@@ -267,58 +267,115 @@ table class="table table-bordered"
 
 상황별 클래스로 테이블 행(<tr>) 또는 테이블 셀(<td>)의 색상을 지정
 
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+class="success" : 성공적인 작업 또는 긍정적인 작업
 
+class="danger" : 위험하거나 잠재적으로 부정적인 조치
 
-예
-Firstname	Lastname	Email
-Default	Defaultson	def@somemail.com
-Success	Doe	john@example.com
-Danger	Moe	mary@example.com
-Info	Dooley	july@example.com
-Warning	Refs	bo@example.com
-Active	Activeson	act@example.com
-사용할 수있는 컨텍스트 클래스는 다음과 같습니다.
+class="info" : 중립적인 정보 변경 또는 조치
 
-수업	기술
-.active	표 행 또는 표 셀에 호버 색상을 적용합니다.
-.success	성공하거나 긍정적 인 행동을 나타냅니다.
-.info	중립적 인 정보 변경 또는 조치를 나타냅니다.
-.warning	주의가 필요할 수있는 경고를 나타냅니다.
-.danger	위험하거나 잠재적으로 부정적인 행동을 나타냅니다.
-반응 형 테이블
-.table-responsive클래스는 반응 테이블을 작성합니다. 그러면 테이블이 소형 장치 (768px 미만)에서 가로로 스크롤됩니다. 768px보다 큰 화면에서 볼 때 차이가 없습니다.
+class="warning" : 주의가 필요할 수 있는 경고
 
-### [Table](https://gekdev.github.io/docs/css/bootstrap/table-sample.html)
+class="active" : 테이블 행 또는 테이블 셀에 호버 색상을 적용
+</div>
 
-* class="table"
-    
-    
-    
-* class="table table-striped"
+<div class="code-example" markdown="1">
+<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_tb_contextual.html" height="300" width="700" style="border:none;" title="bt heading example"></iframe>
+</div>
+```html
+<div class="container">
+  <h2>Contextual Classes</h2>
+  <p>Contextual classes can be used to color table rows or table cells. The classes that can be used are: .active, .success, .info, .warning, and .danger.</p>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Default</td>
+        <td>Defaultson</td>
+        <td>def@somemail.com</td>
+      </tr>      
+      <tr class="success">
+        <td>Success</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+      </tr>
+      <tr class="danger">
+        <td>Danger</td>
+        <td>Moe</td>
+        <td>mary@example.com</td>
+      </tr>
+      <tr class="info">
+        <td>Info</td>
+        <td>Dooley</td>
+        <td>july@example.com</td>
+      </tr>
+      <tr class="warning">
+        <td>Warning</td>
+        <td>Refs</td>
+        <td>bo@example.com</td>
+      </tr>
+      <tr class="active">
+        <td>Active</td>
+        <td>Activeson</td>
+        <td>act@example.com</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+```
 
-    각 행에 색상(배경)을 줌
-    
-* class="table table-bordered"
+### table-responsive class
 
-    테이블 전체 테두리
-    
-* class="table table-hover"
+**반응형 테이블**
 
-    각 행에 마우스 오버시 색상에 오버 기능 추가
-    
-* class="table table-condensed"
+&#9656; 테이블이 소형 장치 (768px 미만)에서 가로로 스크롤됨, (768px보다 큰 화면에서 볼 때 차이가 없음)
 
-    
-    
-* class="active" class="success" class="warning" class="danger" 
+&#9656; 테이블을 감싸는 부모 요소에 클래스를 집어넣어야 함
 
-    각 셀에 색상을 지원
-    
-* div class="table-responsive"
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+div class="table-responsive"
+</div>
 
-    테이블을 감싸게 되면, 768px 이하의 사이즈에서 자동으로 테이블에 스크롤 바가 생성
-    
-* table class="table table-hover"
-
-   호버시 색상 살짝 바뀜
-       
+<div class="code-example" markdown="1">
+<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_tb_responsive.html" height="300" width="700" style="border:none;" title="bt heading example"></iframe>
+</div>
+```html
+<div class="container">
+  <h2>Table</h2>
+  <p>The .table-responsive class creates a responsive table which will scroll horizontally on small devices (under 768px). When viewing on anything larger than 768px wide, there is no difference:</p>                                                                                      
+  <div class="table-responsive">          
+  <table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Age</th>
+        <th>City</th>
+        <th>Country</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Anna</td>
+        <td>Pitt</td>
+        <td>35</td>
+        <td>New York</td>
+        <td>USA</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+```
