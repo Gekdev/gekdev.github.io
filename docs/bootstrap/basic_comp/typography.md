@@ -33,14 +33,7 @@ nav_order: 1
 
 ### <h1>-<h6>
 
-<div class="code-example" markdown="1">
-<h1 style="font: 36px;">h1 Bootstrap heading</h1>
-<h2 style="font: 36px;">h2 Bootstrap heading</h2>
-<h3 style="font: 36px;">h3 Bootstrap heading</h3>
-<h4 style="font: 36px;">h4 Bootstrap heading</h4>
-<h5 style="font: 36px;">h5 Bootstrap heading</h5>
-<h6 style="font: 36px;">h6 Bootstrap heading</h6>
-</div>
+<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_ty_heading.html" height="300" width="700" style="border:none;" title="bt heading example"></iframe>
 ```html
 <div class="container">
   <h1>h1 Bootstrap heading (36px)</h1>
@@ -52,13 +45,9 @@ nav_order: 1
 </div>
 ```
 
-<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_ty_heading.html" height="300" width="700" style="border:none;" title="bt heading example"></iframe>
-
-<div class="code-example" markdown="1">
-<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_ty_heading.html" height="400" width="800" style="border:none;" title="bt heading example"></iframe>
-</div>
-
 #### <small>
+
+
 
 **모든 제목에 더 가벼운 보조 텍스트를 만드는 데 사용**
 
