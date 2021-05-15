@@ -26,7 +26,7 @@ nav_order: 4
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-    <iframe src="url" title="description">
+<iframe src="url" title="description">
 </div>
 
 &#9656; height및 width으로 가로 세로값을 지정할 수 있음
