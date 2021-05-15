@@ -17,6 +17,28 @@ nav_order: 3
 
 ---
 
+## Single Button  
+
+### 
+
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+img class="img-rounded"
+</div>
+
+<div class="code-example" markdown="1">
+<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_img_rounded.html" height="280" width="700" style="border:none;" title="example"></iframe>
+</div>
+```html
+<div class="container">
+  <h2>Rounded Corners</h2>
+  <p>The .img-rounded class adds rounded corners to an image (not available in IE8):</p>            
+  <img src="cinqueterre" class="img-rounded" alt="Cinque Terre" width="304" height="236"> 
+</div>
+```
+
+
 ### [Button](https://gekdev.github.io/docs/css/bootstrap/button.html)
 
 * class="btn" : 다양한 버튼 효과

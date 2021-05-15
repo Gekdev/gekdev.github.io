@@ -38,7 +38,7 @@ syntax
 </div>
 
 <div class="code-example" markdown="1">
-<iframe src="https://gekdev.github.io/docs/bootstrap/information/example/alt_01.html" height="350" width="700" style="border:none;" title=" example"></iframe>
+<iframe src="https://gekdev.github.io/docs/bootstrap/information/example/alt_01.html" height="400" width="700" style="border:none;" title=" example"></iframe>
 </div>
 ```html
 <div class="container">
@@ -75,7 +75,7 @@ a href="#" class="alert-link">
 </div>
 
 <div class="code-example" markdown="1">
-<iframe src="https://gekdev.github.io/docs/bootstrap/information/example/alt_02.html" height="350" width="700" style="border:none;" title=" example"></iframe>
+<iframe src="https://gekdev.github.io/docs/bootstrap/information/example/alt_02.html" height="400" width="700" style="border:none;" title=" example"></iframe>
 </div>
 ```html
 <div class="container">
@@ -113,7 +113,7 @@ a href="#" class="close" data-dismiss="alert" aria-label="close"
 </div>
 
 <div class="code-example" markdown="1">
-<iframe src="https://gekdev.github.io/docs/bootstrap/information/example/alt_close.html" height="350" width="700" style="border:none;" title=" example"></iframe>
+<iframe src="https://gekdev.github.io/docs/bootstrap/information/example/alt_close.html" height="400" width="700" style="border:none;" title=" example"></iframe>
 </div>
 ```html
 <div class="container">
@@ -154,7 +154,7 @@ class="alert alert-danger fade in
 </div>
 
 <div class="code-example" markdown="1">
-<iframe src="https://gekdev.github.io/docs/bootstrap/information/example/alt_animation.html" height="350" width="700" style="border:none;" title=" example"></iframe>
+<iframe src="https://gekdev.github.io/docs/bootstrap/information/example/alt_animation.html" height="400" width="700" style="border:none;" title=" example"></iframe>
 </div>
 ```html
 <div class="container">
