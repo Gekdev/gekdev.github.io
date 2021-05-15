@@ -73,6 +73,23 @@ syntax
 <div class="code-example" markdown="1">
 class="container"
 </div>
+```html
+<div class="container">
+  <h1>Hello World!</h1>
+  <div class="row">
+    <div class="col-sm-6" style="background-color:yellow;">
+      <p>Lorem ipsum...</p>
+    </div>
+    <div class="col-sm-6" style="background-color:pink;">
+      <p>Sed ut perspiciatis...</p>
+    </div>
+  </div>
+</div>
+```
+
+<span class="fs-2">
+[W3School](https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_grid_stacked_to_hor&stacked=h){: .btn .btn-outline .mt-2}
+</span>
 
 ### container-fluid
 
@@ -83,6 +100,19 @@ syntax
 <div class="code-example" markdown="1">
 class="container-fluid"
 </div>
+```js
+<div class="container-fluid">
+  <h1>Hello World!</h1>
+  <div class="row">
+    <div class="col-sm-6" style="background-color:yellow;">
+      <p>Lorem ipsum...</p>
+    </div>
+    <div class="col-sm-6" style="background-color:pink;">
+      <p>Sed ut perspiciatis...</p>
+    </div>
+  </div>
+</div>
+```
 
 <span class="fs-2">
 [W3School](https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_grid_container-fluid&stacked=h){: .btn .btn-outline .mt-2}
@@ -136,7 +166,7 @@ class="col-md-offset-?"
 
 ### row-no-gutters
 
-**행과 열에서 거터를 제거함**
+**행과 열에서 거터(좌우 패딩)를 제거함**
 
 &#9656; 그래서 사용하면 양 옆으로 마진 값이 생김
 
