@@ -17,6 +17,40 @@ nav_order: 1
 
 ---
 
+## Text/Typography
+
+### Bootstrap's Default Settings
+
+**부트스트랩 기본 CSS는 브라우저 기본값과 약간 다름**
+
+* 전역 기본 글꼴 크기는 14px이고 줄 높이는 1.428
+
+* <p>요소에는 계산 된 선 높이의 절반(기본적으로 10px)에 해당하는 아래쪽 여백이 있음
+
+### <h1>-<h6>
+
+<div class="code-example" markdown="1">
+<h1 style="font: 36px;">h1 Bootstrap heading</h1>
+<h2 style="font: 36px;">h2 Bootstrap heading</h2>
+<h3 style="font: 36px;">h3 Bootstrap heading</h3>
+<h4 style="font: 36px;">h4 Bootstrap heading</h4>
+<h5 style="font: 36px;">h5 Bootstrap heading</h5>
+<h6 style="font: 36px;">h6 Bootstrap heading</h6>
+</div>
+```html
+<div class="container">
+  <h1>h1 Bootstrap heading (36px)</h1>
+  <h2>h2 Bootstrap heading (30px)</h2>
+  <h3>h3 Bootstrap heading (24px)</h3>
+  <h4>h4 Bootstrap heading (18px)</h4>
+  <h5>h5 Bootstrap heading (14px)</h5>
+  <h6>h6 Bootstrap heading (12px)</h6>
+</div>
+```
+
+
+
+
 ### [Typography](https://gekdev.github.io/docs/css/bootstrap/typo-sample.html)
 
 * 부트스트랩의 타이포
