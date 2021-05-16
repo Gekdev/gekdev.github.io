@@ -117,7 +117,7 @@ item 클래스가 있는 곳에 div class="carousel-caption을 추가해 캡션�
 ### Carosel Basic Example
 
 <div class="code-example" markdown="1">
-<iframe src="https://gekdev.github.io/docs/bootstrap/plugin/example/plg_car_cap.html" height="300" width="700" style="border:none;" title="example"></iframe>
+<iframe src="https://gekdev.github.io/docs/bootstrap/plugin/example/plg_car_cap.html" height="600" width="700" style="border:none;" title="example"></iframe>
 </div>
 ```html
 <div class="container">
