@@ -19,17 +19,7 @@ nav_order: 5
 
 ## Scrollspy
 
-### How scrollspy works
-
-1. data-spy="scroll" : 스크롤 가능 영역으로 사용해야하는 요소에 추가 (`body data-spy="scroll"`)
-
-2. 스크롤 가능 영역에 있는(`body`) data-target(`.navbar`) 의 ID 또는 클래스값이 있는 속성(`nav`)을 추가 (navbar가 스크롤 가능 영역과 연결되어 있는지 확인하는 것)
-
-3. navbar의 목록 항목에 있는 a 링크의 href값과 스크롤 가능한 요소의 ID와 일치해야함 (`<div id="section1"> = <a href="#section1">`) 
-
-4. 선택적 data-offset속성은 스크롤 위치를 계산할 때 위에서 오프셋할 픽셀 수를 지정 (스크롤 가능한 요소로 이동할 때 탐색 모음 내부의 링크가 활성 상태를 너무 빨리 또는 너무 일찍 변경한다고 느낄 때 유용함, 기본값은 10 픽셀)
-
-5. 상대 위치 지정 필요 : data-spy = "scroll"이있는 요소가 제대로 작동하려면 값이 "relative"인 CSS 위치 속성이 필요 (`body position : relative`)
+### How Scrollspy works
 
 ```html
 <!-- [1] [2] [4](scrollable area) --> 
@@ -53,6 +43,16 @@ nav_order: 5
 
 </body>
 ```
+
+1. data-spy="scroll" : 스크롤 가능 영역으로 사용해야하는 요소에 추가 (`body data-spy="scroll"`)
+
+2. 스크롤 가능 영역에 있는(`body`) data-target(`.navbar`) 의 ID 또는 클래스값이 있는 속성(`nav`)을 추가 (navbar가 스크롤 가능 영역과 연결되어 있는지 확인하는 것)
+
+3. navbar의 목록 항목에 있는 a 링크의 href값과 스크롤 가능한 요소의 ID와 일치해야함 (`<div id="section1"> = <a href="#section1">`) 
+
+4. 선택적 data-offset속성은 스크롤 위치를 계산할 때 위에서 오프셋할 픽셀 수를 지정 (스크롤 가능한 요소로 이동할 때 탐색 모음 내부의 링크가 활성 상태를 너무 빨리 또는 너무 일찍 변경한다고 느낄 때 유용함, 기본값은 10 픽셀)
+
+5. 상대 위치 지정 필요 : data-spy = "scroll"이있는 요소가 제대로 작동하려면 값이 "relative"인 CSS 위치 속성이 필요 (`body position : relative`)
 
 ### Scrollspy Horizontal Menu
 

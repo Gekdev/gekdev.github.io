@@ -16,3 +16,13 @@ nav_order: 1
 {:toc}
 
 ---
+
+## Carousel
+
+### How Carousel works
+
+!note
+{: .label .label-yellow .mt-2}
+<div class="code-example" markdown="1">
+슬라이드 효과를 얻기 위해 CSS3 전환 및 애니메이션을 사용하기 때문에 Internet Explorer 9 및 이전 버전에서는 carousel이 제대로 지원되지 않음
+</div>
