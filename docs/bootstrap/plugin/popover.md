@@ -73,7 +73,7 @@ syntax
 </div>
 
 <div class="code-example" markdown="1">
-<iframe src="https://gekdev.github.io/docs/bootstrap/plugin/example/plg_tt_place.html" height="200" width="700" style="border:none;" title="example"></iframe>
+<iframe src="https://gekdev.github.io/docs/bootstrap/plugin/example/plg_po_place.html" height="200" width="700" style="border:none;" title="example"></iframe>
 </div>
 ```html
 <div class="container">
