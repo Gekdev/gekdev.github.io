@@ -44,7 +44,7 @@ eclipse 에서 Run On Server 가 보이지 않는 경우,
 
 해당 프로젝트 Properties -> Project Facets -> Dynamic Web Module 체크 추가 해준다.
 
-Version은 Java 버전에 맞는 J2EE 버전을 선택하면 된다.
+Version은 Java 버전에 맞는 J2EE 버전을 선택하면 된다.  
 
 
 
