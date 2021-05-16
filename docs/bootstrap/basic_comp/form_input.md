@@ -17,202 +17,38 @@ nav_order: 6
 
 ---
 
-## Form Basic
 
-### Bootstrap's Default Settings
+### [Form 형태](https://gekdev.github.io/docs/css/bootstrap/form-sample.html)
 
-부트스트랩 폼은 기본적으로 CSS를 가지고 있음
+* role="form"
 
-&#9656; input, textarea select에 form-control 클래스를 지정하면 width값은 100%가 됨
+    role값은 리더기가 읽어준다(접근성)
 
-&#9656; 부트스트랩은 기본적으로 세가지 폼 레이아웃(버티컬 폼(기본), 세로 폼, 인라인 폼)을 제공함
+* class="form-control"
 
-### Form Layouts Rules
+    넓이가 100%, 높이가 34px, 패딩 상하 6px 좌우 12px, border-radius:4px 적용
+    
+* class="form-group"
 
-폼 레이아웃의 기본 룰
+    하단에 15px의 마진이 생김
 
-&#9656; 라벨과 폼을 div class="form-group"로 감싸야 함 (최적의 간격을 위해 필요)
+* 인라인 폼
 
-&#8594; class="form-group"은 하단에 15px의 마진이 생김
-
-&#9656; input, textarea, select 요소에 class="form-control"를 추가해야 함
-
-&#8594; class="form-control"는 넓이가 100%, 높이가 34px, 패딩 상하 6px 좌우 12px, border-radius:4px 적용
-
----
-
-## Three types of Form
-
-부트스트랩은 기본적으로 세가지 폼 레이아웃(버티컬 폼(기본), 세로 폼, 인라인 폼)을 제공함
-
-### Vertical Form (default)
-
-**두 개의 입력 필드, 하나의 확인란 및 제출 버튼이있는 수직 양식**
-
-<div class="code-example" markdown="1">
-<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_form_vert.html" height="300" width="700" style="border:none;" title="example"></iframe>
-</div>
-```html
-<div class="container">
-  <h2>Vertical (basic) form</h2>
-  <form action="/action_page.php">
-    <div class="form-group">
-      <label for="email">Email:</label>
-      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
-    </div>
-    <div class="form-group">
-      <label for="pwd">Password:</label>
-      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
-    </div>
-    <div class="checkbox">
-      <label><input type="checkbox" name="remember"> Remember me</label>
-    </div>
-    <button type="submit" class="btn btn-default">Submit</button>
-  </form>
-</div>
-```
-
-### Inline Form
-
-**인라인 양식에서 모든 요소는 인라인이고 왼쪽 정렬되며 레이블은 나란히 정렬됨**
-
-&#9656; form 요소에서 form-inline 클래스를 추가해야 함
-
-★ 너비가 768px 이상인 뷰포트 내의 양식에만 적용
-
-&#9656; sr-only 클래스를 사용해서 웹 접근성 높히기, 라벨이 화면에서 안보이게 됨
-
-syntax
-{: .label .mt-2}
-<div class="code-example" markdown="1">
-form class="form-inline" 
-</div>
-
-<div class="code-example" markdown="1">
-<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_form_inline.html" height="400" width="700" style="border:none;" title="example"></iframe>
-</div>
-```html
-<div class="container">
-   <h2>Inline form</h2>
-  <p>Make the viewport larger than 768px wide to see that all of the form elements are inline, left aligned, and the labels are alongside.</p>
-  <form class="form-inline" action="/action_page.php">
-    <div class="form-group">
-      <label for="email">Email:</label>
-      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
-    </div>
-    <div class="form-group">
-      <label for="pwd">Password:</label>
-      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
-    </div>
-    <div class="checkbox">
-      <label><input type="checkbox" name="remember"> Remember me</label>
-    </div>
-    <button type="submit" class="btn btn-default">Submit</button>
-  </form>
+    브라우져 너비가 커지면 한 라인으로 구성
+    
+    `<form role="form" class="form-inline"></form>`
   
-  <hr>
-  
-  <h2>Inline form with .sr-only class</h2>
-  <p>Make the viewport larger than 768px wide to see that all of the form elements are inline, left aligned, and the labels are alongside.</p>
-  <form class="form-inline" action="/action_page.php">
-    <div class="form-group">
-      <label class="sr-only" for="email">Email:</label>
-      <input type="email" class="form-control" id="email" placeholder="Enter email"  name="email">
-    </div>
-    <div class="form-group">
-      <label class="sr-only" for="pwd">Password:</label>
-      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
-    </div>
-    <div class="checkbox">
-      <label><input type="checkbox" name="remember"> Remember me</label>
-    </div>
-    <button type="submit" class="btn btn-default">Submit</button>
-  </form>
-</div>
-```
+* class="sr-only" 
 
-### Horizontal Form
+    라벨을 화면에서 안보이게 할때 적용
+    
+    `<label for="Name" class="sr-only">이름</label>`
 
-**대형 및 중간 화면에서 레이블이 입력 필드 (가로) 옆에 정렬됨**
-
-&#9656; 작은 화면 (767px 이하)에서는 수직 형식으로 변환
-
-&#9656; Tip: Use Bootstrap's predefined grid classes to align labels and groups of form controls in a horizontal layout
-
-syntax
-{: .label .mt-2}
-<div class="code-example" markdown="1">
-form class="form-horizontal" 
-
-// 모든 label에 추가
-
-label class ="control-label"
-</div>
-
-<div class="code-example" markdown="1">
-<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_form_hor.html" height="300" width="700" style="border:none;" title="example"></iframe>
-</div>
-```html
-<div class="container">
-  <h2>Horizontal form</h2>
-  <form class="form-horizontal" action="/action_page.php">
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="email">Email:</label>
-      <div class="col-sm-10">
-        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="pwd">Password:</label>
-      <div class="col-sm-10">          
-        <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
-      </div>
-    </div>
-    <div class="form-group">        
-      <div class="col-sm-offset-2 col-sm-10">
-        <div class="checkbox">
-          <label><input type="checkbox" name="remember"> Remember me</label>
-        </div>
-      </div>
-    </div>
-    <div class="form-group">        
-      <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-default">Submit</button>
-      </div>
-    </div>
-  </form>
-</div>
-```
-
----
-
-## Form Inputs
-
-### Supported Form Controls
-
-### Bootstrap Input
-
-### Textarea
-
-### Checkboxes
-
-### Radio Buttons
-
-### Select List
-
-### Static Control
-
-### Input Groups
-
-### Form Control States
-
----
-
-## Bootstrap Input Sizing
-### Input Sizing in Forms
-### Height Sizing
-### Column Sizing
-### Help Text
+* class="form-horizontal" 
+    
+    라벨 오른쪽에 폼요소들을 배치
+ 
+### [Form 형식](https://gekdev.github.io/docs/css/bootstrap/form-sample-2.html)
 
 
 * textarea는 rows 값만 적용
