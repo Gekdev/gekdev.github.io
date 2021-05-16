@@ -84,3 +84,9 @@ nav_order: 5
 
 </body>
 ```
+
+---
+
+## Complete Bootstrap Scrollspy Reference
+
+For a complete reference of all scrollspy methods and events, go to our [Bootstrap JS Scrollspy Reference](https://www.w3schools.com/bootstrap/bootstrap_ref_js_scrollspy.asp)

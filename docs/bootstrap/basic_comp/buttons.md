@@ -160,6 +160,8 @@ syntax
 
 &#9656; .btn-group-lg|sm|xs으로 크기를 지정할 수 있음
 
+★ 전체 너비를 확장하는 justified는 아래와 같은 방법으로 사용할 수 없음
+
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
@@ -206,6 +208,137 @@ class = "btn-group-lg|sm|xs"
 
 ### Vertical Button Groups
 
+세로 버튼 그룹**
+
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+class="btn btn-primary"
+</div>
+
+<div class="code-example" markdown="1">
+<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_btg_vert.html" height="200" width="700" style="border:none;" title="example"></iframe>
+</div>
+```html
+<div class="container">
+  <h2>Vertical Button Group</h2>
+  <p>Use the .btn-group-vertical class to create a vertical button group:</p>
+  <div class="btn-group-vertical">
+    <button type="button" class="btn btn-primary">Apple</button>
+    <button type="button" class="btn btn-primary">Samsung</button>
+    <button type="button" class="btn btn-primary">Sony</button>
+  </div>
+</div>
+```
+
+### Justified Button Groups
+
+**화면의 전체 너비를 확장**
+
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+1. 자식이 a링크 일경우
+
+    //부모객체 
+    
+    class="btn-group btn-group-justified"
+
+    //자식 객체
+    
+    a href="#" class="btn btn-primary"
+
+..
+
+2. 자식이 button일경우
+
+    //자식 객체(button)각각 하나씩 div로 묶어줘야 한다 
+    
+    div class="btn-group"
+</div>
+
+<div class="code-example" markdown="1">
+<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_btg_justi.html" height="300" width="700" style="border:none;" title="example"></iframe>
+</div>
+```html
+<div class="container">
+    <h2>Justified Button Groups</h2>
+    <p>To span the entire width of the screen, use the .btn-group-justified class:</p>
+    <div class="btn-group btn-group-justified">
+      <a href="#" class="btn btn-primary">Apple</a>
+      <a href="#" class="btn btn-primary">Samsung</a>
+      <a href="#" class="btn btn-primary">Sony</a>
+    </div>
+   
+    <h2>Justified Button Groups</h2>
+    <div class="btn-group btn-group-justified">
+    <div class="btn-group">
+      <button type="button" class="btn btn-primary">Apple</button>
+    </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-primary">Samsung</button>
+    </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-primary">Sony</button>
+    </div>
+  </div>
+</div>
+```
+
+### Nesting Button Groups & Dropdown Menus
+
+**드롭다운 메뉴를 만들기 위한 중첩 버튼 그룹**
+
+&#9656; 일반 버튼과 드롭다운 버튼을 한꺼번에 사용 가능
+
+&#9656; class="caret"은 역삼각형 생성 클래스, (버튼태그 안에 사용해야함)
+
+&#8594; 없다고 에러는 안나지만 사용자 편의를 위해 꼭 넣어야함
+
+<div class="code-example" markdown="1">
+<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_btg_nesting.html" height="100" width="700" style="border:none;" title="example"></iframe>
+</div>
+```html
+<div class="container">
+  <h2>Nesting Button Groups</h2>
+  <p>Nest button groups to create drop down menus:</p>
+  <div class="btn-group">
+    <button type="button" class="btn btn-primary">Apple</button>
+    <button type="button" class="btn btn-primary">Samsung</button>
+    <div class="btn-group">
+      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+      Sony <span class="caret"></span></button>
+      <ul class="dropdown-menu" role="menu">
+        <li><a href="#">Tablet</a></li>
+        <li><a href="#">Smartphone</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+```
+
+### Split Button Dropdowns
+
+**방향키가 분할된 드롭 다운 메뉴**
+
+<div class="code-example" markdown="1">
+<iframe src="https://gekdev.github.io/docs/bootstrap/basic_comp/example/bt_btg_split.html" height="100" width="700" style="border:none;" title="example"></iframe>
+</div>
+```html
+<div class="container">
+  <h2>Split Buttons</h2>
+  <div class="btn-group">
+    <button type="button" class="btn btn-primary">Sony</button>
+    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" role="menu">
+      <li><a href="#">Tablet</a></li>
+      <li><a href="#">Smartphone</a></li>
+    </ul>
+  </div>
+</div>
+```
 
 
 
@@ -244,15 +377,6 @@ class = "btn-group-lg|sm|xs"
 
     둥근모서리 사각형이 적용되지 않음
 
-* `<span class="caret"></span>`
-  
-  역삼각형 영역이 만들어짐
-    
-   ```html
-   <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-     버튼1<span class="caret"></span>
-   </button>
-   ```
   
 * 일반적인 버튼 드롭다운
 
@@ -266,7 +390,7 @@ class = "btn-group-lg|sm|xs"
         <li><a href="#">메뉴 2</a></li>
         <li><a href="#">메뉴 3</a></li>
       </ul>
-    </div> 
+    </div>  
     ```
  
 * 분할된 버튼 드롭 다운
