@@ -18,7 +18,17 @@ nav_order: 1
 
 ## Eclipse
 
+### Template Modify
+
+![](https://gekdev.github.io/docs/etc/images/eclipse_html_set.jpg)
+
+위와 같이 html 템플릿을 수정할 수 있음
+
+---
+
 ## Eclipse Shortcut
+
+---
 
 ## Eclipse Common Issues
 
