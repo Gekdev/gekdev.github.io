@@ -391,15 +391,15 @@ class="text-capitalize"
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-class="text-primary"
+* class="text-primary"
 
-class="text-success"
+* class="text-success"
 
-class="text-info"
+* class="text-info"
 
-class="text-warning"
+* class="text-warning"
 
-class="text-danger"
+* class="text-danger"
 </div>
 
 <div class="code-example" markdown="1">
@@ -425,15 +425,15 @@ class="text-danger"
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-class="bg-primary"
+* class="bg-primary"
 
-class="bg-success"
+* class="bg-success"
 
-class="bg-info"
+* class="bg-info"
 
-class="bg-warning"
+* class="bg-warning"
 
-class="bg-danger"
+* class="bg-danger"
 </div>
 
 <div class="code-example" markdown="1">
