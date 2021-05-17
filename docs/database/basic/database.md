@@ -93,6 +93,7 @@ syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
 NOT NULL
+</div>
 ```sql
 ex) CREATE TABLE emp(
     ename VARCHAR2(20) NOT NULL,
