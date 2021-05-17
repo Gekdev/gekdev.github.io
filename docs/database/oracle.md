@@ -27,6 +27,8 @@ has_children: true
 
 ### Navicat Install
 
+0. window defender off
+
 1. Navicat Premium 15.zip 압축풀기
 
 2. navicat150_premium_en_x64.exe 실행후 설치
@@ -41,15 +43,17 @@ has_children: true
 
 6. RegPrivateKey.pem에서 Activation Code 다시 Navicat에 붙여넣기
 
-7. 모두 마친 후 Navicat 재시작 
+7. 모두 마친 후 Navicat 재시작
+
+<span class="fs-2">
+[자세히 확인하기](/navicatpatch순서.txt){: .btn .btn-outline .mt-2}
+</span>
 
 ### Oracle DB Connecting 
 
 **제대로 설치 되었는지 commanline으로 연결 확인**
 
 1. Window Menu > Run SQL Command Line 실행
-
-2. Command Line
 
     ```sql
     -- 1. DB 접속
@@ -67,27 +71,7 @@ has_children: true
     SQL> exit
     ```
     
-3. Navicat 실행
-
-    a. File > New Connection > Oracle
-    
-    b. New Connection
-         ... Connection Name : sys
-         ... Host            : localhost
-         ... Service Name    : XE
-         ... User Name       : sys
-         ... password        : 12345
-      c. (tab) Advanced
-         ... Role            : SYSDBA
-      d. (button) Test Connection
-         ... Connection Successful
-      e. (button)OK
-      f. (menu) Tools > Options > Enviroment 
-         ... OCI Environment 
-         ... c:Progrman Files/premium soft/..../instanceclient_10_?/oci.dll 
-         ... (button) 열기
-      g. 좌측 Tree Menu : sys를 더블클릭
-         ... 접속확인
+2. [Navicat 실행]()
          
 &#8594; 여기까지 실행 잘 되면 제대로 설치된것!
 
@@ -95,7 +79,7 @@ has_children: true
 
 ## Oracle DB Environment Setting
 
-### Search Oracle DB Current Environment
+### Search Current Oracle DB Environment
 
 1. Run SQL Command Line 실행
 
@@ -116,7 +100,7 @@ has_children: true
          -- scott 사용자는 없음
     ```
     
-    &#8594; hr사용자는 lock해제해야 하고 scott사용자는 새로 생성해야함
+    &#8594; [hr사용자는 lock해제해야 하고 scott사용자는 새로 생성해야함]()
     
 2. Navicat 실행
 
@@ -124,41 +108,61 @@ has_children: true
     
     (위 SQL Command Line에서도 볼 수 있지만, 테이블 형식은 보기 힘들어서 navicat에서 실행 후 확인)
     
+    &#8594; [NLS_DATE_FORMAT, NLS_TIMESTAMP_FORMAT을 변경할 예정]()
+    
     ![](https://gekdev.github.io/docs/database/oracle/example/search_table.JPG)
     
 
 ### Change Oracle DB Environment Setting
 
-b. 날짜형식 변경하기
+#### Change Date Format
 
+ **영구적으로 변경해야 하니 system 변경 명령어로 사용해야 함**
+
+![](https://gekdev.github.io/docs/database/oracle/example/change_format.JPG)
+
+ syntax
+ {: .label .mt-2}
+ <div class="code-example" markdown="1">
+ 명령문 : alter [session/system] ...
+
+ * session : **현재 접속한 session에서만 변경**되고 접속을 끊은 후 다시 접속하면 **변경전 환경으로 복귀됨**
+
+ * system  : **database의 정보를 영구적으로 변경**
+
+     옵션 : **scope=[both/spfile]**
+
+     &#9656; both : 바로 적용 or 재시작(오류가 날 가능성이 많음)
+
+     &#9656; spfile : db를 종료후 재시작
+ </div>
+ ```sql
+ -- Session changing
  SQL> alter session set nls_date_format = 'YYYY-MM-DD';
-      ... NLS_DATE_FORMAT=DD-MON-RR 을 YYYY-MM-DD'로 변경
+      -- ... NLS_DATE_FORMAT=DD-MON-RR 을 YYYY-MM-DD'로 변경
  SQL> alter session set NLS_TIMESTAMP_FORMAT = 'YYYY-MM-DD HH:MI:SS';
 
-c. 변경정보를 영구적으로 변경
+ -- System changing
+ SQL> alter system set nls_date_format = 'YYYY-MM-DD' scope=spfile;
+ SQL> alter system set NLS_TIMESTAMP_FORMAT = 'YYYY-MM-DD HH:MI:SS' scope=spfile;
+ SQL> exit
+ ```
 
- 명령) alter [session/system]
- a) session : 현재 접속한 session에서만 변경되고 접속을 끊은후 다시 접속하면 
-              변경전 환경으로 복귀된다.
- b) system  : database의 정보를 영구적으로 변경
-    ... 옵션 scope=[both/spfile]
-        --> both : 바로 적용 or 재시작(오류가 날 가능성이 많다.)
-        --> spfile : db를 종료후 재시작
+![](https://gekdev.github.io/docs/database/oracle/example/reformed.JPG)
 
- c) 변경하기
+&#8594; 변경 후 모습
 
-SQL> alter system set nls_date_format = 'YYYY-MM-DD' scope=spfile;
-SQL> alter system set NLS_TIMESTAMP_FORMAT = 'YYYY-MM-DD HH:MI:SS' scope=spfile;
-SQL> exit
+#### Restart Database
 
-d. DB재시작 : 
+**데이터 포멧을 변경한 후에는 꼭 데이터베이스를 재시작 해줘야 함**
 
-Window Mene > Oracle XE.....
-a) stop database
-b) start database
+&#9656; Stop database(app) 실행 후 Start database(app) 실행
 
+---
 
-### 연결하고자 하는 데이터 베이스 Connection
+## Oracle DB Creating & Connecting
+
+### New Database Connection
 
 connection Name = 서버 이름
 
@@ -170,7 +174,7 @@ connection Name = 서버 이름
 
     ![](https://gekdev.github.io/docs/database/oracle/example/connection_icon.jpg)
 
-### 오라클 데이터베이스에 new Connection
+### New Connection Setting
 
 ![](https://gekdev.github.io/docs/database/oracle/example/newcon_oracle.JPG)
 
@@ -192,26 +196,29 @@ connection Name = 서버 이름
 
 ![](https://gekdev.github.io/docs/database/oracle/example/dllfile.JPG)
 
-Tools > Options > Enviroment > OCI Environment > OCI Library
+&#9656; Tools > Options > Enviroment > OCI Environment > OCI Library
 
-c:Progrman Files/premium soft/..../instanceclient_10_?/oci.dll 
+&#9656; 경로를 c:Progrman Files/premium soft/..../instanceclient_10_?/oci.dll 
 
 ### Custom Database
 
 ![](https://gekdev.github.io/docs/database/oracle/example/custom_dbase.JPG)
 
-원하는 데이터 베이스를 체크해서 보고싶은 데이터베이스만 볼 수 있음
+&#9656; 원하는 데이터 베이스를 체크해서 보고싶은 데이터베이스만 볼 수 있음
 
 ### Connection된 Database
 
 ![](https://gekdev.github.io/docs/database/oracle/example/connected.JPG)
 
-connection되면 빨갛게 불이 들어옴
+&#9656; connection되면 빨갛게 불이 들어옴
 
 ![](https://gekdev.github.io/docs/database/oracle/example/connection_close.jpg)
 
+&#9656; 마우스 오른쪽 눌러서 connection 종료
 
-### Open External File
+---
+
+## Open External File
 
 다른 sql 파일들을 가져올 수 있음
 
@@ -226,24 +233,13 @@ connection되면 빨갛게 불이 들어옴
 ![](https://gekdev.github.io/docs/database/oracle/example/drag.JPG)
 
 
+---
+
 ## Connection Create
 
-### SYS
+### [SYS]()
 
-SYS 테이블 중 dba_users가 있음
-
-
-![](https://gekdev.github.io/docs/database/oracle/example/change_format.JPG)
-
-SQL Command Line에서 
-
-`conn sys/12345 as sysdba`로 SYS와 connection 후
-
-nls_date_format테이블의 형식을 바꿈
-
-![](https://gekdev.github.io/docs/database/oracle/example/reformed.JPG)
-
-바꾼 후 모습 
+가장 큰 관리자 권한 (위에서 했음!)
 
 ### HR 
 
@@ -257,7 +253,7 @@ nls_date_format테이블의 형식을 바꿈
 
 ![](https://gekdev.github.io/docs/database/oracle/example/custom_onlyhr.JPG)
 
-hr 데이터베이스만 보게 하기
+&#9656; hr 데이터베이스만 보게 하기
 
 ![](https://gekdev.github.io/docs/database/oracle/example/locked.JPG)
 
@@ -281,12 +277,8 @@ hr 데이터베이스만 보게 하기
 
 ---
 
+## Navicat Settings 
+
 ### Setting Fonts
 
 ![](https://gekdev.github.io/docs/database/oracle/example/setting_font.JPG)
-
-----
-
-## Example
-
-
