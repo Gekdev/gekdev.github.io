@@ -30,15 +30,15 @@ nav_order: 1
 사용 명령어
 {: .label .label-red .mt-2}
 <div class="code-example" markdown="1">
-- CREATE : 새로운 테이블을 생성함
+- CREATE : DB객체(user, table, view, index, ...)를 생성
 
-- ALTER : 기존의 테이블을 변경함 (컬럼을 추가하거나 변경)
+- ALTER : 기존의 테이블(DB객체)을 변경함 (컬럼을 추가하거나 변경)
 
-- RENAME : 테이블의 이름을 변경함
+- RENAME : 테이블(DB객체)의 이름을 변경함
 
-- TRUNCATE : 테이블을 잘라냄(테이블 내의 저장된 내용 삭제)
+- TRUNCATE : 테이블(DB객체)을 잘라냄 (테이블 내의 저장된 내용 삭제)
 
-- DROP : 기존의 테이블을 삭제함 (테이블의 구조 자체를 제거)
+- DROP : 기존의 테이블(DB객체)을 삭제함 (테이블의 구조 자체를 제거)
 </div>
 
 ---
@@ -64,9 +64,9 @@ nav_order: 1
 SYNTAX
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-SELECT 컬럼명 FROM 테이블명 [WHERE ...]
+SELECT [distinct] 컬럼명 FROM 테이블명 [WHERE ...]
 
-&#9656; 컬럼명 : *(전체선택), 따로 컬럼명으로 그 열만 가져올 수 있음
+* 컬럼명 *(전체선택), 따로 컬럼명으로 그 열만 가져올 수 있음
 
 &#9656; [] 안에 있는 절은 생략이 가능
 </div>
