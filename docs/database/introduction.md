@@ -55,9 +55,13 @@ has_children: true
 
 ![](https://gekdev.github.io/docs/database/basic/example/db_basic_structure.png)
 
-### Classification of data (Bigdata)
+---
 
-#### Structured Data
+## Classification of data (Bigdata)
+
+정형 데이터와 비정형 데이터는 서로 배척관계가 아님
+
+### Structured Data
 
 **정형 데이터**
 
@@ -65,7 +69,7 @@ has_children: true
 
 ex) 엑셀의 스프레드시트, 관계 데이터베이스의 테이블
 
-#### Semi-structured Data
+### Semi-structured Data
 
 **반정형 데이터**
 
@@ -77,7 +81,7 @@ ex) 엑셀의 스프레드시트, 관계 데이터베이스의 테이블
 
 ex) HTML, XML, JSON 문서, 웹 로그, 센서 데이터
 
-#### Unstructured Data
+### Unstructured Data
 
 **비정형 데이터**
 
@@ -89,9 +93,7 @@ ex) 소셜 데이터의 텍스트, 영상, 이미지, 워드, PDF 문서 등의 
 
 ---
 
-## Representative Site 
-
-### Information
+## Reference site
 
 * [데이터베이스 기초 - (1)기초개념익히기](https://www.bsidesoft.com/4754)
 
