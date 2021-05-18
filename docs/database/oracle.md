@@ -282,3 +282,13 @@ connection Name = 서버 이름
 ### Setting Fonts
 
 ![](https://gekdev.github.io/docs/database/oracle/example/setting_font.JPG)
+
+---
+
+## Reference Site
+
+### Information
+
+* [Practical Oracle SQL](https://www.apress.com/kr/book/9781484256169)
+
+    &#9656; [github](https://github.com/Apress/practical-oracle-sql)

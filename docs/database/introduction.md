@@ -3,7 +3,6 @@ layout: default
 title: Introduction
 parent: Database
 nav_order: 1
-has_children: true
 ---
 
 # Database Introduction
