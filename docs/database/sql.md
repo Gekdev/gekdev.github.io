@@ -1,7 +1,7 @@
 ---
 layout: default
 title: SQL
-parent: Basic
+parent: Database
 nav_order: 3
 has_children: true
 ---
