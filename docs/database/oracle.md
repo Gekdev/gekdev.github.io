@@ -57,7 +57,7 @@ has_children: true
 
 1. Window Menu > Run SQL Command Line 실행
 
-    **제대로 설치 되었는지 SQL Command Line으로 연결 확인**
+    **제대로 설치 되었는지 SQL Command Line으로 연결 확인하는 것**
     
     ```sql
     -- 1. DB 접속
@@ -82,13 +82,11 @@ has_children: true
 
 ---
 
-## Navicat Oracle Creating & Connecting
+## Navicat Oracle Connecting
 
 ### New Database Connection
 
-연결하는데에는 두가지 방법이 있음
-
-&#9656; Connection Name = 서버 이름
+연결하는데에는 아래처럼 두가지 방법이 있음
 
 1. **File &#8594; New Connection**
 
@@ -102,13 +100,13 @@ has_children: true
 
 1. General
 
-    &#9656; **Connection Name : sys**
+    &#9656; **Connection Name : sys** (서버이름, 아래 예제는 잘못 생성)
 
     &#9656; **Hose : localhost**
 
-    &#9656; **Service Name** : XE로 해야지 오류가 나지않음
+    &#9656; **Service Name : XE** (그래야 오류가 나지않음)
 
-    &#9656; **User Name : sys** => 최고 관리자
+    &#9656; **User Name : sys** (최고 관리자)
 
     &#9656; **Password : 12345**
 
@@ -118,7 +116,7 @@ has_children: true
 
     1. **Role : SYSDBA**
 
-    2. **왼쪽 아래 text connections 버튼 확인 후 Connection Successful 확인**
+    2. **왼쪽 아래 text connections > Connection Successful 확인**
 
     3. **OK**
 
@@ -127,28 +125,30 @@ has_children: true
 3. Databases
 
     &#9656; 원하는 데이터 베이스를 체크해서 **보고싶은 데이터베이스만 볼 수 있음**
+    
+    &#9656; HR, SYS 데이터베이스 선택
 
     ![](https://gekdev.github.io/docs/database/oracle/example/custom_dbase.JPG)
 
 ### OCI Environment
 
-&#9656; **Tools > Options > Enviroment > OCI Environment > OCI Library**
+**Tools > Options > Enviroment > OCI Environment > OCI Library**
 
 &#9656; 파일을 c:Progrman Files/premium soft/..../instanceclient_10_?/oci.dll 로 변경
 
 ![](https://gekdev.github.io/docs/database/oracle/example/dllfile.JPG)
 
-### Connection된 Database
+### Connected Database
 
-* Connection
+* Check Connection
 
-    &#9656; **connection되면 빨갛게 불이 들어옴**
+    **connection되면 빨갛게 불이 들어옴**
 
     ![](https://gekdev.github.io/docs/database/oracle/example/connected.JPG)
 
 * Delete Connection
 
-    &#9656; **마우스 오른쪽 눌러서 connection 종료**
+    **마우스 오른쪽 눌러서 connection 종료**
 
     ![](https://gekdev.github.io/docs/database/oracle/example/connection_close.jpg)
 
