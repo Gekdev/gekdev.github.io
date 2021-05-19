@@ -158,9 +158,11 @@ has_children: true
 
 ### Search Current Oracle DB Environment
 
-1. Run SQL Command Line 실행
+* HR, SCOTT사용자 확인하기
 
-    &#8594; **hr사용자는 lock해제해야 하고 scott사용자는 새로 생성할 예정**
+    1. Run SQL Command Line 실행
+    
+    2. 아래 명령어 확인하면서 실행
     
     ```sql
     -- 1. DB 접속
@@ -179,11 +181,15 @@ has_children: true
         -- scott 사용자는 없음
     ```
     
-2. Navicat 실행
-
-    SYS table에서 `SQL > select * from v$nls_parameters;` 검색
+    &#8594; **hr사용자는 lock해제해야 하고 scott사용자는 새로 생성할 예정**
     
-    (위 SQL Command Line에서도 볼 수 있지만, 테이블 형식은 보기 힘들어서 navicat에서 실행 후 확인)
+* SYS 테이블 확인하기
+
+    1. Navicat 실행
+
+    2. SYS table에서 `SQL > select * from v$nls_parameters;` 검색
+    
+        (위 SQL Command Line에서도 볼 수 있지만, 테이블 형식은 보기 힘들어서 navicat에서 실행 후 확인)
     
     &#8594; **NLS_DATE_FORMAT, NLS_TIMESTAMP_FORMAT을 변경할 예정**
     
