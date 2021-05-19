@@ -77,7 +77,7 @@ SQL> conn hr/hr
 -- 4. 종료
 SQL> exit
 ```
-    
+
 ---
 
 ## Navicat Oracle DB Connection Checking
@@ -136,6 +136,10 @@ SQL> exit
 
 ![](https://gekdev.github.io/docs/database/oracle/example/dllfile.JPG)
 
+### Setting Fonts
+
+![](https://gekdev.github.io/docs/database/oracle/example/setting_font.JPG)
+
 ### Connected Database
 
 * Check Connection
@@ -152,36 +156,9 @@ SQL> exit
 
 ---
 
-## Search Current Oracle DB Environment
+## Check and Change Oracle DB Environment
 
-### Window Menu > Run SQL Command Line
-
-**HR, SCOTT사용자 확인하기**
-
-1. Run SQL Command Line 실행
-
-2. 아래 명령어 확인하면서 실행
-
-```sql
--- 1. DB 접속
-SQL> conn sys/12345 as sysdba
-    -- Connected 확인 : 접속성공
-
--- 2. 현재 사용자 확인 
-SQL> show user 
-    -- USER is "SYS"
-
--- 3. 다른 사용자접속
-SQL> conn hr/hr
-    -- hr 사용자는 기본적으로 lock 되어있음
-
-SQL> conn scott
-    -- scott 사용자는 없음
-```
-
-&#8594; **hr사용자는 lock해제해야 하고 scott사용자는 새로 생성할 예정**
-
-### SYS 테이블 확인하기
+### Checking Environment Variables
 
 1. Navicat 실행
 
@@ -193,64 +170,7 @@ SQL> conn scott
 
 ![](https://gekdev.github.io/docs/database/oracle/example/newver.jpg)
 
----
-
-## Change Oracle DB Environment Setting
-
-### Create HR Connection 
-
-1. General
-
-    &#9656; **Connection Name : hr** 
-
-    &#9656; **Host : localhost**
-
-    &#9656; **Service Name : XE** 
-
-    &#9656; **User Name : hr** 
-
-    &#9656; **Password : 12345**
-
-    ![](https://gekdev.github.io/docs/database/oracle/example/hr.JPG)
-
-2. Advanced
-
-    1. **Role : SYSDBA**
-
-    2. **왼쪽 아래 text connections > Connection Successful 확인**
-
-    3. **OK**
-
-    ![](https://gekdev.github.io/docs/database/oracle/example/newcon_oracle2.JPG)
-
-3. Databases
-
-    &#9656; HR 데이터베이스만 보기
-    
-    ![](https://gekdev.github.io/docs/database/oracle/example/custom_onlyhr.JPG)
-
-
-**접속하려면 기본값으로 hr은 잠겨있음**
-
-![](https://gekdev.github.io/docs/database/oracle/example/locked.JPG)
-
-&#8594; SYS에서 관리자 권한으로 풀어줘야 함
-
-### Create HR SCOTT
-
-1. SYS 권한으로 SCOTT 생성
-
-    `create user scott identified by tiger`
-
-    identified = 비밀번호
-    
-2. SCOTT에 권한 부여하기
-
-3. 작업장소 지정하기
-
-![](https://gekdev.github.io/docs/database/oracle/example/scott.JPG)
-
-### Change Date Format
+### Changing Date Format
 
 change the table row value form
 {: .label .mt-2}
@@ -283,10 +203,6 @@ SQL> exit
 
 ![](https://gekdev.github.io/docs/database/oracle/example/change_format.JPG)
 
-### Setting Fonts
-
-![](https://gekdev.github.io/docs/database/oracle/example/setting_font.JPG)
-
 ### Restart Database
 
 **데이터 포멧을 변경한 후에는 꼭 데이터베이스를 재시작 해줘야 함**
@@ -299,16 +215,253 @@ SQL> exit
 
 ![](https://gekdev.github.io/docs/database/oracle/example/search_table.JPG)
 
+---
+
+## Check and Change HR 
+
+### Checking Users By SQL Command Line
+
+**HR, SCOTT사용자 확인하기**
+
+1. Window Menu > Run SQL Command Line 실행
+
+2. 아래 명령어 확인하면서 실행
+
+    &#8594; 오라클 명령어이기 때문에 navicat 에서는 사용불가
+
+    dn connection명령 : conn 사용자/비밀번호 as 사용자권한
+
+    ```sql
+    -- 1. DB 접속
+    SQL> conn sys/12345 as sysdba
+        -- Connected 확인 : 접속성공
+
+    -- 2. 현재 사용자 확인 
+    SQL> show user 
+        -- USER is "SYS"
+
+    -- 3. 다른 사용자접속
+    SQL> conn hr/hr
+        -- hr 사용자는 기본적으로 lock 되어있음
+
+    SQL> conn scott
+        -- scott 사용자는 없음
+    ```
+
+&#8594; **hr사용자는 lock해제해야 하고 scott사용자는 새로 생성할 예정**
+
+### Create HR Connection in Navicat 
+
+1. General
+
+    &#9656; **Connection Name : hr** 
+
+    &#9656; **Host : localhost**
+
+    &#9656; **Service Name : XE** 
+
+    &#9656; **User Name : hr** 
+
+    &#9656; **Password : hr**
+
+    ![](https://gekdev.github.io/docs/database/oracle/example/hr.JPG)
+
+2. Advanced
+
+    1. **Role : SYSDBA**
+
+    2. **왼쪽 아래 text connections > Connection Successful 확인**
+
+    3. **OK**
+
+    ![](https://gekdev.github.io/docs/database/oracle/example/newcon_oracle2.JPG)
+
+3. Databases
+
+    &#9656; HR 데이터베이스만 보기
+    
+    ![](https://gekdev.github.io/docs/database/oracle/example/custom_onlyhr.JPG)
 
 
+**접속하려면 기본값으로 hr은 잠겨있음**
 
+![](https://gekdev.github.io/docs/database/oracle/example/locked.JPG)
 
+&#8594; SYS에서 관리자 권한으로 풀어줘야 함
 
+### Checking Users By Navicat
 
+1. oracle 사용자 조회, 환경 변수 변경 조회
 
+    ```sql
+    select * from dba_users; 
+        -- dba_users 테이블에서 * 전체칼럼 가져오기
+    select username from dba_users;
+        -- 이렇게 칼럼을 선택해서 가져올 수 있음
+    select username, ACCOUNT_STATUS, LOCK_DATE from dba_users;
+        -- 여러칼럼 ,로 사용가능, 칼럼은 대소문자 구분하지 않음
+    ```
 
+    ![](https://gekdev.github.io/docs/database/oracle/example/check_set.jpg)
+    
+    ![](https://gekdev.github.io/docs/database/oracle/example/search_table.JPG)
 
+2. 사용자 권한 조회
 
+    ```sql 
+    select * from DBA_SYS_PRIVS; --전체 사용자의 권한을 조회
+    select * from DBA_SYS_PRIVS where grantee = 'SYS' 
+        -- sys 사용자만 권한 조회, 대소문자 구분함, row 값 검색해서 테이블에서 추출
+    select * from DBA_ROLE_PRIVS where grantee = 'HR';
+        -- HR 사용자 권한 조회
+    ```
+
+    **↓ SYS의 ADMIN_OPTION YES권한조회**
+    ![](https://gekdev.github.io/docs/database/oracle/example/sys_yes.jpg)
+
+    **↓ HR의 ADMIN_OPTION YES권한조회**
+    ![](https://gekdev.github.io/docs/database/oracle/example/hr_yes.jpg)
+    
+
+3. HR 권한 만들기
+
+    ```sql
+    alter user hr account unlock; -- 사용자 잠금을 헤제하는 명령
+    select username, ACCOUNT_STATUS, LOCK_DATE from dba_users where username = 'HR';
+    alter user hr identified by hr; -- hr사용자의 비번을 hr로 변경하기
+    select * from dba_users where username = 'HR';
+    ```
+
+    **↓ HR의 ACCOUNT_STATUS YES권한조회**
+    ![](https://gekdev.github.io/docs/database/oracle/example/hr_role.jpg)
+    
+4. 사용자소유의 table 목록 조회
+
+    ```sql
+    select * from tabs; -- 현재 접속한 session 즉, 사용자의 테이블 목록 조회
+    ```
+
+---
+
+## Check and Change SCOTT 
+
+### Checking Users By SQL Command Line
+
+HR사용자 확인하면서 SCOTT 계정은 없는걸 확인했음
+
+### Create SCOTT
+
+1. SYS 권한으로 SCOTT 생성
+
+    &#9656; identified = 비밀번호
+    
+    ```sql
+    select * from dba_users where username = 'SCOTT'; -- 존재하지 않음
+    create user scott identified by tiger; -- scott 유저 생성하고 비번 tiger
+    ```
+    
+2. SCOTT에 권한 부여하기
+
+    ```sql
+    select * from dba_sys_privs where grantee ='SCOOT' -- 아무것도 나오지 않음
+    select * from dba_role_privs where garantee = 'SCOOT' ;
+    grant connect, resource to scott; -- 권한부여
+    ```
+    
+3. 작업장소 지정하기
+
+    ```sql
+    alter user scott default tablespace users; -- users라는 작업장소
+    alter user scott temporary tabblespace temp; -- temp라는 작업장소
+    ```
+
+    ![](https://gekdev.github.io/docs/database/oracle/example/scott.JPG)
+
+4. 실습용 테이블 생성하기
+
+    &#9656; 사용자를 scott으로 변경 후 작업 - 안나오면 scott에서 new query 하기
+
+    &#9656; dept, emp, bonus, salgradeI (아래 명령들)
+
+    ```sql
+    CREATE TABLE DEPT
+       (DEPTNO NUMBER(2) CONSTRAINT PK_DEPT PRIMARY KEY,
+        DNAME VARCHAR2(14) ,
+        LOC VARCHAR2(13) ) ;
+
+    CREATE TABLE EMP  
+       (EMPNO NUMBER(4) CONSTRAINT PK_EMP PRIMARY KEY,  
+        ENAME VARCHAR2(10),  
+        JOB VARCHAR2(9),  
+        MGR NUMBER(4),  
+        HIREDATE DATE,  
+        SAL NUMBER(7,2),  
+        COMM NUMBER(7,2),  
+        DEPTNO NUMBER(2) CONSTRAINT FK_DEPTNO REFERENCES DEPT);
+
+    INSERT INTO DEPT VALUES (10,'ACCOUNTING','NEW YORK');
+    INSERT INTO DEPT VALUES (20,'RESEARCH','DALLAS');   
+    INSERT INTO DEPT VALUES (30,'SALES','CHICAGO');  
+    INSERT INTO DEPT VALUES (40,'OPERATIONS','BOSTON');
+
+    INSERT INTO EMP VALUES
+    (7369,'SMITH','CLERK',7902,to_date('17-12-1980','dd-mm-yyyy'),800,NULL,20);
+    INSERT INTO EMP VALUES
+    (7499,'ALLEN','SALESMAN',7698,to_date('20-2-1981','dd-mm-yyyy'),1600,300,30);
+    INSERT INTO EMP VALUES
+    (7521,'WARD','SALESMAN',7698,to_date('22-2-1981','dd-mm-yyyy'),1250,500,30);
+    INSERT INTO EMP VALUES
+    (7566,'JONES','MANAGER',7839,to_date('2-4-1981','dd-mm-yyyy'),2975,NULL,20);
+    INSERT INTO EMP VALUES
+    (7654,'MARTIN','SALESMAN',7698,to_date('28-9-1981','dd-mm-yyyy'),1250,1400,30);
+    INSERT INTO EMP VALUES
+    (7698,'BLAKE','MANAGER',7839,to_date('1-5-1981','dd-mm-yyyy'),2850,NULL,30);
+    INSERT INTO EMP VALUES
+    (7782,'CLARK','MANAGER',7839,to_date('9-6-1981','dd-mm-yyyy'),2450,NULL,10);
+    INSERT INTO EMP VALUES
+    (7788,'SCOTT','ANALYST',7566,to_date('13-7-1987','dd-mm-yyyy')-85,3000,NULL,20);
+    INSERT INTO EMP VALUES
+    (7839,'KING','PRESIDENT',NULL,to_date('17-11-1981','dd-mm-yyyy'),5000,NULL,10);
+    INSERT INTO EMP VALUES
+    (7844,'TURNER','SALESMAN',7698,to_date('8-9-1981','dd-mm-yyyy'),1500,0,30);
+    INSERT INTO EMP VALUES
+    (7876,'ADAMS','CLERK',7788,to_date('13-7-1987','dd-mm-yyyy')-51,1100,NULL,20);
+    INSERT INTO EMP VALUES
+    (7900,'JAMES','CLERK',7698,to_date('3-12-1981','dd-mm-yyyy'),950,NULL,30);
+    INSERT INTO EMP VALUES
+    (7902,'FORD','ANALYST',7566,to_date('3-12-1981','dd-mm-yyyy'),3000,NULL,20);
+    INSERT INTO EMP VALUES
+    (7934,'MILLER','CLERK',7782,to_date('23-1-1982','dd-mm-yyyy'),1300,NULL,10);
+
+    CREATE TABLE BONUS
+        (
+        ENAME VARCHAR2(10)  ,
+        JOB VARCHAR2(9)  ,
+        SAL NUMBER,
+        COMM NUMBER
+        ) ;
+
+    CREATE TABLE SALGRADE
+          ( GRADE NUMBER,
+        LOSAL NUMBER,
+        HISAL NUMBER );
+
+    INSERT INTO SALGRADE VALUES (1,700,1200);
+    INSERT INTO SALGRADE VALUES (2,1201,1400);
+    INSERT INTO SALGRADE VALUES (3,1401,2000);
+    INSERT INTO SALGRADE VALUES (4,2001,3000);
+    INSERT INTO SALGRADE VALUES (5,3001,9999);
+    ```
+
+---
+
+## Reference Site
+
+### Information
+
+* [Practical Oracle SQL](https://www.apress.com/kr/book/9781484256169)
+
+    &#9656; [github](https://github.com/Apress/practical-oracle-sql)
 
 ---
 
@@ -320,19 +473,8 @@ SQL> exit
 
 ---
 
-### 
+### Drag Multiple Result
 
 여러개 동시에 선택하면 아래 창에 여러개 값이 한꺼번에 나와서 비교 가능함
 
 ![](https://gekdev.github.io/docs/database/oracle/example/drag.JPG)
-
-
----
-
-## Reference Site
-
-### Information
-
-* [Practical Oracle SQL](https://www.apress.com/kr/book/9781484256169)
-
-    &#9656; [github](https://github.com/Apress/practical-oracle-sql)
