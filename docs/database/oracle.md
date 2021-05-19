@@ -82,90 +82,7 @@ has_children: true
 
 ---
 
-## Oracle DB Environment Setting
-
-### Search Current Oracle DB Environment
-
-1. Run SQL Command Line 실행
-
-    &#8594; hr사용자는 lock해제해야 하고 scott사용자는 새로 생성할 예정
-    
-    ```sql
-    -- 1. DB 접속
-    SQL> conn sys/12345 as sysdba
-        -- Connected 확인 : 접속성공
-        
-    -- 2. 현재 사용자 확인 
-    SQL> show user 
-        -- USER is "SYS"
-        
-    -- 3. 다른 사용자접속
-    SQL> conn hr/hr
-        -- hr 사용자는 기본적으로 lock 되어있음
-    
-    SQL> conn scott
-        -- scott 사용자는 없음
-    ```
-    
-2. Navicat 실행
-
-    SYS table에서 `SQL > select * from v$nls_parameters;` 검색
-    
-    (위 SQL Command Line에서도 볼 수 있지만, 테이블 형식은 보기 힘들어서 navicat에서 실행 후 확인)
-    
-    &#8594; NLS_DATE_FORMAT, NLS_TIMESTAMP_FORMAT을 변경할 예정
-
-### Change Oracle DB Environment Setting
-
-#### Change Date Format
-
-change the table row value form
-{: .label .mt-2}
-<div class="code-example" markdown="1">
-명령문 : alter [session/system] ...
-
-* session : **현재 접속한 session에서만 변경**되고 접속을 끊은 후 다시 접속하면 **변경전 환경으로 복귀됨**
-
-* system  : **database의 정보를 영구적으로 변경**
-
-   옵션 : scope=[both/spfile]
-
-   &#9656; both : 바로 적용 or 재시작(오류가 날 가능성이 많음)
-
-   &#9656; spfile : db를 종료후 재시작
-</div>
-```sql
--- Session changing
-SQL> alter session set nls_date_format = 'YYYY-MM-DD';
-  -- ... NLS_DATE_FORMAT=DD-MON-RR 을 YYYY-MM-DD'로 변경
-SQL> alter session set NLS_TIMESTAMP_FORMAT = 'YYYY-MM-DD HH:MI:SS';
-SQL> exit
-
--- System changing
-SQL> alter system set nls_date_format = 'YYYY-MM-DD' scope=spfile;
-SQL> alter system set NLS_TIMESTAMP_FORMAT = 'YYYY-MM-DD HH:MI:SS' scope=spfile;
-SQL> exit
-```
-
-**영구적으로 변경해야 하니 system 변경 명령어로 사용해야 함**
-
-![](https://gekdev.github.io/docs/database/oracle/example/change_format.JPG)
-
-#### Restart Database
-
-**데이터 포멧을 변경한 후에는 꼭 데이터베이스를 재시작 해줘야 함**
-
-1. Stop database(app) 실행
-
-2. Start database(app) 실행
-
-↓ **변경된 모습**
-
-![](https://gekdev.github.io/docs/database/oracle/example/search_table.JPG)
-
----
-
-## Oracle DB Creating & Connecting
+## Navicat Oracle Creating & Connecting
 
 ### New Database Connection
 
@@ -173,11 +90,11 @@ SQL> exit
 
 &#9656; Connection Name = 서버 이름
 
-* **File &#8594; New Connection**
+1. **File &#8594; New Connection**
 
     ![](https://gekdev.github.io/docs/database/oracle/example/newconnection.jpg)
 
-* 왼쪽 끝에 있는 **Connection 아이콘**
+2. 왼쪽 끝에 있는 **Connection 아이콘**
 
     ![](https://gekdev.github.io/docs/database/oracle/example/connection_icon.jpg)
 
@@ -234,6 +151,90 @@ SQL> exit
     &#9656; **마우스 오른쪽 눌러서 connection 종료**
 
     ![](https://gekdev.github.io/docs/database/oracle/example/connection_close.jpg)
+
+---
+
+## Oracle DB Environment Setting
+
+### Search Current Oracle DB Environment
+
+1. Run SQL Command Line 실행
+
+    &#8594; **hr사용자는 lock해제해야 하고 scott사용자는 새로 생성할 예정**
+    
+    ```sql
+    -- 1. DB 접속
+    SQL> conn sys/12345 as sysdba
+        -- Connected 확인 : 접속성공
+        
+    -- 2. 현재 사용자 확인 
+    SQL> show user 
+        -- USER is "SYS"
+        
+    -- 3. 다른 사용자접속
+    SQL> conn hr/hr
+        -- hr 사용자는 기본적으로 lock 되어있음
+    
+    SQL> conn scott
+        -- scott 사용자는 없음
+    ```
+    
+2. Navicat 실행
+
+    SYS table에서 `SQL > select * from v$nls_parameters;` 검색
+    
+    (위 SQL Command Line에서도 볼 수 있지만, 테이블 형식은 보기 힘들어서 navicat에서 실행 후 확인)
+    
+    &#8594; **NLS_DATE_FORMAT, NLS_TIMESTAMP_FORMAT을 변경할 예정**
+    
+    ![](https://gekdev.github.io/docs/database/oracle/example/newver.jpg)
+
+### Change Oracle DB Environment Setting
+
+#### Change Date Format
+
+change the table row value form
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+명령문 : **alter [session/system] ...**
+
+* session : **현재 접속한 session에서만 변경**되고 접속을 끊은 후 다시 접속하면 **변경전 환경으로 복귀됨**
+
+* system  : **database의 정보를 영구적으로 변경**, 옵션 : scope=[both/spfile]
+
+   &#9656; both : 바로 적용 or 재시작(오류가 날 가능성이 많음)
+
+   &#9656; spfile : db를 종료후 재시작
+</div>
+```sql
+-- Session changing
+SQL> alter session set nls_date_format = 'YYYY-MM-DD';
+  -- ... NLS_DATE_FORMAT=DD-MON-RR 을 YYYY-MM-DD'로 변경
+SQL> alter session set NLS_TIMESTAMP_FORMAT = 'YYYY-MM-DD HH:MI:SS';
+SQL> exit
+
+-- System changing
+SQL> alter system set nls_date_format = 'YYYY-MM-DD' scope=spfile;
+SQL> alter system set NLS_TIMESTAMP_FORMAT = 'YYYY-MM-DD HH:MI:SS' scope=spfile;
+SQL> exit
+```
+
+**↓ 영구적으로 변경해야 하니 system 변경 명령어로 사용해야 함**
+{: mt-3}
+
+![](https://gekdev.github.io/docs/database/oracle/example/change_format.JPG)
+
+#### Restart Database
+
+**데이터 포멧을 변경한 후에는 꼭 데이터베이스를 재시작 해줘야 함**
+
+1. Stop database(app) 실행
+
+2. Start database(app) 실행
+
+**↓ 변경된 모습**
+
+![](https://gekdev.github.io/docs/database/oracle/example/search_table.JPG)
 
 ---
 
