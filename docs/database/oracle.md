@@ -53,36 +53,34 @@ has_children: true
 [자세히 확인하기](https://gekdev.github.io/docs/database/oracle/example/navicatpatch순서.txt){: .btn .btn-outline .mt-2}
 </span>
 
-### Oracle DB Connecting 
-
-1. Window Menu > Run SQL Command Line 실행
-
-    **제대로 설치 되었는지 SQL Command Line으로 연결 확인하는 것**
-    
-    ```sql
-    -- 1. DB 접속
-    SQL> conn sys/12345 as sysdba
-        -- Connected 확인 : 접속성공
-        
-    -- 2. 현재 사용자 확인 
-    SQL> show user 
-        -- USER is "SYS"
-        
-    -- 3. 다른 사용자접속
-    SQL> conn hr/hr
-        -- hr 사용자는 기본적으로 lock 되어있음
-    
-    -- 4. 종료
-    SQL> exit
-    ```
-    
-2. [Navicat 실행]()
-         
-&#8594; 여기까지 실행 잘 되면 제대로 설치된것!
-
 ---
 
-## Navicat Oracle Connecting
+## Oracle DB Connection Checking
+
+### Window Menu > Run SQL Command Line
+
+**제대로 설치 되었는지 SQL Command Line으로 연결 확인하는 것**
+
+```sql
+-- 1. DB 접속
+SQL> conn sys/12345 as sysdba
+    -- Connected 확인 : 접속성공
+
+-- 2. 현재 사용자 확인 
+SQL> show user 
+    -- USER is "SYS"
+
+-- 3. 다른 사용자접속
+SQL> conn hr/hr
+    -- hr 사용자는 기본적으로 lock 되어있음
+
+-- 4. 종료
+SQL> exit
+```
+    
+---
+
+## Navicat Oracle DB Connection Checking
 
 ### New Database Connection
 
@@ -154,50 +152,105 @@ has_children: true
 
 ---
 
-## Oracle DB Environment Setting
+## Search Current Oracle DB Environment
 
-### Search Current Oracle DB Environment
+### Window Menu > Run SQL Command Line
 
-* HR, SCOTT사용자 확인하기
+**HR, SCOTT사용자 확인하기**
 
-    1. Run SQL Command Line 실행
-    
-    2. 아래 명령어 확인하면서 실행
-    
-    ```sql
-    -- 1. DB 접속
-    SQL> conn sys/12345 as sysdba
-        -- Connected 확인 : 접속성공
-        
-    -- 2. 현재 사용자 확인 
-    SQL> show user 
-        -- USER is "SYS"
-        
-    -- 3. 다른 사용자접속
-    SQL> conn hr/hr
-        -- hr 사용자는 기본적으로 lock 되어있음
-    
-    SQL> conn scott
-        -- scott 사용자는 없음
-    ```
-    
-    &#8594; **hr사용자는 lock해제해야 하고 scott사용자는 새로 생성할 예정**
-    
-* SYS 테이블 확인하기
+1. Run SQL Command Line 실행
 
-    1. Navicat 실행
+2. 아래 명령어 확인하면서 실행
 
-    2. SYS table에서 `SQL > select * from v$nls_parameters;` 검색
-    
-        (위 SQL Command Line에서도 볼 수 있지만, 테이블 형식은 보기 힘들어서 navicat에서 실행 후 확인)
-    
-    &#8594; **NLS_DATE_FORMAT, NLS_TIMESTAMP_FORMAT을 변경할 예정**
-    
-    ![](https://gekdev.github.io/docs/database/oracle/example/newver.jpg)
+```sql
+-- 1. DB 접속
+SQL> conn sys/12345 as sysdba
+    -- Connected 확인 : 접속성공
 
-### Change Oracle DB Environment Setting
+-- 2. 현재 사용자 확인 
+SQL> show user 
+    -- USER is "SYS"
 
-#### Change Date Format
+-- 3. 다른 사용자접속
+SQL> conn hr/hr
+    -- hr 사용자는 기본적으로 lock 되어있음
+
+SQL> conn scott
+    -- scott 사용자는 없음
+```
+
+&#8594; **hr사용자는 lock해제해야 하고 scott사용자는 새로 생성할 예정**
+
+### SYS 테이블 확인하기
+
+1. Navicat 실행
+
+2. SYS table에서 `SQL > select * from v$nls_parameters;` 검색
+
+    (위 SQL Command Line에서도 볼 수 있지만, 테이블 형식은 보기 힘들어서 navicat에서 실행 후 확인)
+
+&#8594; **NLS_DATE_FORMAT, NLS_TIMESTAMP_FORMAT을 변경할 예정**
+
+![](https://gekdev.github.io/docs/database/oracle/example/newver.jpg)
+
+---
+
+## Change Oracle DB Environment Setting
+
+### Create HR Connection 
+
+1. General
+
+    &#9656; **Connection Name : hr** 
+
+    &#9656; **Host : localhost**
+
+    &#9656; **Service Name : XE** 
+
+    &#9656; **User Name : hr** 
+
+    &#9656; **Password : 12345**
+
+    ![](https://gekdev.github.io/docs/database/oracle/example/hr.JPG)
+
+2. Advanced
+
+    1. **Role : SYSDBA**
+
+    2. **왼쪽 아래 text connections > Connection Successful 확인**
+
+    3. **OK**
+
+    ![](https://gekdev.github.io/docs/database/oracle/example/newcon_oracle2.JPG)
+
+3. Databases
+
+    &#9656; HR 데이터베이스만 보기
+    
+    ![](https://gekdev.github.io/docs/database/oracle/example/custom_onlyhr.JPG)
+
+
+**접속하려면 기본값으로 hr은 잠겨있음**
+
+![](https://gekdev.github.io/docs/database/oracle/example/locked.JPG)
+
+&#8594; SYS에서 관리자 권한으로 풀어줘야 함
+
+### Create HR SCOTT
+
+1. SYS 권한으로 SCOTT 생성
+
+    `create user scott identified by tiger`
+
+    identified = 비밀번호
+    
+2. SCOTT에 권한 부여하기
+
+3. 작업장소 지정하기
+
+![](https://gekdev.github.io/docs/database/oracle/example/scott.JPG)
+
+### Change Date Format
 
 change the table row value form
 {: .label .mt-2}
@@ -230,7 +283,11 @@ SQL> exit
 
 ![](https://gekdev.github.io/docs/database/oracle/example/change_format.JPG)
 
-#### Restart Database
+### Setting Fonts
+
+![](https://gekdev.github.io/docs/database/oracle/example/setting_font.JPG)
+
+### Restart Database
 
 **데이터 포멧을 변경한 후에는 꼭 데이터베이스를 재시작 해줘야 함**
 
@@ -241,6 +298,17 @@ SQL> exit
 **↓ 변경된 모습**
 
 ![](https://gekdev.github.io/docs/database/oracle/example/search_table.JPG)
+
+
+
+
+
+
+
+
+
+
+
 
 ---
 
@@ -258,56 +326,6 @@ SQL> exit
 
 ![](https://gekdev.github.io/docs/database/oracle/example/drag.JPG)
 
-
----
-
-## Connection Create
-
-### [SYS]()
-
-가장 큰 관리자 권한 (위에서 했음!)
-
-### HR 
-
-![](https://gekdev.github.io/docs/database/oracle/example/hr.JPG)
-
-&#9656; Hose => localhost
-
-&#9656; Service Name => XE로 해야지 오류가 나지않음
-
-&#9656; User Name : hr
-
-![](https://gekdev.github.io/docs/database/oracle/example/custom_onlyhr.JPG)
-
-&#9656; hr 데이터베이스만 보게 하기
-
-![](https://gekdev.github.io/docs/database/oracle/example/locked.JPG)
-
-**접속하려면 기본값으로 hr은 잠겨있음**
-
-&#8594; SYS에서 관리자 권한으로 풀어줘야 함
-
-### SCOTT
-
-![](https://gekdev.github.io/docs/database/oracle/example/scott.JPG)
-
-1. SYS 권한으로 SCOTT 생성
-
-    `create user scott identified by tiger`
-
-    identified = 비밀번호
-    
-2. SCOTT 에 권한 부여하기
-
-3. 작업장소 지정하기
-
----
-
-## Navicat Settings 
-
-### Setting Fonts
-
-![](https://gekdev.github.io/docs/database/oracle/example/setting_font.JPG)
 
 ---
 
