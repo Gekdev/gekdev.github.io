@@ -33,7 +33,7 @@ has_children: true
 
 4. 완료
 
-!{}(https://gekdev.github.io/docs/database/oracle/example/or_ins_finish.JPG)
+![](https://gekdev.github.io/docs/database/oracle/example/or_ins_finish.JPG)
 
 ### Navicat Install
 
@@ -67,11 +67,7 @@ has_children: true
 [자세히 확인하기](https://gekdev.github.io/docs/database/oracle/example/navicatpatch순서.txt){: .btn .btn-outline .mt-2}
 </span>
 
----
-
-## Oracle DB Connection Checking
-
-### Run SQL Command Line
+### Oracle DB Connection Checking
 
 **제대로 설치 되었는지 SQL Command Line으로 연결 확인하는 것**
 
@@ -102,9 +98,10 @@ has_children: true
     ```sql
     SQL> exit
     ```
+    
 ---
 
-## Navicat Oracle DB Connection Checking
+## Navicat DB Connection
 
 ### New Database Connection
 
@@ -122,15 +119,15 @@ has_children: true
 
 1. General
 
-    &#9656; **Connection Name : sys** (서버이름, 아래 예제는 잘못 생성)
+    1. **Connection Name : sys** (서버이름, 아래 예제는 잘못 생성)
 
-    &#9656; **Hose : localhost**
+    2. **Hose : localhost**
 
-    &#9656; **Service Name : XE** (그래야 오류가 나지않음)
+    3. **Service Name : XE** 
 
-    &#9656; **User Name : sys** (최고 관리자)
+    4. **User Name : sys** (최고 관리자)
 
-    &#9656; **Password : 12345**
+    5. **Password : 12345**
 
     ![](https://gekdev.github.io/docs/database/oracle/example/newcon_oracle.JPG)
 
@@ -138,27 +135,27 @@ has_children: true
 
     1. **Role : SYSDBA**
 
-    2. **test connections > Connection Successful 확인**
+    2. **Test Connections &#8594; Connection Successful**
 
     ![](https://gekdev.github.io/docs/database/oracle/example/newcon_oracle2.JPG)
 
 3. Databases
 
-    &#9656; **test connections > Connection Successful**이 완료 되어야지 열림
+    **원하는 데이터 베이스를 체크해서 보고싶은 데이터베이스만 볼 수 있음**
 
-    &#9656; 원하는 데이터 베이스를 체크해서 **보고싶은 데이터베이스만 볼 수 있음**
+    1. **Test Connections &#8594; Connection Successful**이 완료 되어야지 열림
     
-    &#9656; HR, SYS 데이터베이스 선택 (나중에 SCOTT 계정 추가할 예정)
+    2. **HR, SYS 데이터베이스 선택** (나중에 SCOTT 계정 추가할 예정)
 
     ![](https://gekdev.github.io/docs/database/oracle/example/custom_dbase.JPG)
 
-&#8594; 모두 다 설정 후 OK
+&#8594; 1,2,3 모두 다 설정 후 OK
 
 ### OCI Environment
 
-1. **Tools > Options > Enviroment > OCI Environment > OCI Library**
+1. **Tools &#8594; Options &#8594; Enviroment &#8594; OCI Environment &#8594; OCI Library** 열기
 
-2. 파일을 c:Progrman Files/premium soft/..../instanceclient_10_?/oci.dll 로 변경
+2. 파일을 c:Progrman Files/premium soft/..../instanceclient_10_?/oci.dll로 변경
 
 ![](https://gekdev.github.io/docs/database/oracle/example/dllfile.JPG)
 
@@ -170,41 +167,41 @@ has_children: true
 
 ### Connected Database
 
-* Check Connection
+**Connection되면 빨갛게 불이 들어옴**
 
-    **Connection되면 빨갛게 불이 들어옴**
+![](https://gekdev.github.io/docs/database/oracle/example/connected.JPG)
 
-    ![](https://gekdev.github.io/docs/database/oracle/example/connected.JPG)
+#### Delete Connection
 
-* Delete Connection
+**마우스 오른쪽 눌러서 Close Connection**
 
-    **마우스 오른쪽 눌러서 Close Connection**
-
-    ![](https://gekdev.github.io/docs/database/oracle/example/connection_close.jpg)
+![](https://gekdev.github.io/docs/database/oracle/example/connection_close.jpg)
 
 ---
 
-## Check and Change Oracle DB Environment
+## Change Oracle DB Environment
 
 ### Checking Environment Variables
 
 1. Navicat 실행
 
-2. SYS New Query
+2. SYS 관리자 선택 &#8594; New Query 생성
 
     ```sql
     select * from v$nls_parameters;
     ```
 
-    (SQL Command Line에서도 볼 수 있지만, 테이블 형식은 보기 힘들어서 navicat에서 실행 후 확인)
+    &#8594; SQL Command Line에서도 볼 수 있지만, 테이블 형식은 보기 힘들어서 navicat에서 실행 후 확인
 
-&#8594; **NLS_DATE_FORMAT, NLS_TIMESTAMP_FORMAT을 변경할 예정**
+★ **NLS_DATE_FORMAT, NLS_TIMESTAMP_FORMAT을 변경할 예정**
 
 **↓ 변경전 모습**
 
 ![](https://gekdev.github.io/docs/database/oracle/example/before_change.jpg)
 
-### Session and System
+### Changing Date Format
+
+**영구적으로 변경해야 하니 system 변경 명령어로 사용해야 함**
 
 syntax
 {: .label .mt-2}
@@ -233,10 +230,6 @@ SQL> alter system set nls_date_format = 'YYYY-MM-DD' scope=spfile;
 SQL> alter system set NLS_TIMESTAMP_FORMAT = 'YYYY-MM-DD HH:MI:SS' scope=spfile;
 SQL> exit
 ```
-
-### Changing Date Format
-
-**영구적으로 변경해야 하니 system 변경 명령어로 사용해야 함**
 
 1. SQL Command Line 실행
 
@@ -276,7 +269,7 @@ SQL> exit
 
 ---
 
-## Check and Change HR 
+## Checking and Changing HR 
 
 ### Checking Users By SQL Command Line
 
@@ -286,9 +279,9 @@ SQL> exit
 
 2. 아래 명령어 확인하면서 실행
 
+    **dn connection명령 : conn 사용자/비밀번호 as 사용자권한**
+    
     &#8594; 오라클 명령어이기 때문에 navicat 에서는 사용불가
-
-    dn connection명령 : conn 사용자/비밀번호 as 사용자권한
 
     ```sql
     -- 1. DB 접속
@@ -307,33 +300,33 @@ SQL> exit
         -- scott 사용자는 없음
     ```
 
-&#8594; **hr사용자는 lock해제해야 하고 scott사용자는 새로 생성할 예정**
+★ **hr사용자는 lock해제해야 하고 scott사용자는 새로 생성할 예정**
 
 ### Create HR Connection in Navicat 
 
 0. sys에서 hr 활성화
 
-    activate_hr.JPG
+    ![](https://gekdev.github.io/docs/database/oracle/example/activate_hr.JPG)
 
 1. General
 
-    &#9656; **Connection Name : hr** 
+    1. **Connection Name : hr** 
 
-    &#9656; **Host : localhost**
+    2. **Host : localhost**
 
-    &#9656; **Service Name : XE** 
+    3. **Service Name : XE** 
 
-    &#9656; **User Name : hr** 
+    4. **User Name : hr** 
 
-    &#9656; **Password : hr**
+    5. **Password : hr**
 
-    ![](https://gekdev.github.io/docs/database/oracle/example/hr.JPG)
+    ![](https://gekdev.github.io/docs/database/oracle/example/default_hr.jpg)
 
 2. Advanced
 
-    1. **Role : SYSDBA**
+    1. **Role : Default**
 
-    2. **왼쪽 아래 text connections > Connection Successful 확인**
+    2. **왼쪽 아래 text connections &#8594; Connection Successful**
 
     3. **OK**
 
@@ -341,18 +334,19 @@ SQL> exit
 
 3. Databases
 
-    &#9656; HR 데이터베이스만 보기
+    HR 데이터베이스만 보기
     
     ![](https://gekdev.github.io/docs/database/oracle/example/custom_onlyhr.JPG)
 
+5. locked
 
-**접속하려면 기본값으로 hr은 잠겨있음**
+    접속하려면 기본값으로 hr은 잠겨있음
 
-![](https://gekdev.github.io/docs/database/oracle/example/locked.JPG)
+    ![](https://gekdev.github.io/docs/database/oracle/example/locked.JPG)
 
-&#8594; SYS에서 관리자 권한으로 풀어줘야 함
+    ★ **SYS에서 관리자 권한으로 풀어줘야 함**
 
-### Checking Users By Navicat
+### Checking HR By Navicat
 
 1. oracle 사용자 조회, 환경 변수 변경 조회
 
@@ -367,8 +361,6 @@ SQL> exit
 
     ![](https://gekdev.github.io/docs/database/oracle/example/check_set.jpg)
     
-    ![](https://gekdev.github.io/docs/database/oracle/example/search_table.JPG)
-
 2. 사용자 권한 조회
 
     ```sql 
@@ -398,7 +390,7 @@ SQL> exit
     **↓ HR의 ACCOUNT_STATUS YES권한조회**
     ![](https://gekdev.github.io/docs/database/oracle/example/hr_role.jpg)
     
-4. 사용자소유의 table 목록 조회
+4. 사용자 소유의 table 목록 조회
 
     ```sql
     select * from tabs; -- 현재 접속한 session 즉, 사용자의 테이블 목록 조회
@@ -406,7 +398,7 @@ SQL> exit
 
 ---
 
-## Check and Change SCOTT 
+## Checking and Changing SCOTT 
 
 ### Checking Users By SQL Command Line
 
@@ -416,12 +408,14 @@ HR사용자 확인하면서 SCOTT 계정은 없는걸 확인했음
 
 1. SYS 권한으로 SCOTT 생성
 
-    &#9656; identified = 비밀번호
+    **identified = 비밀번호**
     
     ```sql
     select * from dba_users where username = 'SCOTT'; -- 존재하지 않음
     create user scott identified by tiger; -- scott 유저 생성하고 비번 tiger
     ```
+    
+    ![](https://gekdev.github.io/docs/database/oracle/example/hr_yes.jpg)
     
 2. SCOTT에 권한 부여하기
 
