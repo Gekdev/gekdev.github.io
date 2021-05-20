@@ -29,25 +29,39 @@ has_children: true
 
 2. 압축 풀고 setup.exe 를 실행
 
+3. 비밀번호 12345
+
+4. 완료
+
+!{}(https://gekdev.github.io/docs/database/oracle/example/or_ins_finish.JPG)
+
 ### Navicat Install
 
-0. window defender off
+0. window defender, 보안프로그램 off
 
 1. Navicat Premium 15.zip 압축풀기
 
-2. navicat150_premium_en_x64.exe 실행후 설치
+2. navicat150_premium_en_x64.exe 실행
 
-3. RegPrivateKey.pem 실행 후 설정 마친 후 Key Generate
+    &#8594; 설치한거 실행하면 안됨!
+
+3. Navicat_Keygen_Patch_v6.1_By_DFoX.exe 실행
+    
+    설정(lang: English) > Patch > Key Generate
 
     (Error Message 무시 후 close)
     
 4. Navicat에 Key 붙여넣기 
 
-5. Navicat에서 생성된 코드 RegPrivateKey.pem Request Code에 붙여넣기
+5. Navicat에서 생성된 코드 DFoX.exe의 Request Code에 붙여넣기
 
-6. RegPrivateKey.pem에서 Activation Code 다시 Navicat에 붙여넣기
+6. Activation Code > Own RSA Key 클릭
 
-7. 모두 마친 후 Navicat 재시작
+7. Generate에서 ddl 파일 클릭
+
+8. 생성된 Activation Code를 다시 Navicat에 붙여넣기
+
+9. 완료
 
 <span class="fs-2">
 [자세히 확인하기](https://gekdev.github.io/docs/database/oracle/example/navicatpatch순서.txt){: .btn .btn-outline .mt-2}
@@ -57,27 +71,37 @@ has_children: true
 
 ## Oracle DB Connection Checking
 
-### Window Menu > Run SQL Command Line
+### Run SQL Command Line
 
 **제대로 설치 되었는지 SQL Command Line으로 연결 확인하는 것**
 
-```sql
--- 1. DB 접속
-SQL> conn sys/12345 as sysdba
-    -- Connected 확인 : 접속성공
+1. Window Menu > Run SQL Command Line
 
--- 2. 현재 사용자 확인 
-SQL> show user 
-    -- USER is "SYS"
+2. DB 접속
 
--- 3. 다른 사용자접속
-SQL> conn hr/hr
-    -- hr 사용자는 기본적으로 lock 되어있음
+    ```sql
+    SQL> conn sys/12345 as sysdba
+        -- Connected 확인 : 접속성공
+    ```
+3. 현재 사용자 확인 
 
--- 4. 종료
-SQL> exit
-```
+    ```sql
+    SQL> show user 
+        -- USER is "SYS"
+    ```
 
+4. 다른 사용자 접속 확인
+
+    ```sql
+    SQL> conn hr/hr
+        -- hr 사용자는 기본적으로 lock 되어있음
+    ```
+
+5. 종료
+
+    ```sql
+    SQL> exit
+    ```
 ---
 
 ## Navicat Oracle DB Connection Checking
@@ -114,29 +138,33 @@ SQL> exit
 
     1. **Role : SYSDBA**
 
-    2. **왼쪽 아래 text connections > Connection Successful 확인**
-
-    3. **OK**
+    2. **test connections > Connection Successful 확인**
 
     ![](https://gekdev.github.io/docs/database/oracle/example/newcon_oracle2.JPG)
 
 3. Databases
 
+    &#9656; **test connections > Connection Successful**이 완료 되어야지 열림
+
     &#9656; 원하는 데이터 베이스를 체크해서 **보고싶은 데이터베이스만 볼 수 있음**
     
-    &#9656; HR, SYS 데이터베이스 선택
+    &#9656; HR, SYS 데이터베이스 선택 (나중에 SCOTT 계정 추가할 예정)
 
     ![](https://gekdev.github.io/docs/database/oracle/example/custom_dbase.JPG)
 
+&#8594; 모두 다 설정 후 OK
+
 ### OCI Environment
 
-**Tools > Options > Enviroment > OCI Environment > OCI Library**
+1. **Tools > Options > Enviroment > OCI Environment > OCI Library**
 
-&#9656; 파일을 c:Progrman Files/premium soft/..../instanceclient_10_?/oci.dll 로 변경
+2. 파일을 c:Progrman Files/premium soft/..../instanceclient_10_?/oci.dll 로 변경
 
 ![](https://gekdev.github.io/docs/database/oracle/example/dllfile.JPG)
 
 ### Setting Fonts
+
+**d2 coding 폰트로 변경**
 
 ![](https://gekdev.github.io/docs/database/oracle/example/setting_font.JPG)
 
@@ -144,13 +172,13 @@ SQL> exit
 
 * Check Connection
 
-    **connection되면 빨갛게 불이 들어옴**
+    **Connection되면 빨갛게 불이 들어옴**
 
     ![](https://gekdev.github.io/docs/database/oracle/example/connected.JPG)
 
 * Delete Connection
 
-    **마우스 오른쪽 눌러서 connection 종료**
+    **마우스 오른쪽 눌러서 Close Connection**
 
     ![](https://gekdev.github.io/docs/database/oracle/example/connection_close.jpg)
 
@@ -162,44 +190,75 @@ SQL> exit
 
 1. Navicat 실행
 
-2. SYS table에서 `SQL > select * from v$nls_parameters;` 검색
+2. SYS New Query
 
-    (위 SQL Command Line에서도 볼 수 있지만, 테이블 형식은 보기 힘들어서 navicat에서 실행 후 확인)
+    ```sql
+    select * from v$nls_parameters;
+    ```
+
+    (SQL Command Line에서도 볼 수 있지만, 테이블 형식은 보기 힘들어서 navicat에서 실행 후 확인)
 
 &#8594; **NLS_DATE_FORMAT, NLS_TIMESTAMP_FORMAT을 변경할 예정**
 
-![](https://gekdev.github.io/docs/database/oracle/example/newver.jpg)
+**↓ 변경전 모습**
 
-### Changing Date Format
+![](https://gekdev.github.io/docs/database/oracle/example/before_change.jpg)
 
-change the table row value form
+### Session and System
+
+syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-명령문 : **alter [session/system] ...**
+**alter [session/system] ...**
 
-* session : **현재 접속한 session에서만 변경**되고 접속을 끊은 후 다시 접속하면 **변경전 환경으로 복귀됨**
+* **session** : 현재 접속한 session에서만 변경되고 접속을 끊은 후 다시 접속하면 **변경전 환경으로 복귀됨**
 
-* system  : **database의 정보를 영구적으로 변경**, 옵션 : scope=[both/spfile]
+* **system**  : database의 정보를 **영구적으로 변경**
+    
+    옵션 : **scope=[both/spfile]**
 
    &#9656; both : 바로 적용 or 재시작(오류가 날 가능성이 많음)
 
    &#9656; spfile : db를 종료후 재시작
 </div>
 ```sql
--- Session changing
+-- session changing
 SQL> alter session set nls_date_format = 'YYYY-MM-DD';
   -- ... NLS_DATE_FORMAT=DD-MON-RR 을 YYYY-MM-DD'로 변경
 SQL> alter session set NLS_TIMESTAMP_FORMAT = 'YYYY-MM-DD HH:MI:SS';
 SQL> exit
 
--- System changing
+-- system changing
 SQL> alter system set nls_date_format = 'YYYY-MM-DD' scope=spfile;
 SQL> alter system set NLS_TIMESTAMP_FORMAT = 'YYYY-MM-DD HH:MI:SS' scope=spfile;
 SQL> exit
 ```
 
-**↓ 영구적으로 변경해야 하니 system 변경 명령어로 사용해야 함**
-{: mt-3}
+### Changing Date Format
+
+**영구적으로 변경해야 하니 system 변경 명령어로 사용해야 함**
+
+1. SQL Command Line 실행
+
+2. 데이터베이스 연결
+
+    ```sql
+    SQL> conn sys/12345 as sysdba
+    ```
+
+3. 변경 명령어 작성    
+
+    ```sql
+    SQL> alter system set nls_date_format = 'YYYY-MM-DD' scope=spfile;
+
+    SQL> alter system set NLS_TIMESTAMP_FORMAT = 'YYYY-MM-DD HH:MI:SS' scope=spfile;
+    ```
+
+4. 종료
+
+    ```sql
+    SQL> exit
+    ```
 
 ![](https://gekdev.github.io/docs/database/oracle/example/change_format.JPG)
 
@@ -211,7 +270,7 @@ SQL> exit
 
 2. Start database(app) 실행
 
-**↓ 변경된 모습**
+**↓ 변경후 모습**
 
 ![](https://gekdev.github.io/docs/database/oracle/example/search_table.JPG)
 
@@ -223,7 +282,7 @@ SQL> exit
 
 **HR, SCOTT사용자 확인하기**
 
-1. Window Menu > Run SQL Command Line 실행
+1. Window Menu > Run SQL Command Line
 
 2. 아래 명령어 확인하면서 실행
 
@@ -251,6 +310,10 @@ SQL> exit
 &#8594; **hr사용자는 lock해제해야 하고 scott사용자는 새로 생성할 예정**
 
 ### Create HR Connection in Navicat 
+
+0. sys에서 hr 활성화
+
+    activate_hr.JPG
 
 1. General
 
@@ -364,7 +427,7 @@ HR사용자 확인하면서 SCOTT 계정은 없는걸 확인했음
 
     ```sql
     select * from dba_sys_privs where grantee ='SCOOT' -- 아무것도 나오지 않음
-    select * from dba_role_privs where garantee = 'SCOOT' ;
+    select * from dba_role_privs where grantee = 'SCOOT' ;
     grant connect, resource to scott; -- 권한부여
     ```
     
