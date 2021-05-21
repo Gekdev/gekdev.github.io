@@ -42,7 +42,7 @@ select count(comm) from emp; -- null 값 포함하지 않음
 select count(sal), count(comm) from emp;
 ```
 
-![](count_func.jpg)
+![](https://gekdev.github.io/docs/database/sql/example/count_func.jpg)
 
 ### sum()
 
@@ -61,7 +61,7 @@ select sum(sal) from emp;
 select count(ename), sum(sal), round(sum(sal)/count(ename),0) from emp;
 ```
 
-![](sum_func.jpg)
+![](https://gekdev.github.io/docs/database/sql/example/sum_func.jpg)
 
 ### avg()
 
@@ -88,7 +88,7 @@ union all
 select count(*), sum(comm), round(avg(nvl(comm, 0)), 0) from emp;
 ```
 
-![](avg_func.jpg)
+![](https://gekdev.github.io/docs/database/sql/example/avg_func.jpg)
 
 ### max() & min()
 
@@ -111,7 +111,7 @@ select min(sal), max(sal) from emp;
 select min(hiredate), max(hiredate) from emp;
 ```
 
-![](min_max_func.jpg)
+![](https://gekdev.github.io/docs/database/sql/example/min_max_func.jpg)
 
 ### stddev()
 
@@ -127,7 +127,7 @@ syntax
 select round(stddev(sal), 1) from emp;
 ```
 
-![](stu_func.jpg)
+![](https://gekdev.github.io/docs/database/sql/example/stu_func.jpg)
 
 ### variance()
 
@@ -143,7 +143,7 @@ syntax
 select round(variance(sal), 1) from emp;
 ```
 
-![](var_func.jpg)
+![](https://gekdev.github.io/docs/database/sql/example/var_func.jpg)
 
 	8. rollup()
 	9. cube()
@@ -187,7 +187,8 @@ select .... from .... **group by ...** [order by ...];
 </div>
 ```sql
 -- Q1) 부서별 급여합계
--- where 절을 사용하면 데이터에 맞는 조건 하나씩(부서 하나의 급여합계)만 검색 가능하고, 
+-- ver1) where 절
+-- 데이터에 맞는 조건 하나씩(부서 하나의 급여합계)만 검색 가능하고, 
 -- 부서별로 급여 합계를 보려면 union all로 합쳐야지 한꺼번에 출력되기 때문에 불편함
 select 10 부서, sum(sal) 급여합계 from emp where deptno = 10 
 union all
@@ -195,14 +196,15 @@ select 20, sum(sal) from emp where deptno = 20
 union all
 select 30, sum(sal) from emp where deptno = 30;
 
--- sum() 그룹함수를 사용하며 group by를 사용하면서 부서별로 급여 합계를 쉽게 볼 수 있음
+-- ver2) sum() 그룹함수
+-- group by를 사용하면서 부서별로 급여 합계를 쉽게 볼 수 있음
 select deptno 부서, sum(sal) 부서별급여합계
   from emp
  group by deptno
  order by 부서;
 ```
 
-![](group_by1.jpg)
+![](https://gekdev.github.io/docs/database/sql/example/group_by1.jpg)
 
 ### having
 
@@ -232,7 +234,7 @@ select deptno
 having round(avg(nvl(sal, 0)), 2) < 1600.00;
 ```
 
-![](hav.jpg)
+![](https://gekdev.github.io/docs/database/sql/example/hav.jpg)
 
 ### Examples
 
@@ -248,7 +250,7 @@ select deptno
  order by deptno;
 ```
 
-![](gr_ex1.jpg)
+![](https://gekdev.github.io/docs/database/sql/example/gr_ex1.jpg)
 
 Q2. 업무별(JOB)로 인원수, 평균급여, 최고급여, 최소급여, 급여합계를 구하기
 
@@ -263,7 +265,7 @@ select job
  group by job;
 ```
 
-![](gr_ex1.jpg)
+![](https://gekdev.github.io/docs/database/sql/example/gr_ex1.jpg)
 
 ---
 
@@ -273,7 +275,11 @@ select job
 
 **데이터의 소계, 총계를 그룹별로 구하기**
 
-&#9656; rollup함수는 group by절과 같이 사용되면 group by절에 의해서 그룹지어진 집합결과에 대해 좀더 상세한 결과를 반환한다 
+&#9656; rollup함수는 group by절과 같이 사용되면 group by절에 의해서 그룹 지어진 집합결과에 대해 좀더 상세한 결과를 반환
+
+&#9656; group by rollup(deptno, job) -> M+1개의 그룹이 생김
+
+&#9656; rollup에 있는 매개변수 순서에 따라서 결과값이 달라짐
 
 syntax
 {: .label .mt2}
@@ -282,126 +288,187 @@ select .... from .... group by **rollup(컬럼명)** [order by ...];
 
 &#9656; []은 생략가능
 </div>
-```sql
--- Q1) 직급별 급여합계와 총합계를 구하기
--- union all을 사용해서 총계를 따로 더해주는 방법
+
+직급별 급여합계와 총합계를 구하기
+{: .label mt-2}
+```sql 
+-- ver1) union all을 사용해서 총계를 따로 더해주는 방법
 select *
   from 
 (
-	select job, sum(sal)
-	  from emp
-	 group by job
- 
- 	 union all
- 
-	select '총계', sum(sal)
-      from emp
+	select job, sum(sal) from emp group by job
+    union all
+	select '총계', sum(sal) from emp
 ) table1
 order by job; 
 
--- 상기예제를 rollup함수를 이용해서 총계를 구함
+-- ver2) 상기예제를 rollup함수를 이용해서 총계를 구함
 select job
 	 , sum(sal)
   from emp
  group by rollup(job);
 ```
 
-![](roll_up_ex.jpg)
+![](https://gekdev.github.io/docs/database/sql/example/roll_up_ex.jpg)
 
--- 실습) 
--- 1. 부서별 직업별 평균급여, 사원수
--- 2. 부서별        평균급여, 사원수
--- 3. 전체          평균급여, 사원수
--- ex01) union all
-select *
-from(
-	select deptno, job, round(avg(sal), 1) 평균급여, count(*) 사원수 from emp group by deptno, job
-	union all
-	select deptno, null, round(avg(sal), 1) 평균급여, count(*) 사원수 from emp group by deptno
-	union all
-	select null, null, round(avg(sal), 1) 평균급여, count(*) 사원수 from emp
-)
-order by deptno, job;
+### Example
 
-select deptno
-     , nvl(job, '부서합계')
-		 , 평균급여
-		 , 사원수
-  from (
-	select deptno, job, round(avg(sal), 1) 평균급여, count(*) 사원수 from emp group by deptno, job
-	union all
-	select deptno, null, round(avg(sal), 1) 평균급여, count(*) 사원수 from emp group by deptno
-	union all
-	select null, null, round(avg(sal), 1) 평균급여, count(*) 사원수 from emp
-)
-order by deptno, job;
+Q1. EMP테이블에서 부서별, 직업별, 평균급여, 사원수를 부서별 합계와 전체 총계를 같이 출력하며, 부서번호와 직업을 순서로 작성
 
--- ex02) rollup() : 자동으로 소계와 합계를 구해주는 함수
--- group by rollup(deptno, job) -> M+1개의 그룹이 생긴다.
--- 순서에 주위
-select deptno
-	   , nvl(job, '부서합계')
-		 , round(avg(sal), 1) 평균급여
-		 , count(*) 사원수 
-  from emp
- group by rollup(deptno, job);
+| 부서별  |직업별     |평균급여      |사원수   | 
+|:-------|:---------|:-----------|:--------|
+| 부서    | 직업      | 평균급여     | 사원수  | 
+| 부서    |         | 부서별 합계   | 부서별 사원합계 | 
+|        |         | 전체 합계    | 총사원수 | 
 
-select deptno
-	   , nvl(job, '부서합계')
-		 , round(avg(sal), 1) 평균급여
-		 , count(*) 사원수 
-  from emp
- group by deptno, rollup(job);
- 
- select deptno
-	   , nvl(job, '부서합계')
-		 , round(avg(sal), 1) 평균급여
-		 , count(*) 사원수 
-  from emp
- group by job, rollup(deptno);
+1. union all
 
--- 실습) professor테이블에서 deptno, position별로 교수인원수, 급여합계 구하기(rollup함수이용) 
-select deptno
-     , nvl(position, '----------------') position
-		 , count(*)
-		 , sum(pay)
-  from professor
- group by rollup(deptno, position);
+    방법1
+    {: .label .mt-2}
+    
+    ```sql
+    select *
+    from(
+        -- 부서, 직업, 평균급여, 사원수 출력
+        select deptno, job, round(avg(sal), 1) 평균급여, count(*) 사원수 from emp group by deptno, job 
+        union all
+        -- 부서, 부서별 합계, 부서별 사원합계 출력
+        select deptno, null, round(avg(sal), 1) 평균급여, count(*) 사원수 from emp group by deptno
+        union all
+        -- 전체 합계, 총 사원수 출력
+        select null, null, round(avg(sal), 1) 평균급여, count(*) 사원수 from emp
+    )
+    order by deptno, job; -- 부서번호와 직업 정렬
+    ```
+
+    ![](https://gekdev.github.io/docs/database/sql/example/un_zero.jpg)
+
+    방법2 : null값에 이름 주기
+    {: .label .mt-2}
+    
+    ```sql
+    select deptno --여기는 null 처리가 안됨
+         , nvl(job, '부서합계') JOB
+         , 평균급여
+         , 사원수
+      from (
+        select deptno, job, round(avg(sal), 1) 평균급여, count(*) 사원수 from emp group by deptno, job
+        union all
+        select deptno, null, round(avg(sal), 1) 평균급여, count(*) 사원수 from emp group by deptno
+        union all
+        select null, null, round(avg(sal), 1) 평균급여, count(*) 사원수 from emp
+    )
+    order by deptno, job;
+    ```
+
+    ![](https://gekdev.github.io/docs/database/sql/example/un_one.jpg)
+
+2. rollup()
+
+    방법1
+    {: .label .mt-2}
+
+    ```sql
+    select deptno
+         , nvl(position, '-------------') position
+         , 교수인원수
+         , 합계
+      from (
+        select deptno, position, count(*) 교수인원수, sum(pay) 합계 from professor group by deptno, position
+        union all
+        select deptno, null, count(*) 교수인원수, sum(pay) 합계 from professor group by deptno
+        union all
+        select null, null, count(*) 교수인원수, sum(pay) 합계 from professor
+    ) 
+    order by deptno, position;
+    ```
+    
+    ![](https://gekdev.github.io/docs/database/sql/example/rollup_1.jpg)
+
+    방법2
+    {: .label .mt-2}
+
+    ```sql
+    select deptno
+         , nvl(job, '부서합계')
+         , round(avg(sal), 1) 평균급여
+         , count(*) 사원수 
+      from emp
+     group by deptno, rollup(job);
+    ```
+    
+    ![](https://gekdev.github.io/docs/database/sql/example/rollup_2.jpg)
+    
+    방법3
+    {: .label .mt-2}
+
+    ```sql
+     select deptno
+          , nvl(job, '부서합계')
+          , round(avg(sal), 1) 평균급여
+          , count(*) 사원수 
+      from emp
+     group by job, rollup(deptno);
+    ```
+    
+    ![](https://gekdev.github.io/docs/database/sql/example/rollup_3.jpg)
+
+Q2. Professor 테이블에서 deptno, position별로 교수인원수, 급여합계 구하기
+
+1. union all
+
+    ```sql
+    select deptno
+         , nvl(position, '-------------') position
+             , 교수인원수
+             , 합계
+      from (
+        select deptno, position, count(*) 교수인원수, sum(pay) 합계 from professor group by deptno, position
+        union all
+        select deptno, null, count(*) 교수인원수, sum(pay) 합계 from professor group by deptno
+        union all
+        select null, null, count(*) 교수인원수, sum(pay) 합계 from professor
+    ) 
+    order by deptno, position;
+    ```
+
+    ![](https://gekdev.github.io/docs/database/sql/example/q2_union.jpg)
+
+2. rollup()
+
+    ```sql
+    select deptno
+         , nvl(position, '--------------------') position
+         , count(*)
+         , sum(pay)
+      from professor
+     group by rollup(deptno, position);
+    ```
+
+    ![](https://gekdev.github.io/docs/database/sql/example/q2_rol.jpg)
 
 ### cube()함수
 
--- 1) 부서별, 직급별, 평균급여와 사원수
--- 2) 부서별          평균급여와 사원수
--- 3)         직급별, 평균급여와 사원수
--- 4) 전체            평균급여와 사원수 
+### Example
 
-select deptno
-	   , nvl(job, '부서합계')
-		 , round(avg(sal), 1) 평균급여
-		 , count(*) 사원수 
-  from emp
- group by rollup(deptno, job);
- 
-select deptno
-	   , job
-		 , round(avg(sal), 1) 평균급여
-		 , count(*) 사원수 
-  from emp
- group by rollup(deptno), rollup(job)
-union all
-select null
-     , job
-		 , round(avg(sal), 1)	
-		 , count(*)
-  from emp
- group by rollup(job);
- 
+Q1. EMP테이블에서 부서별, 직업별, 평균급여, 사원수를 부서별 합계와 전체 총계를 같이 출력하며, 부서번호와 직업을 순서로 작성
+
+| 부서별  |직급별     |평균급여      |사원수   | 
+|:-------|:---------|:-----------|:--------|
+| 부서별  |         | 평균급여     | 사원수  | 
+|        | 직급별   |     합계   |  사원수 | 
+|        |         | 전체 합계    | 총사원수 | 
+
+```sql 
  select deptno
 	   , job
 		 , round(avg(sal), 1) 평균급여
 		 , count(*) 사원수 
   from emp
  group by cube(deptno, job);
+```
+
+![](https://gekdev.github.io/docs/database/sql/example/cube.jpg)
 
 ---
 
@@ -409,13 +476,22 @@ select null
 
 순위함수 사용시에는 order by절은 필수로 정의
 
-### rank()함수
+### rank()
 
 **순위를 부여하는 함수로서 동일순위처리가 가능(중복순위 1,2,2,4)**
 
---    1) 특정자료의 순위 : rank(조건값) within group (oder by 조건값, 컬럼명[asc|desc])
---    2) 전체자료의 순위 : rank() over(oder by 조건값, 컬럼명[asc|desc])
+컬럼명 안에 값이 없을 경우 에러가 나옴
 
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+1. 특정자료의 순위 : **rank(조건값) within group (order by 컬럼명[asc|desc])**
+
+2. 전체자료의 순위 : **rank() over(order by 컬럼명[asc|desc])**
+
+3. 그룹별 순위 : **rank() over(partition by 컬럼명 order by 컬럼명[asc|desc])**
+</div>
+```sql
 -- 1) 특정조건의 순위
 -- SMITH가 알파벳순으로 몇번째인지?
 select ename from emp order by ename;
@@ -426,34 +502,44 @@ select rank('SMITH') within group(order by hiredate) from emp; -- 에러
 -- emp에서 사원들의 급여순위?
 select empno, ename, sal
      , rank() over(order by sal) 급여오름차순
-		 , rank() over(order by sal desc) 급여내림차순
+     , rank() over(order by sal desc) 급여내림차순
   from emp;
-	
--- 2) 그룹별순위
--- 그룹별별 순위는 order by와 patition by를 사용한다.
+
+-- 3) 그룹별순위
 -- 부서별 급여순위는?
 select deptno, ename, sal
      , rank() over(partition by deptno order by sal)
   from emp;
+```
 
-### dense_rank()함수
+### dense_rank()
 
-**동일순서의 처리에 영향이 없다.(중복순위, 1,2,2,3)**
+**동일순서의 처리에 영향이 없다 (중복순위, 1,2,2,3)**
 
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+select **dense_rank() over(order by 컬럼명)** 별칭 from 테이블;
+</div>
+```sql
 select empno, ename, sal
-     , rank() over(order by sal)  
-		 , dense_rank() over(order by sal) 
+	 , dense_rank() over(order by sal) 
   from emp;
-	
-### row_number() : 행번호
+```
 
-**특정순위의 일련번호를 제공하는 함수 동일순위처리 불가(1,2,3,4,)**
+### row_number() 
 
+**특정순위의 일련번호를 제공하는 함수 동일순위처리 불가 (1,2,3,4,5)**
+
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+select **row_number() over(order by 컬럼명)** 별칭 from 테이블;
+</div>
+```sql
 select empno, ename, sal
-     , rank()       over(order by sal)   "RANK"
-		 , dense_rank() over(order by sal)   "DENSE_RANK"
-		 , row_number() over(order by sal)   "ROW_NUMBER"
+	 , row_number() over(order by sal) "ROW_NUMBER"
   from emp;
+```
   
-  
-##	
+![](https://gekdev.github.io/docs/database/sql/example/https://gekdev.github.io/docs/database/sql/example/row.jpg)
