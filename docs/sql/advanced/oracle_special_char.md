@@ -2,7 +2,7 @@
 layout: default
 title: Special Characters
 parent: Advanced
-grand_parent: Database
+grand_parent: SQL / Oracle
 nav_order: 1
 ---
 

@@ -1,18 +1,16 @@
 ---
 layout: default
-title: SQL
+title: SQL / Oracle
 nav_order: 7
 has_children: true
 permalink: docs/database
 ---
 
-# SQL
+# SQL / Oracle
 {: .no_toc .text-beta .fw-700 }
 
 정리하면서...
 {: .fs-3 .text-grey-dk-200 .fw-700 .mt-3}
-
-
 
 <br>
 

@@ -2,7 +2,7 @@
 layout: default
 title: Group Function
 parent: Function
-grand_parent: SQL
+grand_parent: SQL / Oracle
 nav_order: 6
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Function
-parent: SQL
+parent: SQL / Oracle
 nav_order: 5
 has_children: true
 ---

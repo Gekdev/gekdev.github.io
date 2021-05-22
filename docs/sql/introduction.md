@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Introduction
-parent: SQL
+parent: SQL / Oracle
 nav_order: 1
 ---
 

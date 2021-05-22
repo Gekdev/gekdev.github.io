@@ -2,7 +2,7 @@
 layout: default
 title: DBMS
 parent: Database
-grand_parent: SQL
+grand_parent: SQL / Oracle
 nav_order: 3
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Oracle
-parent: Database
+parent: SQL / Oracle
 nav_order: 5
 has_children: true
 ---

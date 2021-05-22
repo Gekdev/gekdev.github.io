@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Command Types
-parent: SQL
+parent: SQL / Oracle
 nav_order: 1
 ---
 
