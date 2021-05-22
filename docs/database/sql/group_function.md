@@ -543,3 +543,52 @@ select empno, ename, sal
 ```
   
 ![](https://gekdev.github.io/docs/database/sql/example/https://gekdev.github.io/docs/database/sql/example/row.jpg)
+
+---
+
+## 기타함수 
+
+1. sum() over        : 누계를 구하는 함수
+    ... sum(컬럼) over (order by 컬럼(기준열))
+2. ratio_to_report() : 비율을 구하는 함수
+
+*/
+
+--1. sum() over()
+select * from panmae;
+
+--판매테이블에서 1000번대리점의 판매누계 구하기
+select p_date, p_code, p_qty, p_total
+		 , sum(p_total) over(order by p_total) 판매누계
+  from panmae
+ where p_store = 1000;
+
+-- 상기 예제를 기준으로 제품 코드별 누계구하기
+-- partition by(제품 코드)를 사용
+select p_date, p_code, p_qty, p_total
+     , sum(p_total) over(partition by p_code order by p_date)
+  from panmae;
+
+-- 상기 예제를 기준으로 제품 코드/대리점별 누계구하기
+select p_date, p_code, p_store, p_qty, p_total
+     , sum(p_total) over(partition by p_code, p_store order by p_date)
+  from panmae;
+
+-- 2. ratio_to_report()
+--판매비율
+select p_code
+		 , sum(p_qty) over() tot_qty
+		 , sum(p_total) over() tot_amt
+		 , p_store
+		 , p_total
+		 , round(p_total / sum(p_total) over(),2)
+		 , round(p_total / (select sum(p_total) from panmae), 2) --두번 읽어야 해서 별로 안좋음
+		 , round(ratio_to_report(sum(p_qty)) over() * 100,2) "수량(%)"
+		 , round(ratio_to_report(sum(p_total)) over() * 100,2) "금액(%)"
+  from panmae
+group by p_code, p_store, p_qty, p_total;
+
+select sum(p_qty), sum(p_total)
+  from panmae;
+
+

@@ -39,7 +39,6 @@ syntax
 &#8594; ()안에는 문자열이나 함수, 열이름 등이 들어갈 수 있음
 </div>
 ```sql
--- Ex) 이름을 소문자, 대문자로 출력
 -- upper(lower(ename))는 소문자 변환한걸 대문자로 다시 변환한 모습
 select ename
     , lower(ename)
@@ -67,7 +66,6 @@ syntax
 &#8594; ()안에는 문자열이나 함수, 열이름 등이 들어갈 수 있음
 </div>
 ```sql
--- Ex) 이름의 길이를 출력
 -- 한글 하나는 3바이트 = 두개라서 6
 select name
     , length(name)
@@ -94,19 +92,18 @@ from professor;
 SQL > SELECT * FROM NLS_DATABASE_PARAMETERS WHERE PARAMETER LIKE '%CHARACTERSET%';
 ```
 
-### concat() and ||
+### concat() and `||`
 
-**문자의 값을 연결 (||와 동일)**
+**문자의 값을 연결 (`||`와 동일)**
 
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-* **concat()** 
+**concat()** 
 
 &#8594; ()안에는 문자열이나 함수, 열이름 등이 들어갈 수 있음
 </div>
 ```sql
--- Ex) 이름과 아이디를 다양한 방법으로 조합
 select name
     , id
     , name || ',' || id
@@ -179,7 +176,7 @@ from dual;
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-* **instr(문자열, 찾는글자, 시작위치, 몇번째(기본값 1))** 
+**instr(문자열, 찾는글자, 시작위치, 몇번째(기본값 1))** 
 </div>
 ```sql
 select instr('HELLOW WORLD', 'O') O찾기
@@ -198,7 +195,7 @@ select instr('HELLOW WORLD', 'O') O찾기
 
 * lpad() : **주어진 문자열에서 왼쪽으로 특정 문자를 채움**
 
-* rpad() : **주어진 문자열에서 왼쪽으로 특정 문자를 채움**
+* rpad() : **주어진 문자열에서 오른쪽으로 특정 문자를 채움**
 
 syntax
 {: .label .mt-2}
@@ -250,7 +247,7 @@ where deptno = 10;
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-* **replace(문자열, 변경전문자, 변경후문자)**
+**replace(문자열, 변경전문자, 변경후문자)**
 </div>
 ```sql
 select ename
