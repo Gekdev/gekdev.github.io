@@ -1,8 +1,9 @@
 ---
 layout: default
-title: Introduction
-parent: Database
-nav_order: 1
+title: Database
+parent: SQL
+nav_order: 2
+has_children: true
 ---
 
 # Database Introduction
@@ -22,7 +23,7 @@ nav_order: 1
 
 * 데이터 : **단순한 관찰이나 측정 등의 수단을 통해 현실 세계로부터 수집된 사실이나 값**
 
-* 정보 : **데이터 중에서도 조직화되고 체계화 된 데이터로서 의사 결정권자에게 의미를 제공하는 것**
+* 정보 : 데이터 중에서도 **조직화되고 체계화 된 데이터로서 의사 결정권자에게 의미를 제공하는 것**
 
 **★ 데이터베이스에서 데이터는 정보를 의미함**
 
@@ -40,19 +41,19 @@ nav_order: 1
 
 **한 조직의 여러 응용시스템들이 공유해서 사용할 수 있도록 데이터들을 통합해 체계적으로 조직한 후 저장한 운영데이터의 집합**
  
-![](https://gekdev.github.io/docs/database/basic/example/data_system.png)
+![](data_system.png)
 
 ### Database Users
 
 * 클라이언트 : 일반 사용자
 
-* 응용프로그래머 : 데이터베이스 전문 지식을 가지고 어플리캐이션을 개발할 목적으로 데이터베이스를 사용하는 사용사
+* 응용프로그래머 : 데이터베이스 전문 지식을 가지고 **어플리캐이션을 개발할 목적으로 데이터베이스를 사용하는 사용자**
 
-* 데이터베이스 관리자(DBA) : 데이터베이스를 구축, 운영, 통제하는 특별한 소수 사용자
+* 데이터베이스 관리자(DBA) : **데이터베이스를 구축, 운영, 통제하는 특별한 소수 사용자**
 
-* DB서버 : DBMS를 사용하는 서버
+* DB서버 : **DBMS를 사용하는 서버**
 
-![](https://gekdev.github.io/docs/database/basic/example/db_basic_structure.png)
+![](db_basic_structure.png)
 
 ---
 
@@ -88,7 +89,8 @@ ex) HTML, XML, JSON 문서, 웹 로그, 센서 데이터
 
 ex) 소셜 데이터의 텍스트, 영상, 이미지, 워드, PDF 문서 등의 멀티미디어 데이터
 
-![](https://gekdev.github.io/docs/database/basic/example/datatype3.png)
+![](datatype3.png)
+{: .mt-2}
 
 ---
 
@@ -99,4 +101,3 @@ ex) 소셜 데이터의 텍스트, 영상, 이미지, 워드, PDF 문서 등의 
 * [데이터, 데이터베이스란?](https://ahnty0122.tistory.com/26)
 
 * [데이터 베이스 기초 강의 (DB의 개념)](https://nackwon.tistory.com/96)
-

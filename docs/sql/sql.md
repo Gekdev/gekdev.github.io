@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Database
+title: SQL
 nav_order: 7
 has_children: true
 permalink: docs/database
 ---
 
-# Database
+# SQL
 {: .no_toc .text-beta .fw-700 }
 
 정리하면서...
@@ -29,7 +29,7 @@ Database
 
 [W3schools](https://www.w3schools.com/) 홈페이지를 기반으로
 
-[생활코딩](https://opentutorials.org/module/1)를 참고하여 작성했습니다.
+[생활코딩](https://opentutorials.org/)를 참고하여 작성했습니다.
 
 또한 중간 중간 삽입한 심화 내용들은 그 아래에 따로 출처를 기재해 두었습니다.
 

@@ -178,6 +178,7 @@ select 'A' + 2 from dual;
 
 **날짜형을 문자로 변환**
 
+
 ### to_char() from number
 
 **날짜형을 숫자로 변환**

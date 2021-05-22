@@ -2,7 +2,6 @@
 layout: default
 title: Command Types
 parent: SQL
-grand_parent: Database
 nav_order: 1
 ---
 

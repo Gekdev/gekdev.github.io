@@ -1,8 +1,8 @@
 ---
 layout: default
 title: DBMS
-parent: Basic
-grand_parent: Database
+parent: Database
+grand_parent: SQL
 nav_order: 2
 ---
 

@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Basic
-parent: Database
-nav_order: 2
+title: Function
+parent: SQL
+nav_order: 5
 has_children: true
 ---
 
-# Database Basic
+# SQL Function
 {: .no_toc .text-beta .fw-700}
 
 ## Table of contents
@@ -16,3 +16,4 @@ has_children: true
 {:toc}
 
 ---
+
