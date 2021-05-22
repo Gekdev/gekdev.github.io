@@ -3,7 +3,7 @@ layout: default
 title: Group Function
 parent: SQL
 grand_parent: Database
-nav_order: 3
+nav_order: 6
 ---
 
 # SQL Group Function

@@ -1,0 +1,367 @@
+---
+layout: default
+title: Single String Function
+parent: SQL
+grand_parent: Database
+nav_order: 2
+---
+
+# SQL Single String Function
+{: .no_toc .text-beta .fw-700}
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
+---
+
+## Single String Functions
+
+### upper() / lower() / initcap()
+
+* upper() : **소문자를 대문자로 변환**
+
+* lower() : **대문자를 소문자로 변환**
+
+* initcap() : **첫글자를 대문자, 나머지는 소문자로 변환**
+
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+* **upper()** 
+
+* **lower()**
+
+* **initcap()**
+
+&#8594; ()안에는 문자열이나 함수, 열이름 등이 들어갈 수 있음
+</div>
+```sql
+-- Ex) 이름을 소문자, 대문자로 출력
+-- upper(lower(ename))는 소문자 변환한걸 대문자로 다시 변환한 모습
+select ename
+    , lower(ename)
+    , upper(ename)
+    , initcap(ename)
+    , upper(lower(ename)) 
+from emp;
+```
+
+![](upper_lower.jpg)
+
+### length() / lengthb()
+
+* length() : **문자길이를 리턴(한글인 경우 1byte)**
+
+* lengthb() : **문자길이를 리턴(한글인 경우 2byte)**
+
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+* **length()** 
+
+* **lengthb()**
+
+&#8594; ()안에는 문자열이나 함수, 열이름 등이 들어갈 수 있음
+</div>
+```sql
+-- Ex) 이름의 길이를 출력
+-- 한글 하나는 3바이트 = 두개라서 6
+select name
+    , length(name)
+    , lengthb(name)
+    , length('소향')
+    , lengthb('소향') 
+from professor;
+```
+
+![](length.jpg)
+
+#### [한글을 3Byte로 인식할 때](https://plakia.tistory.com/432)
+
+오라클 설치 시 **문자 집합을 어떻게 설정했느냐에 따라 한글을 인식하는 Byte의 길이가 달라짐**
+
+&#9656; KO16KSC5601이나 KO16MSWIN949는 한글 한 글자를 2Byte로 인식
+
+&#9656; UTF8이나 AL32UTF8의 경우 한글 한 글자를 3Byte로 인식 &#8594; 한글 정렬이 가능하다는 장점이 있음
+
+&#8594; 아래 코드는 사용중인 문자 집합을 확인할 수 있음
+
+```sql
+-- SQL PLUS 접속
+SQL > SELECT * FROM NLS_DATABASE_PARAMETERS WHERE PARAMETER LIKE '%CHARACTERSET%';
+```
+
+### concat() and ||
+
+**문자의 값을 연결 (||와 동일)**
+
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+* **concat()** 
+
+&#8594; ()안에는 문자열이나 함수, 열이름 등이 들어갈 수 있음
+</div>
+```sql
+-- Ex) 이름과 아이디를 다양한 방법으로 조합
+select name
+    , id
+    , name || ',' || id
+    , concat(concat(name, ','),id) comma
+    , concat(concat('소향의 직업은 ','가수 입니다! '), '나이는 42살 입니다') as 소향 
+from professor;
+```
+
+![](concat.jpg)
+
+### substr() / substrb()
+
+* substr : **주어진 문자에서 문자 단위로 자를때 추출**
+
+* substrb : **주어진 문자에서 바이트 단위로 문자열을 자를때 사용**
+
+    &#8594; 한글 같은 경우 문자단위로 자를때 깨지는 경우가 있어서 바이트 단위로 자르면 깨지는걸 방지할 수 있음
+
+    &#8594; 바이트를 잘못 설정해서 자르면 값이 있긴 한데 제대로 된 값이 아님 (공백인데 값이 있는 공백으로 출력)
+
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+* **substr(값, from, length)** 
+
+* **substr(값, from, length)** 
+
+&#8594; from부터 시작, length갯수 만큼 자름
+
+&#8594; from에서 음수값이 들어갈경우 뒤에서부터 셈
+</div>
+```sql
+-- 오라클 설정이 utf8로 되어있어서 한글 한글자는 3byte
+select 'abcde' 
+    , substr('abcde', 2) 
+    , substr('abcde', 3, 2) 
+    , substr('abcde', -3, 2) 
+    , substr('abcde', -3, 3)
+    , substr('abcde', 3, 3000)
+    , substrb('안녕하세요', 6,12)
+from dual; 
+```
+
+![](substr.jpg)
+
+!note
+{: .label .label-yellow .mt-2}
+<div class="code-example" markdown="1">
+한글에 substrb()사용시 제대로 바이트값을 지정하지 않으면 비정상적인 값이 출력됨
+</div>
+```sql
+select '홍길동'
+    , substr('홍길동',1,2)
+    , substrb('홍길동',1,2)  --값이 있긴 한데 제대로 된 값이 아님
+    , substrb('홍길동',1,3)
+from dual;
+```
+![](non_profit.jpg)
+
+### instr() / instrb()
+
+* instr() : **주어진 문자에서 특정문자의 위치를 리턴**
+
+* instrb() : **주어진 문자에서 특정문자의 위치 바이트를 리턴**
+
+&#9656; 음수값이 들어가면 뒤에서부터 찾지만, 값은 앞에서부터 세서 출력해줌
+
+&#9656; 시작위치, 몇번째 인수는 생략할 수 있음, 기본값 둘다 1
+
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+* **instr(문자열, 찾는글자, 시작위치, 몇번째(기본값 1))** 
+</div>
+```sql
+select instr('HELLOW WORLD', 'O') O찾기
+	, instr('HELLOW WORLD', 'O', -1) 뒤에서O찾기 -- 마이너스는 거꾸로 찾음
+	, instr('HELLOW WORLD', 'O', -1,2) 뒤에서두번째O찾기
+	, instr('안녕하세요하', '하') 하가나오는순서찾기
+	, instrb('안녕하세요하', '하') 첫번째하의바이트찾기
+	, instr('안녕하세요하', '하', -1) 뒤에서하가나오는순서
+	, instrb('안녕하세요하', '하', -1) 뒤에서하의바이트찾기
+	from dual;
+```
+
+![](str.jpg)
+
+### lpad() / rpad()
+
+* lpad() : **주어진 문자열에서 왼쪽으로 특정 문자를 채움**
+
+* rpad() : **주어진 문자열에서 왼쪽으로 특정 문자를 채움**
+
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+* **lpad(문자열, 총 문자열 자리수, 나머지 문자열에 채울문자)** 
+
+* **rpad(문자열, 총 문자열 자리수, 나머지 문자열에 채울문자)** 
+</div>
+```sql
+select name, id, length(id)
+	, lpad(id,7,'*')
+	, rpad(id,7,'*')
+	, lpad('123456789', 15, '$')
+	, rpad('123456789', 15, '$')
+from student
+where deptno1 = 201;
+```
+
+![](lpad.jpg)
+
+### ltrim() / rtrim()
+
+* ltrim() : **주어진 문자열에서 왼쪽의 특정 문자를 삭제**
+
+* rtrim() : **주어진 문자열에서 오른쪽의 특정 문자를 삭제**
+
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+* **ltrim(문자열, 왼쪽에서 자를 문자)** 
+
+* **rtrim(문자열, 오른쪽에서 자를 문자)** 
+</div>
+```sql
+select ename 
+     , ltrim(ename, 'C')
+     , ltrim(ename, 'KI')
+     , ltrim(ename, 'MI')
+     , rtrim(ename, 'MI')
+from emp
+where deptno = 10;
+```
+
+![](ltrim.jpg)
+
+### replace()
+
+* replace : **주어진 문자열에서 A를 B로 치환**
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+* **replace(문자열, 변경전문자, 변경후문자)**
+</div>
+```sql
+select ename
+     , replace(ename, 'KI', '**')
+     , replace(ename, 'I', '------')
+     , replace(ename, substr(ename,1,2), '**')
+  from emp
+ where deptno = 10;
+```
+
+![](replace.jpg)
+
+### Example
+
+Q1. STUDENT 테이블의 주민등록번호(JUNIN)에서 성별만 추출
+
+```sql
+select jumin, substr(jumin, 7,1) 성별 from student;
+select jumin, substr(jumin, 7,1) 성별 from student 
+    where substr(jumin,7,1) = '1' or substr(jumin,7,1) = '3'; --남자만 추출하는 방법
+```
+![](single_ex.jpg)
+
+Q2. STUDENT 테이블의 주민등록번호(JUNIN)에서 월일만 추출
+
+```sql
+select jumin, substr(jumin,3,4) "월일" from student;
+```
+
+![](single_ex2.jpg)
+
+Q3. STUDENT 테이블의 주민등록번호(JUNIN)에서 1전공이 101번인 학생들의 이름과 태어난 월일, 생일 하루 전 날짜를 출력
+
+```sql
+select name
+	, substr(jumin,3,4)
+	, substr(jumin,1,2) || '.' ||  substr(jumin,3,2) || '.' ||  substr(jumin,5,2) birthday
+	, birthday - 15
+from student 
+where deptno1 = 101;
+```
+
+![](single_ex3.jpg)
+
+Q4. 'CLARK', 'KING', 'MILLER'에 왼, 오른쪽으로 '123456789'를 채우는데 문자열의 나머지 순서대로 숫자 채우기
+
+```sql
+select lpad('CLARK',9,'123456789')
+    , lpad('KING',9, '123456789')
+    , lpad('MILLER',9,'123456789')
+    , rpad('CLARK',9, substr('123456789', length('CLARK')+1,(9-length('CLARK'))))
+    , rpad('KING',9, substr('123456789', length('KING')+1,(9-length('KING'))))
+    , rpad('MILLER',9, substr('123456789', length('MILLER')+1,(9-length('MILLER'))))		 
+from dual; 
+```
+
+![](lpad_ex.jpg)
+
+Q5. EMP 테이블에서 DEPTNO 20인 사원들의 이름과 3~4번째글자를 '-' 변경 
+
+ex) SMITH --> SM--H
+
+```sql
+select ename
+    , replace(ename, substr(ename,3,2), '--')
+from emp;
+```
+
+![](single_ex5.jpg)
+
+Q6. STUDENT 테이블에서 DEPTNO1 101 학생들의 이름과, 주민번호를 출력, 주민번호 7자리는 '-'와 '/'로 표시
+
+ex) 123456-/-/-/-
+
+```sql
+select name, jumin
+     , replace(jumin, substr(jumin,7),'-/-/-/-')
+ from student
+where deptno1 = 101;
+```
+
+![](single_ex6.jpg)
+
+Q7. STUDENT 테이블에서 DEPTNO1 102 학생들의 이름과 전화번호를 출력, 전화번호는 국번만 '*'처리
+
+ex) 051)999-9999 --> 051)***-9999 
+
+```sql
+select name, tel
+    , instr(tel, ')') -- )가 나오는 위치
+    , instr(tel, '-') -- -가 나오는 위치
+    , instr(tel, '-') - instr(tel, ')') -- )와 - 사이의 숫자 개수
+    , substr(tel,instr(tel, ')')+1,instr(tel, '-') - instr(tel, ')')-1) -- 번호 중간값 추출
+    , lpad('*',instr(tel, '-') - instr(tel, ')')-1,'*') -- 추출한 번호를 *로 변경
+    , replace(tel, substr(tel,instr(tel, ')')+1,instr(tel, '-') - instr(tel, ')')-1),lpad('*',instr(tel, '-') - instr(tel, ')')-1,'*'))
+from student;
+where deptno1 = 102;
+```
+
+![](single_ex7.jpg)
+
+
+Q8. STUDENT 테이블에서 DEPTNO1 102 학생들의 이름과 전화번호를 출력, 전화번호는 뒷자리를 *로 출력
+
+ex) 051)999-****
+
+```sql
+select name, tel
+    , replace(tel, substr(tel,instr(tel,'-')+1, 4), '****')
+from student
+where deptno1 = 102;
+```
+
+![](single_ex8.jpg)
