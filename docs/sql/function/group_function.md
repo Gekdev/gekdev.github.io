@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Group Function
-parent: SQL
-grand_parent: Database
+parent: Function
+grand_parent: SQL
 nav_order: 6
 ---
 
@@ -42,7 +42,7 @@ select count(comm) from emp; -- null 값 포함하지 않음
 select count(sal), count(comm) from emp;
 ```
 
-![](https://gekdev.github.io/docs/database/sql/example/count_func.jpg)
+![](https://gekdev.github.io/docs/sql/function/example/count_func.jpg)
 
 ### sum()
 
@@ -61,7 +61,7 @@ select sum(sal) from emp;
 select count(ename), sum(sal), round(sum(sal)/count(ename),0) from emp;
 ```
 
-![](https://gekdev.github.io/docs/database/sql/example/sum_func.jpg)
+![](https://gekdev.github.io/docs/sql/function/example/sum_func.jpg)
 
 ### avg()
 
@@ -88,7 +88,7 @@ union all
 select count(*), sum(comm), round(avg(nvl(comm, 0)), 0) from emp;
 ```
 
-![](https://gekdev.github.io/docs/database/sql/example/avg_func.jpg)
+![](https://gekdev.github.io/docs/sql/function/example/avg_func.jpg)
 
 ### max() & min()
 
@@ -111,7 +111,7 @@ select min(sal), max(sal) from emp;
 select min(hiredate), max(hiredate) from emp;
 ```
 
-![](https://gekdev.github.io/docs/database/sql/example/min_max_func.jpg)
+![](https://gekdev.github.io/docs/sql/function/example/min_max_func.jpg)
 
 ### stddev()
 
@@ -127,7 +127,7 @@ syntax
 select round(stddev(sal), 1) from emp;
 ```
 
-![](https://gekdev.github.io/docs/database/sql/example/stu_func.jpg)
+![](https://gekdev.github.io/docs/sql/function/example/stu_func.jpg)
 
 ### variance()
 
@@ -143,7 +143,7 @@ syntax
 select round(variance(sal), 1) from emp;
 ```
 
-![](https://gekdev.github.io/docs/database/sql/example/var_func.jpg)
+![](https://gekdev.github.io/docs/sql/function/example/var_func.jpg)
 
 	8. rollup()
 	9. cube()
@@ -204,7 +204,7 @@ select deptno 부서, sum(sal) 부서별급여합계
  order by 부서;
 ```
 
-![](https://gekdev.github.io/docs/database/sql/example/group_by1.jpg)
+![](https://gekdev.github.io/docs/sql/function/example/group_by1.jpg)
 
 ### having
 
@@ -234,7 +234,7 @@ select deptno
 having round(avg(nvl(sal, 0)), 2) < 1600.00;
 ```
 
-![](https://gekdev.github.io/docs/database/sql/example/hav.jpg)
+![](https://gekdev.github.io/docs/sql/function/example/hav.jpg)
 
 ### Examples
 
@@ -250,7 +250,7 @@ select deptno
  order by deptno;
 ```
 
-![](https://gekdev.github.io/docs/database/sql/example/gr_ex1.jpg)
+![](https://gekdev.github.io/docs/sql/function/example/gr_ex1.jpg)
 
 Q2. 업무별(JOB)로 인원수, 평균급여, 최고급여, 최소급여, 급여합계를 구하기
 
@@ -265,7 +265,7 @@ select job
  group by job;
 ```
 
-![](https://gekdev.github.io/docs/database/sql/example/gr_ex1.jpg)
+![](https://gekdev.github.io/docs/sql/function/example/gr_ex1.jpg)
 
 ---
 
@@ -309,7 +309,7 @@ select job
  group by rollup(job);
 ```
 
-![](https://gekdev.github.io/docs/database/sql/example/roll_up_ex.jpg)
+![](https://gekdev.github.io/docs/sql/function/example/roll_up_ex.jpg)
 
 ### Example
 
@@ -341,7 +341,7 @@ Q1. EMP테이블에서 부서별, 직업별, 평균급여, 사원수를 부서�
     order by deptno, job; -- 부서번호와 직업 정렬
     ```
 
-    ![](https://gekdev.github.io/docs/database/sql/example/un_zero.jpg)
+    ![](https://gekdev.github.io/docs/sql/function/example/un_zero.jpg)
 
     방법2 : null값에 이름 주기
     {: .label .mt-2}
@@ -361,7 +361,7 @@ Q1. EMP테이블에서 부서별, 직업별, 평균급여, 사원수를 부서�
     order by deptno, job;
     ```
 
-    ![](https://gekdev.github.io/docs/database/sql/example/un_one.jpg)
+    ![](https://gekdev.github.io/docs/sql/function/example/un_one.jpg)
 
 2. rollup()
 
@@ -383,7 +383,7 @@ Q1. EMP테이블에서 부서별, 직업별, 평균급여, 사원수를 부서�
     order by deptno, position;
     ```
     
-    ![](https://gekdev.github.io/docs/database/sql/example/rollup_1.jpg)
+    ![](https://gekdev.github.io/docs/sql/function/example/rollup_1.jpg)
 
     방법2
     {: .label .mt-2}
@@ -397,7 +397,7 @@ Q1. EMP테이블에서 부서별, 직업별, 평균급여, 사원수를 부서�
      group by deptno, rollup(job);
     ```
     
-    ![](https://gekdev.github.io/docs/database/sql/example/rollup_2.jpg)
+    ![](https://gekdev.github.io/docs/sql/function/example/rollup_2.jpg)
     
     방법3
     {: .label .mt-2}
@@ -411,7 +411,7 @@ Q1. EMP테이블에서 부서별, 직업별, 평균급여, 사원수를 부서�
      group by job, rollup(deptno);
     ```
     
-    ![](https://gekdev.github.io/docs/database/sql/example/rollup_3.jpg)
+    ![](https://gekdev.github.io/docs/sql/function/example/rollup_3.jpg)
 
 Q2. Professor 테이블에서 deptno, position별로 교수인원수, 급여합계 구하기
 
@@ -432,7 +432,7 @@ Q2. Professor 테이블에서 deptno, position별로 교수인원수, 급여합�
     order by deptno, position;
     ```
 
-    ![](https://gekdev.github.io/docs/database/sql/example/q2_union.jpg)
+    ![](https://gekdev.github.io/docs/sql/function/example/q2_union.jpg)
 
 2. rollup()
 
@@ -445,7 +445,7 @@ Q2. Professor 테이블에서 deptno, position별로 교수인원수, 급여합�
      group by rollup(deptno, position);
     ```
 
-    ![](https://gekdev.github.io/docs/database/sql/example/q2_rol.jpg)
+    ![](https://gekdev.github.io/docs/sql/function/example/q2_rol.jpg)
 
 ### cube()함수
 
@@ -468,7 +468,7 @@ Q1. EMP테이블에서 부서별, 직업별, 평균급여, 사원수를 부서�
  group by cube(deptno, job);
 ```
 
-![](https://gekdev.github.io/docs/database/sql/example/cube.jpg)
+![](https://gekdev.github.io/docs/sql/function/example/cube.jpg)
 
 ---
 
@@ -542,7 +542,7 @@ select empno, ename, sal
   from emp;
 ```
   
-![](https://gekdev.github.io/docs/database/sql/example/https://gekdev.github.io/docs/database/sql/example/row.jpg)
+![](https://gekdev.github.io/docs/sql/function/example/row.jpg)
 
 ---
 

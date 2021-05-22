@@ -3,7 +3,7 @@ layout: default
 title: Basic
 parent: Database
 grand_parent: SQL
-nav_order: 1
+nav_order: 2
 ---
 
 # Database Basic  
@@ -73,7 +73,7 @@ nav_order: 1
 
 &#8594; 데이터를 삽입할 때 이를 유의해야 함
 
-![](https://gekdev.github.io/docs/database/basic/example/db_datatype.png)
+![](https://gekdev.github.io/docs/sql/database/example/db_datatype.png)
 
 ### Data Integrity Constraints
 
@@ -143,7 +143,7 @@ CREATE TABLE emp(
 
 1. 비트(Bit) : 컴퓨터에서 기억하는 상태의 가장 작은 단위, 두가지 상태를 나타낼 수 있음
 
-![](https://gekdev.github.io/docs/database/basic/example/bit.jpg)
+![](https://gekdev.github.io/docs/sql/database/example/bit.jpg)
 
 2. 바이트(Byte) : 8개의 상태를 나타낼 수 있음
 
@@ -155,7 +155,7 @@ CREATE TABLE emp(
 
 6. 데이터베이스(Database) : 여러 개의 관련있는 파일을 논리적으로 연결해 필요한 부분을 적절히 찾고 활용할 수 있도록 한 것
 
-![](https://gekdev.github.io/docs/database/basic/example/heir.jpg)
+![](https://gekdev.github.io/docs/sql/database/example/heir.jpg)
 
 ---
 
@@ -175,7 +175,7 @@ CREATE TABLE emp(
 
 3단계 데이터베이스 구조(3-level-database architecture, =ANSI/SPARC 구조)
 
-![](https://gekdev.github.io/docs/database/basic/example/data_indep.jpg)
+![](https://gekdev.github.io/docs/sql/database/example/data_indep.jpg)
 
 ### External Level
 

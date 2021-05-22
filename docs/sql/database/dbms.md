@@ -3,7 +3,7 @@ layout: default
 title: DBMS
 parent: Database
 grand_parent: SQL
-nav_order: 2
+nav_order: 3
 ---
 
 # Basic DBMS 
@@ -33,7 +33,7 @@ nav_order: 2
 
 데이터베이스와 DBMS가 도입됨으로서 데이터의 공유가 가능해지고 중복을 최소화할 수 있게 되었습니다. 중복이 사라지니 데이터가 흠없이 정확한 무결성을 갖추고 일관성을 유지하기에 더 수월해졌습니다. 또한 데이터 접근 가능 여부에 인증과 인가를 도입해 보안성도 높일 수 있게 되었습니다.
 
-![](https://gekdev.github.io/docs/database/basic/example/dbsm_product.png)
+![](https://gekdev.github.io/docs/sql/database/example/dbsm_product.png)
 
 ---
 

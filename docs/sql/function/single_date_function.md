@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Single Date Function
-parent: SQL
-grand_parent: Database
+parent: Function
+grand_parent: SQL
 nav_order: 3
 ---
 
@@ -28,7 +28,7 @@ nav_order: 3
 ```sql
 select sysdate from dual;
 ```
-![](sysdate.jpg)
+![](https://gekdev.github.io/docs/sql/function/example/sysdate.jpg)
 
 ### months_between()
 
@@ -46,7 +46,7 @@ select months_between(sysdate, '19981205')
 from emp;
 ```
 
-![](month_between.jpg)
+![](https://gekdev.github.io/docs/sql/function/example/month_between.jpg)
 
 ### add_months()
 
@@ -63,7 +63,7 @@ select sysdate
 from dual;
 ```
 
-![](add_month.jpg)
+![](https://gekdev.github.io/docs/sql/function/example/add_month.jpg)
 
 ### next_day()
 
@@ -91,7 +91,7 @@ select sysdate
 from dual;
 ```
 
-![](next_day.jpg)
+![](https://gekdev.github.io/docs/sql/function/example/next_day.jpg)
 
 ### last_day()
 
@@ -109,7 +109,7 @@ select sysdate
 from dual;
 ```
 
-![](last_day.jpg)
+![](https://gekdev.github.io/docs/sql/function/example/last_day.jpg)
 
 ### Date function with round() / trunc()
 
@@ -122,7 +122,7 @@ select sysdate
   from dual;
 ```
   
-![](date_round.jpg)
+![](https://gekdev.github.io/docs/sql/function/example/date_round.jpg)
 
 ### Example
 
@@ -137,7 +137,7 @@ select empno
 from emp;
 ```
 
-![](date_example.jpg)
+![](https://gekdev.github.io/docs/sql/function/example/date_example.jpg)
 
 ---
 
@@ -155,7 +155,7 @@ from emp;
 select '2a' + 2 from dual;
 select 'A' + 2 from dual;
 ```
-![](to_num_error.jpg)
+![](https://gekdev.github.io/docs/sql/function/example/to_num_error.jpg)
 
 1. 묵시적(자동) 형변환
 

@@ -41,7 +41,7 @@ nav_order: 1
 
 **한 조직의 여러 응용시스템들이 공유해서 사용할 수 있도록 데이터들을 통합해 체계적으로 조직한 후 저장한 운영데이터의 집합**
  
-![](data_system.png)
+![](https://gekdev.github.io/docs/sql/database/example/data_system.png)
 
 ### Database Users
 
@@ -53,7 +53,7 @@ nav_order: 1
 
 * DB서버 : **DBMS를 사용하는 서버**
 
-![](db_basic_structure.png)
+![](https://gekdev.github.io/docs/sql/database/example/db_basic_structure.png)
 
 ---
 
@@ -89,7 +89,7 @@ ex) HTML, XML, JSON 문서, 웹 로그, 센서 데이터
 
 ex) 소셜 데이터의 텍스트, 영상, 이미지, 워드, PDF 문서 등의 멀티미디어 데이터
 
-![](datatype3.png)
+![](https://gekdev.github.io/docs/sql/database/example/datatype3.png)
 {: .mt-2}
 
 ---

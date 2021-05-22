@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Single String Function
-parent: SQL
-grand_parent: Database
+parent: Function
+grand_parent: SQL
 nav_order: 2
 ---
 
@@ -48,7 +48,7 @@ select ename
 from emp;
 ```
 
-![](upper_lower.jpg)
+![](https://gekdev.github.io/docs/sql/function/example/upper_lower.jpg)
 
 ### length() / lengthb()
 
@@ -75,7 +75,7 @@ select name
 from professor;
 ```
 
-![](length.jpg)
+![](https://gekdev.github.io/docs/sql/function/example/length.jpg)
 
 #### [한글을 3Byte로 인식할 때](https://plakia.tistory.com/432)
 
@@ -112,7 +112,7 @@ select name
 from professor;
 ```
 
-![](concat.jpg)
+![](https://gekdev.github.io/docs/sql/function/example/concat.jpg)
 
 ### substr() / substrb()
 
@@ -147,7 +147,7 @@ select 'abcde'
 from dual; 
 ```
 
-![](substr.jpg)
+![](https://gekdev.github.io/docs/sql/function/example/substr.jpg)
 
 !note
 {: .label .label-yellow .mt-2}
@@ -161,7 +161,7 @@ select '홍길동'
     , substrb('홍길동',1,3)
 from dual;
 ```
-![](non_profit.jpg)
+![](https://gekdev.github.io/docs/sql/function/example/non_profit.jpg)
 
 ### instr() / instrb()
 
@@ -189,7 +189,7 @@ select instr('HELLOW WORLD', 'O') O찾기
 	from dual;
 ```
 
-![](str.jpg)
+![](https://gekdev.github.io/docs/sql/function/example/str.jpg)
 
 ### lpad() / rpad()
 
@@ -214,7 +214,7 @@ from student
 where deptno1 = 201;
 ```
 
-![](lpad.jpg)
+![](https://gekdev.github.io/docs/sql/function/example/lpad.jpg)
 
 ### ltrim() / rtrim()
 
@@ -239,7 +239,7 @@ from emp
 where deptno = 10;
 ```
 
-![](ltrim.jpg)
+![](https://gekdev.github.io/docs/sql/function/example/ltrim.jpg)
 
 ### replace()
 
@@ -258,7 +258,7 @@ select ename
  where deptno = 10;
 ```
 
-![](replace.jpg)
+![](https://gekdev.github.io/docs/sql/function/example/replace.jpg)
 
 ### Example
 
@@ -269,7 +269,7 @@ select jumin, substr(jumin, 7,1) 성별 from student;
 select jumin, substr(jumin, 7,1) 성별 from student 
     where substr(jumin,7,1) = '1' or substr(jumin,7,1) = '3'; --남자만 추출하는 방법
 ```
-![](single_ex.jpg)
+![](https://gekdev.github.io/docs/sql/function/example/single_ex.jpg)
 
 Q2. STUDENT 테이블의 주민등록번호(JUNIN)에서 월일만 추출
 
@@ -277,7 +277,7 @@ Q2. STUDENT 테이블의 주민등록번호(JUNIN)에서 월일만 추출
 select jumin, substr(jumin,3,4) "월일" from student;
 ```
 
-![](single_ex2.jpg)
+![](https://gekdev.github.io/docs/sql/function/example/single_ex2.jpg)
 
 Q3. STUDENT 테이블의 주민등록번호(JUNIN)에서 1전공이 101번인 학생들의 이름과 태어난 월일, 생일 하루 전 날짜를 출력
 
@@ -290,7 +290,7 @@ from student
 where deptno1 = 101;
 ```
 
-![](single_ex3.jpg)
+![](https://gekdev.github.io/docs/sql/function/example/single_ex3.jpg)
 
 Q4. 'CLARK', 'KING', 'MILLER'에 왼, 오른쪽으로 '123456789'를 채우는데 문자열의 나머지 순서대로 숫자 채우기
 
@@ -304,7 +304,7 @@ select lpad('CLARK',9,'123456789')
 from dual; 
 ```
 
-![](lpad_ex.jpg)
+![](https://gekdev.github.io/docs/sql/function/example/lpad_ex.jpg)
 
 Q5. EMP 테이블에서 DEPTNO 20인 사원들의 이름과 3~4번째글자를 '-' 변경 
 
@@ -316,7 +316,7 @@ select ename
 from emp;
 ```
 
-![](single_ex5.jpg)
+![](https://gekdev.github.io/docs/sql/function/example/single_ex5.jpg)
 
 Q6. STUDENT 테이블에서 DEPTNO1 101 학생들의 이름과, 주민번호를 출력, 주민번호 7자리는 '-'와 '/'로 표시
 
@@ -329,7 +329,7 @@ select name, jumin
 where deptno1 = 101;
 ```
 
-![](single_ex6.jpg)
+![](https://gekdev.github.io/docs/sql/function/example/single_ex6.jpg)
 
 Q7. STUDENT 테이블에서 DEPTNO1 102 학생들의 이름과 전화번호를 출력, 전화번호는 국번만 '*'처리
 
@@ -347,7 +347,7 @@ from student;
 where deptno1 = 102;
 ```
 
-![](single_ex7.jpg)
+![](https://gekdev.github.io/docs/sql/function/example/single_ex7.jpg)
 
 
 Q8. STUDENT 테이블에서 DEPTNO1 102 학생들의 이름과 전화번호를 출력, 전화번호는 뒷자리를 *로 출력
@@ -361,4 +361,4 @@ from student
 where deptno1 = 102;
 ```
 
-![](single_ex8.jpg)
+![](https://gekdev.github.io/docs/sql/function/example/single_ex8.jpg)

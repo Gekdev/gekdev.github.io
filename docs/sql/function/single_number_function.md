@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Single Number Function
-parent: SQL
-grand_parent: Database
+parent: Function
+grand_parent: SQL
 nav_order: 3
 ---
 
@@ -32,7 +32,7 @@ syntax
 
 ```
 
-![](ceil.jpg)
+![](https://gekdev.github.io/docs/sql/function/example/ceil.jpg)
 
 ### round()
 
@@ -51,7 +51,7 @@ select round(987.654, 2)
 from dual;
 ```
 
-![](round.jpg)
+![](https://gekdev.github.io/docs/sql/function/example/round.jpg)
 
 ### floor()
 
@@ -68,7 +68,7 @@ select 123
 from dual;
 ```
 
-![](floor.jpg)
+![](https://gekdev.github.io/docs/sql/function/example/floor.jpg)
 
 ### trunc()
 
@@ -89,7 +89,7 @@ select trunc(987.654, 2)
 from dual;
 ```
 
-![](trunc.jpg)
+![](https://gekdev.github.io/docs/sql/function/example/trunc.jpg)
 
 ### mod()
 
@@ -106,7 +106,7 @@ select 121
 from dual;
 ```
 
-![](mod.jpg)
+![](https://gekdev.github.io/docs/sql/function/example/mod.jpg)
 
 ### power()
 
@@ -123,7 +123,7 @@ select power(2,3)
 from dual;
 ```
 
-![](power.jpg)
+![](https://gekdev.github.io/docs/sql/function/example/power.jpg)
 
 ### rownum()
 
@@ -138,4 +138,4 @@ select rownum, * from emp; --오류
 select rownum, ename, hiredate from emp;
 ```
 
-![](rownum.jpg)
+![](https://gekdev.github.io/docs/sql/function/example/rownum.jpg)
