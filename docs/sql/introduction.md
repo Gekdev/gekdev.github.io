@@ -26,7 +26,7 @@ nav_order: 1
 
 **Structured Query Language**
 
-&#9656; 데이터베이스에 액세스하고 조작 할 수 있음
+데이터베이스에 액세스하고 조작 할 수 있음
 
 &#9656; SQL은 1986년 ANSI(American National Standards Institute)의 표준이되었고 1987년에는 ISO(International Organization for Standardization)의 표준이 됨
 
