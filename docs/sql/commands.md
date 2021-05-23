@@ -57,7 +57,7 @@ has_children: true
 - SELECT : 테이블에 저장된 데이터를 조회하는 데 사용되는 가장 기본적인 문법
 </div>
 
-### [Select 문]()
+### [Select Statement](https://gekdev.github.io/docs/sql/commands/select/)
 
 **테이블 내의 데이터를 조회할 때 사용**
 
@@ -101,7 +101,7 @@ SELECT [distinct] 컬럼명 FROM 테이블명 [WHERE ...]
 - DELETE : 기존의 데이터를 삭제함 
 </div>
 
-### insert 문
+### insert Statement
 
 **데이터를 해당하는 테이블에 삽입하기 위해 사용**
 
@@ -112,11 +112,11 @@ INSERT INTO employees VALUES ('id','부서이름','연봉' .....);
 
 </div>
 
-### update 문
+### update Statement
 
 **테이블에 저장되어 있는 데이터를 수정할 때 사용**
 
-### delete 문
+### delete Statement
 
 **테이블에 있는 데이터를 삭제할 때 사용**
 

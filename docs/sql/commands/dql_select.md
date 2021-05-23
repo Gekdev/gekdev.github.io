@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Select
+title: DQL Select
 parent: Commands
 grand_parent: SQL / Oracle
-nav_order: 1
+nav_order: 2
 ---
 
-# Commands Select 
+# DQL Commands Select 
 {: .no_toc .text-beta .fw-700}
 
 ## Table of contents
