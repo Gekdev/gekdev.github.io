@@ -468,7 +468,7 @@ select p_total, p_qty,
 from panmae;
 ```
 
-![](sumover.jpg)  
+![](https://gekdev.github.io/docs/sql/function/example/sumover.jpg)  
 
 Q1. 판매테이블에서 1000번대리점의 판매누계 구하기 
 
@@ -479,7 +479,7 @@ select p_date, p_code, p_qty, p_total
  where p_store = 1000;
 ```
 
-![](q1_example.jpg)
+![](https://gekdev.github.io/docs/sql/function/example/q1_example.jpg)
 
 Q1-2. 상기 예제를 기준으로 제품 코드별 누계구하기, partition by(제품 코드)를 사용
 
@@ -489,7 +489,7 @@ select p_date, p_code, p_qty, p_total
   from panmae;
 ```
 
-![](q1_example2.jpg)
+![](https://gekdev.github.io/docs/sql/function/example/q1_example2.jpg)
 
 Q1-3. 상기 예제를 기준으로 제품 코드/대리점별 누계구하기
 
@@ -499,7 +499,7 @@ select p_date, p_code, p_store, p_qty, p_total
   from panmae;
 ```
 
-![](q1_example3.jpg)
+![](https://gekdev.github.io/docs/sql/function/example/q1_example3.jpg)
 
 ### ratio_to_report()
 
@@ -520,7 +520,7 @@ from panmae
 group by p_code, p_store, p_qty, p_total;
 ```
 
-![](ratio.jpg)
+![](https://gekdev.github.io/docs/sql/function/example/ratio.jpg)
 
 
 	10. groupingset()
@@ -528,4 +528,140 @@ group by p_code, p_store, p_qty, p_total;
 	12. pivot() / unpivot() - 행을 열로, 열을 행으로 
 	13. lag()
 	14. lead()
-    
+
+---
+
+## Example
+
+Q1. emp 테이블을 사용하여 사원 중에서 급여(sal)와 보너스(comm)를 합친 금액이 가장 많은 경우와 가장 적은 경우 , 평균 금액을 구하세요. 단 보너스가 없을 경우는 보너스를 0 으로 계산하고 출력 금액은 모두 소수점 첫째 자리까지만 나오게 하세요
+
+```sql
+select round(max(sal+nvl(comm,0)),1)
+		 , round(min(sal+nvl(comm,0)),1)
+		 , round(avg(sal+nvl(comm,0)),1)
+from emp;
+```
+
+![](https://gekdev.github.io/docs/sql/function/example/gr_01.jpg)
+
+Q2. student 테이블의 birthday 컬럼을 참조해서 월별로 생일자수를 출력하세요
+
+-- TOTAL, JAN, ...,  5 DEC
+
+-- 20EA   3EA ....
+
+```sql
+select count(*) TOTAL
+     , count(case when substr(birthday, 6, 2) ='01' then 1 END) JAN
+     , count(case when substr(birthday, 6, 2) ='02' then 1 END) FEB
+     , count(case when substr(birthday, 6, 2) ='03' then 1 END) MAR
+     , count(case when substr(birthday, 6, 2) ='04' then 1 END) APR
+     , count(case when substr(birthday, 6, 2) ='05' then 1 END) MAY
+     , count(case when substr(birthday, 6, 2) ='06' then 1 END) JUN
+     , count(case when substr(birthday, 6, 2) ='07' then 1 END) JUL
+     , count(case when substr(birthday, 6, 2) ='08' then 1 END) AUG
+     , count(case when substr(birthday, 6, 2) ='09' then 1 END) SEP
+     , count(case when substr(birthday, 6, 2) ='10' then 1 END) OCT
+     , count(case when substr(birthday, 6, 2) ='11' then 1 END) NOV
+     , count(case when substr(birthday, 6, 2) ='12' then 1 END) DEC
+from student;
+```
+
+![](https://gekdev.github.io/docs/sql/function/example/gr_02.jpg)
+
+Q3. Student 테이블의 tel 컬럼을 참고하여 아래와 같이 지역별 인원수를 출력하세요.
+
+단, 02-SEOUL, 031-GYEONGGI, 051-BUSAN, 052-ULSAN, 053-DAEGU, 055-GYEONGNAM 으로 출력하세요
+
+```sql
+select count(*) TOTAL
+     , count(case when substr(tel,1,instr(tel,')')-1) = '02' then 1 END) "02-SEOUL"
+     , count(case when substr(tel,1,instr(tel,')')-1) = '031' then 1 END) "31-GYEONGGI"
+     , count(case when substr(tel,1,instr(tel,')')-1) = '051' then 1 END) "051-BUSAN"
+     , count(case when substr(tel,1,instr(tel,')')-1) = '052' then 1 END) "052-ULSAN"
+     , count(case when substr(tel,1,instr(tel,')')-1) = '053' then 1 END) "053-DAEGU"
+     , count(case when substr(tel,1,instr(tel,')')-1) = '055' then 1 END) "055-YEONGNAM"
+from student;
+```
+
+![](https://gekdev.github.io/docs/sql/function/example/gr_03.jpg)
+
+Q4. emp 테이블을 사용하여 직원들의 급여와 전체 급여의 누적 급여금액을 출력, 단 급여를 오름차순으로 정렬해서 출력하세요.
+
+-- sum() over()
+
+```sql
+select sal, sum(sal) over(order by sal) "누적 급여금액" from emp;
+```
+
+![](https://gekdev.github.io/docs/sql/function/example/gr_04.jpg)
+
+Q5. student 테이블의 Tel 컬럼을 사용하여 아래와 같이 지역별 인원수와 전체대비 차지하는 비율을 출력하세요.
+
+(단, 02-SEOUL, 031-GYEONGGI, 051-BUSAN, 052-ULSAN, 053-DAEGU,055-GYEONGNAM)
+
+```sql
+select count(*) TOTAL
+     , count(case when substr(tel,1,instr(tel,')')-1) ='02' then 1 END) "02-SEOUL"
+     , count(case when substr(tel,1,instr(tel,')')-1) ='031' then 1 END) "031-GYEONGGI"
+     , count(case when substr(tel,1,instr(tel,')')-1) ='051' then 1 END) "051-BUSAN"
+     , count(case when substr(tel,1,instr(tel,')')-1) ='052' then 1 END) "052-ULSAN"
+     , count(case when substr(tel,1,instr(tel,')')-1) ='053' then 1 END) "053-DAEGU"
+     , count(case when substr(tel,1,instr(tel,')')-1) ='055' then 1 END) "055-GYEONGNAM"
+     , round(count(case when substr(tel,1,instr(tel,')')-1) ='02' then 1 END) / count(*) * 100, 2)  "서울비율(%)"
+     , round(count(case when substr(tel,1,instr(tel,')')-1) ='031' then 1 END) / count(*) * 100, 2) "경기비율(%)"
+     , round(count(case when substr(tel,1,instr(tel,')')-1) ='051' then 1 END) / count(*) * 100, 2) "부산비율(%)"
+     , round(count(case when substr(tel,1,instr(tel,')')-1) ='052' then 1 END) / count(*) * 100, 2) "울산비율(%)"
+     , round(count(case when substr(tel,1,instr(tel,')')-1) ='053' then 1 END) / count(*) * 100, 2) "대구비율(%)"
+     , round(count(case when substr(tel,1,instr(tel,')')-1) ='055' then 1 END) / count(*) * 100, 2) "경남비율(%)"
+from student;
+```
+
+![](https://gekdev.github.io/docs/sql/function/example/gr_06.jpg)
+
+Q6. emp 테이블을 사용하여 부서별로 급여 누적 합계가 나오도록 출력하세요. ( 단 부서번호로 오름차순 출력하세요. )
+
+```sql
+select deptno, ename, sal,
+    sum(sal) over(partition by deptno) 급여누계
+from emp;
+```
+
+![](https://gekdev.github.io/docs/sql/function/example/gr_07.jpg)
+
+Q8. emp 테이블을 사용하여 각 사원의 급여액이 전체 직원 급여총액에서 몇 %의 비율을 차지하는지 출력하세요. 단 급여 비중이 높은 사람이 먼저 출력되도록 하세요
+
+```sql
+select ename, sal
+		 , round(ratio_to_report(sal) over() * 100,2) "%비중"
+from emp;
+```
+
+![](https://gekdev.github.io/docs/sql/function/example/gr_08.jpg)
+
+Q8. emp 테이블을 조회하여 각 직원들의 급여가 해당 부서 합계금액에서 몇 %의 비중을 차지하는지를 출력하세요. 단 부서번호를 기준으로 오름차순으로 출력하세요.
+
+```sql
+select deptno, ename, sal 
+     , sum(sal) over(partition by deptno)
+     , round(ratio_to_report(sal) over (partition by deptno) * 100,2)
+from emp;
+```
+
+![](https://gekdev.github.io/docs/sql/function/example/gr_09.jpg)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
