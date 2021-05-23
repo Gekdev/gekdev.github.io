@@ -24,7 +24,7 @@ nav_order: 2
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-**ceil() : 주어진 숫자를 올림** 
+**ceil(실수, 자릿수) : 실수를 특정 자리수에서 올림** 
 </div>
 ```sql
 select 123

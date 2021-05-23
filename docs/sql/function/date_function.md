@@ -30,9 +30,20 @@ select sysdate from dual;
 ```
 ![](https://gekdev.github.io/docs/sql/function/example/sysdate.jpg)
 
+날짜 계산하기
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+| 종류 | 결과 | 의미|
+|:----|:-----|:---|
+|date+number | 날짜 | 날짜에 일수를 더하여 날짜 계산    |
+|date-number | 날짜 | 날짜에 일수를 빼서 날짜를 계산    |
+|date-date   | 일수 | 날짜와 날짜를 빼서 일수를 계산    |
+|date+number/24 | 날짜 | 날짜에 시간을 더하여 날짜 계산 |
+</div>
+
 ### months_between()
 
-**두 날짜의 개월수, 결과는 숫자**
+**두 날짜의 개월수가 몇 개월인지를 반환함, 결과는 숫자**
 
 syntax
 {: .label .mt-2}
@@ -56,6 +67,8 @@ syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
 **add_months(날짜문자열, 숫자)** 
+
+&#9656; 숫자는 정수여야 하고 음수일수도 있음 
 </div>
 ```sql
 select sysdate
@@ -69,9 +82,9 @@ from dual;
 
 **주어진 날짜를 기준으로 돌아오는 날짜를 출력, 결과는 날짜**
 
-1부터 일요일, ... 7 토요일
+&#9656; 1부터 일요일, ... 7 토요일
 
-Sun과 같이 문자열도 사용가능
+&#9656; Sun과 같이 문자열도 사용가능
 
 syntax
 {: .label .mt-2}
@@ -113,7 +126,26 @@ from dual;
 
 ### Date function with round() / trunc()
 
-숫자함수에서 했던 성질 그대로 날짜를 반올림하거나 버림
+**숫자함수에서 했던 성질 그대로 날짜를 반올림하거나 버림**
+
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+**round(date, format)** 
+
+**trunc(date, format)** 
+</div>
+
+| 포멧 모델 | 단위 |
+|:---------|:-----|
+|CC, SCC | 자리 연도의 끝 두 글자를 기준으로 반올림 |
+|SYYY, YYYY, YEAR, SYEAR, YYY, YY, Y | 년(7월 1일부터 반올림) |
+|DDD, D, J | 일을 기준 |
+|HH, HH12, HH24 | 시를 기준 |
+|Q | 한 분기의 두번째 달에 16일을 기준으로 반올림 |
+|MONTH, MON, MM, RM | 월(16일을 기준으로 반올림) |
+|DAY, DY, D | 한 주가 시작되는 날짜 |
+|MI | 분을 기준 |
 
 ```sql
 select sysdate
@@ -126,12 +158,13 @@ select sysdate
 
 ### Example
 
-Q1. EMP 테이블에서 ename, hiredate, 근속월, 근속년수 출력
+Q1. EMP 테이블에서 ename, hiredate, 근무일수, 근속월, 근속년수 출력
 
 ```sql
 select empno
     , ename
     , hiredate
+    , trunc(sysdate-hiredate) 근무일수
     , trunc(months_between(sysdate, hiredate), 0) 근속월
     , trunc(trunc(months_between(sysdate, hiredate), 0) / 12, 0) 근속년수
 from emp;
