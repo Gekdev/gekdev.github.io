@@ -19,9 +19,9 @@ nav_order: 6
 
 ## Group Functions
 
-### count()
+그룹함수는 두번 까지 중첩해서 사용 가능
 
-**조회되는 데이터들의 총 건수** 
+### count()
 
 &#9656; row를 세서 출력하는 것
 
@@ -32,7 +32,7 @@ nav_order: 6
 syntax
 {: .label .mt2}
 <div class="code-example" markdown="1">
-**count(칼럼명)**
+**count(칼럼명)** : **조회되는 데이터들의 총 건수** 
 </div>
 ```sql
 select count(*) from emp;
@@ -46,14 +46,12 @@ select count(sal), count(comm) from emp;
 
 ### sum()
 
-**조회되는 데이터들을 총 합계** 
-
 &#9656; 값이 숫자여야지 오류가 나지 않음
 
 syntax
 {: .label .mt2}
 <div class="code-example" markdown="1">
-**sum(칼럼명)**
+**sum(칼럼명)** : **조회되는 데이터들을 총 합계** 
 </div>
 ```sql
 select sum(ename) from emp; -- 에러
@@ -65,14 +63,12 @@ select count(ename), sum(sal), round(sum(sal)/count(ename),0) from emp;
 
 ### avg()
 
-**조회되는 데이터들을 평균**
-
 &#9656; avg는 null값을 빼고 평균을 구함
 
 syntax
 {: .label .mt2}
 <div class="code-example" markdown="1">
-**avg(칼럼명)**
+**avg(칼럼명)** : 조회되는 데이터들을 평균
 </div>
 ```sql
 -- Q1) 평균급여 구하기
@@ -92,16 +88,14 @@ select count(*), sum(comm), round(avg(nvl(comm, 0)), 0) from emp;
 
 ### max() & min()
 
-**조회되는 데이터들중 최대/소값**
-
 &#9656; 문자열은 a에 가까울수록 값이 낮다
 
 syntax
 {: .label .mt2}
 <div class="code-example" markdown="1">
-**max(칼럼명)**
+**max(칼럼명) : 조회되는 데이터들중 최대값**
 
-**min(칼럼명)**
+**min(칼럼명) : 조회되는 데이터들중 최소값**
 </div>
 ```sql
 -- Q1) 최소급여, 최대급여 구하기
@@ -115,12 +109,10 @@ select min(hiredate), max(hiredate) from emp;
 
 ### stddev()
 
-**조회되는 데이터들을 표준편차값**
-
 syntax
 {: .label .mt2}
 <div class="code-example" markdown="1">
-**stddev(칼럼명)**
+**stddev(칼럼명) : 조회되는 데이터들을 표준편차값**
 </div>
 ```sql
 -- Q1) 급여의 표준편차 값 구하기
@@ -131,12 +123,10 @@ select round(stddev(sal), 1) from emp;
 
 ### variance()
 
-**조회되는 데이터들을 분산값**
-
 syntax
 {: .label .mt2}
 <div class="code-example" markdown="1">
-**stddev(칼럼명)**
+**stddev(칼럼명) : 조회되는 데이터들을 분산값**
 </div>
 ```sql
 -- Q1) 급여의 표준편차 값 구하기
@@ -144,97 +134,8 @@ select round(variance(sal), 1) from emp;
 ```
 
 ![](https://gekdev.github.io/docs/sql/function/example/var_func.jpg)
-
-	8. rollup()
-	9. cube()
-    
-	10. groupingset()
-	11. listagg()
-	12. pivot() / unpivot() - 행을 열로, 열을 행으로 
-	13. lag()
-	14. lead()
-    
-	15. rank()
-	16. dense_rank()
-	
-    17. sum() over()
-	18. ration_to_report()
 	
 ---
-
-## group by
-
-### group by
-
-**그룹 함수의 결과를 조건에 따라 그룹화하기**
-
-&#9656; select절에 사용된 **그룹함수 이외의 컬럼이나 표현식은 반드시 group by 절에 정의** 되어야 함
-
-&#9656; group by 절에 사용된 컬럼이라도 select절에 사용되지 않아도 됨
-
-&#9656; group by 절에는 반드시 컬럼명이 사용되어야 함 (alias는 사용 불가)
-
-&#9656; group by절을 사용한 select문에 order by절로 정렬을 하기 위해서는 order by절은 group by절 뒤에 정의해야 한다
-
-&#8594; (order by 절에서는 별칭도 정의가 가능)
-
-syntax
-{: .label .mt2}
-<div class="code-example" markdown="1">
-select .... from .... **group by ...** [order by ...];
-
-&#9656; []은 생략가능, group by로 만들어진 그룹에 따라 순서를 정렬하는것
-</div>
-```sql
--- Q1) 부서별 급여합계
--- ver1) where 절
--- 데이터에 맞는 조건 하나씩(부서 하나의 급여합계)만 검색 가능하고, 
--- 부서별로 급여 합계를 보려면 union all로 합쳐야지 한꺼번에 출력되기 때문에 불편함
-select 10 부서, sum(sal) 급여합계 from emp where deptno = 10 
-union all
-select 20, sum(sal) from emp where deptno = 20   
-union all
-select 30, sum(sal) from emp where deptno = 30;
-
--- ver2) sum() 그룹함수
--- group by를 사용하면서 부서별로 급여 합계를 쉽게 볼 수 있음
-select deptno 부서, sum(sal) 부서별급여합계
-  from emp
- group by deptno
- order by 부서;
-```
-
-![](https://gekdev.github.io/docs/sql/function/example/group_by1.jpg)
-
-### having
-
-**집계함수를 가지고 그룹결과를 조건별로 결과 구하기**
-
-&#8594; 단일행 함수에서 사용했던 where조건과 동일
-
-&#8594; 즉, 그룹화에서 조건을 주기위해서는 having절을 사용, where절에는 그룹화 되지 않은 행에서 단일 조건을 검색할 때 사용
-
-&#8594; having절에는 집계함수를 가지고 조건을 비교할 때 사용되며 having절과 group by절과 함께 사용
-
-&#8594; having절은 group by절없이 사용할 수 없고, order by 절보다 일찍 나옴
-
-syntax
-{: .label .mt2}
-<div class="code-example" markdown="1">
-select .... from .... group by .... **having ....** [order by ...];
-
-&#9656; []은 생략가능, group by로 만들어진 그룹에 따라 순서를 정렬하는것
-</div>
-``` sql
--- Q1) EMP테이블에서 평균 급여가 1600보다 낮은 부서번호와 평균급여를 출력
-select deptno
-     , round(avg(nvl(sal, 0)), 2) 평균급여
-  from emp
- group by deptno
-having round(avg(nvl(sal, 0)), 2) < 1600.00;
-```
-
-![](https://gekdev.github.io/docs/sql/function/example/hav.jpg)
 
 ### Examples
 
@@ -472,9 +373,9 @@ Q1. EMP테이블에서 부서별, 직업별, 평균급여, 사원수를 부서�
 
 ---
 
-## 순위함수 
+## Rank Function
 
-순위함수 사용시에는 order by절은 필수로 정의
+**순위함수 사용시에는 order by절은 필수로 정의**
 
 ### rank()
 
@@ -512,6 +413,8 @@ select deptno, ename, sal
   from emp;
 ```
 
+![](https://gekdev.github.io/docs/sql/function/example/rank.jpg)
+
 ### dense_rank()
 
 **동일순서의 처리에 영향이 없다 (중복순위, 1,2,2,3)**
@@ -526,6 +429,8 @@ select empno, ename, sal
 	 , dense_rank() over(order by sal) 
   from emp;
 ```
+
+![](https://gekdev.github.io/docs/sql/function/example/dense.jpg)
 
 ### row_number() 
 
@@ -546,49 +451,81 @@ select empno, ename, sal
 
 ---
 
-## 기타함수 
+## Other Functions
 
-1. sum() over        : 누계를 구하는 함수
-    ... sum(컬럼) over (order by 컬럼(기준열))
-2. ratio_to_report() : 비율을 구하는 함수
+### sum() over
 
-*/
+**누계를 구하는 함수**
 
---1. sum() over()
-select * from panmae;
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+... **sum(컬럼) over (order by 컬럼(기준열))**
+</div>
+```sql
+select p_total, p_qty,
+    sum(p_total) over(order by p_total)
+from panmae;
+```
 
---판매테이블에서 1000번대리점의 판매누계 구하기
+![](sumover.jpg)  
+
+Q1. 판매테이블에서 1000번대리점의 판매누계 구하기 
+
+```sql
 select p_date, p_code, p_qty, p_total
 		 , sum(p_total) over(order by p_total) 판매누계
   from panmae
  where p_store = 1000;
+```
 
--- 상기 예제를 기준으로 제품 코드별 누계구하기
--- partition by(제품 코드)를 사용
+![](q1_example.jpg)
+
+Q1-2. 상기 예제를 기준으로 제품 코드별 누계구하기, partition by(제품 코드)를 사용
+
+```sql
 select p_date, p_code, p_qty, p_total
      , sum(p_total) over(partition by p_code order by p_date)
   from panmae;
+```
 
--- 상기 예제를 기준으로 제품 코드/대리점별 누계구하기
+![](q1_example2.jpg)
+
+Q1-3. 상기 예제를 기준으로 제품 코드/대리점별 누계구하기
+
+```sql
 select p_date, p_code, p_store, p_qty, p_total
      , sum(p_total) over(partition by p_code, p_store order by p_date)
   from panmae;
+```
 
--- 2. ratio_to_report()
+![](q1_example3.jpg)
+
+### ratio_to_report()
+
+**비율을 구하는 함수**
+
+```sql
 --판매비율
 select p_code
-		 , sum(p_qty) over() tot_qty
-		 , sum(p_total) over() tot_amt
-		 , p_store
-		 , p_total
-		 , round(p_total / sum(p_total) over(),2)
-		 , round(p_total / (select sum(p_total) from panmae), 2) --두번 읽어야 해서 별로 안좋음
-		 , round(ratio_to_report(sum(p_qty)) over() * 100,2) "수량(%)"
-		 , round(ratio_to_report(sum(p_total)) over() * 100,2) "금액(%)"
-  from panmae
+    , sum(p_qty) over() tot_qty
+    , sum(p_total) over() tot_amt
+    , p_store
+    , p_total
+    , round(p_total / sum(p_total) over(),2)
+    , round(p_total / (select sum(p_total) from panmae), 2) --두번 읽어야 해서 별로 안좋음
+    , round(ratio_to_report(sum(p_qty)) over() * 100,2) "수량(%)"
+    , round(ratio_to_report(sum(p_total)) over() * 100,2) "금액(%)"
+from panmae
 group by p_code, p_store, p_qty, p_total;
+```
 
-select sum(p_qty), sum(p_total)
-  from panmae;
+![](ratio.jpg)
 
 
+	10. groupingset()
+	11. listagg()
+	12. pivot() / unpivot() - 행을 열로, 열을 행으로 
+	13. lag()
+	14. lead()
+    

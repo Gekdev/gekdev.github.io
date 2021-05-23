@@ -564,6 +564,82 @@ select deptno, ename from emp order by deptno desc, ename asc;
 
 **동일한 값을 갖는 로우들을 한 그룹으로 묶음**
 
+### group by
+
+**그룹 함수의 결과를 조건에 따라 그룹화하기**
+
+&#9656; select절에 사용된 **그룹함수 이외의 컬럼이나 표현식은 반드시 group by 절에 정의** 되어야 함
+
+&#9656; group by 절에 사용된 컬럼이라도 select절에 사용되지 않아도 됨
+
+&#9656; group by 절에는 반드시 컬럼명이 사용되어야 함 (alias는 사용 불가)
+
+&#9656; group by절을 사용한 select문에 order by절로 정렬을 하기 위해서는 order by절은 group by절 뒤에 정의해야 한다
+
+&#8594; (order by 절에서는 별칭도 정의가 가능)
+
+syntax
+{: .label .mt2}
+<div class="code-example" markdown="1">
+select .... from .... **group by ...** [order by ...];
+
+&#9656; []은 생략가능, group by로 만들어진 그룹에 따라 순서를 정렬하는것
+</div>
+```sql
+-- Q1) 부서별 급여합계
+-- ver1) where 절
+-- 데이터에 맞는 조건 하나씩(부서 하나의 급여합계)만 검색 가능하고, 
+-- 부서별로 급여 합계를 보려면 union all로 합쳐야지 한꺼번에 출력되기 때문에 불편함
+select 10 부서, sum(sal) 급여합계 from emp where deptno = 10 
+union all
+select 20, sum(sal) from emp where deptno = 20   
+union all
+select 30, sum(sal) from emp where deptno = 30;
+
+-- ver2) sum() 그룹함수
+-- group by를 사용하면서 부서별로 급여 합계를 쉽게 볼 수 있음
+select deptno 부서, sum(sal) 부서별급여합계
+  from emp
+ group by deptno
+ order by 부서;
+```
+
+![](https://gekdev.github.io/docs/sql/function/example/group_by1.jpg)
+
+---
+
+## Having Clause
+
+### having
+
+**집계함수를 가지고 그룹결과를 조건별로 결과 구하기**
+
+&#8594; 단일행 함수에서 사용했던 where조건과 동일
+
+&#8594; 즉, 그룹화에서 조건을 주기위해서는 having절을 사용, where절에는 그룹화 되지 않은 행에서 단일 조건을 검색할 때 사용
+
+&#8594; having절에는 집계함수를 가지고 조건을 비교할 때 사용되며 having절과 group by절과 함께 사용
+
+&#8594; having절은 group by절없이 사용할 수 없고, order by 절보다 일찍 나옴
+
+syntax
+{: .label .mt2}
+<div class="code-example" markdown="1">
+select .... from .... group by .... **having ....** [order by ...];
+
+&#9656; []은 생략가능, group by로 만들어진 그룹에 따라 순서를 정렬하는것
+</div>
+``` sql
+-- Q1) EMP테이블에서 평균 급여가 1600보다 낮은 부서번호와 평균급여를 출력
+select deptno
+     , round(avg(nvl(sal, 0)), 2) 평균급여
+  from emp
+ group by deptno
+having round(avg(nvl(sal, 0)), 2) < 1600.00;
+```
+
+![](https://gekdev.github.io/docs/sql/function/example/hav.jpg)
+
 ---
 
 ## UNION Operator
