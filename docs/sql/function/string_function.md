@@ -15,7 +15,7 @@ nav_order: 2
 1. TOC
 {:toc}
 
----
+--- 
 
 ## String Functions
 
@@ -30,7 +30,7 @@ syntax
 
 * **lower()** : **대문자를 소문자로 변환**
 
-* **initcap()** **첫글자를 대문자, 나머지는 소문자로 변환**
+* **initcap() : 첫글자를 대문자, 나머지는 소문자로 변환**
 
 &#9656; ()안에는 문자열이나 함수, 열이름(데이터 타입 문자열)등이 들어갈 수 있음
 </div>
@@ -86,12 +86,12 @@ SQL > SELECT * FROM NLS_DATABASE_PARAMETERS WHERE PARAMETER LIKE '%CHARACTERSET%
 ```
 
 <span class="fs-2">
-[tistory](https://plakia.tistory.com/432){: .btn .btn-outline .mt-2}
+[Tistory](https://plakia.tistory.com/432){: .btn .btn-outline .mt-2}
 </span>
 
 ### Character Connect Function
 
-&#9656; concat()과 `||`은 동일하게 작동함
+concat()과 `||`은 동일하게 작동함
 
 syntax
 {: .label .mt-2}
@@ -113,10 +113,6 @@ from professor;
 
 ### Character Extraction function
 
-&#9656; from부터 시작, length갯수 만큼 자름
-
-&#9656; from에서 음수값이 들어갈경우 뒤에서부터 셈
-
 &#9656; 한글 같은 경우 문자단위로 자를때 깨지는 경우가 있어서 substrb인 바이트 단위로 자르면 깨지는걸 방지할 수 있음
 
 &#8594; 바이트를 잘못 설정해서 자르면 값이 있긴 한데 제대로 된 값이 아님 (공백인데 값이 있는 공백으로 출력)
@@ -127,6 +123,10 @@ syntax
 * **substr(값, from, length) : 주어진 문자에서 문자 단위로 자를때 추출** 
 
 * **substrb(값, from, length) : 주어진 문자에서 바이트 단위로 문자열을 자를때 사용** 
+
+&#9656; from부터 시작, length갯수 만큼 자름
+
+&#9656; from에서 음수값이 들어갈경우 뒤에서부터 셈
 </div>
 ```sql
 -- 오라클 설정이 utf8로 되어있어서 한글 한글자는 3byte

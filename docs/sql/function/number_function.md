@@ -3,7 +3,7 @@ layout: default
 title: Number Function
 parent: Function
 grand_parent: SQL / Oracle
-nav_order: 3
+nav_order: 2
 ---
 
 # SQL Single Number Function
@@ -21,27 +21,26 @@ nav_order: 3
 
 ### ceil()
 
-**주어진 숫자를 올림**
-
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-**ceil()** 
+**ceil() : 주어진 숫자를 올림** 
 </div>
 ```sql
-
+select 123
+    , ceil(123.55)
+    , ceil(123.25)
+from dual;
 ```
 
 ![](https://gekdev.github.io/docs/sql/function/example/ceil.jpg)
 
 ### round()
 
-**주어진 숫자를 반올림**
-
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-**round(실수, 반올림위치)** 
+**round(실수, 자릿수) : 실수를 특정 자리수에서 반올림** 
 </div>
 ```sql
 select round(987.654, 2)
@@ -55,12 +54,13 @@ from dual;
 
 ### floor()
 
-**주어진 숫자를 내림**
-
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-**floor()** 
+**floor(실수, 자릿수) : 실수를 특정 자리수에서 내림**
+
+소숫점 기준 0으로 시작함
+
 </div>
 ```sql
 select 123
@@ -72,14 +72,12 @@ from dual;
 
 ### trunc()
 
-**주어진 숫자를 버림**
-
-round()와 동일한데 다른 점은 무조건 버림처리
+&#9656; round()와 동일한데 다른 점은 무조건 버림처리
 
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-**trunc(숫자, 잘릴위치)** 
+**trunc(숫자, 자릿수) : 실수를 특정 자리수에서 버림** 
 </div>
 ```sql
 select trunc(987.654, 2)
@@ -93,12 +91,10 @@ from dual;
 
 ### mod()
 
-**주어진 숫자를 나누기 후 나머지**
-
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-**mod()** 
+**mod(실수, 자를숫자) : 실수를 자를숫자로 나눈 후 나머지값 반환** 
 </div>
 ```sql
 select 121
@@ -110,12 +106,10 @@ from dual;
 
 ### power()
 
-**주어진 숫자의 숫자의 승을 출력**
-
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-**power()** 
+**power(실수, 승) : 실수의 승을 출력** 
 </div>
 ```sql
 select power(2,3)
@@ -129,9 +123,9 @@ from dual;
 
 **행번호를 출력해줌**
 
-오라클에서만 사용하는 속성으로 모든 객체에 제공
+&#9656; 오라클에서만 사용하는 속성으로 모든 객체에 제공
 
-전체열 즉, *와 같이 사용할 수 없음
+&#9656; 전체열 즉, *와 같이 사용할 수 없음
 
 ```sql
 select rownum, * from emp; --오류
