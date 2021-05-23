@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Single Number Function
+title: Number Function
 parent: Function
 grand_parent: SQL / Oracle
 nav_order: 3

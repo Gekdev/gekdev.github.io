@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Single String Function
+title: String Function
 parent: Function
 grand_parent: SQL / Oracle
 nav_order: 2
@@ -17,26 +17,22 @@ nav_order: 2
 
 ---
 
-## Single String Functions
+## String Functions
 
-### upper() / lower() / initcap()
+대소문자를 변환하거나 문자열의 길이를 반환하거나 데이터를 조작하는 함수 등으로 나뉨
 
-* upper() : **소문자를 대문자로 변환**
-
-* lower() : **대문자를 소문자로 변환**
-
-* initcap() : **첫글자를 대문자, 나머지는 소문자로 변환**
+### Case Transformation Function
 
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-* **upper()** 
+* **upper()** : **소문자를 대문자로 변환**
 
-* **lower()**
+* **lower()** : **대문자를 소문자로 변환**
 
-* **initcap()**
+* **initcap()** **첫글자를 대문자, 나머지는 소문자로 변환**
 
-&#8594; ()안에는 문자열이나 함수, 열이름 등이 들어갈 수 있음
+&#9656; ()안에는 문자열이나 함수, 열이름(데이터 타입 문자열)등이 들어갈 수 있음
 </div>
 ```sql
 -- upper(lower(ename))는 소문자 변환한걸 대문자로 다시 변환한 모습
@@ -50,20 +46,16 @@ from emp;
 
 ![](https://gekdev.github.io/docs/sql/function/example/upper_lower.jpg)
 
-### length() / lengthb()
-
-* length() : **문자길이를 리턴(한글인 경우 1byte)**
-
-* lengthb() : **문자길이를 리턴(한글인 경우 2byte)**
+### Returns Character Length Function
 
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-* **length()** 
+* **length() : 문자길이를 리턴(한글인 경우 1byte)**
 
-* **lengthb()**
+* **lengthb() : 문자길이를 리턴(한글인 경우 2byte)**
 
-&#8594; ()안에는 문자열이나 함수, 열이름 등이 들어갈 수 있음
+&#9656; ()안에는 문자열이나 함수, 열이름(데이터 타입 문자열)등이 들어갈 수 있음
 </div>
 ```sql
 -- 한글 하나는 3바이트 = 두개라서 6
@@ -77,8 +69,9 @@ from professor;
 
 ![](https://gekdev.github.io/docs/sql/function/example/length.jpg)
 
-#### [한글을 3Byte로 인식할 때](https://plakia.tistory.com/432)
-
+한글을 3Byte로 인식할 때
+{: .label .label-yellow .mt-2}
+<div class="code-example" markdown="1">
 오라클 설치 시 **문자 집합을 어떻게 설정했느냐에 따라 한글을 인식하는 Byte의 길이가 달라짐**
 
 &#9656; KO16KSC5601이나 KO16MSWIN949는 한글 한 글자를 2Byte로 인식
@@ -86,22 +79,26 @@ from professor;
 &#9656; UTF8이나 AL32UTF8의 경우 한글 한 글자를 3Byte로 인식 &#8594; 한글 정렬이 가능하다는 장점이 있음
 
 &#8594; 아래 코드는 사용중인 문자 집합을 확인할 수 있음
-
+</div>
 ```sql
 -- SQL PLUS 접속
 SQL > SELECT * FROM NLS_DATABASE_PARAMETERS WHERE PARAMETER LIKE '%CHARACTERSET%';
 ```
 
-### concat() and `||`
+<span class="fs-2">
+[tistory](https://plakia.tistory.com/432){: .btn .btn-outline .mt-2}
+</span>
 
-**문자의 값을 연결 (`||`와 동일)**
+### Character Connect Function
+
+&#9656; concat()과 `||`은 동일하게 작동함
 
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-**concat()** 
+**concat() : 문자의 값을 연결** 
 
-&#8594; ()안에는 문자열이나 함수, 열이름 등이 들어갈 수 있음
+&#9656; ()안에는 문자열이나 함수, 열이름 등이 들어갈 수 있음
 </div>
 ```sql
 select name
@@ -114,26 +111,22 @@ from professor;
 
 ![](https://gekdev.github.io/docs/sql/function/example/concat.jpg)
 
-### substr() / substrb()
+### Character Extraction function
 
-* substr : **주어진 문자에서 문자 단위로 자를때 추출**
+&#9656; from부터 시작, length갯수 만큼 자름
 
-* substrb : **주어진 문자에서 바이트 단위로 문자열을 자를때 사용**
+&#9656; from에서 음수값이 들어갈경우 뒤에서부터 셈
 
-    &#8594; 한글 같은 경우 문자단위로 자를때 깨지는 경우가 있어서 바이트 단위로 자르면 깨지는걸 방지할 수 있음
+&#9656; 한글 같은 경우 문자단위로 자를때 깨지는 경우가 있어서 substrb인 바이트 단위로 자르면 깨지는걸 방지할 수 있음
 
-    &#8594; 바이트를 잘못 설정해서 자르면 값이 있긴 한데 제대로 된 값이 아님 (공백인데 값이 있는 공백으로 출력)
+&#8594; 바이트를 잘못 설정해서 자르면 값이 있긴 한데 제대로 된 값이 아님 (공백인데 값이 있는 공백으로 출력)
 
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-* **substr(값, from, length)** 
+* **substr(값, from, length) : 주어진 문자에서 문자 단위로 자를때 추출** 
 
-* **substr(값, from, length)** 
-
-&#8594; from부터 시작, length갯수 만큼 자름
-
-&#8594; from에서 음수값이 들어갈경우 뒤에서부터 셈
+* **substrb(값, from, length) : 주어진 문자에서 바이트 단위로 문자열을 자를때 사용** 
 </div>
 ```sql
 -- 오라클 설정이 utf8로 되어있어서 한글 한글자는 3byte
@@ -153,6 +146,7 @@ from dual;
 {: .label .label-yellow .mt-2}
 <div class="code-example" markdown="1">
 한글에 substrb()사용시 제대로 바이트값을 지정하지 않으면 비정상적인 값이 출력됨
+![](https://gekdev.github.io/docs/sql/function/example/non_profit.jpg)
 </div>
 ```sql
 select '홍길동'
@@ -161,13 +155,8 @@ select '홍길동'
     , substrb('홍길동',1,3)
 from dual;
 ```
-![](https://gekdev.github.io/docs/sql/function/example/non_profit.jpg)
 
-### instr() / instrb()
-
-* instr() : **주어진 문자에서 특정문자의 위치를 리턴**
-
-* instrb() : **주어진 문자에서 특정문자의 위치 바이트를 리턴**
+### Character Location Value Return Function
 
 &#9656; 음수값이 들어가면 뒤에서부터 찾지만, 값은 앞에서부터 세서 출력해줌
 
@@ -176,7 +165,9 @@ from dual;
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-**instr(문자열, 찾는글자, 시작위치, 몇번째(기본값 1))** 
+* **instr(문자열, 찾는글자, 시작위치, 몇번째(기본값 1)) : 주어진 문자에서 특정문자의 위치를 리턴** 
+
+* **instrb(문자열, 찾는글자, 시작위치, 몇번째(기본값 1)) 주어진 문자에서 특정문자의 위치 바이트를 리턴** 
 </div>
 ```sql
 select instr('HELLOW WORLD', 'O') O찾기
@@ -191,18 +182,14 @@ select instr('HELLOW WORLD', 'O') O찾기
 
 ![](https://gekdev.github.io/docs/sql/function/example/str.jpg)
 
-### lpad() / rpad()
-
-* lpad() : **주어진 문자열에서 왼쪽으로 특정 문자를 채움**
-
-* rpad() : **주어진 문자열에서 오른쪽으로 특정 문자를 채움**
+### Returns Characters of a Particular Length Function
 
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-* **lpad(문자열, 총 문자열 자리수, 나머지 문자열에 채울문자)** 
+* **lpad(문자열, 총 문자열 자리수, 나머지 문자열에 채울문자) : 주어진 문자열에서 왼쪽으로 특정 문자를 채움** 
 
-* **rpad(문자열, 총 문자열 자리수, 나머지 문자열에 채울문자)** 
+* **rpad(문자열, 총 문자열 자리수, 나머지 문자열에 채울문자) : 주어진 문자열에서 오른쪽으로 특정 문자를 채움** 
 </div>
 ```sql
 select name, id, length(id)
@@ -216,20 +203,25 @@ where deptno1 = 201;
 
 ![](https://gekdev.github.io/docs/sql/function/example/lpad.jpg)
 
-### ltrim() / rtrim()
-
-* ltrim() : **주어진 문자열에서 왼쪽의 특정 문자를 삭제**
-
-* rtrim() : **주어진 문자열에서 오른쪽의 특정 문자를 삭제**
+### Text Trim function
 
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-* **ltrim(문자열, 왼쪽에서 자를 문자)** 
+* **trim(문자열, 오른쪽에서 자를 문자) : 칼럼이나 대상 문자열에서 특정 문자가 첫 번째 글자이거나 마지막 글자이면 잘라내고 남은 문자열만 반환** 
 
-* **rtrim(문자열, 오른쪽에서 자를 문자)** 
+* **ltrim(문자열, 왼쪽에서 자를 문자) : 주어진 문자열에서 왼쪽의 특정 문자나 공백를 삭제** 
+
+* **rtrim(문자열, 오른쪽에서 자를 문자) : 주어진 문자열에서 오른쪽의 특정 문자나 공백 문자를 삭제** 
 </div>
 ```sql
+select ' Oracle mania '
+    , trim(' Oracle mania ')
+    , ltrim(' Oracle mania ')
+    , rtrim(' Oracle mania ')
+    , trim('O' from 'Oracle mania')
+from dual;
+
 select ename 
      , ltrim(ename, 'C')
      , ltrim(ename, 'KI')
@@ -239,15 +231,16 @@ from emp
 where deptno = 10;
 ```
 
+![](https://gekdev.github.io/docs/sql/function/example/trim2.jpg)
+
 ![](https://gekdev.github.io/docs/sql/function/example/ltrim.jpg)
 
-### replace()
+### Function that replaces characters
 
-* replace : **주어진 문자열에서 A를 B로 치환**
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-**replace(문자열, 변경전문자, 변경후문자)**
+**replace(문자열, 변경전문자, 변경후문자) : 주어진 문자열에서 A를 B로 치환**
 </div>
 ```sql
 select ename
@@ -271,7 +264,7 @@ select jumin, substr(jumin, 7,1) 성별 from student
 ```
 ![](https://gekdev.github.io/docs/sql/function/example/single_ex.jpg)
 
-Q2. STUDENT 테이블의 주민등록번호(JUNIN)에서 월일만 추출
+Q2. STUDENT 테이블의 주민등록번호(JUNIN)에서 월일만 추출{: .mt-2}
 
 ```sql
 select jumin, substr(jumin,3,4) "월일" from student;
@@ -279,7 +272,7 @@ select jumin, substr(jumin,3,4) "월일" from student;
 
 ![](https://gekdev.github.io/docs/sql/function/example/single_ex2.jpg)
 
-Q3. STUDENT 테이블의 주민등록번호(JUNIN)에서 1전공이 101번인 학생들의 이름과 태어난 월일, 생일 하루 전 날짜를 출력
+Q3. STUDENT 테이블의 주민등록번호(JUNIN)에서 1전공이 101번인 학생들의 이름과 태어난 월일, 생일 하루 전 날짜를 출력{: .mt-2}
 
 ```sql
 select name
@@ -292,7 +285,7 @@ where deptno1 = 101;
 
 ![](https://gekdev.github.io/docs/sql/function/example/single_ex3.jpg)
 
-Q4. 'CLARK', 'KING', 'MILLER'에 왼, 오른쪽으로 '123456789'를 채우는데 문자열의 나머지 순서대로 숫자 채우기
+Q4. 'CLARK', 'KING', 'MILLER'에 왼, 오른쪽으로 '123456789'를 채우는데 문자열의 나머지 순서대로 숫자 채우기{: .mt-2}
 
 ```sql
 select lpad('CLARK',9,'123456789')
@@ -306,7 +299,7 @@ from dual;
 
 ![](https://gekdev.github.io/docs/sql/function/example/lpad_ex.jpg)
 
-Q5. EMP 테이블에서 DEPTNO 20인 사원들의 이름과 3~4번째글자를 '-' 변경 
+Q5. EMP 테이블에서 DEPTNO 20인 사원들의 이름과 3~4번째글자를 '-' 변경{: .mt-2} 
 
 ex) SMITH --> SM--H
 
@@ -318,7 +311,7 @@ from emp;
 
 ![](https://gekdev.github.io/docs/sql/function/example/single_ex5.jpg)
 
-Q6. STUDENT 테이블에서 DEPTNO1 101 학생들의 이름과, 주민번호를 출력, 주민번호 7자리는 '-'와 '/'로 표시
+Q6. STUDENT 테이블에서 DEPTNO1 101 학생들의 이름과, 주민번호를 출력, 주민번호 7자리는 '-'와 '/'로 표시{: .mt-2}
 
 ex) 123456-/-/-/-
 
@@ -331,7 +324,7 @@ where deptno1 = 101;
 
 ![](https://gekdev.github.io/docs/sql/function/example/single_ex6.jpg)
 
-Q7. STUDENT 테이블에서 DEPTNO1 102 학생들의 이름과 전화번호를 출력, 전화번호는 국번만 '*'처리
+Q7. STUDENT 테이블에서 DEPTNO1 102 학생들의 이름과 전화번호를 출력, 전화번호는 국번만 '*'처리{: .mt-2}
 
 ex) 051)999-9999 --> 051)***-9999 
 
@@ -350,7 +343,7 @@ where deptno1 = 102;
 ![](https://gekdev.github.io/docs/sql/function/example/single_ex7.jpg)
 
 
-Q8. STUDENT 테이블에서 DEPTNO1 102 학생들의 이름과 전화번호를 출력, 전화번호는 뒷자리를 *로 출력
+Q8. STUDENT 테이블에서 DEPTNO1 102 학생들의 이름과 전화번호를 출력, 전화번호는 뒷자리를 *로 출력{: .mt-2}
 
 ex) 051)999-****
 
