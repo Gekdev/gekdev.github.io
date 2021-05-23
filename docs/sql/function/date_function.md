@@ -32,14 +32,14 @@ select sysdate from dual;
 
 날짜 계산하기
 {: .label .mt-2}
-<div class="code-example" markdown="1">
+
 | 종류 | 결과 | 의미|
 |:----|:-----|:---|
 |date+number | 날짜 | 날짜에 일수를 더하여 날짜 계산    |
 |date-number | 날짜 | 날짜에 일수를 빼서 날짜를 계산    |
 |date-date   | 일수 | 날짜와 날짜를 빼서 일수를 계산    |
 |date+number/24 | 날짜 | 날짜에 시간을 더하여 날짜 계산 |
-</div>
+
 
 ### months_between()
 
@@ -233,7 +233,7 @@ syntax
     | DAY | 요일 표현 |
     | DY | 요일을 약어로 표현 |
 
-    ```SQL
+    ```sql
     --입사일에서 입사년도와 월만 출력하거나 입사일을 출력하되 요일까지 함께 출력
     select ename, hiredate
         , to_char(hiredate, 'YY-MM')
@@ -254,7 +254,7 @@ syntax
     | MI | 분 표현 |
     | SS | 초 표현 |
 
-    ```SQL
+    ```sql
     select to_char(sysdate, 'YYYY/MM/DD, HH24:MI:SS')
     from dual;
     ```
@@ -272,7 +272,7 @@ syntax
     | . | 소숫점을 표시 |
     | , | 천 단위 자리 구분을 표시 |
 
-    ```SQL
+    ```sql
 	select ename, to_char(sal, 'L999,999')
     from emp;
     ```
