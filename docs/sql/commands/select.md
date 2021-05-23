@@ -34,7 +34,7 @@ select ename, empno, job from emp;
     -- ename, empno, job 컬럼 조회
 ```
 
-![](https://gekdev.github.io/docs/database/sql/example/sel_bas.jpg)
+![](https://gekdev.github.io/docs/sql/commands/example/sel_bas.jpg)
 
 &#9656; 문자열 사용할때는 주의해야 함, 작은 따옴표 안에 작은 따옴표 nesting 불가 (에러)
 
@@ -51,7 +51,7 @@ select '한'글', ename from emp;
     -- 에러    
 ```
 
-![](https://gekdev.github.io/docs/database/sql/example/smol_quot.jpg)
+![](https://gekdev.github.io/docs/sql/commands/example/smol_quot.jpg)
 
 #### distinct 절
 
@@ -68,7 +68,7 @@ select distinct deptno from emp order by deptno;
 select distinct deptno from emp order by deptno desc;
 ```
 
-![](https://gekdev.github.io/docs/database/sql/example/distc_jpg)
+![](https://gekdev.github.io/docs/sql/commands/example/distc_jpg)
 
 #### 표현식
 
@@ -97,7 +97,7 @@ select '이름=', "ename" from emp;
     -- 에러 : 컬럼명을 소문자 큰따옴표
 ```
 
-![](https://gekdev.github.io/docs/database/sql/example/ex_name.jpg)
+![](https://gekdev.github.io/docs/sql/commands/example/ex_name.jpg)
 
 #### alias
 
@@ -192,4 +192,4 @@ select distinct deptno from emp order by deptno desc;
 	-- 내림차순
 ```
 
-![](https://gekdev.github.io/docs/database/sql/example/desc.jpg)
+![](https://gekdev.github.io/docs/sql/commands/example/desc.jpg)

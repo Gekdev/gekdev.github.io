@@ -110,6 +110,10 @@ SQL은 ANSI / ISO 표준이지만 SQL 언어에는 여러 버전이 있음
 
 * [SQL의 종류](https://webstudynote.tistory.com/46)
 
+* [Practical Oracle SQL](https://www.apress.com/kr/book/9781484256169)
+
+    &#9656; [github](https://github.com/Apress/practical-oracle-sql)
+
 ### Quiz
 
 * [W3School](https://www.w3schools.com/sql/sql_quiz.asp)

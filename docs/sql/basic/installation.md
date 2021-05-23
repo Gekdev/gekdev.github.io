@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Oracle Installation
+title: Installation
 parent: Basic
 grand_parent: SQL / Oracle
 nav_order: 1
 ---
 
-# Basic Oracle Installation
+# Basic Installation
 {: .no_toc .text-beta .fw-700}
 
 ## Table of contents
@@ -376,6 +376,8 @@ SQL> exit
 5. locked
 
     접속하려면 기본값으로 hr은 잠겨있음
+    
+    &#8594; 만약 위에서 잠금을 풀어줬다면 아래 HR권한만들기 하지 않아도 됨
 
     ![](https://gekdev.github.io/docs/sql/basic/example/locked.JPG)
 
@@ -544,13 +546,3 @@ HR사용자 확인하면서 SCOTT 계정은 없는걸 확인했음
     INSERT INTO SALGRADE VALUES (4,2001,3000);
     INSERT INTO SALGRADE VALUES (5,3001,9999);
     ```
-
----
-
-## Reference Site
-
-### Information
-
-* [Practical Oracle SQL](https://www.apress.com/kr/book/9781484256169)
-
-    &#9656; [github](https://github.com/Apress/practical-oracle-sql)

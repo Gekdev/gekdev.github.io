@@ -3,6 +3,7 @@ layout: default
 title: Commands
 parent: SQL / Oracle
 nav_order: 4
+has_children: true
 ---
 
 # SQL Commands
