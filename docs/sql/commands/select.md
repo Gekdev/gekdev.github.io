@@ -6,7 +6,7 @@ grand_parent: SQL / Oracle
 nav_order: 1
 ---
 
-# Commands Select
+# Commands Select 
 {: .no_toc .text-beta .fw-700}
 
 ## Table of contents
@@ -260,7 +260,7 @@ where hiredate <= '1981.06.09'
 
 #### example
 
-1. 기본 연습
+↓ 기본 연습
 
 ```sql
 -- Q1. 사원번호가 7900인 자료만 조회하기
@@ -312,7 +312,7 @@ select * from emp where sal between 2000 and 3000;
 select * from emp where sal > 2000 and sal <= 3000;
 ```
 
-2. 연습문제
+↓ 연습문제
 
 ```sql
 -- ex01) 급여가 1000보다 작은 사원만 출력하기(ename/sal/hiredate 만 출력)
