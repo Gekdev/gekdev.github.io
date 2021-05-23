@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Command Types
+title: Commands
 parent: SQL / Oracle
-nav_order: 1
+nav_order: 4
 ---
 
-# SQL Command Types
+# SQL Commands
 {: .no_toc .text-beta .fw-700}
 
 ## Table of contents
