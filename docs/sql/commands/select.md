@@ -240,7 +240,7 @@ select ... from ... **where condition**
 |=      | 비교대상과 같은 조건을 검색    |
 |!=, <> | 같지 않다                   |
 |>      | 크다                       |
-||>=    | 크거나 같다                 |
+|>=     | 크거나 같다                 |
 |<      | 작다                       |
 |<=     | 작거나 같다                 |
 
@@ -253,84 +253,88 @@ where hiredate <= '1981.06.09'
 
 #### example
 
-```sql
-/* /////////////////////////////
-A. 비교연산자
-///////////////////////////// */
+* 기본 연습
 
--- 1. 사원번호가 7900인 자료만 조회하기
-select *
-	from emp
-	where empno = 7900;
+    ```sql
+    -- Q1. 사원번호가 7900인 자료만 조회하기
+    select * from emp where empno = 7900;
 
--- 2. 급여(sal)가 900보다 작은 사원만 출력
-select *
-	from emp
-	where sal < 900;
-	
--- 3. 이름이 smith인 사원만 출력
-select *
-	from emp
-	where ename = 'SMITH'; --"와 공백은 같은것, '만 문자열로 나타남, 리터럴 값은 소문자 대문자 구별함
+    -- Q2. 급여(sal)가 900보다 작은 사원만 출력
+    select * from emp where sal < 900;
 
--- 4. 입사일(hiredate) 1980-12-17인 사원만 출력
-select *
-	from emp
-	where hiredate =  '1980-12-17'; -- 형변환(암묵)되어서 date타입을 비교하게됨
+    -- Q3. 이름이 smith인 사원만 출력
+    select * from emp where ename = 'SMITH'; 
+        --"와 공백은 같은것, '만 문자열로 나타남, 리터럴 값은 소문자 대문자 구별함
 
-select *
-	from emp
-	where hiredate =  '19801217'; 
-				
-select *
-	from emp
-	where hiredate =  '1980-dec-17'; 	
-	
-select *
-	from emp
-	where hiredate =  '1980-DEC-17'; 	
-	
-select *
-	from emp
-	where hiredate =  '1980.12.17'; 	
-		
-select *
-	from emp
-	where hiredate =  '80/12/17'; -- DB환경설정때문에 error	
-													
-select *
-	from emp
-	where hiredate =  '1980.80.17'; 	-- 80월이 시스템으로 없기때문에 error
-	
-select *
-	from emp
-	where hiredate =  '1980.10.40'; 	-- 40일이 시스템으로 없기때문에 error
-```
+    -- Q4. 입사일(hiredate) 1980-12-17인 사원만 출력
+    select * from emp where hiredate = '1980-12-17'; 
+        -- 형변환(암묵)되어서 date타입을 비교하게됨
 
-![](https://gekdev.github.io/docs/sql/commands/example/comp2.jpg)
+    select * from emp where hiredate = '19801217'; 
 
-```sql    
--- 5. 기본 연산자를 이용해서 현재 급여를 인상
--- 인상전급여, 인상후급여 = 인상전급여의 10% 인상
-select 인상전급여, 인상후 급여 from emp;
-select sal 인상전급여 , sal*1.1 인상후급여 from emp;
-select sal 인상전급여 , (sal*1.1 + 100)/2 인상후급여 from emp; --db에 전혀 영향이 안감, 조회만 하는것(select)
+    select * from emp where hiredate = '1980-dec-17'; 	
 
--- 6. 급여가 4000보다 크거나 같은 사원만 출력
-select * from emp where sal >= 4000;
-select ename,sal from emp where 4000 <= sal;
+    select * from emp where hiredate = '1980-DEC-17'; 	
 
--- 7. 사원명이 'W'보다 크거나 같은 사원만 출력
-select * from emp where ename >= 'W';
+    select * from emp where hiredate = '1980.12.17'; 	
 
--- 8. 급여가 2000보다 크면서 3000보다 작거나 같은 사원만 출력
-select * from emp where sal between 2000 and 3000;
-select * from emp where sal > 2000 and sal <= 3000;
-```
+    select * from emp where hiredate = '80/12/17'; 
+        -- DB환경설정때문에 error	
 
+    select * from emp where hiredate = '1980.80.17'; 	
+        -- 80월이 시스템으로 없기때문에 error
 
+    select * from emp where hiredate = '1980.10.40'; 	
+        -- 40일이 시스템으로 없기때문에 error
+
+    -- Q5. 기본 연산자를 이용해서 현재 급여를 인상
+    -- 인상전급여, 인상후급여 = 인상전급여의 10% 인상
+    select 인상전급여, 인상후 급여 from emp;
+    select sal 인상전급여 , sal*1.1 인상후급여 from emp;
+    select sal 인상전급여 , (sal*1.1 + 100)/2 인상후급여 from emp; --db에 전혀 영향이 안감, 조회만 하는것(select)
+
+    -- Q6. 급여가 4000보다 크거나 같은 사원만 출력
+    select * from emp where sal >= 4000;
+    select ename,sal from emp where 4000 <= sal;
+
+    -- Q7. 사원명이 'W'보다 크거나 같은 사원만 출력
+    select * from emp where ename >= 'W';
+
+    -- Q8. 급여가 2000보다 크면서 3000보다 작거나 같은 사원만 출력
+    select * from emp where sal between 2000 and 3000;
+    select * from emp where sal > 2000 and sal <= 3000;
+    ```
+
+* 연습문제
+
+    ```sql
+    -- ex01) 급여가 1000보다 작은 사원만 출력하기(ename/sal/hiredate 만 출력)
+    select ename, sal, hiredate from emp where 1000 > sal
+
+    -- ex02) 부서(dept)테이블에서 부서번호와, 부서명을 별칭으로 한 sql문을 작성
+    select * from dept
+    select deptno as 부서번호, dname as 부서명 from dept
+
+    -- ex03) 사원테이블에서 직급만 출력하는데 중복되지 않게 출력하는 sql문
+    select distinct job from emp
+
+    -- ex04) 급여가 800인 사원만 조회
+    select * from emp where 800 = sal
+    select * from emp where '800' = sal --내부적으로 변환됨, 위보다 실행속도가 느리다
+
+    -- ex05) 사원명이 BLAKE인 사원만 출력
+    select * from emp where 'BLAKE' = ename
+
+    -- ex06) 사원이름 JAMES-MATIN사이의 사원을 사원번호, 사원명, 급여를 출력
+    --  and betweem 두가지 형태로 작성
+    select * from emp;
+    select * from emp where ename >= 'JAMES' and ename <= 'MATIN'
+    select * from emp where ename between 'JAMES' and 'MATIN'	--실행속도가 더 빠름
+    ```
 
 ### Logical operator
+
+**조건을 여러 개 조합해서 결과를 얻어야 할 경우에 조건을 연결해 주는 역할**
 
 |연산자  | 의미                                          |
 |:------|:---------------------------------------------|
@@ -338,12 +342,138 @@ select * from emp where sal > 2000 and sal <= 3000;
 |OR     | 두가지 이상의 조건 중에서 한가지만 만족해도 검색 가능|
 |NOT    | 조건에 만족하지 못하는 것만 검색                  |
 
+#### example
+
+* 연습문제
+
+    ```sql
+    -- ex01) 입사일이 1982-01-01 이후이면서 급여가 3000보다 크거나 같은 사원목록
+    select * from emp where hiredate > '1982-01-01' and sal >=3000;
+    
+    -- ex02) 입사일이 1982-01-01 이후이거나 급여가 3000보다 크거나 같은 사원목록
+    select * from emp where hiredate > '1982-01-01' or sal >=3000;
+    
+    -- ex03) 사원이름은 S로 시작되면서 급여가 800인 사원
+    select * from emp where ename like 'S%' and sal = 800;
+    
+    -- ex04) 급여가 1000보다 크면서 (comm이 1000보다 작거나 comm이 null) 인사원
+    select * from emp where (comm <1000 or comm is null) and sal > 1000;
+    ```
+    
+### between a and b 
+
+**특정 칼럼의 데이터 값이 하한값과 상한값 사이에 포함되는 로우를 검색하기 위한 연산자**
+
+&#9656; 비교연산자와 논리연산자를 합친것과 같음
+
+&#9656; 날짜나 문자 상수에 사용할 경우에는 작은 따옴표로 묶어줘야 함
+
+SYNTAX
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+column_name **between A and B**
+</div>
+```sql
+select * from emp
+where deptno between 20 and 30;
+    -- and 연산자와 비교연산자를 사용한것과 같음 
+
+select * from emp
+where deptno not between 20 and 25; 
+    -- or 연산자와 비교연산자 사용한것과 같음
+```
+
+![](https://gekdev.github.io/docs/sql/commands/example/between.jpg)
+
+### in(a,b,c)
+
+**특정 칼럼의 값이 A,B,C중에 하나라도 일치하면 참이 되는 연산자**
+
+&#9656; or 연산자를 사용한것과 동일함
+
+&#9656; 앞에 not을 붙이면 <>, != 연산자를 사용한것과 동일함
+
+SYNTAX
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+column_name **in(A,B,C)**
+</div>
+```sql
+--1. emp에서 부서번호가 10, 20인 사원만 조회
+select ename, sal, deptno
+from emp where deptno in(10,20)
+
+select ename, sal, deptno
+from emp where deptno = 10 or deptno = 20; 
+    -- 위와 같은 방법이지만 코드가 길어지기 때문에 안좋음
+	
+select ename, sal, deptno
+	from emp
+	where deptno in (10,20)
+	order by deptno;
+	
+select ename, deptno, sal
+	from emp
+	where deptno in (10,20)
+	order by 1; -- 숫자는 열 번호 순서를 고름
+	
+select ename, deptno, sal
+	from emp
+	where deptno in (10,20)
+	order by 2, 3 asc; --먼저 정렬해야 하는걸 먼저 정렬함
+	
+select deptno, ename, sal
+	from emp
+	where deptno in (10,20)
+	order by deptno, sal desc, 2; 
+```
+
+![](https://gekdev.github.io/docs/sql/commands/example/in.jpg)
+
+### like operator
+
+**칼럼에 저장된 문자 상수 중 like연산자에서 지정한 문자 패턴과 부분적으로 일치하면 참이 되는 연산자**
+
+&#9656; 데이터의 일부만 일치하더라도 조회가 가능하도록 하기 위해서 사용
+
+&#9656; pattern에는 두가지가 있음
+
+|연산자  | 의미                                              |
+|:------|:-------------------------------------------------|
+| %     | 문자가 없거나 하나 이상의 문자가 어떤 값이 와도 상관없음 |
+| _     | 하나의 문자가 어떤 값이 와도 상관없음(_의 갯수만큼 따짐) |
+
+SYNTAX
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+column_name **like pattern**
+</div>
+
+```sql
+select * from emp where ename like 'A%';
+select * from emp where ename between 'A' and 'AZ';
+
+--이름이 N으로 끝나는 사원
+select * from emp where ename like '%N';
+
+--이름에 A를 포함하는 사원
+select * from emp where ename like '%A%';
+
+--sal이 50으로 끝나는 사원만 출력
+select * from emp where SAL like '%50';
+
+--입사일이 1980년대 입사한 사람
+select * from emp where HIREDATE like '198%';
+
+--입사월이 12월에 입사한 사람
+select empno, ename, sal, hiredate from emp where HIREDATE like '_____12%';
+select empno, ename, sal, hiredate from emp where HIREDATE like '____-12%';
+```
 
 
-2. between a and b : a와 b사이 범위의 값
-3. in(a,b,c) : a,b,c값을 가지고 있는 데이터
-4. like : 특정패턴을 가지고 있는 조건의 데이터
-5. is null / is not null : null값을 검색
+### is null / is not null
+
+**null값을 검색**
 
  
 #### group by 절
