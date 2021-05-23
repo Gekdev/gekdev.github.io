@@ -3,7 +3,7 @@ layout: default
 title: String Function
 parent: Function
 grand_parent: SQL / Oracle
-nav_order: 2
+nav_order: 1
 ---
 
 # SQL Single String Function

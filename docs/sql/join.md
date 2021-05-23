@@ -28,6 +28,12 @@ nav_order: 6
 
 &#9656; 조인 결과가 의미를 가지려면 조인할 때 조건을 지정해야 함
 
+```sql
+select * from emp, dept; 
+```
+
+![](https://gekdev.github.io/docs/sql/example/cart.jpg)
+
 ### ANSI JOIN
 
 EQUI JOIN, NON-EQUI JOIN, OUTER JOIN, SELF JOIN등을 오라클 9i부터는 **ANSI 표준 SQL 조인 구문으로 제공해 줌**
@@ -60,8 +66,24 @@ from table1, table2 -- 조인 대상 테이블을 기술하고 ,로 구분
 where table1.column1 = table.column2;** -- =를 사용해 조인 조건 기술(기본 키와 외래 키에 공통적으로 존재하는 칼럼)
 </div>
 ```sql
-
+select emp.deptno, emp.ename, emp.hiredate, dept.dname
+from emp, dept
+where emp.deptno = dept.deptno;
 ```
+
+![](https://gekdev.github.io/docs/sql/example/join1.jpg)
+
+### EQUI JOIN with AND
+
+테이블을 조인할 경우 조인 뿐만 아니라 고려 대상인 행을 제한하기 위해 where 절에 조건을 추가해야 하는 경우가 있음
+
+```sql
+select emp.deptno, emp.ename, dept.dname
+from emp, dept
+where emp.deptno = dept.deptno and dname = 'SALES';
+```
+
+![](https://gekdev.github.io/docs/sql/example/join_and.jpg)
 
 ### Alias Rules
 
@@ -73,37 +95,183 @@ where table1.column1 = table.column2;** -- =를 사용해 조인 조건 기술(�
 
 4. 테이블의 별칭은 해당 SQL 명령문 내에서만 유효함
 
-### NATURL JOIN
+```sql
+select d.deptno, e.ename, d.dname
+from emp e, dept d
+where e.deptno = d.deptno;
+```
 
-**where절을 사용하지 않고 natural join키워드를 사용하면 오라클에서 자동적으로 테이블의 모든 칼럼을 대상으로 일치하는 데이터 유형 및 이름을 가진 공통 칼럼을 조사한 후에 자동으로 조인을 수행**
+![](https://gekdev.github.io/docs/sql/example/ansi.jpg)
 
-&#9656; 오라클 9i 이전에 equi join으로 사용하던 것을 대신해서 사용하는 조인방식
+### JOIN ~ ON
 
-&#9656; 조인 칼럼에 테이블 별칭을 사용하면 오류가 발생
+임의의 조건을 지정하거나 조인할 칼럼을 지정하려면 ON절을 사용
 
-&#9656; 조인에 참여하는 두 테이블 모두에서 동일한 이름과 테이블 유형을 가진 칼럼이 존재해야 한다는 점에 주의
+조인 조건만을 ON절에 기술하고 다른 검색이나 필터 조건은 WHERE절에 분리해서 기술할 수 있음
+
+```sql
+select dpt.deptno, emp.ename, dpt.dname
+from emp emp inner join dept dpt 
+on emp.deptno = dpt.deptno;
+```
+
+![](https://gekdev.github.io/docs/sql/example/join_on.jpg)
+
+### EQUI JOIN Multiple Tables
+
+**여러개의 테이블을 동시에 조인하는 방법**
+
+```sql
+-- 1. where 조건으로 연결
+select stu.name studentname
+     , pro.name professorname
+     , dpt.dname subject
+	from student stu, professor pro, department dpt 
+	where stu.profno = pro.profno and stu.deptno1 = dpt.deptno;
+
+-- 2. inner join으로 연결
+select stu.name studentname
+     , pro.name professorname
+     , dpt.dname subject
+	from student stu inner join professor pro on stu.profno = pro.profno
+	                 inner join department dpt on stu.deptno1 = dpt.deptno;
+```
+
+![](https://gekdev.github.io/docs/sql/example/three_join.jpg)
+
+---
+
+## NON-EQUI JOIN
+
+### EQUI JOIN Syntax
+
+**비등가 조인, 조인 조건에 특정 범위 내에 있는지를 조사하기 위해서 사용**
+
+&#9656; where절에 < 나 between a and b와 같은 =이 아닌 조건연산자를 사용
+
+```sql
+-- 고객명과 상품명, 마일리지를 출력
+select cus.gname 고객명, gif.gname 상품명, to_char(cus.point, '999,999') 마일리지 
+from customer cus, gift gif
+where cus.point between gif.g_start and gif.g_end;
+```
+
+![](https://gekdev.github.io/docs/sql/example/uneq.jpg)
+
+### NON-EQUI JOIN Multiple Tables
+
+3개의 테이블을 조인하는 방법
+
+```sql
+--표준
+select name 학생명, scr.total 점수, hak.grade 학점 
+from student stu, score scr, hakjum hak
+where stu.studno = scr.studno 
+    and scr.total between hak.min_point and hak.max_point;
+
+--ansi
+select name 학생명, scr.total 점수, hak.grade 학점 
+from student std inner join score scr on std.studno = scr.studno
+                 inner join hakjum hak on scr.total between hak.min_point and hak.max_point;
+```
+
+![](https://gekdev.github.io/docs/sql/example/non_equl_three.jpg)
+
+---
+
+## SELF JOIN
+
+**하나의 테이블에 있는 칼럼 끼리 연결해야 하는 조인이 필요한 경우 사용**
+
+&#9656; 한 테이블에서 두 개의 칼럼을 연결할 때 FROM 절에서 하나의 테이블에 테이블 별칭을 지정
+
+---
+
+## OUTER JOIN
+
+**EQUI JOIN에서 양측 칼럼 값 중의 하나가 NULL 이지만 조인 결과로 출력할 필요가 있는 경우 사용**
+
+&#9656; WHERE 절의 조인 조건에서는 OUTER JOIN 연산자인 + 기호를 사용, 조인 조건문에서 NULL이 출력되는 테이블의 칼럼에 + 기호를 추가
+
+### LEFT OUTER JOIN
 
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
 select table1.column, table2.column
 
-from table1 **natural join** table2;
+from table1, table2 
+
+**where table1.column = table.column2(+);**
+
+-- join on 절
+
+select table1.column, table2.column
+
+from table1 **left outer join table2 
+
+on table1.column1 = table.column2**;
 </div>
 ```sql
+ --left outer join, 학생에 배정받은 교수 없음
+select std.name 학생이름, pro.name 교수이름
+from student std, professor pro
+where std.profno = pro.profno(+); -- left outer join, 오라클에서만 사용 
 
-
-
+select std.name 학생이름, pro.name
+from student std left outer join professor pro 
+on std.profno = pro.profno; 
 ```
 
----
+![](https://gekdev.github.io/docs/sql/example/left_outer.jpg)
 
-## NON-EQUI JOIN
+### RIGHT OUTER JOIN
 
----
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+select table1.column, table2.column
 
-## SELF JOIN
+from table1, table2 
 
----
+**where table1.column1(+) = table.column2**;
 
-## OUTER JOIN
+-- join on 절
+
+select table1.column, table2.column
+
+from table1 **right outer join table2 
+
+on table1.column1 = table.column2**;
+</div>
+```sql
+--right outer join, 교수에 배정받은 학생없음 
+select std.name 학생이름, pro.name 교수이름
+from student std, professor pro
+where std.profno(+) = pro.profno; -- right outer join, 오라클에서만 사용 
+
+select std.name 학생이름, pro.name
+from student std right outer join professor pro 
+on std.profno = pro.profno;
+```
+
+![](https://gekdev.github.io/docs/sql/example/right_outer.JPG)
+
+### FULL JOIN
+
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+select table1.column, table2.column
+
+from table1 **full outer join table2 
+
+on table1.column1 = table.column2**;
+</div>
+```sql
+select std.name 학생이름, pro.name
+from student std full outer join professor pro 
+on std.profno = pro.profno; 
+```
+
+![](https://gekdev.github.io/docs/sql/example/full_join.jpg)
