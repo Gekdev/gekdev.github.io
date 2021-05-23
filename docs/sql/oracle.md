@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Oracle
+title: Oracle Installation
 parent: SQL / Oracle
-nav_order: 5
-has_children: true
+nav_order: 1
+grand_parent: SQL / Oracle
 ---
 
-# Oracle
+# Oracle Installation
 {: .no_toc .text-beta .fw-700}
 
 ## Table of contents
@@ -33,7 +33,7 @@ has_children: true
 
 4. 완료
 
-![](https://gekdev.github.io/docs/database/oracle/example/or_ins_finish.JPG)
+![](https://gekdev.github.io/docs/sql/basic/example/or_ins_finish.JPG)
 
 ### Navicat Install
 
@@ -64,7 +64,7 @@ has_children: true
 9. 완료
 
 <span class="fs-2">
-[자세히 확인하기](https://gekdev.github.io/docs/database/oracle/example/navicatpatch순서.txt){: .btn .btn-outline .mt-2}
+[자세히 확인하기](https://gekdev.github.io/docs/sql/basic/example/navicatpatch순서.txt){: .btn .btn-outline .mt-2}
 </span>
 
 ### Oracle DB Connection Checking
@@ -98,7 +98,22 @@ has_children: true
     ```sql
     SQL> exit
     ```
-    
+
+오라클에서 제공되는 사용자 계정
+{: .label .mt2}
+<div class="code-example" markdown="1">
+* SYS : 오라클 SUPER 사용자계정, 데이터베이스에서 발생하는 모든 문제들을 처리할 수 있는 권한을 가지고 있음
+
+* SYSTEM : 오라클 데이터베이스를 유지보수 관리할 떄 사용하는 사용자 계정이며, SYS 사용자와의 차이점은 데이터베이스를 생성할 수 있는 권한이 없으면 불완전 복구를 할 수 없음
+
+* HR : 처음 오라클을 사용하는 사용자의 실습을 위해 만들어놓은 교육용 계정
+</div>
+```html
+sys와 system계정은 dba권한을 가짐 → 사용자를 생성하거나 삭제, 변경 등의 시스템 권한을 가지고 있음
+
+오라클을 처음 설치하자마자 디폴트로 생성되고 활성화 되어있는 사용자 계정
+```
+
 ---
 
 ## Navicat DB Connection
@@ -109,11 +124,11 @@ has_children: true
 
 1. **File &#8594; New Connection**
 
-    ![](https://gekdev.github.io/docs/database/oracle/example/newconnection.jpg)
+    ![](https://gekdev.github.io/docs/sql/basic/example/newconnection.jpg)
 
 2. 왼쪽 끝에 있는 **Connection 아이콘**
 
-    ![](https://gekdev.github.io/docs/database/oracle/example/connection_icon.jpg)
+    ![](https://gekdev.github.io/docs/sql/basic/example/connection_icon.jpg)
 
 ### New Connection Setting
 
@@ -129,7 +144,7 @@ has_children: true
 
     5. **Password : 12345**
 
-    ![](https://gekdev.github.io/docs/database/oracle/example/newcon_oracle.JPG)
+    ![](https://gekdev.github.io/docs/sql/basic/example/newcon_oracle.JPG)
 
 2. Advanced
 
@@ -137,7 +152,7 @@ has_children: true
 
     2. **Test Connections &#8594; Connection Successful**
 
-    ![](https://gekdev.github.io/docs/database/oracle/example/newcon_oracle2.JPG)
+    ![](https://gekdev.github.io/docs/sql/basic/example/newcon_oracle2.JPG)
 
 3. Databases
 
@@ -147,7 +162,7 @@ has_children: true
     
     2. **HR, SYS 데이터베이스 선택** (나중에 SCOTT 계정 추가할 예정)
 
-    ![](https://gekdev.github.io/docs/database/oracle/example/custom_dbase.JPG)
+    ![](https://gekdev.github.io/docs/sql/basic/example/custom_dbase.JPG)
 
 &#8594; 1,2,3 모두 다 설정 후 OK
 
@@ -157,25 +172,25 @@ has_children: true
 
 2. 파일을 c:Progrman Files/premium soft/..../instanceclient_10_?/oci.dll로 변경
 
-![](https://gekdev.github.io/docs/database/oracle/example/dllfile.JPG)
+![](https://gekdev.github.io/docs/sql/basic/example/dllfile.JPG)
 
 ### Setting Fonts
 
 **d2 coding 폰트로 변경**
 
-![](https://gekdev.github.io/docs/database/oracle/example/setting_font.JPG)
+![](https://gekdev.github.io/docs/sql/basic/example/setting_font.JPG)
 
 ### Connected Database
 
 **Connection되면 빨갛게 불이 들어옴**
 
-![](https://gekdev.github.io/docs/database/oracle/example/connected.JPG)
+![](https://gekdev.github.io/docs/sql/basic/example/connected.JPG)
 
 #### Delete Connection
 
 **마우스 오른쪽 눌러서 Close Connection**
 
-![](https://gekdev.github.io/docs/database/oracle/example/connection_close.jpg)
+![](https://gekdev.github.io/docs/sql/basic/example/connection_close.jpg)
 
 ---
 
@@ -197,7 +212,7 @@ has_children: true
 
 **↓ 변경전 모습**
 
-![](https://gekdev.github.io/docs/database/oracle/example/before_change.jpg)
+![](https://gekdev.github.io/docs/sql/basic/example/before_change.jpg)
 
 ### Changing Date Format
 
@@ -253,7 +268,7 @@ SQL> exit
     SQL> exit
     ```
 
-![](https://gekdev.github.io/docs/database/oracle/example/change_format.JPG)
+![](https://gekdev.github.io/docs/sql/basic/example/change_format.JPG)
 
 ### Restart Database
 
@@ -265,7 +280,7 @@ SQL> exit
 
 **↓ 변경후 모습**
 
-![](https://gekdev.github.io/docs/database/oracle/example/search_table.JPG)
+![](https://gekdev.github.io/docs/sql/basic/example/search_table.JPG)
 
 ---
 
@@ -306,7 +321,7 @@ SQL> exit
 
 0. sys에서 hr 활성화
 
-    ![](https://gekdev.github.io/docs/database/oracle/example/activate_hr.JPG)
+    ![](https://gekdev.github.io/docs/sql/basic/example/activate_hr.JPG)
 
 1. General
 
@@ -320,7 +335,7 @@ SQL> exit
 
     5. **Password : hr**
 
-    ![](https://gekdev.github.io/docs/database/oracle/example/default_hr.jpg)
+    ![](https://gekdev.github.io/docs/sql/basic/example/default_hr.jpg)
 
 2. Advanced
 
@@ -330,19 +345,19 @@ SQL> exit
 
     3. **OK**
 
-    ![](https://gekdev.github.io/docs/database/oracle/example/newcon_oracle2.JPG)
+    ![](https://gekdev.github.io/docs/sql/basic/example/newcon_oracle2.JPG)
 
 3. Databases
 
     HR 데이터베이스만 보기
     
-    ![](https://gekdev.github.io/docs/database/oracle/example/custom_onlyhr.JPG)
+    ![](https://gekdev.github.io/docs/sql/basic/example/custom_onlyhr.JPG)
 
 5. locked
 
     접속하려면 기본값으로 hr은 잠겨있음
 
-    ![](https://gekdev.github.io/docs/database/oracle/example/locked.JPG)
+    ![](https://gekdev.github.io/docs/sql/basic/example/locked.JPG)
 
     ★ **SYS에서 관리자 권한으로 풀어줘야 함**
 
@@ -359,7 +374,7 @@ SQL> exit
         -- 여러칼럼 ,로 사용가능, 칼럼은 대소문자 구분하지 않음
     ```
 
-    ![](https://gekdev.github.io/docs/database/oracle/example/check_set.jpg)
+    ![](https://gekdev.github.io/docs/sql/basic/example/check_set.jpg)
     
 2. 사용자 권한 조회
 
@@ -372,10 +387,10 @@ SQL> exit
     ```
 
     **↓ SYS의 ADMIN_OPTION YES권한조회**
-    ![](https://gekdev.github.io/docs/database/oracle/example/sys_yes.jpg)
+    ![](https://gekdev.github.io/docs/sql/basic/example/sys_yes.jpg)
 
     **↓ HR의 ADMIN_OPTION YES권한조회**
-    ![](https://gekdev.github.io/docs/database/oracle/example/hr_yes.jpg)
+    ![](https://gekdev.github.io/docs/sql/basic/example/hr_yes.jpg)
     
 
 3. HR 권한 만들기
@@ -388,7 +403,7 @@ SQL> exit
     ```
 
     **↓ HR의 ACCOUNT_STATUS YES권한조회**
-    ![](https://gekdev.github.io/docs/database/oracle/example/hr_role.jpg)
+    ![](https://gekdev.github.io/docs/sql/basic/example/hr_role.jpg)
     
 4. 사용자 소유의 table 목록 조회
 
@@ -415,7 +430,7 @@ HR사용자 확인하면서 SCOTT 계정은 없는걸 확인했음
     create user scott identified by tiger; -- scott 유저 생성하고 비번 tiger
     ```
     
-    ![](https://gekdev.github.io/docs/database/oracle/example/hr_yes.jpg)
+    ![](https://gekdev.github.io/docs/sql/basic/example/hr_yes.jpg)
     
 2. SCOTT에 권한 부여하기
 
@@ -432,7 +447,7 @@ HR사용자 확인하면서 SCOTT 계정은 없는걸 확인했음
     alter user scott temporary tabblespace temp; -- temp라는 작업장소
     ```
 
-    ![](https://gekdev.github.io/docs/database/oracle/example/scott.JPG)
+    ![](https://gekdev.github.io/docs/sql/basic/example/scott.JPG)
 
 4. 실습용 테이블 생성하기
 
@@ -526,7 +541,7 @@ HR사용자 확인하면서 SCOTT 계정은 없는걸 확인했음
 
 &#9656; File > Open External File > Query로 **다른 sql 파일들을 가져올 수 있음**
 
-![](https://gekdev.github.io/docs/database/oracle/example/open_file.png)
+![](https://gekdev.github.io/docs/sql/basic/example/open_file.png)
 
 ---
 
@@ -534,4 +549,4 @@ HR사용자 확인하면서 SCOTT 계정은 없는걸 확인했음
 
 여러개 동시에 선택하면 아래 창에 여러개 값이 한꺼번에 나와서 비교 가능함
 
-![](https://gekdev.github.io/docs/database/oracle/example/drag.JPG)
+![](https://gekdev.github.io/docs/sql/basic/example/drag.JPG)
