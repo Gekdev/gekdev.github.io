@@ -62,7 +62,7 @@ nav_order: 1
 
 &#9656; 클라이언트/서버 구조
 
-### SQL is a Standard - BUT....
+### SQL is a Standard?
 
 SQL은 ANSI / ISO 표준이지만 SQL 언어에는 여러 버전이 있음
 
@@ -86,7 +86,7 @@ SQL은 ANSI / ISO 표준이지만 SQL 언어에는 여러 버전이 있음
 
 4. HTML / CSS : 페이지 스타일을 지정하기 위해
 
-### RDBMS
+### [RDBMS](https://gekdev.github.io/docs/sql/database/dbms)
 
 **RDBMS는 관계형 데이터베이스 관리 시스템**
 
@@ -95,10 +95,6 @@ SQL은 ANSI / ISO 표준이지만 SQL 언어에는 여러 버전이 있음
 &#9656; RDBMS의 데이터는 테이블이라는 데이터베이스 개체에 저장
 
 &#9656; 테이블은 관련 데이터 항목의 모음이며 열과 행으로 구성
-
-### SQL Command Types
-
-DDL, DQL, DML, TCL, DCL 총 다섯가지가 있음
 
 ---
 

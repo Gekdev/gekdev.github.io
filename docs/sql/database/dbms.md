@@ -3,10 +3,10 @@ layout: default
 title: DBMS
 parent: Database
 grand_parent: SQL / Oracle
-nav_order: 3
+nav_order: 2
 ---
 
-# Basic DBMS 
+# Database DBMS 
 {: .no_toc .text-beta .fw-700}
 
 ## Table of contents
