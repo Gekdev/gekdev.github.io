@@ -1,12 +1,12 @@
 ---
 layout: default
 title: Oracle Installation
-parent: SQL / Oracle
-nav_order: 1
+parent: Basic
 grand_parent: SQL / Oracle
+nav_order: 1
 ---
 
-# Oracle Installation
+# Basic Oracle Installation
 {: .no_toc .text-beta .fw-700}
 
 ## Table of contents
@@ -214,9 +214,9 @@ sys와 system계정은 dba권한을 가짐 → 사용자를 생성하거나 삭�
 
 ![](https://gekdev.github.io/docs/sql/basic/example/before_change.jpg)
 
-### Changing Date Format
+### Session and System 
 
-**영구적으로 변경해야 하니 system 변경 명령어로 사용해야 함**
+환경을 변경하는데에는 두가지 방법이 있음
 
 syntax
 {: .label .mt-2}
@@ -245,6 +245,10 @@ SQL> alter system set nls_date_format = 'YYYY-MM-DD' scope=spfile;
 SQL> alter system set NLS_TIMESTAMP_FORMAT = 'YYYY-MM-DD HH:MI:SS' scope=spfile;
 SQL> exit
 ```
+
+### Changing Date Format
+
+**영구적으로 변경해야 하니 system 변경 명령어로 사용해야 함**
 
 1. SQL Command Line 실행
 
@@ -286,37 +290,53 @@ SQL> exit
 
 ## Checking and Changing HR 
 
-### Checking Users By SQL Command Line
+### Check and Change HR Setting
 
 **HR, SCOTT사용자 확인하기**
 
 1. Window Menu > Run SQL Command Line
 
-2. 아래 명령어 확인하면서 실행
+2. DB 접속
 
     **dn connection명령 : conn 사용자/비밀번호 as 사용자권한**
     
     &#8594; 오라클 명령어이기 때문에 navicat 에서는 사용불가
-
+    
     ```sql
-    -- 1. DB 접속
     SQL> conn sys/12345 as sysdba
         -- Connected 확인 : 접속성공
+    ```
 
-    -- 2. 현재 사용자 확인 
+3. 현재 사용자 확인 
+
+    &#9656; 시스템 권한을 가지고 있는 사용자 계정으로 접속해 있어야 함
+    
+    ```sql
     SQL> show user 
         -- USER is "SYS"
+    ```
 
-    -- 3. 다른 사용자접속
+4. 다른 사용자접속
+
+    ```sql
     SQL> conn hr/hr
         -- hr 사용자는 기본적으로 lock 되어있음
-
     SQL> conn scott
         -- scott 사용자는 없음
     ```
 
-★ **hr사용자는 lock해제해야 하고 scott사용자는 새로 생성할 예정**
+5. HR 잠금해제
 
+    ```sql
+    SQL> alter user hr account unlock;
+    ```
+
+6. HR 패스워드 지정
+
+    ```sql
+    alter user hr identified by 1234
+    ```
+    
 ### Create HR Connection in Navicat 
 
 0. sys에서 hr 활성화
@@ -534,19 +554,3 @@ HR사용자 확인하면서 SCOTT 계정은 없는걸 확인했음
 * [Practical Oracle SQL](https://www.apress.com/kr/book/9781484256169)
 
     &#9656; [github](https://github.com/Apress/practical-oracle-sql)
-
----
-
-## Open External File
-
-&#9656; File > Open External File > Query로 **다른 sql 파일들을 가져올 수 있음**
-
-![](https://gekdev.github.io/docs/sql/basic/example/open_file.png)
-
----
-
-### Drag Multiple Result
-
-여러개 동시에 선택하면 아래 창에 여러개 값이 한꺼번에 나와서 비교 가능함
-
-![](https://gekdev.github.io/docs/sql/basic/example/drag.JPG)
