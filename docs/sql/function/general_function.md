@@ -118,12 +118,14 @@ select deptno
 
 **프로그램 언어의 if else와 같이 사용할 수 있음**
 
+expr이 조건 1과 일치하면 1반환... 값이 없거나 null일 경우에는 else 다음 기술한 결과n을 반환함
+
 &#9656; decode대신 일반적으로 사용되는 문장(ISO 표준 규격에 더 잘맞음)
 
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-**case expr(
+**case expr
 
   when 조건1 then 결과1
 
@@ -135,12 +137,116 @@ syntax
   
   end [as 별칭]
 </div>
+
+### Example
+
+Q1. student에서 전공이 101인 학생들중에 jumin 성별구분해서 1=남자 2=여자를 출력
+
+name, jumin, gender 
+
 ```sql
+select name
+, substr(jumin,7,1)
+, decode(substr(jumin,7,1), 1, '남자', '여자') gender
+	from student;
 ```
---       case 조건 when 결과1 then 춝력1,
---                           [when .......]
---                            else 출력n                  
---       end
 
+Q2. Student 테이블에서 1 전공이 (deptno1) 101번인 학생의 이름과 연락처와 지역을 출력하세요
 
+단,지역번호가 02 는 "SEOUL" , 031 은 "GYEONGGI", 051 은 "BUSAN", 052 는 "ULSAN", 055 는 "GYEONGNAM"
 
+```sql
+select name
+		 , tel
+		 , substr(tel,0, instr(tel,')')-1)
+     , decode(substr(tel,0, instr(tel,')')-1), 02, 'SEOUL'
+									  , 031, 'GYEONGGI'
+										, 051, 'BUSAN'
+										, 052, 'ULSAN'
+										, 053, 'DAGUE'
+										, 055, 'GYEONGNAM') decode
+		 , case substr(tel,0, instr(tel,')')-1) -- ISO  표준 규격에 더 맞음
+					When '02' then 'SEOUL'
+					When '051' then 'GYEONGGI'
+					When '052' then 'ULSAN'
+					When '053' then 'DAGUE'
+					When '055' then 'GYEONGNAM'
+			 end as 지역번호
+	from student 
+ where deptno1 = 101;
+```
+
+Q3. when 조건 between 값1 and 값2 then 출력
+
+emp에서 sal 1~1000 1등급, 1001~2000 2등급, 2001~3000 2등급, 3001~4000 2등급, 4001보다 크면 5등급
+
+```sql
+ select ename
+      , sal
+			, case when sal between    1 and 1000 then '1등급'
+						 when sal between 1001 and 1000 then '2등급'
+						 when sal between 2001 and 3000 then '3등급'
+						 when sal between 3001 and 4000 then '4등급'
+						 when sal > 4001 then '5등급'
+			 end as 등급 
+	 from emp
+  order by sal desc;
+```
+
+Q4. student에서 jumin에 월참조해서 해당월의 분기를 출력(1Q, 2Q, 3Q, 4Q)
+
+name, jumin, 분기
+
+```sql
+select name
+			, jumin
+			, substr(jumin,3,2) month
+			, case when substr(jumin,3,2) between 1 and 3 then '1Q'
+						 when substr(jumin,3,2) between 4 and 6 then '2Q'
+						 when substr(jumin,3,2) between 7 and 9 then '3Q'
+						 when substr(jumin,3,2) >= 10 then '4Q'
+			  end as 분기
+	 from student;
+```
+
+Q5. emp에서 10=회계부, 20=연구실, 30=영업부, 40=전산실
+
+deptno, 부서명
+
+```sql
+-- 1) decode
+-- 2) case
+select deptno
+     , decode(deptno, 10, '회계부'
+                      , 20, '연구실'
+                      , 30, '영업부'
+                     , 40, '전산실') 부서명
+     , case deptno When 10 then '회계부'
+                                 When 20 then '연구실'
+                                 When 30 then '영업부'
+                                 When 40 then '전산실'
+			 end as 부서명
+  from emp;
+```
+
+Q6. 급여인상율을 다르게 적용하기
+
+emp에서 sal < 1000 0.8%인상, 1000~2000 0.5%, 2001~3000 0.3% 그 이상은 0.1% 인상분 출력
+
+ename, sal(인상전급여), 인상후급여 
+
+```sql
+-- 1) decode
+-- 2) case 
+select * from emp;
+select ename, sal
+		 , decode(sign(sal-1000), -1, sal*1.08,
+                                   0, sal*1.05,
+                                   1, decode(sign(sal-2000), -1, sal*1.05,0, sal*1.05, 1, decode(sign(sal-3000),-1, sal*1.03, 0, sal*1.03, 1, sal*1.01)))
+		 , case when sal < 1000  then sal*1.08
+						when sal between 1000 and 2000 then sal*1.05
+						when sal between 2001 and 3000 then sal*1.03
+						when sal > 3000 then sal*1.01
+				end as 인상후급여
+  from emp; 
+```
