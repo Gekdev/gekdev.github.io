@@ -249,7 +249,9 @@ where deptno = 10;
 
 ![](https://gekdev.github.io/docs/sql/function/example/ltrim.jpg)
 
-### Function that replaces characters
+### replace()
+
+**문자열을 다른 문자열로 치환하는 함수**
 
 syntax
 {: .label .mt-2}
