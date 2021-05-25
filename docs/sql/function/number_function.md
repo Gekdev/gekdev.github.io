@@ -21,10 +21,12 @@ nav_order: 2
 
 ### ceil()
 
+**실수를 특정 자리수에서 올림**
+
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-**ceil(실수, 자릿수) : 실수를 특정 자리수에서 올림** 
+ceil(실수, 자릿수)
 </div>
 ```sql
 select 123
@@ -37,10 +39,12 @@ from dual;
 
 ### round()
 
+**실수를 특정 자리수에서 반올림**
+
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-**round(실수, 자릿수) : 실수를 특정 자리수에서 반올림** 
+round(실수, 자릿수)
 </div>
 ```sql
 select round(987.654, 2)
@@ -54,10 +58,12 @@ from dual;
 
 ### floor()
 
+**실수를 특정 자리수에서 내림**
+
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-**floor(실수, 자릿수) : 실수를 특정 자리수에서 내림**
+floor(실수, 자릿수)
 
 &#9656; 소숫점 기준 0으로 시작함
 </div>
@@ -71,10 +77,12 @@ from dual;
 
 ### trunc()
 
+**실수를 특정 자리수에서 버림**
+
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-**trunc(숫자, 자릿수) : 실수를 특정 자리수에서 버림** 
+trunc(숫자, 자릿수)
 </div>
 ```sql
 select trunc(987.654, 2)
@@ -88,10 +96,12 @@ from dual;
 
 ### mod()
 
+**실수를 자를숫자로 나눈 후 나머지값 반환**
+
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-**mod(실수, 자를숫자) : 실수를 자를숫자로 나눈 후 나머지값 반환** 
+mod(실수, 자를숫자)
 </div>
 ```sql
 select 121
@@ -103,10 +113,12 @@ from dual;
 
 ### power()
 
+**실수를 승한 값을 출력**
+
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-**power(실수, 승) : 실수를 승한 값을 출력** 
+power(실수, 승)
 </div>
 ```sql
 select power(2,3)

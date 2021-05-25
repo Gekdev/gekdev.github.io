@@ -28,11 +28,11 @@ nav_order: 1
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-**upper() : 소문자를 대문자로 변환**
+upper() : 소문자를 대문자로 변환
 
-**lower() : 대문자를 소문자로 변환**
+lower() : 대문자를 소문자로 변환
 
-**initcap() : 첫글자를 대문자, 나머지는 소문자로 변환**
+initcap() : 첫글자를 대문자, 나머지는 소문자로 변환
 
 &#9656; ()안에는 문자열이나 함수, 열이름(데이터 타입 문자열)등이 들어갈 수 있음
 </div>
@@ -55,9 +55,9 @@ from emp;
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-**length() : 문자길이를 리턴(한글인 경우 1byte)**
+length() : 문자길이를 리턴(한글인 경우 1byte)
 
-**lengthb() : 문자길이를 리턴(한글인 경우 2byte)**
+lengthb() : 문자길이를 리턴(한글인 경우 2byte)
 
 &#9656; ()안에는 문자열이나 함수, 열이름(데이터 타입 문자열)등이 들어갈 수 있음
 </div>
@@ -102,7 +102,7 @@ SQL > SELECT * FROM NLS_DATABASE_PARAMETERS WHERE PARAMETER LIKE '%CHARACTERSET%
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-**concat() : 문자의 값을 연결** 
+concat() : 문자의 값을 연결 
 
 &#9656; ()안에는 문자열이나 함수, 열이름 등이 들어갈 수 있음
 </div>
@@ -128,9 +128,9 @@ from professor;
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-**substr(값, from, length) : 주어진 문자에서 문자 단위로 자를때 추출** 
+substr(값, from, length) : 주어진 문자에서 문자 단위로 자를때 추출 
 
-**substrb(값, from, length) : 주어진 문자에서 바이트 단위로 문자열을 자를때 사용** 
+substrb(값, from, length) : 주어진 문자에서 바이트 단위로 문자열을 자를때 사용 
 
 &#9656; from부터 시작, length갯수 만큼 자름
 
@@ -175,9 +175,9 @@ from dual;
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-**instr(문자열, 찾는글자, 시작위치, 몇번째(기본값 1)) : 주어진 문자에서 특정문자의 위치를 리턴** 
+instr(문자열, 찾는글자, 시작위치, 몇번째(기본값 1)) : 주어진 문자에서 특정문자의 위치를 리턴 
 
-**instrb(문자열, 찾는글자, 시작위치, 몇번째(기본값 1)) 주어진 문자에서 특정문자의 위치 바이트를 리턴** 
+instrb(문자열, 찾는글자, 시작위치, 몇번째(기본값 1)) 주어진 문자에서 특정문자의 위치 바이트를 리턴 
 </div>
 ```sql
 select instr('HELLOW WORLD', 'O') O찾기
@@ -199,9 +199,9 @@ select instr('HELLOW WORLD', 'O') O찾기
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-**lpad(문자열, 총 문자열 자리수, 나머지 문자열에 채울문자) : 주어진 문자열에서 왼쪽으로 특정 문자를 채움** 
+lpad(문자열, 총 문자열 자리수, 나머지 문자열에 채울문자) : 주어진 문자열에서 왼쪽으로 특정 문자를 채움 
 
-**rpad(문자열, 총 문자열 자리수, 나머지 문자열에 채울문자) : 주어진 문자열에서 오른쪽으로 특정 문자를 채움** 
+rpad(문자열, 총 문자열 자리수, 나머지 문자열에 채울문자) : 주어진 문자열에서 오른쪽으로 특정 문자를 채움 
 </div>
 ```sql
 select name, id, length(id)
@@ -222,11 +222,11 @@ where deptno1 = 201;
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-**trim(문자열, 양쪽에서 자를 문자) : 칼럼이나 대상 문자열에서 특정 문자가 첫 번째 글자이거나 마지막 글자이면 잘라내고 남은 문자열만 반환** 
+trim(문자열, 양쪽에서 자를 문자) : 칼럼이나 대상 문자열에서 특정 문자가 첫 번째 글자이거나 마지막 글자이면 잘라내고 남은 문자열만 반환
 
-**ltrim(문자열, 왼쪽에서 자를 문자) : 주어진 문자열에서 왼쪽의 특정 문자나 공백를 삭제** 
+ltrim(문자열, 왼쪽에서 자를 문자) : 주어진 문자열에서 왼쪽의 특정 문자나 공백를 삭제
 
-**rtrim(문자열, 오른쪽에서 자를 문자) : 주어진 문자열에서 오른쪽의 특정 문자나 공백 문자를 삭제** 
+rtrim(문자열, 오른쪽에서 자를 문자) : 주어진 문자열에서 오른쪽의 특정 문자나 공백 문자를 삭제
 </div>
 ```sql
 select ' Oracle mania '
@@ -256,7 +256,7 @@ where deptno = 10;
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-**replace(문자열, 변경전문자, 변경후문자) : 주어진 문자열에서 A를 B로 치환**
+replace(문자열, 변경전문자, 변경후문자)
 </div>
 ```sql
 select ename
@@ -269,7 +269,9 @@ select ename
 
 ![](https://gekdev.github.io/docs/sql/function/example/replace.jpg)
 
-### Example
+---
+
+## Example
 
 Q1. STUDENT 테이블의 주민등록번호(JUNIN)에서 성별만 추출
 

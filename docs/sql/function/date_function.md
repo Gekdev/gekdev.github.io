@@ -47,7 +47,7 @@ select sysdate from dual;
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-**months_between(날짜문자열, 날짜문자열)** 
+months_between(날짜문자열, 날짜문자열) 
 </div>
 ```sql
 select months_between(sysdate, '19981205')
@@ -67,7 +67,7 @@ from emp;
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-**add_months(날짜문자열, 숫자)** 
+add_months(날짜문자열, 숫자) 
 </div>
 ```sql
 select sysdate
@@ -88,7 +88,7 @@ from dual;
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-**next_day(날짜문자열, 1~7 or sun~sat)** 
+next_day(날짜문자열, 1~7 or sun~sat) 
 </div>
 ```sql
 select sysdate
@@ -112,7 +112,7 @@ from dual;
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-**last_day(날짜문자열)** 
+last_day(날짜문자열) 
 </div>
 ```sql
 select sysdate
@@ -130,9 +130,9 @@ from dual;
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-**round(date, format)** 
+round(date, format) 
 
-**trunc(date, format)** 
+trunc(date, format) 
 </div>
 
 | 포멧 모델 | 단위 |
@@ -155,7 +155,9 @@ select sysdate
   
 ![](https://gekdev.github.io/docs/sql/function/example/date_round.jpg)
 
-### Example
+---
+
+## Example
 
 Q1. EMP 테이블에서 ename, hiredate, 근무일수, 근속월, 근속년수 출력
 

@@ -55,7 +55,7 @@ select 'A' + 2 from dual;
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-**to_char(number / date, 'format')** 
+to_char(number / date, 'format') 
 </div>
 
 날짜 형식(format) 모델
@@ -129,7 +129,7 @@ from emp;
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-**to_date('char', 'format')** 
+to_date('char', 'format') 
 </div>
 ```sql
 select ename, hiredate

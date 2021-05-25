@@ -17,7 +17,7 @@ nav_order: 5
 
 ---
 
-## Single General Function
+## Null Functions
 
 ### nvl() / nvl2()
 
@@ -79,6 +79,10 @@ order by job;
 
 ![](https://gekdev.github.io/docs/sql/function/example/coalesce.jpg)
 
+---
+
+## Condition functions
+
 ### decode()
 
 **조건에 따라 다른 결과를 얻고 싶을 때 사용**
@@ -92,7 +96,9 @@ order by job;
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-decode(표현식, 조건1, 결과1,
+decode(표현식, 
+
+조건1, 결과1,
 
 조건2, 결과2, 
 
@@ -121,20 +127,20 @@ expr이 조건 1과 일치하면 1반환... 값이 없거나 null일 경우에�
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-**case expr
+case expr 
 
-  when 조건1 then 결과1
+when 조건1 then 결과1
 
-  when 조건2 then 결과2
+when 조건2 then 결과2
 
-  when 조건3 then 결과3
-    
-  else 결과n
-  
-  end [as 별칭]
+else 결과n
+
+end [as 별칭]
 </div>
 
-### Example
+---
+
+## Example
 
 Q1. student에서 전공이 101인 학생들중에 jumin 성별구분해서 1=남자 2=여자를 출력
 
@@ -147,6 +153,8 @@ select name
 	from student;
 ```
 
+![](https://gekdev.github.io/docs/sql/function/example/ge_q1.jpg){: .mb-2}
+
 Q2. Student 테이블에서 1 전공이 (deptno1) 101번인 학생의 이름과 연락처와 지역을 출력하세요
 
 단,지역번호가 02 는 "SEOUL" , 031 은 "GYEONGGI", 051 은 "BUSAN", 052 는 "ULSAN", 055 는 "GYEONGNAM"
@@ -156,21 +164,23 @@ select name
 		 , tel
 		 , substr(tel,0, instr(tel,')')-1)
      , decode(substr(tel,0, instr(tel,')')-1), 02, 'SEOUL'
-									  , 031, 'GYEONGGI'
-										, 051, 'BUSAN'
-										, 052, 'ULSAN'
-										, 053, 'DAGUE'
-										, 055, 'GYEONGNAM') decode
+                                            , 031, 'GYEONGGI'
+                                            , 051, 'BUSAN'
+                                            , 052, 'ULSAN'
+                                            , 053, 'DAGUE'
+                                            , 055, 'GYEONGNAM') decode
 		 , case substr(tel,0, instr(tel,')')-1) -- ISO  표준 규격에 더 맞음
-					When '02' then 'SEOUL'
-					When '051' then 'GYEONGGI'
-					When '052' then 'ULSAN'
-					When '053' then 'DAGUE'
-					When '055' then 'GYEONGNAM'
+            When '02' then 'SEOUL'
+            When '051' then 'GYEONGGI'
+            When '052' then 'ULSAN'
+            When '053' then 'DAGUE'
+            When '055' then 'GYEONGNAM'
 			 end as 지역번호
 	from student 
  where deptno1 = 101;
 ```
+
+![](https://gekdev.github.io/docs/sql/function/example/ge_q2.jpg){: .mb-2}
 
 Q3. when 조건 between 값1 and 값2 then 출력
 
@@ -179,15 +189,17 @@ emp에서 sal 1~1000 1등급, 1001~2000 2등급, 2001~3000 2등급, 3001~4000 2�
 ```sql
  select ename
       , sal
-			, case when sal between    1 and 1000 then '1등급'
-						 when sal between 1001 and 1000 then '2등급'
-						 when sal between 2001 and 3000 then '3등급'
-						 when sal between 3001 and 4000 then '4등급'
-						 when sal > 4001 then '5등급'
-			 end as 등급 
+      , case when sal between    1 and 1000 then '1등급'
+             when sal between 1001 and 1000 then '2등급'
+             when sal between 2001 and 3000 then '3등급'
+             when sal between 3001 and 4000 then '4등급'
+             when sal > 4001 then '5등급'
+       end as 등급 
 	 from emp
   order by sal desc;
 ```
+
+![](https://gekdev.github.io/docs/sql/function/example/ge_q3.jpg){: .mb-2}
 
 Q4. student에서 jumin에 월참조해서 해당월의 분기를 출력(1Q, 2Q, 3Q, 4Q)
 
@@ -195,15 +207,17 @@ name, jumin, 분기
 
 ```sql
 select name
-			, jumin
-			, substr(jumin,3,2) month
-			, case when substr(jumin,3,2) between 1 and 3 then '1Q'
-						 when substr(jumin,3,2) between 4 and 6 then '2Q'
-						 when substr(jumin,3,2) between 7 and 9 then '3Q'
-						 when substr(jumin,3,2) >= 10 then '4Q'
-			  end as 분기
+    , jumin
+    , substr(jumin,3,2) month
+    , case when substr(jumin,3,2) between 1 and 3 then '1Q'
+             when substr(jumin,3,2) between 4 and 6 then '2Q'
+             when substr(jumin,3,2) between 7 and 9 then '3Q'
+             when substr(jumin,3,2) >= 10 then '4Q'
+      end as 분기
 	 from student;
 ```
+
+![](https://gekdev.github.io/docs/sql/function/example/ge_q4.jpg){: .mb-2}
 
 Q5. emp에서 10=회계부, 20=연구실, 30=영업부, 40=전산실
 
@@ -216,14 +230,16 @@ select deptno
      , decode(deptno, 10, '회계부'
                       , 20, '연구실'
                       , 30, '영업부'
-                     , 40, '전산실') 부서명
+                      , 40, '전산실') 부서명
      , case deptno When 10 then '회계부'
-                                 When 20 then '연구실'
-                                 When 30 then '영업부'
-                                 When 40 then '전산실'
-			 end as 부서명
+                     When 20 then '연구실'
+                     When 30 then '영업부'
+                     When 40 then '전산실'
+      end as 부서명
   from emp;
 ```
+
+![](https://gekdev.github.io/docs/sql/function/example/ge_q5.jpg){: .mb-2}
 
 Q6. 급여인상율을 다르게 적용하기
 
@@ -236,9 +252,9 @@ ename, sal(인상전급여), 인상후급여
 -- 2) case 
 select * from emp;
 select ename, sal
-		 , decode(sign(sal-1000), -1, sal*1.08,
-                                   0, sal*1.05,
-                                   1, decode(sign(sal-2000), -1, sal*1.05,0, sal*1.05, 1, decode(sign(sal-3000),-1, sal*1.03, 0, sal*1.03, 1, sal*1.01)))
+     , decode(sign(sal-1000), -1, sal*1.08,
+                               0, sal*1.05,
+                               1, decode(sign(sal-2000), -1, sal*1.05,0, sal*1.05, 1, decode(sign(sal-3000),-1, sal*1.03, 0, sal*1.03, 1, sal*1.01)))
 		 , case when sal < 1000  then sal*1.08
 						when sal between 1000 and 2000 then sal*1.05
 						when sal between 2001 and 3000 then sal*1.03
@@ -246,3 +262,5 @@ select ename, sal
 				end as 인상후급여
   from emp; 
 ```
+
+![](https://gekdev.github.io/docs/sql/function/example/ge_q6.jpg){: .mb-2}
