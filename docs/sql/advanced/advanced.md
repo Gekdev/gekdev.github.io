@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Database
+title: Advanced
 parent: Advanced
 grand_parent: SQL / Oracle
 nav_order: 1
 ---
 
-# Advanced Database 
+# Advanced SQL 
 {: .no_toc .text-beta .fw-700}
 
 ## Table of contents

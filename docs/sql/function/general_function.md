@@ -28,9 +28,9 @@ nav_order: 5
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-**nvl(컬럼명, expr1)** : **null을 0 또는 다른 값으로 변환**
+nvl(컬럼명, expr1)** : **null을 0 또는 다른 값으로 변환
 
-**nvl2(컬럼명, expr1, expr2)** : **컬럼명을 검사해 결과가 null이면 expr2반환, null이 아니면 expr3을 반환**
+nvl2(컬럼명, expr1, expr2)** : **컬럼명을 검사해 결과가 null이면 expr2반환, null이 아니면 expr3을 반환
 
 &#9656; exprN에는 날짜, 문자, 숫자형이 들어갈 수 있음
 </div>
@@ -53,7 +53,7 @@ from emp;
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-**nullif(expr1, expr2)**
+nullif(expr1, expr2)
 </div>
 ```sql
 select nullif('A','A'), nullif('A','B')
@@ -155,7 +155,7 @@ select name
 
 ![](https://gekdev.github.io/docs/sql/function/example/ge_q1.jpg){: .mb-2}
 
-Q2. Student 테이블에서 1 전공이 (deptno1) 101번인 학생의 이름과 연락처와 지역을 출력하세요
+Q2. Student 테이블에서 1 전공이 (deptno1) 101번인 학생의 이름과 연락처와 지역을 출력
 
 단,지역번호가 02 는 "SEOUL" , 031 은 "GYEONGGI", 051 은 "BUSAN", 052 는 "ULSAN", 055 는 "GYEONGNAM"
 

@@ -19,7 +19,17 @@ nav_order: 1
 
 ## DDL Basic
 
-### create Statement
+### CREATE Statement
+
+### ALTER Statement 
+
+### RENAME Statement
+
+### DROP Statement
+
+### TRUNCATE Statement 
+
+### Data Dictionary
 
 테이블 생성 create
 

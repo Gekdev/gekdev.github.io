@@ -59,11 +59,11 @@ EQUI JOIN, NON-EQUI JOIN, OUTER JOIN, SELF JOIN등을 오라클 9i부터는 **AN
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-**select table1.column, table2.column
+select table1.column, table2.column
 
 from table1, table2 -- 조인 대상 테이블을 기술하고 ,로 구분
 
-where table1.column1 = table.column2;** -- =를 사용해 조인 조건 기술(기본 키와 외래 키에 공통적으로 존재하는 칼럼)
+where table1.column1 = table.column2; -- =를 사용해 조인 조건 기술(기본 키와 외래 키에 공통적으로 존재하는 칼럼)
 </div>
 ```sql
 select emp.deptno, emp.ename, emp.hiredate, dept.dname
@@ -181,9 +181,15 @@ from student std inner join score scr on std.studno = scr.studno
 
 ## SELF JOIN
 
-**하나의 테이블에 있는 칼럼 끼리 연결해야 하는 조인이 필요한 경우 사용**
+**self join은 주로 테이블에 Hierarchical structure가 있을 때 flat structure로 바꾸는 역할**
 
 &#9656; 한 테이블에서 두 개의 칼럼을 연결할 때 FROM 절에서 하나의 테이블에 테이블 별칭을 지정
+
+![](https://gekdev.github.io/docs/sql/example/employee1.png)
+
+<span class="fs-2">
+[참조하기](https://junyongs.wordpress.com/2014/01/16/sql%EC%97%90%EC%84%9C-self-join%EC%9D%B4-%EB%AC%B4%EC%97%87%EC%9D%B4%EB%A9%B0-%EC%99%9C-%EC%82%AC%EC%9A%A9%ED%95%98%EB%82%98%EC%9A%94/){: .btn .btn-outline .mt-2}
+</span>
 
 ---
 
@@ -208,9 +214,9 @@ from table1, table2
 
 select table1.column, table2.column
 
-from table1 **left outer join table2 
+from table1 left outer join table2 
 
-on table1.column1 = table.column2**;
+on table1.column1 = table.column2;
 </div>
 ```sql
  --left outer join, 학생에 배정받은 교수 없음
@@ -240,9 +246,9 @@ from table1, table2
 
 select table1.column, table2.column
 
-from table1 **right outer join table2 
+from table1 right outer join table2 
 
-on table1.column1 = table.column2**;
+on table1.column1 = table.column2;
 </div>
 ```sql
 --right outer join, 교수에 배정받은 학생없음 
@@ -264,9 +270,9 @@ syntax
 <div class="code-example" markdown="1">
 select table1.column, table2.column
 
-from table1 **full outer join table2 
+from table1 full outer join table2 
 
-on table1.column1 = table.column2**;
+on table1.column1 = table.column2;
 </div>
 ```sql
 select std.name 학생이름, pro.name

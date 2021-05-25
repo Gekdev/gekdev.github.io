@@ -19,20 +19,22 @@ nav_order: 6
 
 ## Group Functions
 
-그룹함수는 두번 까지 중첩해서 사용 가능
+**테이블의 전체 데이터에서 통계적인 결과를 구하기 위해 행 집합에 적용하여 하나의 결과를 생산하는 함수**
+
+&#9656; 두번 까지 중첩가능
 
 ### count()
 
-&#9656; row를 세서 출력하는 것
+**조회되는 데이터들의 총 건수**
 
-&#9656; 조건 상관없이 row 개수만을 출력하고 싶으면 * 사용
+&#9656; 조건에 맞는 row의 갯수를 출력
 
 &#9656; 중복되는 값 상관없이 데이터만 있다면 갯수를 셈(null값 제외)
 
 syntax
 {: .label .mt2}
 <div class="code-example" markdown="1">
-**count(칼럼명)** : **조회되는 데이터들의 총 건수** 
+count(칼럼명)
 </div>
 ```sql
 select count(*) from emp;
@@ -46,12 +48,14 @@ select count(sal), count(comm) from emp;
 
 ### sum()
 
+**조회되는 데이터들을 총 합계**
+
 &#9656; 값이 숫자여야지 오류가 나지 않음
 
 syntax
 {: .label .mt2}
 <div class="code-example" markdown="1">
-**sum(칼럼명)** : **조회되는 데이터들을 총 합계** 
+sum(칼럼명)
 </div>
 ```sql
 select sum(ename) from emp; -- 에러
@@ -63,39 +67,41 @@ select count(ename), sum(sal), round(sum(sal)/count(ename),0) from emp;
 
 ### avg()
 
+**조회되는 데이터들을 평균**
+
 &#9656; avg는 null값을 빼고 평균을 구함
 
 syntax
 {: .label .mt2}
 <div class="code-example" markdown="1">
-**avg(칼럼명)** : 조회되는 데이터들을 평균
+avg(칼럼명)
 </div>
 ```sql
 -- Q1) 평균급여 구하기
 -- sum/count 사용한것과 동일하게 결과가 나옴
 select round(avg(sal), 0) 평균급여
-     , round(sum(sal) / count(ename), 0) 
+     , round(sum(sal) / count(ename), 0) --위와 같은 결과
   from emp;
   
 -- Q2) Null값 포함/미포함 평균 구하기
 -- avg는 null값을 빼고 평균을 구함
-select count(*), sum(comm), avg(comm) from emp
+select count(*), sum(comm), avg(comm) from emp --미포함
 union all
-select count(*), sum(comm), round(avg(nvl(comm, 0)), 0) from emp;
+select count(*), sum(comm), round(avg(nvl(comm, 0)), 0) from emp; --포함
 ```
 
 ![](https://gekdev.github.io/docs/sql/function/example/avg_func.jpg)
 
-### max() & min()
+### max() / min()
 
 &#9656; 문자열은 a에 가까울수록 값이 낮다
 
 syntax
 {: .label .mt2}
 <div class="code-example" markdown="1">
-**max(칼럼명) : 조회되는 데이터들중 최대값**
+max(칼럼명) : 조회되는 데이터들중 최대값
 
-**min(칼럼명) : 조회되는 데이터들중 최소값**
+min(칼럼명) : 조회되는 데이터들중 최소값
 </div>
 ```sql
 -- Q1) 최소급여, 최대급여 구하기
@@ -109,10 +115,12 @@ select min(hiredate), max(hiredate) from emp;
 
 ### stddev()
 
+**조회되는 데이터들을 표준편차값**
+
 syntax
 {: .label .mt2}
 <div class="code-example" markdown="1">
-**stddev(칼럼명) : 조회되는 데이터들을 표준편차값**
+stddev(칼럼명)
 </div>
 ```sql
 -- Q1) 급여의 표준편차 값 구하기
@@ -123,10 +131,12 @@ select round(stddev(sal), 1) from emp;
 
 ### variance()
 
+**조회되는 데이터들의 분산값**
+
 syntax
 {: .label .mt2}
 <div class="code-example" markdown="1">
-**stddev(칼럼명) : 조회되는 데이터들을 분산값**
+stddev(칼럼명)
 </div>
 ```sql
 -- Q1) 급여의 표준편차 값 구하기
@@ -170,37 +180,41 @@ select job
 
 ---
 
-## 소계 및 총계구하기
+## Subtotal and Total Acquisition
 
 ### rollup()
 
 **데이터의 소계, 총계를 그룹별로 구하기**
 
+**★ 매개변수 안에 있는 열의 (그룹함수로 만들어진)행 값들을 다 더해**
+
 &#9656; rollup함수는 group by절과 같이 사용되면 group by절에 의해서 그룹 지어진 집합결과에 대해 좀더 상세한 결과를 반환
 
-&#9656; group by rollup(deptno, job) -> M+1개의 그룹이 생김
+&#9656; group by rollup(deptno, job) &#8594; M+1개의 그룹이 생김
 
-&#9656; rollup에 있는 매개변수 순서에 따라서 결과값이 달라짐
+&#9656; rollup 매개변수 순서에 따라서 결과값이 달라짐
 
 syntax
 {: .label .mt2}
 <div class="code-example" markdown="1">
-select .... from .... group by **rollup(컬럼명)** [order by ...];
+select [distinct] { * / column[alias]… }
 
-&#9656; []은 생략가능
+from table
+
+[where condition]
+
+[group by **rollup(컬럼명)**]
+
+[having group_condition]
+
+[order by column];
 </div>
-
-직급별 급여합계와 총합계를 구하기
-{: .label mt-2}
 ```sql 
 -- ver1) union all을 사용해서 총계를 따로 더해주는 방법
 select *
-  from 
-(
-	select job, sum(sal) from emp group by job
-    union all
-	select '총계', sum(sal) from emp
-) table1
+  from (select job, sum(sal) from emp group by job
+        union all
+	    select '총계', sum(sal) from emp) table1
 order by job; 
 
 -- ver2) 상기예제를 rollup함수를 이용해서 총계를 구함
@@ -348,7 +362,9 @@ Q2. Professor 테이블에서 deptno, position별로 교수인원수, 급여합�
 
     ![](https://gekdev.github.io/docs/sql/function/example/q2_rol.jpg)
 
-### cube()함수
+### cube()
+
+rollup 함수와 거의 비슷하지만, 출력방식이 다름
 
 ### Example
 
@@ -386,11 +402,11 @@ Q1. EMP테이블에서 부서별, 직업별, 평균급여, 사원수를 부서�
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-1. 특정자료의 순위 : **rank(조건값) within group (order by 컬럼명[asc|desc])**
+1. 특정자료의 순위 : rank(조건값) within group (order by 컬럼명[asc/desc])
 
-2. 전체자료의 순위 : **rank() over(order by 컬럼명[asc|desc])**
+2. 전체자료의 순위 : rank() over(order by 컬럼명[asc/desc])
 
-3. 그룹별 순위 : **rank() over(partition by 컬럼명 order by 컬럼명[asc|desc])**
+3. 그룹별 순위 : rank() over(partition by 컬럼명 order by 컬럼명[asc/desc])
 </div>
 ```sql
 -- 1) 특정조건의 순위
@@ -460,7 +476,7 @@ select empno, ename, sal
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-... **sum(컬럼) over (order by 컬럼(기준열))**
+sum(컬럼) over (order by 컬럼(기준열))
 </div>
 ```sql
 select p_total, p_qty,
@@ -469,6 +485,8 @@ from panmae;
 ```
 
 ![](https://gekdev.github.io/docs/sql/function/example/sumover.jpg)  
+
+#### Example
 
 Q1. 판매테이블에서 1000번대리점의 판매누계 구하기 
 
@@ -639,7 +657,7 @@ from emp;
 
 ![](https://gekdev.github.io/docs/sql/function/example/gr_08.jpg)
 
-Q8. emp 테이블을 조회하여 각 직원들의 급여가 해당 부서 합계금액에서 몇 %의 비중을 차지하는지를 출력하세요. 단 부서번호를 기준으로 오름차순으로 출력하세요.
+Q9. emp 테이블을 조회하여 각 직원들의 급여가 해당 부서 합계금액에서 몇 %의 비중을 차지하는지를 출력하세요. 단 부서번호를 기준으로 오름차순으로 출력하세요.
 
 ```sql
 select deptno, ename, sal 
@@ -649,19 +667,3 @@ from emp;
 ```
 
 ![](https://gekdev.github.io/docs/sql/function/example/gr_09.jpg)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
