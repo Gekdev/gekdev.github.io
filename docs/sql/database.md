@@ -55,6 +55,10 @@ has_children: true
 
     **한 조직의 여러 응용시스템들이 공유해서 사용할 수 있도록 데이터들을 통합해 체계적으로 조직한 후 저장한 운영데이터의 집합**
     
+    &#9656; 개별적인 정보 = 로우, 레코드
+    
+    &#9656; 서로 구분되는 속성 = 칼럼
+    
 ![](https://gekdev.github.io/docs/sql/database/example/data_system.png)
 
 ### Database Features

@@ -46,15 +46,7 @@ from table
 
 [order by column];
 </div>
-```sql
-select * from emp; 
-    -- emp 전체 테이블 조회
-    
-select ename, empno, job from emp;
-    -- ename, empno, job 컬럼 조회
-```
 
-![](https://gekdev.github.io/docs/sql/commands/example/sel_bas.jpg)
 
 | 절                  | 기능                                            |
 |:--------------------|:-----------------------------------------------|
@@ -66,22 +58,41 @@ select ename, empno, job from emp;
 | HAVING 절           | 로우들의 그룹이 만족해야 하는 조건을 제시            |
 | ORDER BY 절         | 로우들의 정렬 순서를 제시                          |
 
-### Distinct clause
+---
 
-**동일한 내용을 한 번씩만 출력해 중복을 제거**
+## Columns with Expression
 
-&#9656; 무조건 특정한 컬럼명보다 앞에 와야함
+**테이블의 열(column)에 영향이 있음**
 
-distinct 사용법
+syntax
 {: .label .mt-2}
-```sql
-select distinct deptno from emp order by deptno;
-    --emp 테이블에서 deptno 중복을 제거한 값을 순서대로 나타냄
+<div class="code-example" markdown="1">
+select [distinct] **{ * / column[alias]... }**
 
-select distinct deptno from emp order by deptno desc;
+from table
+
+[where condition]
+
+[group by groub_by_expression]
+
+[having group_condition]
+
+[order by column];
+</div>
+
+### Basic Column Expression
+
+**기본적인 행 나열 방법**
+
+```sql
+select * from emp; 
+    -- emp 전체 테이블 조회
+    
+select ename, empno, job from emp;
+    -- ename, empno, job 컬럼 조회
 ```
 
-![](https://gekdev.github.io/docs/sql/commands/example/distc_jpg)
+![](https://gekdev.github.io/docs/sql/commands/example/sel_bas.jpg)
 
 ### Expression
 
@@ -91,8 +102,6 @@ select distinct deptno from emp order by deptno desc;
 
 &#9656; 컬럼명은 소문자, 대문자 상관하지 않음, 큰따옴표로 정의할 경우에는 대문자 사용
 
-표현식 사용법
-{: .label .mt-2}
 ```sql
 select '이름=', ename from emp; 
     -- 정상
@@ -114,10 +123,8 @@ select '이름=', "ename" from emp;
 
 ### String 
 
-문자열 사용할때는 주의해야 함, 작은 따옴표 안에 작은 따옴표 nesting 불가 (에러)
+**문자열 사용할때는 주의해야 함, 작은 따옴표 안에 작은 따옴표 nesting 불가 (에러)**
 
-single quotation
-{: .label .mt-2}
 ```sql
 select '한"글', ename from emp; 
     -- 쌍 따옴표는 가능
@@ -139,17 +146,15 @@ select '한'글', ename from emp;
 
 &#9656; 별칭이 컬럼명이 되고 그냥 적거나 쌍따옴표로 적어야 함
 
-alias 사용법
-{: .label .mt-2}
 ```sql
---      값       이름
 select '이름=' 한글, ename 사원이름 from emp; 
-    -- 열이름 부여하기
 
 select '이름=' as "한글", ename as "사원이름" from emp; 
     
 select '이름=' as 한글, ename 사원이름 from emp;
 ```
+
+![](https://gekdev.github.io/docs/sql/commands/example/alias.jpg)
 
 ### Arithmetic Operators
 
@@ -163,12 +168,13 @@ select '이름=' as 한글, ename 사원이름 from emp;
 
 ```sql
 select sal
-    , sal +300
-    , sal -300
-    , sal *3
-    , sal /3
+    , sal + 300
+    , sal - 300
+    , sal * 3
+    , sal / 3
  from emp;
 ```
+
 ![](https://gekdev.github.io/docs/sql/commands/example/arith.jpg)
 
 ### concat(),||
@@ -186,38 +192,50 @@ select ename || '(' || deptno || ')' as "사원명(부서)" from emp;
     -- 보기좋게 연결됨 (컬럼명이 별칭으로 됨)
 
 select ename || '(' || deptno || ')' as 사원명(부서) from emp; 
-    -- ()는 표현식, 열이름으로 인식하기 때문에 문자로 사용하려면 큰따옴표로 감싸야 함
+    -- ()는 표현식, 컬럼명으로 인식하기 때문에 문자로 사용하려면 큰따옴표로 감싸야 함
 ````
 
-### Searching Other Table
+![](https://gekdev.github.io/docs/sql/commands/example/concat.jpg)
 
-**더 높은 사용자 권한이 있는 사용자가 하위 사용자의 테이블을 조회할 때 사용**
+---
 
+## distinct Clause
+
+**동일한 내용을 한 번씩만 출력해 중복되는 데이터를 제거**
+
+&#9656; row에 영향이 있음
+
+&#9656; 무조건 특정한 컬럼명보다 앞에 와야함
+
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+select **[distinct]** { * / column[alias]... }
+
+from table
+
+[where condition]
+
+[group by groub_by_expression]
+
+[having group_condition]
+
+[order by column];
+</div>
 ```sql
--- 사용자의 접근 권한에 따라서 조회를 할 수 있음
-select * from hr.employees; 
-select * from scott.emp; --hr 사용자에서는 접근할 수 없음
+select distinct deptno from emp order by deptno;
+    --emp 테이블에서 deptno 중복을 제거한 값을 순서대로 나타냄
 ```
 
-### DUAL table
-
-**결과를 출력하기 위해 제공되는 테이블로 오라클에서 자동생성**
-
-&#9656; varchar2(1)으로 정의된 하나의 DUMMY 칼럼으로 구성되어 있고 데이터는 X
-
-&#9656; 계산이나 함수를 실행하고 나서 결과값을 한번 표시하고 싶을 때 사용
-
-```sql
-select * from dual;
-```
-
-![](https://gekdev.github.io/docs/sql/commands/example/dual.jpg)
+![](https://gekdev.github.io/docs/sql/commands/example/distc.JPG)
 
 ---
 
 ## Where Clause
 
 **테이블에 저장된 데이터 중 원하는 데이터만 선택적으로 추출하기 위해 사용**
+
+&#9656; row에 영향이 있음
 
 &#9656; 문자나 날짜 타입의 상수값은 반드시 작은 따옴표('')로 묶어 표현
 
@@ -226,7 +244,17 @@ select * from dual;
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-select ... from ... **where condition**
+select [distinct] { * / column[alias]... }
+
+from table
+
+**[where 조건문(condition)]**
+
+[group by groub_by_expression]
+
+[having group_condition]
+
+[order by column];
 
 &#9656; **condition에는 컬럼명, 연산자, 비교대상이 되는 상수값(숫자, 문자, 날짜)로 구성**
 </div>
@@ -249,7 +277,7 @@ select ... from ... **where condition**
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-column_name **comparison operator** data
+where 컬럼명 **Comparison Operator** data
 </div>
 ```sql
 select * from emp
@@ -260,8 +288,8 @@ where hiredate <= '1981.06.09'
 
 #### example
 
-↓ 기본 연습
-
+기본 연습
+{: .label}
 ```sql
 -- Q1. 사원번호가 7900인 자료만 조회하기
 select * from emp where empno = 7900;
@@ -312,8 +340,8 @@ select * from emp where sal between 2000 and 3000;
 select * from emp where sal > 2000 and sal <= 3000;
 ```
 
-↓ 연습문제
-
+연습 문제
+{: .label .mt-3}
 ```sql
 -- ex01) 급여가 1000보다 작은 사원만 출력하기(ename/sal/hiredate 만 출력)
 select ename, sal, hiredate from emp where 1000 > sal
@@ -343,6 +371,8 @@ select * from emp where ename between 'JAMES' and 'MATIN'	--실행속도가 더 
 
 **조건을 여러 개 조합해서 결과를 얻어야 할 경우에 조건을 연결해 주는 역할**
 
+&#9656; 조건문에는 where의 다양한 연산자로 표현된 식들이 들어갈 수 있음
+
 |연산자  | 의미                                          |
 |:------|:---------------------------------------------|
 |AND    | 두가지 이상의 조건 모두 만족해야만 검색            |
@@ -352,7 +382,7 @@ select * from emp where ename between 'JAMES' and 'MATIN'	--실행속도가 더 
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-**not** column_name ... data **and / or** column_name ... data 
+where **not** 조건문 **and / or** 조건문
 </div>
 ```sql
 -- 1. and 연산자 사용
@@ -369,22 +399,23 @@ select * from emp where not deptno = 10;
 
 #### example
 
-* 연습문제
+연습문제
+{: .label}
 
-    ```sql
-    -- ex01) 입사일이 1982-01-01 이후이면서 급여가 3000보다 크거나 같은 사원목록
-    select * from emp where hiredate > '1982-01-01' and sal >=3000;
-    
-    -- ex02) 입사일이 1982-01-01 이후이거나 급여가 3000보다 크거나 같은 사원목록
-    select * from emp where hiredate > '1982-01-01' or sal >=3000;
-    
-    -- ex03) 사원이름은 S로 시작되면서 급여가 800인 사원
-    select * from emp where ename like 'S%' and sal = 800;
-    
-    -- ex04) 급여가 1000보다 크면서 (comm이 1000보다 작거나 comm이 null) 인사원
-    select * from emp where (comm <1000 or comm is null) and sal > 1000;
-    ```
-    
+```sql
+-- ex01) 입사일이 1982-01-01 이후이면서 급여가 3000보다 크거나 같은 사원목록
+select * from emp where hiredate > '1982-01-01' and sal >=3000;
+
+-- ex02) 입사일이 1982-01-01 이후이거나 급여가 3000보다 크거나 같은 사원목록
+select * from emp where hiredate > '1982-01-01' or sal >=3000;
+
+-- ex03) 사원이름은 S로 시작되면서 급여가 800인 사원
+select * from emp where ename like 'S%' and sal = 800;
+
+-- ex04) 급여가 1000보다 크면서 (comm이 1000보다 작거나 comm이 null) 인사원
+select * from emp where (comm <1000 or comm is null) and sal > 1000;
+```
+
 ### between a and b 
 
 **특정 칼럼의 데이터 값이 하한값과 상한값 사이에 포함되는 로우를 검색하기 위한 연산자**
@@ -396,7 +427,7 @@ select * from emp where not deptno = 10;
 SYNTAX
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-column_name **between A and B**
+where 컬럼명 **between A and B**
 </div>
 ```sql
 select * from emp
@@ -421,41 +452,21 @@ where deptno not between 20 and 25;
 SYNTAX
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-column_name **in(A,B,C)**
+where 컬럼명 **in(A,B,C)**
 </div>
 ```sql
 --1. emp에서 부서번호가 10, 20인 사원만 조회
 select ename, sal, deptno
 from emp where deptno in(10,20)
 
+-- 위와 같은 방법이지만 코드가 길어지기 때문에 안좋음
 select ename, sal, deptno
 from emp where deptno = 10 or deptno = 20; 
-    -- 위와 같은 방법이지만 코드가 길어지기 때문에 안좋음
-	
-select ename, sal, deptno
-	from emp
-	where deptno in (10,20)
-	order by deptno;
-	
-select ename, deptno, sal
-	from emp
-	where deptno in (10,20)
-	order by 1; -- 숫자는 열 번호 순서를 고름
-	
-select ename, deptno, sal
-	from emp
-	where deptno in (10,20)
-	order by 2, 3 asc; --먼저 정렬해야 하는걸 먼저 정렬함
-	
-select deptno, ename, sal
-	from emp
-	where deptno in (10,20)
-	order by deptno, sal desc, 2; 
 ```
 
 ![](https://gekdev.github.io/docs/sql/commands/example/in.jpg)
 
-### Like Operator
+### like Operator
 
 **칼럼에 저장된 문자 상수 중 like연산자에서 지정한 문자 패턴과 부분적으로 일치하면 참이 되는 연산자**
 
@@ -471,7 +482,7 @@ select deptno, ename, sal
 SYNTAX
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-column_name **like pattern**
+where 컬럼명 **like pattern**
 </div>
 ```sql
 select * from emp where ename like 'A%';
@@ -507,7 +518,7 @@ select empno, ename, sal, hiredate from emp where HIREDATE like '____-12%';
 SYNTAX
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-column_name **is null / is not null**
+where 컬럼명 **is null / is not null**
 </div>
 ```sql
 select * from emp where comm is null;
@@ -521,50 +532,7 @@ select * from emp where comm is not null;
 
 ---
 
-## Order by Clause
-
-**특정 칼럼을 기준으로 순서대로 나열할 때 사용**
-
-&#9656; 등수정하기와 같음, ~부터, 기준으로, ~순으로라는 말이 나오면 order by한것
-
-&#9656; 여러개의 칼럼값을 지정할 수 있음, 컴마(,)로 구분하고 먼저 지정한 순서대로 나열
-
-&#9656; asc 오름차순, desc 내림차순
-
-&#9656; 숫자 데이터가 아닌 문자 데이터로 지정하면 알파벳 순서대로 나옴(a,b,c... 오름차순)
-
-&#9656; 날짜 데이터로 지정하면 과거가 가장 먼저 나옴
-
-syntax
-{: .label .mt-2}
-<div class="code-example" markdown="1">
-select 1,2,3... from ... where ... **order by column_name(1,2,3...) sorting**
-
-&#9656; column_name 여러개 설정 가능, 숫자로 설정하면 표현되는 컬럼을 기준으로 순서를 셈 
-</div>
-```sql
-select distinct deptno from emp order by deptno;
-
-select distinct deptno from emp order by deptno asc; 
-	-- default, 오름차순
-	
-select distinct deptno from emp order by deptno desc;
-	-- 내림차순
-    
-select deptno, ename from emp order by deptno desc, ename asc;
-```
-
-![](https://gekdev.github.io/docs/sql/commands/example/desc.jpg)
-
-![](https://gekdev.github.io/docs/sql/commands/example/orderby.jpg)
-
----
-
 ## Group By Clause
-
-**동일한 값을 갖는 로우들을 한 그룹으로 묶음**
-
-### group by
 
 **그룹 함수의 결과를 조건에 따라 그룹화하기**
 
@@ -579,11 +547,19 @@ select deptno, ename from emp order by deptno desc, ename asc;
 &#8594; (order by 절에서는 별칭도 정의가 가능)
 
 syntax
-{: .label .mt2}
+{: .label .mt-2}
 <div class="code-example" markdown="1">
-select .... from .... **group by ...** [order by ...];
+select [distinct] { * / column[alias]... }
 
-&#9656; []은 생략가능, group by로 만들어진 그룹에 따라 순서를 정렬하는것
+from table
+
+[where 조건문(condition)]
+
+**[group by groub_by_expression]**
+
+[having group_condition]
+
+[order by column_name(1,2,3...) sorting];
 </div>
 ```sql
 -- Q1) 부서별 급여합계
@@ -614,25 +590,32 @@ select deptno 부서, sum(sal) 부서별급여합계
 
 **집계함수를 가지고 그룹결과를 조건별로 결과 구하기**
 
-&#8594; 단일행 함수에서 사용했던 where조건과 동일
+&#9656; 단일행 함수에서 사용했던 where조건과 동일
 
-&#8594; 즉, 그룹화에서 조건을 주기위해서는 having절을 사용, where절에는 그룹화 되지 않은 행에서 단일 조건을 검색할 때 사용
+&#9656; 즉, 그룹화에서 조건을 주기위해서는 having절을 사용, where절에는 그룹화 되지 않은 행에서 단일 조건을 검색할 때 사용
 
-&#8594; having절에는 집계함수를 가지고 조건을 비교할 때 사용되며 having절과 group by절과 함께 사용
+&#9656; having절에는 집계함수를 가지고 조건을 비교할 때 사용되며 having절과 group by절과 함께 사용
 
-&#8594; having절은 group by절없이 사용할 수 없고, order by 절보다 일찍 나옴
+&#9656; having절은 group by절없이 사용할 수 없고, order by 절보다 일찍 나옴
 
 syntax
-{: .label .mt2}
+{: .label .mt-2}
 <div class="code-example" markdown="1">
-select .... from .... group by .... **having ....** [order by ...];
+select [distinct] { * / column[alias]... }
 
-&#9656; []은 생략가능, group by로 만들어진 그룹에 따라 순서를 정렬하는것
+from table
+
+[where 조건문(condition)]
+
+[group by groub_by_expression]
+
+**[having group_condition]**
+
+[order by column_name(1,2,3...) sorting];
 </div>
 ``` sql
 -- Q1) EMP테이블에서 평균 급여가 1600보다 낮은 부서번호와 평균급여를 출력
-select deptno
-     , round(avg(nvl(sal, 0)), 2) 평균급여
+select deptno, round(avg(nvl(sal, 0)), 2) 평균급여
   from emp
  group by deptno
 having round(avg(nvl(sal, 0)), 2) < 1600.00;
@@ -642,118 +625,71 @@ having round(avg(nvl(sal, 0)), 2) < 1600.00;
 
 ---
 
-## UNION Operator
+## Order By Clause
 
-**집합연산자의 사용조건**
+**특정 칼럼을 기준으로 순서대로 나열할 때 사용**
 
-1. 두집합의 select절에 오는 컬럼의 갯수가 동일해야 함
+&#9656; 등수정하기와 같음, ~부터, 기준으로, ~순으로
 
-2. 두집합의 select절에 오는 컬럼의 데이터형이 동일 해야함
+&#9656; 여러개의 칼럼값을 지정할 수 있음, 컴마로 구분하고 먼저 지정한 순서대로 나열됨
 
-3. 두집합의 컬럼명은 달라도 상관없음. 제일 처음에 위치한 쿼리문의 컬럼명이 집합결과의 컬럼명이 됨
-  
-### union 
+&#9656; asc 오름차순(문자 데이터로 지정하면 알파벳 순서대로 나옴), desc 내림차순
 
-**두 집합의 결과를 합쳐서 출력, 중복값은 제거, 정렬**
+&#9656; 날짜 데이터로 지정하면 과거가 가장 먼저 나옴
 
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-select ...
+select [distinct] { * / column[alias]... }
 
-**union**
+from table
 
-select ...
-</div>
+[where 조건문(condition)]
 
-### union all
+[group by groub_by_expression]
 
-**두 집합의 결과를 합쳐서 출력, 중복값을 제거안하고, 정렬(X)**
+[having group_condition]
 
-syntax
-{: .label .mt-2}
-<div class="code-example" markdown="1">
-select ...
+**[order by column_name(1,2,3...) sorting]**;
 
-**union all**
-
-select ...
+&#9656; column_name 여러개 설정 가능, 숫자로 설정하면 표현되는 컬럼을 기준으로 순서를 셈
 </div>
 ```sql
--- 1. union/union all
-select count(*) from student; -- 20 
-
-select studno, name, deptno1 from student
-union all
-select studno, name, deptno1 from student; --40건 나옴(중복제거 x)
-
-select studno, name, deptno1 from student -- 20건
-union
-select studno, name, deptno1 from student;
-
-select studno, name, deptno1 from student where deptno1 = 101; -- 4개
-select studno, name, deptno1 from student where deptno1 = 201; -- 6개
-select studno, name, deptno1 from student where deptno1 = 301; -- 2개
-
-select studno, name, deptno1 from student where deptno1 = 101 -- 12개
-union all
-select studno, name, deptno1 from student where deptno1 = 201
-union all -- 여러번 나와도 상관없음
-select studno, name, deptno1 from student where deptno1 = 301;
-
-select studno, name from student where deptno1 = 101 --중복 제거되어서 5개
-union
-select studno, name from student where deptno2 = 201;
-
-select studno, name from student where deptno1 = 101 -- 중복 제거 x 6개
-union all
-select studno, name from student where deptno2 = 201;
+select ename, sal, deptno
+	from emp
+	where deptno in (10,20)
+	order by deptno;
+	
+select ename, deptno, sal
+	from emp
+	where deptno in (10,20)
+	order by 1; -- 숫자는 열 번호 순서를 고름
+	
+select ename, deptno, sal
+	from emp
+	where deptno in (10,20)
+	order by 2, 3 asc; --먼저 정렬해야 하는걸 먼저 정렬함
+	
+select deptno, ename, sal
+	from emp
+	where deptno in (10,20)
+	order by deptno, sal desc, 2; 
 ```
 
-![](https://gekdev.github.io/docs/sql/commands/example/unionall.jpg)
+![](https://gekdev.github.io/docs/sql/commands/example/orderby.jpg)
 
-### intersect
+---
 
-**두 집합의 교집합을 출력, 정렬**
+## DUAL table
 
-syntax
-{: .label .mt-2}
-<div class="code-example" markdown="1">
-select ...
+**결과를 출력하기 위해 제공되는 테이블로 오라클에서 자동생성**
 
-**intersect**
+&#9656; varchar2(1)으로 정의된 하나의 DUMMY 칼럼으로 구성되어 있고 데이터는 X
 
-select ...
-</div>
+&#9656; 계산이나 함수를 실행하고 나서 결과값을 한번 표시하고 싶을 때 사용
+
 ```sql
-select studno, name from student where deptno1 = 101
-intersect
-select studno, name from student where deptno2 = 201;
+select * from dual;
 ```
 
-![](https://gekdev.github.io/docs/sql/commands/example/intersect.jpg)
-
-### minus
-
-**두 집합의 차집합을 출력, 정렬(쿼리순서가 중요)**
-
-syntax
-{: .label .mt-2}
-<div class="code-example" markdown="1">
-select ...
-
-**minus**
-
-select ...
-</div>
-```sql
-select studno, name from student where deptno1 = 101
-minus
-select studno, name from student where deptno2 = 201;
-
-select studno, name from student where deptno2 = 201;
-minus
-select studno, name from student where deptno1 = 101
-```
-
-![](https://gekdev.github.io/docs/sql/commands/example/minus.jpg)
+![](https://gekdev.github.io/docs/sql/commands/example/dual.jpg)

@@ -170,8 +170,3 @@ alter table dept7 add(hiredate date number sysdate);
 -- 6.컬럼크기를 수정하기
 -- location 10를 1자리로 수정
 alter table dept7 modify(location )
-
-
-
-
-
