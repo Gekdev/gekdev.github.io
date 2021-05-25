@@ -59,8 +59,7 @@ syntax
 <div class="code-example" markdown="1">
 **floor(실수, 자릿수) : 실수를 특정 자리수에서 내림**
 
-소숫점 기준 0으로 시작함
-
+&#9656; 소숫점 기준 0으로 시작함
 </div>
 ```sql
 select 123
@@ -71,8 +70,6 @@ from dual;
 ![](https://gekdev.github.io/docs/sql/function/example/floor.jpg)
 
 ### trunc()
-
-&#9656; round()와 동일한데 다른 점은 무조건 버림처리
 
 syntax
 {: .label .mt-2}
@@ -109,7 +106,7 @@ from dual;
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-**power(실수, 승) : 실수의 승을 출력** 
+**power(실수, 승) : 실수를 승한 값을 출력** 
 </div>
 ```sql
 select power(2,3)
@@ -125,7 +122,7 @@ from dual;
 
 &#9656; 오라클에서만 사용하는 속성으로 모든 객체에 제공
 
-&#9656; 전체열 즉, *와 같이 사용할 수 없음
+&#9656; 전체열 즉, * 와 같이 사용할 수 없음
 
 ```sql
 select rownum, * from emp; --오류

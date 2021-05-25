@@ -21,17 +21,16 @@ nav_order: 3
 
 ### sysdate
 
-**sysdate : 시스템의 현재 날짜와 시간**
+**시스템의 현재 날짜와 시간**
 
-날짜 함수를 사용할 때 유용하게 이용됨
+&#9656; 날짜 함수를 사용할 때 유용하게 이용됨
 
 ```sql
 select sysdate from dual;
 ```
 ![](https://gekdev.github.io/docs/sql/function/example/sysdate.jpg)
 
-날짜 계산하기
-{: .label .mt-2}
+#### 날짜 계산하기
 
 | 종류 | 결과 | 의미|
 |:----|:-----|:---|
