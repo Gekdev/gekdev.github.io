@@ -5,7 +5,7 @@ parent: SQL / Oracle
 nav_order: 7
 ---
 
-# SQL Subquery
+# SQL Subquery 
 {: .no_toc .text-beta .fw-700}
 
 ## Table of contents
@@ -54,28 +54,19 @@ WHERE DEPTNO = (select deptno from emp where ename = 'SMITH');
 
 ![](https://gekdev.github.io/docs/sql/example/smith.jpg)
 
-### Example
+### Subquery Sort
 
-Q1. 최소급여를 받는 사원의 이름, 담당업무, 급여 출력
+1. 연관성에 따른 분류
 
-```sql
-select ename, job, sal
-from emp 
-where sal = (select min(sal) from emp);
-```
+    1) 연관성이 있는 서브쿼리
+    
+    2) 연관성이 없는 서브쿼리
 
-![](https://gekdev.github.io/docs/sql/example/min_sal.jpg)
+2. 위치에 따른 분류
 
-Q2. 부서별 최소 급여가 30번부서의 최소급여보다 큰 부서만 출력
-
-```sql
-select deptno, min(sal)
-from emp
-group by deptno
-having min(sal) > (select min(sal) from emp where deptno = 30)
-```
-
-![](https://gekdev.github.io/docs/sql/example/hav_q2.jpg)
+    1) 인라인뷰 : select or from 절에 위치
+    
+    2) 중첩쿼리 : where 절에 위치
 
 ---
 
@@ -145,3 +136,28 @@ and job <> 'SALESMAN'
 ```
 
 ![](https://gekdev.github.io/docs/sql/example/all33.jpg)
+
+---
+
+## Example
+
+Q1. 최소급여를 받는 사원의 이름, 담당업무, 급여 출력
+
+```sql
+select ename, job, sal
+from emp 
+where sal = (select min(sal) from emp);
+```
+
+![](https://gekdev.github.io/docs/sql/example/min_sal.jpg)
+
+Q2. 부서별 최소 급여가 30번부서의 최소급여보다 큰 부서만 출력
+
+```sql
+select deptno, min(sal)
+from emp
+group by deptno
+having min(sal) > (select min(sal) from emp where deptno = 30)
+```
+
+![](https://gekdev.github.io/docs/sql/example/hav_q2.jpg)

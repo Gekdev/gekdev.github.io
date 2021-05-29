@@ -3,7 +3,7 @@ layout: default
 title: Installation
 parent: Basic
 grand_parent: SQL / Oracle
-nav_order: 1
+nav_order: 2
 ---
 
 # Basic Installation
