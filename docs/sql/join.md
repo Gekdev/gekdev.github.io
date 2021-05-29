@@ -75,7 +75,7 @@ where emp.deptno = dept.deptno;
 
 ### EQUI JOIN with AND
 
-테이블을 조인할 경우 조인 뿐만 아니라 고려 대상인 행을 제한하기 위해 where 절에 조건을 추가해야 하는 경우가 있음
+**테이블을 조인할 경우 조인 뿐만 아니라 고려 대상인 행을 제한하기 위해 where 절에 조건을 추가해야 하는 경우가 있음**
 
 ```sql
 select emp.deptno, emp.ename, dept.dname
@@ -105,10 +105,19 @@ where e.deptno = d.deptno;
 
 ### JOIN ~ ON
 
-임의의 조건을 지정하거나 조인할 칼럼을 지정하려면 ON절을 사용
+**임의의 조건을 지정하거나 조인할 칼럼을 지정하려면 ON절을 사용**
 
 조인 조건만을 ON절에 기술하고 다른 검색이나 필터 조건은 WHERE절에 분리해서 기술할 수 있음
 
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+select 테이블명.칼럼명, 테이블명.칼럼명, 테이블명.칼럼명
+
+from 테이블명1 **inner join** 테이블명2
+
+**on** 조건절;
+</div>
 ```sql
 select dpt.deptno, emp.ename, dpt.dname
 from emp emp inner join dept dpt 
@@ -126,15 +135,15 @@ on emp.deptno = dpt.deptno;
 select stu.name studentname
      , pro.name professorname
      , dpt.dname subject
-	from student stu, professor pro, department dpt 
-	where stu.profno = pro.profno and stu.deptno1 = dpt.deptno;
+from student stu, professor pro, department dpt 
+where stu.profno = pro.profno and stu.deptno1 = dpt.deptno;
 
 -- 2. inner join으로 연결
 select stu.name studentname
      , pro.name professorname
      , dpt.dname subject
-	from student stu inner join professor pro on stu.profno = pro.profno
-	                 inner join department dpt on stu.deptno1 = dpt.deptno;
+from student stu inner join professor pro on stu.profno = pro.profno
+                 inner join department dpt on stu.deptno1 = dpt.deptno;
 ```
 
 ![](https://gekdev.github.io/docs/sql/example/three_join.jpg)
@@ -165,13 +174,13 @@ where cus.point between gif.g_start and gif.g_end;
 3개의 테이블을 조인하는 방법
 
 ```sql
---표준
+-- 1. 표준
 select name 학생명, scr.total 점수, hak.grade 학점 
 from student stu, score scr, hakjum hak
 where stu.studno = scr.studno 
     and scr.total between hak.min_point and hak.max_point;
 
---ansi
+-- 2. ansi
 select name 학생명, scr.total 점수, hak.grade 학점 
 from student std inner join score scr on std.studno = scr.studno
                  inner join hakjum hak on scr.total between hak.min_point and hak.max_point;
@@ -206,6 +215,8 @@ from student std inner join score scr on std.studno = scr.studno
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
+-- where 조건
+
 select table1.column, table2.column
 
 from table1, table2 
@@ -216,7 +227,7 @@ from table1, table2
 
 select table1.column, table2.column
 
-from table1 left outer join table2 
+from table1 **left outer join** table2 
 
 on table1.column1 = table.column2;
 </div>
@@ -248,7 +259,7 @@ from table1, table2
 
 select table1.column, table2.column
 
-from table1 **right outer** join table2 
+from table1 **right outer join** table2 
 
 on table1.column1 = table.column2;
 </div>
@@ -272,7 +283,7 @@ syntax
 <div class="code-example" markdown="1">
 select table1.column, table2.column
 
-from table1 **full outer** join table2 
+from table1 **full outer join** table2 
 
 on table1.column1 = table.column2;
 </div>
@@ -283,3 +294,82 @@ on std.profno = pro.profno;
 ```
 
 ![](https://gekdev.github.io/docs/sql/example/full_join.jpg)
+
+---
+
+## Example
+
+ex01) student, department에서 학생이름, 학과번호, 1전공학과명출력
+
+```sql
+select student.name 학생이름
+     , student.deptno1 학과번호
+     , department.dname "1전공학과명"
+from student, department
+where student.deptno1 = department.deptno;
+```
+
+![](https://gekdev.github.io/docs/sql/example/join_q1.jpg)
+
+ex02) emp2, p_grade에서 현재 직급의 사원명, 직급, 현재연봉, 해당직급의 하한 상한금액 출력 (천단위 ,로 구분)   
+
+```sql
+select emp2.name
+     , emp2.position
+     , emp2.pay
+     , p_grade.s_pay
+     , p_grade.e_pay
+from emp2, p_grade
+where emp2.position = p_grade.position;
+```
+
+![](https://gekdev.github.io/docs/sql/example/join_q2.jpg)
+
+ex03) emp2, p_grade에서 사원명, 나이, 직급, 예상직급(나이로 계산후 해당 나이의 직급), 나이는 오늘날자기준 trunc로 소수점이하 절삭
+
+```sql
+select emp2.name
+    , trunc(trunc(months_between(sysdate, emp2.birthday), 0) / 12, 0) 나이
+    , emp2.position 직급
+    , p_grade.position 예상직급
+from emp2, p_grade
+where trunc(trunc(months_between(sysdate, emp2.birthday), 0) / 12, 0) between p_grade.s_age and p_grade.e_age
+order by trunc(trunc(months_between(sysdate, emp2.birthday), 0) / 12, 0) desc;
+```
+
+![](https://gekdev.github.io/docs/sql/example/join_q3.jpg)
+
+ex04) customer, gift 고객들 중 낮은 포인트의 상품중에 Notebook을 선택할 수 있는 고객명, 포인트, 상품명을 출력
+
+```sql
+select customer.gname, customer.point, gift.gname
+from customer, gift
+where customer.point > 600000 
+and customer.point > gift.g_start;
+```
+
+![](https://gekdev.github.io/docs/sql/example/join_q4.jpg)
+
+ex05) professor에서 교수번호, 교수명, 입사일, 자신보다 빠른 사람의 인원수 단, 입사일이 빠른 사람수를 오름차순으로
+
+```sql
+select p.profno 교수번호, p.name 교수명, p.hiredate 입사일, count(q.hiredate) 입사일빠른인원수
+from professor p, professor q
+where p.hiredate > q.hiredate
+group by p.profno, p.name, p.hiredate
+order by p.hiredate;
+```
+
+![](https://gekdev.github.io/docs/sql/example/join_q5.jpg)
+
+ex06) emp에서 사원번호, 사원명, 입사일 자신보다 먼저 입사한 인원수를 출력 단, 입사일이 빠른 사람수를 오름차순 정렬
+
+```sql
+select e.empno 사원번호, e.ename 사원명, e.hiredate 입사일, count(f.hiredate) 입사일빠른인원수
+from emp e, emp f
+where e.hiredate > f.hiredate
+group by e.empno, e.ename, e.hiredate
+order by e.hiredate;
+```
+
+![](https://gekdev.github.io/docs/sql/example/join_q6.jpg)

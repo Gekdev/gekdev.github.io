@@ -115,7 +115,7 @@ create table mytable(
 );
 ```
 
-![](create.jpg) 
+![](https://gekdev.github.io/docs/sql/commands/example/create.jpg) 
 
 !NOTE
 <div class="code-example" markdown="1">
@@ -396,7 +396,7 @@ TRUNCATE TABLE EMP_FOURTH;
 SELECT TABLE_NAME FROM USER_TABLES;
 ```
 
-![](user_tables.jpg)
+![](https://gekdev.github.io/docs/sql/commands/example/user_tables.jpg)
 
 ### ALL_ Data Dictionary
 
@@ -412,7 +412,7 @@ SELECT TABLE_NAME FROM USER_TABLES;
 SELECT OWNER, TABLE_NAME FROM ALL_TABLES;
 ```
 
-![](all_tables.jpg)
+![](https://gekdev.github.io/docs/sql/commands/example/all_tables.jpg)
 
 * 오라클의 테이블 정보 보기
 
@@ -435,5 +435,82 @@ SELECT OWNER, TABLE_NAME FROM ALL_TABLES;
 SELECT OWNER, TABLE_NAME FROM dba_tables;
 ```
 
-![](dba_tables.jpg)
+![](https://gekdev.github.io/docs/sql/commands/example/dba_tables.jpg)
 
+### Example
+
+![](https://gekdev.github.io/docs/sql/commands/example/ddl_q1.jpg)
+
+```sql
+-- Q1. 
+create table new_emp(
+		no number(5)
+	, name varchar2(20)
+	, hiredate date
+	, bonus number(6,2)
+);
+
+select * from new_emp;
+```
+
+![](https://gekdev.github.io/docs/sql/commands/example/ddl_q2.jpg)
+
+```sql
+-- Q2.
+create table new_emp2
+as
+select no, name, hiredate from new_emp;
+
+select * from new_emp2;
+```
+
+![](https://gekdev.github.io/docs/sql/commands/example/ddl_q3.jpg)
+
+```sql
+-- Q3. 
+create table new_emp3
+as
+select * from new_emp2
+where 1=2;
+
+select * from new_emp3;
+```
+
+![](https://gekdev.github.io/docs/sql/commands/example/ddl_q4.jpg)
+
+```sql
+-- Q4. 
+alter table new_emp2 add(birthday varchar2(10) default sysdate);
+
+select * from new_emp2;
+```
+
+![](https://gekdev.github.io/docs/sql/commands/example/ddl_q5.jpg)
+
+```sql
+-- Q5. 
+alter table new_emp2 rename column BIRTHDAY to birth;
+
+select * from new_emp2;
+
+-- Q6. 
+alter table new_emp2 modify(no number(7));
+
+select * from new_emp2;
+
+-- Q7. 
+alter table new_emp2 drop column birth;
+
+select * from new_emp2;
+
+-- Q8. 
+truncate table new_emp2;
+
+select * from new_emp2;
+
+-- Q9. 
+drop table new_emp2;
+
+select * from new_emp2;
+
+```
