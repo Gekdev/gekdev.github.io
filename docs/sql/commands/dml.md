@@ -1,12 +1,12 @@
 ---
 layout: default
-title: DDL
+title: DML
 parent: Commands
 grand_parent: SQL / Oracle
-nav_order: 1
+nav_order: 3
 ---
 
-# DDL Commands
+# DML Commands
 {: .no_toc .text-beta .fw-700}
 
 ## Table of contents
@@ -17,15 +17,15 @@ nav_order: 1
 
 ---
 
-## DDL Basic
+## DML Basic
 
-DDL : 데이터 정의어
+DML : 데이터 조작어
 
-테이블의 구조 자체를 생성, 수정, 제거하도록 하는 명령문의 집합
+테이블에 새로운 데이터를 삽입하거나 기존의 데이터를 수저하거나 삭제하기 위한 명령어의 집합
 
 ---
 
-## CREATE Statement
+## INSERT Statement
 
 ### CREATE Statement Basic
 
@@ -139,7 +139,7 @@ where 1=2;
 
 ---
 
-## ALTER Statement 
+## UPDATE Statement 
 
 테이블의 구조를 변경해야 하는 경우 사용
 
@@ -236,7 +236,7 @@ SET UNUSED (칼럼명)
 
 ---
 
-## RENAME Statement
+## DELETE Statement
 
 **테이블을 포함한 객체의 이름을 변경하는 DDL 명령문**
 
@@ -251,7 +251,7 @@ RENAME 기존 테이블명 TO 새로운 테이블명;
 
 ---
 
-## DROP Statement
+## TRANSACTION
 
 **기존 테이블과 데이터를 모두 제거**
 
@@ -265,77 +265,3 @@ DROP TABLE 테이블명;
 ```sql
 
 ```
-
----
-
-## TRUNCATE Statement 
-
-**테이블의 모든 로우를 제거(데이터 제거)**
-
-테이블의 구조는 그대로 유지하고, 테이블의 데이터와 할당된 공간만 해제
-
-테이블에 생성된 제약 조건과 연관된 인덱스, 뷰, 동의어는 유지됨
-
-
-syntax
-{: .label mt-2}
-
-TRUNCATE TABLE 테이블명;
-</div>
-```sql
-
-```
-
----
-
-## Data Dictionary
-
-데이터사전 : 사용자와 데이터베이스 자원을 효율적으로 관리하기 위한 다양한 정보를 저장하는 시스템 테이블의 집합
-
-사용자가 테이블을 생성하거나 사용자를 변경하는 등의 작업을 할 때 데이터 베이스 서버에의해 자동으로 갱신되는 테이블
-
-사용자는 데이터 사전의 내용을 직접 수정하거나 삭제할 수 없고 사용자가 이해할 수 있는 데이터를 산출해 줄 수 있도록 하기 위해 읽기 전용 뷰 형태로 정보를 제공 
-
-오라클 서버는 데이터베이스의 이름이나 생성 시각, 사용자 권한 및 데이터의 변경사항을 반영하기 위해 지속적으로 수정, 관리를 하고있음
-
-데이터 사전은 크게 세가지로 나뉨
-
-| 접두어 | 의미 | 
-|:------|:----|
-| USER | 자신의 계정이 소유한 객체 등에 관한 정보 조회|
-| ALL | 자신 계정 소유 또는 권한을 부여 받은 객체 등에 관한 정보 조회|
-| DBA | 데이터베이스 관리자만 접근 가능한 객체 등의 정보 조회|
-
-### USER_ Data Dictionary
-
-사용자와 가장 밀접하게 관련된 뷰로서 자신이 생성한 테이블, 인덱스, 뷰, 동의어 등의 객체나 해당 사용자에게 부여된 권한 정보를 제공
-
-* USER_SEQUENCES : 사용자가 소유한 시퀀스의 정보를 조회
-
-* USER_INDEXES : 사용자가 소유한 인덱스 정보를 조회
-
-* USER_VIEWS : 사용자가 소유한 뷰 정보를 조회
-
-데이터사전은 USER 뒤에 원하는 객체를 기술하고 뒤에 기술되는 명칭은 S가 붙은 복수 타입임을 주의
-
-### ALL_ Data Dictionary
-
-전체 사용자와 관련된 뷰로서 사용자가 접근할 수 잇는 모든 객체에 대한 정보를 조회할 수 있음
-
-조회중인 객체가 누구의 소유인지를 확인하기 위해 OWNER칼럼 제공
-
-all_tables로 자신이 소유하거나 권한을 부여받은 테이블에 대한 정보를 조회
-
-### DBA_ Data Dictionary
-
-시스템 관리와 관련된 뷰
-
-DBA나 시스템 권한을 가진 사용자만 접근 가능 
-
-현재 접속한 사용자가 HR이라면 DBA_로 시작하는 데이터 사전을 조회할 권한ㅇ이 없기때문에 DBA권한을 가진 SYSTEM 계정으로 접속해야 함
-
-
-
-
-
-
