@@ -143,6 +143,8 @@ select stu.name studentname
 
 ## NON-EQUI JOIN
 
+![](https://gekdev.github.io/docs/sql/example/join_img.png)
+
 ### EQUI JOIN Syntax
 
 **비등가 조인, 조인 조건에 특정 범위 내에 있는지를 조사하기 위해서 사용**
@@ -246,7 +248,7 @@ from table1, table2
 
 select table1.column, table2.column
 
-from table1 right outer join table2 
+from table1 **right outer** join table2 
 
 on table1.column1 = table.column2;
 </div>
@@ -270,7 +272,7 @@ syntax
 <div class="code-example" markdown="1">
 select table1.column, table2.column
 
-from table1 full outer join table2 
+from table1 **full outer** join table2 
 
 on table1.column1 = table.column2;
 </div>
