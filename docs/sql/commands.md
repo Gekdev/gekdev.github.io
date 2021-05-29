@@ -167,10 +167,42 @@ INSERT INTO employees VALUES ('id','부서이름','연봉' .....);
 - REVOKE : 부여했던 권한 제거
 </div>
 
-#### Oracle Account Type
+---
 
-* SYS : Oracle DB 관리자, Super 사용자 계정, 모든 관리 기능을 수행할 수 있음
+## Exercise
 
-* SYSTEM : 백업 및 복구, 데이터베이스 업그레이드를 제외한 모든 관리 기능 수행 가능
+### Connection Operator
 
-* HT : 오라클을 잘 다루지 못하는 사용자를 위한 교육용 계정
+![](https://gekdev.github.io/docs/sql/commands/example/con_op1.png)
+
+```sql
+select name 
+    || '''s ID : ' 
+    || id 
+    || ', weight is ' 
+    ||  weight 
+    || 'kg'  "ID and Weight"
+from student;
+```
+
+![](https://gekdev.github.io/docs/sql/commands/example/con_qa_1.jpg)
+
+![](https://gekdev.github.io/docs/sql/commands/example/con_op2.png)
+
+```sql
+select ename 
+    || '('
+    || job
+    || ') , '
+    || ename
+    || ''''
+    || job
+    || ''''  "Name and Job"
+from emp;
+```
+
+![](https://gekdev.github.io/docs/sql/commands/example/con_qa_2.jpg)
+
+![](https://gekdev.github.io/docs/sql/commands/example/con_op3.png)
+
+![](https://gekdev.github.io/docs/sql/commands/example/con_qa_3.jpg)
