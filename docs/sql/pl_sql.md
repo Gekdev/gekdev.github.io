@@ -121,17 +121,7 @@ end;
 /
 ```
 
----
-
-## Variable Declare
-
-
-
-
-
----
-
-## Sub-Program
+### Sub-Program
 
 **하나의 프로그램을 구성하는 여러 작은 단위의 프로그램**
 
@@ -145,13 +135,109 @@ PL/SQL의 대표적인 부 프로그램에서는 Function, Procedure가 있음
 
 ---
 
+## Variable Declare
+
+**pl/sql 블록 내에서 변수를사용하려면 선언부에서 선언해야 하며, 변수명 다음에 데이터 타입을 기술해야 함**
+
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+identifier [CONSTANT] datatype [NOT NULL]
+[:= DEFAULT expression]
+</div>
+
+| 구문 | 설명 |
+|:----|:-----|
+|identifier| 변수의 이름 |
+|CONSTANT|상수로 지정|
+|datatype|자료형을 기술 |
+|NOT NULL|값을 반드시 포함|
+|expression| literal, 다른변수, 연산자나 함수를 포함하는 표현식 |
+
+&#9656; identifier 오라클에서 사용하는 객체들의 이름을 명명할 때와 동일한 규칙을 따름
+
+&#9656; CONSTANT는 identifier 값을 변경할 수 없도록 제약하기 때문에 상수로 지정하고 싶을때 사용
+
+&#9656; 반드시 초기치를 할당해야 한다는 점에 유의
+
+&#9656; NOT NULL이 정의되어 있으면 초기값을 반드시 지정하도록 하기 위해 변수를 제약
+
+&#9656; 할당연산자는 초기값을 지정할 때 사용, 초기값을 정하지 않으면 NULL
+
+&#9656; 일반적으로 한줄에 한개의 identifier를 정의 
+
+### Data Type
+
+1. 스칼라
+
+    1) 숫자
+    
+    2) 문자
+    
+    3) 날짜 
+    
+    4) BOOLEAN
+    
+2. 레퍼런스
+
+    **변수의 데이터타입을 데이터베이스 기존 칼럼에 맞추어 선언하기 위해 사용**
+    
+    SYNTAX
+    {: .label .mt-2}
+    <div class="code-example" markdown="1">
+    변수이름 테이블이름.컬럼이름%TYPE;
+    
+    변수이름 테이블이름.컬럼이름%ROWTYPE;
+    </div>
+    
+    &#9656; 레퍼런스 타입은 칼럼에 대한 데이터 타입이 중간에 변경되는 경우에도 칼럼의 데이터 타입과 크기를 그대로 참조하기 때문에 굳이 레퍼런스 변수 선언을 수정할 필요가 없다는 장점이 있음
+
+    1. %TYPE : 칼럼 단위로 데이터 타입을 참조
+    
+    2. %ROWTYPE : 로우 전체에 대한 데이터 타입을 참조
+    
+        &#8594; 테이블의 칼럼명과 데이터 타입과 크기를 그대로 참조함
+
+        **그냥 변수가 테이블이 된다고 생각하면 편함!**
+    
+### :=
+
+변수에 값을 저장하기 위해 사용
+
+좌측에는 변수, 우측에는 값을 기술
+
+SYNTAX
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+identifier := expression
+</div>
+
+### Inquiry table in PL/SQL
+
+SELECT 문을 사용하지만 차이점은 INTO절이 추가로 필요함
+
+INTO절에는 조회 결과 값을 저장할 변수를 기술, SELECT문은 INTO절에 의해 하나의 행만 저장할 수 있음
+
+SYNTAX
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+SELECT select_list
+
+INTO variable_name1, ....  -- 조회 결과 값을 저장할 변수 기술
+
+FROM table_name
+
+WHERE condition;
+</div>
+
+SELECT 다음에 기술한 칼럼은 INTO 절에 있는 변수와 1:1로 대응해야 하기 때문에 개수와 데이터 타입, 길이를 일치시켜야 함
+
+---
+
+## Representative Site
+
+### Information
+
 [Enjoy My Life](https://m.blog.naver.com/kmymk/110081331981)
 
 [호기심 많은 오리의 지식 저장소](https://gdtbgl93.tistory.com/149)
-
-
-
-
-
-
-

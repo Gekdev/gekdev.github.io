@@ -70,7 +70,7 @@ WHERE DEPTNO = (select deptno from emp where ename = 'SMITH');
 
 ### Subquery Column
 
-컬럼에 서브쿼리문을 사용해서 테이블을 조인하고 값을 가져올 수 있음
+**컬럼에 서브쿼리문을 사용해서 테이블을 조인하고 값을 가져올 수 있음**
 
 &#8594; 일반적으로 테이블 조인해서 값 가져오는 방법
 
@@ -352,7 +352,7 @@ select * from v_over_avg_salary_by_us;
  
 ![](https://gekdev.github.io/docs/sql/example/sub_q6.jpg)
  
- ### Assignment
+### Assignment
  
 1. 급여가 평균보다 같거나 큰 그리고 최대급여보다 작거나 같은 사원출력
 

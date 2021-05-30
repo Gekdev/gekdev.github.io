@@ -106,7 +106,7 @@ select fn_01(7369) from dual;
 select empno, ename, fn_01(empno) from emp where empno = 7369;
 ```
 
-![](func_q1.jpg)
+![](https://gekdev.github.io/docs/sql/pl_sql/example/func_q1.jpg)
 
 Q2. 부피를 계산하는 함수, 매개변수는 length, width, height
 
@@ -127,7 +127,7 @@ end fn_02;
 select fn_02(10,20,30) from dual;
 ```
 
-![](func_q2.jpg)
+![](https://gekdev.github.io/docs/sql/pl_sql/example/func_q2.jpg)
 
 Q3. 현재일을 입력받아서 해당월의 마지막일자를 구하기(fn_03)
 
@@ -150,7 +150,7 @@ select fn_03('20200321') from dual;
 select fn_03('2020.03.21') from dual;
 ```
 
-![](func_q3.jpg)
+![](https://gekdev.github.io/docs/sql/pl_sql/example/func_q3.jpg)
 
 Q4. '홍길동'문자를 받아서 '길동'값을 리턴하는 함수(fn_04)
 
@@ -171,7 +171,7 @@ select fn_04('가은가은') from dual;
 select fn_04('Sharon Stom') from dual;
 ```
 
-![](func_q4.jpg)
+![](https://gekdev.github.io/docs/sql/pl_sql/example/func_q4.jpg)
 
 Q5. 현재일을 입력받아서 '2020년 07월 17일'형태로 리턴하는 함수(fn_05)
 
@@ -191,7 +191,7 @@ end fn_05;
 select fn_05(sysdate) from dual;
 ```
 
-![](func_q5.jpg)
+![](https://gekdev.github.io/docs/sql/pl_sql/example/func_q5.jpg)
 
 Q6. 주민번호를 입력받아서 남자 또는 여자를 리턴하는 함수(fn_06)
 
@@ -225,7 +225,7 @@ select fn_06(9702284123567) from dual ;
 select studno, name, jumin, fn_06(jumin) from student;
 ```
 
-![](func_q6.jpg)
+![](https://gekdev.github.io/docs/sql/pl_sql/example/func_q6.jpg)
 
 Q7. emp에서 전사원의 hiredate를 현재일 기준으로 근손년월을 계산하는 함수를 작성한 후에 전사원의 근속년월을 출력(fn_07)
 
@@ -246,7 +246,7 @@ end fn_07;
 select empno, ename, fn_07(hiredate) 근속년월 from emp;
 ```
 
-![](func_q7.jpg)
+![](https://gekdev.github.io/docs/sql/pl_sql/example/func_q7.jpg)
 
 ### function 호출위치
 
