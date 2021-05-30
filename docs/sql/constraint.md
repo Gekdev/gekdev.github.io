@@ -101,7 +101,13 @@ column datatype[DEFAULT expression] [column_constraint],
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-칼럼명 데이터타입 **NOT NULL**
+1. 정식문법
+
+    칼럼명 데이터타입 **CONSTRAINT 칼럼명 NOT NULL**
+
+2. 약식문법
+
+    칼럼명 데이터타입 **NOT NULL**
 </div>
 ```sql
 create table summer(
@@ -114,7 +120,7 @@ insert into summer values(null, 'cherry');
 select * from summer;
 ```
 
-![](notnull.jpg)
+![](https://gekdev.github.io/docs/sql/example/notnull.jpg)
 
 ### UNIQUE
 
@@ -153,7 +159,7 @@ insert into customer values('id_01','pw_54321');
 select * from customer;
 ```
 
-![](unique.jpg)
+![](https://gekdev.github.io/docs/sql/example/unique.jpg)
 
 SCOTT.SYS_C007066이라는 값은 오라클에서 자동으로 생성한 제약 조건 이름
 
@@ -168,7 +174,7 @@ select table_name, constraint_name
 from USER_CONSTRAINTS
 where table_name in('CUSTOMER');
 ```
-![](constraint_name.jpg)
+![](https://gekdev.github.io/docs/sql/example/constraint_name.jpg)
 
 ### PRIMARY KEY
 
@@ -210,69 +216,215 @@ insert into winter values('id_1','pw_12345','01011111111');
 -- 같은값이 두번 들어가서 unique constraint (SCOTT.WINTER_ID_PK) violated 오류가 뜸
 ```
 
-![](primary.jpg)
+![](https://gekdev.github.io/docs/sql/example/primary.jpg)
 
 ### FOREIGN KEY
 
-****
+**외래 키 제약조건**
 
-&#9656; 
+참조의 무결성은 테이블과 테이블 사이의 주종관계설정을 위한 제약 조건
+
+&#9656; FOREIGN KEY는 참조테이블의 컬럼이 PK or UK인 컬럼만 foreign key로 지정할 수 있음
+
+* 자식테이블 : 다른테이블의 칼럼값을 참조하는 테이블
+
+* 부모테이블 : 다른 테이블에 의해 참조되는 테이블
+
+* 외래키 : 부모 테이블의 칼럼 값을 자식테이블의 칼럼
+
+* 부모키(참조키) : 자식테이블에서 참조하는 부모테이블의 칼럼
+
+    &#8594; 부모키가 되기 위한 칼럼은 부모 테이블의 기본키나 유일키로 설정되어 있어야 함
+
+![](https://gekdev.github.io/docs/sql/example/fkpk.jpg)
+
+&#9656; 부모키로 설정된 칼럼에 존재하는 값만 추가하고 존재하지 않는 값이라면 추가하지 않음
+
+&#9656; **자식 테이블에서 데이터를 추가할 떄 왜래키에는 부모테이블에 저장된 기본키나 유일키의 정보중 하나가 정보가 일치하거나 null만 입력 가능해야 한다는 조건이 참조의 무결성 제약조건**
 
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-칼럼명 데이터타입 **NOT NULL**
+1. 정식문법
+
+    칼럼명 데이터타입 **CONSTRAINT constraint_name REFERENCES 부모테이블(칼럼명)**
+
+2. 약식문법
+
+    칼럼명 데이터타입 **REFERENCES 부모테이블(칼럼명)**
 </div>
 ```sql
-
+CREATE TABLE NEW_EMP1(
+      deptno    varchar2(6) 	constraint emp_1_deptno_fk references dept2(dcode)
+    , deptno    varchar2(6) 	references dept2(dcode)
+)
 ```
-
-![]()
 
 ### CHECK
 
-****
+**칼럼에서 허용 가능한 데이터의 범위나 조건을 정의**
+
+입력되는 값을 체크해 설정된 값 이외의 값이 들어오면 오류 메시지와 함께 명령이 수행되지 못하게 하는 것
+
+데이터값의 범위, 특정 패턴의 숫자나 문자를 설정할 수 있음
+
+조건의 수에는 제한이 없기 때문에 하나의 칼럼에 여러개의 CHECK조건을 정의할 수 있음
+
+NOTE!
+{: .label .label-yellow .mt-2}
+<div class="code-example" markdown="1">
+CURRVAL, NEXTVAL, ROWNUM과 같은 의사칼럼이나 SYSDATE,USER와 같은 함수에는 사용 불가능
+</div>
 
 &#9656; 
 
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-칼럼명 데이터타입 **NOT NULL**
+1. 정식문법
+
+    칼럼명 데이터타입 **CONSTRAINT constraint_name CHECK(조건문)**
+
+2. 약식문법
+
+    칼럼명 데이터타입 **CHECK(조건문)**
 </div>
 ```sql
-
+CREATE TABLE NEW_EMP1(
+      loc_code	number(1)    constraint emp_1_loc_code_ck check(loc_code < 5)
+    , loc_code	number(1)    check(loc_code < 5)
+)
 ```
-
-![]()
 
 ### DEFAULT
 
-****
-
-&#9656; 
+**아무런 값을 입력하지 않았을 때 디폴트 제약의 값이 입력**
 
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-칼럼명 데이터타입 **NOT NULL**
+칼럼명 데이터타입 **DEFAULT 값**
 </div>
 ```sql
-
+CREATE TABLE NEW_EMP1(
+      loc_code	number(1) DEFAULT 1
+)
 ```
-
-![]()
-
 
 ---
 
 ## Change Integrity Constraint
 
+ALTER TABLE문을 사용해서 기존 테이블에 대해서 제약 조건을 추가하거나 삭제하고 변경할 수 있음
+
 ### ADD CONSTRAINT
+
+**기존 테이블에 대해서도 제약 조건 추가**
+
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+ALTER TABLE 테이블명 
+ADD CONSTRAINT constraint_name 제한조건(칼럼명);
+</div>
+```sql
+-- PRIMARY KEY 제약조건 추가하기
+ALTER TABLE NEW_EMP1
+ADD CONSTRAINT emp_copy_eno_pk PRIMARY KEY(ENO);
+
+-- FOREIGN KEY 제약조건 추가하기
+ALTER TABLE NEW_EMP1
+ADD CONSTRAINT emp_copy_eno_pk FOREIGN KEY(ENO) REFERENCES dept_copy(dno);
+```
+
+### MODIFY CONSTRAINT 
+
+**제약조건을 다른 조건에서 NOT NULL로 수정하기**
+
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+ALTER TABLE 테이블명 
+MODIFY 칼럼명 CONSTRAINT constraint_name NOT NULL;
+</div>
+```sql
+-- NOT NULL로 NULL값 허용하지 않게 하기
+ALTER TABLE EMP_COPY
+MODIFY ename CONSTRAINT emp_copy_ename_nn NOT NULL;
+```
 
 ### DROP CONSTRAINT
 
+**제약 조건 제거하기**
+
+외래 키 제약 조건으로 지정되어 있는 부모 테이블의 기본 키 제약 조건을 제거하려면 자식 테이블의 FK제약 조건을 먼저 제거한 후 제거나 CASCADE옵션을 사용
+
+CASCADE옵션을 사용하면 제거하려는 칼럼을 참조하는 참조 무결성 제약 조건도 함께 제거됨 
+
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+ALTER TABLE 테이블명 
+DROP PRIMARY KEY/ UNIQUE(COLUMN)/ CONSTRAINT constraint_name [CASCADE]
+</div>
+```sql
+-- PK 제거하기
+ALTER TABLE EMP_COPY
+DROP PRIMARY KEY;
+
+-- PK 종속 까지 제거하기
+ALTER TABLE EMP_COPY
+DROP PRIMARY KEY CASCADE;
+
+-- NOTNULL 제거하기
+ALTER TABLE EMP_COPY
+DROP CONSTRAINT EMP_COPY_ENAME_NN;
+```
+
 ### DISABLE CONSTRAINT
+
+**제약 조건을 삭제하지 않고 일시적으로 비활성화**
+
+&#8594; 특별한 데이터를 처리하는 과정에서 무결성 제약 조건(FK)으로 인해 처리 시간이 오래 걸리는 경우가 있어서 비활성화 하는 경우가 있음
+
+&#9656; disable 옵션은 2가지 : novalidate, validate
+
+&#9656; novalidate : 해당 제약 조건을 무효화 시킴
+
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+ALTER TABLE 테이블명 
+DISABLE CONSTRAINT constraint_name [CASCADE]
+</div>
+```sql
+-- PK 제거하기
+ALTER TABLE EMP_COPY
+DISABLE CONSTRAINT EMP_COPY_DNO_FK;
+```
 
 ### ENABLE CONSTRAINT
 
+**제약 조건 활성화**
+
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+ALTER TABLE 테이블명 
+ENABLE CONSTRAINT constraint_name [CASCADE]
+</div>
+```sql
+-- PK 제거하기
+ALTER TABLE EMP_COPY
+ENABLE CONSTRAINT EMP_COPY_DNO_FK;
+```
+
+### Check Constraints
+
+**데이터 사전으로 제약조건을 확인할 수 있음**
+
+```sql
+select * from all_constraints
+where owner = 'SCOTT'
+and table_name like 'NEW_EMP%';
+```

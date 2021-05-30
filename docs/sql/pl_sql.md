@@ -53,7 +53,7 @@ PL/SQL Block내에서 SQL DML문과 Query문, 절차형 언어(if, loop)등을 �
 
 **논리적인 블록으로 이루어진 구조화된 블록 언어로써 세개의 섹션으로 구성됨**
 
-![](unnamed.png)
+![](https://gekdev.github.io/docs/sql/pl_sql/example/unnamed.png)
 
 1. DECLARE (선언부)
 
@@ -141,9 +141,7 @@ end;
 
 PL/SQL의 대표적인 부 프로그램에서는 Function, Procedure가 있음
 
-![](func_pro.jpg)
-
----
+![](https://gekdev.github.io/docs/sql/pl_sql/example/func_pro.jpg)
 
 ---
 
