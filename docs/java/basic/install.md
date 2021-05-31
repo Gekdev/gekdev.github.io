@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Install
+title: Basic Install
 parent: Basic
 grand_parent: Java
 nav_order: 1
 ---
 
-# JAVA
+# Basic Install
 {: .no_toc .text-beta .fw-700}
 
 ## Table of contents
