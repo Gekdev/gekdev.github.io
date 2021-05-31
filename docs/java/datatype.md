@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Datatype
-parent: Datatype
+parent: Java
 nav_order: 3
 has_children: true
 ---

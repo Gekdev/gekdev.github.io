@@ -76,6 +76,7 @@ public static void main(String[] args) {
 ```
 
 !note
+{: .label .label-yellow .mt-2}
 <div class="code-example" markdown="1">
 자바 클래스 파일(*.java)에 public 클래스(class)가 존재하면 소스 파일의 이름은 반드시 해당 public 클래스의 이름과 같아야 함
 

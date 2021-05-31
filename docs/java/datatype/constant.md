@@ -81,3 +81,20 @@ final int AGES = 100; // 100이 바로 리터럴임.
 |F 또는 f	|float형	|1.234567F, 8.9f, ...|
 |D 또는 d (생략 가능)|double형	|1.2345D, 6.789d, ...|
 
+### Literal with Decimal
+
+**리터럴 앞에 접두어를 붙여서 진법을 나타낼 수 있음**
+
+기본은 10진수
+
+* 8진수 : 숫자리터럴 앞에 0
+
+* 16진수 : 숫자리터럴 앞에 0x
+
+```java
+int var2 = 010;
+System.out.println(var2);   // 8
+
+int var3 = 0x10;
+System.out.println(var3);   // 16
+```
