@@ -97,7 +97,7 @@ cmd 콘솔에서 javac로 compile하거나, 다른 프로그램에서 자바 JDK
 
     1. **변수 이름 : JAVA_HOME**
 
-    2. **변수 값   : C:\Program Files\Java\jdk1.8**
+    2. **변수 값 : C:\Program Files\Java\jdk1.8**
 
     ![](https://gekdev.github.io/docs/java/basic/example/javains_03.png)
 
