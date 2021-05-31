@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Variable
-parent: Basic
+parent: Datatype
 grand_parent: Java
 nav_order: 1
 ---

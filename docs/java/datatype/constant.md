@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Constant / Literal
-parent: Basic
+parent: Datatype
 grand_parent: Java
 nav_order: 2
 ---
