@@ -137,3 +137,45 @@ double num1, num2;        // 같은 타입의 변수를 동시에 선언함.
 
 num1 = 1.23, num2 = 4.56; // 하지만 이미 선언된 여러 변수를 동시에 초기화할 수는 없음.
 ```
+
+### Variable Scope
+
+자바스크립트 변수 범위처럼 작용함 **(Local Variable / Global Variable)**
+
+&#9656; 전역 변수는 지역에서 사용가능하고, 지역변수는 전역에서 사용할 수 없음
+
+&#9656; 지역에서 변경한 전역변수는 그대로 값이 변경되어서 남아있음
+
+```java
+public static void main(String[] args) {
+    // 변수의 사용범위
+    // local(지역변수) vs global(전역변수)
+    int var1;
+    var1 = 10;
+    System.out.println("var1의 값 = " + var1);		//10
+    System.out.println();
+
+    if(true) {
+        int var2;
+        var1 = 20;
+        var2 = 20;
+        // var3 = 30; 접근 불가
+        System.out.println("var1의 값 = " + var1);    //20
+        System.out.println("var2의 값 = " + var2);    //20
+    }
+
+    System.out.println();
+
+    if(true) {
+        int var3;
+        var1 = 30;
+        var3 = 30;
+        System.out.println("var1의 값 = " + var1);    //30
+        System.out.println("var3의 값 = " + var3);    //30
+    }   
+
+    System.out.println("var1의 값 = " + var1);	     //30
+    // System.out.println("var2의 값 = " + var2); 접근 불가능, 둘다 지역변수 이기 때문
+    // System.out.println("var3의 값 = " + var3);	
+}
+```
