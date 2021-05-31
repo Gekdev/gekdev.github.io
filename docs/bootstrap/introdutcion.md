@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Information
+title: Introduction
 parent: Bootstrap
 nav_order: 1
 ---
 
-# Bootstrap Information
+# Bootstrap Introduction
 {: .no_toc .text-beta .fw-700}
 
 ## Table of contents

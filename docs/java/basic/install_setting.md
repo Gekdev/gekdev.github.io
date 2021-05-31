@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Basic Install and Setting
+title: Install and Setting
 parent: Basic
 grand_parent: Java
 nav_order: 1
