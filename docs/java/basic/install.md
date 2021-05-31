@@ -19,11 +19,7 @@ nav_order: 1
 
 ## JAVA Installation
 
-### Java JDK Install
-
-Java를 사용하기 위해선 JDK(Java Development Kit)을 설치해야 함
-
-자바 개발 도구인 JDK를 깔아야 Java라는 언어로 프로그래밍을 할 수 있기 때문
+**자바 개발 도구인 JDK를 깔아야 Java라는 언어로 프로그래밍을 할 수 있기 때문에 JDK(Java Development Kit)을 설치해야 함**
 
 자바라는 언어를 통해 개발을 하고자 하기 때문에 JRE, JVM이 아닌 JDK를 깔아야 함
 
@@ -33,37 +29,43 @@ Java를 사용하기 위해선 JDK(Java Development Kit)을 설치해야 함
 
 * JDK : JRE 이상으로 환경구성 뿐만 아니라 직접 개발까지 가능
 
-<span class="fs-2">
-[jdk1.9 win_64버전 다운](https://www.oracle.com/java/technologies/javase-downloads.html){: .btn .btn-outline .mt-2}
-</span>
+### Java JDK Install
 
-이미 설치가 되어있다면
-{: .label .label-yellow mt-2}
-<div class="code-example" markdown="1">
-1. 언인스톨 / 재설치
+1. 다운로드 받기
 
-2. 그냥 사용
+    <span class="fs-2">
+    [jdk1.9 win_64버전 다운](https://www.oracle.com/java/technologies/javase-downloads.html){: .btn .btn-outline .mt-2}
+    </span>
 
-3. C:\Program Files\Java\jdk1.8
-</div>
+    이미 설치가 되어있다면
+    {: .label .label-yellow mt-2}
+    <div class="code-example" markdown="1">
+    1. 언인스톨 / 재설치
 
-![](https://gekdev.github.io/docs/java/basic/example/ins_01.png)
+    2. 그냥 사용
 
-**개발도구폴더**
+    3. 경로설정 : C:\Program Files\Java\jdk1.8
+    </div>
 
-폴더를 새로 생성하는데 폴더이름을 jdk1.8로 해야함 (위 이미지와 경로가 다름) 
+2. Setting File path
 
-### Create jre Folder
+    ![](https://gekdev.github.io/docs/java/basic/example/ins_01.png)
 
-**실행폴더**
+    **개발도구폴더**
 
-폴더가 없는 경우는 해당폴더를 생성
+    폴더를 새로 생성하는데 폴더이름을 jdk1.8로 해야함 (위 이미지와 경로가 다름) 
 
-경로 : **C:\Program Files\Java\jre1.8**
+3. Create jre Folder
 
-![](https://gekdev.github.io/docs/java/basic/example/ins_02.png)
+    **실행폴더**
 
-폴더 생성 후 설치해야함(위 이미지와 경로가 다름) 
+    폴더가 없는 경우는 해당폴더를 생성
+
+    경로 : **C:\Program Files\Java\jre1.8**
+
+    ![](https://gekdev.github.io/docs/java/basic/example/ins_02.png)
+
+    폴더 생성 후 설치해야함(위 이미지와 경로가 다름) 
 
 ### API Document
 
@@ -77,13 +79,13 @@ JDK에서 제공하는 표준 클래스 라이브러리 설명해 놓은 HTML �
 
 ## Setting Environment
 
-Cmd 콘솔에서 javac로 compile하거나, 다른 프로그램에서 자바 JDK를 참조하기 위해선 윈도우 환경변수를 지정해야 함 
+cmd 콘솔에서 javac로 compile하거나, 다른 프로그램에서 자바 JDK를 참조하기 위해선 윈도우 환경변수를 지정해야 함 
 
 이클립스같은 통합개발환경에서는 환경변수를 알아서 프로그램이 관리해줌
 
 ### Steps
 
-1. 내 PC를 우클릭해서 속성을 들어가서 고급시스템설정 
+1. **내 PC를 우클릭해서 속성을 들어가서 고급시스템설정**
 
     **winkey + R &#8594; sysdm.cpl** 도 동일한 방법
 
@@ -91,7 +93,7 @@ Cmd 콘솔에서 javac로 compile하거나, 다른 프로그램에서 자바 JDK
 
 2. 새로운 시스템 변수 생성
 
-    자바에 관련된 환경변수를 설정하기 위해선 새로운 시스템변수를 만들어야 함
+    **자바에 관련된 환경변수를 설정하기 위해선 새로운 시스템변수를 만들어야 함**
 
     ![](https://gekdev.github.io/docs/java/basic/example/javains_02.png)
 
@@ -107,7 +109,7 @@ Cmd 콘솔에서 javac로 compile하거나, 다른 프로그램에서 자바 JDK
 
     ![](https://gekdev.github.io/docs/java/basic/example/javains_04.png)
 
-    **%JAVA_HOME%\bin**
+    **새로만들기 &#8594; %JAVA_HOME%\bin**
 
     ![](https://gekdev.github.io/docs/java/basic/example/javains_05.png)
     
@@ -122,7 +124,9 @@ Cmd 콘솔에서 javac로 compile하거나, 다른 프로그램에서 자바 JDK
     
     javac -version
     ```
-    
+
+3. 아래와 같이 나오면 설치 완료
+
     ![](https://gekdev.github.io/docs/java/basic/example/javains_06.png)
   
 ---
