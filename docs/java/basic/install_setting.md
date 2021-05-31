@@ -3,7 +3,7 @@ layout: default
 title: Install and Setting
 parent: Basic
 grand_parent: Java
-nav_order: 1
+nav_order: 3
 ---
 
 # Basic Install
