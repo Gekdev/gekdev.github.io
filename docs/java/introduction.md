@@ -1,9 +1,8 @@
 ---
 layout: default
-title: Java Introduction
+title: Introduction
 parent: Java
 nav_order: 1
-has_children: true
 ---
 
 # Java Introduction
