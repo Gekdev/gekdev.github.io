@@ -53,7 +53,7 @@ boolean형을 제외한 나머지 기본 타입 간의 타입 변환을 자유�
 
 자바에서는 타입의 표현 범위에 따라 다음과 같은 방향으로 자동 타입 변환이 이루어짐
 
-![](imc.jpg)
+![](https://gekdev.github.io/docs/java/datatype/example/imc.jpg)
 
 예제
 {: .label .label-purple .mt-2}

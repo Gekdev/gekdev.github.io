@@ -25,7 +25,9 @@ Database
 
 이번 Java는
 
-[W3schools](https://www.w3schools.com/) 홈페이지를 기반으로
+[TCP](http://tcpschool.com/java/java_datatype_typeConversion) 홈페이지를 기반으로
+
+[W3schools](https://www.w3schools.com/),
 
 [생활코딩](https://opentutorials.org/)를 참고하여 작성했습니다.
 
