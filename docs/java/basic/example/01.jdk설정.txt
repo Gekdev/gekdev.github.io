@@ -1,0 +1,35 @@
+A. 자바설치
+0. oracle홈페이지에서 jdk1.9 win_64버전 다운 & 설치
+
+1. java가 이미 설치 되신 분은 
+   1) 언인스톨 / 재설치
+   2) 그냥 사용
+   3) C:\Program Files\Java\jdk1.8
+
+2. jre - 폴더가 없는 경우는 해당폴더를 생성
+   1) C:\Program Files\Java\jre1.8
+
+3.  설치 완료
+
+B. 환경설정
+1. winkey + R : sysdm.cpl
+   1) (tab)고급 > (button)환경변수
+   2) 시스템변수
+      a. (button)새로만들기
+      b. 변수이름 : JAVA_HOME
+         변수값   : yourfloder\jdk1.8_????
+   3) path 설정
+      a. path 선택 > (button)새로만들기
+      b. %JAVA_HOME%\bin
+      c. 확인
+
+2. 자바실행
+
+   1) javac(java 컴파일러)
+     a. javac.exe 자바소스파일명.java
+          --> 자바소스파일명.class
+   2) java(java실행프로그램)
+     a. java.exe 자바소스파일명
+
+
+

@@ -27,6 +27,8 @@ Java를 사용하기 위해선 JDK(Java Development Kit)을 설치해야 함
 
 자바라는 언어를 통해 개발을 하고자 하기 때문에 JRE, JVM이 아닌 JDK를 깔아야 함
 
+![](https://gekdev.github.io/docs/java/basic/example/new.jpg)
+
 * JRE : 자바언어로 개발된 어떤 SW를 구동시키기 위해 최소한 설치되어야할 것들을 지원
 
 * JDK : JRE 이상으로 환경구성 뿐만 아니라 직접 개발까지 가능
@@ -45,11 +47,31 @@ Java를 사용하기 위해선 JDK(Java Development Kit)을 설치해야 함
 3. C:\Program Files\Java\jdk1.8
 </div>
 
+![](https://gekdev.github.io/docs/java/basic/example/ins_01.png)
+
+**개발도구폴더**
+
+폴더를 새로 생성하는데 폴더이름을 jdk1.8로 해야함 (위 이미지와 경로가 다름) 
+
 ### Create jre Folder
+
+**실행폴더**
 
 폴더가 없는 경우는 해당폴더를 생성
 
 경로 : **C:\Program Files\Java\jre1.8**
+
+![](https://gekdev.github.io/docs/java/basic/example/ins_02.png)
+
+폴더 생성 후 설치해야함(위 이미지와 경로가 다름) 
+
+### API Document
+
+JDK에서 제공하는 표준 클래스 라이브러리 설명해 놓은 HTML 페이지
+
+<span class="fs-2">
+[ORACLE](https://docs.oracle.com/javase/8/docs/api/){: .btn .btn-outline .mt-2}
+</span>
 
 ---
 
@@ -105,6 +127,13 @@ Cmd 콘솔에서 javac로 compile하거나, 다른 프로그램에서 자바 JDK
   
 ---
 
-## Reference Site
+## Reference
+
+### Site
 
 * [Tistory](https://limkydev.tistory.com/61)
+
+### School 
+
+* [학원파일](https://gekdev.github.io/docs/java/basic/example/01.jdk설정.txt)
+
