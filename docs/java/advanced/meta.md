@@ -20,3 +20,7 @@ nav_order: 1
 ## Meta Element Attributes
 
 ### Charset
+
+[JAVA8 변경 사항](http://tcpschool.com/java/java_intro_java8)
+
+[실수의 표현](http://tcpschool.com/java/java_datatype_floatingPointNumber)
