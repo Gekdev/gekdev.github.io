@@ -21,8 +21,6 @@ has_children: true
 
 ### Operator Basic
 
-연산을 수행하기 위해 사용
-
 **연산자의 종류**
 
 1. 산술 연산자(arithmetic operator)
@@ -45,9 +43,9 @@ has_children: true
 
 연산자의 우선순위는 수식 내에 여러 연산자가 등장할 때 어느 연산자부터 처리될것인지 결정
 
-![](as01.png)
+![](https://gekdev.github.io/docs/java/operator/example/as01.png)
 
-![](as02.png)
+![](https://gekdev.github.io/docs/java/operator/example/as02.png)
 
 ### Operator Precedence
 
@@ -91,4 +89,4 @@ has_children: true
 | 12	| &&	| 논리 AND 연산자	| 왼쪽에서 오른쪽으로| 
 | 13	| `||`	| 논리 OR 연산자	| 왼쪽에서 오른쪽으로| 
 | 14	| ? :	| 삼항 조건 연산자	| 오른쪽에서 왼쪽으로| 
-| 15	| =	| 대입 연산자 및 복합 대입 연산자 | (=, +=, -=, *=, /=, %=, <<=, >>=, >>>=, &=, ^=, |=) | 오른쪽에서 왼쪽으로 | 
+| 15	| =	| 대입 연산자 및 복합 대입 연산자 | =, +=, -=, *=, /=, %=, <<=, >>=, >>>=, &=, ^=, `|=` | 오른쪽에서 왼쪽으로 | 
