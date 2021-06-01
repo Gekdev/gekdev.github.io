@@ -130,7 +130,7 @@ int y = x-- + 5 + --x;
 System.out.println("x : "+ x + ", y : " + y);
 ```
 
-![](pref.png)
+![](https://gekdev.github.io/docs/java/operator/example/pref.png)
 
 ① : 첫 번째 감소 연산자(decrement operator)는 피연산자의 뒤쪽에 위치하므로, 덧셈 연산이 먼저 수행
 

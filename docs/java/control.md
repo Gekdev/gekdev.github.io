@@ -3,6 +3,7 @@ layout: default
 title: Control 
 parent: Java
 nav_order: 5
+has_children: true
 ---
 
 # Java Control Flow Statements
