@@ -137,6 +137,8 @@ cmd 콘솔에서 javac로 compile하거나, 다른 프로그램에서 자바 JDK
 
 1. 오른쪽 위 아이콘을 java로 변경하기
 
+    ![](https://gekdev.github.io/docs/java/basic/example/openperspective.jpg)
+    
     ![](https://gekdev.github.io/docs/java/basic/example/java.jpg)
 
 2. File &#8594; New &#8594; Java Project
