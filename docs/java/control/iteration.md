@@ -51,6 +51,20 @@ while (조건식) {
 }
 ```
 
+예제
+{: .label .label-purple .mt-2}
+```java
+int sum = 0;
+int i = 1;
+
+while(i<=100) {
+    sum += i;
+    i++;
+}
+```
+
+![](https://gekdev.github.io/docs/java/control/example/while.jpg)
+
 ### do / while Statement
 
 **while과는 다르게 루프를 무조건 한 번 실행한 후에 조건식을 검사**
@@ -64,6 +78,22 @@ do {
 ```
 
 ![](https://gekdev.github.io/docs/java/control/example/do_while.png)
+
+예제
+{: .label .label-purple .mt-2}
+```java
+int sum = 0;
+int i = 100;
+
+do{
+    sum += i;
+    i++;
+}while(i<100);
+
+System.out.println(sum);
+```
+
+![](https://gekdev.github.io/docs/java/control/example/do_while.jpg)
 
 ### for Statement
 
@@ -82,6 +112,34 @@ for (초기식; 조건식; 증감식) {
 ```
 
 ![](https://gekdev.github.io/docs/java/control/example/for.png)
+
+예제
+{: .label .label-purple .mt-2}
+```java
+int sum = 0;
+
+for(int i=0 ; i<=10 ; i++) {
+    sum += i;
+}
+System.out.println("1~10까지의 합"+sum);
+```
+
+![](for.jpg)
+
+!note
+{: .label .label-yellow .mt-2}
+<div class="code-example" markdown="1">
+부동소수점타입을 사용하지 말아야 함
+
+이상한 결과값이 나옴
+</div>
+```java
+for(float i=0.1f ; i<=1.0f ; i+=0.1f) {
+    System.out.println(i);
+}
+```
+
+![](https://gekdev.github.io/docs/java/control/example/float_for.jpg)
 
 ### Enhanced for Statement
 
@@ -169,4 +227,20 @@ for (int i = 2; i < 10; i++) {
 }
 
 //변수 i의 값이 5가 되는 순간, 해당 프로그램의 제어는 두 개의 for 문을 모두 빠져나와 종료
+```
+
+---
+
+## Exercise
+
+### Nested for
+
+**구구단**
+
+```java
+for(int i=2 ; i<=9 ; i++) {
+    for(int j=2 ; j<=9 ; j++) {
+        System.out.println(i + "x" + j + "=" + i*j );
+    }
+}
 ```
