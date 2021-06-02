@@ -36,3 +36,7 @@ Database
 <br>
 
 오타, 문제점을 발견하시거나 제안하고 싶은 사항이 있으시다면 편하게 연락주세요 감사합니다.
+
+[ㅔㅔㅅ](https://slidesplayer.org/slide/15030587/)
+
+[ㅔㅔㅅ](https://docsplayer.org/104244489-Chapter-01-html.html)
