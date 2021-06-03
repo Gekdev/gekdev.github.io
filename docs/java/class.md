@@ -27,36 +27,40 @@ has_children: true
 
 쉽게 얘기하자면 객체는 사물, 객체의 상태(state)와 행동(behavior)을 구체화하는 형태의 프로그래밍이 바로 객체 지향 프로그래밍
 
-이때 객체를 만들어 내기 위한 설계도와 같은 개념을 클래스(class)라고 함
+**이때 객체를 만들어 내기 위한 설계도와 같은 개념을 클래스(class)라고 함**
 
 ### Class
 
 **객체를 정의하는 틀 또는 설계도와 같은 의미로 사용**
 
-&#9656; 자바에서는 이러한 설계도인 클래스를 가지고, 여러 객체를 생성하여 사용
+&#8594; 자바에서는 이러한 설계도인 클래스를 가지고, 여러 객체를 생성하여 사용
 
-클래스 구성물
+&#8594; 클래스 구성물에는 필드, 메소드, 생성자가 있음
 
-* 필드(field) : 속성을 표현 = 클래스에 포함된 변수
+* 필드(field) : 속성을 표현, 클래스에 포함된 변수
 
-* 메소드(method) : 기능을 표현 = 특정 작업을 수행하기 위한 명령문의 집합
+* 메소드(method) : 기능을 표현, 특정 작업을 수행하기 위한 명령문의 집합
 
 * 생성자(constructor) : 생성된 객체의 필드를 초기화
 
 예시
 {: .label .label-purple .mt-2}
 ```java
-class Car {                    // 클래스 이름
+// 클래스 이름
+class Car {                    
 
-    private String modelName;  // 필드
-    private int modelYear;     // 필드
+    // 필드
+    private String modelName;  
+    private int modelYear;    
 
-    Car(String modelName, int modelYear) { // 생성자
+    // 생성자
+    Car(String modelName, int modelYear) {
         this.modelName = modelName;
         this.modelYear = modelYear;
     }
 
-    public String getModel() { // 메소드
+    // 메소드
+    public String getModel() {
         return this.modelYear + "년식 " + this.modelName + " " + this.color;
     }
 
@@ -65,47 +69,17 @@ class Car {                    // 클래스 이름
 
 ### Instance
 
-**인스턴스, 클래스 타입의 객체 = 메모리에 할당된 객체**
+**인스턴스, 클래스 타입의 객체**
 
-클래스를 사용하기 위해 해당 클래스 타입의 객체를 선언해야 함 = 클래스의 인스턴스 화
+클래스를 사용하기 위해 해당 클래스 타입의 객체를 선언해야 함 &#8594; 클래스의 인스턴스 화
 
-즉 클래스로 만들어낸 복제품 = instance
+즉, 클래스로 만들어낸 복제품을 instance라고 함
 
 &#9656; 하나의 클래스로부터 여러 개의 인스턴스를 생성할 수 있음
 
 &#9656; 생성된 인스턴스는 독립된 메모리 공간에 저장된 자신만의 필드를 가짐
 
 &#9656; 해당 클래스의 모든 메소드(method)는 해당 클래스에서 생성된 모든 인스턴스가 공유
-
----
-
-## Class Components
-
-### [Field]()
-
-**클래스에 포함된 변수(variable)를 의미**
-
-선언된 위치에 따라 구분됨
-
-1. 클래스 변수(static variable)
-
-2. 인스턴스 변수(instance variable)
-
-3. 지역 변수(local variable)
-
-### [Method]()
-
-
-
-### Constructor
-
-**객체의 생성과 동시에 인스턴스 변수를 원하는 값으로 초기화할 수 있는 생성자(constructor)라는 메소드**
-
-클래스를 가지고 객체를 생성하면, 해당 객체는 메모리에 즉시 생성
-
-&#8594; 이렇게 생성된 객체는 모든 인스턴스 변수가 아직 초기화되지 않은 상태
-
-&#9656; 생성자(constructor)의 이름은 해당 클래스의 이름과 같아야 함
 
 ### Class Example
 
@@ -143,7 +117,7 @@ class Car {                    // 클래스 이름
 
 ### Declaration
 
-클래스(class)란 객체 지향 프로그래밍의 추상화(abstraction)라는 개념을 직접 구현한 것
+클래스란 객체 지향 프로그래밍의 추상화라는 개념을 직접 구현한 것
 
 개발자의 편의를 위해 유용하게 사용할 수 있는 많은 수의 클래스를 미리 정의하여 제공
 
@@ -154,24 +128,24 @@ syntax
 <div class="code-example" markdown="1">
 접근제어자 class 클래스이름 {
 
-    접근제어자 필드1의타입 필드1의이름;
+접근제어자 필드1의타입 필드1의이름;
 
-    접근제어자 필드2의타입 필드2의이름;
+접근제어자 필드2의타입 필드2의이름;
 
-    ...
+...
 
-    접근제어자 메소드1의 원형
+접근제어자 메소드1의 원형
 
-    접근제어자 메소드2의 원형
+접근제어자 메소드2의 원형
 
-    ...
+...
 
 };
+
+&#9656; 접근 제어자 : 정보 은닉(data hiding)을 위한 키워드
 </div>
 
-![](img_java_class_definition.png)
-
-&#8594; 접근 제어자 : 정보 은닉(data hiding)을 위한 키워드
+![](https://gekdev.github.io/docs/java/class/example/img_java_class_definition.png)
 
 ### Create Instance
 
@@ -209,4 +183,3 @@ syntax
     ```java
     Car myCar = new Car();
     ```
-
