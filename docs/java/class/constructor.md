@@ -88,7 +88,7 @@ syntax
 **new 키워드를 사용하여 객체를 생성할 때 자동으로 생성자가 호출**
 
 예제
-{: .label .label-purple .mt-2
+{: .label .label-purple .mt-2}
 ```java
 public class Method02 {
     public static void main(String[] args) {
