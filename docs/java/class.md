@@ -17,9 +17,7 @@ has_children: true
 
 ---
 
-## Class Basic
-
-### OOP, Object-Oriented Programming
+## OOP, Object-Oriented Programming
 
 **객체 지향 프로그래밍에서는 모든 데이터를 객체(object)로 취급**
 
@@ -29,7 +27,11 @@ has_children: true
 
 **이때 객체를 만들어 내기 위한 설계도와 같은 개념을 클래스(class)라고 함**
 
-### Class
+---
+
+## Class 
+
+### Class Basic
 
 **객체를 정의하는 틀 또는 설계도와 같은 의미로 사용**
 
@@ -43,7 +45,40 @@ has_children: true
 
 * 생성자(constructor) : 생성된 객체의 필드를 초기화
 
-### Instance
+**클래스란 객체 지향 프로그래밍의 추상화라는 개념을 직접 구현한 것**
+
+### Class Declaration
+
+**클래스 선언방법**
+
+&#9656; 개발자의 편의를 위해 유용하게 사용할 수 있는 많은 수의 클래스를 미리 정의하여 제공
+
+&#9656; 개발자가 원하는 동작을 하는 새로운 클래스를 손쉽게 작성할 수 있음
+
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+![](https://gekdev.github.io/docs/java/class/example/img_java_class_definition.png)
+
+&#9656; 접근 제어자 : 정보 은닉(data hiding)을 위한 키워드
+</div>
+```java
+접근제어자 class 클래스이름 {
+
+    접근제어자 필드1의타입 필드1의이름;
+    접근제어자 필드2의타입 필드2의이름;
+    ...
+
+    접근제어자 메소드1의 원형
+    접근제어자 메소드2의 원형
+    ...
+
+};
+```
+
+---
+
+## Instance
 
 **인스턴스, 클래스 타입의 객체**
 
@@ -57,7 +92,42 @@ has_children: true
 
 &#9656; 해당 클래스의 모든 메소드(method)는 해당 클래스에서 생성된 모든 인스턴스가 공유
 
-### Class Example
+### Create Instance
+
+인스턴스를 생성하는데에는 3가지 방법이 있음
+
+1. 방법1) 참조 변수 선언
+
+    <div class="code-example" markdown="1">
+    클래스이름 객체참조변수이름;
+    </div>
+    ```java
+    Car myCar;
+    ```
+
+2. 방법2) new 키워드로 인스턴스를 생성
+
+    해당 인스턴스의 주소를 미리 선언한 참조변수에 저장후 사용
+
+    <div class="code-example" markdown="1">
+    객체참조변수이름 = new 클래스이름();
+    </div>
+    ```java
+    myCar = new Car();
+    ```
+
+3. 방법3) 참조변수의 선언과 인스턴스의 생성 동시에 하기
+    
+    <div class="code-example" markdown="1">
+    클래스이름 객체참조변수이름 = new 클래스이름();
+    </div>
+    ```java
+    Car myCar = new Car();
+    ```
+    
+---
+
+## Example
 
 * 클래스(class)
 
@@ -108,73 +178,3 @@ class Car {
 
 }
 ```
-
----
-
-## Class Declaration
-
-### Declaration
-
-클래스란 객체 지향 프로그래밍의 추상화라는 개념을 직접 구현한 것
-
-개발자의 편의를 위해 유용하게 사용할 수 있는 많은 수의 클래스를 미리 정의하여 제공
-
-개발자가 원하는 동작을 하는 새로운 클래스를 손쉽게 작성할 수 있음
-
-syntax
-{: .label .mt-2}
-<div class="code-example" markdown="1">
-![](https://gekdev.github.io/docs/java/class/example/img_java_class_definition.png)
-
-&#9656; 접근 제어자 : 정보 은닉(data hiding)을 위한 키워드
-</div>
-```java
-접근제어자 class 클래스이름 {
-
-    접근제어자 필드1의타입 필드1의이름;
-
-    접근제어자 필드2의타입 필드2의이름;
-
-    ...
-
-    접근제어자 메소드1의 원형
-
-    접근제어자 메소드2의 원형
-
-    ...
-
-};
-```
-
-### Create Instance
-
-인스턴스를 생성하는데에는 3가지 방법이 있음
-
-1. 방법1) 참조 변수 선언
-
-    <div class="code-example" markdown="1">
-    클래스이름 객체참조변수이름;
-    </div>
-    ```java
-    Car myCar;
-    ```
-
-2. 방법2) new 키워드로 인스턴스를 생성
-
-    해당 인스턴스의 주소를 미리 선언한 참조변수에 저장후 사용
-
-    <div class="code-example" markdown="1">
-    객체참조변수이름 = new 클래스이름();
-    </div>
-    ```java
-    myCar = new Car();
-    ```
-
-3. 방법3) 참조변수의 선언과 인스턴스의 생성 동시에 하기
-    
-    <div class="code-example" markdown="1">
-    클래스이름 객체참조변수이름 = new 클래스이름();
-    </div>
-    ```java
-    Car myCar = new Car();
-    ```
