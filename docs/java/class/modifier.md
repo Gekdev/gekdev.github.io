@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Singleton
+title: Modifier
 parent: Class
 grand_parent: Java
 nav_order: 5
 ---
 
-# Class Singleton
+# Class Modifier
 {: .no_toc .text-beta .fw-700}
 
 ## Table of contents
@@ -16,6 +16,22 @@ nav_order: 5
 {:toc}
 
 ---
+
+## Modifier
+
+**제어자, 클래스와 클래스 멤버의 선언 시 사용하여 부가적인 의미를 부여하는 키워드**
+
+&#9656; 접근 제어자(access modifier)와 기타 제어자로 구분
+
+&#9656; 접근 제어자는 여러개 사용 불가능, 기타제어자는 두개 이상 사용가능
+
+&#9656; 접근 제어자와 기타 제어자는 조합에 따라 함께 사용가능
+
+### Access Modifier
+
+정보 은닉(data hiding): 사용자가 굳이 알 필요가 없는 정보는 사용자로부터 숨겨야 한다는 개념
+
+&#8594; 사용자는 언제나 최소한의 정보만으로 프로그램을 손쉽게 사용
 
 ### Public class
 

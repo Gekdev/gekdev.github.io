@@ -3,7 +3,7 @@ layout: default
 title: Getter and Setter
 parent: Class
 grand_parent: Java
-nav_order: 7
+nav_order: 6
 ---
 
 # Class Package

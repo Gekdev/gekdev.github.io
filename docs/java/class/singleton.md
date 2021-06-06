@@ -3,7 +3,7 @@ layout: default
 title: Singleton
 parent: Class
 grand_parent: Java
-nav_order: 5
+nav_order: 7
 ---
 
 # Class Singleton
