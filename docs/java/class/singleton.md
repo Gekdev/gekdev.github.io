@@ -84,7 +84,7 @@ public static void main(String[] args) {
 }
 ```
 
-![](singleton1.jpg)
+![](https://gekdev.github.io/docs/java/class/example/singleton1.jpg)
 
 ### Example
 

@@ -63,7 +63,7 @@ nav_order: 5
 
 * 메소드 
 
-![](img_java_access_private.png)
+![](https://gekdev.github.io/docs/java/class/example/img_java_access_private.png)
 
 예제
 {: .label .label-purple .mt-2}
@@ -90,7 +90,7 @@ public 메소드를 통해서만 해당 객체의 private 멤버에 접근가능
 
 * 필드, 메소드 : 다른 패키지의 다른 클래스도 사용가능, 다른패키지라서 임포트해야함 
 
-![](img_java_access_public.png)
+![](https://gekdev.github.io/docs/java/class/example/img_java_access_public.png)
 
 예제
 {: .label .label-purple .mt-2}
@@ -113,7 +113,7 @@ default 접근 제어를 가지는 멤버는 같은 클래스의 멤버와 같�
 
 **같은 패키지의 다른 클래스까지 사용가능**
 
-![](img_java_access_default.png)
+![](https://gekdev.github.io/docs/java/class/example/img_java_access_default.png)
 
 예제
 {: .label .label-purple .mt-2}
@@ -137,7 +137,7 @@ public class SamePackage {
 
 3. 이 멤버를 선언한 클래스를 상속받은 자식 클래스(child class)의 멤버
 
-![](img_java_access_protected.png)
+![](https://gekdev.github.io/docs/java/class/example/img_java_access_protected.png)
 
 예제
 {: .label .label-purple .mt-2}
