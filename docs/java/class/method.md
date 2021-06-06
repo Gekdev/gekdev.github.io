@@ -25,6 +25,12 @@ nav_order: 2
 
 객체의 기능을 표현하는 함수
 
+1. 필드를 읽고 수정하는 역할을 하지만 다른 객체를 생성해서 다양한 기능을 수행
+
+2. 객체사이의 데이타를 전달의 수단으로 사용
+
+3. 외부로 값(매개변수)을 전달 받을 수도 있고 실행한 후에 임의의 결과값을 반환할 수도 있음
+
 ### Why Use Method?
 
 1. 중복되는 코드의 반복적인 프로그래밍을 피함
@@ -39,6 +45,26 @@ nav_order: 2
 
 일반 함수를 정의할때와 비슷하게 정의함
 
+1. 메서드의 선언
+
+    &#9656; 메서드의 선언은 선언부와 실행부가 있음
+
+    &#9656; 선언부 : 접근제한자(public/private), 리턴타입, 메서드이름, 매개변수등을 선언
+
+    &#9656; 메서드선언부를 메서드시그니처(Signature)라고 함
+
+2. 리턴타입
+
+    &#9656; 리턴타입은 메서드가 실행된 후에 리턴하는 값의 데이터타입을 말함
+
+    &#9656; 메서드는 리턴값이 있을수도 없을 수도 있음
+
+    &#9656; 리턴값이 없을 경우에는 리턴타입을 void라 선언
+
+    &#9656; 있을경우에는 데이터타입(기본타입 및 참조타입 포함)을 정의함
+
+    &#9656; 메서드가 실행된 후에 결과를 호출한 곳에 반환할 경우에는 리턴값이 반드시 있어야함
+
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
@@ -52,15 +78,33 @@ syntax
 
 &#9656; 반환 타입(return type) : 메소드가 모든 작업을 마치고 반환하는 데이터의 타입
 
-&#9656;  메소드 이름 : 메소드를 호출하기 위한 이름
+&#9656; 메소드 이름 : 메소드를 호출하기 위한 이름
 
 &#9656; 매개변수 목록(parameters) : 메소드 호출 시에 전달되는 인수의 값을 저장할 변수들
 
 &#9656; 구현부 : 메소드의 고유 기능을 수행하는 명령문의 집합
 </div>
 ```java
+// 리턴값 타입에 따라 반환타입을 작성해야함
+// void는 비었다라는 뜻!
+int eat() {return 10;}
+String think() { return "문자열";}
+double speak() { return 1.0; }
+void move() {
+    System.out.println("움직입니다");
+}
 
+//void를 변수에 받으면 오류! (받을 리턴값이 없기 때문)
 ```
+
+### Method Naming Convention
+
+1) 숫자로 시작하면 안되고 $와 _를 제외한 특수문자는 사용이 불가
+
+2) 관례적으로 메서드이름 소문자로 시작
+
+3) 서로 단어가 혼용이 될 때는 해당단어의 첫 글자는 대문자로 작성
+
 
 ### Method Signature
 
@@ -277,8 +321,6 @@ class Car {
 
     if문은 재귀호출을 중단하기 위해 반드시 필요함
     
-    
-    
     ```java
     int recursiveSum(int n) {
         if (n == 1) {                 // n이 1이면, 그냥 1을 반환함.
@@ -288,8 +330,64 @@ class Car {
 
     }
     ```
+    
+###  for문과 배열
 
+배열이 정의되어있지 않고 갯수를 모를때 사용하면 좋은 코드
 
+1. 배열의 크기를 알고 정의되어있을 때
 
+    ```java
+    public class Computer{
+        int sum2(int[] values) {
+            int sum = 0;
+            for(int i=0 ;i<values.length ;i++) {
+                sum += values[i];
+            }
+            return sum;
+        }
+    }
 
+    ...
 
+    public class ComputerMain {
+    public static void main(String[] args) {
+
+        int values[] = {1,1,1,1,1,1,1,1};
+        result = com.sum2(values);
+        System.out.println(result);
+
+        result = com.sum2(new int[] {1,1,1,1,1,1,1});
+        System.out.println(result);
+
+    }
+    }
+    ```
+
+2. 배열이 정의되어있지 않고 크기도 모를 때
+
+    ```java
+    public class Computer{
+        int sum3(int ... values) {
+            int sum = 0;
+            for(int i=0 ;i<values.length ;i++) {
+                sum += values[i];
+            }
+            return sum;
+        }
+    }
+
+    ...
+
+    public class ComputerMain {
+    public static void main(String[] args) {
+
+        result = com.sum3(1,2,3,4,5);
+        System.out.println(result);
+
+        result = com.sum3(1,2,3,4,5,6,7,8,9,10);
+        System.out.println(result);
+
+    }
+    }
+    ```
