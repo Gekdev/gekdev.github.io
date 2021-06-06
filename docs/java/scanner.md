@@ -58,6 +58,120 @@ public class DoWhileMain {
 
 ![](https://gekdev.github.io/docs/java/example/scanner.jpg)
 
+### Example
+
+Q1. while문과 Scanner를 이용해서 키보드로 부터 입력된 데이터로 예금, 출금, 조회, 종료기능을 제공하는 코드를 작성(예금잔액을 입출금내역을 출력)
+
+WhileKeyControlMain.java를 참조해서 자유롭게 작성
+
+```java
+boolean run = true;
+int balance = 0;
+
+Scanner scanner = new Scanner(System.in); //콘솔에서 기다리고 있는 상태
+
+while(run) {
+    System.out.println("-------------------------------------");
+    System.out.println("1. 입금  | 2. 출금  | 3. 조회  | 4. 종료" );
+    System.out.println("-------------------------------------");
+    System.out.println("작업할 번호를 선택하세요");
+
+    int num = scanner.nextInt();
+
+    switch(num) {
+    case 1 : System.out.println("입금 => "); 
+             balance += scanner.nextInt();
+             break;
+    case 2 : System.out.println("출금 =>");
+             balance -= scanner.nextInt();
+             break;
+    case 3 : System.out.println("잔액 = "+balance);
+             break;
+    case 4 : run = false;
+             break;
+    }
+
+    /* if문을 사용해도 됨
+     if(num==1) {
+        System.out.println("입금 => ");
+        balance += scanner.nextInt();
+    } else if(num==2) {
+        System.out.println("출금 => ");
+        balance -= scanner.nextInt();
+    } else if(num==3) {
+        System.out.println("잔액 = " + balance);
+    } else	if (num==4) {
+        run = false;
+    }
+     */
+}
+
+System.out.println("프로그램 종료");
+```
+
+키보드로부터 학생 수와 각 학생들의 점수를 입력받아서 최고 점수 및 평균 점수를 구하기
+
+(참고: Scanner의 nextlnt() 메소드이용)
+
+```java
+package exercise;
+
+import java.util.Scanner;
+
+public class Exercise09 {
+public static void main(String[] args) {
+	boolean run = true;
+	Scanner scanner = new Scanner(System.in);
+	int studentNum = 0;
+	int scores[] = null;
+	
+	while(run) {
+		System.out.println("---------------------------------------------------");
+		System.out.println("1. 학생수 2. 점수입력 3. 점수리스트 4. 분석 5. 종료");
+		System.out.println("---------------------------------------------------");
+		System.out.println("작업번호를 선택하세요 =>");
+		
+		int selectNo = scanner.nextInt();
+		
+		if(selectNo==1) {
+			System.out.println("학생수를 입력하세요");
+			studentNum = scanner.nextInt();
+			scores = new int[studentNum];
+		}else if(selectNo==2) {
+			for(int i=0;i<scores.length;i++) {
+				System.out.println( (i+1) +"번째 학생점수를 입력하세요");
+				scores[i] = scanner.nextInt();
+			}
+		}else if(selectNo==3) {
+			for(int i=0;i<scores.length;i++) {
+				System.out.println(i + "번째 학생 점수 = " + scores[i]);
+			}
+		}else if(selectNo==4) {
+			int max = 0;
+			int sum = 0;
+			double avg = 0;
+			for(int i=0;i<scores.length;i++) {
+				sum += scores[i];
+				if(max<scores[i]) {
+					max = scores[i];
+				}
+				avg = (double) sum/studentNum;
+				System.out.println("전체점수 = " + sum);
+				System.out.println("평균점수 = " + avg);
+				System.out.println("최고점수 = " + max);
+			}
+		}else{
+			run = false;
+			System.out.println("프로그램이 종료되었습니다");
+		}
+		
+	}
+}
+}
+```
+
+---
+
 ## Swing
 
 java.swing 패키지(라이브러리)는 GUI 환경을 지원
@@ -90,3 +204,47 @@ public class SwingMain {
 
 ![](https://gekdev.github.io/docs/java/example/swing2.jpg)
 
+### Example
+
+Q1. showInputDialog를 이용해서 키보드로 부터 입력된 데이터로 예금, 출금, 조회, 종료기능을 제공하는 코드를 작성(예금잔액을 입출금내역을 출력)
+
+```java
+package com.lec.exercise;
+
+import java.util.Scanner;
+
+import javax.swing.JOptionPane;
+
+public class Exercise08 {
+public static void main(String[] args) {
+
+    int num = 0;
+    int balance = 0;
+    String data;
+    Scanner scanner = new Scanner(System.in);
+
+    do {
+        data = JOptionPane.showInputDialog("1. 입금\n 2. 출금\n 3. 조회\n 4. 종료\n");
+        if(data == null) data = "0";
+        if(data.equals("")) {
+            num = 0;
+        }else {
+            num = Integer.parseInt(data);
+            //System.out.println("입력된번호 = " + num);
+            if(num==1) {
+                System.out.println("입금: ");
+                balance += scanner.nextInt();
+            }else if(num==1) {
+                System.out.println("출금: ");
+                balance -= scanner.nextInt();
+            }else if(num==3) {
+                System.out.println("잔액: " + balance);
+            }
+        }
+    }while(num!=4);
+
+    System.out.println("프로그램종료");
+                                        
+}
+}
+```

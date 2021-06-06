@@ -21,6 +21,8 @@ nav_order: 1
 
 **2차원 이상의 배열을 의미하며, 배열 요소로 또 다른 배열을 가지는 배열을 의미**
 
+계속 배열을 추가하고 싶으면 []만 추가하면 됨
+
 ### Two Dimensional Array
 
 **배열의 요소로 1차원 배열을 가지는 배열**
@@ -81,6 +83,18 @@ int[][] arr = {
 {10, 20, 30, 40},
 {10}
 };
+```
+
+가변배열 출력하기
+{: .label .mt-2}
+```java
+//2차원배열에 값을 선언하기
+int[][] korScores = {{95,60},{92,86,88,76,87}};
+for(int i=0 ; i<korScores.length ; i++) {
+    for(int j=0 ; j < korScores[i].length ; j++) {
+        System.out.println("korScores["+i+"]["+j+"]" + korScores[i][j]);
+    }
+}
 ```
 
 ### Array Example

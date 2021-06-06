@@ -17,18 +17,72 @@ nav_order: 1
 
 ---
 
-## Array Utilize
+## Copy Array 
 
-### Copy Array 
+### Shallow Copy
 
-1. System 클래스의 arraycopy() 메소드 : 가장 좋은 성능, 배열의 길이를 마음대로 늘임
+얕은복사는 객체의 주소를 그대로 복사해와서 기존 배열을 변경하면 복사한 배열까지 변경됨
 
-2. Arrays 클래스의 copyOf() 메소드 : 가장 많이 사용되는 메소드, 배열의 길이를 마음대로 늘임
+```java
+//1. 얕은 복사
+String[] old_arr = {"A", "B", "C"};
+String[] new_arr = old_arr;
+System.out.println(old_arr[0] + "=" + new_arr[0]);
+old_arr[0] = "D";
+System.out.println(old_arr[0] + "=" + new_arr[0]); // D = D
+```
+
+### Deep Copy
+
+1. System 클래스의 arraycopy() 메소드
+
+    가장 좋은 성능, 배열의 길이를 마음대로 늘임
+
+    **arraycopy(old, old시작, new, new시작, old크기)**
+    
+    ```java
+    String[] old_arr2 = {"A", "B", "C"};
+	String[] new_arr2 = new String[6]; //"D","E","F"
+	System.arraycopy(old_arr2, 0, new_arr2, 0, old_arr2.length);
+	new_arr2[3] = "D";
+	new_arr2[4] = "E";
+	new_arr2[5] = "F";
+    ```
+
+2. Arrays 클래스의 copyOf() 메소드
+
+    가장 많이 사용되는 메소드, 배열의 길이를 마음대로 늘임
+    
+    1. **Arrays.copyOf(old, new)**
+
+        ```java
+        int[] old_arr3 = {1,2,3,4,5};
+        int[] new_arr3 = Arrays.copyOf(old_arr3, 3);
+        ```
+    
+    2. **Arrays.copyOfRange(old, 복사시작 index, 복사종료 index)**
+    
+        ```java
+        int[] new_arr4 = Arrays.copyOfRange(old_arr3, 0, 4);
+        for(int arr:new_arr4) {
+            System.out.print(arr + ",");
+        }
+        ```
 
 3. Object 클래스의 clone() 메소드 : 이전 배열과 같은 길이의 배열
 
 4. for 문과 인덱스를 이용한 복사
 
+    ```java
+    String[] old_arr1 = {"A", "B", "C"};
+    String[] new_arr1 = new String[3];
+    for(int i=0; i<old_arr1.length ;i++) {
+        new_arr1[i] = old_arr1[i];
+    }
+    ```
+
+예제
+{: .label .label-purple .mt-2}
 ```java
 int[] arr1 = new int[]{1, 2, 3, 4, 5};
 int newLen = 10;
@@ -53,18 +107,9 @@ int[] arr5 = new int[newLen];
 4. 1 2 3 4 5 0 0 0 0 0 
 ```
 
-예제
-{: .label .label-purple .mt-2}
-```java
-int[] scores = {95,7,84,93,87};
-int sum = 0;
+---
 
-for(int i=0;i<scores.length;i++) {
-    sum += scores[i];
-}
-
-System.out.println("총점" + sum ); // 366
-```
+## For Array
 
 ### Enhanced for Statement 
 
