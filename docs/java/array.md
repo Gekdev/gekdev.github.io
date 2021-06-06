@@ -25,7 +25,7 @@ has_children: true
 
 자바 프로그램이 실행되면, JVM은 운영 체제로부터 해당 프로그램을 수행할 수 있도록 필요한 메모리를 할당받고 JVM은 용도에 따라 구분하여 관리함
 
-![](img_java_memory_structure.png)
+![](https://gekdev.github.io/docs/java/array/example/img_java_memory_structure.png)
 
 ### Method Area
 
