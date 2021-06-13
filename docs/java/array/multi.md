@@ -89,7 +89,8 @@ int[][] arr = {
 {: .label .mt-2}
 ```java
 //2차원배열에 값을 선언하기
-int[][] korScores = {{95,60},{92,86,88,76,87}};
+//int[][] korScores = {{95,60},{92,86,88,76,87}};
+
 for(int i=0 ; i<korScores.length ; i++) {
     for(int j=0 ; j < korScores[i].length ; j++) {
         System.out.println("korScores["+i+"]["+j+"]" + korScores[i][j]);
