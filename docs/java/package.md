@@ -1,12 +1,11 @@
 ---
 layout: default
 title: Package
-parent: Class
-grand_parent: Java
-nav_order: 4
+parent: Java
+nav_order: 8
 ---
 
-# Class Package
+# Java Package
 {: .no_toc .text-beta .fw-700}
 
 ## Table of contents

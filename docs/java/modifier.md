@@ -1,12 +1,11 @@
 ---
 layout: default
 title: Modifier
-parent: Class
-grand_parent: Java
-nav_order: 5
+parent: Java
+nav_order: 9
 ---
 
-# Class Modifier
+# Java Modifier
 {: .no_toc .text-beta .fw-700}
 
 ## Table of contents

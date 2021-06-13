@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Singleton
+title: Design Pattern
 parent: Class
 grand_parent: Java
-nav_order: 7
+nav_order: 4
 ---
 
-# Class Singleton
+# Class Design Pattern
 {: .no_toc .text-beta .fw-700}
 
 ## Table of contents
