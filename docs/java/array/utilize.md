@@ -3,7 +3,7 @@ layout: default
 title: Utilize 
 parent: Array
 grand_parent: Java
-nav_order: 3 
+nav_order: 2
 ---
 
 # Java Array Utilize

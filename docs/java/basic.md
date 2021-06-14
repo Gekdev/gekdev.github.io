@@ -20,19 +20,13 @@ has_children: true
 ## Java Basic
 {: .no_toc}
 
-### Java Programming Process
+### Programming Process
 
 **자바프로그램의 실행과정**
 
-![](https://gekdev.github.io/docs/java/example/pg.png)
-
-### Java Development Process
-
-**↑ 위 그림과 거의 동일한 내용**
-
 ![](https://gekdev.github.io/docs/java/example/dsfa.JPG)
 
-### Java compiler
+### Compiler
 
 **자바 컴파일러**
 
@@ -40,7 +34,7 @@ has_children: true
 
 &#9656; javac.exe라는 실행 파일 형태로 설치됨
  
-### Java bytecode
+### Bytecode
 
 **자바 바이트 코드, 자바 가상 머신이 이해할 수 있는 언어로 변환된 자바 소스 코드를 의미**
 
@@ -62,15 +56,17 @@ has_children: true
 
 &#9656; 자바 프로그램과는 달리 자바 가상 머신(JVM)은 운영체제에 종속적이므로, 각 운영체제에 맞는 자바 가상 머신을 설치해야함
 
-&#9656; 장점 : 개발자는 한 번만 프로그램을 작성하면, 모든 운영체제에서 같이 사용 가능
-
-&#9656; 단점 : 자바 프로그램은 일반 프로그램보다 자바 가상 머신이라는 한 단계를 더 거쳐야 하므로, 상대적으로 실행 속도가 느림
-
 ![](https://gekdev.github.io/docs/java/example/jvm.png)
+
+* 장점 : 개발자는 한 번만 프로그램을 작성하면, 모든 운영체제에서 같이 사용 가능
+
+* 단점 : 자바 프로그램은 일반 프로그램보다 자바 가상 머신이라는 한 단계를 더 거쳐야 하므로, 상대적으로 실행 속도가 느림
 
 ### JVM Configuration
     
 **자바 가상 머신의 구성**
+
+![](https://gekdev.github.io/docs/java/example/pg.png)
 
 1. 자바 인터프리터(interpreter)
 
