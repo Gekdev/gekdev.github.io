@@ -49,10 +49,122 @@ Thread를 생성하는데에는 Runnable 인터페이스를 구현하거나 Thre
     한 프로세스 내에 멀티 작업을 하는것
     
     두 개 이상의 스레드를 가지는 프로세스를 멀티스레드 프로세스(multi-threaded process)
+ 
+### main() Thread
+
+**모든 자바프로그램은 메인 스레드가 main()메소드 실행하며 시작**
+
+&#9656; main()메소드의 첫 코드부터 아래로 순차적으로 실행
+
+&#9656; 실행 종료 조건 : 마지막 코드 실행, return문
+
+&#9656; main() 메소드를 실행하는 스레드의 우선순위는 언제나 5
+
+### Multi Thread
+
+&#9656; 멀티 쓰레드로 실행하는 애플리케이션을 개발하려면 먼저 몇개의 작업을 병렬로 실행할지를 결정하고 각 작업별로 쓰레드를 생성해야 함
+
+&#9656; 어떤 자바 애플리케이션이건 메인 쓰레드는 반드시 존재하기 때문에 메인 작업이외에 추가적인 병렬 작업의 수만큼 쓰레드를 생성해야함
+
+&#9656; 자바에서는 작업 쓰레드도 객체로 생성되기 때문에 객체가 필요함
+
+&#9656; java.langThread클래스를 직접 객체화해서 생성해도 되지만, Thread를 상속해서 하위 클래스를 만들어 생성할 수 있음
+
+### Thread Name
+
+**Thread는 자신의 이름을 가지고 있음**
+
+&#9656; 쓰레드의 이름이 큰역할을 하는건 아니지만 디버깅할 때 유용함
+
+&#9656; 메인쓰레드는 main이라는 이름을 가지고 있고 우리가 생성한 쓰레드는 자동적으로 Thread-n 이라는 이름으로 설정 (n은 쓰레드의 일련번호를 의미)
+
+&#9656; w자동으로 부여되는 이름 대신에 사용자가 이름을 설정하고 싶을 경우에는 Thread클래스의 setName()메서드로 변경하고 getName()메서드로 쓰레드의 이름을 가져올 수 있음
+
+&#8594; setName()과 getName()은 Thread의 인스턴트 메서드이기 때문에 객체의 참조가 필요
+
+&#9656; 만약, 쓰레드 객체의 참조를 가지고 있지 않다면 Thread정적 메서드인 currentTread()로 코드를 실행하면 현재 쓰레드의 참조를 얻을 수 있음
+
+예제 : ThreadA
+{: .label .label-purple .mt-2}
+```java
+public class ThreadA extends Thread{
+
+	public ThreadA() {
+		setName("ThreadA"); //스레드 이름을 설정
+	}
+	
+	@Override
+	public void run() {
+		for(int i=0; i<2 ; i++) {
+			System.out.println(getName() + "가 출력한 내용"); //스레드 이름을 가져옴
+			
+		}
+	}
+}
+```
+
+예제 : Thread B, C
+{: .label .label-purple .mt-2}
+```java
+public class ThreadB extends Thread{
+	@Override
+	public void run() {
+		for(int i=0; i<2 ; i++) {
+			System.out.println(getName() + "가 출력한 내용"); //스레드 이름을 가져옴
+			
+		}
+	}
+}
+
+public class ThreadC extends Thread{
+	@Override
+	public void run() {
+		for(int i=0; i<2 ; i++) {
+			System.out.println(getName() + "가 출력한 내용"); //스레드 이름을 가져옴
+			
+		}
+	}
+}
+```
+
+예제 : Thread Main
+{: .label .label-purple .mt-2}
+```java
+public class ThreadMain {
+public static void main(String[] args) {
+	
+	Thread mainThread = Thread.currentThread();
+	System.out.println("프로그램 시작 쓰레드 이름 = " + mainThread.getName());
+	
+	ThreadA threadA = new ThreadA();
+	System.out.println("작업 쓰레드 이름 = " + threadA.getName());
+	threadA.start();
+
+	ThreadB threadB = new ThreadB();
+	System.out.println("작업 쓰레드 이름 = " + threadB.getName());
+	threadB.start();
+
+	ThreadC threadC = new ThreadC();
+	System.out.println("작업 쓰레드 이름 = " + threadC.getName());
+	threadC.start();
+	
+}
+}
+```
+
+![](https://gekdev.github.io/docs/java/example/thread.jpg)
 
 ---
 
 ## How to make Thread?
+
+1. Runnable 인터페이스를 구현하는 방법
+
+2. Thread 클래스를 상속받는 방법
+
+Thread 클래스를 상속받으면 다른 클래스를 상속받을 수 없으므로, 일반적으로 Runnable 인터페이스를 구현하는 방법으로 스레드를 생성
+
+Runnable 인터페이스는 몸체가 없는 메소드인 run() 메소드 단 하나만을 가지는 간단한 인터페이스
 
 ### Runnable Interface
 
@@ -81,8 +193,8 @@ Runnable구현객체를 생성 후 , 이것을 매개값으로 해서 Thread생�
     ```java
     public class BeepPrintMain2 {
     public static void main(String[] args) throws Exception {
-        Runnable beepTask = new BeepTask();
-        Thread thread = new Thread(beepTask);
+        Runnable beepTask = new BeepTask();   //Runnable구현객체를 생성
+        Thread thread = new Thread(beepTask); //매개값으로 해서 Thread생성자를 호출
         thread.start();
     
         for(int i=0 ;i<5; i++) {
@@ -242,45 +354,7 @@ Thread클래스를 상속한 후 runs()메서드를 재정의 해서 쓰레드�
     
 ---
 
-### Thread Name
 
-Thread는 자신의 이름을 가지고 있음
-
-쓰레드의 이름이 큰역할을 하는건 아니지만 디버깅할 때 유용함
-
-메인쓰레드는 main이라는 이름을 가지고 있고 우리가 생성한 쓰레드는 자동적으로 Thread-n 이라는 이름으로 설정
-
-n은 쓰레드의 일련번호를 의미
-
-w자동으로 부여되는 이름 대신에 사용자가 이름을 설정하고 싶을 경우에는 Thread클래스의 setName()메서드로 변경하고
-
-getName()메서드로 쓰레드의 이름을 가져올 수 있음
-
-setName()과 getName()은 Thread의 인스턴트 메서드이기 때문에 객체의 참조가 필요
-
-만약, 쓰레드 객체의 참조를 가지고 있지 않다면 Thread정적 메서드인 currentTread()로 코드를 실행하면 현재 쓰레드의 참조를 얻을 수 있음
-
-
-
----
-
-### main Thread
-
-**모든 자바프로그램은 메인 스레드가 main()메소드 실행하며 시작**
-
-&#9656; main()메소드의 첫 코드부터 아래로 순차적으로 실행
-
-&#9656; 실행 종료 조건 : 마지막 코드 실행, return문
-
-### multi Thread
-
-멀티 쓰레드로 실행하는 애플리케이션을 개발하려면 먼저 몇개의 작업을 병렬로 실행할지를 결정하고 각 작업별로 쓰레드를 생성해야 함
-
-어떤 자바 애플리케이션이건 메인 쓰레드는 반드시 존재하기 때문에 메인 작업이외에 추가적인 병렬 작업의 수만큼 쓰레드를 생성해야함
-
-자바에서는 작업 쓰레드도 객체로 생성되기 때문에 객체가 필요함
-
-java.langThread클래스를 직접 객체화해서 생성해도 되지만, Thread를 상속해서 하위 클래스를 만들어 생성할 수 있음
 
     
     

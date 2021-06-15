@@ -3,6 +3,7 @@ layout: default
 title: Generic
 parent: Java
 nav_order: 13
+has_children: ture
 ---
 
 # Java Generic
@@ -16,27 +17,68 @@ nav_order: 13
 
 ---
 
-### What is Generic Type?
+## Generic Basic
+{: .no_toc}
 
-제네릭 타입(클래스명<T>, 인터페이스명<T>)
+### What is Generic?
 
-제네릭타입은 타입을 파라미터로 갖는 클래스와 인터페이스를 말함
+**제네릭(generic)이란 데이터의 타입(data type)을 일반화한다(generalize)는 것**
 
-클래스 또는 인터페이스 이름 뒤에 <>부호를 붙이고 사이에 타입파라미터가 위치
-
-타입 파라미터는 변수명과 동일한 규칙에 따라 선언이 가능하지만 일반적으로 대문자 알파벳 한글자로 선언
-    
-### Why Use Generic Type?
-
-컴파일단계에서 잘못된 타입 사용될수 있는 문제를 제거 가능
+즉, 클래스나 메소드에서 사용할 내부 데이터 타입을 컴파일 시에 미리 지정하는 방법
 
 자바 5부터 추가됨
 
-컬렉션, 람다식(함수적 인터페이스), 스트림 NIO(New Input Output에서)에서 널리 사용되기 때문에 제네릭을 이해하지 못하면 자바의 API문서를 이해하지 못함
-
 제네릭은 클래스와 인터페이스, 메서드를 정의할 때 타입을 매개값으로 사용할 수 있도록 함
 
-타입파라미터는 코드 작성시에 구체적인 타이으로 선언되어서 다양한 객체들을 생성할 수 있도록 함
+타입파라미터는 코드 작성시에 구체적인 타입으로 선언되어서 다양한 객체들을 생성할 수 있도록 함
+
+### Declaration and Creation
+
+제네릭은 클래스와 메소드에만 다음과 같은 방법으로 선언가능함
+
+제네릭타입은 타입을 파라미터로 갖는 클래스와 인터페이스를 말함
+
+<div class="code-example" markdown="1">
+T : **타입 변수(type variable), 임의의 참조형 타입을 의미**
+
+&#9656; 어떠한 문자를 사용해도 상관없으며, 여러 개의 타입 변수는 쉼표(,)로 구분하여 명시
+
+&#9656; 타입 변수는 클래스에서뿐만 아니라 메소드의 매개변수나 반환값으로도 사용
+
+&#9656; 클래스 또는 인터페이스 이름 뒤에 <>부호를 붙이고 사이에 타입변수가 위치
+
+&#9656; 타입 변수는 변수명과 동일한 규칙에 따라 선언이 가능하지만 일반적으로 대문자 알파벳 한글자로 선언
+</div>
+```java
+class MyArray<T> {
+
+    T element;
+    void setElement(T element) { this.element = element; }
+    T getElement() { return element; }
+
+}
+
+```
+
+위와 같이 선언된 제네릭 클래스(generic class)를 생성할 때에는 타입 변수 자리에 사용할 실제 타입을 명시해야 함
+
+&#9656; Integer에는 타입 변수 자리에는 Wrapper Class를 사용해야함
+
+```java
+MyArray<Integer> myArr = new MyArray();
+MyArray<Integer> myArr = new MyArray<>(); // Java SE 7부터 가능
+MyArray<Integer> myArr = new MyArray<Integer>();
+```
+
+### Why Use Generic Type?
+
+1. 클래스나 메소드 내부에서 사용되는 객체의 타입 안정성을 높힘
+
+2. 반환값에 대한 타입 변환 및 타입 검사에 들어가는 노력을 줄일 수 있음
+
+3. 컴파일단계에서 잘못된 타입 사용될수 있는 문제를 제거 가능
+
+4. 컬렉션, 람다식(함수적 인터페이스), 스트림 NIO(New Input Output에서)에서 널리 사용되기 때문에 제네릭을 이해하지 못하면 자바의 API문서를 이해하지 못함
 
 ### Advantage of Generic Type
 
@@ -51,6 +93,16 @@ nav_order: 13
     비제네릭코드는 불필요한 타입변환을 하기 때문에 프로그램 성능에 악영향을 미치게 됨
     
     제네릭을 사용하면 사전에 정해진 타입으로만 제한시키기 때문에 불필요한 타입변환을 할 필요가 없어 프로그램의 성능이 향상됨
+
+### Delete Generic
+
+자바 코드에서 선언되고 사용된 제네릭 타입은 컴파일 시 컴파일러에 의해 자동으로 검사되어 타입 변환됨
+
+그리고서 코드 내의 모든 제네릭 타입은 제거되어, 컴파일된 class 파일에는 어떠한 제네릭 타입도 포함되지 않게 됨
+
+이런 식으로 동작하는 이유는 제네릭을 사용하지 않는 코드와의 호환성을 유지하기 위해서임
+
+---
 
 ### Generic Method
 

@@ -18,6 +18,9 @@ nav_order: 1
 ---
 
 ## Variable
+{: .no_toc}
+
+### Variable Basic
 
 **변수, 데이터(data)를 저장하기 위해 프로그램에 의해 이름을 할당받은 메모리 공간**
 
@@ -49,32 +52,42 @@ nav_order: 1
 
 변수는 타입에 따라 다음과 같이 구분
 
-1. 기본형(primitive type) 변수 : 실제 연산에 사용되는 변수
+1. **기본형(primitive type) 변수 : 실제 연산에 사용되는 변수**
 
     - 정수형 : byte, short, int, long
 
-    - 실수형 : float, double
-
     - 문자형 : char
+
+    - 실수형 : float, double
 
     - 논리형 : boolean
 
-2. 참조형(reference type) 변수 : 8개의 기본형 변수를 사용하여 사용자가 직접 만들어 사용하는 변수
+2. **참조형(reference type) 변수 : 8개의 기본형 변수를 사용하여 사용자가 직접 만들어 사용하는 변수**
+
     &#9656; 객체(Object)가 저장되어 있는 메모리의 주소를 참조하는 타입
     
-    &#9656; 배열(Array), 열거(Enum), 클래스(class), 인터페이스(Interface)등이 있음
+    - 배열(Array)
+    
+    - 열거(Enum)
+    
+    - 클래스(class)
+    
+    - 인터페이스(Interface)등이 있음
     
     &#9656; 참조타입은 속성, 필드, 메서드 등 생성자들이 있음
 
 ![](https://gekdev.github.io/docs/java/datatype/example/ref_type.png)
 
+### Difference between Variables
+
 기본타입과 참조타입의 차이점
-{: .label .lable-yellow .mt-2}
-<div class="code-example" markdown="1">
+
 **기본타입은 실제값을 변수에 저장하는 반면 참조타입은 객체가 저장되어 있는 메모리의 주소를 값으로 갖음**
 
 주소를 통해 객체를 참조한다는 의미에서 참조타입이라 부름
-</div>
+
+예제
+{: .label .label-purple .mt-2}
 ```java
 String name1 = "권가은";
 String name2 = "권가은";
@@ -109,17 +122,21 @@ if(name2.equals(name3)) {
 }
 ```
 
-자바는 문자열을 String참조타입변수에 저장하기 때문에 String 변수를 우선 선언해야 함
-실제로는 문자열을 String변수에 저장한다는 말은 틀린말
+* String Type
 
-문자열이 직접 변수에 저장되는게 아니라 문자열을 String 객체로 생성해 힙 영역에 저장하고
-String변수는 String객체가 저장되어 있는 메모리 주소를 참조함
+    &#9656; 자바는 문자열을 String참조타입변수에 저장하기 때문에 String 변수를 우선 선언해야 함
+    실제로는 문자열을 String변수에 저장한다는 말은 틀린말
 
-자바는 문자열 리터럴이 동일하다면 String 객체를 공유하도록 설계되어 있음
+    &#9656; 문자열이 직접 변수에 저장되는게 아니라 문자열을 String 객체로 생성해 힙 영역에 저장하고
+    String변수는 String객체가 저장되어 있는 메모리 주소를 참조함
 
-문자를 저장할 경우에는 문자열리터럴을 사용하지만, new 객체생성연산자를 사용해서 직접 String 객체를 생성시킬 수 있음
+    &#9656; 자바는 문자열 리터럴이 동일하다면 String 객체를 공유하도록 설계되어 있음
 
-new연산자는 힙 영역에 새로운 객체를 만들 때 사용하는 연산자로서 "객체 생성 연산자"라고 함
+* new String
+
+    &#9656; 문자를 저장할 경우에는 문자열리터럴을 사용하지만, new 객체생성연산자를 사용해서 직접 String 객체를 생성시킬 수 있음
+
+    &#9656; new연산자는 힙 영역에 새로운 객체를 만들 때 사용하는 연산자로서 "객체 생성 연산자"라고 함
 
 ### Declaration Variables
 
@@ -131,7 +148,7 @@ new연산자는 힙 영역에 새로운 객체를 만들 때 사용하는 연산
 
 2. 변수의 선언과 동시에 초기화하는 방법
 
-### 1. Only Declaration
+### Only Declaration
 
 위 1번 방법
 
@@ -148,17 +165,16 @@ new연산자는 힙 영역에 새로운 객체를 만들 때 사용하는 연산
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-타입 변수이름;
+타입 변수이름[, 변수이름];
 </div>
 ```java
-int num;                 // 변수의 선언
-System.out.println(num); // 오류 발생
+int num;                        // 변수의 선언
+System.out.println(num);        // 오류 발생
 
-num = 20;                // 변수의 초기화
-System.out.println(num); // 20
+int num, num1, num2;            // 같은 타입의 변수를 동시에 선언함
 ```
 
-### 2. Declaration with Initialization
+### Declaration with Initialization
 
 위 2번 방법
 
@@ -169,15 +185,15 @@ System.out.println(num); // 20
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-1. 타입 변수이름[, 변수이름];
-
-2. 타입 변수이름 = 초깃값[, 변수이름 = 초깃값];
+타입 변수이름 = 초깃값[, 변수이름 = 초깃값];
 </div>
 ```java
-int num1, num2;                  // 같은 타입의 변수를 동시에 선언함
+int num
+num = 20;                         // 변수의 초기화
 
 double num3 = 3.14;              // 선언과 동시에 초기화함
 double num4 = 1.23, num5 = 4.56; // 같은 타입의 변수를 동시에 선언하면서 초기화함
+System.out.println(num);         // 20
 ```
 
 !note
@@ -201,6 +217,8 @@ num1 = 1.23, num2 = 4.56; // 하지만 이미 선언된 여러 변수를 동시�
 
 &#9656; 지역에서 변경한 전역변수는 그대로 값이 변경되어서 남아있음
 
+예제
+{: .label .label-purple .mt-2}
 ```java
 public static void main(String[] args) {
     // 변수의 사용범위
