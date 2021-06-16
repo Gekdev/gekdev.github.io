@@ -24,11 +24,15 @@ has_children : true
 
 ### What is Collection Framework?
 
-**컬렉션 프레임워크(Collection Framework) : java.util패키지에 컬렉션과 관련된 인터페이스와 클래스들을 포함시켜 놓은 것**
+**java.util패키지에 데이터를 저장하는 자료 구조와 데이터를 처리하는 알고리즘을 구조화하여 클래스로 구현해 놓은 것**
 
-&#9656; 컬렉션 프레임워크는 몇가지 인터페이스를 통해서 다양한 컬렉션을 이용할 수 있도록 하고있음
+&#9656; 몇가지 인터페이스를 통해서 다양한 컬렉션을 이용할 수 있도록 하고있음
 
 &#8594; 주요 인터페이스로는 List, Set, Map이 있음
+
+<span class="fs-2">
+[자바 컬렉션 프레임워크의 주요 인터페이스에 대한 더 자세한 사항](https://docs.oracle.com/javase/8/docs/technotes/guides/collections/index.html){: .btn .btn-outline .mt-2}
+</span>
 
 ### Why Use Collection Framework?
 
@@ -51,3 +55,64 @@ has_children : true
 &#9656; List와 Set은 객체를 추가, 삭제, 검색하는 방법에 공통점이 많아 Collection 인터페이스에 공통 메서드를 정의해두고 있음
 
 ![](cf_sort.png)
+
+### Collection class
+
+**컬렉션 클래스(collection class) : 컬렉션 프레임워크에 속하는 인터페이스를 구현한 클래스**
+
+컬렉션 프레임워크의 모든 컬렉션 클래스는 List와 Set, Map 인터페이스 중 하나의 인터페이스를 구현
+
+또한, 클래스 이름에도 구현한 인터페이스의 이름이 포함되므로 바로 구분할 수 있음
+
+Vector나 Hashtable과 같은 컬렉션 클래스는 예전부터 사용해 왔으므로, 기존 코드와의 호환을 위해 아직도 남아 있지만 기존에 사용하던 컬렉션 클래스를 사용하는 것보다는 새로 추가된 ArrayList나 HashMap 클래스를 사용하는 것이 성능 면에서도 더 나은 결과를 얻을 수 있음
+
+예제
+{: .label .label-purple .mt-2}
+```java
+//ArrayList 클래스를 이용하여 리스트를 생성하고 조작하는 예제
+import java.util.*;
+
+public class Collection01 {
+public static void main(String[] args) {
+    // 리스트 생성
+    ArrayList<String> arrList = new ArrayList<String>();
+    // 리스트에 요소의 저장
+    arrList.add("넷");
+    arrList.add("둘");
+    arrList.add("셋");
+    arrList.add("하나");
+
+    // 리스트 요소의 출력
+    for(int i = 0; i < arrList.size(); i++) {
+        System.out.println(arrList.get(i));
+    }
+}
+}
+
+//실행 결과
+//넷
+//둘
+//셋
+//하나
+```
+
+### Collection Interface
+
+List와 Set 인터페이스의 많은 공통된 부분을 Collection 인터페이스에서 정의하고, 두 인터페이스는 그것을 상속받음
+
+따라서 Collection 인터페이스는 컬렉션을 다루는데 가장 기본적인 동작들을 정의하고, 그것을 메소드로 제공
+
+Collection 인터페이스 주요 메소드
+{: .label .label-red .mt-2}
+
+| 메소드   | 설명 |
+|:--------|:----|
+| boolean add(E e)	|해당 컬렉션(collection)에 전달된 요소를 추가 (선택적 기능)|
+| void clear()	|해당 컬렉션의 모든 요소를 제거 (선택적 기능)|
+| boolean contains(Object o)	|해당 컬렉션이 전달된 객체를 포함하고 있는지를 확인|
+| boolean equals(Object o)	|해당 컬렉션과 전달된 객체가 같은지를 확인|
+| boolean isEmpty()	|해당 컬렉션이 비어있는지를 확인|
+| Iterator&#60;E&#62; iterator()	|해당 컬렉션의 반복자(iterator)를 반환|
+| boolean remove(Object o)	|해당 컬렉션에서 전달된 객체를 제거 (선택적 기능)|
+| int size()	|해당 컬렉션의 요소의 총 개수를 반환|
+| Object[] toArray()	|해당 컬렉션의 모든 요소를 Object 타입의 배열로 반환|
