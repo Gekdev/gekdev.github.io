@@ -1,12 +1,12 @@
 ---
 layout: default
-title: API 
+title: Basic API 
 parent: Java
 nav_order: 12
 has_children: true
 ---
 
-# Java API
+# Java Basic API
 {: .no_toc .text-beta .fw-700}
 
 ## Table of contents

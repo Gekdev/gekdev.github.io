@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Comparable
-parent: Framework
+parent: Collection Framework
 grand_parent: Java
 nav_order: 6
 ---

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Iterator
-parent: Framework
+parent: Collection Framework
 grand_parent: Java
 nav_order: 5
 ---

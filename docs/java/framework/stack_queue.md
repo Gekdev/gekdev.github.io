@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Stack & Queue
-parent: Framework
+parent: Collection Framework
 grand_parent: Java
 nav_order: 4
 ---
