@@ -53,11 +53,11 @@
       &::before {
         position: absolute;
         top: 0.2em;
-        left: -1.6em;
+        left: -1.4em;
         color: $grey-dk-100;
         content: counter(step-counter);
         counter-increment: step-counter;
-        @include fs-4;
+        @include fs-3;
 
         @include mq(sm) {
           top: 0.11em;

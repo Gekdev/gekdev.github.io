@@ -21,19 +21,17 @@ nav_order: 1
 
 ### JDK Installation
 
-* JDK(Java Develpment Kit) = JRE + 개발도구
+* **JDK(Java Develpment Kit) = JRE + 개발도구**
     
     **JRE 이상으로 환경구성 뿐만 아니라 직접 개발까지 가능**
 
-* JRE(Java Runtime Environment) = JVM + 표준클래스 라이브러리
+* **JRE(Java Runtime Environment) = JVM + 표준클래스 라이브러리**
 
     **자바언어로 개발된 어떤 SW를 구동시키기 위해 최소한 설치되어야할 것들을 지원**
 
     &#8594; 자바 프로그램을 실행만 할 경우 설치
 
-**자바 개발 도구인 JDK를 깔아야 Java라는 언어로 프로그래밍을 할 수 있기 때문에 JDK(Java Development Kit)을 설치해야 함**
-
-&#8594; 자바라는 언어를 통해 개발을 하고자 하기 때문에 JRE, JVM이 아닌 JDK를 깔아야 함
+**★ 자바 개발 도구인 JDK를 깔아야 Java라는 언어로 프로그래밍을 할 수 있기 때문에 JDK(Java Development Kit)을 설치해야 함**
 
 1. 다운로드 받기
 
@@ -63,7 +61,7 @@ nav_order: 1
 
     **실행폴더**
 
-    &#9656; 폴더가 없는 경우는 해당폴더를 생성, 폴더 생성 후 설치해야함(아래 이미지와 경로가 다름) 
+    &#9656; 폴더가 없는 경우는 해당폴더를 생성, 폴더 생성 후 설치해야함 (아래 이미지와 경로가 다름) 
 
     &#9656; 경로 : **C:\Program Files\Java\jre1.8**
 
@@ -85,7 +83,7 @@ cmd 콘솔에서 javac로 compile하거나, 다른 프로그램에서 자바 JDK
 
     ![](https://gekdev.github.io/docs/java/basic/example/javains_01.png)
 
-2. 새로운 시스템 변수 생성
+2. **새로운 시스템 변수 생성**
 
     **자바에 관련된 환경변수를 설정하기 위해선 새로운 시스템변수를 만들어야 함**
 
@@ -167,7 +165,7 @@ cmd 콘솔에서 javac로 compile하거나, 다른 프로그램에서 자바 JDK
 
     ![](https://gekdev.github.io/docs/java/basic/example/package.jpg)
 
-2. 새로운 Package 생성
+2. **새로운 Package 생성**
 
     ![](https://gekdev.github.io/docs/java/basic/example/hello.jpg)
 
@@ -177,7 +175,7 @@ cmd 콘솔에서 javac로 compile하거나, 다른 프로그램에서 자바 JDK
 
     ![](https://gekdev.github.io/docs/java/basic/example/class.jpg)
     
-2. 새로운 Class 생성
+2. **새로운 Class 생성**
 
     ![](https://gekdev.github.io/docs/java/basic/example/new_class.jpg)
 

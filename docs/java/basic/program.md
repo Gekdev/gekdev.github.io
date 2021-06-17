@@ -19,9 +19,9 @@ nav_order: 2
 
 ## Java Program 
 
-자바 프로그램은 한 개 이상의 클래스(class)로 구성
+### Java Program Basic 
 
-한 개 이상의 필드(field)나 메소드(method)로 구성되어 있음
+**자바 프로그램은 한 개 이상의 클래스(class)로 구성되어있고 클래스는 한 개 이상의 필드(field)나 메소드(method)로 구성되어 있음**
 
 간단한 자바 프로그램의 기본 구조
 {: .label .mt-2}
@@ -140,13 +140,9 @@ public static void main(String[] args) {
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-1. 줄바꿈
+1. 줄바꿈 : System.out.println(출력할데이터);
 
-    System.out.println(출력할데이터);
-
-2. 줄 안바꿈
-
-    System.out.print();
+2. 줄 안바꿈 : System.out.print(출력할데이터);
 </div>
 ```java
 System.out.print(7);         // print() 메소드는 줄 바꿈을 하지 않음.
