@@ -54,7 +54,7 @@
         position: absolute;
         top: 0.2em;
         left: -1.6em;
-        color: $grey-dk-200;
+        color: $grey-dk-100;
         content: counter(step-counter);
         counter-increment: step-counter;
         @include fs-4;

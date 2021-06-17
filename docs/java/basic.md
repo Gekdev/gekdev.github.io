@@ -72,25 +72,25 @@ JVM 단점
 
 ![](https://gekdev.github.io/docs/java/example/pg.png)
 
-1. 자바 인터프리터(interpreter)
+1. **자바 인터프리터(interpreter)**
 
     **자바 컴파일러에 의해 변환된 자바 바이트 코드를 읽고 해석하는 역할**
 
-2. 클래스 로더(class loader)
+2. **클래스 로더(class loader)**
 
     자바는 동적으로 클래스를 읽어오므로, 프로그램이 실행 중인 런타임에서야 모든 코드가 자바 가상 머신과 연결
     
     이렇게 **동적으로 클래스를 로딩해주는 역할을 하는 것이 클래스 로더**
 
-3. JIT 컴파일러(Just-In-Time compiler)
+3. **JIT 컴파일러(Just-In-Time compiler)**
 
     **프로그램이 실행 중인 런타임에 실제 기계어로 변환해 주는 컴파일러를 의미**
     
-    JIT 컴파일러는 자바 컴파일러가 생성한 자바 바이트 코드를 런타임에 바로 기계어로 변환하는 데 사용
+    자바 컴파일러가 생성한 자바 바이트 코드를 런타임에 바로 기계어로 변환하는 데 사용
     
     동적 번역(dynamic translation)이라고도 불리는 이 기법은 프로그램의 실행 속도를 향상시키기 위해 개발
 
-4. 가비지 컬렉터(garbage collector)
+4. **가비지 컬렉터(garbage collector)**
 
     **더는 사용하지 않는 메모리를 자동으로 회수**
 

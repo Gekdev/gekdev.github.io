@@ -31,7 +31,7 @@ nav_order: 1
 ### Features of Java
 
 자바 언어가 가지는 장점
-{: .label .mt-2 .mb-2}
+{: .label .mt-2}
 
 1. 운영체제와는 독립적으로 실행
 
@@ -44,7 +44,7 @@ nav_order: 1
 5. 자바에 관한 수많은 참고 자료를 찾을 수 있음
 
 자바 언어가 가지는 단점
-{: .label .label-red .mt-2 .mb-2}
+{: .label .label-red .mt-2}
 
 1. 실행을 위해 자바 가상 머신을 거쳐야 하므로, 다른 언어에 비해 실행 속도가 느림
 
@@ -66,15 +66,15 @@ nav_order: 1
 
 ### Standard of Java
 
-썬 마이크로시스템즈사가 오라클과 인수함 &#8594; 자바에 대한 권리 및 유지보수를 오라클에서 수행
+1. 썬 마이크로시스템즈사가 오라클과 인수함 &#8594; 자바에 대한 권리 및 유지보수를 오라클에서 수행
 
-초기 버전인 1.0/1.1 버전에서는 JDK(Java Development Kit)를 사용 &#8594; JDK 1.2를 발표하면서 J2SE로 변경
+2. 초기 버전인 1.0/1.1 버전에서는 JDK(Java Development Kit)를 사용 &#8594; JDK 1.2를 발표하면서 J2SE로 변경
 
-J2SE(Java2 Standard Edition) &#8594; 2006년 JDK 1.6부터 Java SE(Java Standard Edition)로 변경
+3. J2SE(Java2 Standard Edition) &#8594; 2006년 JDK 1.6부터 Java SE(Java Standard Edition)로 변경
 
-가장 최신 버전의 자바는 2014년에 발표된 Java SE 8 버전
+4. 가장 최신 버전의 자바는 2014년에 발표된 Java SE 8 버전
 
-현재에는 2017년 제정을 목표로 하는 Java SE 9 버전 제정과 관련된 논의가 계속 진행
+5. 현재에는 2017년 제정을 목표로 하는 Java SE 9 버전 제정과 관련된 논의가 계속 진행
 
 [자바 최신 표준인 Java SE 8에 대한 더 자세한 사항 확인하기](https://docs.oracle.com/javase/specs/jls/se8/html/index.html)
 
@@ -84,7 +84,6 @@ J2SE(Java2 Standard Edition) &#8594; 2006년 JDK 1.6부터 Java SE(Java Standard
 
 ### API Document
 
-**JDK에서 제공하는 표준 클래스 라이브러리 설명해 놓은 HTML 페이지**
+[ORACLE](https://docs.oracle.com/javase/8/docs/api/) : **JDK에서 제공하는 표준 클래스 라이브러리 설명해 놓은 HTML 페이지**
 
-[ORACLE](https://docs.oracle.com/javase/8/docs/api/)
 
