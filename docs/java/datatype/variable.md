@@ -18,7 +18,6 @@ nav_order: 1
 ---
 
 ## Variable
-{: .no_toc}
 
 ### Variable Basic
 
@@ -76,8 +75,6 @@ nav_order: 1
     
     &#9656; 참조타입은 속성, 필드, 메서드 등 생성자들이 있음
 
-![](https://gekdev.github.io/docs/java/datatype/example/ref_type.png)
-
 ### Difference between Variables
 
 기본타입과 참조타입의 차이점
@@ -86,8 +83,25 @@ nav_order: 1
 
 주소를 통해 객체를 참조한다는 의미에서 참조타입이라 부름
 
-예제
-{: .label .label-purple .mt-2}
+String Type과 new String의 차이점
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+* String Type
+
+    &#9656; 자바는 문자열을 String참조타입변수에 저장하기 때문에 String 변수를 우선 선언해야 함
+    실제로는 문자열을 String변수에 저장한다는 말은 틀린말
+
+    &#9656; 문자열이 직접 변수에 저장되는게 아니라 문자열을 String 객체로 생성해 힙 영역에 저장하고
+    String변수는 String객체가 저장되어 있는 메모리 주소를 참조함
+
+    &#9656; 자바는 문자열 리터럴이 동일하다면 String 객체를 공유하도록 설계되어 있음
+
+* new String
+
+    &#9656; 문자를 저장할 경우에는 문자열리터럴을 사용하지만, new 객체생성연산자를 사용해서 직접 String 객체를 생성시킬 수 있음
+
+    &#9656; new연산자는 힙 영역에 새로운 객체를 만들 때 사용하는 연산자로서 "객체 생성 연산자"라고 함
+</div>
 ```java
 String name1 = "권가은";
 String name2 = "권가은";
@@ -122,23 +136,53 @@ if(name2.equals(name3)) {
 }
 ```
 
-* String Type
+### Variable Scope
 
-    &#9656; 자바는 문자열을 String참조타입변수에 저장하기 때문에 String 변수를 우선 선언해야 함
-    실제로는 문자열을 String변수에 저장한다는 말은 틀린말
+자바스크립트 변수 범위처럼 작용함 **(Local Variable / Global Variable)**
 
-    &#9656; 문자열이 직접 변수에 저장되는게 아니라 문자열을 String 객체로 생성해 힙 영역에 저장하고
-    String변수는 String객체가 저장되어 있는 메모리 주소를 참조함
+&#9656; 전역 변수는 지역에서 사용가능하고, 지역변수는 전역에서 사용할 수 없음
 
-    &#9656; 자바는 문자열 리터럴이 동일하다면 String 객체를 공유하도록 설계되어 있음
+&#9656; 지역에서 변경한 전역변수는 그대로 값이 변경되어서 남아있음
 
-* new String
+예제
+{: .label .label-purple .mt-2}
+```java
+public static void main(String[] args) {
+    // 변수의 사용범위
+    // local(지역변수) vs global(전역변수)
+    int var1;
+    var1 = 10;
+    System.out.println("var1의 값 = " + var1);		//10
+    System.out.println();
 
-    &#9656; 문자를 저장할 경우에는 문자열리터럴을 사용하지만, new 객체생성연산자를 사용해서 직접 String 객체를 생성시킬 수 있음
+    if(true) {
+        int var2;
+        var1 = 20;
+        var2 = 20;
+        // var3 = 30; 접근 불가
+        System.out.println("var1의 값 = " + var1);    //20
+        System.out.println("var2의 값 = " + var2);    //20
+    }
 
-    &#9656; new연산자는 힙 영역에 새로운 객체를 만들 때 사용하는 연산자로서 "객체 생성 연산자"라고 함
+    System.out.println();
 
-### Declaration Variables
+    if(true) {
+        int var3;
+        var1 = 30;
+        var3 = 30;
+        System.out.println("var1의 값 = " + var1);    //30
+        System.out.println("var3의 값 = " + var3);    //30
+    }   
+
+    System.out.println("var1의 값 = " + var1);	     //30
+    // System.out.println("var2의 값 = " + var2); 접근 불가능, 둘다 지역변수 이기 때문
+    // System.out.println("var3의 값 = " + var3);	
+}
+```
+
+---
+
+## Declaration Variables
 
 **변수를 사용하기 전에 반드시 먼저 변수를 선언하고 초기화해야 함**
 
@@ -207,48 +251,4 @@ System.out.println(num);         // 20
 double num1, num2;        // 같은 타입의 변수를 동시에 선언함.
 ...
 num1 = 1.23, num2 = 4.56; // 하지만 이미 선언된 여러 변수를 동시에 초기화할 수는 없음.
-```
-
-### Variable Scope
-
-자바스크립트 변수 범위처럼 작용함 **(Local Variable / Global Variable)**
-
-&#9656; 전역 변수는 지역에서 사용가능하고, 지역변수는 전역에서 사용할 수 없음
-
-&#9656; 지역에서 변경한 전역변수는 그대로 값이 변경되어서 남아있음
-
-예제
-{: .label .label-purple .mt-2}
-```java
-public static void main(String[] args) {
-    // 변수의 사용범위
-    // local(지역변수) vs global(전역변수)
-    int var1;
-    var1 = 10;
-    System.out.println("var1의 값 = " + var1);		//10
-    System.out.println();
-
-    if(true) {
-        int var2;
-        var1 = 20;
-        var2 = 20;
-        // var3 = 30; 접근 불가
-        System.out.println("var1의 값 = " + var1);    //20
-        System.out.println("var2의 값 = " + var2);    //20
-    }
-
-    System.out.println();
-
-    if(true) {
-        int var3;
-        var1 = 30;
-        var3 = 30;
-        System.out.println("var1의 값 = " + var1);    //30
-        System.out.println("var3의 값 = " + var3);    //30
-    }   
-
-    System.out.println("var1의 값 = " + var1);	     //30
-    // System.out.println("var2의 값 = " + var2); 접근 불가능, 둘다 지역변수 이기 때문
-    // System.out.println("var3의 값 = " + var3);	
-}
 ```

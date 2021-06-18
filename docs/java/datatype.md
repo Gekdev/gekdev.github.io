@@ -16,3 +16,5 @@ has_children: true
 {:toc}
 
 ---
+
+![](https://gekdev.github.io/docs/java/datatype/example/ref_type.png)
