@@ -59,26 +59,13 @@ public static void main(String[] args) {
     byte b1 = -128;
     byte b2 = 127;
 
-    // char 타입
-    char c1 = 'A'; //문자를 저장하지만 내부적으로 ascii 값 
-    char c2 = 65; // 직접 ascii값으로 저장 
-    char c3 = '\u0041'; //16진수(유니코드)값으로 저장
-    System.out.println(c1 + "," + c2 + "," + c3);
-
-    char c4 = '가';
-    char c5 = 44032;
-    char c6 = '\uac00';
-    System.out.println(c4 + "," + c5 + "," + c6);
-
     int uniCode1 = c4;
     int uniCode2 = '나';
     System.out.println(uniCode1 + "," + uniCode2);
 
 }
 
-// 결과값
-A,A,A
-가,가,가
+//결과값
 44032,45208
 ```
 
@@ -173,9 +160,9 @@ System.out.println(f1+ "," +f2);
 
 double값에 포함되는 실수 리터럴을 float타입으로 바꾸고 싶을때, 반대로도 가능
 
-Double to Float : **f,F 접미사 사용**
+* Double to Float : **f,F 접미사 사용**
 
-Float to Double : **d,D 접미사 사용**
+* Float to Double : **d,D 접미사 사용**
 
 예제
 {: .label .label-purple .mt-2}
@@ -217,6 +204,27 @@ System.out.println((1.0*10 - 0.9*10)*0.1);  //0.1
 |문자형 타입	|할당되는 메모리의 크기	|데이터의 표현 범위|
 |:---------|:--------------------|:----------------|
 |char	   |2 바이트	           |0 ~ 216           |
+
+예제
+{: .label .label-purple .mt-2}
+```java
+public static void main(String[] args) {
+    // char 타입
+    char c1 = 'A'; //문자를 저장하지만 내부적으로 ascii 값 
+    char c2 = 65; // 직접 ascii값으로 저장 
+    char c3 = '\u0041'; //16진수(유니코드)값으로 저장
+    System.out.println(c1 + "," + c2 + "," + c3);
+
+    char c4 = '가';
+    char c5 = 44032;
+    char c6 = '\uac00';
+    System.out.println(c4 + "," + c5 + "," + c6);
+}
+
+// 결과값
+A,A,A
+가,가,가
+```
 
 ---
 

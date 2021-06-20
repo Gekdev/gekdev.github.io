@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Constant / Literal
+title: Constant & Literal
 parent: Datatype
 grand_parent: Java
 nav_order: 2
@@ -105,6 +105,8 @@ g = 0.1234D;
 
 * 16진수 : 숫자리터럴 앞에 0x
 
+예제
+{: .label .label-purple .mt-2}
 ```java
 int var2 = 010;
 System.out.println(var2);   // 8

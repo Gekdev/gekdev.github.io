@@ -18,6 +18,9 @@ nav_order: 5
 ---
 
 ## Type Conversion
+{: .no_toc}
+
+### Type Conversion Basic
 
 **하나의 타입을 다른 타입으로 바꾸는 것을 타입 변환**
 

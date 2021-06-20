@@ -161,7 +161,9 @@ syntax
 }
 ```
 
-[tcp](http://tcpschool.com/java/java_array_application)
+<span class="fs-2">
+[tcp](http://tcpschool.com/java/java_array_application){: .btn .btn-outline .mt-2}
+</span>
 
 ---
 
@@ -177,33 +179,21 @@ syntax
 
 &#8594; 반복문 내에서 특정 조건에 대한 예외 처리를 하고자 할 때 자주 사용
 
-예제
-{: .label .label-purple .mt-2}
-```java
-
-```
-
 ### break Statement
 
 **해당 반복문을 완전히 종료시킨 뒤, 반복문 바로 다음에 위치한 명령문을 실행**
 
 &#8594; 루프 내에서 조건식의 판단 결과와 상관없이 반복문을 완전히 빠져나가고 싶을 때 사용
 
-예제
-{: .label .label-purple .mt-2}
-```java
-
-```
-
 ### break with label
 
-이름을 가지는 반복문
+**이름을 가지는 반복문**
 
-일반적으로 break문은 단 하나의 반복문만 빠져 나가게 하기 때문에 중첩된 상황에서 한번에 모든 반복문을 빠져나가거나, 특정 반복문까지 나가게 하고싶을 때 사용
+&#9656; 일반적으로 break문은 단 하나의 반복문만 빠져 나가게 하기 때문에 중첩된 상황에서 한번에 모든 반복문을 빠져나가거나, 특정 반복문까지 나가게 하고싶을 때 사용
 
-빠져나가고 싶은 특정 반복문에 이름을 설정한 후, break 키워드 다음에 해당 이름을 명시
+&#9656; 빠져나가고 싶은 특정 반복문에 이름을 설정한 후, break 키워드 다음에 해당 이름을 명시
 
-그러면 break 키워드는 현재 반복문이 아닌 해당 이름의 반복문 바로 다음으로 프로그램의 실행을 옮김
+&#9656; 그러면 break 키워드는 현재 반복문이 아닌 해당 이름의 반복문 바로 다음으로 프로그램의 실행을 옮김
 
 note!
 {: .label .label-yellow .mt-2}
@@ -244,3 +234,12 @@ for(int i=2 ; i<=9 ; i++) {
     }
 }
 ```
+
+### Star
+
+**별찍기**
+
+<span class="fs-2">
+[블로그](https://velog.io/@recordboy/%EC%A4%91%EC%B2%A9-%EB%B0%98%EB%B3%B5%EB%AC%B8%EB%B3%84%EC%B0%8D%EA%B8%B0){: .btn .btn-outline .mt-2}
+</span>
+

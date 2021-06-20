@@ -57,8 +57,6 @@ System.out.println("/ 연산자에 의한 결과 : "+ (num1 / num2));   //2
 System.out.println("% 연산자에 의한 결과 : "+ (num1 % num2));   //0
 ```
 
-![]()
-
 ---
 
 ## Assignment Operator
@@ -97,8 +95,6 @@ System.out.println("- 연산자에 의한 결과 : "+ num1);        //4
 System.out.println("-= 연산자에 의한 결과 : "+ num2);       //4
 System.out.println("=- 연산자에 의한 결과 : "+ num3);       //-3
 ```
-
-![]()
 
 ---
 
@@ -163,12 +159,6 @@ System.out.println("x : "+ x + ", y : " + y);
 | <	| 왼쪽이 오른쪽보다 작으면 참| 
 | <=	| 왼쪽이 오른쪽보다 작거나 같으면 참| 
 
-```java
-
-```
-
-![]()
-
 ---
 
 ## Logical Operator
@@ -195,12 +185,6 @@ truth table
 |false|	true  |	false	  | true	  | true  |
 |false|	false |	false	  | false	  | true  |
 
-```java
-
-```
-
-![]()
-
 ---
 
 ## Ternary Operator
@@ -212,11 +196,6 @@ syntax
 <div class="code-example" markdown="1">
 조건식 ? 반환값1 : 반환값2
 </div>
-```java
-
-```
-
-![]()
 
 ---
 
@@ -250,22 +229,3 @@ public static void main(String[] args) {
 
 }
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

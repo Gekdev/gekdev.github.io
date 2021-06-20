@@ -18,6 +18,9 @@ nav_order: 4
 ---
 
 ## Enum Type
+{: .no_toc}
+
+### Enum Type Basic
 
 **한정된 값만 갖는 데이터타입을 열거타입(Enumeration Type)이라고 함**
 
@@ -41,7 +44,7 @@ ex) Week.MONDAY 형태로 사용
 
 여러단어로 구성된 이름이라면 각 단어의 첫글자는 대문자로 하는 것이 관례
 
-### Enum Example
+### Example
 
 ```java
 public enum Week {

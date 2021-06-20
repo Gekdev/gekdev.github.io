@@ -53,6 +53,9 @@ syntax
     ...
 };
 ```
+
+예제
+{: .label .label-purple .mt-2}
 ```java
 int[][] arr = {
     {10, 20, 30},
