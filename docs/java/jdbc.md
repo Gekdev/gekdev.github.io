@@ -325,11 +325,3 @@ SQL문중에서 select문을 사용한 질의가 성공했을 경우에 결과�
     JDBC는 Auto Commit이 자동수행됨
     
     자동수행되는것을 막으려면 conn.setAutoCommit(false)로 지정해야 함
-
----
-
-## 
-
-
-
-
