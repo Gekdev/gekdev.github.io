@@ -109,6 +109,8 @@ mariadb.pwd=
 
 #### BoardVO : 게시판 Model 클래스
 
+**게시판 내용들을 생성, 초기화 그리고 get,set할 메소드를 가진 클래스**
+
 ```java
 package com.lec.ex02_board;
 
@@ -203,6 +205,7 @@ import java.util.Properties;
 public class ConnectionFactory {
 
 	// Path의 경로를 가져오기 : 자기클래스명.class.getResource("파일이름").getPath()
+    // 해석 : ConnectionFactory와 같은 패키지의 클래스의 "jdbc.properties" 파일의 경로를 가져오세요
 	private String path = ConnectionFactory.class.getResource("jdbc.properties").getPath();
 	
 	private String DRV = null;
@@ -215,6 +218,7 @@ public class ConnectionFactory {
 	private String update = null;
 	private String delete = null;
 	
+    //생성시 setUp() 메소드 바로 시작
 	public ConnectionFactory() {
 		try {
 			setUp();
@@ -223,9 +227,10 @@ public class ConnectionFactory {
 		}
 	}
 	
+    //생성자가 부르는 setUp()
 	private void setUp() throws Exception {
 		
-		// Properties 객체 생성
+		//Properties 객체 생성
 		Properties p = new Properties();
 		
 		try {
@@ -235,6 +240,7 @@ public class ConnectionFactory {
 			e.printStackTrace();
 		}
 	
+        //Properties 객체의 정보 가져오기
 		//a. Properties의 DB접속정보
 		DRV = p.getProperty("jdbc.drv");
 		URL = p.getProperty("jdbc.url");
@@ -259,10 +265,12 @@ public class ConnectionFactory {
 		System.out.println(delete);
 		*/
 		
+        // JDBC 드라이버 로딩 - Oracle JDBC 드라이버의 Driver Class 로딩
 		Class.forName(DRV);
 	}
 	
 	//DB접속 메서드
+    //객체 생성 후 접속을 위해 사용할 메소드임
 	public Connection getConnection() {
 		try {
 			System.out.println("DB접속성공");
@@ -274,6 +282,7 @@ public class ConnectionFactory {
 		}
 	}
 
+    //Properties 파일의 명령문 가져오는 메소드
 	public String getInsert() {
 		return insert;
 	}
@@ -318,6 +327,8 @@ public interface BoardDAOService {
 
 #### BoardDAOImpl : 게시판 구현 클래스
 
+BoardDAOService를 구현함
+
 ```java
 package com.lec.ex02_board;
 
@@ -329,11 +340,14 @@ import java.util.Scanner;
 
 public class BoardDAOImpl implements BoardDAOService {
 
-	// 글입력메서드
+	// 글입력메서드 (새로생성)
 	BoardVO inputBoard() {
+        //게시판 Model 객체 생성
 		BoardVO bd = new BoardVO();
+        //Scanner로 값 입력받기
 		Scanner sc = new Scanner(System.in);
 		
+        //입력받은 값으로 제목, 작성자, 글내용 입력받기
 		System.out.println("글제목을 입력하세요 ==> ");
 		bd.setSubject(sc.nextLine());
 		
@@ -346,7 +360,7 @@ public class BoardDAOImpl implements BoardDAOService {
 		return bd;
 	}
 	
-	
+	//추.클 구현하기
 	@Override
 	public void createBoard() {
 		BoardVO bd = inputBoard();
@@ -356,8 +370,8 @@ public class BoardDAOImpl implements BoardDAOService {
 		PreparedStatement pstmt = null;
 
 		ConnectionFactory cf = new ConnectionFactory();
-		conn = cf.getConnection();
-		String sql = cf.getInsert();
+		conn = cf.getConnection(); //연결
+		String sql = cf.getInsert(); // insert문 가져오기
 		
 		try {
 			pstmt = conn.prepareStatement(sql);
@@ -607,6 +621,7 @@ public class BoardDAOImpl implements BoardDAOService {
 ```java
 package com.lec.ex02_board;
 
+//＠ BoardDAOImpl을 싱글톤으로 만드는 클래스
 public class BoardFactory {
 
 	private static BoardDAOImpl bddao = null;
@@ -636,18 +651,24 @@ public class BoardUI {
 
 	private double ver;
 	
+    //생성자 호출 후 필드에 대입
 	public BoardUI(double ver) {
 		this.ver = ver;
 	}
 
+    // ★ 호출된 메소드
 	public void mainBoardMenu() {
 		
+        // 게시판 인터페이스를 싱글톤 객체로 생성 ＠
 		BoardDAOImpl bddao = BoardFactory.getInstance();
 		
+        // 바로 실행
 		while(true) {
 			
+            // displayBoardMenu의 리턴값을 menuNo로 받음 ＆
 			int menuNo = displayBoardMenu();
-			
+                     
+			//받은 리턴값에 따라 실행되어야 하는 메소드들을 switch문으로 나눠줌
 			switch(menuNo) {
 			case 0: System.out.println("프로그램종료"); System.exit(0); break;
 			case 1: makeBoard(bddao); break;
@@ -661,93 +682,8 @@ public class BoardUI {
 		}
 	}
 
-	private void findByWriter(BoardDAOImpl bddao) {
-		
-		String writer = JOptionPane.showInputDialog("작성자를 입력하세요!!\n");
-		if(writer == null) return;
-		if(writer.equals("")) return;
-		
-		ArrayList<BoardVO> bds = bddao.findByWriterBoard(writer);
-		
-		System.out.println("==================================================================");
-		System.out.println("번호\t\t제목\t\t작성자\t\t내용");
-		System.out.println("==================================================================");
-		
-		for(BoardVO bd:bds) {
-			System.out.println(bd.toString());
-		}
-		System.out.println("----------- 출력종료 ---------------\n\n\n");
-	}
-
-	private void findBySubject(BoardDAOImpl bddao) {
-		
-		String subject = JOptionPane.showInputDialog("제목을 입력하세요!!\n");
-		if(subject == null) return;
-		if(subject.equals("")) return;
-		
-		ArrayList<BoardVO> bds = bddao.findBySubjectBoard(subject);
-		
-		System.out.println("==================================================================");
-		System.out.println("번호\t\t제목\t\t작성자\t\t내용");
-		System.out.println("==================================================================");
-		
-		for(BoardVO bd:bds) {
-			System.out.println(bd.toString());
-		}
-		System.out.println("----------- 출력종료 ---------------\n\n\n");
-	}
-
-	private void deleteBoard(BoardDAOImpl bddao) {
-
-		String bno = JOptionPane.showInputDialog("삭제할 글 번호를 입력하세요!");
-		
-		if(bno == null) return;
-		if(bno.equals("")) return;
-		else {
-			bddao.deleteBoard(Integer.parseInt(bno));
-		}
-	}
-
-
-	private void updateBoard(BoardDAOImpl bddao) {
-
-		String bno = JOptionPane.showInputDialog("수정할 글 번호를 입력하세요!");
-		
-		if(bno == null) return;
-		if(bno.equals("")) return;
-		else {
-			bddao.updateBoard(Integer.parseInt(bno));
-		}
-	}
-
-	private void contentView(BoardDAOImpl bddao) {
-		
-		String bno = JOptionPane.showInputDialog("조회할 글 번호를 입력하세요!");
-		
-		if(bno == null) return;
-		if(bno.equals("")) return;
-		else {
-			BoardVO bd = bddao.viewBoard(Integer.parseInt(bno));
-			System.out.println("글제목 : " + bd.getSubject());
-			System.out.println("작성자 : " + bd.getWriter());
-			System.out.println("글내용 : " + bd.getContent());
-		}
-	}
-
-	private void listBoard(BoardDAOImpl bddao) {
-		ArrayList<BoardVO> bds = bddao.listBoard();
-		
-		System.out.println("==================================================================");
-		System.out.println("번호\t\t제목\t\t작성자\t\t내용");
-		System.out.println("==================================================================");
-		
-		for(BoardVO bd:bds) {
-			System.out.println(bd.toString());
-		}
-		System.out.println("----------- 출력종료 ---------------\n\n\n");
-	}
-
-	private int displayBoardMenu() {
+   // ＆ showInputDialog로 내용을 출력하고 값을 받음
+   private int displayBoardMenu() {
 		String menuNo = JOptionPane.showInputDialog(
 			"***** 게시판프로그램 V 1.0 *****\n\n" +
 		    "1. 새로운 글쓰기\n" +
@@ -760,13 +696,112 @@ public class BoardUI {
 			"0. 종료\n\n" +
 			"처리할 작업번호를 입력하세요\n");
 		
-		if(menuNo == null) return 0;
-		if(menuNo.equals("")) return 0;
-		else return Integer.parseInt(menuNo);
+		if(menuNo == null) return 0;          //값이 없거나
+		if(menuNo.equals("")) return 0;       //null이면 0을 리턴하고
+		else return Integer.parseInt(menuNo); //받은 나머지 값을 menuNo에 받음
+	}
+    
+    // case 7                   
+	private void findByWriter(BoardDAOImpl bddao) {
+		
+		String writer = JOptionPane.showInputDialog("작성자를 입력하세요!!\n");
+		if(writer == null) return;
+		if(writer.equals("")) return;
+		
+                         // BoardDAOImpl객체의 findByWriterBoard(bno)메서드 실행
+		ArrayList<BoardVO> bds = bddao.findByWriterBoard(writer);
+		
+		System.out.println("==================================================================");
+		System.out.println("번호\t\t제목\t\t작성자\t\t내용");
+		System.out.println("==================================================================");
+		
+		for(BoardVO bd:bds) {
+			System.out.println(bd.toString());
+		}
+		System.out.println("----------- 출력종료 ---------------\n\n\n");
+	}
+
+    // case 6 
+	private void findBySubject(BoardDAOImpl bddao) {
+		
+		String subject = JOptionPane.showInputDialog("제목을 입력하세요!!\n");
+		if(subject == null) return;
+		if(subject.equals("")) return;
+		
+                            // BoardDAOImpl객체의 findBySubjectBoard(bno)메서드 실행
+		ArrayList<BoardVO> bds = bddao.findBySubjectBoard(subject);
+		
+		System.out.println("==================================================================");
+		System.out.println("번호\t\t제목\t\t작성자\t\t내용");
+		System.out.println("==================================================================");
+		
+		for(BoardVO bd:bds) {
+			System.out.println(bd.toString());
+		}
+		System.out.println("----------- 출력종료 ---------------\n\n\n");
+	}
+
+    // case 5      
+	private void deleteBoard(BoardDAOImpl bddao) {
+
+		String bno = JOptionPane.showInputDialog("삭제할 글 번호를 입력하세요!");
+		
+		if(bno == null) return;
+		if(bno.equals("")) return;
+		else {
+            // BoardDAOImpl객체의 deleteBoard(bno)메서드 실행
+			bddao.deleteBoard(Integer.parseInt(bno));
+		}
+	}
+
+    // case 4     
+	private void updateBoard(BoardDAOImpl bddao) {
+
+		String bno = JOptionPane.showInputDialog("수정할 글 번호를 입력하세요!");
+		
+		if(bno == null) return;
+		if(bno.equals("")) return;
+		else {
+            // BoardDAOImpl객체의 parseInt(bno)메서드 실행
+			bddao.updateBoard(Integer.parseInt(bno));
+		}
+	}
+
+    // case 3      
+	private void contentView(BoardDAOImpl bddao) {
+		
+		String bno = JOptionPane.showInputDialog("조회할 글 번호를 입력하세요!");
+		
+		if(bno == null) return;
+		if(bno.equals("")) return;
+		else {
+            // BoardDAOImpl객체의 viewBoard(Integer.parseInt(bno))메서드 실행
+			BoardVO bd = bddao.viewBoard(Integer.parseInt(bno));
+			System.out.println("글제목 : " + bd.getSubject());
+			System.out.println("작성자 : " + bd.getWriter());
+			System.out.println("글내용 : " + bd.getContent());
+		}
+	}
+
+    // case 2
+	private void listBoard(BoardDAOImpl bddao) {
+    
+        // BoardDAOImpl객체의 listBoard()메서드 실행
+		ArrayList<BoardVO> bds = bddao.listBoard();
+		
+		System.out.println("==================================================================");
+		System.out.println("번호\t\t제목\t\t작성자\t\t내용");
+		System.out.println("==================================================================");
+		
+		for(BoardVO bd:bds) {
+			System.out.println(bd.toString()); 
+		}
+		System.out.println("----------- 출력종료 ---------------\n\n\n");
 	}
 	
+    // case 1
 	private void makeBoard(BoardDAOImpl bddao) {
-		bddao.createBoard();
+		bddao.createBoard(); // BoardDAOImpl객체의 createBoard()메서드 실행
 	}
 }
 ```
@@ -780,9 +815,11 @@ import java.util.ArrayList;
 
 public class Board {
 public static void main(String[] args) {
-	
-	BoardUI bui = new BoardUI(1.0);
-	bui.mainBoardMenu();
+    
+	//게시판 처리 프로그램의 화면구성(메뉴)을 담당하는 클래스를 버전 1.0으로 인스턴스생성
+	BoardUI bui = new BoardUI(1.0);    
+	//인스턴스의 mainBoardMenu()호출 ★
+    bui.mainBoardMenu();
 }
 }
 ```
