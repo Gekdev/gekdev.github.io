@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Install
-parent: basic
+parent: Basic
 grand_parent : JSP
 nav_order: 1
 ---

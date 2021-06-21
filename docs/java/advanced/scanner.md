@@ -1,8 +1,9 @@
 ---
 layout: default
 title: Scanner
-parent: Java
-nav_order: 98
+parent: Advanced
+grand_parent: Java
+nav_order: 1
 ---
 
 # Java Scanner
