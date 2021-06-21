@@ -59,7 +59,7 @@ nav_order: 1
 
 ### CMD Startup
 
-![](cmd.jpg)
+![](https://gekdev.github.io/docs/jsp/basic/example/cmd.jpg)
 
 1. 톰켓 경로잡기
 
@@ -113,3 +113,12 @@ nav_order: 1
 C:\tomcat-9.0.48\webapps\ROOT 여기가 루트
 
 ![](https://gekdev.github.io/docs/jsp/basic/example/index.jpg)
+
+---
+
+## Eclipse Setting
+
+### 
+
+![](https://gekdev.github.io/docs/jsp/basic/example/javaee.jpg)
+![](https://gekdev.github.io/docs/jsp/basic/example/project1.JPG)
