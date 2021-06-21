@@ -192,6 +192,8 @@ public class BoardVO {
 
 #### ConnectionFactory : 데이터 접속 정보를 공통으로 사용하기 위한 클래스
 
+**꼭@@@ ojdbc8-21.1.0.0.jar 를 가져와야함 그래야 Class.forName(DRV);할 수 있음**
+
 ```java
 package com.lec.ex02_board;
 
