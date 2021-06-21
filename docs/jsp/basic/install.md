@@ -121,4 +121,5 @@ C:\tomcat-9.0.48\webapps\ROOT 여기가 루트
 ### 
 
 ![](https://gekdev.github.io/docs/jsp/basic/example/javaee.jpg)
+
 ![](https://gekdev.github.io/docs/jsp/basic/example/project1.JPG)
