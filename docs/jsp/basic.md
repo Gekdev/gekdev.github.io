@@ -21,11 +21,15 @@ has_children: true
 
 ### Web Programming Language, JSP
 
-웹 프로그래밍 언어는 클라이언트 측 실행 언어와 서버측 실행 언어로 구분되며, 자바를 기반으로 하는 JSP는 서버 측 웹 프로그래밍 언어 중 하나
+웹 프로그래밍 언어는 클라이언트 측 실행 언어와 서버 측 실행 언어로 구분
+
+자바를 기반으로 하는 JSP는 서버 측 웹 프로그래밍 언어 중 하나
+
+### Why Use JSP?
 
 원래 자바를 기반으로 하는 서버 측 프로그래밍 방식인 서블릿을 먼저 개발했으나, 서블릿 개발 방식이 쉽지 않아 HTML 코드에 직접 삽입할 수 있도록 개발된 기술이 JSP임
 
-실제로 웹 애플리케이션 서버에서 클라이언트에게 서비스 될 때는 JSP가 서블릿으로 변경됨
+&#8594; 실제로 웹 애플리케이션 서버에서 클라이언트에게 서비스 될 때는 JSP가 서블릿으로 변경됨
 
 ### Features of JSP
 
@@ -69,6 +73,8 @@ JSP 페이지는 하나의 서블릿 프로그램으로 변환되어 실행
 
 4. 웹 서버는 정적 웹 페이지처럼 *.class의 실행 결과를 웹 브라우저에 응답으로 전달하므로 웹 브라우저는 새로 가공된 HTML 페이지를 동적으로 처리한 결과를 보여줌
 
+![](https://gekdev.github.io/docs/jsp/basic/example/proc.png)
+
 웹 컨테이너(Web Container)
 {: .label .mt-2}
 <div class="code-example" markdown="1">
@@ -79,9 +85,11 @@ JSP 페이지는 하나의 서블릿 프로그램으로 변환되어 실행
 - 서블릿 컨테이너의 개념과 동일한 JSP 컨테이너가 탑재되어 있는 WAS(Web Application Server)는 JSP 페이지를 컴파일하여 동적 페이지를 생성
 </div>
 
-### JSP 생명 주기
+### JSP Life Cycle
 
 JSP 페이지를 컴파일한 *.class에는 jspInit( ), _jspService( ), jspDestroy( ) 메소드가 존재하며, JSP 생성부터 파괴까지의 과정에서 다음과 같은 역할을 수행함
+
+![](https://gekdev.github.io/docs/jsp/basic/example/life.png)
 
 1. 번역(translation) 단계
 
@@ -124,5 +132,9 @@ JSP 페이지를 컴파일한 *.class에는 jspInit( ), _jspService( ), jspDestr
     &#9656; 데이터베이스 연결 해제 또는 열려 이쓴 파일 닫기 등을 수행해야 할 때 jspDestroy( ) 메서드를 오버라이딩함
 
     &#9656; JSP 컨테이너가 해당 서블릿 인스턴스를 제거할 떄 어떤 활동을 정리하기 위해 jspDestroy( ) 메서드를 호출함
-    
-jspInit( )와 jspDestroy( ) 메서드는 컨테이너가 기본 기능을 제공하기 때문에 오버라이딩이 선택 사항이지만, 기본적으로 _jspService( ) 메서드는 컨테이너가 추가하기 때문에 오버라이딩할 수 없습니다.
+
+note!
+{: .label .label-yellow .mt-2}
+<div class="code-example" markdown="1">
+jspInit( )와 jspDestroy( ) 메서드는 컨테이너가 기본 기능을 제공하기 때문에 오버라이딩이 선택 사항이지만, 기본적으로 _jspService( ) 메서드는 컨테이너가 추가하기 때문에 오버라이딩할 수 없음
+</div>

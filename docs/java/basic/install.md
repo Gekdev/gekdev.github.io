@@ -23,7 +23,9 @@ nav_order: 1
 
 * **JDK(Java Develpment Kit) = JRE + 개발도구**
     
-    **JRE 이상으로 환경구성 뿐만 아니라 직접 개발까지 가능**
+    **자바 개발 키트**
+    
+    &#9656; JRE 이상으로 환경구성 뿐만 아니라 직접 개발까지 가능
 
 * **JRE(Java Runtime Environment) = JVM + 표준클래스 라이브러리**
 
@@ -32,6 +34,8 @@ nav_order: 1
     &#9656; 자바언어로 개발된 어떤 SW를 구동시키기 위해 최소한 설치되어야할 것들을 지원
 
     &#8594; 자바 프로그램을 실행만 할 경우 설치
+
+![](https://gekdev.github.io/docs/java/basic/example/img.png)
 
 **★ 자바 개발 도구인 JDK를 깔아야 Java라는 언어로 프로그래밍을 할 수 있기 때문에 JDK(Java Development Kit)을 설치해야 함**
 

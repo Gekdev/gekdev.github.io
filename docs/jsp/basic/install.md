@@ -17,7 +17,31 @@ nav_order: 1
 
 ---
 
-## Installation & Setting
+## Building a JSP Development Environment
+
+### JSP Development Environment Tools
+
+* 자바 개발환경 : JDK 
+
+    HTML 코드 내에 자바 코드를 작성하기 때문에 자바 개발 도구인 JDK가 반드시 설치되어 있어야 함
+
+* 웹서버 : 톰캣
+
+    웹 프로그래밍 언어로 작성된 웹 페이지가 실행되어 웹브라우저에 나타나도록 하기위해 컨테이너가 있어야 함
+    
+    JSP 웹 컨테이너로 자주 사용되는 것 중 하나인 톰켓은 오픈소스 프로젝트로 무료로 누구나 사용가능
+
+* 통합 개발 환경 : 이클립스
+
+### Install Java and Set Preferences
+
+* 자바 개발 키트 : JDK(Java Development Kit)
+
+* 자바 실행 환경 : JRE(Java Runtime Environment)
+
+![](https://gekdev.github.io/docs/jsp/basic/example/img.png)
+
+[자바설치는 여기로~](https://gekdev.github.io/docs/java/basic/install/)
 
 ### Apache Tomcat® Install
 
@@ -49,13 +73,11 @@ nav_order: 1
 
 3. **path 변수에 추가**
 
-    ![](https://gekdev.github.io/docs/jsp/basic/example/add.JPG)
-
     **%CATALINA_HOME%\bin**
 
-### CMD Startup
+    ![](https://gekdev.github.io/docs/jsp/basic/example/add.JPG)
 
-![](https://gekdev.github.io/docs/jsp/basic/example/cmd.JPG)
+### CMD Startup
 
 1. 톰켓 경로잡기
 
@@ -81,6 +103,8 @@ nav_order: 1
 
     서버가 알아서 죽음
 
+![](https://gekdev.github.io/docs/jsp/basic/example/cmd.JPG)
+
 ### Change Port
 
 0. **C:\tomcat-9.0.48\conf 경로로 가기**
@@ -95,7 +119,7 @@ nav_order: 1
 
     ![](https://gekdev.github.io/docs/jsp/basic/example/8088.JPG)
 
-    Note!
+    Port?
     {: .label .label-yellow .mt-2}
     <div class="code-example" markdown="1">
     오라클 데이터베이스는 1521, 8080 포트를 사용함
@@ -109,9 +133,13 @@ nav_order: 1
 
 2. **startup명령어 치기 (경로 상관 X)**
 
-    (서버를 실행한다는 의미!)
+    서버를 실행한다는 의미
 
 2. **크롬 실행 후 http://localhost:8088/**
+
+    이 화면이 나오면 성공!
+    
+    ![](https://gekdev.github.io/docs/jsp/basic/example/index.png)
 
 ### index.html
 
