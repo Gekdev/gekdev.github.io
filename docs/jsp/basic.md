@@ -17,7 +17,7 @@ has_children: true
 
 ---
 
-## Web Programming and JSP
+## JSP
 
 ### Web Programming Language, JSP
 
