@@ -1,12 +1,11 @@
 ---
 layout: default
 title: Script
-parent: Elements
-grand_parent : JSP
-nav_order: 2
+parent: JSP
+nav_order: 4
 ---
 
-# Elements Script
+# JSP Script
 {: .no_toc .text-beta .fw-700}
 
 ## Table of contents
@@ -18,7 +17,6 @@ nav_order: 2
 ---
 
 ## Script
-{: no_toc}
 
 ### What is Script?
 
@@ -52,7 +50,9 @@ nav_order: 2
 
 ![](https://gekdev.github.io/docs/jsp/elements/example/ecex.png)
 
-### Declaration Tag
+---
+
+## Declaration Tag
 
 **변수나 메소드를 선언할 때 사용**
 
@@ -76,7 +76,9 @@ syntax
 
 ![](https://gekdev.github.io/docs/jsp/elements/example/image.png)
 
-### Scriptlet Tag
+---
+
+## Scriptlet Tag
 
 **자바 코드로 이루어진 로직 부분을 표현**
 
@@ -100,7 +102,9 @@ syntax
 
 ![](https://gekdev.github.io/docs/jsp/elements/example/scriptvar.png)
 
-### Expression Tag
+---
+
+## Expression Tag
 
 **웹 브라우저에 출력할 부분을 표현**
 

@@ -1,12 +1,11 @@
 ---
 layout: default
 title: Directive
-parent: Elements
-grand_parent : JSP
-nav_order: 1
+parent: JSP
+nav_order: 3
 ---
 
-# Elements Directive
+# JSP Directive
 {: .no_toc .text-beta .fw-700}
 
 ## Table of contents
@@ -18,23 +17,25 @@ nav_order: 1
 ---
 
 ## Directive
-{: no_toc}
 
 ### What is Directive?
 
-**JSP 페이지를 어떻게 처리할 것인지 설정하는 태그**
+**JSP 페이지에 대한 설정 정보를 지정할 때 사용**
 
 &#9656; JSP 페이지가 서블릿 프로그램에서 서블릿 클래스로 변환할 때 JSP 페이지와 관련된 정보를 JSP 컨테이너에 지시하는 메시지
 
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-<%@ 디렉티브이름 속성1="값1" 속성2="값2" ... %>
+<%@ 디렉티브태그 속성1="값1" 속성2="값2" ... %>
 </div>
+```jsp
+<%@ page contentType = "text/html; charset=utf-8" %>
+```
 
 ### Directive Tags
 
-**JSP가 제공하는 디렉티브 태그**
+**JSP가 제공하는 디렉티브태그의 종류**
 
 | 디렉티브  | 형식  | 설명  |
 |:---------|:-----|:-----|
@@ -42,7 +43,11 @@ syntax
 | include | <%@ include... %> | JSP페이지 특정영역으로 다른 페이지를 포함 (ex. header, footer)
 | taglib | <%@ taglib... %> | JSP에서 사용될 tag라이브러리를 지정 |
 
-### Page Directive Tag
+---
+
+## Page Tag
+
+## Page Tag Basic
 
 **현재 JSP 페이지에 대한 정보를 설정하는 태그**
 
@@ -137,7 +142,9 @@ jsp파일에서 문자셋을 잘못 지정할 경우 응답결과 페이지의 �
 
 [속성정리](https://velog.io/@ansalstmd/JSP3.-%EB%94%94%EB%A0%89%ED%8B%B0%EB%B8%8C-%ED%83%9C%EA%B7%B8)
 
-### Include Directive Tag
+---
+
+## Include Tag
 
 **현재 JSP 페이지의 특정 영역에 외부 파일의 내용을 포함하는 태그**
 
@@ -162,7 +169,11 @@ syntax
 
 ![](https://gekdev.github.io/docs/jsp/elements/example/incex.png)
 
-### taglib Directive Tag
+---
+
+## taglib Tag
+
+## taglib Tag Basic
 
 **현재 JSP 페이지에 표현 언어, JSLT, 사용자 정의 태그(custom tag) 등 태그 라이브러리를 설정하는 태그**
 
