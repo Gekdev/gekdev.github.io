@@ -2,7 +2,7 @@
 layout: default
 title: Elements
 parent: JSP
-nav_order: 9
+nav_order: 10
 has_children: true
 ---
 
@@ -16,13 +16,3 @@ has_children: true
 {:toc}
 
 ---
-
-## 정적인 데이터
-
----
-
-## Custom Tag
-
----
-
-## 표준라이브러리(JSTL)
