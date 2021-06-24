@@ -429,32 +429,342 @@ syntax
 
 syntax
 {: .label .mt-2}
-<div class="code-example" markdown="1">
+```jsp
+<%
+    Cookie cookie = new Cookie("time", "1hour");
+    cookie.setMaxAge(초단위 시간); 
+    response.addCookie(cookie);
+%>
+```
 
-</div>
+#### Example
 
+**쿠키 유효시간(1시간) 설정하기**
 
+```jsp
+<%
+    Cookie cookie = new Cookie("time", "1hour");
+    cookie.setMaxAge(60*60);        // 60초 * 60분 = 1시간
+    response.addCookie(cookie);
+%>
+```
 
+![](https://gekdev.github.io/docs/jsp/example/1hour.jpg)
 
 ### Cookie and Header
 
+response.addCookie()로 쿠키를 추가하면 쿠키 유효시간 설정했을 때의 이미지 처럼 실제로 Set-Cookie 헤더를 통해 전달됨
+
+한개의 Set-Cookie 헤더는 한 개의 쿠키값을 전달함
+
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+쿠키이름=쿠키값; Domain=도메인값; Path=경로값; Expires=GMT형식의만료일시
+</div>
+
+![](https://gekdev.github.io/docs/jsp/example/cookies.jpg)
+
+Cookie and Buffer
+{: .label .label-yellow .mt-2}
+<div class="code-example" markdown="1">
+출력 버퍼에 저장되어 있는 내용을 플러시해서 웹 브라우저에 데이터가 전송되면 그 다음부터는 응답 헤더에 새로운 값을 추가할 수 없는것과 마찬가지로
+
+쿠키는 응답 헤더를 사용해서 웹 브라우저에 전달하기 때문에 쿠키 역시 출력 버퍼가 플러시 된 이후에는 새롭게 추가할 수 없음
+
+**따라서 쿠키는 출력 버퍼를 플러시하기 전에 출력해야 함**
+</div>
+
 ---
 
-## 쿠키 처리를 위한 유틸리티 클래스
+## Utility Class for Cookie Processing
 
-### 쿠키 클래스를 이용한 쿠키 생성
+**쿠키 처리를 위한 유틸리티 클래스**
 
-### 쿠키 클래스를 이용한 쿠키 읽기
+### Why Use Utility Class for Cookie?
+
+특정 쿠키의 값을 읽을려면 [위에서 설명한것]()과 같이 쿠키 이름값에 따라 if, else if문을 작성해야 함
+
+이런 구조는 사용할 쿠키가 많아질수록 if-else코드가 복잡해져서 문제가 생김
+
+따라서 보조 유틸리티 클래스(직접 생성한 쿠키 클래스)를 사용해서 작성하면 더욱 편리하게 작성할 수 있음
+
+### Cookies.java
+
+**쿠키를 만들고, 확인하고, 가져오는 쿠키 클래스 생성하기**
+
+```java
+package com.lec.cookie;
+
+import java.net.URLDecoder;
+import java.net.URLEncoder;
+import java.util.HashMap;
+import java.util.Map;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+
+public class Cookies {
+
+	// 1. 쿠키를 <쿠키이름, Cookie객체> 쌍 형태로 저장하는 맵을 생성
+	private Map<String, Cookie> cookieMap = new HashMap<>();
+	
+	// 2. Cookies 생성자
+	public Cookies(HttpServletRequest req) {
+		Cookie[] cookies = req.getCookies();	//파라미터로 전달받은 req로 쿠키를 읽어 
+		if(cookies!=null) {
+			for(int i=0;i<cookies.length;i++) {
+				cookieMap.put(cookies[i].getName(), cookies[i]);	//각 쿠키객체를 cookieMap에 저장함 
+			}
+		}
+	}
+	
+	// 3. Cookies 게터 메서드 (쿠키 가져오기)
+	// 3-1) cookieMap에서 지정한 이름의 Cookie객체를 구함
+	public Cookie getCookie(String name) {
+		return cookieMap.get(name);	//이름이 존재하지 않으면 null
+	}
+	
+	// 3-2) 도메인을 설정하지 않은 only 쿠키를 추가
+	public String getValue(String name) throws Exception{
+		Cookie cookie = cookieMap.get(name);
+		if(cookie==null) return null;
+		return URLDecoder.decode(cookie.getValue(),"utf-8");
+	}
+	
+	// 4. Cookies 메서드 (쿠키 확인하기)
+	// 4-1) 지정한 이름의 쿠키가 존재하는 경우 true, 아니면 false리턴
+	public boolean exists(String name) {
+		return cookieMap.get(name) != null;
+	}
+	
+	// 5. Cookies 메서드 (쿠키 만들기)
+	// 5-1) 이름이 name이고 값이 value인 Cookie객체를 생성해서 리턴
+	public static Cookie createCookie(String name, String value) throws Exception{
+		return new Cookie(name, URLEncoder.encode(value, "utf-8"));
+	}
+
+	// 5-2) 이름이 name이고 값이 value, 경로가 path, 유효시간이 maxAge인 Cookie객체를 생성해서 리턴
+	public static Cookie createCookie(String name, String value, String path, int maxAge) throws Exception{
+		Cookie cookie = new Cookie(name, URLEncoder.encode(value, "utf-8"));
+		cookie.setPath(path);
+		cookie.setMaxAge(maxAge);
+		return cookie;
+	}
+	
+	// 5-3) 이름이 name이고 값이 value, 경로가 path, 도메인이 domain, 유효시간이 maxAge인 Cookie객체를 생성해서 리턴
+	public static Cookie createCookie(String name, String value, String path, String domain, int maxAge) throws Exception {
+		Cookie cookie = new Cookie(name, URLEncoder.encode(value, "utf-8"));
+		cookie.setPath(path);
+		cookie.setDomain(domain);
+		cookie.setMaxAge(maxAge);
+		return cookie;
+	}	
+}
+```
+
+### Generate Cookies using Cookie Class
+
+**쿠키 클래스를 이용한 쿠키 생성**
+
+```jsp
+<%@ page import="com.lec.cookie.Cookies"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+</head>
+<body>
+
+	<h3>java클래스로 Cookie생성하기</h3>
+
+	<%
+	response.addCookie(Cookies.createCookie("cookieName1", "쿠키값1"));
+	response.addCookie(Cookies.createCookie("cookieName2", "쿠키값2", "/", -1));
+	response.addCookie(Cookies.createCookie("cookieName3", "쿠키값3", "/", "xxx.com", -1));
+	%>
+
+	<p>java클래스 Cookies로 쿠키를 생성했습니다</p>
+	
+</body>
+</html>
+```
+
+### Read Cookies using Cookie Class
+
+**쿠키 클래스를 이용한 쿠키 읽기**
+
+```jsp
+<%@ page import="com.lec.cookie.Cookies"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+</head>
+<body>
+
+	<h3>java클래스로 Cookie읽기</h3>
+	
+	<%
+		Cookies cookies = new Cookies(request); //request 기본객체로부터 쿠키 정보를 얻어옴
+	%>
+	
+	<p>cookieName1 쿠키값 : <%= cookies.getValue("cookieName1") %></p>
+	<% if (cookies.exists("cookieName2")){ %>    <!--쿠키가 존재하는지 확인-->
+	<p>cookieName2 쿠키값 : <%= cookies.getValue("cookieName2") %></p>
+	<%} %>
+	<% if (cookies.exists("cookieName3")){ %>   <!--값만 사용할 경우 getValue 메서드 사용 (쿠키를 가져올수도 있음)-->
+	<p>cookieName3 쿠키값 : <%= cookies.getValue("cookieName3") %></p>
+	<%} %>
+	
+</body>
+</html>
+```
 
 ---
 
-## 쿠키를 사용한 로그인 상태 유지
+## Login with Cookie
 
-### 로그인 처리
+**웹 사이트의 기본 기능중 하나, 로그인 상태를 확인할 때 가장 많이 사용하는 방법**
 
-### 로그인 여부 판단
+쿠키를 이용하면 다음과 같은 방법으로 로그인 상태를 유지할 수 있음
 
-### 로그아웃 처리
+1. 로그인에 성공하면 특정 이름을 갖는 쿠키를 생성
 
+2. 해당 쿠키가 존재하면 로그인한 상태라고 판단
 
+3. 로그아웃하면 해당 쿠키를 삭제
 
+### Login Form
+
+로그인폼 : 아이디와 비밀번호를 입력할 페이지
+{: .label .label-purple .mt-2}
+```jsp
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+</head>
+<body>
+	<form action="<%= request.getContextPath() %>/jsp08_cookies/jsp08_09_login.jsp" method="post">
+		<p>아이디 : <input type="text" name="id" size="10" /></p>
+		<p>비밀번호 : <input type="password" name="pw" size="10" /></p>
+		<p><input type="submit" value="로그인"/></p>
+	</form>
+</body>
+</html>
+```
+
+### Login Processing
+
+**아이디와 암호가 같으면(id=pw) 로그인에 성공한다고 가정**
+
+추가 ) 로그인했을 때 로그아웃 버튼을 처리할 수 있게 만들었음
+
+로그인 : 아이디와 비밀번호를 처리 페이지
+{: .label .label-purple .mt-2}
+```jsp
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="com.lec.cookie.Cookies"%>
+<%
+	String id = request.getParameter("id");
+	String password = request.getParameter("pw");
+
+	if(id.equals(password)){
+		//id와 password가 같으면 로그인에 성공
+		response.addCookie(
+			Cookies.createCookie("AUTH", id, "/", -1)
+		);
+%>
+		<!DOCTYPE html>
+		<html>
+		<head>
+		   <meta charset="UTF-8"> 
+		</head>
+		<body>
+		<form action="<%= request.getContextPath() %>/jsp08_cookies/jsp08_09_logout.jsp">
+			<p>로그인에 성공했습니다</p>
+			<input type="submit" value="로그아웃"/>
+		</form>
+		</body>
+		</html>
+<% } else { %>
+	<script>
+		alert("로그인에 실패했습니다");
+		history.go(-1);
+	</script>
+<% } %>
+```
+
+### Determining Whether to Login or not
+
+**AUTH 쿠키가 존재하면 로그인했다고 판단**
+
+로그인 여부 검사
+{: .label .label-purple .mt-2}
+```jsp
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="com.lec.cookie.Cookies"%>
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+</head>
+<body>
+	<h2>로그인 여부 검사</h2>
+	
+	<%
+	Cookies cookies = new Cookies(request); //request 기본객체로부터 쿠키 정보를 얻어옴
+	if(cookies.exists("AUTH")){
+	%>
+		<p>아이디 "<%= cookies.getValue("AUTH")%>"로 로그인한 상태 </p>
+	<%
+	} else {
+	%>
+		<p>로그인하지 않은 상태</p>
+	<%
+	}
+	%>
+</body>
+</html>
+```
+
+Note
+{: .label .label-yellow .mt-2}
+<div class="code-example" markdown="1">
+아이디를 평문 형태로 쿠키 값으로 사용하면 보안에 큰 문제가 생김
+
+웹 브라우저는 개발도구를 사용하면 쿠키 값을 쉽게 변경할 수 있기 때문에 개발도구를 사용하면 다른 아이디로 서버에 접근할 수 있음
+
+이런 이유로 쿠키에 아이디를 저장할 때에는 평문으로 저장하지 않고 다양한 암호화 방식을 혼합해서 저장
+</div>
+
+### Logout Processing
+
+**로그아웃을 하려면 쿠키를 삭제하면 됨**
+
+&#8594; AUTH 쿠키의 유효시간을 0으로 지정하면 됨 
+
+로그아웃
+{: .label .label-purple .mt-2}
+```jsp
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="com.lec.cookie.Cookies"%>
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+</head>
+<body>
+
+<%
+	response.addCookie(Cookies.createCookie("AUTH", "", "/", 0));
+%>
+
+<p>로그아웃 했습니다</p>
+
+</body>
+</html>
+```
