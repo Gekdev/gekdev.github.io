@@ -134,8 +134,10 @@ syntax
 %>
 ```
 
-예제 
-{: .label .label-purple .mt-2}
+### Example
+
+**쿠키 이름과 값 읽어오기**
+
 ```jsp
 <%
     Cookie[] cookies = request.getCookies();            //쿠키의 값 읽어오기
@@ -162,6 +164,8 @@ syntax
 
 예를들어 이름이 name인 쿠키 값을 면경하려면 새로운 name쿠키를 생성해서 응답데이터에 추가함
 
+쿠키 값을 변경한다는 것은 기존에 존재하는 쿠키를 변경한다는 것 따라서 쿠키가 있는지 유무부터 판단해야 함
+
 syntax
 {: .label .mt-2}
 ```jsp
@@ -171,10 +175,10 @@ syntax
 %>
 ```
 
-쿠키 값을 변경한다는 것은 기존에 존재하는 쿠키를 변경한다는 것 따라서 쿠키가 있는지 유무부터 판단해야 함
+### Example
 
-예제 
-{: .label .label-purple .mt-2}
+**쿠키 이름이 name인 쿠키 변경하기**
+
 ```jsp
 <%
     Cookie[] cookies = request.getCookies();              //쿠키 전체를 가져오기
@@ -196,6 +200,8 @@ syntax
 
 정확하게 말하면 지속시간을 0초로 바꿔버려서 없어지게 하는것
 
+반대로 지속시간을 지정하면 쿠키를 오래동안 [유효]()하게 할 수 있음 
+
 syntax
 {: .label .mt-2}
 ```jsp
@@ -205,8 +211,10 @@ syntax
 %>
 ```
 
-예제 
-{: .label .label-purple .mt-2}
+### Example
+
+**쿠키 이름이 name인 쿠키 삭제하기**
+
 ```jsp
 <%
     Cookie[] cookies = request.getCookies();           
@@ -221,6 +229,33 @@ syntax
          }
     }
 >%
+```
+
+#### Delete All Cookies
+
+**전체 쿠키를 삭제하고 싶을 때 사용함**
+
+현재 페이지 경로의 쿠키만 삭제함, 만약 더 깊은 경로로 관련 도메인에 모두 쿠키를 전송했다면 깊은 경로에 있는 쿠키는 삭제되지 않음
+
+예를들어 A파일에서 쿠키를 삭제하는 프로그램을 작성하더라도 쿠키인스턴스.setPath("");를 어떻게, 얼마나 깊게 작성했느냐에 따라 달라짐
+
+(경로를 설정하지 않았으면 삭제됨, /이라고 주면 삭제되지 않음)
+
+```jsp
+<h3>쿠키값 전체 삭제하기</h3>
+
+<% 
+	Cookie[] cookies = request.getCookies();
+	if(cookies != null && cookies.length>0 ){
+		for(int i=0;i<cookies.length;i++){
+			Cookie cookie = new Cookie(cookies[i].getName(), "");
+			cookie.setMaxAge(0);
+			response.addCookie(cookie);
+		}
+	}
+%>
+
+name 쿠키값을 삭제했습니다
 ```
 
 ### Cookie Domain
@@ -335,40 +370,71 @@ syntax
 ...
 
 <h3>쿠키경로 지정하기</h3>
-	
-	<%
-		Cookie cookie1 = new Cookie("path1", URLEncoder.encode("경로:/jsp08_cookies/path1", "utf-8"));
-		cookie1.setPath("/jsp08_cookies/path1");
-		response.addCookie(cookie1);
-	
-		Cookie cookie2 = new Cookie("path2", URLEncoder.encode("경로:", "utf-8"));
-		response.addCookie(cookie2);
 
-		Cookie cookie3 = new Cookie("path3", URLEncoder.encode("경로:/", "utf-8"));
-		cookie3.setPath("/");
-		response.addCookie(cookie3);
-		
-		Cookie cookie4 = new Cookie("path4", URLEncoder.encode("경로:/jsp08_cookies/path2", "utf-8"));
-		cookie4.setPath("/jsp08_cookies/path2");
-		response.addCookie(cookie4);
-	%>
-	
-	<p>쿠키이름 = 쿠키 값 [쿠키 경로]</p>
-	<%= cookie1.getName() %> = <%=cookie1.getValue() %> [<%= cookie1.getPath() %>] <br>
-	<%= cookie2.getName() %> = <%=cookie2.getValue() %> [<%= cookie2.getPath() %>] <br>
-	<%= cookie3.getName() %> = <%=cookie3.getValue() %> [<%= cookie3.getPath() %>] <br>
-	<%= cookie4.getName() %> = <%=cookie4.getValue() %> [<%= cookie4.getPath() %>] <br>
+<%
+    Cookie cookie1 = new Cookie("path1", URLEncoder.encode("경로:/basic/jsp08_cookies/path1", "utf-8"));
+    cookie1.setPath("basic/jsp08_cookies/path1");
+    response.addCookie(cookie1);
+
+    Cookie cookie2 = new Cookie("path2", URLEncoder.encode("경로:", "utf-8"));
+    response.addCookie(cookie2);
+
+    Cookie cookie3 = new Cookie("path3", URLEncoder.encode("경로:/", "utf-8"));
+    cookie3.setPath("/");
+    response.addCookie(cookie3);
+
+    Cookie cookie4 = new Cookie("path4", URLEncoder.encode("경로:/basic/jsp08_cookies/path2", "utf-8"));
+    cookie4.setPath("basic/jsp08_cookies/path2");
+    response.addCookie(cookie4);
+%>
+
+<p>쿠키이름 = 쿠키 값 [쿠키 경로]</p>
+<%= cookie1.getName() %> = <%=cookie1.getValue() %> [<%= cookie1.getPath() %>] <br>
+<%= cookie2.getName() %> = <%=cookie2.getValue() %> [<%= cookie2.getPath() %>] <br>
+<%= cookie3.getName() %> = <%=cookie3.getValue() %> [<%= cookie3.getPath() %>] <br>
+<%= cookie4.getName() %> = <%=cookie4.getValue() %> [<%= cookie4.getPath() %>] <br>
 ```
 
 ![](https://gekdev.github.io/docs/jsp/example/cookie3.jpg)
 
-1. jsp08_cookies에서 쿠키보기
+1. 같은 레벨의 경로에서(jsp08_cookies) 쿠키보기
 
-    경로가 지정이 안되어있거나(같은 레벨의 경로), /인 쿠키만 출력됨
+    &#9656; 경로가 지정이 안되어있거나(같은 레벨의 경로), /인 쿠키만 출력됨
     
     ![](https://gekdev.github.io/docs/jsp/example/cookiespath1.jpg)
 
+2. 아래 레벨의 경로1(path1)에서 쿠키보기
+
+    &#9656; 경로 지정 X, 경로 /, 경로 path1 출력 (path2출력 X)
+
+    ![](https://gekdev.github.io/docs/jsp/example/path1.jpg)
+
+3. 아래 레벨의 경로2(path2)에서 쿠키보기
+
+    &#9656; 경로 지정 X, 경로 /, 경로 path2 출력 (path1출력 X)
+
+    ![](https://gekdev.github.io/docs/jsp/example/path2.jpg)
+
 ### Effective Time for Cookies
+
+**쿠키는 유효시간이 있음** 
+
+&#9656; 쿠키의 유효시간을 지정하지 않으면 웹 브라우저를 종료할 때 쿠키를 함께 삭제
+
+&#9656; 웹 브라우저 종료 후 다시 웹 브라우저를 실행하면 삭제한 쿠키는 서버에 전송되지 않음
+
+&#9656; 쿠키의 유효시간을 정해놓으면 그 유효시간 동안 쿠키가 존재하며, 웹 브라우저를 종료해도 유효시간이 지나지 않으면 쿠키를 삭제하지 않음
+
+&#9656; 유효 시간을 지정하려면 setMaxAge()메서드를 사용(초 단위로 유효시간을 지정)
+
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+
+</div>
+
+
+
 
 ### Cookie and Header
 
