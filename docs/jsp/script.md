@@ -22,9 +22,11 @@ nav_order: 4
 
 **문서의 내용을 동적으로 생성하기 위해 사용되는 것**
 
+&#9656; JSP 프로그래밍에서 로직을 수행하는데 필요
+
 &#9656; 스크립트 요소를 사용하면 사용자가 JSP페이지에 입력한 정보들을 DB에 저장할 수도 있고 DB에서 데이터를 읽어서 출력할 수도 있음
 
-&#9656; 스크립트를 사용하면 자바가 제공하는 다양한 기능들을 사용할 수 있음
+&#9656; 스크립트 코드를 사용해서 자바가 제공하는 다양한 기능들을 사용해 프로그램이 수행해야 하는 기능을 구현할 수 있음
 
 &#9656; JSP를 스크립트 언어라고 불리는데 그 이유가 이러한 스크립트 코드를 제공하기 때문 
 
@@ -40,7 +42,7 @@ nav_order: 4
 | 스크립트릿(Scriptlet) | <% ... %> |  자바로직 코드를 작성하는데 사용 | 
 | 표현식(Expression) | <%= ... %> | 결과를 문자열 형태로 출력하는데 사용 | 
 
-![](https://gekdev.github.io/docs/jsp/elements/example/scriptex.png)
+![](https://gekdev.github.io/docs/jsp/example/scriptex.png)
 
 ### Eclipse Server
 
@@ -48,7 +50,7 @@ nav_order: 4
 
 경로 : E:\lec\05.jsp\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\work\Catalina\localhost\basic\org\apache\jsp
 
-![](https://gekdev.github.io/docs/jsp/elements/example/ecex.png)
+![](https://gekdev.github.io/docs/jsp/example/ecex.png)
 
 ---
 
@@ -66,15 +68,13 @@ syntax
 
 * 변수 : 전역변수로 사용
 
-    ![](https://gekdev.github.io/docs/jsp/elements/example/loc.png)
+    ![](https://gekdev.github.io/docs/jsp/example/loc.png)
 
 * 메소드 : 전역메소드로 사용
 
-    ![](https://gekdev.github.io/docs/jsp/elements/example/loc_m.png)
+    ![](https://gekdev.github.io/docs/jsp/example/loc_m.png)
 
 &#9656; 각 행이 세미콜론으로 끝나야 함
-
-![](https://gekdev.github.io/docs/jsp/elements/example/image.png)
 
 ---
 
@@ -89,18 +89,16 @@ syntax
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-<% ... %>
+<% 자바코드 %>
 </div>
 
 선언문 태그와 스크립틀릿 태그의 차이점
-{: .label .mt-2}
+{: .label .label-red .mt-2}
 
 | 선언문태그  | 스크립틀릿 태그 |
 |:----------|:--------------|
 | 변수뿐만 아니라 메소드를 선언할 수 있음 | 스크립틀릿 태그는 메소드 없이 변수만을 선언할 수 있음 |
 | 서블릿 프로그램으로 변환할 때 _jspService() 메소드 외부에 배치됨 | 서블릿 프로그램으로 변환될 때 _jspService() 메소드 내부에 배치됨 |
-
-![](https://gekdev.github.io/docs/jsp/elements/example/scriptvar.png)
 
 ---
 
@@ -115,9 +113,7 @@ syntax
 syntax
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-<%= ... %>
+<%= 값 %>
 
 &#9656; %와 =사이에 공백이 없어야 함
 </div>
-
-![](https://gekdev.github.io/docs/jsp/elements/example/exptag.png)

@@ -23,6 +23,8 @@ nav_order: 2
 
 **웹 서버가 웹브라우저에 전송하는 응답정보를 가지고 있음**
 
+&#9656; 제공하는 기능 1. 헤더정보 입력 2. 리다이렉트 등이 있음
+
 &#9656; 사용자의 요청을 처리한 결과를 서버에서 웹 브라우저로 전달하는 정보를 저장하고 서버는 응답 헤더와 요청 처리 결과 데이터를 웹 브라우저로 보냄
 
 &#9656; JSP 컨테이너는 서버에서 웹 브라우저로 응답하는 정보를 처리하기 위해 javax.servlet.http.HttpServelteResponse 객체 타입의 response 내장 객체를 사용하여 사용자의 요청에 응답
@@ -33,17 +35,18 @@ nav_order: 2
 
 **응답 HTTP 헤더 관련 메소드**
 
-1. addDateHeader(String name, long date) : name헤더에 date값을 추가
+&#9656; add는 기존의 헤더에 새로운 값을 추가할 때 사용
 
-2. addHeader(String name, String value) : name 헤더에 value값을 추가
+&#9656; set은 헤더의 값을 새로 지정할 때 사용
 
-3. addIntHeader(String name, int value) : name 헤더에 int값을 추가
-
-4. setHeader(String name, String value) : name 헤더에 value값을 지정
-
-5. setIntHeader(String name, int value) : name 헤더에 정수값을 지정
-
-6. setDateHeader(String name, long date) : name 헤더에 date값을 지정
+| 메서드 | 설명 |
+|:--------------------------------------|:-------------------------|
+| addDateHeader(String name, long date) | name헤더에 date값을 추가|
+| addHeader(String name, String value) | name 헤더에 value값을 추가|
+| addIntHeader(String name, int value) | name 헤더에 int값을 추가|
+| setHeader(String name, String value) | name 헤더에 value값을 지정|
+| setIntHeader(String name, int value) | name 헤더에 정수값을 지정|
+| setDateHeader(String name, long date) | name 헤더에 date값을 지정|
 
 ### Cache Control Response Header on Web Browser
 
@@ -64,18 +67,35 @@ jsp를 비롯한 웹어플리케이션을 개발할 경우 새로운 내용을 D
 <div class="code-example" markdown="1">
 웹 브라우저가 WAS에 jsp실행을 요청하고 잠시 뒤에 동일한 jsp실행을 요청한 경우 첫 번째 요청과 두 번째 요청사이에 결과 차이가 없을 경우에 불필요한 응답결과를 반복해서 요청한 셈이 됨
 
-캐시는 이렇게 동일한 데이터를 중복해서 로딩하지 않도록 할 경우에 사용됨
+**캐시는 이렇게 동일한 데이터를 중복해서 로딩하지 않도록 할 경우에 사용됨**
 </div>
 
 ### Add Header Method
 
-헤더 추가 메서드
+**응답 헤더와 관련된 헤더**
 
-1. Cache-Control : 이 헤더값을 "no-cache"로 지정하면 웹브라우저는 응답결과를 캐시에 사용하지 않음
+&#9656; 특수한 응답 헤더를 통해서 웹 브라우저가 응답 결과를 캐시할 것인지에 대한 여부를 설정할 수 있음 
 
-2. Pragma : 이 헤더값을 "no-cache"로 지정하면 웹브라우저는 응답결과를 캐시에 사용하지 않음
+&#9656; 브라우저마다 설정이 다르기 때문에 Cache-Control 응답 헤더와 Pragma응답 헤더를 모두 설정해주는 게 좋음
 
-3. Expires : 응답결과의 만료시간을 지정한다
+| 응답헤더 | 설명 |
+|:--------------------------------------|:-------------------------|
+| Cache-Control | 이 헤더값을 "no-cache"로 지정하면 웹브라우저는 응답결과를 캐시에 사용하지 않음|
+| Pragma | 이 헤더값을 "no-cache"로 지정하면 웹브라우저는 응답결과를 캐시에 사용하지 않음|
+| Expires | 응답결과의 만료시간을 지정한다|
+
+예시
+{: .label .label-purple .mt-2}
+```jsp
+<%
+response.setHeader("Cache-Control", "no-cache");
+response.addHeader("Cache-Control", "no-store");
+response.setHeader("Pragma", "no-cache");
+response.setHeader("Expires", "1L");
+%>
+
+&#9656; 1L의 만료일은 1970.1.1일0시0분0.001초
+```
 
 ### Moving Pages Method
 
@@ -88,10 +108,9 @@ jsp를 비롯한 웹어플리케이션을 개발할 경우 새로운 내용을 D
 &#9656; response 객체에서 가장 많이 사용되는 기능 중 하나임
 
 syntax
-{: .label .label-purple .mt-2}
 {: .label .mt-2}
 <div class="code-example" markdown="1">
-<% response.sendRedirect("String url"); %>
+<% response.sendRedirect("String location"); %>
 </div>
 ```jsp
 <%
@@ -102,7 +121,7 @@ if(id!=null && id.equals("sohyang")){
 %>
 ```
 
-![](https://gekdev.github.io/docs/jsp/elements/example/redi.png)
+![](https://gekdev.github.io/docs/jsp/implicit/example/redi.png)
 
 forward와의 차이
 {: .label .label-red .mt-2}
@@ -111,3 +130,20 @@ forward와의 차이
 
 redirect를 하게되면 내가 갖고 있지 않더라도 요청자에게 정보를 공개적으로 제공(내가 갖고 있지 않더라도 페이지 이동 가능)
 </div>
+
+#### URLEncoder.encode() 
+
+**웹 서버에 전송할 파라미터 값을 알맞게 인코딩 해야하는데 그 파라미터를 자동으로 인코딩 시켜주는 메소드**
+
+파라미터값으로 사용될 문자열을 지정한 캐릭터 셋으로 인코딩 할 수 있음
+
+syntax
+{: .label .mt-2}
+```jsp
+<%@ page import = "java.net.URLEncoder" %>
+<%
+String value = "자바"
+String encodedValue = URLEncoder.encode(value, "utf-8");
+response.sendRedirect("String location?name=" + encodedValue)
+%>
+```

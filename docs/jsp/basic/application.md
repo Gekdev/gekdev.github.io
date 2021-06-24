@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Elements
-parent: JSP
-nav_order: 11
-has_children: true
+title: Web Application
+parent: Basic
+grand_parent : JSP
+nav_order: 4
 ---
 
-# Basic Elements
+# Basic Web Application
 {: .no_toc .text-beta .fw-700}
 
 ## Table of contents

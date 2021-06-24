@@ -19,9 +19,9 @@ nav_order: 5
 
 ## PageContext Implicit Object
 
-jsp페이지 하나당 하나씩 연결된 기본객체로서 다음의 기능을 제공
+PageContext 페이지는 JSP페이지와 일대일로 연결된 객체
 
-1. 기본객체 구하기
+1. 기본객체 구하기 : 직접 사용하는 경우는 드물지만 커스텀 태그를 구현할 때 사용됨
 
 2. 속성처리하기
 
@@ -31,16 +31,16 @@ jsp페이지 하나당 하나씩 연결된 기본객체로서 다음의 기능�
 
 ### 기본객체 접근 메소드
 
-| 메서드 				| 리턴타입 			| 설명 							|
-|:----------------------|:------------------|:------------------------------|
-| getRequest() 			| ServletRequest 	| request 기본 객체를 구함 		|
+| 메서드 				| 리턴타입 			| 설명 						  |
+|:----------------------|:------------------|:-----------------------------|
+| getRequest() 			| ServletRequest 	| request 기본 객체를 구함 	|
 | getResponse() 		| ServletResponse 	| response 기본 객체를 구함 	|
 | getSession() 			| HttpSession 		| session 기본 객체를 구함		|
 | getServletContext() 	| ServletContext 	| application 기본 객체를 구함	|
 | getServletConfig() 	| ServletConfig 	| config 기본 객체를 구함		|
 | getOut() 				| JspWriter 		| out 기본 객체를 구함			|
 | getException() 		| Exception 		| exception 기본 객체를 구함	|
-| getPage()  			| Object 			| page 기본 객체를 구함			|
+| getPage()  			| Object 			| page 기본 객체를 구함		|
 
 ```jsp
 <% HttpServletRequest req = (HttpServletRequest) pageContext.getRequest(); %>

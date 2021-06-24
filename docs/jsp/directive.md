@@ -75,16 +75,17 @@ syntax
 |:-----|:-----|:-------|
 | contentType | JSP가 생성할 문서의 MINE타입과 캐릭터 인코딩을 지정 | text/html |
 | import | JSP 페이지에서 사용할 자바 클래스를 지정 | |
+| trimDirectiveWhitespaces | 출력 결과에서 템플릿 텍스트의 공백 문자를 제거할지의 여부 지정 | false |
+| pageEncoding | JSP 페이지 소스 코드의 캐릭터 인코딩을 지정 | |
 | session | JSP페이지가 세션을 사용할지의 여부를 지정. ture : 세션사용 | true |
 | buffer | JSP페이지의 출력 버퍼크기를 지정. none : 출력버퍼 사용X / 8kb : 8키로바이트 크기의 출력 버퍼 사용 | 최소 8kb | 
 | autoFlush | 출력 버퍼가 다 찼을 경우 자동으로 버퍼에 있는 데이터를 출력 스트림에 보내고 비울지 여부 확인. true : 버퍼의 내용을 웹 브라우저에 보낸 후 비우기 / false : 에러 | true |
 | info | JSP 페이지에 대한 설명 | |
 | errorPage | JSP 페이지를 실행하는 도중에 에러가 발생할 때 보여줄 페이지를 지정 | | 
 | isErrorPage | 현재 페이지가 에러가 발생될때 보여주는 페이지인지의 여부를 지정. true : 에러페이지 | false |
-| pageEncoding | JSP 페이지 소스 코드의 캐릭터 인코딩을 지정 | |
 | isELIgbored | true : 표현언어를 해석하지 않고 문자열로 처리 / false : 표현 언어를 지원 | false |
 | defferedSyntaxAllowedAsLiteral | #{ 문자가 문자열 값으로 사용되는 것을 허용할지의 여부 지정 | false |
-| trimDirectiveWhitespaces | 출력 결과에서 템플릿 텍스트의 공백 문자를 제거할지의 여부 지정 | false |
+| language | 현재 JSP페이지가 사용할 프로그래밍 언어를 설정 | java |
 
 ### contentType Property
 
@@ -93,6 +94,8 @@ syntax
 &#9656; contentType은 JSP가 생성할 문서의 MIME 타입을 입력
 
 &#9656; 주로 사용하는 MINE타입은 "text/html"(기본값), 필요에 따라 "text/xml", "application/json"도 사용함 
+
+&#9656; HTML을 출력하는 JSP 페이지는 contentType을 사용할 필요가 없음
 
 syntax
 {: .label .mt-2}
@@ -120,9 +123,9 @@ Multipurpose Internet Mail Extensions의 약자
 
 ### import Property
 
-자바에서 자바클래스의 full name 대신 단순이름을 사용할 수 있도록 하기 위해 import구문을 사용하는 것처럼
+자바에서 클래스의 풀네임 대신 단순이름을 사용하기 위해 import구문을 사용하는 것처럼
 
-**jsp는 페이지 디렉티브에 import속성을 사용해서 jsp코드에서 클래스이름을 단순하게 사용할 수 있도록 함**
+**jsp는 페이지 디렉티브에 import속성을 사용해서 jsp코드에서 클래스이름을 단순하게 사용하게 함**
 
 &#9656; import속성에는 여러개의 값을 동시에 지정할 수 있음
 
@@ -131,9 +134,9 @@ syntax
 <div class="code-example" markdown="1">
 < %@ page import = "java.util.Date" %>
 
-< %@ page import = "java.util.Date, java.util.Calendar" %> : 여러개 지정
+< %@ page import = "java.util.Date, java.util.Calendar" %> // 여러개 지정
 
-< %@ page import = "java.util.*" %> : 해당 패키지의 모든타입 
+< %@ page import = "java.util.*" %> // 해당 패키지의 모든타입 
 </div>
 ```jsp
 < %@ page import = "java.util.Calendar" %>
@@ -149,7 +152,7 @@ syntax
 현재시간은 <%= now %>
 ```
 
-#### trimDirectiveWhitespaces Property
+### trimDirectiveWhitespaces Property
 
 페이지 디렉티브가 있던 위치 때문에 웹브라우저에서 html 소스를 보면 공백이 있음
 
@@ -161,17 +164,29 @@ syntax
 <%@ page trimDirectiveWhitespaces="true" %>
 </div>
 
-#### pageEncoding Property
+### pageEncoding Property
 
-**JSP 페이지의 인코딩과 pageEncoding 속성**
+**현재 JSP 페이지의 문자 인코딩 유효성을 설정하는 데 사용**
 
-jsp파일에서 문자셋을 잘못 지정할 경우 응답결과 페이지의 문자들이 깨져서 출력이 됨 
+&#9656; 문자 인코딩 유형은 기본 값은 ISO-8859-1
 
-톰캣과 같은 컨테이너는 jsp를 분석하는 과정에서 어떤 인코딩을 이용해서 코드를 작성했는지를 검사 
+&#9656; jsp파일에서 문자셋을 잘못 지정할 경우 응답결과 페이지의 문자들이 깨져서 출력이 됨 
 
-그 결과를 선택한 캐릭터셋을 이용해서 jsp페이지의 문자를 읽어오게 된다 
+&#9656; 톰캣과 같은 컨테이너는 jsp를 분석하는 과정에서 어떤 인코딩을 이용해서 코드를 작성했는지를 검사 
 
-웹컨테이너가 jsp페이지를 읽을 때 사용할 문자셋을 결정하는 과정은 아래와 같음
+&#8594; 그 결과를 선택한 캐릭터셋을 이용해서 jsp페이지의 문자를 읽어오게 된다 
+
+&#9656; pageEncoding 속성과 contentType속성을 사용해서 캐릭터 인코딩을 결정
+
+&#9656; 웹컨테이너가 jsp페이지를 읽을 때 사용할 문자셋을 결정하는 과정은 아래와 같음 (JSP 규약에 명시된 과정)
+
+BOM?
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+Byte Order Mark의 약자
+
+유니코드 인코딩에서 바이트의 순서가 리틀 엔디언인지 빅엔디언인지의 여부를 알려주는 16비트(2바이트)값
+</div>
 
 1. 파일이 BOM으로 시작하지 않을경우
 
@@ -191,21 +206,109 @@ jsp파일에서 문자셋을 잘못 지정할 경우 응답결과 페이지의 �
 
 1 or 2번 과정을 통해서 결정된 문자셋으로 jsp소스코드를 읽음
 
-#### Page Directive Tag Properties
+pageEncoding속성을 지정하지 않은 상태에서 contentType 속서의 charset의 값을 잘못 지정하면 잘못된 인코딩으로 문자가 깨져서 출력되는 원인이 됨 
 
-![](https://gekdev.github.io/docs/jsp/elements/example/pdtprop.png)
+### session Property
 
-[속성정리](https://velog.io/@ansalstmd/JSP3.-%EB%94%94%EB%A0%89%ED%8B%B0%EB%B8%8C-%ED%83%9C%EA%B7%B8)
+**현재 JSP 페이지의 HTTP 세션 사용 여부를 설정하는데 사용**
+
+&#9656; 기본 값 : 세션을 자동으로 사용하는 true
+
+&#8594; 만약 session 속성 값을 false로 설정할 경우 - 해당 JSP 페이지에서 내장 객체인 session 변수를 사용할 수 없다는 의미이므로 해당 페이지에 대해 세션을 유지 관리할 수 없음
+
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+<%@ page session="true" %>
+</div>
+
+### buffer Property
+
+**현재 JSP 페이지의 출력 버퍼 크기를 설정하는 데 사용**
+
+&#9656; 속성 값 : none과 '버퍼 크기'로 설정
+
+&#9656; 버퍼크기 : 출력 버퍼에 먼저 기록한 후 웹 브라우저로 보냄
+
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+<%@ page buffer="none" %>
+
+<%@ page buffer="8kb" %>
+</div>
+
+### autoFlush Property
+
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+<%@ page autoFlush="true" %>
+</div>
+
+### info Property
+
+**페이지 설명을 위한 설정**
+
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+<%@ page info="Home Page JSP" %>
+</div>
+
+### errorPage Property
+
+**이동할 오류 페이지 설정**
+
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+<%@ page errorPage="url/...jsp" %>
+</div>
+
+### isErrorPage Property
+
+**현제 JSP페이지가 오류페이지인지 설정**
+
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+<%@ page isErrorPage="true" %>
+</div>
+
+### isELIgbored Property
+
+**표현 언어 처리 여부**
+
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+<%@ page isELIgnored="true" %>
+</div>
+
+### defferedSyntaxAllowedAsLiteral Property
+
+### language Property
+
+**JSP 페이지에서 사용할 프로그래밍 언어를 설정하는데 사용**
+
+&#9656; 기본 값은 java
+
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+<%@ page language="java" %>
+</div>
 
 ---
 
 ## Include Tag
 
+### Include Tag Basic
+
 **현재 JSP 페이지의 특정 영역에 외부 파일의 내용을 포함하는 태그**
 
-&#9656; 현재 JSP 페이지에 포함할 수 있는 외부 파일
-
-&#9656; HTML, JSP, 텍스트 파일
+&#9656; 현재 JSP 페이지에 포함할 수 있는 외부 파일 (HTML, JSP, 텍스트 파일)
 
 &#9656; include 디렉티브 태그는 JSP 페이지 어디에서든 선언 가능
 
@@ -222,7 +325,7 @@ syntax
 예시
 {: .label .label-purple .mt-2}
 
-![](https://gekdev.github.io/docs/jsp/elements/example/incex.png)
+![](https://gekdev.github.io/docs/jsp/example/incex.png)
 
 ---
 
@@ -241,4 +344,4 @@ syntax
 예시
 {: .label .label-purple .mt-2}
 
-![](https://gekdev.github.io/docs/jsp/elements/example/taglib.png)
+![](https://gekdev.github.io/docs/jsp/example/taglib.png)
