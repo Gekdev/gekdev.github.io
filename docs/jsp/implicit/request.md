@@ -72,25 +72,25 @@ nav_order: 1
 ```jsp
 <h1>request기본객체의 정보</h1>
 
-1. 클라이언트 IP주소 : <%= request.getRemoteAddr() %> : request.getRemoteAddr()<br> 
+request.getRemoteAddr()[클라이언트 IP주소] : <%= request.getRemoteAddr() %><br> 
 
-2. 요청정보의 길이 : <%= request.getContentLength() %> : request.getContentLength()<br>
+request.getContentLength()[요청정보의 길이] : <%= request.getContentLength() %><br>
 
-3. 요청정보의 인코딩 : <%= request.getCharacterEncoding() %> : request.getCharacterEncoding()<br>
+request.getCharacterEncoding()[요청정보의 인코딩] : <%= request.getCharacterEncoding() %><br>
 
-4. 요청정보의 컨텐츠타입 : <%= request.getContentType() %> : request.getContentType()<br>
+request.getContentType()[요청정보의 컨텐츠타입] : <%= request.getContentType() %> <br>
 
-5. 요청정보의 프로토콜 : <%= request.getProtocol() %> : request.getProtocol()<br>
+request.getProtocol()[요청정보의 프로토콜] : <%= request.getProtocol() %> <br>
 
-6. 요청정보의 전송방식 : <%= request.getMethod() %> : request.getMethod()<br>
+request.getMethod()[요청정보의 전송방식] : <%= request.getMethod() %> <br>
 
-7. 요청정보의 URL : <%= request.getRequestURL() %> : request.getRequestURL()<br>
+request.getRequestURL()[요청정보의 URL] : <%= request.getRequestURL() %> <br>
 
-8. 요청정보의 컨텍스트 경로 : <%= request.getContextPath() %> : request.getContextPath()<br> 
+request.getContextPath()[요청정보의 컨텍스트 경로] : <%= request.getContextPath() %> <br> 
 
-9. 요청정보의 서버이름 : <%= request.getServerName() %> : request.getServerName()<br>
+request.getServerName()[요청정보의 서버이름] : <%= request.getServerName() %> <br>
 
-10. 요청정보의 서버포트번호 : <%= request.getServerPort() %> : request.getServerPort()<br>
+request.getServerPort()[요청정보의 서버포트번호] : <%= request.getServerPort() %> <br>
 ```
 
 ### Request Parameter Methods
@@ -184,7 +184,7 @@ Note!
     
     &#9656; 웹 브라우저, 웹 서버 또는 웹 컨테이너에 따라 전송할 수 있는 파라미터 값의 길이에 제한이 있을 수 있음
     
-    ![](https://gekdev.github.io/docs/jsp/implicit/example/get.jpg)
+    ![](https://gekdev.github.io/docs/jsp/example/get.jpg)
 
 * **POST 방식 : 데이터 영역을 이용해서 파라미터를 전송**
 
@@ -192,7 +192,7 @@ Note!
 
     &#9656; 데이터 영역을 이용해서 데이터를 전송하기 때문에 웹 브라우저나 웹 서버 등에 상관없이 전송할 수 있는 파라미터의 길이에 제한없음
 
-    ![](https://gekdev.github.io/docs/jsp/implicit/example/post.jpg)
+    ![](https://gekdev.github.io/docs/jsp/example/post.jpg)
 
 ### Encoding Request Parameters
 
@@ -200,7 +200,7 @@ Note!
 
 반대로 웹 서버는 알맞은 캐릭터 셋을 사용해서 웹 브라우저가 전송한 파라미터 데이터를 디코딩함
 
-![](https://gekdev.github.io/docs/jsp/implicit/example/enco.png)
+![](https://gekdev.github.io/docs/jsp/example/enco.png)
 
 만약 인코딩, 디코딩 시 서로 사용한 캐릭터 셋이 다르다면 웹 서버는 잘못된 파라미터 값을 사용하게 됨
 
@@ -241,8 +241,15 @@ Note!
     server.xml파일에서 <Connector>의 useBodyEncoingForURI = "true"로 지정하면 request.setCharacterEncoding() 메서드로 지정한 캐릭터 셋을 사용함
     </div>
 
-[JSP2.3 웹 프로그래밍 기초부터 중급까지 83 ~ 88p까지 내용]
-{: .mt-3}
+    NOTE
+    {: .label .label-yellow .mt-2}
+    <div class="code-example" markdown="1">	
+    톰켓서버와 이클립스 서버가 다르기때문에 이클립스에서 설정을 바꿨다고 해서 톰켓이 바뀌는건 아님!
+
+    따로 바꿔줘야 함 
+    </div>
+    
+_JSP2.3 웹 프로그래밍 기초부터 중급까지 83 ~ 88p까지 내용_ {: .mt-3 .text-delta }
 
 ### Request Header Methods
 
