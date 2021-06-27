@@ -133,7 +133,7 @@ request의 name의 값 = ${ requestScope.name }  <br>
 code의 파라미터 = ${ param.code } <br>    //url에 ?code=값을 지정하면 나옴
 ```
 
-![](implicitel.jpg)
+![](https://gekdev.github.io/docs/jsp/example/implicitel.jpg)
 
 ### EL Object Access
 
@@ -298,7 +298,7 @@ public class 온도계 {
 </html>
 ```
 
-![](ther.jpg)
+![](https://gekdev.github.io/docs/jsp/example/ther.jpg)
 
 ### Call Static Method 1
 
@@ -348,13 +348,13 @@ public class FormatUtil {
 </html>
 ```
 
-![](staticmethod.jpg)
+![](https://gekdev.github.io/docs/jsp/example/https://gekdev.github.io/docs/jsp/example/staticmethod.jpg)
 
 ---
 
 ## Disable EL
 
-EL을 비활성화 시키는 방법
+EL을 비활성화 시키는 두가지 방법
 
 ### web.xml
 
@@ -392,4 +392,12 @@ web.xml파일: #{expr}만 비활성화
 
 1. isELIgnored : ture일 경우 EL을 일반 문자열로 처리
 
-2. deff
+2. deferredSyntaxAllowedAsLiteral : 이 값이 treu일 경우 #{expr} 형식의 EL을 문자열로 처리
+
+```jsp
+<%-- EL을 비활성하 시키는 경우 --%>
+<%@ page isELIgnored="true" %>
+
+<%-- #{expr} 형식의 EL을 비활성화 시키는 경우 --%>
+<%@ page deferredSyntaxAllowedAsLiteral="true" %>
+```

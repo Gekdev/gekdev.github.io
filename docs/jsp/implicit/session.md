@@ -31,7 +31,7 @@ nav_order: 3
 
 ★ 즉, 쿠키가 클라이언트 측의 데이터 저장소라면 세션은 웹 브라우저와 연관된 서버측의 저장소
 
-![](session01.png)
+![](https://gekdev.github.io/docs/jsp/example/session01.png)
 
 ### Create Session
 
@@ -128,7 +128,7 @@ session 생성 시간 = <%= sdf.format(time) %> <br>
 session 마지막 접근 시간 = <%= sdf.format(time) %> <br>
 ```
 
-![](readsession.jpg)
+![](https://gekdev.github.io/docs/jsp/example/readsession.jpg)
 
 #### JSESSIONID
 
@@ -178,7 +178,7 @@ syntax
 <p>session3_name = <%= session.getAttribute("session3_name") %></p>
 ```
 
-![](setsession.jpg)
+![](https://gekdev.github.io/docs/jsp/example/setsession.jpg)
 
 ### End Session
 
