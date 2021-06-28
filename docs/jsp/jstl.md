@@ -579,12 +579,21 @@ ${exName} 사용
 
 ---
 
-## 국제화 태그
+## Internationalization Tag
 
-국제화 태그는 특정 지역에 따라 알맞은 메시지를 출력해야 할 때 사용
+## Internationalization Tag Basic
+
+**국제화 태그는 특정 지역에 따라 알맞은 메시지를 출력해야 할 때 사용**
 
 예를들어 한글 브라우저로 접속을 하면 한글 메시지로 출력하고 영문 브라우저로 접속을 하면 영문 메시지로 출력해야 할 경우 국제와 태그를 사용
-  
+
+웹 브라우저는 Accept-Language 헤더를 사용해서 수용 가능한 언어 목록을 전송하는데 국제화 테그들은 이 헤더의 값을 사용해서 언어별로 알맞은 처리를 하게 됨
+
+예를들어 메시지를 출력해주는 message태그는 Accept-language의 값이 'ko'인 경우 한글 메시지를 우선적으로 처리하고 'en'일 경우에는 영문메시지를 우선으로 처리
+
+국제화 태그 라이브러리
+{: .label .label-red .mt-2}
+
 | 기능 		   | 태그 	 		| 설명 										  |
 |:---------------|:-----------------|:----------------------------------------------|
 | 로케일		  | setLocale 		 | Locale을 지정								  |
@@ -599,44 +608,372 @@ ${exName} 사용
 | 				 | setTimeZone 		| 시간대 정보를 특정 변수에 저장				   |
 | 				 | timeZone 		| 시간대를 저장								  |
 
-### 로케일 지정태그
+### <fmt:setLocale>
 
-* <fmt:setLocale> : 국제화 태그를 사용할 로케일을 지정
+**국제화 태그를 사용할 로케일을 지정**
 
-* <fmt:requestEncoding> : 요청파라미터의 문자셋 인코딩을 지정
+Accept-Language 헤더에서 지정한 언어가 아닌 다른 언어를 사용하도록 지정할 때 사용하는 테그
 
-웹 브라우저는 Accept-language헤더를 사용해서 수용가능한 언어 목록을 저장하는데 
+일반적으로 웹 브라우저가 전송한 Accept-Language 헤더값에 맞게 메시지를 출력하기 때문에 사용하는경우는 드뭄
 
-JSTL국제화 태그들은 이 헤더값을 사용해서 언어별로 알맞은 처리를 하게 됨
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
-예를들어 메시지를 출력해주는 message태그는 Accept-language의 값이 'ko'인 경우 한글 메시지를 우선적으로 처리하고 'en'일 경우에는 영문메시지를 우선으로 처리
+<fmt:setLocale value="ko" scope="request" />
+</div>
 
-국제화 태그가 Accept-language 헤더에서 지정한 언어가 아닌 다른 언어를 사용하도록 지정할 때 사용하는 태그가 <fmt:setLocale>임
+* value : locale을 "언어코드_국가코드" 형식으로 지정
+    
+    두 글자 언어코드는 반드시 지정해야 하며, 두글자로 된 국가 코드를 추가로 지정할 수 있음
+    
+    언어코드와 국가코드는 하이픈이나 밑줄로 구문해야 함 (ko_kr)
+    
+    null이면 기본로케일을 사용함 (JVM의 기본 로케일 또는 web.xml파일에서 설정한 로케일을 기본 로케일로 사용함)
 
-### 리소스 번들
+* scope : 지정한 Locale이 영향을 미치는 범위를 지정, 기본값 page
 
-메시지 태그에서 사용할 리소스 번들 파일을 작성할 때 메시지 번들 파일은 클래스 패스에 위치해야 하기 때문에 
+### <fmt:requestEncoding>
 
-WEB-INF\classes폴더나 WEB-INF\lib에 포함된 jar파일에 포함시켜야 함
+**요청파라미터의 문자셋 인코딩을 지정**
+
+요청 파라미터의 인코딩을 utf-8로 하고싶다면 다음과 같이 하면됨
+
+예제
+{: .label .label-purple .mt-2}
+```jsp
+<fmt:requestEncoding value="utf-8" />
+
+<% request.setCharacterEncoding("utf-8"); %> //위 코드는 아래 코드와 동일함
+```
+
+### Resource Bundle
+
+메시지 번들 파일은 클래스 패스에 위치해야 하기 때문에 WEB-INF\classes폴더나 WEB-INF\lib에 포함된 jar파일에 포함해야 함
 
 리소스 번들파일은 기본적으로 java.util.Properties 클래스를 사용해서 읽어오기 때문에 확장자가 .properties임
 
 리소스번들파일에서 중요한 점은 리소스번들파일의 이름을 정해진 규칙에 의거 작성해야 함
 
-예를들어 "번들이름_국가.properties"의 형식으로 작성해야 하고 국가코드는 생략할 수 있다
+예를들어 "번들이름_국가.properties"의 형식으로 작성해야 하고 국가코드는 생략할 수 있음
 
-### 메시지 처리 태그
+1. 영문 메시지를 보여줄 때 사용할 리소스 번들 파일
 
-<fmt:bundle> : 태그몸체에서 사용할 리소스번들을 지정 
+    message.properties
+    {: .label .label-purple .mt-2}
+    ```properties
+    TITLE=Learning JSP/Servlet
+    GRETTING=Hello JSP/Servlet?
+    USER=Your Id is {0} ! 
+    ```
 
-<fmt:message> : 메시지를 출력
+2. 한글 메시지를 보여줄 때 사용할 리소스 번들 파일
 
-<fmt:setBundle> : 특정메시지를 사용할 수 있도록 지정
+    message.properties.src
+    {: .label .label-purple .mt-2}
+    ```properties
+    TTILE=최범균의 JSP배우기
+    GREETING=안녕하세요 최범균입니다
+    VISITOR= 당신의 아이디는{0}입니다
+    ```
 
-### 숫자, 날짜 포메팅 태그
+    리소스 번들 파일은 직접 작성하지 못함, 유니코드로 변경한 형태로 변환한 파일을 사용할 수 있음
+    
+    JDK가 제공하는 native2ascii.exe를 사용해야 함
+    
+    위 파일 생성 후 명령프롬프트 경로잡기 아래명령어 치기
+    
+    ```java
+    C:\> e:
+    E:\> cd lec\05.jsp\jsp01_basic\WebContent\WEB-INF\classes\resource
+    E:\...> native2ascii message_ko.properties.src message_ko.properties
+    ```
+    
+    **마지막 명령어를 사용하면 한국어가 유니코드로 변경된 properties파일이 생성됨**
 
-1. 숫자 출력과 파싱 : <fmt:formatNumber>, <fmt:parseNumber>
+### <fmt:bundle>
 
-2. 날짜 출력과 파싱 : <fmt:formatDate>, <fmt:parseDate>
+**태그몸체에서 사용할 리소스 메세지 번들을 지정, message태그와 함께 사용함**
 
-3. 시간대 설정 : <fmt:setTimeZone>, <fmt:timeZone>
+fmt:bundle태그의 속성 설명요약
+{: .label .label-red .mt-2}
+
+| 속성 | 표현식/EL | 타입 | 설명 |
+|:-----|:----------|:-----|:-----|
+| basename | 사용가능 | String | 사용할 리소스 번들의 이름 |
+| prefix | 사용가능 | String | bundle 태그의 내부에서 사용되는 message태그의 key 속성의 값 앞에 자동으로 붙게 될 문자열 |
+
+예제
+{: .label .label-purple .mt-2}
+```jsp
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
+<fmt:bundle basename="resource.message">
+	<fmt:message key="TITLE" var="title"></fmt:message>
+</fmt:bundle>
+
+<h3>${title}</h3>
+```
+
+![](bundle.jpg)
+
+### <fmt:message> 
+
+**지정한 리소스 번들로부터 메시지를 읽어와 출력 메시지를 출력**
+
+fmt:bundle태그의 속성 설명요약
+{: .label .label-red .mt-2}
+<div class="code-example" markdown="1">
+* key : 읽어올 메세지의 키값
+
+* var : 메시지를 저장할 변수 명, 속성을 지정하면 메시지를 출력하지 않고 var속성으로 지정한 변수에 저장함
+
+* scope : 변수가 저장되는 영역 지정
+
+* bundle : <fmt:setBundle> 태그를 사용해서 로딩한 번들로부터 메시지를 읽어올 때 사용
+</div>
+
+리소스 번들이 제공하는 메시지 중에는 [위와같이]() {0}, {1}, {2}와 같이 변경 가능한 요소를 제공하는 메시지가 존재할 때
+
+그 값을 지정하려면 fmt:messate 태그에 fmt:param 태그를 사용해야함
+
+1개 존재할 때
+{: .label .label-purple .mt-2}
+```jsp
+<fmt:message key="VISITOR">
+    <fmt:param value="${id}" />
+</fmt:message>
+```
+
+여러개 존재할 때
+{: .label .label-purple .mt-2}
+```jsp
+<fmt:message key="VISITOR">
+    <fmt:param value="${id}" />      // 0에 들어감
+    <fmt:param value="${name}" />    // 1에 들어감
+    <fmt:param value="${email}" />   // 2에 들어감
+</fmt:message>
+```
+
+#### 리소스 번들 검색 순서
+
+다음과 같은 순서로 리소스 번들을 검색함
+
+1. bungle 속성에 지정한 리소스 번들을 사용
+
+2. <fmt:bundle> 태그에 중첩된 경우 <fmt:bundle> 태그에서 설정한 리소스 번들 사용
+
+3. 1이나 2가 아닐 경우 기본 리소스 번들 사용
+
+    기본 리소스 번들은 web.xml파일에서 javax.servlet.jsp.jstl.fmt.localizationContext 속성을 통해서 설정
+
+### <fmt:setBundle>
+
+<fmt:setBundle> : **특정메시지를 사용할 수 있도록 지정**
+
+bundle은 태그 안에서 사용될 리소스 번들을 지정하는 반면 setBundle은 리소스 번들을 변수로 저장한 후 어디서나 사용할 수 있게 함
+
+syntax
+{: .label .mt-2}
+<div class="code-example" markdown="1">
+<fmt:setBundle var="message" basename="resource.message" />
+
+...
+
+<fmt:message bundle="${message}" key="GREETING" />
+</div>
+
+fmt:setBundle태그의 속성 설명요약
+{: .label .label-red .mt-2}
+
+| 속성 | 표현식/EL | 타입 | 설명 |
+|:-----|:----------|:-----|:-----|
+| basename | 사용가능 | String | 읽어올 리소스 번들의 이름 |
+| var | 사용불가 | String | 리소스 번들을 저장할 변수 명 |
+| scope | 사용불가 | String | 변수를 저장할 영역 |
+
+### <fmt:formatNumber>
+
+**숫자를 양식에 맞춰 출력**
+
+syntax
+{: .label .mt-2}
+```jsp
+<fmt:formatNumber value="숫자값" [type="값타입"] [pattern="패턴"]
+        [currentCode="통화코드"] [currencySymbol="통화심볼"]
+        [groupingUsed="(true/false)"] [var="변수명"] [scope="영역"] />
+```
+
+fmt:formatNumber태그의 속성 설명요약
+{: .label .label-red .mt-2}
+
+| 속성 | 표현식/EL | 타입 | 설명 |
+|:-----|:----------|:-----|:-----|
+| value | 사용가능 | String / Number | 양식에 맞춰 출력할 숫자를 지정 |
+| type | 사용가능 | String | 어떤 양식으로 출력할지 정함. number → 숫자(기본값), percent → %, currency → 통화 |
+| pattern | 사용가능 | String | 직접 숫자가 출력되는 양식을 지정 |
+| currencyCode | 사용가능 | String | 통화 코드를 지정 | 
+| currentSymbol | 사용가능 | String | 통화를 표현할 때 사용할 기호를 표시 |
+| groupingUsed | 사용가능 | Boolean | 콤마와 같이 단위를 구분할 때 사용되는 기호를 사용할 지의 여부를 결정.
+| var | 사용불가 | String | 포멧팅한 결과를 저장할 변수명을 지정 |
+| scope | 사용불가 | String | 변수를 저장할 영역 지정, 기본값 page | 
+
+### <fmt:parseNumber>
+
+**문자열을 숫자 타입으로 변환해주는 기능**
+
+syntax
+{: .label .mt-2}
+```jsp
+<fmt:parseNumber value="값" [type="값타입"] [pattern="패턴"]
+        [parseLocale="통화코드"] [integerOnly="true/false"]
+        [var="변수명"] [scope="영역"] />
+```
+
+fmt:parseNumber태그의 속성 설명요약
+{: .label .label-red .mt-2}
+
+| 속성 | 표현식/EL | 타입 | 설명 |
+|:-----|:----------|:-----|:-----|
+| value | 사용가능 | String | 파싱할 문자열을 지정 |
+| type | 사용가능 | String | value 속성의 문자열 타입을 지정 number → 숫자(기본값), percent → %, currency → 통화 |
+| pattern | 사용가능 | String | 직접 파싱할 때 사용할 양식을 지정 |
+| parseLocale | 사용가능 | String | 파싱할 때 사용할 로케일을 지정 |
+| integerOnly | 사용가능 | String | 정수 부분만 파싱할 지의 여부를 지정. 기본값 false |
+| var | 사용불가 | String | 포멧팅한 결과를 저장할 변수명을 지정 |
+| scope | 사용불가 | String | 변수를 저장할 영역 지정, 기본값 page | 
+
+예제
+{: .label .label-purple .mt-2}
+```jsp
+<fmt:parseNumber value="1,100.12" pattern="0,000,00" var="num" />
+
+${sum}
+```
+
+### <fmt:formatDate>
+
+**날짜 정보를 담고 있는 객체를 포메팅하여 출력할 때 사용**
+
+syntax
+{: .label .mt-2}
+```jsp
+<fmt:formatDate value="날짜값" [type="타입"] [dateStyle="날짜스타일"] 
+        [timeStyle="시간스타일"] [pattern="패턴"] [timeZone="타임존"]
+        [var="변수명"] [scope="영역"] />
+```
+
+fmt:parseNumber태그의 속성 설명요약
+{: .label .label-red .mt-2}
+
+| 속성 | 표현식/EL | 타입 | 설명 |
+|:-----|:----------|:-----|:-----|
+| value | 사용가능 | java.util.Date | 포메팅할 시간 값을 지정 |
+| type | 사용가능 | String | 날찌, 시간 또는 둘 다 포맷팅할 지 여부를 지정. time, date(기본값), both중 한 가지 값을 가질 수 있음 |
+| dateStyle | 사용가능 | String | 날짜에 대해 미리 정의된 포멧팅 스타일을 지정 |
+| timeStyle | 사용가능 | 시간에 대해 미리 정의된 포멧팅 스타일을 사용 |
+| pattern | 사용가능 | 직접 파싱할 때 사용할 양식을 지정 |
+| timeZone | 사용불가 | 시간대를 변경하고 싶을 때 사용 |
+| var | 사용불가 | 파싱한 결과를 저장할 변수명을 지정 |
+| scope | 사용불가 | 변수를 저장할 영역을 지정, 기본값은 page |
+
+### <fmt:parseDate>
+
+**문자열로 표시된 날짜와 시간 값을 java.util.Date로 파싱해주는 기능**
+
+syntax
+{: .label .mt-2}
+```jsp
+<fmt:parseDate value="날짜값" [type="타입"] [dateStyle="날짜스타일"] 
+        [timeStyle="시간스타일"] [pattern="패턴"] [timeZone="타임존"] [parseLocale="로케일"]
+        [var="변수명"] [scope="영역"] />
+```
+
+fmt:parseDate태그의 속성 설명요약
+{: .label .label-red .mt-2}
+
+| 속성 | 표현식/EL | 타입 | 설명 |
+|:-----|:----------|:-----|:-----|
+| value | 사용가능 | java.util.Date | 포메팅할 시간 값을 지정 |
+| type | 사용가능 | String | 날자, 시간 또는 둘 다 포맷팅할 지 여부를 지정. time, date(기본값), both중 한 가지 값을 가질 수 있음 |
+| dateStyle | 사용가능 | String | 날짜에 대해 미리 정의된 포멧팅 스타일을 지정 |
+| timeStyle | 사용가능 | 시간에 대해 미리 정의된 포멧팅 스타일을 사용 |
+| pattern | 사용가능 | 직접 파싱할 때 사용할 양식을 지정 |
+| timeZone | 사용불가 | 시간대를 변경하고 싶을 때 사용 |
+| parseLocale | 사용가능 | String 또는 java.util.Locale | 파싱할 때 사용할 로케일을 지정 |
+| var | 사용불가 | 파싱한 결과를 저장할 변수명을 지정 |
+| scope | 사용불가 | 변수를 저장할 영역을 지정, 기본값은 page |
+
+### <fmt:setTimeZone> / <fmt:timeZone>
+
+**포메팅 태그도 시간대별로 시간을 처리할 수 있는 기능을 제공**
+
+--- 
+
+## Function
+
+
+
+---
+
+## Custom Tag
+
+### What is Custom Tag?
+
+프로그램을 개발하다보면 JSP액션태그나 JSTL태그만으로 부족할 때가 있는데 이를 지원하기 위해서
+
+**사용자가 원하는 목적에 맞게 새로운 태그를 만들어서 사용할 수 있도록 하는 태그**
+
+### Advantage of Custom Tag
+
+1. 재사용: 한번 작성한 커스텀 태그는 어떤 JSP 컨테이너에서도 사용이 가능함
+
+2. 쉽고 단순한 JSP 코드를 작성 : 자바코드에 익숙하지 않은 개발자들도 커스텀 태그를 사용하면 보다 쉽게 JSP 페이지를 작성가능
+
+3. 코드의 가독성 향상 : 커스텀 태그를 사용하면 스크립트 코드를 줄일 수 있기 때문에 JSP의 가독성을 높일 수 있음
+
+### 
+
+태그 파일에서 사용가능한 디렉티브
+
+| 디렉티브 | 설명 |
+|:---------|:-----|
+| tag | JSP 페이지의 page디렉티브와 동일, 태그 파일의 정보를 명시 |
+| taglib | 태그파일에서 사용할 태그라이브러리를 정의 |
+| include | 태그파일에 특정 파일을 포함시킬 때 사용 |
+| attribute | 태그파일을 커스텀태그로 사용할 때 입력받을 속성을 명시 |
+| variable | EL 변수로 사용할 변수에 대한 정보를 정의 |
+
+
+### 태그디렉티브의 속성
+
+| 속성 | 설명 |
+|:-----|:-----|
+| display-name | 태그파일을 사용될 이름을 지정. 기본값은 확장자 ".tag"를 제외한 나머지 파일이름  |
+| body-content | body 내용의 종류를 정의 empty, tagdependent, scriptless의 세가지값 중 하나를 사용할 수 있음 | 
+| dynamic-attributes | 동적속성을 정의 속성<key, value>를 저장하는 Map객체를 page범위의 속성에 저장할 때 사용할 이름을 정의 |
+| description | 태그에 대한 설명 |
+| import | page 디렉티브의 import 속성과 동일 |
+| pageEncoding | page 디렉티브의 pageEncoding 속성과 동일 
+| defferedSyntaxAllowedAsLiteral | page 디렉티브의 defferedSyntaxAllowedAsLiteral 속성과 동일, 이 값이 true일 경우 ${expr} or #{expr}형식의 값은 문자열로 처리하는 옵션 |
+| trimDirectiveWhitespaces | page 디렉티브의 trimDirectiveWhitespaces 속성과 동일 |
+
+
+### 태그파일에서 사용가능한 기본 객체
+
+* jspContext : pageContext가 제공하는 setAttribute(), getAttribute() 메서드를 그대로 제공하며 각 속성과 관련된 작업을 처리
+
+* request : JSP 페이지의 request 기본객체와 동일함
+
+* response : JSP 페이지의 response 기본 객체와 동일
+
+* session : JSP 페이지의 session 기본 객체와 동일
+
+* application : JSP 페이지의 application 기본 객체와 동일
+
+* out : JSP 페이지 out 기본객체와 동일
+
+### 태그파일의 위치
+
+WEB-INF/tags 폴더나 그 하위폴더에 위치. 이폴더에 위치한 파일중에서 ~.tag, ~tagx확장자 파일만 태그파일로 인식함
