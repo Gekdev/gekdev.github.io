@@ -16,23 +16,49 @@ has_children: true
 
 ---
 
-## Java & DB Connection
+## JDBC Basic
 
-## Connection Basic
+### What is JDBC?
 
-JDBC를 이용한 Java와 DB의 연동
+자바에서 데이터베이스 프로그래밍을 할 때 JDBC API를 사용
+
+**즉, Java Database Connectivity는 자바에서 데이터베이스와 관련된 작업을 처리할 때 사용하는 API**
+
+JDBC를 이용한 Java와 DB의 연동을 할 때 사용함
+
+### JDBC Structure
+
+JSP를 포함한 자바 어플리케이션에 데이터베이스를 사용할 때에는 데이터베이스 종류에 상관없이 JDBC API를 이용해서 데이터베이스에 접근 
+
+&#9656; 각각의 DBMS는 자신에게 알맞는 JDBC 드라이버를 제공할 수 있음
+
+&#9656; JDBC API는 JDBC드라이버를 거쳐 데이터베이스와 통신을 함(DBMS에 알맞은 JDBC 드라이버만 있으면 어떤 데이터베이스라도 사용할 수 있음)
+
+&#9656; 현재 주요 DBMS들은 알맞은 JDBC 드라이버를 제공하고 있기 떄문에 드라이버가 존재하지 않아서 JSP에서 데이터베이스 프로그래밍을 할 수 없는 상황은 발생하지 않음
+
+![](https://gekdev.github.io/docs/java/example/jdbcstruc.png)
+
+### JDBC Connecter Driver
 
 Java와 DB를 연동하기 위해서는 각 DBMS의 버전에 맞는 JRE 실행환경 라이브러리(커텍터 드라이버)를 Java프로젝트에 추가해야 함
 
-MSSQL, MySQL, Maria 등 각각 DB버전에 맞는 실행환경 드라이버를 추가해야 함
+&#9656; MSSQL, MySQL, Maria 등 각각 DB버전에 맞는 실행환경 드라이버를 추가해야 함
 
-**즉 이번에 설치 할 Oracle DB는 DB버전(11gR2)에 맞는 자바프로젝트(ojbdc8.jar)를 추가해야 함**
+1. Oracle DataBase
 
-<span class="fs-2">
-[Download Library](https://mvnrepository.com/artifact/com.oracle.database.jdbc/ojdbc8/21.1.0.0){: .btn .btn-outline .mt-2}
-</span>
+    **Oracle DB는 DB버전(11gR2)에 맞는 자바프로젝트(ojbdc8.jar)를 추가해야 함**
 
-### Add Library
+    <span class="fs-2">
+    [Download Oracle Library](https://mvnrepository.com/artifact/com.oracle.database.jdbc/ojdbc8/21.1.0.0){: .btn .btn-outline .mt-2}
+    </span>
+
+2. Maria Database
+
+    <span class="fs-2">
+    [Download Maria Library](https://mvnrepository.com/artifact/org.mariadb.jdbc/mariadb-java-client/2.7.3){: .btn .btn-outline .mt-2}
+    </span>
+
+#### Add Library
 
 라이브러리(드라이버)를 추가하는 방법
 
@@ -40,11 +66,13 @@ MSSQL, MySQL, Maria 등 각각 DB버전에 맞는 실행환경 드라이버를 �
 
 2. **Build Path > Configure Build Path**
 
-![](jar.jpg)
+    ![](https://gekdev.github.io/docs/java/example/jar.jpg)
 
-3. **(tab)Libraries -> (b)Add Jars(Add Ex...) -> (b)Apply & Close**
+3. **(tab)Libraries -> (b)Add Jars(Add External JARs...) -> (b)Apply & Close**
 
-![](jar2.jpg)
+    ![](https://gekdev.github.io/docs/java/example/jar2.jpg)
+
+**쉬운방법으로는 WEB-INF lib폴더에 .jar파일 끌어넣으면 자동으로 라이브러리가 추가됨**
 
 ### JDBC Program Creation Steps
 
@@ -54,7 +82,7 @@ MSSQL, MySQL, Maria 등 각각 DB버전에 맞는 실행환경 드라이버를 �
 
     1. Oracle : `Class.forName("oracle.jdbc.OracleDriver");`
     
-        ![](jar3.jpg)
+        ![](https://gekdev.github.io/docs/java/example/jar3.jpg)
     
     2. MySQL : `Class.forName("com.mysql.jdbc.driver");`
     
