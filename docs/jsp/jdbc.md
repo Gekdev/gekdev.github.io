@@ -19,25 +19,27 @@ has_children: true
 
 ## JSP JDBC
 
-[데이터베이스]()나 [JDBC]()에 대한 설명은 앞에서 이미 설명했기 때문에 넘어가고
+[데이터베이스](https://gekdev.github.io/docs/sql/database/)나 [JDBC](https://gekdev.github.io/docs/java/jdbc/)에 대한 설명은 앞에서 이미 설명했기 때문에 넘어가고
 
 이번에 공부할 jsp예제에서 사용할 데이터베이스는 mariaDB이기 때문에 mariaDB를 설치해줘야함
 
 ### Download MariaDB
 
-1. 다운받은 파일 실행
+1. **다운받은 파일 실행**
 
-    https://mariadb.org/download/
+    <span class="fs-2">
+    [mariaDB 10.5.11 다운로드](https://mariadb.org/download/){: .btn .btn-outline .mt-2}
+    </span>
 
-2. 설치 위치 지정 
+2. **설치 위치 지정**
 
-    **C:\MariaDB 10.5\로 만듦**
+    C:\MariaDB 10.5\로 만듦
 
     ![](https://gekdev.github.io/docs/jsp/example/setmaria.jpg)
     
-3. root 계정의 비밀번호를 입력
+3. **root 계정의 비밀번호를 입력**
 
-    **12345로 만들기**
+    12345로 만들기
 
     ![](https://gekdev.github.io/docs/jsp/example/passmaria.jpg)
     
@@ -51,7 +53,7 @@ Java와 DB를 연동하기 위해서는 각 DBMS의 버전에 맞는 JRE 실행�
 
 &#9656; MSSQL, MySQL, Maria 등 각각 DB버전에 맞는 실행환경 드라이버를 추가해야 함
 
-&#9656; [mariadb-java-client/2.7.3.jar]()을 다운로드 받으면 됨
+&#9656; mariadb-java-client/2.7.3.jar을 다운로드 받으면 됨
 
 <span class="fs-2">
 [Download Maria Library](https://mvnrepository.com/artifact/org.mariadb.jdbc/mariadb-java-client/2.7.3){: .btn .btn-outline .mt-2}
@@ -63,25 +65,25 @@ Java와 DB를 연동하기 위해서는 각 DBMS의 버전에 맞는 JRE 실행�
 
 **&#8594; WEB-INF lib폴더에 .jar파일 끌어넣으면 자동으로 라이브러리가 추가됨**
 
-### navicat connection
+### Navicat Connection
 
-1. File &#8594; new Connection &#8594; mariaDB 으로 새로운 커넥션 생성
+1. **File &#8594; new Connection &#8594; mariaDB 으로 새로운 커넥션 생성**
 
     ![](https://gekdev.github.io/docs/jsp/example/navimaria.jpg)
 
-2. 새로운 데이터베이스 생성
+2. **새로운 데이터베이스 생성**
 
     ```sql
     create database 생성할_데이터베이스명
     ```
 
-3. 생성된 데이터베이스
+3. **생성된 데이터베이스**
 
     ![](https://gekdev.github.io/docs/jsp/example/newdb.jpg)
 
 ### JDBC Program Coding Style
 
-[JDBC Program Creation Steps]()에서도 설명한바와 같이 JDBC프로그램의 전형적인 실행순서는 다음과 같음
+[JDBC Program Creation Steps](https://gekdev.github.io/docs/java/jdbc/#jdbc-program-creation-steps)에서도 설명한바와 같이 JDBC프로그램의 전형적인 실행순서는 다음과 같음
 
 1. JDBC 드라이버 로딩
 
@@ -178,15 +180,17 @@ Java와 DB를 연동하기 위해서는 각 DBMS의 버전에 맞는 JRE 실행�
 
 ![](https://gekdev.github.io/docs/jsp/example/basicjbdc.jpg)
 
-### DBMS와의 통신을 위한 JDBC 드라이버
+### JDBC Driver for Communication with DBMS
 
-JDBC 드라이버는 DBMS와의 통신을 담당하는 자바 클래스
+**DBMS와의 통신을 위한 JDBC 드라이버**
 
-DBMS마다 별도의 JDBC드라이버가 필요, 각 DBMS는 JDBC드라이버를 jar파일 형태로 제공함
+&#9656; JDBC 드라이버는 DBMS와의 통신을 담당하는 자바 클래스
 
-Class.forName() 메서드는 지정한 클래스 정보를 담고 있는 Class 인스턴스를 구해주는 기능만 제공
+&#9656; DBMS마다 별도의 JDBC드라이버가 필요, 각 DBMS는 JDBC드라이버를 jar파일 형태로 제공함
 
-JDBC드라이버에 해당하는 클래스들은 Class.forName() 메서드를 통해 로딩될 때 자동으로 JDBC 드라이버로 등록됨
+&#9656; Class.forName() 메서드는 지정한 클래스 정보를 담고 있는 Class 인스턴스를 구해주는 기능만 제공
+
+&#9656; JDBC드라이버에 해당하는 클래스들은 Class.forName() 메서드를 통해 로딩될 때 자동으로 JDBC 드라이버로 등록됨
 
 JDBC 드라이버를 로딩하는 방법
 {: .label .mt-2}
@@ -221,9 +225,11 @@ try {
 }
 ```
 
-### 데이터베이스 식별을 위한 JDBC URL
+### JDBC URL for Database Identification
 
-데이터베이스를 구분할 때 URL과 비슷한 형식을 갖는 JDBC URL을 사용
+**데이터베이스 식별을 위한 JDBC URL**
+
+&#9656; 데이터베이스를 구분할 때 URL과 비슷한 형식을 갖는 JDBC URL을 사용
 
 syntax
 {: .label .mt-2}
@@ -283,9 +289,11 @@ jdbc:[DBMS]:[데이터베이스식별자]
     jdbc:oracle:thin:@127.0.0.1:1521:ORCL
     ```
     
-### 데이터베이스 커넥션
+### Database Connection
 
-JDBC를 이용해서 데이터베이스를 사용하려면 데이터베이스와 연결된 커넥션을 구해야 함
+**데이터베이스 커넥션**
+
+&#8594; JDBC를 이용해서 데이터베이스를 사용하려면 데이터베이스와 연결된 커넥션을 구해야 함
 
 **java.sql.Connection 타입이 데이터베이스 커넥션을 나타내며, java.sql.DriverManager 클래스가 제공하는 getConnection() 메서드를 사용해서 커넥션을 구함**
 
@@ -330,11 +338,13 @@ try {
 }
 ```
 
-### Statement를 사용한 쿼리 실행
+### Run Queries using Statements
 
-Connection 객체를 생성한 후에는 Connection 객체로부터 Statement를 생성하고 쿼리를 실행할 수 있음
+**Statement를 사용한 쿼리 실행**
 
-Statement는 Connection의 createStatement()메소드를 사용해서 생성함 
+&#9656; Connection 객체를 생성한 후에는 Connection 객체로부터 Statement를 생성하고 쿼리를 실행할 수 있음
+
+&#9656; Statement는 Connection의 createStatement()메소드를 사용해서 생성함 
 
 syntax
 {: .label .mt-2}
@@ -348,13 +358,15 @@ Statement 객체는 쿼리를 실행할 수 있음. 쿼리를 실행하는 메�
 
 * int executeUpdate(String query) : INSERT, UPDATE, DELETE 쿼리를 실행, 변경한 레코드의 개수를 리턴
 
-#### Statement를 이용한 쿼리 실행 시 작은따옴표 처리
+#### **Process Single Quotes when Eecuting Queries using Statements**
 
-SQL 쿼리를 실행할 때 작은 따옴표가 들어가면 작은 따옴표 두 개를 사용하는 형태로 변경해야 함
+**Statement를 이용한 쿼리 실행 시 작은따옴표 처리**
 
-**String 클래스의 replaceAll()메서드를 사용하면 문자열에 포함된 특정 문자나 단어를 손쉽게 변경할 수 있음**
+&#9656; SQL 쿼리를 실행할 때 작은 따옴표가 들어가면 작은 따옴표 두 개를 사용하는 형태로 변경해야 함
 
-문자열에 포함되어 있는 작은 따옴표 한 개를 두개로 변경하고 싶다면 다음과 같이 String 클래스의 replaceAll() 메서드를 사용해야 함
+&#9656; **String 클래스의 replaceAll()메서드를 사용하면 문자열에 포함된 특정 문자나 단어를 손쉽게 변경할 수 있음**
+
+&#9656; 문자열에 포함되어 있는 작은 따옴표 한 개를 두개로 변경하고 싶다면 다음과 같이 String 클래스의 replaceAll() 메서드를 사용해야 함
 
 예제
 {: .label .label-purple .mt-2}
@@ -366,11 +378,13 @@ String replaced = value.replaceAll("'", """);
 
 매번 치환 처리를 하는게 귀찮고 놓치기 쉽기 때문에 PreparedStatement를 사용함
 
-### ResultSet에서 값 읽어오기
+### Read values from ResultSet
 
-Statement의 executeQuery()는 select쿼리의 결과를 ResultSet에 담아서 리턴
+**ResultSet에서 값 읽어오기**
 
-따라서 ResultSet이 제공하는 메서드를 사용해서 결과값을 읽어올 수 있음
+&#9656; Statement의 executeQuery()는 select쿼리의 결과를 ResultSet에 담아서 리턴
+
+&#9656; 따라서 ResultSet이 제공하는 메서드를 사용해서 결과값을 읽어올 수 있음
 
 * next() : select 결과의 존재 여부를 확인할 수 있음
 
@@ -389,7 +403,9 @@ ResultSet클래스의 주요 데이터 읽기 메서드
 | getDate(String name) getDate(int index) | java.sql.Date | 지정한 칼럼 값을 Date 타입으로 읽어옴 |
 | getTime(String name) getTime(int index) | java.sql.Time | 지정한 칼럼 값을 Time 타입으로 읽어옴 |
 
-#### ResultSet에서 LONG VARCHAR 타입 값 읽어오기
+#### Read LONG VARCHAR type value from ResultSet
+
+**ResultSet에서 LONG VARCHAR 타입 값 읽어오기**
 
 getCharacterStream()메서드를 사용해서 읽어오는 게 원칙이지만 다수의 JDBC 드라이버는 getString()메서드로 읽어올 수 있게 지원하고 있음
 
@@ -454,11 +470,13 @@ getCharacterStream()메서드를 사용해서 읽어오는 게 원칙이지만 �
     ...
     ```
 
-### PreparedStatement를 사용한 쿼리 실행 
+### Run queries using PreparedStatement
 
-Statement와 동일한 기능을 제공함
+**PreparedStatement를 사용한 쿼리 실행**
 
-차이점 : PreparedStatement은 SQL 쿼리의 틀을 미리 생성해 놓고 값을 나중에 지정함
+&#9656; Statement와 동일한 기능을 제공함
+
+&#9656; 차이점 : PreparedStatement은 SQL 쿼리의 틀을 미리 생성해 놓고 값을 나중에 지정함
 
 1. Connection.prepareStatment() 메서드를 사용해 PreparedStatement 생성
 
@@ -503,9 +521,11 @@ PreparedStatement클래스가 제공하는 set메서드
 
 4. finally 블록에서 사용한 PreparedStatement를 닫음(close() 실행)
 
-#### PreparedStatement에서 LONG VARCHAR 타입 값 지정하기
+#### Specifying the value of LONG VARCHAR type in PreparedStatement
 
-**setCharacterStream(int index, Reader reader, int length) 메서드를 사용해서 지정함**
+**PreparedStatement에서 LONG VARCHAR 타입 값 지정하기**
+
+&#9656; **setCharacterStream(int index, Reader reader, int length) 메서드를 사용해서 지정함**
 
 &#9656; reader로부터 length 글자 수만큼 데이터를 읽어와 저장
 
@@ -548,7 +568,7 @@ PreparedStatement클래스가 제공하는 set메서드
     }
     ```
 
-### PreparedStatement 쿼리를 사용하는 이유
+### Why use PreparedStatement Queries?
 
 1. 값 변환을 자동으로 하기 위해
 
@@ -560,33 +580,263 @@ PreparedStatement클래스가 제공하는 set메서드
 
 ## 웹 어플리케이션 구동 시 JDBC 드라이버 로딩하기
 
+JDBC 드라이버는 한 번만 로딩하면 이후로 계속해서 사용할 수 있기 때문에 JSP를 실행할 때 마다 JDBC 드라이버를 로딩할 필요가 없음
+
+드라이버를 로딩하기 가장 좋은 시점은 웹 어플리케이션이 시작할 때임
+
+즉, 톰텟과 같은 웹 컨테이너가 시작될 때 자동으로 JDBC 드라이버를 로딩하도록 지정하면 JSP 페이지에서 매번 JDBC 드라이버를 로딩할 필요가 없음
+
+**웹 어플리케이션이 시작될 때 자동으로 JDBC 드라이버를 로딩하도록 만들려면 서블릿 클래스를 사용하면 됨**
+
+예제 : MySQLDriverLoader
+{: .label .label-purple .mt-2}
+```java
+package com.lec.web.jdbc;
+
+import java.sql.DriverManager;
+
+import javax.servlet.http.HttpServlet;
+import javax.servlet.ServletException;
+import javax.servlet.ServletConfig;
+
+// HttpServlet 클래스를 상속
+public class MySQLDriverLoader extends HttpServlet {
+
+    //서블릿을 초기화할 때 호출되는 init()메서드를 구현
+	private void init(ServletConfig config) throws ServletException {
+		try {
+            //MySQL JDBC 드라이버를 로딩
+			Class.forName("org.mariadb.jdbc.Driver");
+		} catch (Exception e) {
+			throw new ServletException(e);	
+		}
+	}
+```
+
+HttpServlet은 서블릿을 위한 상위 클래스임
+
+서블릿은 init() 메서드를 제공하고 있고, 이 메서드는 서블릿을 초기화할 떄 최초에 한 번 실행됨
+
+**톰캣과 같은 컨테이너는 서블릿을 사용하기 전에 초기화를 수행하므로 init() 메서드에서 JDBC 드라이버를 로딩하도록 구현하면 컨테이너를 실행할 때 JDBC 드라이버를 로딩할 수 있음**
+
+웹 어플리케이션이 시작될 때 자동으로 MySQLDriverLoader를 실행하도록 설정해야 함
+
+web.xml파일을 만들어서 servlet태그를 추가하면 됨
+
+예제 : web.xml
+{: .label .label-purple .mt-2}
+```xml
+//MySQLDriverLoader 서블릿클래스에 대한 설정 추가
+<servlet>
+     <servlet-name>MySQLDriverLoader</servlet-name>                        //java파일 이름
+     <servlet-class>com.lec.web.jdbc.MySQLDriverLoader</servlet-class>     //클래스 풀 이름
+     <load-on-startup>1</load-on-startup>                                  //웹 어플리케이션이 시작될 때, 서블릿 클래스를 자동으로 로딩하도록 설정
+</servlet>
+```
+
+★ **결론적으로 web.xml파일에 servlet태그를 추가하면 웹 어플리케이션 구동시 자동으로 MySQLDriverLoader 서블릿 클래스의 init()메서드가 실행됨**
+
+&#8594; 따라서 웹 어플리케이션을 시작할 때 JDBC 드라이버를 로딩한게 됨
+
 ## JDBC에서 트랜잭션 처리
+
+두 개 이상의 쿼리를 모두 성공적으로 실행해야 데이터가 정상적으로 처리되는 경우 **DBMS는 트랜잭션을 이용해서 두 개 이상의 쿼리를 마치 한 개의 쿼리처럼 처리할 수 있게 함**
+
+트랜젝션은 시작과 종료를 가지고 있음. 시작되면 이후 실행되는 쿼리 결과는 DBMS에 곧바로 반영되지 않고 임시로 보관됨
+
+이후 트랜잭션을 커밋(Commit)하면 임시 보관한 모든 쿼리 결과를 실제 데이터에 반영함
+
+커밋 하기전에 에러가 발생하면 임시로 보관한 모든 쿼리 결과를 실제 데이터에 반영하지 않고 취소하는데, 이걸 Rollback이라고 함 
+
+즉, 트랜잭션이 시작되면 트랜잭션 범위 내에 있는 모든 쿼리 결과가 DB에 반영되거나 또는 반영되지 않게 됨
+
+![](https://gekdev.github.io/docs/jsp/example/transac.png)
+
+트랜잭션을 구현하는 방법
+{: .label .label-red .mt-2}
+<div class="code-example" markdown="1">
+* JDBC의 오토 커밋 모드를 false로 지정하는 방법 : 단일 데이터베이스에 접근하는 경우 (아래 예제)
+
+* JTA(Java Transaction API)를 이용하는 방법 : 두개 이상의 데이터베이스를 트랜잭션으로 처리하려면 JTA를 이용
+</div>
+```jsp
+try{
+     conn = DriverManager.getConnection(...);
+     //트랜잭션 시작
+     conn.setAutoCommit(false)
+     ...
+     //쿼리 실행
+     ...
+     //트랜잭션 커밋
+     conn.comit() 
+} catch (SQLException e) {
+    if(conn!=null) {
+        //트랜잭션 롤벡
+        conn.rollback()
+    }
+}
+```
+
+---
 
 ## Connection Pool
 
 ### What is Connection Pool?
 
-### DBCP를 이용해서 커넥션 풀 사용하기 
+**데이터베이스와 연결된 커넥션을 미리 만들어서 풀 속에 저장해두고 있다가 필요할 때 커넥션을 풀에서 가져다 쓰고 다시 풀에 반환하는 기법**
 
-<span class="fs-2">
-[Apache Commons DBCP » 2.8.0](https://mvnrepository.com/artifact/org.apache.commons/commons-dbcp2/2.8.0){: .btn .btn-outline .mt-2}
-</span>
+풀 속에 데이터베이스와 연결된 커넥션을 미리 생성
 
-<span class="fs-2">
-[Apache Commons Pool » 2.9.0](https://mvnrepository.com/artifact/org.apache.commons/commons-pool2/2.9.0){: .btn .btn-outline .mt-2}
-</span>
+커넥션을 새로 생성하는게 아니라 풀 속에 미리 생성된 커넥션을 가져다 쓰고 사용이 끝나면 커넥션을 풀에 반환
 
-<span class="fs-2">
-[Apache Commons Logging](https://mvnrepository.com/artifact/commons-logging/commons-logging/1.2){: .btn .btn-outline .mt-2}
-</span>
+풀에 반환된 커넥션은 다음에 다시 사용됨
 
-### 커넥션 풀 초기화 서블릿 클래스 
+![](https://gekdev.github.io/docs/jsp/example/conpool.png)
 
-### 커넥션 풀 초기화 서블릿 설정
+### Features of Connection Pool
 
-### 커넥션 풀로부터 커넥션 사용하기
+풀 속에 미리 커넥션이 생섣외어 있기 때문에 커넥션을 생성하는데 드는 연결 시간을 줄일 수 있음
 
-### 커넥션 풀 속성 설명
+커넥션을 계속해서 재사용하기 때문에 생성되는 커넥션 수가 일정하게 유지됨
+
+한번에 생성할 수 있는 커넥션 수를 제어하기 때문에 동시 접속자수가 몰려도 웹 어플리케이션이 쉽게 다운되지 않음
+
+전체적인 웹 어플리케이션의 성능과 처리량이 향상되므로 많은 웹 어플리케이션이 커넥션 풀을 기본으로 사용
+
+다양한 커넥션 풀 라이브러리가 존재하는데 오픈 소스 프로젝트인 DBCP API를 많이 사용함
+
+### Using Connection Pool with DBCP
+
+**DBCP를 이용해서 커넥션 풀 사용하기**
+
+1. **필요한 jar 파일 복사하기**
+    
+    * Commons DBCP API 관련 jar파일
+
+        <span class="fs-2">
+        [Apache Commons DBCP » 2.8.0](https://mvnrepository.com/artifact/org.apache.commons/commons-dbcp2/2.8.0){: .btn .btn-outline .mt-2}
+        </span>
+    
+    * Commons DBCP API가 사용하는 Commons Pool API의 Jar파일
+
+        <span class="fs-2">
+        [Apache Commons Pool » 2.9.0](https://mvnrepository.com/artifact/org.apache.commons/commons-pool2/2.9.0){: .btn .btn-outline .mt-2}
+        </span>
+
+    * 로그 기록에 사용하는 Commons Logging API관련 jar파일
+        
+        <span class="fs-2">
+        [Apache Commons Logging](https://mvnrepository.com/artifact/commons-logging/commons-logging/1.2){: .btn .btn-outline .mt-2}
+        </span>
+
+    위 세개 파일을 WEB-INF/lib 디렉토리에 복사
+    
+2. **커넥션 풀 초기화하는 서블릿 클래스**
+
+    DBCPInit
+    {: .label .label-purple .mt-2}
+    ```java
+    package com.lec.web.jdbc;
+
+    import java.sql.DriverManager;
+
+    import javax.servlet.ServletException;
+    import javax.servlet.http.HttpServlet;
+
+    import org.apache.commons.dbcp2.ConnectionFactory;
+    import org.apache.commons.dbcp2.DriverConnectionFactory;
+    import org.apache.commons.dbcp2.DriverManagerConnectionFactory;
+    import org.apache.commons.dbcp2.PoolableConnection;
+    import org.apache.commons.dbcp2.PoolableConnectionFactory;
+    import org.apache.commons.dbcp2.PoolingDriver;
+    import org.apache.commons.pool2.impl.GenericObjectPool;
+    import org.apache.commons.pool2.impl.GenericObjectPoolConfig;
+
+    public class DBCPInit extends HttpServlet {
+
+        @Override
+        public void init() throws ServletException {
+            loadJDBCDriver();
+            initConnectionPool();
+        }
+
+        private void loadJDBCDriver() {
+            String driverClass = getInitParameter("jdbcdriver");	
+
+            try {
+                //커넥션풀이 내부에서 사용할 JDBC드라이버 로딩
+                Class.forName(driverClass);
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException("JDBC 드라이버 로딩 실패!!");		
+            }
+        }
+
+        private void initConnectionPool() {
+
+            String url =  getInitParameter("url");
+            String usr =  getInitParameter("user");
+            String pwd =  getInitParameter("pass");
+
+            // A. Connection Pool 생성
+            // 1. 커넥션풀이 새로운 커넥션을 생성할 떄 사용하는 커넥션팩토리를 생성
+            ConnectionFactory connFactory = new DriverManagerConnectionFactory(url, usr, pwd);
+
+            // 2. PoolableConnection을 생성하는 객체생성. DBCP는 커넥션풀에 커넥션을 보관할 떄 PoolableConnection을 사용
+            // 이 클래스는 내부적으로 커넥션을 보관하고 있으며 커넥션풀을 관리하는데 필요한 기능을 제공
+            // 예를 들어서 connection을 close하면 커넥션을 완전히 종료하지 않고 커넥션풀에 connection을 반환
+            PoolableConnectionFactory poolFactory = new PoolableConnectionFactory(connFactory, null);
+
+            // 3. 커넥션이 유효한지여부를 검사하기 위한 SQL을 지정
+            poolFactory.setValidationQuery("select 1"); // 커넥션유효성을 검사 : mariadb or mysql;
+            // poolFactory.setValidationQuery("select * from dual"); // oracle
+
+            // B. 커넥션플의 설정정보
+            // 1. 설정정보를 관리할 객체를 생성
+            GenericObjectPoolConfig poolConfig = new GenericObjectPoolConfig();		
+            // 2. 커넥션의 검사주기
+            poolConfig.setTimeBetweenEvictionRunsMillis(1000l * 60l * 5l); // 사용가능한 검사주기
+            // 3. 풀에 보관중인 커넥션유효여부를 검사할지 안할지 여부설정
+            poolConfig.setTestWhileIdle(true);
+            // 4. 커넥션의 최소 갯수
+            poolConfig.setMinIdle(4);
+            // 5. 커넥션의 최대 갯수
+            poolConfig.setMaxIdle(50);
+
+            // C. 커넥션풀을 생성
+            // 1. PoolableConnection을 생성할 떄 사용할 커넥션팩토리와 설정정보를 이용해서 커넥션풀을 생성
+            GenericObjectPool<PoolableConnection> connPool = new GenericObjectPool<>(poolFactory, poolConfig);
+            // 2. 생성한 커넥션풀을 연결
+            poolFactory.setPool(connPool);
+
+            // D. 커넥션풀을 제공할 JDBC드라이버 등록
+            try {
+                Class.forName("org.apache.commons.dbcp2.PoolingDriver");
+                PoolingDriver driver = (PoolingDriver) DriverManager.getDriver("jdbc:apache:commons:dbcp:");
+                String poolName = getInitParameter("poolName");
+                driver.registerPool(poolName, connPool);
+            } catch (Exception e) {
+                throw new RuntimeException();
+            }	
+        }
+    }
+    ```
+
+3. **커넥션 풀 초기화 서블릿 설정**
+
+    이 코드를 추가하면 웹 어플리케이션이 시작할 때 DBCPInit 서블릿 클래스가 자동으로 시작되고 init()메소드가 호출됨
+
+    ```xml
+    <servlet>
+        <servlet-name>DBCPInit</servlet-name>
+        <servlet-class>jdbc.DBCPInit</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    ```
+
+4. **커넥션 풀로부터 커넥션 사용하기**
+
+
+### Connection Pool Properties Description
 
 GenericObjectPoolConfig 클래스의 커넥션 개수와 대기 관련 설정 메서드
 {: .label .label-red .mt-2}

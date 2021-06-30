@@ -19,23 +19,23 @@ nav_order: 2
 
 ### GuestBook Setting
 
-1. Dynamic Web Project 생성
+1. **Dynamic Web Project 생성**
 
-2. 웹 서버 유형 Tomcat v9.0으로 설정하기
+2. **웹 서버 유형 Tomcat v9.0으로 설정하기**
 
-3. 라이브러리 가져오기 
+3. **라이브러리 가져오기** 
 
     ![](https://gekdev.github.io/docs/jsp/example/lib.jpg)
 
 ### Create New Database 
 
-1. 새로운 데이터베이스 생성 하기
+1. **새로운 데이터베이스 생성 하기**
 
     ```sql
     create database guestbook;
     ```
 
-2. 새로운 테이블 생성
+2. **새로운 테이블 생성**
 
     ```sql
     create table guestbook_message (
@@ -46,7 +46,7 @@ nav_order: 2
     ) engine=InnoDB default character set = utf8;
     ```
 
-3. 테이블에 1000건의 데이터 넣기
+3. **테이블에 1000건의 데이터 넣기**
 
     ```sql
     delimiter //
@@ -60,7 +60,7 @@ nav_order: 2
     end;
     ```
 
-4. 테이블 조회하기
+4. **테이블 조회하기**
 
     ```sql
     select * from guestbook_message order by message_id desc limit 0, 10;   //10건씩 나오는지 확인
@@ -120,7 +120,7 @@ public class Message {
 
 ### Create JDBC Package
 
-1. 데이터베이스 커넥션 생성 객체 생성
+1. **데이터베이스 커넥션 생성 객체 생성**
 
     JDBC를 이용해서 데이터베이스를 사용하려면 데이터베이스와 연결된 커넥션
 
@@ -141,7 +141,7 @@ public class Message {
     }
     ```
 
-2. 드라이버 로딩, 커넥션풀을 생성하는 객체 생성
+2. **드라이버 로딩, 커넥션풀을 생성하는 객체 생성**
 
     커넥션 풀을 사용해서 생성함
 
@@ -232,7 +232,7 @@ public class Message {
     }
     ```
 
-3. 커넥션을 종료하거나 롤벡할 수 있는 객체 생성
+3. **커넥션을 종료하거나 롤벡할 수 있는 객체 생성**
 
     JDBCUtil
     {: .label .label-purple .mt-2}
@@ -440,6 +440,7 @@ public class MessageDAO {
 ```
 
 list
+{: .label .label-purple .mt-2}
 ```java
 <%@ page import="com.lec.web.service.MessageListView"%>
 <%@ page import="com.lec.web.service.GetMessageListService"%>
