@@ -358,7 +358,7 @@ Statement 객체는 쿼리를 실행할 수 있음. 쿼리를 실행하는 메�
 
 * int executeUpdate(String query) : INSERT, UPDATE, DELETE 쿼리를 실행, 변경한 레코드의 개수를 리턴
 
-#### **Process Single Quotes when Eecuting Queries using Statements**
+#### Process Single Quotes when Eecuting Queries using Statements
 
 **Statement를 이용한 쿼리 실행 시 작은따옴표 처리**
 

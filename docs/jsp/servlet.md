@@ -3,7 +3,6 @@ layout: default
 title: Servlet
 parent: JSP
 nav_order: 12
-has_children: true
 ---
 
 # JSP Servlet
@@ -35,7 +34,7 @@ JSP 표준이 나오기 전에 만들어진 표준
 
 아파치 톰켓 서버를 가져오지 않으면 사용할 수 없음
 
-### 서블릿의 개발과정
+### Development of Servlet
 
 1. 서블릿 규약에 따라 자바 코드를 작성
 
@@ -57,7 +56,13 @@ JSP와 비교하면 몇가지 과정이 더 들어가기 때문에 복잡해서 
 
 따라서 서블릿 코드를 직접 구현하지는 않더라도 웹 개발을 배울 때 서블릿 자체에 대해서 이해하는 것은 중요함
 
-### 서블릿 구현 방법
+---
+
+## Create Servlet
+
+### Servlet Implementation Method
+
+**서블릿 구현 방법**
 
 1. 서블릿 클래스를 구현하려면 먼저 HttpServlet 클래스를 상속받은 클래스를 작성해야 함
     
@@ -205,7 +210,9 @@ package com.lec.servlet;
 public class CurrentTime extends HttpServlet {
 ```
 
-### URL 패턴 매핑 규칙
+### URL Pattern Mapping Rules
+
+**URL 패턴 매핑 규칙**
 
 servlet-mapping 태그는 url-pattern태그를 사용해서 서블릿과 url을 매핑하고, @WebServlet의 경우 urlPatterns속성을 이용해서 서블릿과 url을 매핑함
 
@@ -254,7 +261,7 @@ URL패턴은 다음 규칙에 따라 서블릿을 매핑함
 **즉, 서로 다른 두 개의 객체가 생성되고 각각 @WebServlet 애노테이션에서 지정한 URL 패턴과 web.xml파일에 지정한 URL 패턴에 매핑됨**
 </div>
 
-### HTTP 각 방식 별 구현 메서드
+### HTTP Implementation Method for Each Method
 
 HTTP는 다양한 방식을 지원하지만 일반적으로 웹과 웹브라우저가 지원하는 방식은 GET, POST방식임
 
@@ -284,11 +291,11 @@ HttpServlet은 Http의 각 방식에 따라 알맞은 메서드를 이용해서 
     }
     ```
     
-### 서블릿 로딩과 초기화
+### Servlet Loading and Initialization
 
 서블릿 컨테이너는 처음 서블릿을 실행 할 떄 서블릿 객체를 생성함
 
-![](servletloading.png)
+![](https://gekdev.github.io/docs/jsp/example/servletloading.png)
 
 위 그림과 같이 서블릿을 최초 요청할 때 서블릿 객체를 생성하고, 이후 요청이 오면 앞서 생성한 서블릿 객체를 그대로 사용
 
@@ -336,15 +343,15 @@ public class DBCPInit extends HttpServlet {
 
 보통 초기화 작업은 상대적으로 시간이 오래 걸리기 때문에 웹 컨테이너를 처음 구동하는 시점에 초기화를 진행하는게 좋음
 
-이를 위한 설정이 <load-on-startup> 태그, DBCP 초기화를 위해 web.xml파일에 추가해야 함
+이를 위한 설정이 load-on-startup 태그, DBCP 초기화를 위해 web.xml파일에 추가해야 함
 
-<load-on-startup> 태그 값은 로딩 순서를 의미
+load-on-startup 태그 값은 로딩 순서를 의미
 
 값을 기준으로 오름차순으로 서블릿을 로딩(1,2,3 순서)
 
 @WebServlet 태그를 사용하는 경우에는 loadOnStartUp 속성을 이용해 로딩값을 지정
 
-web.xml : load-on-startup
+web.xml: load-on-startup
 {: .label .label-purple .mt-2}
 ```xml
 <servlet>
@@ -354,9 +361,9 @@ web.xml : load-on-startup
 </servlet>
 ```
 
-![](load.png)
+![](https://gekdev.github.io/docs/jsp/example/load.png)
 
-### 초기화 파라미터
+### Initialization Parameters
 
 수정해야 하는 클래스가 자바 클래스 안에 있을 경우 수정하기 불편함
 
@@ -403,7 +410,6 @@ web.xml : 초기화 파라미터 예시
      
      <load-on-startup>1</load-on-startup>
   </servlet>
-</web-app>
 ```
 
 아래와 같이 사용하면 됨
