@@ -835,7 +835,6 @@ try{
 
 4. **커넥션 풀로부터 커넥션 사용하기**
 
-
 ### Connection Pool Properties Description
 
 GenericObjectPoolConfig 클래스의 커넥션 개수와 대기 관련 설정 메서드
