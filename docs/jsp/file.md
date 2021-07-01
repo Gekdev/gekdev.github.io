@@ -1,3 +1,25 @@
+---
+layout: default
+title: File
+parent: JSP
+nav_order: 13
+---
+
+# JSP File
+{: .no_toc .text-beta .fw-700}
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
+---
+
+## JSP File Processing
+
+### 
+
 <input type="file"> 은 파일을 선택할 수 있는 창을 만든다. 
 
 선택된 파일을 전송할 수 있도록 enctype을 지정해준다.
@@ -20,9 +42,6 @@ request객체로 파라미터의 값을 얻어낼 수 없다.
 
 <input type="file" 로 지정된 파일을 서버상의 한 폴더에 업로드 하기 위해 특별한 컴포넌트가 필요하다.
 
-[daraeK blog](https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=darae9108&logNo=220761003181)
-
-
 ---
 
 ## cos.jar
@@ -31,4 +50,10 @@ request객체로 파라미터의 값을 얻어낼 수 없다.
 
 최신버전을 다운받고 싶다면[mvnrepository](https://mvnrepository.com/search?q=cos)로...
 
+
+---
+
+## Reference Site 
+
+* [daraeK blog](https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=darae9108&logNo=220761003181)
 
