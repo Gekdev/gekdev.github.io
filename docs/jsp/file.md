@@ -375,15 +375,16 @@ jsp05_fileupload
 		Enumeration files = multi.getFileNames();
 
 		//가져온 파일들의 값을 하나씩 추출하기
-		String file1 = (String)files.nextElement();
+		//마지막에 저장된 값이 (file2)가 먼저 추출됨
+		String file2 = (String)files.nextElement();
 		//추출한 파일의 이름을 가져오기
-		filename1 = multi.getFilesystemName(file1);
+		filename2 = multi.getFilesystemName(file2);
 		//추출한 파일의 원래 이름을 가져오기
-        orgfilename1 = multi.getOriginalFileName(file1);
-        
-        String file2 = (String)files.nextElement();
-        filename2 = multi.getFilesystemName(file2);
         orgfilename2 = multi.getOriginalFileName(file2);
+        
+        String file1 = (String)files.nextElement();
+        filename1 = multi.getFilesystemName(file1);
+        orgfilename1 = multi.getOriginalFileName(file1);
         
 	}catch(Exception e){
 		e.printStackTrace();
@@ -566,4 +567,3 @@ jsp07_filedownload
 ## Reference Site
 
 * [daraeK blog](https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=darae9108&logNo=220761003181)
-
