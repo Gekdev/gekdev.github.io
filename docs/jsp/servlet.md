@@ -3,6 +3,7 @@ layout: default
 title: Servlet
 parent: JSP
 nav_order: 12
+has_children: true
 ---
 
 # JSP Servlet
@@ -445,6 +446,9 @@ if(poolName == null) poolName = "pool";
 @WebInitParam 예시
 {: .label .label-purple .mt-2}
 ```java
+import javax.servlet.annotation.WebInitParam;
+...
+    
 @WebServlet
 (urlPatterns="/yyy", 
     initParams = 

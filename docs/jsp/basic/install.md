@@ -51,7 +51,7 @@ nav_order: 1
 
 ---
 
-## Installing a web server 
+## Installing a web Server 
 
 ### Apache Tomcat® Install
 
@@ -73,7 +73,7 @@ nav_order: 1
 
     ![](https://gekdev.github.io/docs/jsp/basic/example/comm.jpg) 
 
-2. **시스템속성&#8594; 고급&#8594; 환경변수&#8594; 시스템변수 추가하기**
+2. **시스템속성 &#8594; 고급 &#8594; 환경변수 &#8594; 시스템변수 추가하기**
 
     * 변수이름 : CATALINA_HOME
     
@@ -83,13 +83,15 @@ nav_order: 1
 
 3. **path 변수에 추가**
 
-    `%CATALINA_HOME%\bin`
+    &#9656; %CATALINA_HOME%\bin
 
     ![](https://gekdev.github.io/docs/jsp/basic/example/add.JPG)
 
 ### CMD Startup
 
 1. **톰켓 경로잡기**
+
+    dir을 확인했을때 bin이 있는지 확인
 
     ```java
     cd..
@@ -98,8 +100,6 @@ nav_order: 1
     cd dir
     ```
     
-    &#8594; 여기 dir을 확인했을때 bin이 있는지 확인
-
 2. **startup 명령으로 톰켓 설치하기**
 
     ```java
@@ -107,7 +107,7 @@ nav_order: 1
     ```
 
     외장하드에다가 풀고 cmd해봤는데 안됨 (따로 연결 문제가 있는듯 함)
-    {: .fs-3 .text-grey-dk-200 .fw-700 .mt-3}
+    {: .fs-3 .text-grey-dk-000 .fw-700 .mt-3}
 
 3. **창닫기**
 
@@ -143,15 +143,15 @@ nav_order: 1
 
 2. **startup명령어 치기 (경로 상관 X)**
 
-    서버를 실행한다는 의미
+    &#9656; 서버를 실행한다는 의미
 
 2. **크롬 실행 후 http://localhost:8088/**
 
-    이 화면이 나오면 성공!
+    아래 화면이 나오면 성공!
     
     ![](https://gekdev.github.io/docs/jsp/basic/example/index.png)
 
-### index.html
+### Root Folder
 
 C:\tomcat-9.0.48\webapps\ROOT 여기가 루트
 
@@ -159,7 +159,7 @@ C:\tomcat-9.0.48\webapps\ROOT 여기가 루트
 
 ---
 
-## Integrated Development Environment Setting
+## Eclipse Integrated Development Environment Setting 
 
 ### Default Setting
 
@@ -201,13 +201,21 @@ Open Perspective 에서 Java EE로 세팅
 
 ### Dynamic Web Project 
 
-**JSP파일은 동적 웹 프로젝트 파일로 생성해야 함**
+JSP파일은 동적 웹 프로젝트 파일로 생성해야 함
 
-![](https://gekdev.github.io/docs/jsp/basic/example/project1.JPG)
+1. **어느 서버를 사용할건지 지정해줘야 함**
 
-#### Structure of dynamic web projects
+    ![](https://gekdev.github.io/docs/jsp/basic/example/)
 
-![](https://gekdev.github.io/docs/jsp/basic/example/dystruct.png)
+2. **Context root를 다른 이름으로 지정할 수 있음**
+
+    web.xml을 클릭해야지 생성됨
+
+    ![](https://gekdev.github.io/docs/jsp/basic/example/project1.JPG)
+
+3. **생성하면 아래 이미지와 같은 구조로 생성됨**
+
+    ![](https://gekdev.github.io/docs/jsp/basic/example/dystruct.png)
 
 ### Root & WebContent
 
@@ -219,7 +227,7 @@ Open Perspective 에서 Java EE로 세팅
 
 0. **템플릿 설정하기 전 먼저 해야하는것**
 
-    **★ Apache Tomcat v9.0 라이브러리를 해놔야지 ${encoding}부분이 알아서 변경됨**
+    **★ Apache Tomcat v9.0 서버 런타임 라이브러리를 해놔야지 ${encoding}부분이 알아서 변경됨**
 
     1. **Build path &#8594; Configure Build path**
     
@@ -227,7 +235,7 @@ Open Perspective 에서 Java EE로 세팅
 
         ![](https://gekdev.github.io/docs/jsp/basic/example/adlib.JPG)
     
-    3. **add된 모습**
+    3. **Apache Tomcat선택 후 add된 모습**
     
         ![](https://gekdev.github.io/docs/jsp/basic/example/adlibadd.JPG)
         
@@ -235,6 +243,9 @@ Open Perspective 에서 Java EE로 세팅
 
 2. **New JSP File (html 5) 파일을 수정하기**
 
+    <div class="code-example" markdown="1">
+    ![](https://gekdev.github.io/docs/jsp/basic/example/6.templates.JPG)
+    </div>
     ```jsp
     <%@ page language="java" contentType="text/html; charset=${encoding}" pageEncoding="${encoding}"%>
     <!DOCTYPE html>
@@ -253,10 +264,10 @@ Open Perspective 에서 Java EE로 세팅
     </html>
     ```
 
-    ![](https://gekdev.github.io/docs/jsp/basic/example/6.templates.JPG)
-
 ---
 
-## Reference site
+## Representative Site
 
-[ansalstmd.log](https://velog.io/@ansalstmd/JSP1.-%EA%B0%9C%EC%9A%94)
+### Information
+
+* [ansalstmd.log](https://velog.io/@ansalstmd/JSP1.-%EA%B0%9C%EC%9A%94)

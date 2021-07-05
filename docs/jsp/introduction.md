@@ -36,11 +36,53 @@ nav_order: 1
 
 ![](https://gekdev.github.io/docs/jsp/example/internet.png)
 
+### How the Web Works
+
+웹은 기본적으로 클라이언트/서버 방식으로 동작
+
+클라이언트(웹 브라우저)가 특정 페이지를 웹 서버에 요청(request)하면 이를 처리한 후 그 결과를 클라이언트에게 보내어 응답(response)
+
+즉 웹브라우저에 원하는 웹 서버 주소를 입력(요청)하면 웹 서버가 웹 브라우저를 통해 해당 웹 페이지를 제공(응답)
+
+&#9656; 요청하는 쪽이 클라이언트(사용자)이고 응답하는 쪽이 서버(제공자)
+
+&#9656; 가장 널리쓰이는 웹 서버로 아파치(Apache), 톰캣(Tomcat), IIS(Internet Information Server)등
+
+### Web Browser and Web Server
+
+![](https://gekdev.github.io/docs/jsp/example/browser.png)
+
+웹 브라우저와 웹 서버는 IP주소를 이용해서 연결하기 때문에 도메인이름을 IP주소로 변환할 필요가 있음
+
+**이때 사용하는 것이 DNS(Domain Name Server)**
+
+웹브라우저와 웹 서버의 통신과정
+{: .label .label-red .mt-2}
+<div class="code-example" markdown="1">
+1. 웹브라우저에서 URL을 입력
+
+2. 도메인에 해당하는 IP주소를 DNS에 요청
+
+3. DNS는 IP주소를 응답으로 제공
+
+4. 웹브라우저는 받은 IP주소를 웹서버에 연결후 웹페이지 요청
+
+5. 웹 서버로부터 응답받음
+</div>
+
+### Port
+
+**각 서버프로그램을 클라이언트가 연결할 때 다른 서버프로그램과 구분할 때 사용하는 것**
+
+한개의 컴퓨터는 여러개의 서버 프로그램이 실행될 수 있는데 ip주소만으로는 어떤 서버프로그램을 사용할지 모르기 때문에 클라이언트가 연결할 때 각 서버프로그램을 구분할 수 있게 포트를 사용함
+
+&#9656; **ip + port = 원하는 서버프로그램 연결**
+
 ### URL(Uniform Resource Locator)
 
 **URL의 주요 구성 요소**
 
-![](urlbasic.png)
+![](https://gekdev.github.io/docs/jsp/example/urlbasic.png)
 
 | 구성요소 | 설명 |
 |:---------|:-----|
@@ -57,57 +99,15 @@ nav_order: 1
 URL을 좀 더 범용적으로 정의한 URL을 확인하려면 [http://ko.wikipedia.org/wiki/URL](http://ko.wikipedia.org/wiki/URL)이나 [http://goo.gl/1gNfgx](http://goo.gl/1gNfgx) 참고
 </div>
 
-### How the Web Works
-
-웹은 기본적으로 클라이언트/서버 방식으로 동작
-
-클라이언트(웹 브라우저)가 특정 페이지를 웹 서버에 요청(request)하면 이를 처리한 후 그 결과를 클라이언트에게 보내어 응답(response)
-
-즉 웹브라우저에 원하는 웹 서버 주소를 입력(요청)하면 웹 서버가 웹 브라우저를 통해 해당 웹 페이지를 제공(응답)
-
-&#9656; 요청하는 쪽이 클라이언트(사용자)이고 응답하는 쪽이 서버(제공자)
-
-&#9656; 가장 널리쓰이는 웹 서버로 아파치(Apache), 톰캣(Tomcat), IIS(Internet Information Server)등
-
-### Web Browser and Web Server
-
-**웹브라우저와 웹 서버의 통신과정**
-
-![](browser.png)
-
-웹 브라우저와 웹 서버는 IP주소를 이용해서 연결하기 때문에 도메인이름을 IP주소로 변환할 필요가 있음
-
-이때 사용하는 것이 DNS(Domain Name Server)
-
-1. 웹브라우저에서 URL을 입력
-
-2. 도메인에 해당하는 IP주소를 DNS에 요청
-
-3. DNS는 IP주소를 응답으로 제공
-
-4. 웹브라우저는 받은 IP주소를 웹서버에 연결후 웹페이지 요청
-
-5. 웹 서버로부터 응답받음
-
-### Port
-
-**각 서버프로그램을 클라이언트가 연결할 때 다른 서버프로그램과 구분할 때 사용하는 것**
-
-한개의 컴퓨터는 여러개의 서버 프로그램이 실행될 수 있는데 ip주소만으로는 어떤 서버프로그램을 사용할지 모름
-
-그래서 클라이언트가 연결할 때 각 서버프로그램을 구분할 수 있게 포트를 사용함
-
-**ip + port = 원하는 서버프로그램 연결**
-
 ### HTML and HTTP
 
 * HTML : 웹페이지를 만들 때 사용하는 것
 
-* 렌더링 : HTML문서를 받은 웹 브라우저가 정해진 규칙에 따라 HTML문서를 분석해서 알맞은 화면을 생성하는 과정
+    &#9656; 렌더링 : HTML문서를 받은 웹 브라우저가 정해진 규칙에 따라 HTML문서를 분석해서 알맞은 화면을 생성하는 과정
 
 * HTTP : 웹 브라우저와 웹 서버가 HTML을 비롯해 이미지, 동영상, XML문서 등 다양한 데이터를 주고 받을 때 사용하는 일종의 규칙, 쉽게말해 정보를 담는 박스라고 생각하면 됨
 
-#### HTTP Rules
+### HTTP Rules
 
 * 요청 규칙 : 웹 브라우저가 웹 서버에 HTML과 같은것을 요청할 때 사용할 데이터 구성 규칙
 
@@ -115,14 +115,16 @@ URL을 좀 더 범용적으로 정의한 URL을 확인하려면 [http://ko.wikip
     
     &#8594; 요청데이터 : 요청줄, 헤더, 몸체로 구성
 
-* 응답 규칙 : 웹 서버가 웹 브라우저에 HTML과 같은것을 전송할 대 사용할 데이터 구성 규칙
+* 응답 규칙 : 웹 서버가 웹 브라우저에 HTML과 같은것을 전송할 때 사용할 데이터 구성 규칙
 
     &#9656; 요청데이터에 기술한 정보를 이용해서 웹 브라우저가 요청한 것을 응답데이터에 담아 보냄
 
     &#8594; 응답데이터 : 응답줄, 헤더, 몸체로 구성
 
+![](https://gekdev.github.io/docs/jsp/example/reqresp.png)
+
 요청/응답 데이터의 구성요소
-{: .label .mt-2}
+{: .label .label-red .mt-2}
 
 | 구성요소 | 요청 데이터 | 응답 데이터 |
 |:---------|:------------|:------------|
@@ -138,9 +140,10 @@ URL을 좀 더 범용적으로 정의한 URL을 확인하려면 [http://ko.wikip
 
 ### Technology used to Create Websites
 
-웹을 기반으로 하는 서비스를 만들기 위해 필요한 지식은 많다
+웹을 기반으로 하는 서비스를 만들기 위해 필요한 지식은 많음
 
-다음은 자바를 이용해서 웹사이티를 만들 때 사용하는 기술들을 나열한 것
+자바를 이용해서 웹사이트를 만들 때 사용하는 기술들
+{: .label .label-red .mt-2}
 
 * 개발언어 : 자바
 
@@ -164,15 +167,15 @@ URL을 좀 더 범용적으로 정의한 URL을 확인하려면 [http://ko.wikip
 
 ### Static Web Page
 
-**컴퓨터에 저장된 텍스트 파일을 그대로 보는 것, HTML(Hyper Text Markup Language)과 같은 웹 언어로 작성**
+**컴퓨터에 저장된 텍스트 파일을 그대로 보는 것** 
 
-&#8594; 가장 단순한 형태의 웹 언어
+&#9656; HTML(Hyper Text Markup Language)과 같은 웹 언어로 작성
+
+&#9656; 가장 단순한 형태의 웹 언어
 
 &#9656; 추가적인 처리 과정 없이 클라이언트에게 응답을 보냄
 
-&#9656; 회사나 개인의 소개 페이지가 정적 웹 페이지의 좋은 예시
-
-![](https://gekdev.github.io/docs/jsp/example/static.png)
+&#9656; 회사나 개인 소개 페이지가 정적 웹 페이지의 좋은 예시
 
 #### How Static Web Pages Work
 
@@ -183,6 +186,12 @@ URL을 좀 더 범용적으로 정의한 URL을 확인하려면 [http://ko.wikip
 3. 이미 준비된 HTML 문서를 클라이언트에게 그대로 전송
 
 4. 웹 브라우저가 HTML 문서를 보여줌
+
+![](https://gekdev.github.io/docs/jsp/example/static.png)
+
+#### Advantage & Disadvantage
+
+정적 홈페이지의 장,단점
 
 장점
 {: .label .mt-2}
@@ -206,17 +215,17 @@ URL을 좀 더 범용적으로 정의한 URL을 확인하려면 [http://ko.wikip
 
 **저장된 내용을 다른 변수로 가공 처리하여 보는 것**
 
-&#9656; 기술이 발전함에 따라 사용자의 기호에 맞게 능동적으로 변화하는 웹 페이지가 필요해져서 이를 위해 동적 웹 페이지를 제공하는 PHP(Personal Home Page), ASP(Active Server Page), JSP와 같은 웹 언어가 개발됨
-
 &#9656; 동적 페이지는 방문자와 상호작용하기 때문에 웹 페이지 상에서 특정 부분을 동적으로 바꾸는 형태로 사용해 페이지 내용은 그때그때 다름
 
 &#9656; 댓글, 날씨, 주가 정보 등과 같이 정보 변경이 잦은 곳에 많이 사용됨 
 
-![](https://gekdev.github.io/docs/jsp/example/dynamic.png)
+&#9656; 기술이 발전함에 따라 사용자의 기호에 맞게 능동적으로 변화하는 웹 페이지가 필요해져서 이를 위해 동적 웹 페이지를 제공하는 PHP(Personal Home Page), ASP(Active Server Page), JSP와 같은 웹 언어가 개발됨
 
 #### How Dynamic Web Pages Work
 
 사용자가 웹 페이지에 글을 작성하거나 환경 설정 등을 바꾸면 그내용이 서버에 있는 데이터베이스에 저장되고 결과가 웹 페이지에 반영되는 형태로 동작
+
+로그인하면 개인에 대한 정보와 개인만의 화면으로 구성되는 웹 사이트가 동적 웹 페이지의 대표적인 예
 
 1. 클라이언트가 웹 브라우저를 통해 웹 서버에 웹 페이지(URL) 요청
 
@@ -228,10 +237,10 @@ URL을 좀 더 범용적으로 정의한 URL을 확인하려면 [http://ko.wikip
 
 5. 웹 브라우저가 HTML 문서를 보여줌
 
-로그인하면 개인에 대한 정보와 개인만의 화면으로 구성되는 웹 사이트가 동적 웹 페이지의 대표적인 예
+![](https://gekdev.github.io/docs/jsp/example/dynamic.png)
 
 파이썬으로 동적 웹페이지 크롤링
-{: .label .mt-2}
+{: .label .label-red .mt-2}
 <div class="code-example" markdown="1">
 requests 라이브러리를 이용해서는 나타나지 않는 데이터들을 수집하는 가장 손쉬운 방법은 코드로 브라우저를 제어하는 것
 
