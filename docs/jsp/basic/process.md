@@ -99,7 +99,11 @@ C:/apache-tomcat/work/Catalina/localhost/...
 
 ### JSP Life Cycle
 
-JSP 페이지를 컴파일한 *.class에는 jspInit( ), _jspService( ), jspDestroy( ) 메소드가 존재하며, JSP 생성부터 파괴까지의 과정에서 다음과 같은 역할을 수행함
+JSP 페이지를 컴파일한 *.class에는 jspInit( ), _jspService( ), jspDestroy( ) 메소드가 존재함
+
+JSP 생성부터 파괴까지의 과정에서 다음과 같은 역할을 수행함
+
+![](https://gekdev.github.io/docs/jsp/basic/example/life.png)
 
 1. **변환(translation) 단계**
 
@@ -143,8 +147,6 @@ JSP 페이지를 컴파일한 *.class에는 jspInit( ), _jspService( ), jspDestr
 
     &#9656; JSP 컨테이너가 해당 서블릿 인스턴스를 제거할 떄 어떤 활동을 정리하기 위해 jspDestroy( ) 메서드를 호출함
 
-![](https://gekdev.github.io/docs/jsp/basic/example/life.png)
-
 override method
 {: .label .label-yellow .mt-2}
 <div class="code-example" markdown="1">
@@ -159,13 +161,15 @@ jspInit( )와 jspDestroy( ) 메서드는 컨테이너가 기본 기능을 제공
 
 jsp페이지는 응답결과를 곧바로 웹 브라우저에 전송하는 것이 아니라 출력 버퍼(buffer)에 임시로 저장했다가 한번에 웹 브라우저로 전달
 
-버퍼 출력 장점
+![](https://gekdev.github.io/docs/jsp/example/buffer.png)
 
-* 데이터 전송 성능 향상
+### Advantage of Buffer
+
+* **데이터 전송 성능 향상**
 
     &#9656; 네트워크를 비롯한 모든 데이터 교환에서는 큰 단위로 데이터를 전송하는 것이 성능이 높음
 
-* JSP 실행 도중에 버퍼를 비우고 새로운 내용 전송 가능
+* **JSP 실행 도중에 버퍼를 비우고 새로운 내용 전송 가능**
 
     &#9656; jsp:forward 기능과 에러 페이지 처리 기능이 가능함
 
@@ -175,7 +179,7 @@ jsp페이지는 응답결과를 곧바로 웹 브라우저에 전송하는 것�
 
     ex) JSP 실행과정에서 에러가 발생하면, 지금 까지 생성한 내용을 버퍼에서 지우고 에러 화면을 출력할 수 있음
 
-* 버퍼가 다 차기 전까지는 헤더정보를 변경 가능
+* **버퍼가 다 차기 전까지는 헤더정보를 변경 가능**
 
     &#9656; HTTP 프로토콜의 구조상 응답 상태 코드와 함께 헤더 정보를 가장 먼저 웹 브라우저에 전송해야 함. 이런 이유로 WAS는 처음 버퍼의 내용을 웹 브라우저로 전송하기 전에 헤더 정보를 전송함
 
@@ -183,41 +187,79 @@ jsp페이지는 응답결과를 곧바로 웹 브라우저에 전송하는 것�
 
     &#9656; 하지만 일단 버퍼 내용이 웹 브라우저에 전송되면 그 이후로는 헤더 정보를 변경해도 적용되지 않음
 
-![](https://gekdev.github.io/docs/jsp/example/buffer.png)
-
 ### buffer & autoFlush Property
 
 page 디렉티브는 buffer, autoFlush 속성을 제공하고 있음
 
-&#9656; **buffer속성 : JSP 페이지가 사용할 버퍼의 크기를 지정할 때 사용, 킬로바이트 단위로 버퍼 크기를 지정함**
+* **buffer : JSP 페이지가 사용할 버퍼의 크기를 지정할 때 사용, 킬로바이트 단위로 버퍼 크기를 지정함**
 
-&#9656; buffer를 사용하고 싶지 않다면 buffer="none"으로 지정하면 됨 
+    &#9656; buffer를 사용하고 싶지 않다면 buffer="none"으로 지정하면 됨 
 
-&#9656; none으로 지정한다면 jsp가 출력하는 내용을 즉시 웹브라우저로 전송하기 때문에 제약사항이 있음 (그래서 거의 사용 안함)
+    &#9656; none으로 지정한다면 jsp가 출력하는 내용을 즉시 웹브라우저로 전송하기 때문에 제약사항이 있음 (그래서 거의 사용 안함)
 
-1. <jsp:forward> 기능을 사용할 수 없음
+    1. <jsp:forward> 기능을 사용할 수 없음
 
-2. 곧바로 전송되기 때문에 출력한 내용을 취소할 수 없음
+    2. 곧바로 전송되기 때문에 출력한 내용을 취소할 수 없음
 
-&#9656; autoFlush속성 : 버퍼가 다 찼을 때 어떻게 처리할지 결정
+* **autoFlush : 버퍼가 다 찼을 때 어떻게 처리할지 결정**
 
-예제
+Syntax
 {: .label .label-purple .mt-2}
 ```jsp
-<%@ page buffer = "8kb" autoFlush= "true" %>
+<%@ page buffer = "?kb" autoFlush= "true/false" %>
+
+▸ autoFlush = "true" : 버퍼가 다 찼을 경우 버퍼를 플러시하고 계속해서 작업 진행
+
+▸ autoFlush = "false" : 버퍼가 다 차면 익셉션을 발생시키고 작업을 중지
 ```
 
-* autoFlush = "true" : 버퍼가 다 찼을 경우 버퍼를 플러시하고 계속해서 작업 진행
+autoFlush = "true"
+{: .label .label-purple .mt-2}
+<div class="code-example" markdown="1">
+![](https://gekdev.github.io/docs/jsp/example/flushtrue.jpg)
+</div>
+```jsp
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page buffer = "8kb" autoFlush= "true" %>
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+	<% 	for(int i=0 ; i<1000 ; i++){ %>
+		12345
+	<%	} %>
+</body>
+</html>
+```
 
-* autoFlush = "false" : 버퍼가 다 차면 익셉션을 발생시키고 작업을 중지
+autoFlush = "false"
+{: .label .label-purple .mt-2}
+<div class="code-example" markdown="1">
+![](https://gekdev.github.io/docs/jsp/example/flushfalse.jpg)
+</div>
+```jsp
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page buffer = "8kb" autoFlush= "false" %>
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+	<% 	for(int i=0 ; i<1000 ; i++){ %>
+		12345
+	<%	} %>
+</body>
+</html>
+```
 
 ### Process of Buffer
 
 ![](https://gekdev.github.io/docs/jsp/example/buffer2.png)
 
-위 그림의 3번 과정에서 출력 버퍼에 보관한 데이터를 웹 브라우저에 전송하는데, 이때 버퍼에 보관된 응답 데이터를 전송하기 전에 응답 상태 코드와 응답 헤더를 먼저 전송. 따라서 이후에는 응답 헤더값을 변경해도 웹 브라우저에 전송되지 않고 무시됨
+▸ 위 그림의 3번 과정에서 출력 버퍼에 보관한 데이터를 웹 브라우저에 전송하는데, 이때 버퍼에 보관된 응답 데이터를 전송하기 전에 응답 상태 코드와 응답 헤더를 먼저 전송. 따라서 이후에는 응답 헤더값을 변경해도 웹 브라우저에 전송되지 않고 무시됨
 
-위 3번 과정을 Flush(버퍼가 다 찼을 때 버퍼에 쌓긴 데이터를 실제로 전송해야 할곳에 전송하고 버퍼를 비우는 것)라고 함
+▸ 위 3번 과정을 **Flush(버퍼가 다 찼을 때 버퍼에 쌓긴 데이터를 실제로 전송해야 할곳에 전송하고 버퍼를 비우는 것)라고 함**
 
 note!
 {: .label .label-yellow .mt-2}
@@ -237,7 +279,7 @@ Servlet/JSP은 웹애플리케이션이 특정의 폴더 구조를 따르도록 
 
 이 구조를 모르면 제대로 동작하는 프로그램을 개발할 수 없게 됨
 
-웹 어플리케이션 폴더는 WEB-INF폴더와 그 하위폴더를 포함함
+▸ 웹 어플리케이션 폴더는 WEB-INF폴더와 그 하위폴더를 포함함
 
 Servlet/JSP의 기본폴더 구조
 {: .label .mt-2}
@@ -267,63 +309,73 @@ JSP 2.0에서는 web.xml파일을 반드시 포함하도록 제한하고 있었�
 
 ### Relationship between Web Application Folder and URL
 
-한개의 웹 어플리케이션은 한개의 폴더를 차지함 (jsp01_...)
+&#9656; 한개의 웹 어플리케이션은 한개의 폴더를 차지함 (jsp01_...)
 
-톰켓에서 웹 어플리케이션은 [톰켓]/webapps 폴더에 위치하고, 그 하위폴더는 자동으로 웹 어플리케이션에 포함됨
+&#9656; 톰켓에서 웹 어플리케이션은 [톰켓]/webapps 폴더에 위치하고, 그 하위폴더는 자동으로 웹 어플리케이션에 포함됨
 
-각 폴더의 이름은 웹 어플리케이션을 실행할 때 사용되는 URL과 관련이 있는데 context path를 따로 설정한 경우 폴더의 이름이 아니라 context path명으로 사용됨
+&#9656; 각 폴더의 이름은 웹 어플리케이션을 실행할 때 사용되는 URL과 관련이 있는데 context path를 따로 설정한 경우 폴더의 이름이 아니라 context path명으로 사용됨
 
-**[톰켓]/webapps/[웹경로] = http://host:port[/웹경로]**
+&#9656; **[톰켓]/webapps/[웹경로] = http://host:port[/웹경로]**
 
-[톰켓]/webapps에는 root라는 특수 폴더가 존재하는데, root는 context path가 빈 문자열("")임
-
-request.getContextPath() : 컨텍스트 경로를 얻을 수 있음
+&#9656; [톰켓]/webapps에는 root라는 특수 폴더가 존재하는데, root는 context path가 빈 문자열("")임
 
 웹 어플리케이션의 경로 구하기
 {: .label .label-purple .mt-2}
 <div class="code-example" markdown="1">
+**request.getContextPath() : 컨텍스트 경로를 얻을 수 있음**
 
+![](https://gekdev.github.io/docs/jsp/example/contextpath.jpg)
 </div>
 ```jsp
-웹 어플리케이션 컨텍스트 경로 : <%=request.getContextPath()%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <h1>웹의 컨텍스트 경로 = <%= request.getContextPath() %></h1>
+</body>
+</html>
 ```
 
 ### Using Subfolders within the Web Application Folder
 
-JSP페이지가 너무 많아지면 관리하기 힘들어짐. 이 문제를 해결하는 쉬운 방법은 웹 어플리케이션 폴더 밑에 하위 폴더를 생성해서 JSP 페이지를 기능 별로 분류하는 것
+JSP페이지가 너무 많아지면 관리하기 힘들어짐. **이 문제를 해결하는 쉬운 방법은 웹 어플리케이션 폴더 밑에 하위 폴더를 생성해서 JSP 페이지를 기능 별로 분류하는 것**
 
-하위 폴더를 사용하면 JSP 페이지를 알맞게 기능별로 분류할 수 있으므로 웹 어플리케이션을 구현할 때에는 하위 폴더를 적극적으로 사용하는 것이 개발 과정이나 유지 보수에 이로움
+&#9656; 하위 폴더를 사용하면 JSP 페이지를 알맞게 기능별로 분류할 수 있으므로 웹 어플리케이션을 구현할 때에는 하위 폴더를 적극적으로 사용하는 것이 개발 과정이나 유지 보수에 이로움
 
 ### Web Application Deployment
 
 개발된 웹애플리케이션을 WAS에 배포하는 방법은 2가지가 있음
 
-1. 개발된 폴더 그대로 파일을 WAS에 직접 복사
+1. **개발된 폴더 그대로 파일을 WAS에 직접 복사**
 
-    예제를 실행할 때 이미 사용하는 방법!
+    &#9656; 예제를 실행할 때 이미 사용하는 방법!
 
-    톰켓의 webapps/jsp01...과 같은 폴더에 직접 JSP 파일을 저장했는데, 이는 톰캣 서버의 특정 폴더에 파일을 직접 복사하는 방식을 사용한 것
+    &#8594; 톰켓의 webapps/jsp01...과 같은 폴더에 직접 JSP 파일을 저장했는데, 이는 톰캣 서버의 특정 폴더에 파일을 직접 복사하는 방식을 사용한 것
 
-2. war파일로 압축해서 배포하는 방법
+2. **war파일로 압축해서 배포하는 방법**
 
     **war은 Web Application Archive의 약자로 웹 어플리케이션의 구성 요소를 하나로 묶어놓은 파일**
 
-    war파일로 묶으려면 jdk의 jar.exe 명령어를 사용해서 war파일을 생성
+    &#9656; war파일로 묶으려면 jdk의 jar.exe 명령어를 사용해서 war파일을 생성
 
-    jar 명령어는 javac 명령어와 동일하게 JDK설치폴더/bin 폴더에 포함되어있음
+    &#9656; jar 명령어는 javac 명령어와 동일하게 JDK설치폴더/bin 폴더에 포함되어있음
     
-    Path 환경변수에 JDK설치폴더/bin 폴더를 추가해주면 전체 경로를 입력할 필요 없이 jar 명령어를 실행할 수 있음
+    &#9656; Path 환경변수에 JDK설치폴더/bin 폴더를 추가해주면 전체 경로를 입력할 필요 없이 jar 명령어를 실행할 수 있음
 	
+    jar 명령어 실행하기
+    {: .label .label-purple .mt-2}
     ```jsp
 	C:/apache-tomcat/webapps/jsp01.../jar cvf 웹애플리케이션이름.war *
+    
+    ▸ c : 새로운 파일을 생성함
+    
+    ▸ v : 세부 정보를 콘솔에 표시
+    
+    ▸ f : 생성할 파일의 이름을 지정함
+    
+    ▸ * : 현재 폴더의 모든 파일과 하위 폴더가 대상
     ```
     
-    * c : 새로운 파일을 생성함
-    
-    * v : 세부 정보를 콘솔에 표시
-    
-    * f : 생성할 파일의 이름을 지정함
-    
-    * * : 현재 폴더의 모든 파일과 하위 폴더가 대상
-    
-    위 jar 명령어를 실행하면 war파일이 생성됨, 이 파일을 실 서버의 [톰캣]/webapps 폴더에 복사해주면 배포가 됨 
+    &#9656; 위 jar 명령어를 실행하면 war파일이 생성됨, 이 파일을 실 서버의 [톰캣]/webapps 폴더에 복사해주면 배포가 됨 
