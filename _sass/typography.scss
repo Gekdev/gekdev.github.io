@@ -19,10 +19,12 @@ h3,
   @include fs-5;
 }
 
-h4,
+h4{
+  @include fs-11;
+}
+
 .text-delta {
   @include fs-4;
-  font-style: italic;
 }
 
 h5,

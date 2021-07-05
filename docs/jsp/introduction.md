@@ -143,8 +143,8 @@ URL을 좀 더 범용적으로 정의한 URL을 확인하려면 [http://ko.wikip
 웹을 기반으로 하는 서비스를 만들기 위해 필요한 지식은 많음
 
 자바를 이용해서 웹사이트를 만들 때 사용하는 기술들
-{: .label .label-red .mt-2}
-
+{: .label .mt-2}
+<div class="code-example" markdown="1">
 * 개발언어 : 자바
 
 * 웹/어플리케이션 서버 : HTTPD(아파치 웹 서버)나 NGINX, 톰켓, 웹로직 등
@@ -164,6 +164,7 @@ URL을 좀 더 범용적으로 정의한 URL을 확인하려면 [http://ko.wikip
 * 통신 프로토콜 : HTTP
 
 * OS : 센트OS, 윈도우 서버 2012 등
+</div>
 
 ### Static Web Page
 

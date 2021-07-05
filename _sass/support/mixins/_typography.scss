@@ -84,3 +84,11 @@
     font-size: 48px !important;
   }
 }
+
+@mixin fs-11 {
+  font-size: 15px !important;
+
+  @include mq(sm) {
+    font-size: 19px !important;
+  }
+}
