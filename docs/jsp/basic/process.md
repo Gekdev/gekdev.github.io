@@ -53,8 +53,17 @@ WAS는 웹 브라우저로부터 요청이 오면 알맞은 프로그램을 찾�
 
 ### Processing of JSP (Complicate)
 
-WAS는 JSP 페이지에 대한 요청이 들어오면 다음과 같은 처리를 함
+&#9656; jsp 페이지를 요청할 때에는 JSP를 직접 실행하는 것이 아니라, JSP를 자바 소스코드로 변환한 뒤 컴파일 해서 생성한 서블릿을 실행하는 것
 
+&#9656; 여기서 JSP페이지를 자바 코드로 변경하는 단계를 변환(translation)단계 [과정 1.2]라고 하며, 자바 코드를 서블릿 클래스로 변경하는 단계를 컴파일(compile)단계 [과정 1.3]이라고 함
+
+★ 즉, jsp를 실행한다는 말은 jsp페이지를 컴파일한 결과 서블릿 클래스를 실행한다는 말과 동일함
+
+&#8594; 정확하게 말한다면 jsp페이지를 컴파일 한 서블릿을 실행한다는 의미
+
+JSP 페이지에 대한 요청의 WAS 처리
+{: .label .label-purple .mt-2}
+<div class="code-example" markdown="1">
 ![](https://gekdev.github.io/docs/jsp/example/jspdispose.png)
 
 *  **[과정 1.1] JSP에 해당하는 서블릿이 존재하지 않을 경우**
@@ -78,22 +87,15 @@ WAS는 JSP 페이지에 대한 요청이 들어오면 다음과 같은 처리를
     2. [과정 2.2] 서블릿 처리결과를 응답
 
     3. [과정 3.3] 응답(response)을 웹 브라우저에 전달
+</div>
 
-&#9656; jsp 페이지를 요청할 때에는 JSP를 직접 실행하는 것이 아니라, JSP를 자바 소스코드로 변환한 뒤 컴파일 해서 생성한 서블릿을 실행하는 것
+#### work folder
 
-&#9656; 여기서 JSP페이지를 자바 코드로 변경하는 단계를 변환(translation)단계 [과정 1.2]라고 하며, 자바 코드를 서블릿 클래스로 변경하는 단계를 컴파일(compile)단계 [과정 1.3]이라고 함
-
-★ 즉, jsp를 실행한다는 말은 jsp페이지를 컴파일한 결과 서블릿 클래스를 실행한다는 말과 동일함
-
-&#8594; 정확하게 말한다면 jsp페이지를 컴파일 한 서블릿을 실행한다는 의미
-
-work folder
-{: .label .mt-2}
-<div class="code-example" markdown="1">
 **톰켓은 work 폴더에 JSP를 변환한 자바 소스 코드와 서블릿 클래스를 생성함**
 
+```html
 C:/apache-tomcat/work/Catalina/localhost/...
-</div>
+```
 
 ### JSP Life Cycle
 
@@ -227,7 +229,7 @@ JSP 규약은 buffer 속성을 지정하지 않으면 최소한 8kb 이상의 �
 
 ---
 
-## 웹 어플리케이션 폴더 구조와 URL 매핑
+## Web Application Folder Structure and URL Mapping
 
 JSP를 이용해서 웹 어플리케이션을 개발하려면 기초 문법 뿐만 아니라 웹 어플리케이션의 폴더 구조에 대해서도 알고 있어야 함
 
@@ -263,7 +265,7 @@ JSP 2.0에서는 web.xml파일을 반드시 포함하도록 제한하고 있었�
 **하지만 서블릿을 직접 설정하는 경우, 리스너를 직접 설정하는 경우, 특정 URL에 속하는 JSP들에 대해 공통 속성값을 설정하는 경우에는 web.xml파일을 직접 작성해야 함**
 </div>
 
-### 웹 어플리케이션 폴더와 URL의 관계
+### Relationship between Web Application Folder and URL
 
 한개의 웹 어플리케이션은 한개의 폴더를 차지함 (jsp01_...)
 
@@ -286,13 +288,13 @@ request.getContextPath() : 컨텍스트 경로를 얻을 수 있음
 웹 어플리케이션 컨텍스트 경로 : <%=request.getContextPath()%>
 ```
 
-### 웹 어플리케이션 폴더 내에서의 하위 폴더 사용
+### Using Subfolders within the Web Application Folder
 
 JSP페이지가 너무 많아지면 관리하기 힘들어짐. 이 문제를 해결하는 쉬운 방법은 웹 어플리케이션 폴더 밑에 하위 폴더를 생성해서 JSP 페이지를 기능 별로 분류하는 것
 
 하위 폴더를 사용하면 JSP 페이지를 알맞게 기능별로 분류할 수 있으므로 웹 어플리케이션을 구현할 때에는 하위 폴더를 적극적으로 사용하는 것이 개발 과정이나 유지 보수에 이로움
 
-### 웹 어플리케이션 배포
+### Web Application Deployment
 
 개발된 웹애플리케이션을 WAS에 배포하는 방법은 2가지가 있음
 

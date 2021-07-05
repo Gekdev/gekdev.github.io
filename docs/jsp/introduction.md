@@ -107,7 +107,7 @@ URL을 좀 더 범용적으로 정의한 URL을 확인하려면 [http://ko.wikip
 
 * HTTP : 웹 브라우저와 웹 서버가 HTML을 비롯해 이미지, 동영상, XML문서 등 다양한 데이터를 주고 받을 때 사용하는 일종의 규칙, 쉽게말해 정보를 담는 박스라고 생각하면 됨
 
-### HTTP Rules
+#### HTTP Rules
 
 * 요청 규칙 : 웹 브라우저가 웹 서버에 HTML과 같은것을 요청할 때 사용할 데이터 구성 규칙
 
@@ -189,8 +189,9 @@ URL을 좀 더 범용적으로 정의한 URL을 확인하려면 [http://ko.wikip
 4. 웹 브라우저가 HTML 문서를 보여줌
 
 ![](https://gekdev.github.io/docs/jsp/example/static.png)
+{: .mt-2}
 
-#### Advantage & Disadvantage
+#### Advantage & Disadvantage of Static WebPage 
 
 정적 홈페이지의 장,단점
 
@@ -239,6 +240,7 @@ URL을 좀 더 범용적으로 정의한 URL을 확인하려면 [http://ko.wikip
 5. 웹 브라우저가 HTML 문서를 보여줌
 
 ![](https://gekdev.github.io/docs/jsp/example/dynamic.png)
+{: .mt-2}
 
 파이썬으로 동적 웹페이지 크롤링
 {: .label .label-red .mt-2}

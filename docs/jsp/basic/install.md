@@ -205,7 +205,7 @@ JSP파일은 동적 웹 프로젝트 파일로 생성해야 함
 
 1. **어느 서버를 사용할건지 지정해줘야 함**
 
-    ![](https://gekdev.github.io/docs/jsp/basic/example/)
+    ![](https://gekdev.github.io/docs/jsp/basic/example/runtime.JPG)
 
 2. **Context root를 다른 이름으로 지정할 수 있음**
 
@@ -270,4 +270,4 @@ JSP파일은 동적 웹 프로젝트 파일로 생성해야 함
 
 ### Information
 
-* [ansalstmd.log](https://velog.io/@ansalstmd/JSP1.-%EA%B0%9C%EC%9A%94)
+* [ansalstmd](https://velog.io/@ansalstmd/JSP1.-%EA%B0%9C%EC%9A%94)
