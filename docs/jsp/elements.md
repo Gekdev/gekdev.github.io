@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Filter
+title: Elements
 parent: JSP
 nav_order: 16
 has_children: true
 ---
 
-# JSP Filter
+# JSP Elements
 {: .no_toc .text-beta .fw-700}
 
 ## Table of contents

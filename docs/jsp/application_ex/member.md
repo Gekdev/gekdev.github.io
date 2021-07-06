@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Application EX
-parent: JSP
-nav_order: 15
-has_children: true
+title: Member
+parent: Application EX
+grand_parent : JSP
+nav_order: 1
 ---
 
-# JSP Application EX
+# Application EX Member
 {: .no_toc .text-beta .fw-700}
 
 ## Table of contents
