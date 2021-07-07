@@ -62,10 +62,10 @@ create table board(
 	board_pass 			varchar(15) not null,
 	board_subject		varchar(50) not null,
 	board_content		varchar(2000) not null,
-	board_file 			varchar(50) not null,
+	board_file 			varchar(50),
 	board_re_ref 	    int not null,
 	board_re_lev 	    int not null,
-	board_re_req 	    int not null,
+	board_re_seq 	    int not null,
 	board_readcount	    int default 0,
 	board_date 			date,
 	primary key(board_num)
@@ -87,3 +87,39 @@ mysql
 grant all privileges on *.* to 'scott'@'localhost';
 grant all privileges on *.* to 'scott'@'%';
 ```
+
+```sql
+create table board(
+	board_num 			int,
+	board_name 			varchar(20) not null,
+	board_pass 			varchar(15) not null,
+	board_subject		varchar(50) not null,
+	board_content		varchar(2000) not null,
+	board_file 			varchar(50) not null,
+	board_re_ref 	    int not null,
+	board_re_lev 	    int not null,
+	board_re_seq 	    int not null,
+	board_readcount	    int default 0,
+	board_date 			date,
+	primary key(board_num)
+);
+
+select * from board;
+
+update board set board_readcount = board_readcount + 1 where board_num = 1;
+
+select max(board_num) from board;
+
+delete from board;
+
+ delimiter //
+ begin not atomic 
+     declare i int default 1;
+     while(i <= 1001) do
+         insert into board(board_num, board_name, board_pass, board_subject, board_content, 
+				 board_file, board_re_ref, board_re_lev, board_re_seq, board_readcount, board_date)
+             values(i, concat('작성자_',i), '1', concat('메시지제목_', i), concat('메시지내용_', i), '', i, 0, 0, 0, curdate());
+             set i = i + 1;
+     end while;
+ end;
+ ```
