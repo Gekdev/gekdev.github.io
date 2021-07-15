@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Introduction
-parent: Install
+title: Install
+parent: Python
 nav_order: 2
 ---
 
